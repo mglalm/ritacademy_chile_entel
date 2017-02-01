@@ -1,1 +1,5 @@
-Este es un archivo de prueba con una línea
+Este es un archivo de prueba con línea
+
+otra línea
+
+tercera línea
