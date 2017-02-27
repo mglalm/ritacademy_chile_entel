@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="customerManagement.customerFinder">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_customerManagement.customerSearch</input>
+  <label>Búsqueda de Usuario</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_customerManagement.customerProfile</output>
+  <sortList>
+    <sort type="stitem">
+      <path>doc_customerManagement.customerProfile/leaf_customerName</path>
+    </sort>
+  </sortList>
+  <type>document</type>
+  <vDetailForm>doc_customerManagement.customerProfile/ui_UserInterface/frmui_Forms/exov_Default</vDetailForm>
+  <searchList>
+    <search type="sitem">
+      <document>doc_customerManagement.customerSearch</document>
+      <mappedDocument>doc_customerManagement.customerProfile</mappedDocument>
+      <mappedPath>doc_customerManagement.customerProfile/leaf_cwCreated</mappedPath>
+      <operation>greater</operation>
+      <path>doc_customerManagement.customerSearch/leaf_createdAfter</path>
+    </search>
+    <search type="sitem">
+      <document>doc_customerManagement.customerSearch</document>
+      <mappedDocument>doc_customerManagement.customerProfile</mappedDocument>
+      <mappedPath>doc_customerManagement.customerProfile/leaf_cwCreated</mappedPath>
+      <operation>less</operation>
+      <path>doc_customerManagement.customerSearch/leaf_createdBefore</path>
+    </search>
+    <search type="sitem">
+      <document>doc_customerManagement.customerSearch</document>
+      <mappedDocument>doc_customerManagement.customerProfile</mappedDocument>
+      <mappedPath>doc_customerManagement.customerProfile/leaf_customerName</mappedPath>
+      <operation>equal</operation>
+      <path>doc_customerManagement.customerSearch/leaf_customerName</path>
+    </search>
+    <search type="sitem">
+      <document>doc_customerManagement.customerSearch</document>
+      <mappedDocument>doc_customerManagement.customerProfile</mappedDocument>
+      <mappedPath>doc_customerManagement.customerProfile/leaf_marketSegment</mappedPath>
+      <operation>equal</operation>
+      <path>doc_customerManagement.customerSearch/leaf_marketSegment</path>
+    </search>
+    <search type="sitem">
+      <mappedDocument>doc_customerManagement.customerProfile</mappedDocument>
+      <mappedPath>doc_customerManagement.customerProfile/leaf_customerName</mappedPath>
+      <operation>is not null</operation>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>doc_customerManagement.customerSearch/ui_UserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>doc_customerManagement.customerProfile/ui_UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_customerManagement.customerProfile</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="customerFinderResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="cwDocId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_cwDocId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="customerName" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_customerName</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="marketSegment" type="elslct">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_marketSegment</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="isPrefered" type="elchk">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_isPrefered</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwCreated" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_cwCreated</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwCreatedBy" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_cwCreatedBy</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwDocStamp" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_cwDocStamp</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwOrderCreationDate" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_cwOrderCreationDate</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwOrderId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_cwOrderId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwParentId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_cwParentId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwSiteId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_cwSiteId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="lastUpdatedDate" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_lastUpdatedDate</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="updatedBy" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_updatedBy</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwDocType" type="elfld">
+                        <dataLength>25</dataLength>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_customerManagement.customerFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_customerManagement.customerProfile/leaf_cwDocType</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="customerFinderView" type="findVView">
+      <inputOverlay>doc_customerManagement.customerSearch/ui_UserInterface/frmui_Forms/vform_generatedForm</inputOverlay>
+      <label>Vista del Customer finder</label>
+      <outputOverlay>findDoc_customerManagement.customerFinder/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <searchImmediately>true</searchImmediately>
+      <showSearchForm>true</showSearchForm>
+    </view>
+  </viewList>
+</findDoc>

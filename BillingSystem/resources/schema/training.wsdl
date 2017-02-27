@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="externalSystemSimulator" targetNamespace="externalSystemSimulator"
+	xmlns:tns="externalSystemSimulator"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:externalSystemSimulator="externalSystemSimulator">
+
+	<types>
+		<schema targetNamespace="externalSystemSimulator"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:externalSystemSimulator="externalSystemSimulator"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>External System Simulator</documentation>
+				<appinfo>
+					<metadata>External System Simulator</metadata>
+					<created>Thu Feb 16 15:53:23 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<!-- Structures -->
+
+			<complexType name="getCreditApprovalNumberResponse">
+				<annotation>
+					<documentation>getCreditApprovalNumberResponse</documentation>
+				</annotation>
+					<sequence>
+						<element name="destiny" minOccurs="0" maxOccurs="1">
+							<annotation>
+								<documentation>destiny</documentation>
+							</annotation>
+							<complexType>
+								<sequence>
+									<element name="destinyProcess" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+									<element name="destinyOrder" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+								</sequence>
+							</complexType>
+						</element>
+						<element name="creditApprovalNumber" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="ack">
+				<annotation>
+					<documentation>ack</documentation>
+				</annotation>
+					<sequence>
+						<element name="code" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="description" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="getCreditApprovalNumberRequest">
+				<annotation>
+					<documentation>getCreditApprovalNumberRequest</documentation>
+				</annotation>
+					<sequence>
+						<element name="origin" minOccurs="0" maxOccurs="1">
+							<annotation>
+								<documentation>origin</documentation>
+							</annotation>
+							<complexType>
+								<sequence>
+									<element name="originProcess" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+									<element name="originOrder" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+								</sequence>
+							</complexType>
+						</element>
+						<element name="credirApprovalNumberOld" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+			<complexType name="ProcDoc">
+				<annotation>
+					<documentation>Process Document</documentation>
+				</annotation>
+					<sequence>
+						<element name="originProcess" type="xsd:string"/>
+						<element name="originOrder" type="xsd:string"/>
+						<element name="creditApprovalNumber" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+		</schema>
+	</types>
+
+	<message name="getCreditApprovalNumberRequest">
+		<part name="getCreditApprovalNumberRequest" type="externalSystemSimulator:getCreditApprovalNumberRequest"/>
+	</message>
+
+	<message name="ack">
+		<part name="ack" type="externalSystemSimulator:ack"/>
+	</message>
+
+	<portType name="externalSystemInboundInterface">
+		<operation name="extSysInboundGetCreditApprovalNumber">
+			<input message="tns:getCreditApprovalNumberRequest"/>
+			<output message="tns:ack"/>
+		</operation>
+		<operation name="GPgetCreditApprovalNumberRequest">
+			<input message="tns:getCreditApprovalNumberRequest"/>
+		</operation>
+	</portType>
+
+	<binding name="extSysInboundSOAPBinding" type="tns:externalSystemInboundInterface">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="extSysInboundGetCreditApprovalNumber">
+			<soap:operation soapAction="extSysInboundGetCreditApprovalNumber"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GPgetCreditApprovalNumberRequest">
+			<soap:operation soapAction="GPgetCreditApprovalNumberRequest"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+		</operation>
+	</binding>
+
+	<service name="externalServices">
+		<port name="extSysInboundSOAPPort" binding="tns:extSysInboundSOAPBinding">
+		</port>
+	</service>
+
+</definitions>

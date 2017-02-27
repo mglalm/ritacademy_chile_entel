@@ -29,7 +29,7 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10</dataTypeSize>
+<dataTypeSize>15</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -107,7 +107,7 @@
 <colUsage columnID="474A2E39-1F1D-37D7-BBDB-31AC6286114C"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="46C3690D-E1B5-A253-C473-1AABE6B0008B" name="BSCS_SERVICIO_BSCS_SERVICIO_ESTADO_FK">
+<ind_PK_UK id="46C3690D-E1B5-A253-C473-1AABE6B0008B" name="BSCS_SERVICIO_ESTADO_FK">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 15:55:40 UTC</createdTime>
 <ownerDesignName>modelo_bscs</ownerDesignName>
