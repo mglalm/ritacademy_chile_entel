@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="chargingSystem.clienteChagingSystem">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{c4a508ae-6ef1-43a8-add6-9df41204578c}</guid>
+  <label>Cliente Charging System</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="idCliente" type="leaf">
+      <key>1</key>
+      <valueType>dtype_chargingSystem.idCliente</valueType>
+    </variable>
+  </variableList>
+</document>
