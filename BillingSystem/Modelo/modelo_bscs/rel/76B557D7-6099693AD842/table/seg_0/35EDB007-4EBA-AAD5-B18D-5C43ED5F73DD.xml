@@ -15,8 +15,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10</dataTypeSize>
-<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="ID_MSISDN_ESTADO" id="4DC50F2A-A8E4-42CF-C0BC-398DCE830A4F">
@@ -47,7 +47,7 @@
 <colUsage columnID="6ED62064-9826-4B95-3959-5BE6F081896E"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="400DBC41-F496-9CAA-6B6C-64D949A2FC24" name="BSCS_MSISDN_BSCS_MSISDN_ESTADO_FK">
+<ind_PK_UK id="400DBC41-F496-9CAA-6B6C-64D949A2FC24" name="BSCS_MSISDN_ESTADO_FK">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 15:41:39 UTC</createdTime>
 <ownerDesignName>modelo_bscs</ownerDesignName>

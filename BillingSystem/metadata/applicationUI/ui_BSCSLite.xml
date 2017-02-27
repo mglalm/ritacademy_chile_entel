@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="applicationUI.BSCSLite">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>BSCS</label>
+  <metaVersion>25</metaVersion>
+  <url>/BSCS</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayout" type="elext">
+              <elementList>
+                <element name="tools" type="elmnu">
+                  <label>Tools</label>
+                  <elementList>
+                    <element name="selectApp" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_selectApp</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Select Application</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="Customers" type="elmnu">
+                  <label>Clientes</label>
+                  <elementList>
+                    <element name="AddCustomers" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_addCustomer</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Agregar Nuevo Cliente</label>
+                    </element>
+                    <element name="findCustomers" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_findCustomer</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Encontrar Clientes</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>CRM Lite</title>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="addCustomer" type="usrActionMethod">
+      <form>doc_customerManagement.DOC_CLIENTE_BSCS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+      <userInterface>doc_customerManagement.DOC_CLIENTE_BSCS</userInterface>
+      <valueType>doc_customerManagement.DOC_CLIENTE_BSCS</valueType>
+    </method>
+    <method name="findCustomer" type="usrActionMethod">
+      <userInterface>findDoc_customerManagement.customerFinder</userInterface>
+      <valueType>findDoc_customerManagement.customerFinder</valueType>
+    </method>
+    <method name="selectApp" type="usrActionMethod">
+      <script>UserProfile.selectApp();</script>
+    </method>
+  </methodList>
+</userInterface>

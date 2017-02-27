@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="billingInterface.billingBind">
+  <interface>iface_billingInterface.billingInterface</interface>
+  <label>Billing Bind</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

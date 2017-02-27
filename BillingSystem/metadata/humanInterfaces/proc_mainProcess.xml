@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="humanInterfaces.mainProcess">
+  <activity name="start" type="seqActivity">
+    <label>start</label>
+    <x>-148.0</x>
+    <y>126.0</y>
+    <childList>
+      <child name="assignCustomerService" type="opActivity">
+        <element>iface_humanInterfaces.customerServiceInterface/oper_assignCustomerService</element>
+        <label>Assign Customer Service</label>
+        <participant>part_humanInterfaces.customerServicePart</participant>
+        <x>-78.0</x>
+        <y>110.0</y>
+      </child>
+      <child name="decision" type="seqActivity">
+        <label>decision</label>
+        <x>6.0</x>
+        <y>128.0</y>
+        <childList>
+          <child name="customerServiceDecision" type="choiceActivity">
+            <label>customerServiceDecision</label>
+            <x>84.0</x>
+            <y>128.0</y>
+            <childList>
+              <child name="cancel" type="opActivity">
+                <element>iface_humanInterfaces.customerServiceInterface/oper_Cancel</element>
+                <label>cancel</label>
+                <participant>part_humanInterfaces.customerServicePart</participant>
+                <x>121.0</x>
+                <y>229.0</y>
+                <childList>
+                  <child name="orderCancelled" type="completeActivity">
+                    <label>Order Cancelled</label>
+                    <x>167.0</x>
+                    <y>223.0</y>
+                  </child>
+                </childList>
+              </child>
+              <child name="submit" type="opActivity">
+                <element>iface_humanInterfaces.customerServiceInterface/oper_Submit</element>
+                <label>submit</label>
+                <participant>part_humanInterfaces.customerServicePart</participant>
+                <x>246.0</x>
+                <y>128.0</y>
+                <childList>
+                  <child name="creditAnalisys" type="seqActivity">
+                    <label>creditAnalisys</label>
+                    <x>306.00003</x>
+                    <y>131.0</y>
+                    <childList>
+                      <child name="doCreditAnalisys" type="opActivity">
+                        <element>iface_humanInterfaces.creditAnalisysInterface/oper_doCreditAnalisys</element>
+                        <label>doCreditAnalisys</label>
+                        <participant>part_humanInterfaces.creditAnalisysPart</participant>
+                        <x>382.0</x>
+                        <y>131.0</y>
+                        <childList>
+                          <child name="creditAnalisysDecision" type="choiceActivity">
+                            <label>Credit Analisys Decision</label>
+                            <x>458.0</x>
+                            <y>224.0</y>
+                            <childList>
+                              <child name="rejectCredit" type="opActivity">
+                                <element>iface_humanInterfaces.creditAnalisysInterface/oper_rejectCredit</element>
+                                <label>rejectCredit</label>
+                                <participant>part_humanInterfaces.creditAnalisysPart</participant>
+                                <x>370.0</x>
+                                <y>249.0</y>
+                                <childList>
+                                  <child name="creditRejected" type="seqActivity">
+                                    <label>Credit Rejected</label>
+                                    <x>339.0</x>
+                                    <y>362.0</y>
+                                    <childList>
+                                      <child name="handleRejectCredit" type="opActivity">
+                                        <element>iface_humanInterfaces.customerServiceInterface/oper_handleRejectCredit</element>
+                                        <label>Handle Reject Credit</label>
+                                        <participant>part_humanInterfaces.customerServicePart</participant>
+                                        <x>265.0</x>
+                                        <y>227.0</y>
+                                        <childList>
+                                          <child name="backToCustomerService" type="repeatActivity">
+                                            <element>proc_humanInterfaces.mainProcess/seqActivity_start/seqActivity_decision</element>
+                                            <label>Back To Customer Service</label>
+                                            <x>-7.0</x>
+                                            <y>220.0</y>
+                                          </child>
+                                        </childList>
+                                      </child>
+                                    </childList>
+                                  </child>
+                                </childList>
+                              </child>
+                              <child name="acceptCredit" type="opActivity">
+                                <element>iface_humanInterfaces.creditAnalisysInterface/oper_acceptCredit</element>
+                                <label>Accept Credit</label>
+                                <participant>part_humanInterfaces.creditAnalisysPart</participant>
+                                <x>504.0</x>
+                                <y>109.0</y>
+                                <childList>
+                                  <child name="provisioning" type="seqActivity">
+                                    <label>Provisioning</label>
+                                    <x>573.0</x>
+                                    <y>115.0</y>
+                                    <childList>
+                                      <child name="doProvisioning" type="opActivity">
+                                        <element>iface_humanInterfaces.provisioningInterface/oper_doProvisioning</element>
+                                        <label>doProvisioning</label>
+                                        <participant>part_humanInterfaces.provisioningPart</participant>
+                                        <x>642.0</x>
+                                        <y>113.0</y>
+                                        <childList>
+                                          <child name="provisioningComplete" type="opActivity">
+                                            <element>iface_humanInterfaces.provisioningInterface/oper_provisioningComplete</element>
+                                            <label>Provisioning Complete</label>
+                                            <participant>part_humanInterfaces.provisioningPart</participant>
+                                            <x>755.64075</x>
+                                            <y>112.42714</y>
+                                          </child>
+                                        </childList>
+                                      </child>
+                                      <child name="billing" type="seqActivity">
+                                        <label>Billing</label>
+                                        <x>865.5592</x>
+                                        <y>140.76831</y>
+                                        <childList>
+                                          <child name="doBilling" type="opActivity">
+                                            <element>iface_billingInterface.billingInterface/oper_doBilling</element>
+                                            <label>doBilling</label>
+                                            <participant>part_billingInterface.billingParticipant</participant>
+                                            <x>975.4833</x>
+                                            <y>88.47513</y>
+                                          </child>
+                                        </childList>
+                                      </child>
+                                      <child name="orderComplete" type="completeActivity">
+                                        <label>Order Complete</label>
+                                        <x>1068.2515</x>
+                                        <y>203.62262</y>
+                                      </child>
+                                    </childList>
+                                  </child>
+                                </childList>
+                              </child>
+                            </childList>
+                          </child>
+                        </childList>
+                      </child>
+                    </childList>
+                  </child>
+                </childList>
+              </child>
+            </childList>
+          </child>
+        </childList>
+      </child>
+      <child name="customerServicePart" type="participantActivity">
+        <label>customerServicePart</label>
+        <participant>part_humanInterfaces.customerServicePart</participant>
+        <x>110.43527</x>
+        <y>-42.475105</y>
+      </child>
+      <child name="creditAnalisysPart" type="participantActivity">
+        <label>creditAnalisysPart</label>
+        <participant>part_humanInterfaces.creditAnalisysPart</participant>
+        <x>293.68503</x>
+        <y>-31.552933</y>
+      </child>
+      <child name="provisioningPart" type="participantActivity">
+        <label>provisioningPart</label>
+        <participant>part_humanInterfaces.provisioningPart</participant>
+        <x>451.4497</x>
+        <y>-46.11583</y>
+      </child>
+      <child name="billingParticipant" type="participantActivity">
+        <label>billingParticipant</label>
+        <participant>part_billingInterface.billingParticipant</participant>
+        <x>697.9403</x>
+        <y>-24.057913</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <label>mainProcess</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>User</type>
+</process>
