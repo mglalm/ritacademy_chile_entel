@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="bscsProy.recIMSI">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{7a7399d4-2614-4566-872c-18ed9a619c7e}</guid>
+  <label>Recurso IMSI</label>
+  <metaVersion>25</metaVersion>
+</document>
