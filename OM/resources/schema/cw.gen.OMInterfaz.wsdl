@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="IO" targetNamespace="IO"
+	xmlns:tns="IO"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:IO="IO">
+
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="IO" schemaLocation="IO.xsd"/>
+		</schema>
+	</types>
+
+	<message name="request">
+		<part name="request" type="IO:request"/>
+	</message>
+
+	<message name="response">
+		<part name="response" type="IO:response"/>
+	</message>
+
+	<portType name="OMInterfaz">
+		<operation name="provisioning">
+			<input message="tns:request"/>
+			<output message="tns:response"/>
+		</operation>
+	</portType>
+
+	<binding name="bindingSOAP" type="tns:OMInterfaz">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="provisioning">
+			<soap:operation soapAction="provisioning"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="externalService">
+		<port name="portSOAP" binding="tns:bindingSOAP">
+		</port>
+	</service>
+
+</definitions>

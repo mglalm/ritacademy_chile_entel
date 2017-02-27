@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="IO.OMInterfaz">
+  <label>OMInterfaz</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="provisioning" type="oper">
+      <input>dstruct_IO.request</input>
+      <label>provisioning</label>
+      <output>dstruct_IO.response</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>
