@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D8A267F4-39D5-5BFC-156E-2792DD8A9650" containerWithKeyObject="512D759C-B57F-5431-F746-F71EA93DD404" localFKIndex="3F68C441-F3FE-A48A-81AE-C59E33824CFF" name="BSCS_SERVICIO_BSCS_PLAN_FK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:53:54 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2C4E2B51-CBEB-5F37-19A8-55CC30BA3B0D</referredTableID>
+<keyObject>7F3865E9-6C84-9C8A-8B98-587D3062C1B1</keyObject>
+<referredKeyID>7F3865E9-6C84-9C8A-8B98-587D3062C1B1</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>false</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

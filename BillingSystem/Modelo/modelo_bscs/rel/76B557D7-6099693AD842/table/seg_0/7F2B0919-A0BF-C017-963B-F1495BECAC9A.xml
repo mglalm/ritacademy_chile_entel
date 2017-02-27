@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7F2B0919-A0BF-C017-963B-F1495BECAC9A" name="BSCS_MSISDN_ESTADO">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:29:41 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_MSISDN_ESTADO" id="2D9AD112-FBD9-B66B-C896-77E1A225FF96">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:30:25 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESC_MSISDN_ESTADO" id="9E4D8B78-EDB1-915C-FB43-42C44D833EA7">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:30:25 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D75FAF02-544B-31F4-AFDB-680A355C3906" name="BSCS_MSISDN_ESTADO_PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:30:30 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2D9AD112-FBD9-B66B-C896-77E1A225FF96"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="70603905-98B7-8332-5ADF-750DE965EF96" name="BSCS_CLIENTE">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:25:31 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_CLIENTE_BSCS" id="0B77458B-C10B-AE82-55F9-B69CAB245BC7">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:27:41 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_CREACION" id="F7649F11-6CD9-46A4-0F29-FBC68B9659FC">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:27:41 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_CLIENTE_ESTADO" id="E4FFB75E-B589-98CE-6E08-368E17CC9513">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:27:41 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3FC266ED-C59C-4AEC-4E82-619F68AF91E4" referredColumn="5AC287A8-E6D5-2F94-F938-2E7C23FF131F"/>
+</associations>
+</Column>
+<Column name="RUT" id="B6B6B272-2FDE-9D66-D3B5-D9B3A1698FB8">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:45:54 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E063425C-F67A-B038-0421-3899336FFCEA" name="BSCS_CLIENTE_PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:27:41 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B77458B-C10B-AE82-55F9-B69CAB245BC7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5CA3C61D-BCD0-42C0-816B-209F4CD07AEF" name="ID_CLIENTE_ESTADO">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:49:07 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E4FFB75E-B589-98CE-6E08-368E17CC9513"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

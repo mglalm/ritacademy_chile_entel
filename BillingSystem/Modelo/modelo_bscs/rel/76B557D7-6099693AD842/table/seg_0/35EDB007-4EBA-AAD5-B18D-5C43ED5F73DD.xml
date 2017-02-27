@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="35EDB007-4EBA-AAD5-B18D-5C43ED5F73DD" name="BSCS_MSISDN">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:28:09 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MSISDN" id="6ED62064-9826-4B95-3959-5BE6F081896E">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:28:44 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_MSISDN_ESTADO" id="4DC50F2A-A8E4-42CF-C0BC-398DCE830A4F">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:41:00 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<reference>true</reference>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5FFAE232-B1D2-A922-43EF-3F170992D506" referredColumn="2D9AD112-FBD9-B66B-C896-77E1A225FF96"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EE05E716-F4F5-7362-4899-24C1505E4412" name="BSCS_MSISDN_PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:29:12 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6ED62064-9826-4B95-3959-5BE6F081896E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="400DBC41-F496-9CAA-6B6C-64D949A2FC24" name="BSCS_MSISDN_BSCS_MSISDN_ESTADO_FK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:41:39 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4DC50F2A-A8E4-42CF-C0BC-398DCE830A4F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

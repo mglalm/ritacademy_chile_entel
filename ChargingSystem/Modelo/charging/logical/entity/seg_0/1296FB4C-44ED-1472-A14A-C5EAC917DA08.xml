@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1296FB4C-44ED-1472-A14A-C5EAC917DA08" name="CS_PLAN">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:31:24 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_PLAN_CS" id="DAB8C65A-544A-9FE2-73EE-BBA9502F4429">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:31:34 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DESC_PLAN" id="8F2748DF-505C-4929-7353-BB2275FA525C">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:32:06 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

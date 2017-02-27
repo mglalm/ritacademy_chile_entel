@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B0CE0D00-5229-BD22-C983-3496FAA4B65E" name="CS_SERVICIO">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:30:14 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_SERVICIO" id="E789D6C4-1171-EA5F-EE1C-2FA648FF80AF">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:33:54 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_PLAN_CS" id="1E839FCC-D341-CF67-7E71-C3257559D9C8">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:32:54 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_SERVICIO_ESTADO" id="639864BA-C25C-E1E1-06C6-0AA0835E8B38">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:33:21 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MSISDN" id="3EACE6E1-43D5-1330-6426-E4590B3531F9">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:33:08 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA_ACTIVACION" id="A5D5ABC7-099C-4D9A-D3FB-A3DD23C9C551">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:33:39 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F00A6E26-97CC-9830-911F-DCCE0A519753" name="CS_SERVICIO PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:34:45 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E789D6C4-1171-EA5F-EE1C-2FA648FF80AF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

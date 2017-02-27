@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modelo_bscs" id="203534A6-8C09-73F8-392A-B4B8231B109C" version="3.5">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 15:25:17 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>203534A6-8C09-73F8-392A-B4B8231B109C</designId>
+</OSDM_Design>
