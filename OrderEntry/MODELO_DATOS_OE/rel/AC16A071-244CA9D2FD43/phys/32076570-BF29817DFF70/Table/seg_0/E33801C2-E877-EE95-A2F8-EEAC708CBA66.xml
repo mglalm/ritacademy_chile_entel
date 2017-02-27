@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="EOC_CLIENTE" directorySegmentName="seg_0" id="E33801C2-E877-EE95-A2F8-EEAC708CBA66">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<schemaObject>429F4A2B-03CA-A55D-A302-5D1EC02C4FB7</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>181E4029-1134-0EAD-E403-43F38D57B64A</segment>
+<tableSpace>E1254995-30B0-9D46-9BD5-AD8F53E1F54D</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DIRECCION" id="4EA9D0D5-5248-0451-7835-A18D612FC002">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NOMBRE" id="4EE85A41-66BB-6DDA-F2A6-629D53AAE6C3">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COMUNA" id="69F5B8C6-F995-56B5-60E8-CE02A8B28915">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RUT" id="AA933CBA-A8BB-A616-A035-84BF0CE27795">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CIUDAD" id="E57BB7B3-67E4-EB36-9C9C-AAC9B45E50CA">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="EOC_CLIENTE_PK" id="E8D1AD68-8DCC-0569-E08F-8D309E5F9314">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<schemaObject>429F4A2B-03CA-A55D-A302-5D1EC02C4FB7</schemaObject>
+<segment>6D6DC5E4-0FF8-F24E-AEC2-0B9654C49B6E</segment>
+<tableSpace>E1254995-30B0-9D46-9BD5-AD8F53E1F54D</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="EOC_CLIENTE_PK" id="1307306C-7C1B-BBE1-F583-E377599CE7E9">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<segment>6D6DC5E4-0FF8-F24E-AEC2-0B9654C49B6E</segment>
+<tableSpace>E1254995-30B0-9D46-9BD5-AD8F53E1F54D</tableSpace>
+<existingIndex>E8D1AD68-8DCC-0569-E08F-8D309E5F9314</existingIndex>
+<indexSegment>6D6DC5E4-0FF8-F24E-AEC2-0B9654C49B6E</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

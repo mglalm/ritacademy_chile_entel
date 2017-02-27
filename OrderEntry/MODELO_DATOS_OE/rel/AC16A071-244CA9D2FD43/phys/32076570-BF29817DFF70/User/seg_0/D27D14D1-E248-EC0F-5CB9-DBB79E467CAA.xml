@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="C##TRAIN3" directorySegmentName="seg_0" id="D27D14D1-E248-EC0F-5CB9-DBB79E467CAA">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:38:15 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<schemaObject>429F4A2B-03CA-A55D-A302-5D1EC02C4FB7</schemaObject>
+</UserOraclev10g>

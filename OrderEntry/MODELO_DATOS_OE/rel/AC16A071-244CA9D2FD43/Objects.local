@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="SchemaObject" objectID="429F4A2B-03CA-A55D-A302-5D1EC02C4FB7" name="C##TRAIN3" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.SchemaObject" propertyParentId="AC16A071-D1B3-1300-1024-244CA9D2FD43" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="E33801C2-E877-EE95-A2F8-EEAC708CBA66" name="EOC_CLIENTE" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="AC16A071-D1B3-1300-1024-244CA9D2FD43" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="83858E25-F251-CC9D-BCD8-B50CCCBA4C08" name="EOC_ORDEN" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="AC16A071-D1B3-1300-1024-244CA9D2FD43" propertySourceId="" propertyTargetId=""/>
+   <object objectType="FKIndexAssociation" objectID="BB67F3B7-3249-E9C0-A591-A15812C51901" name="EOC_ORDEN_FK" seqName="seg_0" containerID="83858E25-F251-CC9D-BCD8-B50CCCBA4C08" refContainerID="E33801C2-E877-EE95-A2F8-EEAC708CBA66" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="AC16A071-D1B3-1300-1024-244CA9D2FD43" propertySourceId="E33801C2-E877-EE95-A2F8-EEAC708CBA66" propertyTargetId="83858E25-F251-CC9D-BCD8-B50CCCBA4C08"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

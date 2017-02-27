@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="83858E25-F251-CC9D-BCD8-B50CCCBA4C08" schemaObject="429F4A2B-03CA-A55D-A302-5D1EC02C4FB7" name="EOC_ORDEN">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>D3550C3B-674B-34ED-754F-649787937359</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ORDERID" id="333D3CC5-2E43-5107-858F-F6D8EDCFAFB2">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>5DE71AC0-3608-9D72-B066-56E25409E4F0</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<ownDataTypeParameters>,*,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RUT" id="7FBFD1E9-9A8B-2412-CEF3-5FA588764C2C">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>06D13711-56DF-29AA-51A0-AC4071019192</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BB67F3B7-3249-E9C0-A591-A15812C51901" referredColumn="AA933CBA-A8BB-A616-A035-84BF0CE27795"/>
+</associations>
+</Column>
+<Column name="ESTADO" id="B31393BF-8022-F1C1-C84F-181BAB6C6650">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>94D2BB2C-CB7F-619D-9E0E-6FE10114E597</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_CREACION" id="51C16D57-8D8C-716B-BC92-C9AB2D7EAFB8">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>AA606693-2B0C-3230-26C8-593D5777E1FD</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MSISDN" id="AB39D3AF-4105-7DB4-0A79-5D6982FE23D4">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>5E0834F4-C528-A0C5-E44A-79E955D178A2</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11 BYTE</dataTypeSize>
+<ownDataTypeParameters>11 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="986FCBC0-A13F-4E08-50AE-4C0072028F70" name="EOC_ORDEN_FK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7FBFD1E9-9A8B-2412-CEF3-5FA588764C2C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

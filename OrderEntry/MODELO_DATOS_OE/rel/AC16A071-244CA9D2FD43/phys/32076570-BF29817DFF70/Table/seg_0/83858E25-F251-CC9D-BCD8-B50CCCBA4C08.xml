@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="EOC_ORDEN" directorySegmentName="seg_0" id="83858E25-F251-CC9D-BCD8-B50CCCBA4C08">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<schemaObject>429F4A2B-03CA-A55D-A302-5D1EC02C4FB7</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>181E4029-1134-0EAD-E403-43F38D57B64A</segment>
+<tableSpace>E1254995-30B0-9D46-9BD5-AD8F53E1F54D</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ORDERID" id="333D3CC5-2E43-5107-858F-F6D8EDCFAFB2">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="FECHA_CREACION" id="51C16D57-8D8C-716B-BC92-C9AB2D7EAFB8">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RUT" id="7FBFD1E9-9A8B-2412-CEF3-5FA588764C2C">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MSISDN" id="AB39D3AF-4105-7DB4-0A79-5D6982FE23D4">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ESTADO" id="B31393BF-8022-F1C1-C84F-181BAB6C6650">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="EOC_ORDEN_FK" id="986FCBC0-A13F-4E08-50AE-4C0072028F70">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+</TableProxyOraclev11g>

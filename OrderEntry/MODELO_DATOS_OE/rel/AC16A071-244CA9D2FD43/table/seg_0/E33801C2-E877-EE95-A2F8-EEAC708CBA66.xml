@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E33801C2-E877-EE95-A2F8-EEAC708CBA66" schemaObject="429F4A2B-03CA-A55D-A302-5D1EC02C4FB7" name="EOC_CLIENTE">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>AE39EB15-226C-F781-5838-65F79D7AE4B0</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="RUT" id="AA933CBA-A8BB-A616-A035-84BF0CE27795">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>15F0C704-EC14-CF19-4929-C9257226C3CE</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DIRECCION" id="4EA9D0D5-5248-0451-7835-A18D612FC002">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>AE52D0CE-B917-E3A9-586B-3F85C7A1A079</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="4EE85A41-66BB-6DDA-F2A6-629D53AAE6C3">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>F113A3B5-65FF-99B0-793D-9A63B201446B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COMUNA" id="69F5B8C6-F995-56B5-60E8-CE02A8B28915">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>09DAC50A-6765-4667-C715-DD19E9C6D144</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CIUDAD" id="E57BB7B3-67E4-EB36-9C9C-AAC9B45E50CA">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>C9FCFF90-9FDF-E401-E7E2-D8CEBD255E68</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1307306C-7C1B-BBE1-F583-E377599CE7E9" name="EOC_CLIENTE_PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>59763579-F210-58C4-9798-22A990D990E1</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AA933CBA-A8BB-A616-A035-84BF0CE27795"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E8D1AD68-8DCC-0569-E08F-8D309E5F9314" schemaObject="429F4A2B-03CA-A55D-A302-5D1EC02C4FB7" name="EOC_CLIENTE_PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 20:46:49 UTC</createdTime>
+<ownerDesignName>MODELO_DATOS_OE</ownerDesignName>
+<importedID>74D38496-C805-A456-B2A3-C46B93DA1A2D</importedID>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AA933CBA-A8BB-A616-A035-84BF0CE27795"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
