@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="BSCS_MSISDN" directorySegmentName="seg_0" id="35EDB007-4EBA-AAD5-B18D-5C43ED5F73DD">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_MSISDN_ESTADO" id="4DC50F2A-A8E4-42CF-C0BC-398DCE830A4F">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MSISDN" id="6ED62064-9826-4B95-3959-5BE6F081896E">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="BSCS_MSISDN_BSCS_MSISDN_ESTADO_FK" id="400DBC41-F496-9CAA-6B6C-64D949A2FC24">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="BSCS_MSISDN_PK" id="EE05E716-F4F5-7362-4899-24C1505E4412">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

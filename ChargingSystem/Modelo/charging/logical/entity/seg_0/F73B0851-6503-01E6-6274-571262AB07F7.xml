@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F73B0851-6503-01E6-6274-571262AB07F7" name="CS SALDOS">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>63C48410-1EEE-2302-877C-D8146EDEB451</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID SERVICIO" id="D7A88C12-F7D5-CEBA-D19B-58D985362553">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>730AA538-8B57-ABCA-95E2-35005EEA688B</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<referedAttribute>14DE6589-6EFC-3E4E-17AC-47FA1822A5B5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SALDO INICIAL" id="ED4B7BEE-96F9-C05A-7974-8BCFE2738A31">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>C8EB1447-BB1D-4106-BD34-2C6669D79DE1</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SALDO ACTUAL" id="ACCCE838-CF9B-E40C-B4C1-B6D119549635">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>822CB438-7899-16E7-FA38-C8A020AF5DEB</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA ULTIMO SALDO" id="5C1C73B2-44A7-21E2-136B-7397AE0AAA64">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>BD9C7E2C-D1CE-4BB7-7165-4410BBA398A3</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A28316A6-EC9E-F1D1-42D8-B49C131F63FF" name="CS SALDOS PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>0F315864-D32A-9A11-3609-DE0FFDD20E73</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D7A88C12-F7D5-CEBA-D19B-58D985362553</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

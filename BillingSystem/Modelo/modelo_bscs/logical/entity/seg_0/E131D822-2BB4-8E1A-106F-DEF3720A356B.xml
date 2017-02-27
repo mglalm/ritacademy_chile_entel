@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E131D822-2BB4-8E1A-106F-DEF3720A356B" name="BSCS CLIENTE ESTADO">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>09A86551-4FDF-3782-C614-6BC4246B285C</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID CLIENTE ESTADO" id="DB83B3BC-37D4-CDC1-0E1D-8881E0521FB6">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>5AC287A8-E6D5-2F94-F938-2E7C23FF131F</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DESC CLIENTE ESTADO" id="2833695F-DE51-50EE-6A53-106A43C2A834">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>58312D5B-E663-B698-C1F7-D81CE30F90EC</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8E5F1517-0EFB-175D-3239-3B629508CC2A" name="BSCS CLIENTE ESTADO PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>2345DEF0-7374-A74D-3D07-16E6EE24FE6A</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DB83B3BC-37D4-CDC1-0E1D-8881E0521FB6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

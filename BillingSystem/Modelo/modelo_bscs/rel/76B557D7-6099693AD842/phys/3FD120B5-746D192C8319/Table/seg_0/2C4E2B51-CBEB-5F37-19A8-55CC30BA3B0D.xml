@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="BSCS_PLAN" directorySegmentName="seg_0" id="2C4E2B51-CBEB-5F37-19A8-55CC30BA3B0D">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DESC_PLAN_BSCS" id="197CA460-EB18-C4A8-F7A6-6174D6EBD22F">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_PLAN_BSCS" id="A8357848-0FFA-5382-F69C-78AA5455F00F">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="BSCS_PLAN_PK" id="7F3865E9-6C84-9C8A-8B98-587D3062C1B1">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

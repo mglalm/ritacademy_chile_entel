@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="BSCS_SERVICIO" directorySegmentName="seg_0" id="512D759C-B57F-5431-F746-F71EA93DD404">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_SERVICIO_ESTADO" id="31CB7177-A079-8DBD-BE20-01CB6E62A5B8">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="FECHA_ACTIVACION" id="38CDC3BA-3E76-FBBE-E71B-8D622AE796D7">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_PLAN_BSCS" id="474A2E39-1F1D-37D7-BBDB-31AC6286114C">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MSISDN" id="886852A6-84DB-39CF-C201-EAC0D0EF3EEC">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_CLIENTE_BSCS" id="BC520B90-B8E8-6CBD-8BDE-5F77BE856760">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="BSCS_SERVICIO_BSCS_CLIENTE_FK" id="0DF9A9DC-8719-93F0-C06A-9C98F9825C58">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="BSCS_SERVICIO_BSCS_PLAN_FK" id="3F68C441-F3FE-A48A-81AE-C59E33824CFF">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="BSCS_SERVICIO_BSCS_SERVICIO_ESTADO_FK" id="46C3690D-E1B5-A253-C473-1AABE6B0008B">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="BSCS_SERVICIO_BSCS_MSISDN_FK" id="A6EA832D-2387-0BC0-C27C-AD45F2C71711">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FE64B048-B1AC-59ED-4F2D-076AD1DB691F" name="CS PLAN">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>56F84C5A-FCE2-20E5-E23F-48764F9F6A5D</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID PLAN CS" id="A429FB72-0D8D-8BAF-9B7A-890634436158">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>1328197B-F68D-362C-A548-782291DC39BA</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DESC PLAN" id="2BF9450A-639B-B179-26CC-8EB3AC8ACC37">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>23F8F6C5-7F80-9171-ADDF-72561BEEB6EC</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SALDO INICIAL" id="8B7F35FE-EECE-2F70-C1C3-3E39A97CF415">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>F70B2900-985C-F885-BDF7-092304F9A554</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

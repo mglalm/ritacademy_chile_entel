@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="BSCS_CLIENTE_ESTADO" directorySegmentName="seg_0" id="09A86551-4FDF-3782-C614-6BC4246B285C">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DESC_CLIENTE_ESTADO" id="58312D5B-E663-B698-C1F7-D81CE30F90EC">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_CLIENTE_ESTADO" id="5AC287A8-E6D5-2F94-F938-2E7C23FF131F">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="BSCS_CLIENTE_ESTADO_PK" id="2345DEF0-7374-A74D-3D07-16E6EE24FE6A">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:45:38 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

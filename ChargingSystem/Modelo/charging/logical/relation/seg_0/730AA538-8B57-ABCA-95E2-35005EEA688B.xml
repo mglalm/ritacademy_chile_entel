@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CS_SALDOS_CS_SERVICIO_FK" directorySegmentName="seg_0" id="730AA538-8B57-ABCA-95E2-35005EEA688B">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>02A4D54B-4E1F-5BD2-3038-6BDB537D08BD</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<sourcePk>411B8B58-FD00-2465-AB80-11C134736600</sourcePk>
+<dominantRole>D8206663-F16C-A980-3A80-B8F935C8D7B2</dominantRole>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D8206663-F16C-A980-3A80-B8F935C8D7B2</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>F73B0851-6503-01E6-6274-571262AB07F7</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="91022EE9-7AA2-17B2-F1EE-1BC59DBFA605" name="BSCS MSISDN">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>35EDB007-4EBA-AAD5-B18D-5C43ED5F73DD</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="MSISDN" id="6AD1A75C-E1A6-2AB3-80AC-E8B69C3E6098">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>6ED62064-9826-4B95-3959-5BE6F081896E</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID MSISDN ESTADO" id="22A1664D-309B-7E4F-C503-68003DCC5741">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>D840F37F-D5D1-B008-1ED5-65AF11902CEC</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<referedAttribute>2288AC83-4C34-4CD2-BC83-E666C78740A9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<reference>true</reference>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DC61DBDC-C699-B39A-D231-AF254134D850" name="BSCS MSISDN PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>EE05E716-F4F5-7362-4899-24C1505E4412</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6AD1A75C-E1A6-2AB3-80AC-E8B69C3E6098</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

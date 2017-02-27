@@ -1,0 +1,2 @@
+imp system/System FROMUSER=C##TRAIN2 TOUSER=C##TRAIN3 FILE=ctrain2_20170227.dmp
+

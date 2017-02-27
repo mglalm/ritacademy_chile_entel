@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CS_SERVICIO_CS_PLAN_FK" directorySegmentName="seg_0" id="132887A5-741A-6176-2F42-F7282C2F2F80">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>96CC4E8B-ED91-E0FE-423A-F90B10CF9FEA</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<useSurrogateKey>true</useSurrogateKey>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>FE64B048-B1AC-59ED-4F2D-076AD1DB691F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D8206663-F16C-A980-3A80-B8F935C8D7B2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

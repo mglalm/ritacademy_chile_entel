@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D2C5DD5C-F01D-AF79-204A-877BF6E0DAC5" name="BSCS PLAN">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>2C4E2B51-CBEB-5F37-19A8-55CC30BA3B0D</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID PLAN BSCS" id="1C1E5EE3-C2CF-4531-8D8D-3AF194201FF1">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>A8357848-0FFA-5382-F69C-78AA5455F00F</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DESC PLAN BSCS" id="455CA77B-3C4F-2381-6D6E-01F674CC141A">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>197CA460-EB18-C4A8-F7A6-6174D6EBD22F</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F998ABBE-046C-DEA3-CF08-2BCD678A1462" name="BSCS PLAN PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>7F3865E9-6C84-9C8A-8B98-587D3062C1B1</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1C1E5EE3-C2CF-4531-8D8D-3AF194201FF1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D8206663-F16C-A980-3A80-B8F935C8D7B2" name="CS SERVICIO">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>03CF6B42-4471-E8B2-8DF8-1608DB90161A</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID SERVICIO" id="14DE6589-6EFC-3E4E-17AC-47FA1822A5B5">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>8E50A1EA-FBB1-526E-103F-BC9ECC0C2D9D</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID PLAN CS" id="28C2F5F5-E73D-AE85-74F5-8E19002850F7">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID SERVICIO ESTADO" id="8F1FCFAE-1093-D7E6-AEA5-372769CA2B40">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>2C0689C2-1F85-0F05-2AC2-113BE924D91A</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<referedAttribute>C7C14C1A-9301-B979-0C4B-B6346AB11C69</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MSISDN" id="0888B49C-4928-6B59-FF87-69BC2F499460">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>2B2B5B19-58D9-2AF5-E80E-7464C812230A</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA ACTIVACION" id="55D85421-559B-4491-4C41-CEF66BAB6AC8">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>CE4DC469-247A-92DE-4352-D24A887096FF</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="411B8B58-FD00-2465-AB80-11C134736600" name="CS SERVICIO PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 18:01:38 UTC</createdTime>
+<generatorID>9F6E2B6B-0CCF-063D-4170-D517034A7BE0</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<engineerTo>
+<item key="64E99C6A-B116-AC2D-40DD-89DEFBD91708" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>14DE6589-6EFC-3E4E-17AC-47FA1822A5B5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

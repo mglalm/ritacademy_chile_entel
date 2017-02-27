@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="BSCS_MSISDN_BSCS_MSISDN_ESTADO_FK" directorySegmentName="seg_0" id="D840F37F-D5D1-B008-1ED5-65AF11902CEC">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:42:49 UTC</createdTime>
+<generatorID>5FFAE232-B1D2-A922-43EF-3F170992D506</generatorID>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<engineerTo>
+<item key="76B557D7-CD3C-C7E0-7EA3-6099693AD842" value="true"/>
+</engineerTo>
+<sourcePk>D4D645BC-DBEF-3038-6D69-0B2463FA7BD5</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>61B2FA70-9694-5E8B-CC86-53E924E4094B</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>91022EE9-7AA2-17B2-F1EE-1BC59DBFA605</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

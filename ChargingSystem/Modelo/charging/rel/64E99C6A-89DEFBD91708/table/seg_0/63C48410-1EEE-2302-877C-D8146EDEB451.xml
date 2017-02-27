@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="63C48410-1EEE-2302-877C-D8146EDEB451" name="CS_SALDOS">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:39:00 UTC</createdTime>
+<generatorID>881D2574-01A8-506F-4E3C-8AFBC5346641</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_SERVICIO" id="90A0DA4D-64CC-DECA-6BAB-9015890E17FF">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:39:00 UTC</createdTime>
+<generatorID>24C2F924-39F7-D0A7-B8E5-E59E13CC00E1</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="02A4D54B-4E1F-5BD2-3038-6BDB537D08BD" referredColumn="8E50A1EA-FBB1-526E-103F-BC9ECC0C2D9D"/>
+</associations>
+</Column>
+<Column name="SALDO_INICIAL" id="C8EB1447-BB1D-4106-BD34-2C6669D79DE1">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:39:00 UTC</createdTime>
+<generatorID>FEB2A6D2-F1B9-B60F-55CD-37BA8AD795B9</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SALDO_ACTUAL" id="822CB438-7899-16E7-FA38-C8A020AF5DEB">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:39:00 UTC</createdTime>
+<generatorID>0033F852-7CE7-99A6-4E58-43DEA496297F</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_ULTIMO_SALDO" id="BD9C7E2C-D1CE-4BB7-7165-4410BBA398A3">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:39:00 UTC</createdTime>
+<generatorID>4BACE40B-7DB4-DC88-DAE9-E9DB10236FA6</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0F315864-D32A-9A11-3609-DE0FFDD20E73" name="CS_SALDOS_PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:59:32 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90A0DA4D-64CC-DECA-6BAB-9015890E17FF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="215DBFBA-50A8-6BC9-D36A-459463581942" name="CS_SALDOS_CS_SERVICIO_FK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:39:00 UTC</createdTime>
+<generatorID>D91FE27F-01E3-C7E5-3214-9FC8CEA2AD85</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90A0DA4D-64CC-DECA-6BAB-9015890E17FF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

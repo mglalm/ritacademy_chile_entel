@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="32E2CDF0-10F7-EB55-D386-F12E82822A94" name="CS_SERVICIO_ESTADO">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:53:24 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_SERVICIO_ESTADO" id="9645F69B-26F1-6119-EE56-CEA5BF855FC2">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:54:16 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESC_ESTADO" id="60E14B44-043D-F3A4-7002-30001FC91DD2">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:54:16 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CAA2A96E-CCF7-A134-D179-5258788B3485" name="CS_SERVICIO_ESTADO_PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:54:16 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9645F69B-26F1-6119-EE56-CEA5BF855FC2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
