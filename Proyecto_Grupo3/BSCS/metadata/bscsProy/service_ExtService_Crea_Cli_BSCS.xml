@@ -9,7 +9,7 @@
       <recover>5</recover>
     </port>
     <port name="ExtCrea_Cli_BSCS_SOAP_PORT" type="port">
-      <binding>bind_bscsProy.Crea_Cli_BSCS_Bind</binding>
+      <binding>bind_bscsProy.Crea_Cli_BSCS_Soap</binding>
       <exportReferencedOnly>true</exportReferencedOnly>
       <exportSchemaInsideWsdl>true</exportSchemaInsideWsdl>
       <label>ExtCrea_Cli_BSCS_SOAP_PORT</label>

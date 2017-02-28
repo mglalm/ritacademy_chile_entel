@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="bscsProy.Crea_Cli_BSCS_proc">
+  <activity name="start" type="seqActivity">
+    <label>start</label>
+    <x>57.0</x>
+    <y>102.0</y>
+    <childList>
+      <child name="Recive" type="opActivity">
+        <element>iface_bscsProy.Crea_Cli_BSCS/oper_Crea_cli_bscs</element>
+        <label>Recive</label>
+        <participant>part_bscsProy.BSCS_part</participant>
+        <x>213.0</x>
+        <y>105.0</y>
+        <childList>
+          <child name="getIMSI" type="scriptActivity">
+            <label>getIMSI</label>
+            <x>378.0</x>
+            <y>101.0</y>
+            <methodList>
+              <method name="cwOnProcActBefore" type="action">
+                <category>before</category>
+                <system>true</system>
+                <script>var IMSI=this.process.processDocument.IMSI;</script>
+              </method>
+            </methodList>
+          </child>
+        </childList>
+        <methodList>
+          <method name="cwOnProcActAfter" type="action">
+            <category>script</category>
+            <system>true</system>
+            <script><![CDATA[
+              var input = this.activityData;
+              var ID_CLIENTE = input.ID_CLIENTE;
+              var PLAN_BSCS = input.PLAN_BSCS;
+              this.process.processDocument.ID_CLIENTE = ID_CLIENTE;
+              this.process.processDocument.PLAN_BSCS =PLAN_BSCS;
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="BSCS_part" type="participantActivity">
+        <label>BSCS_part</label>
+        <participant>part_bscsProy.BSCS_part</participant>
+        <x>160.0</x>
+        <y>2.0</y>
+      </child>
+    </childList>
+    <methodList>
+      <method name="cwOnProcActBefore" type="action">
+        <category>before</category>
+        <system>true</system>
+        <script><![CDATA[
+          this.process.processDocument.ESTADO= null ;
+          this.process.processDocument.ID_CLIENTE = null;
+          this.process.processDocument.IMSI = null;
+          this.process.processDocument.MSISDN = null;
+          this.process.processDocument.PLAN_BSCS = null;
+        ]]></script>
+      </method>
+    </methodList>
+  </activity>
+  <curRevision>true</curRevision>
+  <document>doc_bscsProy.DocProceso</document>
+  <label>Crea_Cli_BSCS_proc</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>User</type>
+</process>

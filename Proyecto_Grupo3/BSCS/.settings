@@ -11,11 +11,12 @@
         <driverType>Oracle thin</driverType>
       </driver>
       <password>5DC5700840C7B835</password>
-      <user>C##TRAIN2</user>
+      <user>c##train2</user>
     </databases>
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
+  <jarExportFolder>E:\protecto_grp3\Proyecto_Grupo3\BSCS\</jarExportFolder>
   <joinCluster>true</joinCluster>
   <nodeString>BSCS_train</nodeString>
   <skin>Enterprise</skin>
