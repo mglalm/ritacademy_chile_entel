@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="chargingSystem.request">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>request</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="idCliente" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.idCliente</element>
+      <label>idCliente</label>
+    </child>
+    <child name="IMSI" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.IMSI</element>
+      <label>IMSI</label>
+    </child>
+    <child name="monto" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.monto</element>
+      <label>monto</label>
+    </child>
+    <child name="MSISDN" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.MSISDN</element>
+      <label>MSISDN</label>
+    </child>
+    <child name="planCS" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.planCS</element>
+      <label>planCS</label>
+    </child>
+  </childList>
+</dataStructure>

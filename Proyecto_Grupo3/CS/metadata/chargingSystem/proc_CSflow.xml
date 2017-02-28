@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="chargingSystem.CSflow">
+  <activity name="start" type="seqActivity">
+    <label>start</label>
+    <x>30.0</x>
+    <y>148.0</y>
+    <childList>
+      <child name="CS" type="opActivity">
+        <element>iface_chargingSystem.Crea_CLI_CS/oper_creacionClienteCS</element>
+        <label>CS</label>
+        <participant>part_chargingSystem.creacion</participant>
+        <x>346.0</x>
+        <y>148.0</y>
+        <methodList>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script>this.clienteChargingSystem.IMSI = 9;</script>
+          </method>
+        </methodList>
+      </child>
+      <child name="gg" type="repeatActivity">
+        <element>proc_chargingSystem.CSflow/seqActivity_start</element>
+        <label>gg</label>
+        <x>609.0</x>
+        <y>156.0</y>
+      </child>
+      <child name="creacion" type="participantActivity">
+        <label>creacion</label>
+        <participant>part_chargingSystem.creacion</participant>
+        <x>302.0</x>
+        <y>8.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <document>doc_chargingSystem.clienteChagingSystem</document>
+  <label>CSflow</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>Global</type>
+</process>

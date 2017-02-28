@@ -1,35 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <document name="chargingSystem.clienteChagingSystem">
-  <dbSchema>ORDER</dbSchema>
   <extends>doc_com.conceptwave.system.Document</extends>
-  <guid>{c4a508ae-6ef1-43a8-add6-9df41204578c}</guid>
-  <label>Cliente Charging System</label>
+  <guid>{04e502ad-d5ec-481c-8648-3b6b8960a1d8}</guid>
+  <label>Cliente Chaging System</label>
   <metaVersion>25</metaVersion>
   <variableList>
     <variable name="idCliente" type="leaf">
-      <column>IDCLIENTE</column>
-      <key>1</key>
-      <table>clienteChagingSystem</table>
+      <label>idCliente</label>
       <valueType>dtype_chargingSystem.idCliente</valueType>
     </variable>
     <variable name="IMSI" type="leaf">
-      <column>IMSI</column>
-      <table>clienteChagingSystem</table>
+      <label>IMSI</label>
       <valueType>dtype_chargingSystem.IMSI</valueType>
     </variable>
-    <variable name="MSISDN" type="leaf">
-      <column>MSISDN</column>
-      <table>clienteChagingSystem</table>
-      <valueType>dtype_chargingSystem.MSISDN</valueType>
-    </variable>
     <variable name="monto" type="leaf">
-      <column>SALDO</column>
-      <table>clienteChagingSystem</table>
+      <label>monto</label>
       <valueType>dtype_chargingSystem.monto</valueType>
     </variable>
+    <variable name="MSISDN" type="leaf">
+      <label>MSISDN</label>
+      <valueType>dtype_chargingSystem.MSISDN</valueType>
+    </variable>
     <variable name="planCS" type="leaf">
-      <column>PLANCS</column>
-      <table>clienteChagingSystem</table>
+      <label>planCS</label>
       <valueType>dtype_chargingSystem.planCS</valueType>
     </variable>
   </variableList>

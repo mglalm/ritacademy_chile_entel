@@ -4,7 +4,7 @@
   <metaVersion>25</metaVersion>
   <operationList>
     <operation name="creacionClienteCS" type="oper">
-      <input>doc_chargingSystem.clienteChagingSystem</input>
+      <input>dstruct_chargingSystem.request</input>
       <label>Creación Cliente CS</label>
       <output>dstruct_chargingSystem.response</output>
       <type>Request-Response</type>
