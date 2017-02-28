@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<participant name="chargingSystem.creacion">
+  <label>creacion</label>
+  <metaVersion>25</metaVersion>
+  <participant>iface_chargingSystem.Crea_CLI_CS</participant>
+</participant>

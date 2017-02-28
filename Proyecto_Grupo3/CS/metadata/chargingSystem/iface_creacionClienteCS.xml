@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<interface name="chargingSystem.creacionClienteCS">
-  <label>Creacion Cliente CS</label>
-  <metaVersion>25</metaVersion>
-  <revision>1</revision>
-</interface>

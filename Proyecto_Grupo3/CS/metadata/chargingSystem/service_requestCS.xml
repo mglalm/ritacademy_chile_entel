@@ -2,4 +2,16 @@
 <externalService name="chargingSystem.requestCS">
   <label>requestCS</label>
   <metaVersion>25</metaVersion>
+  <portList>
+    <port name="chargingSOAPPort" type="port">
+      <binding>bind_chargingSystem.bindingJSRequestCS</binding>
+      <label>Charging SOAP Port</label>
+      <recover>5</recover>
+    </port>
+    <port name="chargingJSPort" type="port">
+      <binding>bind_chargingSystem.bindingJSRequestCS</binding>
+      <label>Chargiing JS port</label>
+      <recover>5</recover>
+    </port>
+  </portList>
 </externalService>

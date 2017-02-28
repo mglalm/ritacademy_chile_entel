@@ -17,6 +17,6 @@
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
   <joinCluster>true</joinCluster>
-  <nodeString>CS</nodeString>
+  <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
 </project>

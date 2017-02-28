@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="chargingSystem.creacionClienteCSGlogal">
+  <activity name="start" type="seqActivity">
+    <label>start</label>
+    <x>47.0</x>
+    <y>96.0</y>
+    <childList>
+      <child name="ope" type="opActivity">
+        <element>iface_chargingSystem.Crea_CLI_CS/oper_creacionClienteCS</element>
+        <label>ope</label>
+        <participant>part_chargingSystem.creacion</participant>
+        <x>192.0</x>
+        <y>94.0</y>
+        <childList>
+          <child name="complete" type="completeActivity">
+            <label>complete</label>
+            <x>374.0</x>
+            <y>94.0</y>
+          </child>
+        </childList>
+      </child>
+      <child name="creacion" type="participantActivity">
+        <label>creacion</label>
+        <participant>part_chargingSystem.creacion</participant>
+        <x>160.0</x>
+        <y>-11.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <interface>iface_chargingSystem.Crea_CLI_CS</interface>
+  <label>creacionClienteCSGlogal</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>Global</type>
+</process>
