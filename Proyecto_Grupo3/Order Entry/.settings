@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <DefaultDB>2_TRAIN</DefaultDB>
+  <applicationString>TRAINING METADATA IWS</applicationString>
+  <applicationVersionString>1</applicationVersionString>
+  <databasesMap>
+    <databases key="2_TRAIN" type=".configdb">
+      <dbname>2_TRAIN</dbname>
+      <driver type=".dbdriver">
+        <attributes>localhost;1521;orcl;false</attributes>
+        <driverType>Oracle thin</driverType>
+      </driver>
+      <password>49A225C3CBCC77BF5347C8B21011B9E7</password>
+      <user>C##TRAIN_2</user>
+    </databases>
+  </databasesMap>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <joinCluster>true</joinCluster>
+  <nodeString>PE_UI</nodeString>
+  <skin>Enterprise</skin>
+</project>

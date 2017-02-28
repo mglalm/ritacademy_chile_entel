@@ -1,0 +1,22 @@
+title Order Entry
+
+
+
+
+
+OE->OE: Selección Plan, Usuario , N°Orden
+
+OE->+Order Manager: Submit Order
+
+Order Manager->+BSCS: Crear Cliente en BSCS
+BSCS-->-Order Manager: Asigna recursos(IMSI-MSISDN)
+
+Order Manager->+CS: Crea Cliente en CS (MSISDN-PlanCS-Saldo)
+CS-->-Order Manager: OK
+
+Order Manager->+EMA: Provisión (IMSI-MSISDN-PROFILE)
+EMA-->-Order Manager: Ok/Nok
+
+Order Manager--> OE : Provisión Completa
+
+

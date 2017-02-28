@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<header name="AVMMetadata">
+  <APIVersion>2</APIVersion>
+  <author>Loyarzunsilva</author>
+  <availableList>
+    <available type="loc">
+      <locale>en</locale>
+      <rightToLeft>false</rightToLeft>
+    </available>
+  </availableList>
+  <created>Thu Feb 23 09:27:02 CLT 2017</created>
+  <internalName>TRAINING METADATA IWS</internalName>
+  <internalSysVersion>16.0 ICP16-01EP01</internalSysVersion>
+  <label>TRAINING METADATA</label>
+  <locale type="loc">
+    <locale>en</locale>
+    <rightToLeft>false</rightToLeft>
+  </locale>
+  <metaVersion>25</metaVersion>
+  <metadataVersion>20150818</metadataVersion>
+  <templateList>
+    <template>ECMSid</template>
+    <template>EOCAdaptor</template>
+    <template>SIDCommon</template>
+    <template>address</template>
+    <template>billing</template>
+    <template>catalog</template>
+    <template>catalogClient</template>
+    <template>charging</template>
+    <template>customer</template>
+    <template>customer_information_management</template>
+    <template>cwInitialization</template>
+    <template>cwa_plm</template>
+    <template>cwf</template>
+    <template>cwf5</template>
+    <template>cwl_address</template>
+    <template>cwl_charging</template>
+    <template>cwl_customer</template>
+    <template>cwl_dbqueue</template>
+    <template>cwl_digital</template>
+    <template>cwl_fullStack</template>
+    <template>cwl_od</template>
+    <template>cwl_om</template>
+    <template>cwl_on</template>
+    <template>cwl_party</template>
+    <template>cwl_plm</template>
+    <template>cwl_policy</template>
+    <template>cwl_rcir</template>
+    <template>cwl_service_registry</template>
+    <template>cwl_subscription</template>
+    <template>data_dictionary</template>
+    <template>data_order</template>
+    <template>do_api</template>
+    <template>ecm</template>
+    <template>ecmBillingAdapter</template>
+    <template>ecmBillingAdapterValidation</template>
+    <template>ecmCFF</template>
+    <template>ecmCS6import</template>
+    <template>ecmDT</template>
+    <template>ecmDTClientInf</template>
+    <template>ecmDTLib</template>
+    <template>ecmDTServ</template>
+    <template>ecmPolicyLib</template>
+    <template>ecmRT</template>
+    <template>ecmRTLib</template>
+    <template>ecmRTServ</template>
+    <template>eoc_commons</template>
+    <template>notification</template>
+    <template>od_api</template>
+    <template>om_api</template>
+    <template>on_api</template>
+    <template>order_negotiations</template>
+    <template>order_negotiations_lib</template>
+    <template>party</template>
+    <template>pld</template>
+    <template>plm</template>
+    <template>plugin_on_cim</template>
+    <template>queue</template>
+    <template>rcir_api</template>
+    <template>serviceOrchestrationFramework</template>
+    <template>service_registry</template>
+    <template>subscription</template>
+    <template>uws_controller</template>
+    <template>uws_controller_api</template>
+    <template>wizard</template>
+  </templateList>
+</header>
