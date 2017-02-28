@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="chargingSystem.idCliente">
+  <extends>dtype_cwf.processId</extends>
+  <label>ID Cliente</label>
+  <metaVersion>25</metaVersion>
+</dataType>

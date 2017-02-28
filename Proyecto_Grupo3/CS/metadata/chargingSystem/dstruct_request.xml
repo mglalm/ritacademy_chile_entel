@@ -7,11 +7,6 @@
   <label>request</label>
   <metaVersion>25</metaVersion>
   <childList>
-    <child name="idCliente" type="dstruct">
-      <datatype>true</datatype>
-      <element>dtype_chargingSystem.idCliente</element>
-      <label>idCliente</label>
-    </child>
     <child name="IMSI" type="dstruct">
       <datatype>true</datatype>
       <element>dtype_chargingSystem.IMSI</element>
@@ -31,6 +26,11 @@
       <datatype>true</datatype>
       <element>dtype_chargingSystem.planCS</element>
       <label>planCS</label>
+    </child>
+    <child name="idCliente" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.idCliente</element>
+      <label>idCliente</label>
     </child>
   </childList>
 </dataStructure>
