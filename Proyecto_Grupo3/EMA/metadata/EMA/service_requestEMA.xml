@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<externalService name="chargingSystem.requestCS">
-  <label>requestCS</label>
+<externalService name="EMA.requestEMA">
+  <label>Request EMA</label>
   <metaVersion>25</metaVersion>
   <portList>
-    <port name="chargingSOAPPort" type="port">
-      <binding>bind_chargingSystem.bindingSOAPRequestCS</binding>
+    <port name="EMASOAPPort" type="port">
+      <binding>bind_EMA.bindingSOAPRequestEMA</binding>
       <exportReferencedOnly>true</exportReferencedOnly>
       <exportSchemaInsideWsdl>true</exportSchemaInsideWsdl>
-      <label>Charging SOAP Port</label>
+      <label>EMA SOAP Port</label>
       <listener>true</listener>
       <recover>5</recover>
     </port>

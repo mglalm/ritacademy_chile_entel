@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project>
   <DefaultDB>TRAIN2</DefaultDB>
-  <applicationString>CS</applicationString>
-  <applicationVersionString>1</applicationVersionString>
+  <applicationString>EMA</applicationString>
+  <applicationVersionString>2</applicationVersionString>
   <databasesMap>
     <databases key="TRAIN2" type=".configdb">
       <dbname>TRAIN2</dbname>
@@ -16,8 +16,8 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarExportFolder>E:\ProyectoG3\Proyecto_Grupo3\CS\</jarExportFolder>
+  <jarExportFolder>C:\Users\EOC\Desktop\EMA\</jarExportFolder>
   <joinCluster>true</joinCluster>
-  <nodeString>CS</nodeString>
+  <nodeString>EMA</nodeString>
   <skin>Enterprise</skin>
 </project>

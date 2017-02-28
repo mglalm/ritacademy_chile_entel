@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<participant name="chargingSystem.creacion">
+<participant name="EMA.creacion">
   <invokeDirectly>true</invokeDirectly>
   <label>creacion</label>
   <metaVersion>25</metaVersion>
-  <participant>iface_chargingSystem.Crea_CLI_CS</participant>
+  <participant>iface_EMA.Crea_CLI_HLR</participant>
 </participant>

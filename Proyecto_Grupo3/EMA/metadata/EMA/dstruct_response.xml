@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="chargingSystem.response">
+<dataStructure name="EMA.response">
   <container>true</container>
   <jsonMap type="jmap">
     <exclude>1</exclude>
