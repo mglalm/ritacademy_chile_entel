@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="bscsProy.Crea_Cli_BSCS_JS">
+  <extensionList>
+    <extension name="Crea_cli_bscs" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="script">/* Aqui va el script para tratar el requerimiento del Cliente*/</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_bscsProy.Crea_Cli_BSCS</interface>
+  <label>Crea_Cli_BSCS_JS</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

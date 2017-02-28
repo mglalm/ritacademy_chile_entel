@@ -2,4 +2,19 @@
 <externalService name="bscsProy.ExtService_Crea_Cli_BSCS">
   <label>ExtService_Crea_Cli_BSCS</label>
   <metaVersion>25</metaVersion>
+  <portList>
+    <port name="Crea_cli_bscs_JS_port" type="port">
+      <binding>bind_bscsProy.Crea_Cli_BSCS_JS</binding>
+      <label>Crea_cli_bscs_JS_port</label>
+      <recover>5</recover>
+    </port>
+    <port name="ExtCrea_Cli_BSCS_SOAP_PORT" type="port">
+      <binding>bind_bscsProy.Crea_Cli_BSCS_Bind</binding>
+      <exportReferencedOnly>true</exportReferencedOnly>
+      <exportSchemaInsideWsdl>true</exportSchemaInsideWsdl>
+      <label>ExtCrea_Cli_BSCS_SOAP_PORT</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+  </portList>
 </externalService>
