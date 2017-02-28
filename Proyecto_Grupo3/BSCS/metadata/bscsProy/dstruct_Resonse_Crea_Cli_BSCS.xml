@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="bscsProy.Resonse_Crea_Cli_BSCS">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>Resonse_Crea_Cli_BSCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="ESTADO" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_bscsProy.ESTADO</element>
+      <label>ESTADO</label>
+    </child>
+    <child name="IMSI" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_bscsProy.IMSI</element>
+      <label>IMSI</label>
+    </child>
+    <child name="MSISDN" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_bscsProy.MSISDN</element>
+      <label>MSISDN</label>
+    </child>
+  </childList>
+</dataStructure>
