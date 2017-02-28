@@ -11,5 +11,10 @@
       <listener>true</listener>
       <recover>5</recover>
     </port>
+    <port name="EMAJSPort" type="port">
+      <binding>bind_EMA.bindingJSRequestEMA</binding>
+      <label>EMA JS Port</label>
+      <recover>5</recover>
+    </port>
   </portList>
 </externalService>

@@ -16,7 +16,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarExportFolder>C:\Users\EOC\Desktop\EMA\</jarExportFolder>
+  <jarExportFolder>E:\ProyectoG3\Proyecto_Grupo3\EMA</jarExportFolder>
   <joinCluster>true</joinCluster>
   <nodeString>EMA</nodeString>
   <skin>Enterprise</skin>
