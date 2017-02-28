@@ -1,0 +1,4 @@
+Prueba Interface Externa
+
+http://localhost:8080/cwf/services/COBRAS_externalSystemInboundInterface?wsdl
+

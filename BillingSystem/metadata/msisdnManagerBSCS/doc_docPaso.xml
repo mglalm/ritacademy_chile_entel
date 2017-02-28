@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="msisdnManagerBSCS.docPaso">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{7f0a3892-b31a-44b8-9463-fc8a105711a4}</guid>
+  <label>Doc Paso</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_MSISDN_ESTADO" type="leaf">
+      <key>1</key>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="MSISDN" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+  </variableList>
+</document>

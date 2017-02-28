@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="msisdnManagerBSCS.msisdnServiceInterface">
+  <label>MSISDN Service Interface</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="nidea" type="oper">
+      <label>niidea</label>
+      <output>doc_msisdnManagerBSCS.DOC_MSISDN_ESTADO</output>
+      <type>Request-Response</type>
+    </operation>
+    <operation name="obtieneMsisdn" type="oper">
+      <input>dstruct_msisdnManagerBSCS.orden</input>
+      <label>Obtiene Msisdn</label>
+      <output>dstruct_msisdnManagerBSCS.ack</output>
+      <type>One-Way</type>
+    </operation>
+    <operation name="getCredit" type="oper">
+      <input>dstruct_msisdnManagerBSCS.orden</input>
+      <label>Get Credit</label>
+      <type>One-Way</type>
+    </operation>
+  </operationList>
+  <revision>2</revision>
+</interface>

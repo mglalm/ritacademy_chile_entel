@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="msisdnManagerBSCS.creditApprobalmsisdn">
+  <activity name="Start" type="seqActivity">
+    <label>Start</label>
+    <x>1.0</x>
+    <y>13.0</y>
+    <childList>
+      <child name="Recibe" type="opActivity">
+        <element>iface_msisdnManagerBSCS.msisdnServiceInterface/oper_getCredit</element>
+        <label>Recibe</label>
+        <x>219.0</x>
+        <y>11.0</y>
+        <childList>
+          <child name="elije" type="switchActivity">
+            <label>elije</label>
+            <x>374.0</x>
+            <y>11.0</y>
+            <childList>
+              <child name="yes" type="caseActivity">
+                <label>yes</label>
+                <x>602.0</x>
+                <y>109.0</y>
+                <childList>
+                  <child name="EnviaRespuesta" type="scriptActivity">
+                    <label>Envia Respuesta</label>
+                    <x>602.0</x>
+                    <y>108.0</y>
+                    <methodList>
+                      <method name="cwOnProcActBefore" type="action">
+                        <category>before</category>
+                        <system>true</system>
+                        <script><![CDATA[
+                          var processId = this.process.processDocument.originProcess;
+                          Process.sendMessageToProcess(processId,null,"ExternalSystemCommunication:processInterface/GetCreditApprovalNumberResponse",null,null,null,null);
+                        ]]></script>
+                      </method>
+                    </methodList>
+                  </child>
+                </childList>
+              </child>
+            </childList>
+          </child>
+        </childList>
+        <methodList>
+          <method name="cwOnProcActAfter" type="action">
+            <category>script</category>
+            <system>true</system>
+            <script><![CDATA[
+              var input = this.activityData;
+              var originOrder = input.orden.orderid;
+              this.process.processDocument.creditApprovalNumber = oldNumber;
+              this.process.processDocument.originOrder = originOrder;
+              this.process.processDocument.originProcess = originProcess;
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="back" type="repeatActivity">
+        <element>proc_msisdnManagerBSCS.creditApprobalmsisdn/seqActivity_Start</element>
+        <label>back</label>
+        <x>1.0</x>
+        <y>113.0</y>
+      </child>
+    </childList>
+    <methodList>
+      <method name="cwOnProcActBefore" type="action">
+        <category>before</category>
+        <system>true</system>
+        <script><![CDATA[
+          this.process.processDocument.id_msisdnestado = null;
+          this.process.processDocument.msisdn = null;
+        ]]></script>
+      </method>
+    </methodList>
+  </activity>
+  <curRevision>true</curRevision>
+  <document>doc_msisdnManagerBSCS.docPaso</document>
+  <interface>iface_msisdnManagerBSCS.msisdnServiceInterface</interface>
+  <label>creditApprobalmsisdn</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>Global</type>
+</process>

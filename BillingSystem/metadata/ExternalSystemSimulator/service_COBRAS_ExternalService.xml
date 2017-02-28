@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="ExternalSystemSimulator.COBRAS_ExternalService">
+  <label>COBRAS_External Service</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="COBRAS_extSysInboundJSPort" type="port">
+      <binding>bind_ExternalSystemSimulator.COBRAS_ExtSysInboundJSBinding</binding>
+      <label>COBRAS_ext Sys Inbound JS Port</label>
+      <recover>5</recover>
+    </port>
+    <port name="COBRAS_extSysInboundSOAPPort" type="port">
+      <binding>bind_ExternalSystemSimulator.COBRAS_ExtSysInboundSOAPBinding</binding>
+      <label>COBRAS_ext Sys Inbound SOAP Port</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>
