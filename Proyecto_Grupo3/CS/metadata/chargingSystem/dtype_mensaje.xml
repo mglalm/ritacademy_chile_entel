@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="chargingSystem.idCliente">
+<dataType name="chargingSystem.mensaje">
   <extends>dtype_com.conceptwave.system.String</extends>
-  <label>ID Cliente</label>
-  <length>16</length>
+  <label>Mensaje</label>
+  <length>32</length>
   <metaVersion>25</metaVersion>
 </dataType>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="chargingSystem.findMSISDN">
+  <allowSaveSearch>false</allowSaveSearch>
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <label>Find MSISDN</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_chargingSystem.clienteChargingSystem</output>
+  <type>document</type>
+</findDoc>

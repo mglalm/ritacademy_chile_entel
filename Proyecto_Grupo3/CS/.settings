@@ -18,6 +18,6 @@
   <excludedResource>.svn</excludedResource>
   <jarExportFolder>E:\ProyectoG3\Proyecto_Grupo3\CS\</jarExportFolder>
   <joinCluster>true</joinCluster>
-  <nodeString>CS</nodeString>
+  <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
 </project>

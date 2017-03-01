@@ -2,6 +2,6 @@
 <dataType name="EMA.PROFILE">
   <extends>dtype_com.conceptwave.system.String</extends>
   <label>PROFILE</label>
-  <length>20</length>
+  <length>32</length>
   <metaVersion>25</metaVersion>
 </dataType>

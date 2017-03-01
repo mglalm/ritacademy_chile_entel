@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="chargingSystem.serviceCS">
+  <label>Service CS</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="chargingSystemJSPort" type="port">
+      <binding>bind_chargingSystem.bindingJSCS</binding>
+      <label>Charging System JS Port</label>
+      <recover>5</recover>
+    </port>
+    <port name="chargingSystemSOAPPort" type="port">
+      <binding>bind_chargingSystem.bindingSOAPCS</binding>
+      <exportReferencedOnly>true</exportReferencedOnly>
+      <exportSchemaInsideWsdl>true</exportSchemaInsideWsdl>
+      <label>Charging System SOAP Port</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

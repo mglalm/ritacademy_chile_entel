@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<binding name="chargingSystem.bindingJSRequestCS">
+<binding name="chargingSystem.bindingSOAPCS">
   <interface>iface_chargingSystem.Crea_CLI_CS</interface>
-  <label>Binding JS Request CS</label>
+  <label>Binding SOAP CS</label>
   <metaVersion>25</metaVersion>
-  <provider>prov_cwf.jsprov</provider>
+  <provider>prov_cwf.soapprov</provider>
 </binding>

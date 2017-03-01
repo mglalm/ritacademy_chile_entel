@@ -4,13 +4,71 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:cwf="http://www.conceptwave.com/system"
+	xmlns:cwf_system="http://www.conceptwave.com/com/conceptwave/system"
 	xmlns:chargingSystem="chargingSystem">
 
 	<types>
+		<schema targetNamespace="http://www.conceptwave.com/system"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:cwf="http://www.conceptwave.com/system"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>ConceptWave system namespace</documentation>
+				<appinfo>
+					<label>ConceptWave System</label>
+					<metadata>CS</metadata>
+					<created>Tue Feb 28 21:40:03 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<simpleType name="processId">
+				<annotation>
+					<documentation>Process ID</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="16"/>
+				</restriction>
+			</simpleType>
+
+			<!-- Structures -->
+
+			<!-- Documents -->
+
+		</schema>
+		<schema targetNamespace="http://www.conceptwave.com/com/conceptwave/system"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>system</documentation>
+				<appinfo>
+					<metadata>CS</metadata>
+					<created>Tue Feb 28 21:40:03 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Structures -->
+
+			<complexType name="DataStructure"/>
+
+			<!-- Documents -->
+
+			<complexType name="Document"/>
+
+		</schema>
 		<schema targetNamespace="chargingSystem"			
 	xmlns="http://www.w3.org/2001/XMLSchema"			
 	xmlns:chargingSystem="chargingSystem"			
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"			
+	xmlns:cwf="http://www.conceptwave.com/system">
 
 
 
@@ -38,15 +96,6 @@
 					<documentation>ID Cliente</documentation>
 				</annotation>
 				<restriction base="xsd:string">
-					<maxLength value="16"/>
-				</restriction>
-			</simpleType>
-
-			<simpleType name="planCS">
-				<annotation>
-					<documentation>Plan CS</documentation>
-				</annotation>
-				<restriction base="xsd:string">
 					<maxLength value="32"/>
 				</restriction>
 			</simpleType>
@@ -64,7 +113,7 @@
 				<annotation>
 					<documentation>MSISDN</documentation>
 				</annotation>
-				<restriction base="xsd:integer">
+				<restriction base="cwf:processId">
 					<totalDigits value="15"/>
 				</restriction>
 			</simpleType>
@@ -83,7 +132,7 @@
 					<documentation>IMSI</documentation>
 				</annotation>
 				<restriction base="xsd:integer">
-					<totalDigits value="15"/>
+					<totalDigits value="16"/>
 				</restriction>
 			</simpleType>
 
@@ -96,19 +145,6 @@
 					<sequence>
 						<element name="mensaje" minOccurs="0" maxOccurs="1" type="chargingSystem:mensaje"/>
 						<element name="estado" minOccurs="0" maxOccurs="1" type="chargingSystem:estado"/>
-					</sequence>
-				</complexType>
-
-			<complexType name="requestCS">
-				<annotation>
-					<documentation>requestCS</documentation>
-				</annotation>
-					<sequence>
-						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="chargingSystem:MSISDN"/>
-						<element name="IMSI" minOccurs="0" maxOccurs="1" type="chargingSystem:IMSI"/>
-						<element name="idCliente" minOccurs="0" maxOccurs="1" type="chargingSystem:idCliente"/>
-						<element name="planCS" minOccurs="0" maxOccurs="1" type="chargingSystem:idCliente"/>
-						<element name="saldo" minOccurs="0" maxOccurs="1" type="chargingSystem:saldo"/>
 					</sequence>
 				</complexType>
 
