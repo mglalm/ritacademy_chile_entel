@@ -24,6 +24,15 @@
 
 			<!-- Data types and elements -->
 
+			<simpleType name="DESC">
+				<annotation>
+					<documentation>Descripcion</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
 			<simpleType name="ID_CLIENTE">
 				<annotation>
 					<documentation>ID_CLIENTE</documentation>
@@ -79,6 +88,7 @@
 						<element name="ESTADO" minOccurs="0" maxOccurs="1" type="bscsProy:ESTADO"/>
 						<element name="IMSI" minOccurs="0" maxOccurs="1" type="bscsProy:IMSI"/>
 						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="bscsProy:MSISDN"/>
+						<element name="DESC" minOccurs="0" maxOccurs="1" type="bscsProy:DESC"/>
 					</sequence>
 				</complexType>
 

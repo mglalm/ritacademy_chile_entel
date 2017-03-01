@@ -22,5 +22,10 @@
       <element>dtype_bscsProy.MSISDN</element>
       <label>MSISDN</label>
     </child>
+    <child name="DESC" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_bscsProy.DESC</element>
+      <label>DESC</label>
+    </child>
   </childList>
 </dataStructure>

@@ -21,11 +21,12 @@
           var doc = result && result.length>0 ? result[0] : null;
           if(doc)
           {
-             IMSI = doc.IMSI;
-             doc.ESTADO = 'ASIGNADO';
-             doc.ID_CLIENTE=ID_CLIENTE;
-             doc.save();
-
+             ;
+          }
+          else
+          {
+              output.ESTADO='FALLIDO'
+              output.DESC='NO HAY IMSI';
           }
 
           var fnd2 = new Finder('bscsProy.findMSISDN');
@@ -34,16 +35,35 @@
           var doc2 = result2 && result2.length>0 ? result2[0] : null;
           if(doc2)
           {
+            ;
+          }
+          else
+          {
+              output.ESTADO='FALLIDO'
+              output.DESC='NO HAY MSISDN';
+          }
+          // asigno salida
+          if( doc && doc2)
+            {
+             IMSI = doc.IMSI;
+             doc.ESTADO = 'ASIGNADO';
+             doc.ID_CLIENTE=ID_CLIENTE;
+             doc.save();
+
              MSISDN = doc2.MSISDN;
              doc2.ESTADO = 'ASIGNADO';
              doc2.ID_CLIENTE=ID_CLIENTE;
              doc2.save();
-          }
-          // asigno salida
-          output.ESTADO='CREADO';
-          output.IMSI=IMSI;
-          output.MSISDN=MSISDN;
 
+             output.ESTADO='CREADO';
+             output.IMSI=IMSI;
+             output.MSISDN=MSISDN;
+             output.DESC='EXITO';
+            }
+          else
+          {
+              output.ESTADO='FALLIDO'
+           }
           return output
         ]]></elementItem>
       </elementItemMap>
