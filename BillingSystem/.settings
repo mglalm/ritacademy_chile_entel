@@ -2,7 +2,7 @@
 <project>
   <DefaultDB>TRAIN3</DefaultDB>
   <applicationString>bscs</applicationString>
-  <applicationVersionString>1</applicationVersionString>
+  <applicationVersionString>2</applicationVersionString>
   <breakpointMap>
     <breakpoint key="ExternalSystemSimulator.test">0</breakpoint>
     <breakpoint key="customerManagerBSCS.DOC_CLIENTE_BSCS_FIND.cwOnDocVisualKey">0</breakpoint>
@@ -21,6 +21,6 @@
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
   <joinCluster>true</joinCluster>
-  <nodeString>bscs</nodeString>
+  <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
 </project>

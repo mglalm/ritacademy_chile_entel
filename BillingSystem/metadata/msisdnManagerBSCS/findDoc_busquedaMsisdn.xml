@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<findDoc name="customerManagerBSCS.busquedaEstado">
+<findDoc name="msisdnManagerBSCS.busquedaMsisdn">
   <extends>find_com.conceptwave.system.Finder</extends>
-  <input>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO</input>
-  <label>Búsqueda Estado</label>
+  <input>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND</input>
+  <label>Búsqueda Msisdn</label>
   <metaVersion>25</metaVersion>
-  <output>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO</output>
+  <output>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS</output>
   <type>document</type>
   <searchList>
     <search type="sitem">
-      <document>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO</document>
-      <mappedDocument>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO</mappedDocument>
-      <mappedPath>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO/leaf_DESC_CLIENTE_ESTADO</mappedPath>
+      <document>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND</document>
+      <mappedDocument>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS</mappedDocument>
+      <mappedPath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/leaf_ID_MSISDN_ESTADO</mappedPath>
       <operation>equal</operation>
-      <path>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO/leaf_DESC_CLIENTE_ESTADO</path>
+      <path>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND/leaf_ID_MSISDN_ESTADO</path>
     </search>
     <search type="sitem">
-      <document>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO</document>
-      <mappedDocument>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO</mappedDocument>
-      <mappedPath>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO/leaf_ID_CLIENTE_ESTADO</mappedPath>
+      <document>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND</document>
+      <mappedDocument>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS</mappedDocument>
+      <mappedPath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/leaf_ID_MSISDN_ESTADO</mappedPath>
       <operation>equal</operation>
-      <path>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO/leaf_ID_CLIENTE_ESTADO</path>
+      <path>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND/leaf_ID_MSISDN_ESTADO_REF</path>
     </search>
     <search type="sitem">
-      <mappedDocument>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO</mappedDocument>
-      <mappedPath>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO/leaf_ID_CLIENTE_ESTADO</mappedPath>
-      <operation>is not null</operation>
+      <document>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND</document>
+      <mappedDocument>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS</mappedDocument>
+      <mappedPath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/leaf_MSISDN</mappedPath>
+      <operation>equal</operation>
+      <path>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND/leaf_MSISDN</path>
     </search>
   </searchList>
   <UserInterface name="UserInterface" type="ui">
@@ -33,16 +35,16 @@
       <variable name="finder" type="uivar">
         <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
       </variable>
+      <variable name="search" type="uivar">
+        <valueType>ui_com.conceptwave.system.UserInterface</valueType>
+      </variable>
       <variable name="detail" type="uivar">
         <flags enum-type="metadataFlag">VALIDATE</flags>
-        <valueType>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO/ui_UserInterface</valueType>
+        <valueType>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/ui_UserInterface</valueType>
       </variable>
       <variable name="result" type="uivar">
         <flags enum-type="metadataFlag">ARRAY</flags>
-        <valueType>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO</valueType>
-      </variable>
-      <variable name="search" type="uivar">
-        <valueType>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO/ui_UserInterface</valueType>
+        <valueType>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS</valueType>
       </variable>
     </variableList>
     <vformList>
@@ -62,7 +64,7 @@
                 </formReference>
                 <variable type="varPath">
                   <variablePathList>
-                    <variablePath>findDoc_customerManagerBSCS.busquedaEstado/ui_UserInterface/uivar_detail</variablePath>
+                    <variablePath>findDoc_msisdnManagerBSCS.busquedaMsisdn/ui_UserInterface/uivar_detail</variablePath>
                   </variablePathList>
                 </variable>
                 <visible type="varPath">
@@ -79,7 +81,7 @@
                 </formReference>
                 <variable type="varPath">
                   <variablePathList>
-                    <variablePath>findDoc_customerManagerBSCS.busquedaEstado/ui_UserInterface/uivar_search</variablePath>
+                    <variablePath>findDoc_msisdnManagerBSCS.busquedaMsisdn/ui_UserInterface/uivar_search</variablePath>
                   </variablePathList>
                 </variable>
                 <visible type="varPath">
@@ -99,7 +101,7 @@
                 <height>100%</height>
                 <width>100%</width>
                 <elementList>
-                  <element name="busquedaEstadoResultTable" type="eltabl">
+                  <element name="busquedaMsisdnResultTable" type="eltabl">
                     <onSelectChange type="varPath">
                       <variablePathList>
                         <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
@@ -107,23 +109,24 @@
                     </onSelectChange>
                     <variable type="varPath">
                       <variablePathList>
-                        <variablePath>findDoc_customerManagerBSCS.busquedaEstado/ui_UserInterface/uivar_result</variablePath>
+                        <variablePath>findDoc_msisdnManagerBSCS.busquedaMsisdn/ui_UserInterface/uivar_result</variablePath>
                       </variablePathList>
                     </variable>
                     <elementList>
-                      <element name="ID_CLIENTE_ESTADO" type="elfld">
+                      <element name="MSISDN" type="elfld">
                         <variable type="varPath">
                           <variablePathList>
-                            <variablePath>findDoc_customerManagerBSCS.busquedaEstado/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO/leaf_ID_CLIENTE_ESTADO</variablePath>
+                            <variablePath>findDoc_msisdnManagerBSCS.busquedaMsisdn/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/leaf_MSISDN</variablePath>
                           </variablePathList>
                         </variable>
                       </element>
-                      <element name="DESC_CLIENTE_ESTADO" type="elfld">
+                      <element name="ID_MSISDN_ESTADO" type="elslct">
+                        <multiselect>false</multiselect>
                         <variable type="varPath">
                           <variablePathList>
-                            <variablePath>findDoc_customerManagerBSCS.busquedaEstado/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_customerManagerBSCS.DOC_CLIENTE_ESTADO/leaf_DESC_CLIENTE_ESTADO</variablePath>
+                            <variablePath>findDoc_msisdnManagerBSCS.busquedaMsisdn/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/leaf_ID_MSISDN_ESTADO</variablePath>
                           </variablePathList>
                         </variable>
                       </element>
@@ -138,9 +141,11 @@
     </vformList>
   </UserInterface>
   <viewList>
-    <view name="busquedaEstadoView" type="findVView">
-      <outputOverlay>findDoc_customerManagerBSCS.busquedaEstado/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
-      <searchImmediately>true</searchImmediately>
+    <view name="busquedaMsisdnView" type="findVView">
+      <inputOverlay>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND/ui_UserInterface/frmui_Forms/vform_Formulario_Busqueda</inputOverlay>
+      <label>Búsqueda MSISDN</label>
+      <outputOverlay>findDoc_msisdnManagerBSCS.busquedaMsisdn/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <showSearchForm>true</showSearchForm>
     </view>
   </viewList>
 </findDoc>

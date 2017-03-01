@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="ExternalSystemSimulator.scr_Reserva_Msisdn">
+  <label>Binding Script</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>dstruct_ExternalSystemSimulator.input_getMsisdnReserveBSCS</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var var_orderid = input.orderid;
+    var var_rut = input.rut;
+    var output = new DataStructure("ExternalSystemSimulator.output_getMsisdnReserveBSCS");
+
+    ExternalSystemSimulator.test();
+
+    var documento = new Document("ExternalSystemSimulator.DOC_MSISDN_PASO_GET");
+    var msisdn_disponibles = new Finder("ExternalSystemSimulator.DOC_MSISDN_FIND");
+    var resultado = msisdn_disponibles.search();
+
+    if ( resultado.length > 0)
+    {
+        resultado[0].ID_MSISDN_ESTADO=2;
+
+        output.estado = "OK";
+        output.mensaje = "Mensaje Recibido";
+        output.msisdn = resultado[0].MSISDN;
+        //resultado.save();
+        resultado[0].save();
+    }
+    else
+    {
+        output.estado = "NOOK";
+        output.mensaje = "No hay MSISDN Disponibles";
+        output.msisdn = "";
+    }
+    //Process.sendMessageToQueue("ExternalSystemSimulator.creditApprovalNumberGenerator","COBRAS_GPgetCreditApprovalNumberRequest", input, null,null,null,null,null,false,false);
+    //Process.sendMessageToQueue("ExternalSystemSimulator.prueba","COBRAS_GPgetCreditApprovalNumberRequest", input, null,null,null,null,null,false,false);
+    //Process.sendMessageToProcess(1,null,"creditApprovalNumberGenerator",input,null,null,null);
+    //Process.startProcess("ExternalSystemSimulator.procObtieneReservaMsisdn",null,null,null);
+
+    return output;
+  ]]></script>
+</script>

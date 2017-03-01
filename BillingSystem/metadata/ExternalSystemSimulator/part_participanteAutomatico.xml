@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<participant name="ExternalSystemSimulator.participanteAutomatico">
+  <label>participanteAutomatico</label>
+  <metaVersion>25</metaVersion>
+  <participant>iface_ExternalSystemSimulator.COBRAS_externalSystemInboundInterface</participant>
+</participant>

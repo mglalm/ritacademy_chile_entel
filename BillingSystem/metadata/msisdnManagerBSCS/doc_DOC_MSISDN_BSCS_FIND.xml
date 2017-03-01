@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{b76038c2-70bd-4f5c-995f-41273c7511ed}</guid>
+  <label>DOC_MSISDN_BSCS_FIND</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="MSISDN" type="leaf">
+      <valueType>dtype_msisdnManagerBSCS.MSISDN</valueType>
+    </variable>
+    <variable name="ID_MSISDN_ESTADO" type="leaf">
+      <valueType>dtype_msisdnManagerBSCS.ID_MSISDN_ESTADO</valueType>
+    </variable>
+    <variable name="ID_MSISDN_ESTADO_REF" type="leaf">
+      <valueType>dtype_msisdnManagerBSCS.DESC_MSISDN_ESTADO_REF</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Busqueda" type="vform">
+            <label>Formulario_Busqueda</label>
+            <root name="Formulario_BusquedaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_MSISDN_BSCS_FINDGrid" type="elgrd">
+                  <numOfCols>2</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DOC_MSISDN_BSCS_FINDHeader" type="elhdr"/>
+                    <element name="MSISDN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND/leaf_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ID_MSISDN_ESTADO_REF" type="elslct">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS_FIND/leaf_ID_MSISDN_ESTADO_REF</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

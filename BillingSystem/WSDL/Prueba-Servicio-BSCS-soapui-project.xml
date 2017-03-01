@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="a9239df8-d675-4a54-98b8-f028922d7ada" activeEnvironment="Default" name="Prueba_Servicio_BSCS" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="07e35544-a1b8-4ba7-a92a-355c4df26386" wsaVersion="NONE" name="COBRAS_ExtSysInboundSOAPBinding" type="wsdl" bindingName="{ExternalSystemSimulator}COBRAS_ExtSysInboundSOAPBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/SJM/Archivos/Velocity/Proyecto_Cobras/BillingSystem/WSDL/Prueba.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\SJM\Archivos\Velocity\Proyecto_Cobras\BillingSystem\WSDL\Prueba.wsdl"><con:part><con:url>file:\C:\SJM\Archivos\Velocity\Proyecto_Cobras\BillingSystem\WSDL\Prueba.wsdl</con:url><con:content><![CDATA[<definitions name="ExternalSystemSimulator" targetNamespace="ExternalSystemSimulator" xmlns:tns="ExternalSystemSimulator" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ExternalSystemSimulator="ExternalSystemSimulator">
+<con:soapui-project id="a9239df8-d675-4a54-98b8-f028922d7ada" activeEnvironment="Default" name="Prueba_Servicio_BSCS" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="07e35544-a1b8-4ba7-a92a-355c4df26386" wsaVersion="NONE" name="COBRAS_ExtSysInboundSOAPBinding" type="wsdl" bindingName="{ExternalSystemSimulator}COBRAS_ExtSysInboundSOAPBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/SJM/Archivos/Velocity/Proyecto_Cobras/BillingSystem/WSDL/Prueba.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\SJM\Archivos\Velocity\Proyecto_Cobras\BillingSystem\WSDL\Prueba.wsdl"><con:part><con:url>file:\C:\SJM\Archivos\Velocity\Proyecto_Cobras\BillingSystem\WSDL\Prueba.wsdl</con:url><con:content><![CDATA[<definitions name="ExternalSystemSimulator" targetNamespace="ExternalSystemSimulator" xmlns:tns="ExternalSystemSimulator" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ExternalSystemSimulator="ExternalSystemSimulator">
   <types>
     <schema targetNamespace="ExternalSystemSimulator" xmlns="http://www.w3.org/2001/XMLSchema">
       <annotation>
@@ -111,33 +111,14 @@
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <getCreditApprovalNumberRequest>\r
-         <!--Optional:-->\r
          <origin>\r
-            <!--Optional:-->\r
-            <originProcess>?</originProcess>\r
-            <!--Optional:-->\r
-            <originOrder>?</originOrder>\r
+            <originProcess>1</originProcess>\r
+            <originOrder>2</originOrder>\r
          </origin>\r
-         <!--Optional:-->\r
-         <creditApprovalNumberOld>?</creditApprovalNumberOld>\r
+         <creditApprovalNumberOld>3</creditApprovalNumberOld>\r
       </getCreditApprovalNumberRequest>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="COBRAS_extSysInboundGetCreditApprovalNumber"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1c02440c-4c03-406d-aea1-26e8c21ef5f2" isOneWay="false" action="COBRAS_GPgetCreditApprovalNumberRequest" name="COBRAS_GPgetCreditApprovalNumberRequest" bindingOperationName="COBRAS_GPgetCreditApprovalNumberRequest" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e35e929c-b121-4126-8abf-1285d1e0c615" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/cwf/services/COBRAS_externalSystemInboundInterface</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <getCreditApprovalNumberRequest>\r
-         <!--Optional:-->\r
-         <origin>\r
-            <!--Optional:-->\r
-            <originProcess>?</originProcess>\r
-            <!--Optional:-->\r
-            <originOrder>?</originOrder>\r
-         </origin>\r
-         <!--Optional:-->\r
-         <creditApprovalNumberOld>?</creditApprovalNumberOld>\r
-      </getCreditApprovalNumberRequest>\r
-   </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="COBRAS_GPgetCreditApprovalNumberRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="98f5f4e6-7ad6-4e7a-a331-a63a0f6b73da" port="8088" path="/mockCOBRAS_ExtSysInboundSOAPBinding" host="EOC-PC" name="COBRAS_ExtSysInboundSOAPBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="COBRAS_extSysInboundGetCreditApprovalNumber" id="9749bbf5-6c1e-43c5-aff0-9a0c33bfc70e" interface="COBRAS_ExtSysInboundSOAPBinding" operation="COBRAS_extSysInboundGetCreditApprovalNumber"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="4790a7c3-de15-425b-b330-c85ce2fa9e91" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="COBRAS_extSysInboundGetCreditApprovalNumber"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1c02440c-4c03-406d-aea1-26e8c21ef5f2" isOneWay="false" action="COBRAS_GPgetCreditApprovalNumberRequest" name="COBRAS_GPgetCreditApprovalNumberRequest" bindingOperationName="COBRAS_GPgetCreditApprovalNumberRequest" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/></con:operation></con:interface><con:mockService id="98f5f4e6-7ad6-4e7a-a331-a63a0f6b73da" port="8088" path="/mockCOBRAS_ExtSysInboundSOAPBinding" host="EOC-PC" name="COBRAS_ExtSysInboundSOAPBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="COBRAS_extSysInboundGetCreditApprovalNumber" id="9749bbf5-6c1e-43c5-aff0-9a0c33bfc70e" interface="COBRAS_ExtSysInboundSOAPBinding" operation="COBRAS_extSysInboundGetCreditApprovalNumber"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="4790a7c3-de15-425b-b330-c85ce2fa9e91" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
    <soapenv:Header/>
    <soapenv:Body>
       <ack>

@@ -39,6 +39,27 @@
 			</sequence>
 		</complexType>
 
+	<complexType name="input_getMsisdnReserveBSCS">
+		<annotation>
+			<documentation>input_getMsisdnReserveBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="orderid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="rut" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="output_getMsisdnReserveBSCS">
+		<annotation>
+			<documentation>output_getMsisdnReserveBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
 	<complexType name="getCreditApprovalNumberRequest">
 		<annotation>
 			<documentation>getCreditApprovalNumberRequest</documentation>

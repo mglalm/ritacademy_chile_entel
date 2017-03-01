@@ -2,7 +2,7 @@
 <findDoc name="customerManagerBSCS.busquedaCliente">
   <extends>find_com.conceptwave.system.Finder</extends>
   <input>doc_customerManagerBSCS.DOC_CLIENTE_BSCS_FIND</input>
-  <label>Busqueda Cliente</label>
+  <label>Búsqueda Cliente</label>
   <metaVersion>25</metaVersion>
   <output>doc_customerManagerBSCS.DOC_CLIENTE_BSCS</output>
   <type>document</type>
@@ -189,7 +189,7 @@
   <viewList>
     <view name="busquedaClienteView" type="findVView">
       <inputOverlay>doc_customerManagerBSCS.DOC_CLIENTE_BSCS_FIND/ui_UserInterface/frmui_Forms/vform_FormularioBusqueda</inputOverlay>
-      <label>Buscar</label>
+      <label>Búsqueda Cliente</label>
       <outputOverlay>findDoc_customerManagerBSCS.busquedaCliente/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
       <showSearchForm>true</showSearchForm>
     </view>

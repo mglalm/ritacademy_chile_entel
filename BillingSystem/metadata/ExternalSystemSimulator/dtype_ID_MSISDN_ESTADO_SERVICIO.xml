@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="msisdnManagerBSCS.DESC_MSISDN_ESTADO">
+<dataType name="ExternalSystemSimulator.ID_MSISDN_ESTADO_SERVICIO">
   <extends>dtype_com.conceptwave.system.String</extends>
-  <label>Estado</label>
-  <length>30</length>
+  <label>Id Estado</label>
+  <length>1</length>
   <metaVersion>25</metaVersion>
 </dataType>

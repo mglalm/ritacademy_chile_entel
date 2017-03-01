@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="ExternalSystemSimulator.procObtieneReservaMsisdn">
+  <activity name="Inicio" type="seqActivity">
+    <label>Inicio</label>
+    <x>0.0</x>
+    <y>-1.0</y>
+    <childList>
+      <child name="prueba" type="scriptActivity">
+        <label>prueba</label>
+        <x>296.0</x>
+        <y>50.0</y>
+      </child>
+      <child name="Fin" type="repeatActivity">
+        <element>proc_ExternalSystemSimulator.procObtieneReservaMsisdn/seqActivity_Inicio</element>
+        <label>Fin</label>
+        <x>99.0</x>
+        <y>125.0</y>
+      </child>
+    </childList>
+    <methodList>
+      <method name="cwOnProcActBefore" type="action">
+        <category>before</category>
+        <system>true</system>
+        <script><![CDATA[
+          ExternalSystemSimulator.test();
+          //this.process.processDocument.creditApprovalNumber = null;
+          //this.process.processDocument.originOrder = null;
+          //this.process.processDocument.originProcess = null;
+        ]]></script>
+      </method>
+    </methodList>
+  </activity>
+  <curRevision>true</curRevision>
+  <document>doc_ExternalSystemSimulator.DOC_MSISDN_PASO_GET</document>
+  <label>procObtieneReservaMsisdn</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>User</type>
+</process>

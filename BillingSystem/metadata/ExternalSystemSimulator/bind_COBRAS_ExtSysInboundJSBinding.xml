@@ -4,7 +4,7 @@
     <extension name="COBRAS_extSysInboundGetCreditApprovalNumber" type="ext">
       <element>Operation</element>
       <elementItemMap>
-        <elementItem key="metadataScript">ExternalSystemSimulator.bindingScript</elementItem>
+        <elementItem key="metadataScript">ExternalSystemSimulator.BindingScript</elementItem>
       </elementItemMap>
     </extension>
   </extensionList>
