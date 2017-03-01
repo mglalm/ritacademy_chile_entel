@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="EMA.bindingEMASOAP">
+  <interface>iface_EMA.provisionaEMA</interface>
+  <label>Binding EMA SOAP</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

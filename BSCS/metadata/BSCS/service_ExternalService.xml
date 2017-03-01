@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="BSCS.ExternalService">
+  <label>External Service</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="portSOAP" type="port">
+      <binding>bind_BSCS.bindingSOAP</binding>
+      <label>Port SOAP</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+    <port name="portBSCS_JS" type="port">
+      <binding>bind_BSCS.bindingBSCS_JS</binding>
+      <label>Port BSCS JS</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

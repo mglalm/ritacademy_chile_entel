@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <DefaultDB>BSCS</DefaultDB>
+  <applicationString>BSCS Metadata</applicationString>
+  <applicationVersionString>1</applicationVersionString>
+  <databasesMap>
+    <databases key="BSCS" type=".configdb">
+      <dbname>BSCS</dbname>
+      <driver type=".dbdriver">
+        <attributes>localhost;1521;orcl;false</attributes>
+        <driverType>Oracle thin</driverType>
+      </driver>
+      <password>BA528B3B98D2C94E</password>
+      <user>c##bscs</user>
+    </databases>
+  </databasesMap>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <nodeString>PE_UI</nodeString>
+  <skin>Enterprise</skin>
+</project>

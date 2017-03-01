@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="BSCS.bscsResponse">
+  <label>BSCS Response</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="getMsisdn" type="oper">
+      <label>Get MSISDN</label>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

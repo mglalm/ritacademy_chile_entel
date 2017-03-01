@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="BSCS_Ingresa_MSISDN.insertMSISDN">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>Insert MSISDN</label>
+  <metaVersion>25</metaVersion>
+  <url>/insertMSISDN</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="MSISDNs" type="elmnu">
+                  <label>MSISDNs</label>
+                  <elementList>
+                    <element name="addMSISDNs" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_BSCS_Ingresa_MSISDN.insertMSISDN/usrActionMethod_addMSISDNs</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Agrega MSISDNs</label>
+                    </element>
+                    <element name="findMSISDNs" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_BSCS_Ingresa_MSISDN.insertMSISDN/usrActionMethod_findMSISDNs</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Busca MSISDNs</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>MSISDNs</title>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="addMSISDNs" type="usrActionMethod">
+      <form>doc_BSCS.docBSCSinfo/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>doc_BSCS.docBSCSinfo</userInterface>
+      <valueType>doc_BSCS.docBSCSinfo</valueType>
+    </method>
+    <method name="findMSISDNs" type="usrActionMethod">
+      <form>findDoc_BSCS.buscaMSISDN/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>findDoc_BSCS.buscaMSISDN</userInterface>
+      <valueType>findDoc_BSCS.buscaMSISDN</valueType>
+    </method>
+  </methodList>
+</userInterface>

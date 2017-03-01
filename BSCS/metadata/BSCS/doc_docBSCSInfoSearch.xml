@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="BSCS.docBSCSInfoSearch">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{72950bf3-af4f-4812-b523-02bccc9a96fd}</guid>
+  <label>Doc BSCS Info Search</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="msisdn" type="leaf">
+      <valueType>dtype_BSCS.msisdn</valueType>
+    </variable>
+    <variable name="status" type="leaf">
+      <valueType>dtype_BSCS.status</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_BSCS.docBSCSInfoSearch</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="despliegaMSISDN" type="vform">
+            <label>despliegaMSISDN</label>
+            <root name="despliegaMSISDNGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="docBSCSInfoSearchGrid" type="elgrd">
+                  <numOfCols>3</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="docBSCSInfoSearchHeader" type="elhdr">
+                      <label>Doc BSCS Info Search</label>
+                    </element>
+                    <element name="msisdn" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_BSCS.docBSCSInfoSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_BSCS.docBSCSInfoSearch/leaf_msisdn</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="status" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_BSCS.docBSCSInfoSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_BSCS.docBSCSInfoSearch/leaf_status</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="BSCS.scriptBSCS_response">
+  <label>Script BSCS Response</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>nmeta_com.conceptwave.system.Object</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var MSISDN = null;
+    var fnd = new Finder('BSCS.buscaMSISDN');
+    var result = fnd.search();//retorna una DataObjectList() -> ARRAY
+    // var doc = result && result.length>0 ? result[0] : null;
+
+    var dt = new DataStructure('BSCS.response');
+    dt.respSTATUS = "NOK";
+    dt.respMSISDN = "0";
+
+    if(result && result.length>0)
+    {
+      var doc=result[0];
+    }
+    else
+    {
+        doc=null;
+    }
+
+    if(doc)
+      {
+       MSISDN = doc.msisdn;
+       doc.status = 'USED';
+       doc.save();
+
+       dt.respSTATUS='OK';
+       dt.respMSISDN=MSISDN;
+      }
+    else
+    {
+        dt.respSTATUS="NOK";
+        dt.respMSISDN="0";
+     }
+    return dt;
+  ]]></script>
+</script>

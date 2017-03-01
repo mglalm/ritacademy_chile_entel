@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="BSCS.docBSCSinfo">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{9fa35c20-ea7f-4f39-961c-2e47d881048f}</guid>
+  <label>Doc BSCS Info</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="msisdn" type="leaf">
+      <column>MSISDN</column>
+      <table>docBSCSinfo</table>
+      <valueType>dtype_BSCS.msisdn</valueType>
+    </variable>
+    <variable name="status" type="leaf">
+      <column>STATUS</column>
+      <table>docBSCSinfo</table>
+      <valueType>dtype_BSCS.status</valueType>
+    </variable>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>docBSCSinfo</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_BSCS.docBSCSinfo</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="GridLayout" type="elgrd">
+                <numOfCols>2</numOfCols>
+                <elementList>
+                  <element name="msisdn" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_BSCS.docBSCSinfo/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_BSCS.docBSCSinfo/leaf_msisdn</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="status" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_BSCS.docBSCSinfo/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_BSCS.docBSCSinfo/leaf_status</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

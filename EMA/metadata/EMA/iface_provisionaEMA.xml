@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="EMA.provisionaEMA">
+  <label>Provisiona EMA</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="activateEMA" type="oper">
+      <label>Activate EMA</label>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

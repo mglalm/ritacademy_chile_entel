@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="EMA.scriptRespEMA">
+  <label>Script Resp EMA</label>
+  <metaVersion>25</metaVersion>
+  <script><![CDATA[
+    var dt = new DataStructure('EMA.responseEMA');
+    dt.respEMA = "OK";
+
+    return dt;
+  ]]></script>
+</script>
