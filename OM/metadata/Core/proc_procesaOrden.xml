@@ -5,47 +5,28 @@
     <x>-295.0</x>
     <y>117.0</y>
     <childList>
-      <child name="all" type="allActivity">
-        <label>all</label>
-        <x>-15.000027</x>
-        <y>162.0</y>
-        <childList>
-          <child name="conectaCS" type="opActivity">
-            <element>iface_CS.CSInterfaz/oper_assign</element>
-            <label>conectaCS</label>
-            <participant>part_Core.CSParticipant</participant>
-            <x>319.0</x>
-            <y>360.0</y>
-          </child>
-          <child name="conectaBSCS" type="opActivity">
-            <element>iface_BSCS.BSCSInterfaz/oper_getMsisdn</element>
-            <label>conectaBSCS</label>
-            <participant>part_Core.BSCSParticipant</participant>
-            <x>306.0</x>
-            <y>-19.0</y>
-          </child>
-        </childList>
+      <child name="conectaBSCS" type="opActivity">
+        <element>iface_BSCS_CONSUMER.BSCSInterfaz/oper_getMsisdn</element>
+        <label>conectaBSCS</label>
+        <participant>part_Core.BSCSParticipant</participant>
+        <x>29.0</x>
+        <y>88.0</y>
       </child>
       <child name="fin" type="completeActivity">
         <label>fin</label>
-        <x>737.0</x>
-        <y>145.0</y>
-      </child>
-      <child name="CSParticipant" type="participantActivity">
-        <label>CSParticipant</label>
-        <participant>part_Core.CSParticipant</participant>
-        <x>423.0</x>
-        <y>159.0</y>
+        <x>453.0</x>
+        <y>121.0</y>
       </child>
       <child name="BSCSParticipant" type="participantActivity">
         <label>BSCSParticipant</label>
         <participant>part_Core.BSCSParticipant</participant>
-        <x>461.0</x>
-        <y>-135.0</y>
+        <x>0.0</x>
+        <y>0.0</y>
       </child>
     </childList>
   </activity>
   <curRevision>true</curRevision>
+  <document>doc_Core.processDocument</document>
   <label>procesaOrden</label>
   <metaVersion>25</metaVersion>
   <priority>8</priority>

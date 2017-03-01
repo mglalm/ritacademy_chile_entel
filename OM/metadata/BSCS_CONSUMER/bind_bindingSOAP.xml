@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="BSCS_CONSUMER.bindingSOAP">
+  <extensionList>
+    <extension name="getMsisdn" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">getMsisdn</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_BSCS_CONSUMER.BSCSInterfaz</interface>
+  <label>bindingSOAP</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

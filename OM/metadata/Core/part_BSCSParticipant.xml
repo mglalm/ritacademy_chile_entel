@@ -2,5 +2,5 @@
 <participant name="Core.BSCSParticipant">
   <label>BSCSParticipant</label>
   <metaVersion>25</metaVersion>
-  <participant>iface_BSCS.BSCSInterfaz</participant>
+  <participant>iface_BSCS_CONSUMER.BSCSInterfaz</participant>
 </participant>

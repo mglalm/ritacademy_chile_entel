@@ -9,7 +9,10 @@
   </parameterList>
   <script><![CDATA[
     var i = 1;
-    Process.startProcess("Core.procesaOrden",null,null,null);
+    var doc = new Document("Core.processDocument");
+    doc.po = input.productOfferId;
+    doc.orderId = input.orderId;
+    Process.startProcess("Core.procesaOrden",doc,null,null);
 
     var dt = new DataStructure("IO.response");
     dt.productOfferId = input.productOfferId;

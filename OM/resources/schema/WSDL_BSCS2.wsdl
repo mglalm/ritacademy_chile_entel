@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="BSCS" targetNamespace="BSCS"
+	xmlns:tns="BSCS"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+	<types>
+	</types>
+
+	<portType name="bscsResponse">
+		<operation name="getMsisdn">
+		</operation>
+	</portType>
+
+	<binding name="bindingSOAP" type="tns:bscsResponse">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getMsisdn">
+			<soap:operation soapAction="getMsisdn"/>
+		</operation>
+	</binding>
+
+	<service name="ExternalService">
+		<port name="portSOAP" binding="tns:bindingSOAP">
+		</port>
+	</service>
+
+</definitions>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="BSCS_CONSUMER.BSCSInterfaz">
+  <label>BSCSInterfaz</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="getMsisdn" type="oper">
+      <label>getMsisdn</label>
+      <output>dstruct_BSCS_CONSUMER.response</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

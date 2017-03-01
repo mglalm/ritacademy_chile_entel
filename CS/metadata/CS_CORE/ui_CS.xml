@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="CS_CORE.CS">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>Charging System</label>
+  <metaVersion>25</metaVersion>
+  <url>/CS</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="MenuItem" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_CS_CORE.CS/usrActionMethod_agregarPo</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Agregar PO</label>
+                </element>
+                <element name="MenuItem2" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_CS_CORE.CS/usrActionMethod_verPo</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Ver PO</label>
+                </element>
+                <element name="MenuItem1" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_CS_CORE.CS/usrActionMethod_verMsisdn</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Ver MSISDN</label>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="verPo" type="usrActionMethod">
+      <userInterface>findDoc_CS_CORE.poInitialDebitFinder</userInterface>
+      <valueType>findDoc_CS_CORE.poInitialDebitFinder</valueType>
+    </method>
+    <method name="agregarPo" type="usrActionMethod">
+      <form>doc_CS_CORE.cs_po_initial_debit/ui_UserInterface/frmui_Forms/vform_gf</form>
+      <userInterface>doc_CS_CORE.cs_po_initial_debit</userInterface>
+      <valueType>doc_CS_CORE.cs_po_initial_debit</valueType>
+    </method>
+    <method name="verMsisdn" type="usrActionMethod">
+      <form>findDoc_CS_CORE.msisdnDebitFinder/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>findDoc_CS_CORE.msisdnDebitFinder</userInterface>
+      <valueType>findDoc_CS_CORE.msisdnDebitFinder</valueType>
+    </method>
+  </methodList>
+</userInterface>

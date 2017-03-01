@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="CS_CORE.poInitialDebitFinder">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_CS_CORE.po_search</input>
+  <label>poInitialDebitFinder</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_CS_CORE.cs_po_initial_debit</output>
+  <type>document</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_CS_CORE.po_search</document>
+      <mappedDocument>doc_CS_CORE.cs_po_initial_debit</mappedDocument>
+      <mappedPath>doc_CS_CORE.cs_po_initial_debit/leaf_po</mappedPath>
+      <operation>equal</operation>
+      <path>doc_CS_CORE.po_search/leaf_po</path>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>doc_CS_CORE.cs_po_initial_debit/ui_UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_CS_CORE.cs_po_initial_debit</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>ui_com.conceptwave.system.UserInterface</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_CS_CORE.poInitialDebitFinder/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_CS_CORE.poInitialDebitFinder/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="poInitialDebitFinderResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_CS_CORE.poInitialDebitFinder/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="po" type="elfld">
+                        <label>Product Offer</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_CS_CORE.poInitialDebitFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_CS_CORE.cs_po_initial_debit/leaf_po</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="debit" type="elfld">
+                        <label>Debit</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_CS_CORE.poInitialDebitFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_CS_CORE.cs_po_initial_debit/leaf_debit</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="poInitialDebitFinderView" type="findVView">
+      <inputOverlay>doc_CS_CORE.po_search/ui_UserInterface/frmui_Forms/vform_gf</inputOverlay>
+      <outputOverlay>findDoc_CS_CORE.poInitialDebitFinder/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <showSearchForm>true</showSearchForm>
+    </view>
+  </viewList>
+</findDoc>

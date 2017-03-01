@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="Core.processDocument">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{2eecbfb5-ec82-44d3-a46a-946d8cd28bbf}</guid>
+  <label>processDocument</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="po" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="orderId" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+  </variableList>
+</document>

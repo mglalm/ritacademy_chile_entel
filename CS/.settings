@@ -3,9 +3,6 @@
   <DefaultDB>TRAINING</DefaultDB>
   <applicationString>CS</applicationString>
   <applicationVersionString>1</applicationVersionString>
-  <breakpointMap>
-    <breakpoint key="IO.io_cs_global_script">0</breakpoint>
-  </breakpointMap>
   <databasesMap>
     <databases key="TRAINING" type=".configdb">
       <dbname>TRAINING</dbname>
@@ -19,6 +16,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
+  <jarExportFolder>C:\Users\EOC\Documents\ritacademy_chile_entel\CS\</jarExportFolder>
   <joinCluster>true</joinCluster>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>

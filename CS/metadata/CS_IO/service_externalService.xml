@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="CS_IO.externalService">
+  <label>externalService</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="portJS" type="port">
+      <binding>bind_CS_IO.bindingJS</binding>
+      <label>portJS</label>
+      <recover>5</recover>
+    </port>
+    <port name="portSOAP" type="port">
+      <binding>bind_CS_IO.bindingSOAP</binding>
+      <exportReferencedOnly>true</exportReferencedOnly>
+      <exportSchemaInsideWsdl>true</exportSchemaInsideWsdl>
+      <label>portSOAP</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

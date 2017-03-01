@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="CS_CORE.debit">
+  <extends>dtype_com.conceptwave.system.Integer</extends>
+  <label>debit</label>
+  <metaVersion>25</metaVersion>
+</dataType>

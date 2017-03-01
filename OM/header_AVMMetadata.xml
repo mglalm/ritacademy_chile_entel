@@ -20,5 +20,7 @@
   <metadataVersion>20150818</metadataVersion>
   <templateList>
     <template>ecm</template>
+    <template>CS</template>
+    <template>BSCS Metadata</template>
   </templateList>
 </header>
