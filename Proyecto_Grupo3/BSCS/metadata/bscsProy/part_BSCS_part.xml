@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<participant name="bscsProy.BSCS_part">
-  <label>BSCS_part</label>
-  <metaVersion>25</metaVersion>
-  <participant>iface_bscsProy.Crea_Cli_BSCS</participant>
-</participant>
