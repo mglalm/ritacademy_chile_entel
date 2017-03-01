@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="bscsProy.Req_Crea_Cli_BSCS">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>Req_Crea_Cli_BSCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="ID_CLIENTE" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_bscsProy.ID_CLIENTE</element>
+      <label>ID_CLIENTE</label>
+    </child>
+    <child name="PLAN_BSCS" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_bscsProy.PLAN_BSCS</element>
+      <label>PLAN_BSCS</label>
+    </child>
+  </childList>
+</dataStructure>

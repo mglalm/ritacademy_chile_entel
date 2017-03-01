@@ -38,7 +38,7 @@
 					<documentation>PROFILE</documentation>
 				</annotation>
 				<restriction base="xsd:string">
-					<maxLength value="20"/>
+					<maxLength value="32"/>
 				</restriction>
 			</simpleType>
 

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="bscsProy.Crea_Cli_BSCS_JS">
+  <extensionList>
+    <extension name="Crea_cli_bscs" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="script"><![CDATA[
+          /* Aqui va el script para tratar el requerimiento del Cliente*/
+          //var procId = Process.startProcess('-.....');
+          //Process.sendMEssageTOPRocess(processID);
+
+          var IMSI = null;
+          var MSISDN = null;
+          var ID_CLIENTE=input.ID_CLIENTE;
+          var output=new DataStructure("bscsProy.Resonse_Crea_Cli_BSCS");
+
+          //var IMSI=this.process.processDocument.IMSI;
+          var fnd = new Finder('bscsProy.findIMSI');
+          //fnd.searchDocument.varX = '';
+          var result = fnd.search();//retorna una DataObjectList() -> ARRAY
+          var doc = result && result.length>0 ? result[0] : null;
+          if(doc)
+          {
+             ;
+          }
+          else
+          {
+              output.ESTADO='FALLIDO'
+              output.DESC='NO HAY IMSI';
+          }
+
+          var fnd2 = new Finder('bscsProy.findMSISDN');
+          //fnd.searchDocument.varX = '';
+          var result2 = fnd2.search();//retorna una DataObjectList() -> ARRAY
+          var doc2 = result2 && result2.length>0 ? result2[0] : null;
+          if(doc2)
+          {
+            ;
+          }
+          else
+          {
+              output.ESTADO='FALLIDO'
+              output.DESC='NO HAY MSISDN';
+          }
+          // asigno salida
+          if( doc && doc2)
+            {
+             IMSI = doc.IMSI;
+             doc.ESTADO = 'ASIGNADO';
+             doc.ID_CLIENTE=ID_CLIENTE;
+             doc.save();
+
+             MSISDN = doc2.MSISDN;
+             doc2.ESTADO = 'ASIGNADO';
+             doc2.ID_CLIENTE=ID_CLIENTE;
+             doc2.save();
+
+             output.ESTADO='CREADO';
+             output.IMSI=IMSI;
+             output.MSISDN=MSISDN;
+             output.DESC='EXITO';
+            }
+          else
+          {
+              output.ESTADO='FALLIDO'
+           }
+          return output
+        ]]></elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_bscsProy.Crea_Cli_BSCS</interface>
+  <label>Crea_Cli_BSCS_JS</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

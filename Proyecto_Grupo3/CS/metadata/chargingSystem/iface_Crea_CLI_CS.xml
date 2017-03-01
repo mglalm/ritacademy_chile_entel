@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <interface name="chargingSystem.Crea_CLI_CS">
-  <label>Creacion Cliente CS</label>
+  <label>Crear Cliente CS</label>
   <metaVersion>25</metaVersion>
   <operationList>
     <operation name="creacionClienteCS" type="oper">
-      <input>doc_chargingSystem.clienteChagingSystem</input>
-      <label>Creación Cliente CS</label>
-      <output>dstruct_chargingSystem.response</output>
+      <input>doc_chargingSystem.clienteChargingSystem</input>
+      <label>Creacion Cliente CS</label>
+      <output>dstruct_chargingSystem.responseCS</output>
       <type>Request-Response</type>
     </operation>
   </operationList>
-  <revision>2</revision>
+  <revision>1</revision>
 </interface>

@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <binding name="EMA.bindingJSRequestEMA">
+  <extensionList>
+    <extension name="creacionClienteHLR" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="script"><![CDATA[
+          var output = new DataStructure("chargingSystem.responseCS");
+
+          input.save(); output.mensaje= "Ok"; output.estado = "Provisionada la MSISDN " + input.MSISDN;
+
+          return output;
+        ]]></elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
   <interface>iface_EMA.Crea_CLI_HLR</interface>
   <label>Binding JS Request EMA</label>
   <metaVersion>25</metaVersion>
