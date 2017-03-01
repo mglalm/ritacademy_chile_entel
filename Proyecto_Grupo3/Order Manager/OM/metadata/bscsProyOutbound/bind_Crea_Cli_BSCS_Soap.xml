@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="bscsProyOutbound.Crea_Cli_BSCS_Soap">
+  <extensionList>
+    <extension name="Crea_cli_bscs" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">Crea_cli_bscs</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="Crea_cli_bscs$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="Crea_cli_bscs$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="Crea_cli_bscs" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">Crea_cli_bscs</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="Crea_cli_bscs$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="Crea_cli_bscs$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="Crea_cli_bscs" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">Crea_cli_bscs</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="Crea_cli_bscs$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="Crea_cli_bscs$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_bscsProyOutbound.Crea_Cli_BSCS</interface>
+  <label>Crea_Cli_BSCS_Soap</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

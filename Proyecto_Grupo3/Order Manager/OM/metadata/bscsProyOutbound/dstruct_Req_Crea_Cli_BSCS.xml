@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="bscsProyOutbound.Req_Crea_Cli_BSCS">
+  <abstract>true</abstract>
+  <label>Req_Crea_Cli_BSCS</label>
+  <metaVersion>25</metaVersion>
+</dataStructure>

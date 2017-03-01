@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="oeInterface.bindingJSOE">
+  <extensionList>
+    <extension name="SubmitOrderOE" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="script"><![CDATA[
+          var IMSI = null;
+          var MSISDN = null;
+          var ID_CLIENTE = input.ID_CLIENTE;
+          var ID_PO = input.ID_PO;
+          var ID_ORDER = input.ID_Order;
+          var PLAN_BSCS = null;
+          var planCS = null;
+          var saldo = null;
+          var PROFILE = null;
+          var docprocess = new Document('oeinterface.documentoOE');
+
+          var findPO = new Finder('findOrder.finderPO');
+          findPO.searchDocument.ID_PO = ID_PO;
+
+          var result = findPO.search();
+          var docPO = result && result.lenght>0 ? result[0] : null;
+
+          if(docPO)
+          {
+              PLAN_BSCS = docPO.PLAN_BSCS;
+              planCS = docPO.planCS;
+              saldo = docPO.saldo;
+              PROFILE = docPO.PROFILE;
+
+          }
+
+          docprocess.ID_CLIENTE = ID_CLIENTE;
+          docprocess.ID_PO = ID_PO;
+          docprocess.ID_Order = ID_ORDER;
+
+          var ProcessID = Process.startProcess('orderManager.mainProcess',docprocess,null,null);
+
+          var ack = new DataStructure('oeinterface.Response');
+
+          ack.ack = 0;
+
+          return ack;
+
+
+
+
+          /*var IMSI = null;
+          var ID_CLIENTE=input.ID_CLIENTE;
+
+          var IMSI=this.process.processDocument.IMSI;
+          var find = new Finder('bscsProxy.findIMSI');
+          find.searchDocument.varX = '';
+          var result = find.search();//retorna una DataObjectList()-->ARRAY
+          var doc = result && result.length>0 ? result(0) : null;
+
+          if(doc)
+          {
+                  IMSI = doc.IMSI;
+                  doc.ESTADO = 'ASIGNADO';
+                  doc.ID_CLIENTE=ID_CLIENTE;e
+                  doc.save();
+
+          }*/
+        ]]></elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_oeInterface.Submit_Order_OE</interface>
+  <label>Binding JS OE</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

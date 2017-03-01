@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="oeInterface.bindingReqSendJSOE">
+  <interface>iface_oeInterface.Submit_Order_OE</interface>
+  <label>binding Req Send JS OE</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

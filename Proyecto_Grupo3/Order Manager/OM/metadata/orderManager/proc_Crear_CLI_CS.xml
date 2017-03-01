@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="orderManager.Crear_CLI_CS">
+  <activity name="Start" type="seqActivity">
+    <label>Start</label>
+    <x>31.0</x>
+    <y>15.0</y>
+    <childList>
+      <child name="Crear_Cli_CS" type="opActivity">
+        <element>iface_chargingSystem.Crea_CLI_CS/oper_creacionClienteCS</element>
+        <label>Crear_Cli_CS</label>
+        <participant>part_chargingSystemOutbound.Crea_Cli_CS_Part</participant>
+        <x>317.0</x>
+        <y>117.0</y>
+        <methodList>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script><![CDATA[
+              this.activityData.IMSI = this.process.processDocument.IMSI;
+              this.activityData.MSISDN = this.process.processDocument.MSISDN;
+              this.activityData.saldo = this.process.processDocument.saldo;
+              this.activityData.planCS = this.process.processDocument.planCS;
+              this.activityData.ID_CLIENTE = this.process.processDocument.ID_CLIENTE;
+            ]]></script>
+          </method>
+          <method name="cwOnProcActAfter" type="action">
+            <category>script</category>
+            <system>true</system>
+            <script><![CDATA[
+              this.process.processDocument.mensaje = this.activityData.mensaje;
+              this.process.processDocument.estado = this.activityData.ESTADO;
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="Crea_Cli_CS_Part" type="participantActivity">
+        <label>Crea_Cli_CS_Part</label>
+        <participant>part_chargingSystemOutbound.Crea_Cli_CS_Part</participant>
+        <x>505.0</x>
+        <y>5.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <label>Crear_CLI_CS</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>Sub-flow</type>
+</process>

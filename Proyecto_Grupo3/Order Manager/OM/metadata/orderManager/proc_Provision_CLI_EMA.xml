@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="orderManager.Provision_CLI_EMA">
+  <activity name="Start" type="seqActivity">
+    <label>Start</label>
+    <x>40.0</x>
+    <y>27.0</y>
+    <childList>
+      <child name="Provision_Servicio_Cli" type="opActivity">
+        <element>iface_EMA.Crea_CLI_HLR/oper_creacionClienteHLR</element>
+        <label>Provision_Servicio_Cli</label>
+        <participant>part_EMAOutbound.Provision_Cli_Part</participant>
+        <x>279.0</x>
+        <y>108.0</y>
+        <methodList>
+          <method name="cwOnProcActAfter" type="action">
+            <category>script</category>
+            <system>true</system>
+            <script><![CDATA[
+              this.process.processDocument.mensaje = this.activityData.mensaje;
+              this.process.processDocument.ESTADO = this.activityData.estado;
+            ]]></script>
+          </method>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script><![CDATA[
+              this.activityData.IMSI = this.process.processDocument.IMSI;
+              this.activityData.MSISDN = this.process.processDocument.MSISDN;
+              this.activityData.PROFILE = this.process.processDocument.PROFILE;
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="Provision_Cli_Part" type="participantActivity">
+        <label>Provision_Cli_Part</label>
+        <participant>part_EMAOutbound.Provision_Cli_Part</participant>
+        <x>445.0</x>
+        <y>-4.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <label>Provision_CLI_EMA</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>Sub-flow</type>
+</process>
