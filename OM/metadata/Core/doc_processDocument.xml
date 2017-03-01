@@ -8,6 +8,9 @@
     <variable name="po" type="leaf">
       <valueType>dtype_com.conceptwave.system.String</valueType>
     </variable>
+    <variable name="msisdn" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
     <variable name="orderId" type="leaf">
       <valueType>dtype_com.conceptwave.system.String</valueType>
     </variable>

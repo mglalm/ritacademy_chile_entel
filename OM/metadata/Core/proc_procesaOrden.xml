@@ -2,26 +2,61 @@
 <process name="Core.procesaOrden">
   <activity name="start" type="seqActivity">
     <label>start</label>
-    <x>-295.0</x>
-    <y>117.0</y>
+    <x>-17.0</x>
+    <y>182.0</y>
     <childList>
       <child name="conectaBSCS" type="opActivity">
         <element>iface_BSCS_CONSUMER.BSCSInterfaz/oper_getMsisdn</element>
         <label>conectaBSCS</label>
         <participant>part_Core.BSCSParticipant</participant>
-        <x>29.0</x>
-        <y>88.0</y>
+        <x>205.0</x>
+        <y>290.0</y>
+        <methodList>
+          <method name="cwOnProcActAfter" type="action">
+            <category>script</category>
+            <system>true</system>
+            <script>this.process.processDocument.msisdn = this.activityData.respMSISDN;</script>
+          </method>
+        </methodList>
+      </child>
+      <child name="conectaCS" type="opActivity">
+        <element>iface_CS_CONSUMER.CSInterfaz/oper_assign</element>
+        <label>conectaCS</label>
+        <participant>part_Core.CSParticipant</participant>
+        <x>498.0</x>
+        <y>332.0</y>
+        <methodList>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script><![CDATA[
+              this.activityData.msisdn=process.processDocument.msisdn;
+              this.activityData.po=process.processDocument.po;
+            ]]></script>
+          </method>
+          <method name="cwOnProcActAfter" type="action">
+            <category>script</category>
+            <system>true</system>
+            <script>Core.dummy();</script>
+          </method>
+        </methodList>
       </child>
       <child name="fin" type="completeActivity">
         <label>fin</label>
-        <x>453.0</x>
-        <y>121.0</y>
+        <x>848.0</x>
+        <y>170.0</y>
       </child>
       <child name="BSCSParticipant" type="participantActivity">
         <label>BSCSParticipant</label>
         <participant>part_Core.BSCSParticipant</participant>
         <x>0.0</x>
         <y>0.0</y>
+      </child>
+      <child name="CSParticipant" type="participantActivity">
+        <label>CSParticipant</label>
+        <participant>part_Core.CSParticipant</participant>
+        <x>552.0</x>
+        <y>63.0</y>
       </child>
     </childList>
   </activity>

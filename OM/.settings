@@ -3,9 +3,6 @@
   <DefaultDB>PROYECTO</DefaultDB>
   <applicationString>OM</applicationString>
   <applicationVersionString>1</applicationVersionString>
-  <breakpointMap>
-    <breakpoint key="Core.dummy">0</breakpoint>
-  </breakpointMap>
   <databasesMap>
     <databases key="PROYECTO" type=".configdb">
       <dbname>PROYECTO</dbname>

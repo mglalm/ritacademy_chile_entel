@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <binding name="CS_CONSUMER.bindingSOAP">
+  <extensionList>
+    <extension name="assign" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">assign</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
   <interface>iface_CS_CONSUMER.CSInterfaz</interface>
   <label>bindingSOAP</label>
   <metaVersion>25</metaVersion>
