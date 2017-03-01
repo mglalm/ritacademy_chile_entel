@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="OrderManager.docProcesoProvision">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{75955b1b-4090-497c-ac30-7a3308fe3a70}</guid>
+  <label>docProcesoProvision</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="IN_orderId" type="leaf">
+      <valueType>dtype_OrderManager.dtOrderId</valueType>
+    </variable>
+    <variable name="IN_rut" type="leaf">
+      <valueType>dtype_OrderManager.dtRut</valueType>
+    </variable>
+    <variable name="IN_POIdBasico" type="leaf">
+      <valueType>dtype_OrderManager.dtPOId</valueType>
+    </variable>
+    <variable name="IN_POIdAdicional" type="leaf">
+      <valueType>dtype_OrderManager.dtPOId</valueType>
+    </variable>
+    <variable name="OUT_estadoOrden" type="leaf">
+      <valueType>dtype_OrderManager.dtEstado</valueType>
+    </variable>
+    <variable name="OUT_MSISDN" type="leaf">
+      <valueType>dtype_OrderManager.dtMSISDN</valueType>
+    </variable>
+    <variable name="OUT_EstadoPOBasica" type="leaf">
+      <valueType>dtype_OrderManager.dtEstado</valueType>
+    </variable>
+    <variable name="OUT_MotivoEstadoPOBasica" type="leaf">
+      <valueType>dtype_OrderManager.dtMotivoEstado</valueType>
+    </variable>
+    <variable name="OUT_EstadoPOAdicional" type="leaf">
+      <valueType>dtype_OrderManager.dtEstado</valueType>
+    </variable>
+    <variable name="OUT_MotivoEstadoPOAdicional" type="leaf">
+      <valueType>dtype_OrderManager.dtMotivoEstado</valueType>
+    </variable>
+  </variableList>
+</document>

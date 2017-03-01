@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="552C8CEC-CB6E-96D8-3E5E-E16714BD62FA" name="OM PARAM BSCS">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>463277B9-7847-D7F5-F3EA-F5DEDB2ACEC0</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>OM_PARAM_BSCS</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ORDER ID" id="5FA6E331-6562-CC81-67ED-33483404DFBB">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>3E415CBD-6806-EF2D-96CF-9177A169D3DD</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<referedAttribute>FEA39AB9-6AB6-20B0-EE03-34DFEC78E946</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PO ID" id="F0E93968-3DF9-A2FD-0812-6B5F257DB5CC">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>3E415CBD-6806-EF2D-96CF-9177A169D3DD</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<referedAttribute>11403DD1-13F1-53C6-E3A4-1204239D04F0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NUMERO INTENTO" id="EA7FF480-4691-6B90-EFE8-D65CD2BE4E2A">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>3E415CBD-6806-EF2D-96CF-9177A169D3DD</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<referedAttribute>2F0BF027-A637-84B4-42BD-8DAE73CBB961</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PARAM ID" id="95D6D42F-8E92-5DFB-1FDF-481B95E9EDB7">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>FFFDD56C-F725-9BE3-D653-D88DFA7B310D</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="VALOR" id="BDAC15CC-EAC1-5514-D23E-D191C75E740B">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>D8CB8A9F-3029-8ADC-5BC7-F0B5423A7FE7</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="83BAFF77-C739-D73B-C419-E2B7F5FF0C97" name="OM PARAM BSCS PK">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>AABA6CCC-CD0E-7FB4-2AEA-75243C3C878C</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5FA6E331-6562-CC81-67ED-33483404DFBB</attributeRef>
+<attributeRef>F0E93968-3DF9-A2FD-0812-6B5F257DB5CC</attributeRef>
+<attributeRef>EA7FF480-4691-6B90-EFE8-D65CD2BE4E2A</attributeRef>
+<attributeRef>95D6D42F-8E92-5DFB-1FDF-481B95E9EDB7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

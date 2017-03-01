@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="OrderManager.OMProvisionProcess">
+  <activity name="inicio" type="seqActivity">
+    <label>inicio</label>
+    <x>20.0</x>
+    <y>23.0</y>
+    <childList>
+      <child name="provisionComplete" type="completeActivity">
+        <label>provisionComplete</label>
+        <x>131.0</x>
+        <y>35.0</y>
+      </child>
+    </childList>
+    <methodList>
+      <method name="cwOnProcActBefore" type="action">
+        <category>before</category>
+        <system>true</system>
+        <script><![CDATA[
+          OrderManager.debug();
+
+          this.process.processDocument.OUT_estadoOrden = "En Proceso";
+          this.process.processDocument.OUT_MSISDN = "56992270351";
+        ]]></script>
+      </method>
+    </methodList>
+  </activity>
+  <curRevision>true</curRevision>
+  <document>doc_OrderManager.docProcesoProvision</document>
+  <label>OMProvisionProcess</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>User</type>
+</process>

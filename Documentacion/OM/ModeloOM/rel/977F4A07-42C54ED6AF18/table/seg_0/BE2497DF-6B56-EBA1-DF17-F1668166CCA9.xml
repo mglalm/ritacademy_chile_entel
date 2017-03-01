@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BE2497DF-6B56-EBA1-DF17-F1668166CCA9" name="OM_RECURSOS_PO">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 20:05:05 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<ordsAlias>table_19</ordsAlias>
+<abbreviation>OM_RECURSOS_PO</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ORDER_ID" id="84EB940D-8C57-CD83-F6F4-3CF183212D06">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 20:07:18 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5965CF7E-6557-98D8-09D2-8E8D075E655C" referredColumn="E335E7FF-638A-7CBB-5A7F-20CC189A0129"/>
+</associations>
+</Column>
+<Column name="PO_ID" id="1017E08D-D452-0A45-0F17-DFD7A30493D7">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 20:07:18 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5965CF7E-6557-98D8-09D2-8E8D075E655C" referredColumn="C39D8012-CDCD-04BC-9087-1F890502518A"/>
+</associations>
+</Column>
+<Column name="RESOURCE_ID" id="13656657-98C0-0119-A4EE-63C82EB9A877">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 20:07:18 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VALOR" id="9DD5C201-BF01-85C4-E64B-02CE331FCE22">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 20:07:18 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="39C0A519-27DB-A17C-D448-FE6E0246C149" name="OM_RECURSOS_PO_PK">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 20:07:18 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="84EB940D-8C57-CD83-F6F4-3CF183212D06"/>
+<colUsage columnID="1017E08D-D452-0A45-0F17-DFD7A30493D7"/>
+<colUsage columnID="13656657-98C0-0119-A4EE-63C82EB9A877"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1038AE38-28FC-16F4-C18C-86EEF49FAAAC" name="OM_RECURSOS_PO_OM_ORDER_PO_FK">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 20:07:38 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="84EB940D-8C57-CD83-F6F4-3CF183212D06"/>
+<colUsage columnID="1017E08D-D452-0A45-0F17-DFD7A30493D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

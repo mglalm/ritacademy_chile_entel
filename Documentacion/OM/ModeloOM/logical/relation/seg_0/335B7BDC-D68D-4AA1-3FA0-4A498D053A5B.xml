@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="OM_ORDER_PO_OM_ORDER_FK" directorySegmentName="seg_0" id="335B7BDC-D68D-4AA1-3FA0-4A498D053A5B">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>51F14B9E-0D03-2A64-3E8A-5F23717D2483</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<sourcePk>6B1D2F09-766A-CB06-5E56-59E242396CD0</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>9967EFD9-7DE5-C4BD-8B43-7BD46260CBA7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8D560917-FFEB-5E11-90AC-5EB4F0F34ADC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

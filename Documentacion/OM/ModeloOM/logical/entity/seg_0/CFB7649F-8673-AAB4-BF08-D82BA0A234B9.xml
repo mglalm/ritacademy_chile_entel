@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CFB7649F-8673-AAB4-BF08-D82BA0A234B9" name="OM PROV CS">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>02812348-73A4-489D-2FE6-3E34C022C9F1</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>OM_PROV_CS</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ORDER ID" id="B7080829-39D7-6082-0ACA-88E68A1FD4C6">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>EC14ACE9-FD28-E199-D480-725D79CE0659</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<referedAttribute>BB69F2A0-20B6-E68E-03AC-537202396CC2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PO ID" id="9A6CF122-D4FD-96B6-AAD7-3938F4EBAC96">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>EC14ACE9-FD28-E199-D480-725D79CE0659</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<referedAttribute>141FF443-77BC-B9BF-A03C-1D33B530AB9C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NUMERO INTENTO" id="B1E72FAD-FCA2-7BA5-092C-178510E24F66">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>AC4EF348-B77C-56BF-0502-D0EDC2EEB54A</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA CREACION" id="C1FA83CF-6809-9D57-454F-16AD3F74FAF7">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>9381D10B-825C-DD8C-6606-1CF087FEFEDE</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ESTADO" id="1B9B6876-E783-C843-3AC4-8FC3AAF1217F">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>A6BF58B1-586B-169A-2B27-1B2A87746ABD</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="03BFA7EC-CA4C-94DA-FD2F-EAAC9AF6DD50" name="OM PROV CS PK">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:50:24 UTC</createdTime>
+<generatorID>46BE0B5F-BF77-4A30-B6EA-D260187497DB</generatorID>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<engineerTo>
+<item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B7080829-39D7-6082-0ACA-88E68A1FD4C6</attributeRef>
+<attributeRef>9A6CF122-D4FD-96B6-AAD7-3938F4EBAC96</attributeRef>
+<attributeRef>B1E72FAD-FCA2-7BA5-092C-178510E24F66</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E7689BF9-E64C-1959-7CCD-9226BE1EE6BF" name="OM_ORDER_PO">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:00:25 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<abbreviation>OM_ORDER_PO</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PO_ID" id="C39D8012-CDCD-04BC-9087-1F890502518A">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:03:40 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_ID" id="E335E7FF-638A-7CBB-5A7F-20CC189A0129">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:07:31 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="95501A49-01FA-9A8F-14C7-E33498F15BDF" referredColumn="E1613574-BC89-82F6-224E-06EA39955507"/>
+</associations>
+</Column>
+<Column name="FECHA_CREACION" id="71CA8C49-AC4B-57B1-1ED9-B680C172A6F3">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:20:26 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTADO" id="229AB3EB-5903-0C37-B76B-D857B178BA25">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:20:26 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MOTIVO_ESTADO" id="DC5BBA24-3393-EBEE-794E-041B03F34FB6">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 20:59:09 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5F217B86-F88D-3DCB-A51F-FC09D7BA4EBE" name="OM_ORDER_PO_PK">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:03:40 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E335E7FF-638A-7CBB-5A7F-20CC189A0129"/>
+<colUsage columnID="C39D8012-CDCD-04BC-9087-1F890502518A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A818E687-6C0B-7460-8B6F-55C06584239D" name="OM_ORDER_PO_OM_Orden_FK">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:56:42 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E335E7FF-638A-7CBB-5A7F-20CC189A0129"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

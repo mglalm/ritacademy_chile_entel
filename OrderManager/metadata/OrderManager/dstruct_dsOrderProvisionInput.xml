@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="OrderManager.dsOrderProvisionInput">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>dsOrderProvisionInput</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="orderId" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtOrderId</element>
+      <label>Order Id</label>
+    </child>
+    <child name="rut" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtRut</element>
+      <label>Rut</label>
+    </child>
+    <child name="listaPOs" type="dstruct">
+      <array>true</array>
+      <container>true</container>
+      <label>Lista POs</label>
+      <mandatory>true</mandatory>
+      <maxInstance>-1</maxInstance>
+      <minInstance>1</minInstance>
+      <childList>
+        <child name="POId" type="dstruct">
+          <datatype>true</datatype>
+          <element>dtype_OrderManager.dtPOId</element>
+          <label>PO Id</label>
+        </child>
+      </childList>
+    </child>
+  </childList>
+  <UserInterface name="UserInterface" type="tree">
+    <autoExpand>true</autoExpand>
+    <defaultFolderImage>undefined</defaultFolderImage>
+    <defaultLeafImage>undefined</defaultLeafImage>
+    <element>dstruct_OrderManager.dsOrderProvisionInput</element>
+    <extends>tree_com.conceptwave.system.DataStructureUserInterface</extends>
+    <tableDoc>doc_com.conceptwave.system.TreeDocument</tableDoc>
+    <childList>
+      <child name="listaPOs" type="tnDs">
+        <autoExpand>true</autoExpand>
+        <detailUI>ui_userInterface.InvocaOM</detailUI>
+        <dsItemPathList>
+          <dsItemPath>dstruct_OrderManager.dsOrderProvisionInput/dstruct_listaPOs</dsItemPath>
+        </dsItemPathList>
+        <element>dstruct_OrderManager.dsOrderProvisionInput/dstruct_listaPOs</element>
+        <extends>tn_com.conceptwave.system.TreeNode</extends>
+        <label>Lista POs</label>
+        <nodeType>5</nodeType>
+        <showChildrenCount>true</showChildrenCount>
+        <childList>
+          <child name="listaPOsInstance" type="tnDs">
+            <detailForm>dstruct_OrderManager.dsOrderProvisionInput/tree_UserInterface/tnDs_listaPOs/tnDs_listaPOsInstance/frmui_Forms/vform_ItemPOForm</detailForm>
+            <dsItemPathList>
+              <dsItemPath>dstruct_OrderManager.dsOrderProvisionInput/dstruct_listaPOs</dsItemPath>
+            </dsItemPathList>
+            <element>dstruct_OrderManager.dsOrderProvisionInput/dstruct_listaPOs</element>
+            <extends>tn_com.conceptwave.system.TreeNode</extends>
+            <instance>true</instance>
+            <label>Lista POs</label>
+            <nodeType>5</nodeType>
+            <variableList>
+              <variable name="model" type="uivar">
+                <valueType>dstruct_OrderManager.dsOrderProvisionInput/dstruct_listaPOs</valueType>
+              </variable>
+            </variableList>
+            <vformList>
+              <vform name="Forms" type="frmui">
+                <extends>tn_com.conceptwave.system.TreeNode/frmui_Forms</extends>
+                <overlayList>
+                  <overlay name="ItemPOForm" type="vform">
+                    <label>ItemPOForm</label>
+                    <root name="ItemPOFormGrid_vCentering" type="elvltstck">
+                      <height>100%</height>
+                      <membersMargin>5</membersMargin>
+                      <width>100%</width>
+                      <elementList>
+                        <element name="listaPOsGrid" type="elgrd">
+                          <useDefaultHeight>true</useDefaultHeight>
+                          <elementList>
+                            <element name="listaPOsHeader" type="elhdr">
+                              <label>Lista POs</label>
+                            </element>
+                            <element name="POId" type="elfld">
+                              <variable type="varPath">
+                                <variablePathList>
+                                  <variablePath>dstruct_OrderManager.dsOrderProvisionInput/tree_UserInterface/tnDs_listaPOs/tnDs_listaPOsInstance/uivar_model</variablePath>
+                                  <variablePath>dstruct_OrderManager.dsOrderProvisionInput/dstruct_listaPOs/dstruct_POId</variablePath>
+                                </variablePathList>
+                              </variable>
+                            </element>
+                          </elementList>
+                        </element>
+                      </elementList>
+                    </root>
+                  </overlay>
+                </overlayList>
+              </vform>
+            </vformList>
+          </child>
+        </childList>
+        <variableList>
+          <variable name="model" type="uivar">
+            <valueType>dstruct_OrderManager.dsOrderProvisionInput/dstruct_listaPOs</valueType>
+          </variable>
+        </variableList>
+        <vformList>
+          <vform name="Forms" type="frmui">
+            <extends>tn_com.conceptwave.system.TreeNode/frmui_Forms</extends>
+            <overlayList>
+              <overlay name="listaPOsForm" type="vform">
+                <label>listaPOsForm</label>
+                <root name="listaPOsFormGrid_vCentering" type="elvltstck">
+                  <height>100%</height>
+                  <membersMargin>5</membersMargin>
+                  <width>100%</width>
+                  <elementList>
+                    <element name="listaPOsGrid" type="elgrd">
+                      <numOfCols>2</numOfCols>
+                      <useDefaultHeight>true</useDefaultHeight>
+                      <elementList>
+                        <element name="listaPOsHeader" type="elhdr">
+                          <label>Lista POs</label>
+                        </element>
+                        <element name="POId" type="elfld">
+                          <variable type="varPath">
+                            <variablePathList>
+                              <variablePath>dstruct_OrderManager.dsOrderProvisionInput/tree_UserInterface/tnDs_listaPOs/uivar_model</variablePath>
+                              <variablePath>dstruct_OrderManager.dsOrderProvisionInput/dstruct_listaPOs/dstruct_POId</variablePath>
+                            </variablePathList>
+                          </variable>
+                        </element>
+                      </elementList>
+                    </element>
+                  </elementList>
+                </root>
+              </overlay>
+            </overlayList>
+          </vform>
+        </vformList>
+      </child>
+    </childList>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>dstruct_OrderManager.dsOrderProvisionInput</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>tree_com.conceptwave.system.DataStructureUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="dsOrderProvisionInputGrid" type="elgrd">
+                  <numOfCols>5</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="dsOrderProvisionInputHeader" type="elhdr">
+                      <label>dsOrderProvisionInput</label>
+                    </element>
+                    <element name="orderId" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInput/tree_UserInterface/uivar_model</variablePath>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInput/dstruct_orderId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="rut" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInput/tree_UserInterface/uivar_model</variablePath>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInput/dstruct_rut</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="invocarOM" type="elbtn">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInput/tree_UserInterface/uimthd_btnClick</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Invocar OM</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="Default" type="exov">
+            <base>tree_com.conceptwave.system.NavigationTreeWithTabs/frmui_Forms/exov_Default</base>
+            <extends>tree_com.conceptwave.system.NavigationTreeWithTabs/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+          </overlay>
+          <overlay name="IngresoOrderTab" type="vform">
+            <label>IngresoOrderTab</label>
+            <root name="Tabset" type="eltset">
+              <elementList>
+                <element name="raiz" type="eltab">
+                  <formReference type="varPath">
+                    <variablePathList>
+                      <variablePath>dstruct_OrderManager.dsOrderProvisionInput/tree_UserInterface/frmui_Forms/vform_generatedForm</variablePath>
+                    </variablePathList>
+                  </formReference>
+                  <label>raiz</label>
+                </element>
+                <element name="pos" type="eltab">
+                  <formReference type="varPath">
+                    <variablePathList>
+                      <variablePath>dstruct_OrderManager.dsOrderProvisionInput/tree_UserInterface/frmui_Forms/vform_ingresoPOs</variablePath>
+                    </variablePathList>
+                  </formReference>
+                  <label>pos</label>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="ingresoPOs" type="vform">
+            <label>ingresoPOs</label>
+            <root name="VerticalLayout" type="elvlt">
+              <height>500px</height>
+              <width>500px</width>
+              <elementList>
+                <element name="arbolPOs" type="eltre">
+                  <height>500px</height>
+                  <label>POs</label>
+                  <variable type="varPath">
+                    <variablePathList>
+                      <variablePath>dstruct_OrderManager.dsOrderProvisionInput/tree_UserInterface/uivar_model</variablePath>
+                      <variablePath>dstruct_OrderManager.dsOrderProvisionInput/dstruct_listaPOs</variablePath>
+                    </variablePathList>
+                  </variable>
+                  <width>500px</width>
+                  <elementList>
+                    <element name="POId" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInput/dstruct_listaPOs</variablePath>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInput/dstruct_listaPOs/dstruct_POId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+                <element name="agregar" type="elbtn">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>dstruct_OrderManager.dsOrderProvisionInput/tree_UserInterface/uimthd_agregar</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Agregar</label>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+    <methodList>
+      <method name="btnClick" type="uimthd">
+        <script>userInterface.scriptInvocaOM(this.model);</script>
+      </method>
+      <method name="agregar" type="uimthd">
+        <script>var a = this.tablaPOs;</script>
+      </method>
+    </methodList>
+  </UserInterface>
+</dataStructure>

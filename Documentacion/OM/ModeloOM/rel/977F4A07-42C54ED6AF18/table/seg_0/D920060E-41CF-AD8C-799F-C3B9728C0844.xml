@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D920060E-41CF-AD8C-799F-C3B9728C0844" name="OM_PARAM_CS">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:57:37 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<ordsAlias>table_15</ordsAlias>
+<abbreviation>OM_PARAM_CS</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ORDER_ID" id="8F439EC7-7C26-D401-FA2D-9E221D5BE195">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:58:42 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A9AEF74B-2BB3-8CD3-250C-57992A12C698" referredColumn="8A52C49A-AA37-440A-D6D2-A6AB1A4E9802"/>
+</associations>
+</Column>
+<Column name="PO_ID" id="492F19E9-94E9-7EA5-3DF6-DDF293E8A68C">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:58:42 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A9AEF74B-2BB3-8CD3-250C-57992A12C698" referredColumn="51F58C8B-8CA9-FB1D-45A9-406CE4F2FBF6"/>
+</associations>
+</Column>
+<Column name="NUMERO_INTENTO" id="2C634EE9-B081-EE14-E8A1-9B37CEF2BE0F">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:58:42 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A9AEF74B-2BB3-8CD3-250C-57992A12C698" referredColumn="AC4EF348-B77C-56BF-0502-D0EDC2EEB54A"/>
+</associations>
+</Column>
+<Column name="PARAM_ID" id="8E1199A4-088F-92C2-9D47-465A06D1B018">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:59:33 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VALOR" id="C430EF31-EBF1-0A84-E41B-1982A9BF46B7">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:59:33 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="499F3598-EE85-CBF1-A57E-7BB7F0A1E0BE" name="OM_PARAM_CS_PK">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 19:58:42 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F439EC7-7C26-D401-FA2D-9E221D5BE195"/>
+<colUsage columnID="492F19E9-94E9-7EA5-3DF6-DDF293E8A68C"/>
+<colUsage columnID="2C634EE9-B081-EE14-E8A1-9B37CEF2BE0F"/>
+<colUsage columnID="8E1199A4-088F-92C2-9D47-465A06D1B018"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E93B73C0-AD41-2669-367A-4C5A13CF7E72" name="OM_PARAM_CS_OM_PROV_CS_FK">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-02-27 20:00:31 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="492F19E9-94E9-7EA5-3DF6-DDF293E8A68C"/>
+<colUsage columnID="8F439EC7-7C26-D401-FA2D-9E221D5BE195"/>
+<colUsage columnID="2C634EE9-B081-EE14-E8A1-9B37CEF2BE0F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

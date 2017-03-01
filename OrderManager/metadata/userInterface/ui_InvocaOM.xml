@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="userInterface.InvocaOM">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>Invoca OM</label>
+  <metaVersion>25</metaVersion>
+  <url>/InvocaOM</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="InvocaOM" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_userInterface.InvocaOM/usrActionMethod_invocarOM</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Invocar OM</label>
+                </element>
+                <element name="InvocaOMSimple" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_userInterface.InvocaOM/usrActionMethod_InvocaOMSimpleUA</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Invoca OM Simple</label>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="invocarOM" type="usrActionMethod">
+      <form>dstruct_OrderManager.dsOrderProvisionInput/tree_UserInterface/frmui_Forms/vform_IngresoOrderTab</form>
+      <userInterface>dstruct_OrderManager.dsOrderProvisionInput</userInterface>
+      <valueType>dstruct_OrderManager.dsOrderProvisionInput</valueType>
+    </method>
+    <method name="InvocaOMSimpleUA" type="usrActionMethod">
+      <form>dstruct_OrderManager.dsOrderProvisionInputSimple/tree_UserInterface/frmui_Forms/vform_ingresoDatosOrden</form>
+      <userInterface>dstruct_OrderManager.dsOrderProvisionInputSimple</userInterface>
+      <valueType>dstruct_OrderManager.dsOrderProvisionInputSimple</valueType>
+    </method>
+  </methodList>
+</userInterface>

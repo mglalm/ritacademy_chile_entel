@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="OrderManager.OMServices">
+  <label>OMServices</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="OMServicio_JS_Port" type="port">
+      <binding>bind_OrderManager.OMProvisionOrderJSBinding</binding>
+      <label>OMServicio_JS_Port</label>
+      <recover>5</recover>
+    </port>
+    <port name="OMServicio_SOAP_Port" type="port">
+      <binding>bind_OrderManager.OMProvisionOrderSOAPBinding</binding>
+      <exportReferencedOnly>true</exportReferencedOnly>
+      <exportSchemaInsideWsdl>true</exportSchemaInsideWsdl>
+      <label>OMServicio_SOAP_Port</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

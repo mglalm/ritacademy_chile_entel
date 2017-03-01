@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="OrderManager.bindingScript">
+  <label>bindingScript</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>dstruct_OrderManager.dsOrderProvisionInputSimple</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var output = new DataStructure("OrderManager.ack");
+    output.estado = "OK";
+    output.descripcion = "Provision de la Orden en Proceso";
+    var doc = new Document("OrderManager.docProcesoProvision");
+    doc.IN_orderId = input.orderId;
+    doc.IN_rut = input.rut;
+    doc.IN_POIdBasico = input.POIdBasico;
+    doc.IN_POIdAdicional = input.POIdAdicional;
+    //Process.sendMessageToQueue("OrderManager.OMProvisionGlobalProcess","userProcessProvisionarOrdenRequest",input,null,null,null,null,null,false,false);
+    Process.startProcess("OrderManager.OMProvisionProcess",doc,null,null);
+    return output;
+  ]]></script>
+</script>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="OrderManager.dsOrderProvisionInputSimple">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>dsOrderProvisionInputSimple</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="orderId" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtOrderId</element>
+      <label>orderId</label>
+    </child>
+    <child name="rut" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtRut</element>
+      <label>rut</label>
+    </child>
+    <child name="POIdBasico" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtPOId</element>
+      <label>PO Id Basico</label>
+    </child>
+    <child name="POIdAdicional" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtPOId</element>
+      <label>PO Id Adicional</label>
+    </child>
+  </childList>
+  <UserInterface name="UserInterface" type="tree">
+    <defaultFolderImage>undefined</defaultFolderImage>
+    <defaultLeafImage>undefined</defaultLeafImage>
+    <element>dstruct_OrderManager.dsOrderProvisionInputSimple</element>
+    <extends>tree_com.conceptwave.system.DataStructureUserInterface</extends>
+    <tableDoc>doc_com.conceptwave.system.TreeDocument</tableDoc>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>dstruct_OrderManager.dsOrderProvisionInputSimple</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>tree_com.conceptwave.system.DataStructureUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="ingresoDatosOrden" type="vform">
+            <label>ingresoDatosOrden</label>
+            <root name="ingresoDatosOrdenGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="dsOrderProvisionInputSimpleGrid" type="elgrd">
+                  <numOfCols>5</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="dsOrderProvisionInputSimpleHeader" type="elhdr">
+                      <label>dsOrderProvisionInputSimple</label>
+                    </element>
+                    <element name="orderId" type="elfld">
+                      <label>Order Id</label>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInputSimple/tree_UserInterface/uivar_model</variablePath>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInputSimple/dstruct_orderId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="rut" type="elfld">
+                      <label>Rut</label>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInputSimple/tree_UserInterface/uivar_model</variablePath>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInputSimple/dstruct_rut</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="POIdBasico" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInputSimple/tree_UserInterface/uivar_model</variablePath>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInputSimple/dstruct_POIdBasico</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="POIdAdicional" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInputSimple/tree_UserInterface/uivar_model</variablePath>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInputSimple/dstruct_POIdAdicional</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="InvocarOM" type="elbtn">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>dstruct_OrderManager.dsOrderProvisionInputSimple/tree_UserInterface/uimthd_btnClick</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Invocar OM</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+    <methodList>
+      <method name="btnClick" type="uimthd">
+        <script>userInterface.scriptInvocaOM(this.model);</script>
+      </method>
+      <method name="onInit" type="action">
+        <system>true</system>
+        <script><![CDATA[
+          this.cw$super_onInit();
+          this.model.orderId = "1234567890";
+          this.model.rut = "13668652-6";
+          this.model.POIdAdicional = "PO_BOLSA_ADICIONAL";
+          this.model.POIdBasico = "PO_BASICA_PREPAGO";
+        ]]></script>
+      </method>
+    </methodList>
+  </UserInterface>
+</dataStructure>
