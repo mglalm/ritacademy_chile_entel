@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<externalService name="BSCS_CONSUMER.ExternalService">
-  <label>ExternalService</label>
+<externalService name="BSCS_CONSUMER.ExternalService_BSCS_Consumer">
+  <label>ExternalService_BSCS_Consumer</label>
   <metaVersion>25</metaVersion>
   <portList>
     <port name="portSOAP" type="port">
