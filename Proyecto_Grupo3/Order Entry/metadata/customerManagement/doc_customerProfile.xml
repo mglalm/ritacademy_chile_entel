@@ -54,6 +54,13 @@
       <valueType>dtype_cwf.cwOrderCreationDate</valueType>
     </variable>
   </variableList>
+  <methodList>
+    <method name="cwOnDocVisualKey" type="action">
+      <system>true</system>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <script>return this.customerName;</script>
+    </method>
+  </methodList>
   <UserInterface name="UserInterface" type="ui">
     <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
     <variableList>

@@ -8,6 +8,9 @@
     <variable name="customerName" type="leaf">
       <valueType>dtype_customerManagement.customerName</valueType>
     </variable>
+    <variable name="customerReference" type="leaf">
+      <valueType>dtype_orderManagement.customerReference</valueType>
+    </variable>
     <variable name="customerMsisdn" type="leaf">
       <valueType>dtype_customerManagement.customerMsisdn</valueType>
     </variable>
@@ -76,6 +79,18 @@
                           <variablePath>doc_customerManagement.customerSearch/leaf_customerMsisdn</variablePath>
                         </variablePathList>
                       </variable>
+                    </element>
+                    <element name="customerReference" type="elslct">
+                      <multiselect>false</multiselect>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagement.customerSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagement.customerSearch/leaf_customerReference</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="offerReference" type="elslct">
+                      <multiselect>false</multiselect>
                     </element>
                   </elementList>
                 </element>

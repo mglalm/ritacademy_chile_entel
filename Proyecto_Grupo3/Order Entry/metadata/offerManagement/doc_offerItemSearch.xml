@@ -11,6 +11,9 @@
       <table>CWPC_ITEM</table>
       <valueType>dtype_offerManagement.offerItemType</valueType>
     </variable>
+    <variable name="offerItemReference" type="leaf">
+      <valueType>dtype_orderManagement.offerItemReference</valueType>
+    </variable>
     <variable name="offerItemName" type="leaf">
       <column>NAME</column>
       <table>CWPC_ITEM</table>
@@ -75,6 +78,15 @@
                         <variablePathList>
                           <variablePath>doc_offerManagement.offerItemSearch/ui_UserInterface/uivar_model</variablePath>
                           <variablePath>doc_offerManagement.offerItemSearch/leaf_offerItemCode</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="offerItemReference" type="elslct">
+                      <multiselect>false</multiselect>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_offerManagement.offerItemSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_offerManagement.offerItemSearch/leaf_offerItemReference</variablePath>
                         </variablePathList>
                       </variable>
                     </element>
