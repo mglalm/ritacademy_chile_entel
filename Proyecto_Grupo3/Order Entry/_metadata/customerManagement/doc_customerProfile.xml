@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="customerManagement.customerProfile">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{1e486a10-b709-4355-b81f-b72046e9f8d0}</guid>
+  <label>Customer Profile</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>customerProfile</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+    <variable name="customerName" type="leaf">
+      <column>CUSTOMERNAME</column>
+      <table>customerProfile</table>
+      <valueType>dtype_customerManagement.customerName</valueType>
+    </variable>
+    <variable name="customerType" type="leaf">
+      <column>CUSTOMERTYPE</column>
+      <table>customerProfile</table>
+      <valueType>dtype_customerManagement.customerType</valueType>
+    </variable>
+    <variable name="isPrefered" type="leaf">
+      <column>ISPREFERED</column>
+      <table>customerProfile</table>
+      <valueType>dtype_com.conceptwave.system.Boolean</valueType>
+    </variable>
+    <variable name="cwCreated" type="leaf">
+      <column>CWCREATED</column>
+      <table>customerProfile</table>
+      <valueType>dtype_cwf.cwCreated</valueType>
+    </variable>
+    <variable name="cwCreatedBy" type="leaf">
+      <column>CWCREATEDBY</column>
+      <table>customerProfile</table>
+      <valueType>dtype_cwf.cwCreatedBy</valueType>
+    </variable>
+    <variable name="cwDocStamp" type="leaf">
+      <column>CWDOCSTAMP</column>
+      <table>customerProfile</table>
+      <valueType>dtype_cwf.cwDocStamp</valueType>
+    </variable>
+    <variable name="cwOrderCreationDate" type="leaf">
+      <column>CWORDERCREATIONDATE</column>
+      <table>customerProfile</table>
+      <valueType>dtype_cwf.cwOrderCreationDate</valueType>
+    </variable>
+    <variable name="customerRut" type="leaf">
+      <column>CUSTOMERRUT</column>
+      <table>customerProfile</table>
+      <valueType>dtype_customerManagement.customerRut</valueType>
+    </variable>
+    <variable name="customerMsisdn" type="leaf">
+      <column>CUSTOMERMSISDN</column>
+      <table>customerProfile</table>
+      <valueType>dtype_customerManagement.customerMsisdn</valueType>
+    </variable>
+    <variable name="customerAddress" type="leaf">
+      <column>CUSTOMERADDRESS</column>
+      <table>customerProfile</table>
+      <valueType>dtype_customerManagement.customerAddress</valueType>
+    </variable>
+    <variable name="customerEmail" type="leaf">
+      <column>CUSTOMEREMAIL</column>
+      <table>customerProfile</table>
+      <valueType>dtype_customerManagement.customerEmail</valueType>
+    </variable>
+    <variable name="cwOrderId" type="leaf">
+      <column>CWORDERID</column>
+      <table>customerProfile</table>
+      <valueType>dtype_cwf.cwOrderId</valueType>
+    </variable>
+    <variable name="cwParentId" type="leaf">
+      <column>CWPARENTID</column>
+      <table>customerProfile</table>
+      <valueType>dtype_cwf.cwParentId</valueType>
+    </variable>
+    <variable name="lastUpdatedDate" type="leaf">
+      <column>LASTUPDATEDDATE</column>
+      <table>customerProfile</table>
+      <valueType>dtype_cwf.lastUpdatedDate</valueType>
+    </variable>
+    <variable name="updatedBy" type="leaf">
+      <column>UPDATEDBY</column>
+      <table>customerProfile</table>
+      <valueType>dtype_cwf.updatedBy</valueType>
+    </variable>
+    <variable name="cwDocType" type="leaf">
+      <column>CWDOCTYPE</column>
+      <table>customerProfile</table>
+      <valueType>dtype_cwf.cwDocType</valueType>
+    </variable>
+  </variableList>
+  <methodList>
+    <method name="cwOnDocVisualKey" type="action">
+      <system>true</system>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <script>return this.customerName;</script>
+    </method>
+  </methodList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_customerManagement.customerProfile</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="GridLayout" type="elgrd">
+                <numOfCols>2</numOfCols>
+                <elementList>
+                  <element name="customerName" type="elfld">
+                    <label>Nombre del Cliente</label>
+                    <labelOrientation>top</labelOrientation>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_customerManagement.customerProfile/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_customerManagement.customerProfile/leaf_customerName</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="customerType" type="elslct">
+                    <label>Segmento de Mercado</label>
+                    <labelOrientation>top</labelOrientation>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_customerManagement.customerProfile/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_customerManagement.customerProfile/leaf_customerType</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="customerRut" type="elfld">
+                    <label>RUT</label>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_customerManagement.customerProfile/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_customerManagement.customerProfile/leaf_customerRut</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="customerMsisdn" type="elfld">
+                    <label>MSISDN</label>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_customerManagement.customerProfile/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_customerManagement.customerProfile/leaf_customerMsisdn</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="customerAddress" type="elfld">
+                    <label>Address</label>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_customerManagement.customerProfile/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_customerManagement.customerProfile/leaf_customerAddress</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="customerEmail" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_customerManagement.customerProfile/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_customerManagement.customerProfile/leaf_customerEmail</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

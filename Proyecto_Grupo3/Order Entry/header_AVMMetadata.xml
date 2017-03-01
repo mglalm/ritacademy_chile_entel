@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <header name="AVMMetadata">
   <APIVersion>2</APIVersion>
-  <author>Loyarzunsilva</author>
+  <author>LOS</author>
   <availableList>
     <available type="loc">
       <locale>en</locale>
       <rightToLeft>false</rightToLeft>
     </available>
   </availableList>
-  <created>Thu Feb 23 09:27:02 CLT 2017</created>
-  <internalName>TRAINING METADATA IWS</internalName>
+  <created>Tue Feb 28 17:26:00 CLT 2017</created>
+  <internalName>TRAINING METADATA</internalName>
   <internalSysVersion>16.0 ICP16-01EP01</internalSysVersion>
   <label>TRAINING METADATA</label>
   <locale type="loc">

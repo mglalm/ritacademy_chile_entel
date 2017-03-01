@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="customerManagement.customerSearch">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{1d8b8d7b-ad57-4fda-9714-30486f27e62d}</guid>
+  <label>Customer Search</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="customerName" type="leaf">
+      <valueType>dtype_customerManagement.customerName</valueType>
+    </variable>
+    <variable name="customerMsisdn" type="leaf">
+      <valueType>dtype_customerManagement.customerMsisdn</valueType>
+    </variable>
+    <variable name="customerRut" type="leaf">
+      <valueType>dtype_customerManagement.customerRut</valueType>
+    </variable>
+    <variable name="customerType" type="leaf">
+      <valueType>dtype_customerManagement.customerType</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_customerManagement.customerSearch</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="customerSearchGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="customerSearchHeader" type="elhdr">
+                      <label>Customer Search</label>
+                    </element>
+                    <element name="customerType" type="elslct">
+                      <sorted>false</sorted>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagement.customerSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagement.customerSearch/leaf_customerType</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="customerName" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagement.customerSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagement.customerSearch/leaf_customerName</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="customerRut" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagement.customerSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagement.customerSearch/leaf_customerRut</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="customerMsisdn" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagement.customerSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagement.customerSearch/leaf_customerMsisdn</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

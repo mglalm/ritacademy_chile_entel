@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project>
-  <DefaultDB>2_TRAIN</DefaultDB>
-  <applicationString>TRAINING METADATA IWS</applicationString>
+  <DefaultDB>TRAIN_2</DefaultDB>
+  <applicationString>TRAINING METADATA</applicationString>
   <applicationVersionString>1</applicationVersionString>
   <databasesMap>
-    <databases key="2_TRAIN" type=".configdb">
-      <dbname>2_TRAIN</dbname>
+    <databases key="TRAIN_2" type=".configdb">
+      <dbname>TRAIN_2</dbname>
       <driver type=".dbdriver">
         <attributes>localhost;1521;orcl;false</attributes>
         <driverType>Oracle thin</driverType>
@@ -16,7 +16,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <joinCluster>true</joinCluster>
+  <joinClusterPeUi>false</joinClusterPeUi>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
 </project>

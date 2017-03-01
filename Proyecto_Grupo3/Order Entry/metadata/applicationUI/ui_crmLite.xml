@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="applicationUI.crmLite">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>CRM Lite</label>
+  <metaVersion>25</metaVersion>
+  <url>/crmLite</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="customers" type="elmnu">
+                  <label>Clientes</label>
+                  <elementList>
+                    <element name="addCustomer" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.crmLite/usrActionMethod_addCustomer</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Agregar Ususario</label>
+                    </element>
+                    <element name="findCustomer" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.crmLite/usrActionMethod_findCustomer</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Búsqueda de Cliente</label>
+                    </element>
+                  </elementList>
+                </element>
+                <element name="offers" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_applicationUI.crmLite/usrActionMethod_findOffer</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Productos Disponibles</label>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>CRM Lite</title>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="addCustomer" type="usrActionMethod">
+      <form>doc_customerManagement.customerProfile/ui_UserInterface/frmui_Forms/vform_generatedForm</form>
+      <userInterface>doc_customerManagement.customerProfile</userInterface>
+      <valueType>doc_customerManagement.customerProfile</valueType>
+    </method>
+    <method name="findCustomer" type="usrActionMethod">
+      <form>findDoc_customerManagement.customerFinder/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>findDoc_customerManagement.customerFinder</userInterface>
+      <valueType>findDoc_customerManagement.customerFinder</valueType>
+    </method>
+    <method name="findOffer" type="usrActionMethod">
+      <form>findDoc_offerManagement.offerFinder/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>findDoc_offerManagement.offerFinder</userInterface>
+      <valueType>findDoc_offerManagement.offerFinder</valueType>
+    </method>
+  </methodList>
+</userInterface>
