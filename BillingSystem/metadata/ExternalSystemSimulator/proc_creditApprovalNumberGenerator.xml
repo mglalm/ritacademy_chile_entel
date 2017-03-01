@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="ExternalSystemSimulator.creditApprovalNumberGenerator">
+  <activity name="Start" type="seqActivity">
+    <label>Start</label>
+    <x>10.0</x>
+    <y>8.0</y>
+    <childList>
+      <child name="receive" type="opActivity">
+        <element>iface_ExternalSystemSimulator.COBRAS_externalSystemInboundInterface/oper_COBRAS_GPgetCreditApprovalNumberRequest</element>
+        <label>receive</label>
+        <x>112.0</x>
+        <y>6.0</y>
+        <childList>
+          <child name="creditApprovalNumberFailed" type="switchActivity">
+            <label>credit Approval Number Failed</label>
+            <x>334.0</x>
+            <y>12.0</y>
+            <childList>
+              <child name="yes" type="caseActivity">
+                <label>yes</label>
+                <x>0.0</x>
+                <y>300.0</y>
+                <childList>
+                  <child name="sendmessagetodestinity" type="scriptActivity">
+                    <label>Send Message To Destinity</label>
+                    <x>492.0</x>
+                    <y>102.0</y>
+                    <methodList>
+                      <method name="cwOnProcActBefore" type="action">
+                        <category>before</category>
+                        <system>true</system>
+                        <script><![CDATA[
+                          ExternalSystemSimulator.test();
+                          var processId = this.process.processDocument.originProcess;
+                          //Process.sendMessageToProcess(processId,null,"ExternalSystemCommunication:processInterface/GetCreditApprovalNumberResponse",null,null,null,null);
+                        ]]></script>
+                      </method>
+                    </methodList>
+                  </child>
+                </childList>
+                <methodList>
+                  <method name="cwOnProcActCond" type="action">
+                    <category>cond</category>
+                    <system>true</system>
+                    <script>return this.process.processDocument.creditApprovalNumber != null;</script>
+                  </method>
+                </methodList>
+              </child>
+              <child name="no" type="caseActivity">
+                <label>No</label>
+                <x>213.0</x>
+                <y>125.0</y>
+              </child>
+            </childList>
+          </child>
+        </childList>
+        <methodList>
+          <method name="cwOnProcActAfter" type="action">
+            <category>script</category>
+            <system>true</system>
+            <script><![CDATA[
+              var input = this.activityData;
+              var oldNumber = input.creditApprovalNumberOld;
+              var originProcess = input.origin.originProcess;
+              var originOrder = input.origin.originOrder;
+              this.process.processDocument.creditApprovalNumber = oldNumber;
+              this.process.processDocument.originOrder = originOrder;
+              this.process.processDocument.originProcess = originProcess;
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="back" type="repeatActivity">
+        <element>proc_ExternalSystemSimulator.creditApprovalNumberGenerator/seqActivity_Start</element>
+        <label>back</label>
+        <x>19.0</x>
+        <y>126.0</y>
+      </child>
+    </childList>
+    <methodList>
+      <method name="cwOnProcActBefore" type="action">
+        <category>before</category>
+        <system>true</system>
+        <script><![CDATA[
+          ExternalSystemSimulator.test();
+          this.process.processDocument.creditApprovalNumber = null;
+          this.process.processDocument.originOrder = null;
+          this.process.processDocument.originProcess = null;
+        ]]></script>
+      </method>
+    </methodList>
+  </activity>
+  <curRevision>true</curRevision>
+  <document>doc_ExternalSystemSimulator.procDoc</document>
+  <interface>iface_ExternalSystemSimulator.COBRAS_externalSystemInboundInterface</interface>
+  <label>creditApprovalNumberGenerator</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>Global</type>
+</process>

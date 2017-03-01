@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="ExternalSystemSimulator.procDoc">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{b96f349b-5bfb-4998-a811-9b870d99ad80}</guid>
+  <label>Proc Doc</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="originProcess" type="leaf">
+      <label>originProcess</label>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="originOrder" type="leaf">
+      <label>originOrder</label>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="creditApprovalNumber" type="leaf">
+      <label>creditApprovalNumber</label>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+  </variableList>
+</document>

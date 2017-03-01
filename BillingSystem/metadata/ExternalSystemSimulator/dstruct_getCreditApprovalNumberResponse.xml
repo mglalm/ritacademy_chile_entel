@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="ExternalSystemSimulator.getCreditApprovalNumberResponse">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>getCreditApprovalNumberResponse</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="destiny" type="dstruct">
+      <container>true</container>
+      <label>destiny</label>
+      <childList>
+        <child name="destinyProcess" type="dstruct">
+          <datatype>true</datatype>
+          <element>dtype_com.conceptwave.system.String</element>
+          <label>destinyProcess</label>
+        </child>
+        <child name="destinyOrder" type="dstruct">
+          <datatype>true</datatype>
+          <element>dtype_com.conceptwave.system.String</element>
+          <label>destinyOrder</label>
+        </child>
+      </childList>
+    </child>
+    <child name="creditApprovalNumber" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>creditApprovalNumber</label>
+    </child>
+  </childList>
+</dataStructure>

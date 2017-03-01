@@ -3,6 +3,10 @@
   <DefaultDB>TRAIN3</DefaultDB>
   <applicationString>bscs</applicationString>
   <applicationVersionString>1</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="ExternalSystemSimulator.test">0</breakpoint>
+    <breakpoint key="customerManagerBSCS.DOC_CLIENTE_BSCS_FIND.cwOnDocVisualKey">0</breakpoint>
+  </breakpointMap>
   <databasesMap>
     <databases key="TRAIN3" type=".configdb">
       <dbname>TRAIN3</dbname>
@@ -16,6 +20,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
+  <joinCluster>true</joinCluster>
   <nodeString>bscs</nodeString>
   <skin>Enterprise</skin>
 </project>

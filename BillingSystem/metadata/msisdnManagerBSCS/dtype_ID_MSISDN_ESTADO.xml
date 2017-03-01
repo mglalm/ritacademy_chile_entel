@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="customerManagement.DESC_MSISDN_ESTADO">
+<dataType name="msisdnManagerBSCS.ID_MSISDN_ESTADO">
   <extends>dtype_com.conceptwave.system.String</extends>
-  <label>DESC_MSISDN_ESTADO</label>
-  <length>30</length>
+  <label>ID_MSISDN_ESTADO</label>
+  <length>1</length>
   <metaVersion>25</metaVersion>
 </dataType>

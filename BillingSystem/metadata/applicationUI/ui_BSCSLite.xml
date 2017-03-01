@@ -53,6 +53,14 @@
                     </element>
                   </elementList>
                 </element>
+                <element name="EjecutarWorkflow" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_ejecWorkflow</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Ejecutar WorkFlow</label>
+                </element>
               </elementList>
             </override>
           </overrideList>
@@ -62,23 +70,32 @@
           <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
           <label>Page</label>
           <stylesheet>/cwf/css/cwf.css</stylesheet>
-          <title>CRM Lite</title>
+          <title>BSCS</title>
         </overlay>
       </overlayList>
     </vform>
   </vformList>
   <methodList>
     <method name="addCustomer" type="usrActionMethod">
-      <form>doc_customerManagement.DOC_CLIENTE_BSCS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
-      <userInterface>doc_customerManagement.DOC_CLIENTE_BSCS</userInterface>
-      <valueType>doc_customerManagement.DOC_CLIENTE_BSCS</valueType>
+      <form>doc_customerManagerBSCS.DOC_CLIENTE_BSCS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+      <userInterface>doc_customerManagerBSCS.DOC_CLIENTE_BSCS</userInterface>
+      <valueType>doc_customerManagerBSCS.DOC_CLIENTE_BSCS</valueType>
     </method>
     <method name="findCustomer" type="usrActionMethod">
-      <userInterface>findDoc_customerManagement.customerFinder</userInterface>
-      <valueType>findDoc_customerManagement.customerFinder</valueType>
+      <userInterface>findDoc_customerManagerBSCS.busquedaCliente</userInterface>
+      <valueType>findDoc_customerManagerBSCS.busquedaCliente</valueType>
     </method>
     <method name="selectApp" type="usrActionMethod">
       <script>UserProfile.selectApp();</script>
+    </method>
+    <method name="ejecWorkflow" type="usrActionMethod">
+      <script><![CDATA[
+        //this.saveAllAction();
+        //Process.startProcess("msisdnManagerBSCS.creditApprobalmsisdn",this.model.id,null,null);
+        //Process.startProcess("msisdnManagerBSCS.creditApprobalmsisdn",null,null,null);
+        ExternalSystemSimulator.bindingScript();
+        //this.saveAllAction();
+      ]]></script>
     </method>
   </methodList>
 </userInterface>

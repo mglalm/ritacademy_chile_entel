@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="ExternalSystemSimulator.COBRAS_ExtSysInboundJSBinding">
+  <extensionList>
+    <extension name="COBRAS_extSysInboundGetCreditApprovalNumber" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="metadataScript">ExternalSystemSimulator.bindingScript</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_ExternalSystemSimulator.COBRAS_externalSystemInboundInterface</interface>
+  <label>COBRAS_Ext Sys Inbound JS Binding</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

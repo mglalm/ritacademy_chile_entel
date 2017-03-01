@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<document name="customerManagement.DOC_MSISDN_ESTADO">
+<document name="msisdnManagerBSCS.DOC_MSISDN_ESTADO">
   <dbSchema>PE_ORDER</dbSchema>
   <extends>doc_com.conceptwave.system.Document</extends>
   <guid>{5d417de4-b37d-41c4-abce-3a05865e5503}</guid>
@@ -10,12 +10,12 @@
       <column>ID_MSISDN_ESTADO</column>
       <key>1</key>
       <table>BSCS_MSISDN_ESTADO</table>
-      <valueType>dtype_customerManagement.ID_MSISDN_ESTADO</valueType>
+      <valueType>dtype_msisdnManagerBSCS.ID_MSISDN_ESTADO</valueType>
     </variable>
     <variable name="DESC_MSISDN_ESTADO" type="leaf">
       <column>DESC_MSISDN_ESTADO</column>
       <table>BSCS_MSISDN_ESTADO</table>
-      <valueType>dtype_customerManagement.DESC_MSISDN_ESTADO</valueType>
+      <valueType>dtype_msisdnManagerBSCS.DESC_MSISDN_ESTADO</valueType>
     </variable>
   </variableList>
 </document>

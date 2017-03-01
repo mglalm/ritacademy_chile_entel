@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="ExternalSystemSimulator.ack">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>ack</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="code" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>code</label>
+    </child>
+    <child name="description" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>description</label>
+    </child>
+  </childList>
+</dataStructure>
