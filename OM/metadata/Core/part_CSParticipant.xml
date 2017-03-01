@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<participant name="Core.CSParticipant">
+  <label>CSParticipant</label>
+  <metaVersion>25</metaVersion>
+  <participant>iface_CS.CSInterfaz</participant>
+</participant>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="CS.bindingSOAP">
+  <interface>iface_CS.CSInterfaz</interface>
+  <label>bindingSOAP</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

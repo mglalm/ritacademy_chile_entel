@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<participant name="Core.BSCSParticipant">
+  <label>BSCSParticipant</label>
+  <metaVersion>25</metaVersion>
+  <participant>iface_BSCS.BSCSInterfaz</participant>
+</participant>

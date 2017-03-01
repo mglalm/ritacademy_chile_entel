@@ -29,7 +29,7 @@
     </child>
     <child name="status" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_com.conceptwave.system.String</element>
+      <element>dtype_com.conceptwave.system.Integer</element>
       <label>status</label>
     </child>
   </childList>

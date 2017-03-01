@@ -28,7 +28,7 @@
 				<element name="orderId" minOccurs="0" maxOccurs="1" type="xsd:string"/>
 				<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
 				<element name="debit" minOccurs="0" maxOccurs="1" type="xsd:string"/>
-				<element name="status" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="status" minOccurs="0" maxOccurs="1" type="xsd:integer"/>
 			</sequence>
 		</complexType>
 

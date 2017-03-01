@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="IO" targetNamespace="IO"
+	xmlns:tns="IO"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:IO="IO">
+
+	<types>
+		<schema targetNamespace="IO"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:IO="IO"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>IO</documentation>
+				<appinfo>
+					<metadata>CS</metadata>
+					<created>Wed Mar 01 10:39:26 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<!-- Structures -->
+
+			<complexType name="response">
+				<annotation>
+					<documentation>response</documentation>
+				</annotation>
+					<sequence>
+						<element name="debit" minOccurs="0" maxOccurs="1" type="xsd:integer"/>
+						<element name="status" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="request">
+				<annotation>
+					<documentation>request</documentation>
+				</annotation>
+					<sequence>
+						<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="po" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+		</schema>
+	</types>
+
+	<message name="request">
+		<part name="request" type="IO:request"/>
+	</message>
+
+	<message name="response">
+		<part name="response" type="IO:response"/>
+	</message>
+
+	<portType name="CSInterfaz">
+		<operation name="assign">
+			<input message="tns:request"/>
+			<output message="tns:response"/>
+		</operation>
+	</portType>
+
+	<binding name="bindingSOAP" type="tns:CSInterfaz">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="assign">
+			<soap:operation soapAction="assign"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="externalService">
+		<port name="portSOAP" binding="tns:bindingSOAP">
+		</port>
+	</service>
+
+</definitions>
