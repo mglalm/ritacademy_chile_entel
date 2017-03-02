@@ -15,7 +15,10 @@
           <method name="cwOnProcActAfter" type="action">
             <category>script</category>
             <system>true</system>
-            <script>this.process.processDocument.msisdn = this.activityData.respMSISDN;</script>
+            <script><![CDATA[
+              this.process.processDocument.msisdn = this.activityData.respMSISDN;
+              this.process.processDocument.statusBSCS = this.activityData.respBSCS;
+            ]]></script>
           </method>
         </methodList>
       </child>
@@ -36,7 +39,10 @@
               <method name="cwOnProcActAfter" type="action">
                 <category>script</category>
                 <system>true</system>
-                <script>OM_CORE.dummy();</script>
+                <script><![CDATA[
+                  process
+                  OM_CORE.dummy();
+                ]]></script>
               </method>
             </methodList>
           </child>
@@ -48,6 +54,14 @@
             <script><![CDATA[
               this.activityData.msisdn=process.processDocument.msisdn;
               this.activityData.po=process.processDocument.po;
+            ]]></script>
+          </method>
+          <method name="cwOnProcActAfter" type="action">
+            <category>script</category>
+            <system>true</system>
+            <script><![CDATA[
+              process.processDocument.po=document.debit;
+              process.processDocument.statusCS = document.status;
             ]]></script>
           </method>
         </methodList>

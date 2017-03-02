@@ -14,5 +14,17 @@
     <variable name="orderId" type="leaf">
       <valueType>dtype_com.conceptwave.system.String</valueType>
     </variable>
+    <variable name="debit" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="statusBSCS" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="statusCS" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="statusEMA" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
   </variableList>
 </document>
