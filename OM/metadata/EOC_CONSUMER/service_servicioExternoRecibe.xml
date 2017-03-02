@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="EOC_CONSUMER.servicioExternoRecibe">
+  <label>servicioExternoRecibe</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="portSOAP_recibe" type="port">
+      <binding>bind_EOC_CONSUMER.bindingSOAP_recibe</binding>
+      <label>portSOAP_recibe</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

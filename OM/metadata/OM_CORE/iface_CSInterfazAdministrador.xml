@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="OM_CORE.CSInterfazAdministrador">
+  <label>CSInterfazAdministrador</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="Reject" type="oper">
+      <description>Reject</description>
+      <label>Reject</label>
+      <type>Notification</type>
+    </operation>
+    <operation name="Submit" type="oper">
+      <description>Submit</description>
+      <label>Submit</label>
+      <type>Notification</type>
+    </operation>
+    <operation name="Assign" type="oper">
+      <label>Assign</label>
+      <type>One-Way</type>
+    </operation>
+  </operationList>
+  <revision>2</revision>
+</interface>

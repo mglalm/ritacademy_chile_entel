@@ -19,7 +19,8 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarExportFolder>C:\Users\grojas\Documents\ritacademy_chile_entel\OM\</jarExportFolder>
+  <jarExportFolder>C:\Users\EOC\Documents\ritacademy_chile_entel\OM\</jarExportFolder>
+  <jarFolder>C:\Users\EOC\Documents\ritacademy_chile_entel\EOC</jarFolder>
   <joinCluster>true</joinCluster>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>

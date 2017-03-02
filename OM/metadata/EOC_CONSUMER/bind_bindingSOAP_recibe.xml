@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<binding name="EOC_CONSUMER.bindingSOAP">
+<binding name="EOC_CONSUMER.bindingSOAP_recibe">
   <extensionList>
     <extension name="updateProvisioning" type="ext">
       <element>Operation</element>
@@ -13,15 +13,9 @@
         <elementItem key="use">literal</elementItem>
       </elementItemMap>
     </extension>
-    <extension name="updateProvisioning$Output" type="ext">
-      <element>Message</element>
-      <elementItemMap>
-        <elementItem key="use">literal</elementItem>
-      </elementItemMap>
-    </extension>
   </extensionList>
   <interface>iface_EOC_CONSUMER.interfazEOC</interface>
-  <label>bindingSOAP</label>
+  <label>bindingSOAP_recibe</label>
   <metaVersion>25</metaVersion>
   <provider>prov_cwf.soapprov</provider>
 </binding>

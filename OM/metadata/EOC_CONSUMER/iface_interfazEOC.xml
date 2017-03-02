@@ -4,10 +4,9 @@
   <metaVersion>25</metaVersion>
   <operationList>
     <operation name="updateProvisioning" type="oper">
-      <input>dstruct_EOC_CONSUMER.respuesta_pt</input>
+      <input>dstruct_EOC_CONSUMER.respuesta</input>
       <label>updateProvisioning</label>
-      <output>dstruct_EOC_CONSUMER.ack_pt</output>
-      <type>Request-Response</type>
+      <type>One-Way</type>
     </operation>
   </operationList>
   <revision>1</revision>

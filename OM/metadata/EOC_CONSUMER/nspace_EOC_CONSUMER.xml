@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <nameSpace name="EOC_CONSUMER">
+  <label>EOC_CONSUMER</label>
   <metaVersion>25</metaVersion>
   <targetNS>recibeProvision</targetNS>
 </nameSpace>

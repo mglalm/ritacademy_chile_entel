@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<participant name="EOC_CONSUMER.EOCParticipant">
+  <label>EOCParticipant</label>
+  <metaVersion>25</metaVersion>
+  <participant>iface_EOC_CONSUMER.interfazEOC</participant>
+</participant>

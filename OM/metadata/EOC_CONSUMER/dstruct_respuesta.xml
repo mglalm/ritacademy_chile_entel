@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <dataStructure name="EOC_CONSUMER.respuesta">
   <container>true</container>
-  <description>respuesta</description>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
   <label>respuesta</label>
   <metaVersion>25</metaVersion>
   <childList>
