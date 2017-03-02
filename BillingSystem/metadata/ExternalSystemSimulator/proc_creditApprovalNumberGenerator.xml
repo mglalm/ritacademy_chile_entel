@@ -23,15 +23,15 @@
                 <childList>
                   <child name="sendmessagetodestinity" type="scriptActivity">
                     <label>Send Message To Destinity</label>
-                    <x>492.0</x>
+                    <x>493.0</x>
                     <y>102.0</y>
                     <methodList>
                       <method name="cwOnProcActBefore" type="action">
                         <category>before</category>
                         <system>true</system>
                         <script><![CDATA[
-                          ExternalSystemSimulator.test();
-                          var processId = this.process.processDocument.originProcess;
+                          //ExternalSystemSimulator.test();
+                          //var processId = this.process.processDocument.originProcess;
                           //Process.sendMessageToProcess(processId,null,"ExternalSystemCommunication:processInterface/GetCreditApprovalNumberResponse",null,null,null,null);
                         ]]></script>
                       </method>
@@ -60,12 +60,12 @@
             <system>true</system>
             <script><![CDATA[
               var input = this.activityData;
-              var oldNumber = input.creditApprovalNumberOld;
-              var originProcess = input.origin.originProcess;
-              var originOrder = input.origin.originOrder;
-              this.process.processDocument.creditApprovalNumber = oldNumber;
-              this.process.processDocument.originOrder = originOrder;
-              this.process.processDocument.originProcess = originProcess;
+              //var oldNumber = input.creditApprovalNumberOld;
+              //var originProcess = input.origin.originProcess;
+              //var originOrder = input.origin.originOrder;
+              //this.process.processDocument.creditApprovalNumber = oldNumber;
+              //this.process.processDocument.originOrder = originOrder;
+              //this.process.processDocument.originProcess = originProcess;
             ]]></script>
           </method>
         </methodList>
@@ -82,10 +82,10 @@
         <category>before</category>
         <system>true</system>
         <script><![CDATA[
-          ExternalSystemSimulator.test();
-          this.process.processDocument.creditApprovalNumber = null;
-          this.process.processDocument.originOrder = null;
-          this.process.processDocument.originProcess = null;
+          //ExternalSystemSimulator.test();
+          //this.process.processDocument.creditApprovalNumber = null;
+          //this.process.processDocument.originOrder = null;
+          //this.process.processDocument.originProcess = null;
         ]]></script>
       </method>
     </methodList>

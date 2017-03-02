@@ -2,25 +2,125 @@
 <process name="OrderManager.OMProvisionProcess">
   <activity name="inicio" type="seqActivity">
     <label>inicio</label>
-    <x>20.0</x>
-    <y>23.0</y>
+    <x>33.0</x>
+    <y>99.0</y>
     <childList>
-      <child name="provisionComplete" type="completeActivity">
-        <label>provisionComplete</label>
-        <x>131.0</x>
-        <y>35.0</y>
+      <child name="obtenerMSISDN" type="opActivity">
+        <element>iface_billingNamespace.interface_serviciosBSCS/oper_getMsisdnReserveBSCS</element>
+        <label>obtenerMSISDN</label>
+        <participant>part_billingNamespace.billingParticipant</participant>
+        <x>234.0</x>
+        <y>90.0</y>
+        <childList>
+          <child name="validaOrden" type="switchActivity">
+            <label>validaOrden</label>
+            <x>424.0</x>
+            <y>95.0</y>
+            <childList>
+              <child name="nok" type="caseActivity">
+                <label>nok</label>
+                <x>424.0</x>
+                <y>195.0</y>
+                <childList>
+                  <child name="ordenNOCompletada" type="completeActivity">
+                    <label>ordenNOCompletada</label>
+                    <x>335.0</x>
+                    <y>238.0</y>
+                  </child>
+                </childList>
+              </child>
+              <child name="ok" type="caseActivity">
+                <label>ok</label>
+                <x>565.0</x>
+                <y>227.0</y>
+                <childList>
+                  <child name="provisionComplete" type="completeActivity">
+                    <label>provisionComplete</label>
+                    <x>565.0</x>
+                    <y>227.0</y>
+                  </child>
+                </childList>
+                <methodList>
+                  <method name="cwOnProcActCond" type="action">
+                    <category>cond</category>
+                    <system>true</system>
+                    <script><![CDATA[return this.process.processDocument.CTRL_ERROR == "0";]]></script>
+                  </method>
+                </methodList>
+              </child>
+            </childList>
+          </child>
+        </childList>
+        <methodList>
+          <method name="cwOnProcActAfter" type="action">
+            <category>script</category>
+            <system>true</system>
+            <script><![CDATA[
+              OrderManager.debug();
+              //Inicializa las variables de control
+              OrderManager.inicializaVariableControl(this.process.processDocument);
+
+              //resp contiene el resultado de la busqueda de MSISDN
+              var resp = this.activityData;
+
+
+
+              /*************** Inicio de la creacion de la ORDEN **************************/
+              var orden = new Document("OrderManager.docOMOrden");  //documento asociado a OM_ORDEN
+              var fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
+              var resultOM_Orden; //lista que retornara el finder
+
+
+              orden.orderId = this.process.processDocument.IN_orderId;
+
+              var resultOM_Orden = fnd.search(resultOM_Orden, orden);//retorna una DataObjectList() -> ARRAY
+              var doc = resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
+
+              //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
+              if(doc)
+              {
+                  this.process.processDocument.CTRL_ERROR = "1";
+                  this.process.processDocument.CTRL_DESC_ERROR = "La orden entregada ya existe en la base de datos";
+                  return;
+              }
+              else  // si no lo encuentra, lo crea
+              {
+                  orden.rut = this.process.processDocument.IN_rut;
+                  orden.estado = "En Proceso";
+                  orden.save();
+              }
+
+              /************* Fin de la creación de la ORDEN ****************/
+
+              /************ Inicio de la creación del recurso MSISDN *********/
+
+              //Si es servicio de consulta de MSISDN no fue exitoso, responde error
+              if(resp.estado == "NOOK"){
+                   this.process.processDocument.CTRL_ERROR = "2";
+                   this.process.processDocument.CTRL_DESC_ERROR = "Error al obtener un nuevo MSISDN desde BSCS";
+                   orden.estado = "ErrorMSISD";
+                   orden.save();
+                   return;
+              }
+
+              /********** Fin de la creación del resurso MSISDN *************/
+              var a = 1;
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="billingParticipant" type="participantActivity">
+        <label>billingParticipant</label>
+        <participant>part_billingNamespace.billingParticipant</participant>
+        <x>234.0</x>
+        <y>-1.0</y>
       </child>
     </childList>
     <methodList>
       <method name="cwOnProcActBefore" type="action">
         <category>before</category>
         <system>true</system>
-        <script><![CDATA[
-          OrderManager.debug();
-
-          this.process.processDocument.OUT_estadoOrden = "En Proceso";
-          this.process.processDocument.OUT_MSISDN = "56992270351";
-        ]]></script>
+        <script><![CDATA[this.process.processDocument.OUT_estadoOrden = "En Proceso";]]></script>
       </method>
     </methodList>
   </activity>

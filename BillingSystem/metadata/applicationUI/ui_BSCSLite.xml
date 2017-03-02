@@ -35,21 +35,42 @@
                 <element name="Customers" type="elmnu">
                   <label>Clientes</label>
                   <elementList>
-                    <element name="AddCustomers" type="elmnu">
+                    <element name="Nuevo_Cliente" type="elmnu">
                       <clickMethod type="varPath">
                         <variablePathList>
-                          <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_addCustomer</variablePath>
+                          <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_nvoCliente</variablePath>
                         </variablePathList>
                       </clickMethod>
-                      <label>Agregar Nuevo Cliente</label>
+                      <label>Crear</label>
                     </element>
-                    <element name="findCustomers" type="elmnu">
+                    <element name="Buscar_Cliente" type="elmnu">
                       <clickMethod type="varPath">
                         <variablePathList>
-                          <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_findCustomer</variablePath>
+                          <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_buscarCliente</variablePath>
                         </variablePathList>
                       </clickMethod>
-                      <label>Encontrar Clientes</label>
+                      <label>Buscar</label>
+                    </element>
+                  </elementList>
+                </element>
+                <element name="Msisdn" type="elmnu">
+                  <label>MSISDN</label>
+                  <elementList>
+                    <element name="Nuevo_Msisdn" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_nvoMsisdn</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Crear</label>
+                    </element>
+                    <element name="Buscar_Msisdn" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_buscarMsisdn</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Buscar</label>
                     </element>
                   </elementList>
                 </element>
@@ -76,12 +97,12 @@
     </vform>
   </vformList>
   <methodList>
-    <method name="addCustomer" type="usrActionMethod">
+    <method name="nvoCliente" type="usrActionMethod">
       <form>doc_customerManagerBSCS.DOC_CLIENTE_BSCS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
       <userInterface>doc_customerManagerBSCS.DOC_CLIENTE_BSCS</userInterface>
       <valueType>doc_customerManagerBSCS.DOC_CLIENTE_BSCS</valueType>
     </method>
-    <method name="findCustomer" type="usrActionMethod">
+    <method name="buscarCliente" type="usrActionMethod">
       <userInterface>findDoc_customerManagerBSCS.busquedaCliente</userInterface>
       <valueType>findDoc_customerManagerBSCS.busquedaCliente</valueType>
     </method>
@@ -93,9 +114,18 @@
         //this.saveAllAction();
         //Process.startProcess("msisdnManagerBSCS.creditApprobalmsisdn",this.model.id,null,null);
         //Process.startProcess("msisdnManagerBSCS.creditApprobalmsisdn",null,null,null);
-        ExternalSystemSimulator.bindingScript();
+        ExternalSystemSimulator.scr_Reserva_Msisdn();
         //this.saveAllAction();
       ]]></script>
+    </method>
+    <method name="nvoMsisdn" type="usrActionMethod">
+      <form>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+      <userInterface>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS</userInterface>
+      <valueType>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS</valueType>
+    </method>
+    <method name="buscarMsisdn" type="usrActionMethod">
+      <userInterface>findDoc_msisdnManagerBSCS.busquedaMsisdn</userInterface>
+      <valueType>findDoc_msisdnManagerBSCS.busquedaMsisdn</valueType>
     </method>
   </methodList>
 </userInterface>

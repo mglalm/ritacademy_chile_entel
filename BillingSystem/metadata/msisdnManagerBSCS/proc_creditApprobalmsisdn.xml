@@ -62,16 +62,6 @@
         <y>113.0</y>
       </child>
     </childList>
-    <methodList>
-      <method name="cwOnProcActBefore" type="action">
-        <category>before</category>
-        <system>true</system>
-        <script><![CDATA[
-          this.process.processDocument.id_msisdnestado = null;
-          this.process.processDocument.msisdn = null;
-        ]]></script>
-      </method>
-    </methodList>
   </activity>
   <curRevision>true</curRevision>
   <document>doc_msisdnManagerBSCS.docPaso</document>

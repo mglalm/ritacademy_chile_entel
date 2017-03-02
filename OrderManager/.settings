@@ -4,10 +4,7 @@
   <applicationString>ProyectoCobras_OM</applicationString>
   <applicationVersionString>1</applicationVersionString>
   <breakpointMap>
-    <breakpoint key="OrderManager.bindingScript">0</breakpoint>
     <breakpoint key="OrderManager.debug">0</breakpoint>
-    <breakpoint key="OrderManager.dsOrderProvisionInput.UserInterface.agregar">0</breakpoint>
-    <breakpoint key="userInterface.scriptInvocaOM">0</breakpoint>
   </breakpointMap>
   <databasesMap>
     <databases key="ORACLE THIN" type=".configdb">

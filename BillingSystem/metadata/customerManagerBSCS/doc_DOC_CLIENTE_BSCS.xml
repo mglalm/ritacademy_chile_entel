@@ -5,7 +5,6 @@
   <guid>{bf1f3565-f73b-4501-a74f-7696db1fffee}</guid>
   <label>DOC_CLIENTE_BSCS</label>
   <metaVersion>25</metaVersion>
-  <textMap type="rmap"/>
   <variableList>
     <variable name="ID_CLIENTE_BSCS" type="leaf">
       <column>ID_CLIENTE_BSCS</column>
@@ -56,7 +55,7 @@
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
                     <element name="DOC_CLIENTE_BSCSHeader" type="elhdr">
-                      <label>DOC_CLIENTE_BSCS</label>
+                      <label>Nuevo Cliente</label>
                     </element>
                     <element name="ID_CLIENTE_BSCS" type="elfld">
                       <variable type="varPath">

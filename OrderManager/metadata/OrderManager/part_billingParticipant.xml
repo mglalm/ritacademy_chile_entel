@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<participant name="OrderManager.billingParticipant">
-  <label>billingParticipant</label>
-  <metaVersion>25</metaVersion>
-  <participant>iface_OrderManager.OMBillingInterface</participant>
-</participant>

@@ -18,4 +18,62 @@
       <valueType>dtype_msisdnManagerBSCS.DESC_MSISDN_ESTADO</valueType>
     </variable>
   </variableList>
+  <methodList>
+    <method name="cwOnDocVisualKey" type="action">
+      <system>true</system>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <script>return this.DESC_MSISDN_ESTADO;</script>
+    </method>
+  </methodList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_msisdnManagerBSCS.DOC_MSISDN_ESTADO</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Presentacion" type="vform">
+            <label>Formulario_Presentacion</label>
+            <root name="Formulario_PresentacionGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_MSISDN_ESTADOGrid" type="elgrd">
+                  <numOfCols>2</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DOC_MSISDN_ESTADOHeader" type="elhdr">
+                      <label>DOC_MSISDN_ESTADO</label>
+                    </element>
+                    <element name="ID_MSISDN_ESTADO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_ESTADO/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_ESTADO/leaf_ID_MSISDN_ESTADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="DESC_MSISDN_ESTADO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_ESTADO/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_ESTADO/leaf_DESC_MSISDN_ESTADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
 </document>

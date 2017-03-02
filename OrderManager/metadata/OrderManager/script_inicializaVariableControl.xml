@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="OrderManager.inicializaVariableControl">
+  <label>inicializaVariableControl</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>doc_OrderManager.docProcesoProvision</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    input.CTRL_ERROR="0";
+    input.CTRL_DESC_ERROR = "";
+  ]]></script>
+</script>
