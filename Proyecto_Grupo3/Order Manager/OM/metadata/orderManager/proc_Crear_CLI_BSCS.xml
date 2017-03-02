@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="orderManager.Crear_CLI_BSCS">
+  <activity name="Start" type="seqActivity">
+    <label>Start</label>
+    <x>45.0</x>
+    <y>55.0</y>
+    <childList>
+      <child name="Crear_Cli_BSCS" type="opActivity">
+        <element>iface_bscsProyOutbound.Crea_Cli_BSCS/oper_Crea_cli_bscs</element>
+        <label>Crear_Cli_BSCS</label>
+        <participant>part_bscsProyOutbound.Crea_Cli_BSCS_Part</participant>
+        <x>257.0</x>
+        <y>48.0</y>
+        <methodList>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script><![CDATA[
+              this.activityData.ID_CLIENTE = this.process.processDocument.ID_CLIENTE;
+              this.activityData.ID_PO = this.process.processDocument.ID_PO;
+            ]]></script>
+          </method>
+          <method name="cwOnProcActAfter" type="action">
+            <category>script</category>
+            <system>true</system>
+            <script><![CDATA[
+              this.process.processDocument.IMSI = this.activityData.IMSI;
+              this.process.processDocument.MSISDN = this.activityData.MSISDN;
+              this.process.processDocument.ESTADO = this.activityData.ESTADO;
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="Crea_Cli_BSCS_Part" type="participantActivity">
+        <label>Crea_Cli_BSCS_Part</label>
+        <participant>part_bscsProyOutbound.Crea_Cli_BSCS_Part</participant>
+        <x>460.0</x>
+        <y>23.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <label>Crear_CLI_BSCS</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>Sub-flow</type>
+</process>

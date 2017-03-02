@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<participant name="chargingSystemOutbound.Crea_Cli_CS_Part">
+  <label>Crea_Cli_CS_Part</label>
+  <metaVersion>25</metaVersion>
+  <participant>iface_chargingSystem.Crea_CLI_CS</participant>
+</participant>

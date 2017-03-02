@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <DefaultDB>TRAIN</DefaultDB>
+  <applicationString>cbio</applicationString>
+  <applicationVersionString>1</applicationVersionString>
+  <databasesMap>
+    <databases key="TRAIN" type=".configdb">
+      <dbname>TRAIN</dbname>
+      <driver type=".dbdriver">
+        <attributes>localhost;1521;orcl;false</attributes>
+        <driverType>Oracle thin</driverType>
+      </driver>
+      <password>49A225C3CBCC77BF5347C8B21011B9E7</password>
+      <user>c##train</user>
+    </databases>
+  </databasesMap>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <jarFolder>D:\</jarFolder>
+  <nodeString>cbio</nodeString>
+  <skin>Enterprise</skin>
+</project>

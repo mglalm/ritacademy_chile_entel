@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="oeInterface.docPOCaracteristicas">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{21f93c95-fca1-4d91-ba75-b0caa8079c4f}</guid>
+  <label>Doc PO Caracteristicas</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="PLAN_BSCS" type="leaf">
+      <column>PLAN_BSCS</column>
+      <table>GG_POCH</table>
+      <valueType>dtype_oeInterface.PLAN_BSCS</valueType>
+    </variable>
+    <variable name="saldo" type="leaf">
+      <column>SALDO</column>
+      <table>GG_POCH</table>
+      <valueType>dtype_oeInterface.saldo</valueType>
+    </variable>
+    <variable name="ID_PO" type="leaf">
+      <column>ID_PO</column>
+      <key>1</key>
+      <table>GG_POCH</table>
+      <valueType>dtype_oeInterface.ID_PO</valueType>
+    </variable>
+    <variable name="planCS" type="leaf">
+      <column>PLANCS</column>
+      <table>GG_POCH</table>
+      <valueType>dtype_oeInterface.planCS</valueType>
+    </variable>
+    <variable name="PROFILE" type="leaf">
+      <column>PROFILE</column>
+      <table>GG_POCH</table>
+      <valueType>dtype_oeInterface.PROFILE</valueType>
+    </variable>
+  </variableList>
+</document>

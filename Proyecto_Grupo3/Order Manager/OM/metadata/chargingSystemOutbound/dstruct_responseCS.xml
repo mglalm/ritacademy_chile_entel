@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="chargingSystemOutbound.responseCS">
+  <abstract>true</abstract>
+  <label>responseCS</label>
+  <metaVersion>25</metaVersion>
+</dataStructure>

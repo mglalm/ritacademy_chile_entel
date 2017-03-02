@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="EMAOutbound.Crea_CLI_HLR">
+  <label>Crea_CLI_HLR</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="creacionClienteHLR" type="oper">
+      <input>dstruct_EMAOutbound.clienteHLR</input>
+      <label>creacionClienteHLR</label>
+      <output>dstruct_EMAOutbound.response</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

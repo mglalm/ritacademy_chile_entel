@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="bscsProyOutbound.Resonse_Crea_Cli_BSCS">
+  <abstract>true</abstract>
+  <label>Resonse_Crea_Cli_BSCS</label>
+  <metaVersion>25</metaVersion>
+</dataStructure>
