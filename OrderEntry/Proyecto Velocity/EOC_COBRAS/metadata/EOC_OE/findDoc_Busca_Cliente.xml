@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="EOC_OE.Busca_Cliente">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_EOC_OE.BUSCA_DATOS_CLIENTE</input>
+  <label>Busca Clientes</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_EOC_OE.DATOS_CLIENTE</output>
+  <type>document</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_EOC_OE.BUSCA_DATOS_CLIENTE</document>
+      <mappedDocument>doc_EOC_OE.DATOS_CLIENTE</mappedDocument>
+      <mappedPath>doc_EOC_OE.DATOS_CLIENTE/leaf_CIUDAD</mappedPath>
+      <operation>equal</operation>
+      <path>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_CIUDAD</path>
+    </search>
+    <search type="sitem">
+      <document>doc_EOC_OE.BUSCA_DATOS_CLIENTE</document>
+      <mappedDocument>doc_EOC_OE.DATOS_CLIENTE</mappedDocument>
+      <mappedPath>doc_EOC_OE.DATOS_CLIENTE/leaf_COMUNA</mappedPath>
+      <operation>equal</operation>
+      <path>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_COMUNA</path>
+    </search>
+    <search type="sitem">
+      <document>doc_EOC_OE.BUSCA_DATOS_CLIENTE</document>
+      <mappedDocument>doc_EOC_OE.DATOS_CLIENTE</mappedDocument>
+      <mappedPath>doc_EOC_OE.DATOS_CLIENTE/leaf_DIRECCION</mappedPath>
+      <operation>equal</operation>
+      <path>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_DIRECCION</path>
+    </search>
+    <search type="sitem">
+      <document>doc_EOC_OE.BUSCA_DATOS_CLIENTE</document>
+      <mappedDocument>doc_EOC_OE.DATOS_CLIENTE</mappedDocument>
+      <mappedPath>doc_EOC_OE.DATOS_CLIENTE/leaf_NOMBRE</mappedPath>
+      <operation>equal</operation>
+      <path>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_NOMBRE</path>
+    </search>
+    <search type="sitem">
+      <document>doc_EOC_OE.BUSCA_DATOS_CLIENTE</document>
+      <mappedDocument>doc_EOC_OE.DATOS_CLIENTE</mappedDocument>
+      <mappedPath>doc_EOC_OE.DATOS_CLIENTE/leaf_RUT</mappedPath>
+      <operation>equal</operation>
+      <path>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_RUT</path>
+    </search>
+    <search type="sitem">
+      <mappedDocument>doc_EOC_OE.DATOS_CLIENTE</mappedDocument>
+      <mappedPath>doc_EOC_OE.DATOS_CLIENTE/leaf_RUT</mappedPath>
+      <operation>is not null</operation>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_EOC_OE.DATOS_CLIENTE</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>doc_EOC_OE.DATOS_CLIENTE/ui_UserInterface</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="Busca_ClienteResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_EOC_OE.Busca_Cliente/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="RUT" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_EOC_OE.Busca_Cliente/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_EOC_OE.DATOS_CLIENTE/leaf_RUT</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="NOMBRE" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_EOC_OE.Busca_Cliente/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_EOC_OE.DATOS_CLIENTE/leaf_NOMBRE</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="DIRECCION" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_EOC_OE.Busca_Cliente/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_EOC_OE.DATOS_CLIENTE/leaf_DIRECCION</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="COMUNA" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_EOC_OE.Busca_Cliente/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_EOC_OE.DATOS_CLIENTE/leaf_COMUNA</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="CIUDAD" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_EOC_OE.Busca_Cliente/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_EOC_OE.DATOS_CLIENTE/leaf_CIUDAD</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_EOC_OE.Busca_Cliente/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_EOC_OE.Busca_Cliente/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Menu" type="exov">
+            <base>ui_com.conceptwave.system.BaseFinderUserInterface/frmui_Forms/exov_Menu</base>
+            <extends>ui_com.conceptwave.system.BaseFinderUserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="Busca_ClienteView" type="findVView">
+      <inputOverlay>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface/frmui_Forms/vform_busca_cliente</inputOverlay>
+      <outputOverlay>findDoc_EOC_OE.Busca_Cliente/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <showSearchForm>true</showSearchForm>
+    </view>
+  </viewList>
+</findDoc>

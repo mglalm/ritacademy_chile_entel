@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="OrderManager" targetNamespace="http://www.readinessit.com/namespaces/ProyectoCobras/OrderManager" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:OrderManager="http://www.readinessit.com/namespaces/ProyectoCobras/OrderManager" xmlns:tns="http://www.readinessit.com/namespaces/ProyectoCobras/OrderManager" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://www.readinessit.com/namespaces/ProyectoCobras/OrderManager" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:OrderManager="http://www.readinessit.com/namespaces/ProyectoCobras/OrderManager" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>Order Manager</documentation>
+				<appinfo>
+					<metadata>AVM Metadata</metadata>
+					<created>Mon Feb 27 16:14:06 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<simpleType name="dtOrderId">
+				<annotation>
+					<documentation>dt Order Id</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="16"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="dtPOId">
+				<annotation>
+					<documentation>dt PO Id</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="dtRut">
+				<annotation>
+					<documentation>dt Rut</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<!-- Structures -->
+
+			<complexType name="ack">
+				<annotation>
+					<documentation>ack</documentation>
+				</annotation>
+					<sequence>
+						<element maxOccurs="1" minOccurs="0" name="estado" type="xsd:string"/>
+						<element maxOccurs="1" minOccurs="0" name="descripcion" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="dsOrderProvisionInputSimple">
+				<annotation>
+					<documentation>dsOrderProvisionInputSimple</documentation>
+				</annotation>
+					<sequence>
+						<element maxOccurs="1" minOccurs="0" name="orderId" type="OrderManager:dtOrderId"/>
+						<element maxOccurs="1" minOccurs="0" name="rut" type="OrderManager:dtRut"/>
+						<element maxOccurs="1" minOccurs="0" name="POIdBasico" type="OrderManager:dtPOId"/>
+						<element maxOccurs="1" minOccurs="0" name="POIdAdicional" type="OrderManager:dtPOId"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+		</schema>
+  </types>
+  <message name="ack">
+    <part name="ack" type="OrderManager:ack">
+    </part>
+  </message>
+  <message name="dsOrderProvisionInputSimple">
+    <part name="dsOrderProvisionInputSimple" type="OrderManager:dsOrderProvisionInputSimple">
+    </part>
+  </message>
+  <portType name="OMInterface">
+    <operation name="OMProvisionarOrden">
+      <input message="OrderManager:dsOrderProvisionInputSimple">
+    </input>
+      <output message="OrderManager:ack">
+    </output>
+    </operation>
+  </portType>
+  <binding name="OMProvisionOrderSOAPBinding" type="OrderManager:OMInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="OMProvisionarOrden">
+      <soap:operation soapAction="OMProvisionarOrden"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="OMServices">
+    <port name="OMServicio_SOAP_Port" binding="OrderManager:OMProvisionOrderSOAPBinding">
+      <soap:address location="http://localhost:8080/cwf/services/OMInterface"/>
+    </port>
+  </service>
+</definitions>

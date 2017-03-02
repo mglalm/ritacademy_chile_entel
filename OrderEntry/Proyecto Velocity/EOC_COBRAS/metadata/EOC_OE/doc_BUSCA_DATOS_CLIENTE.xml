@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="EOC_OE.BUSCA_DATOS_CLIENTE">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{93319d98-4942-4109-a51f-6431d3d3878a}</guid>
+  <label>Busca Datos del Cliente</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="RUT" type="leaf">
+      <column>RUT</column>
+      <key>1</key>
+      <table>EOC_CLIENTE</table>
+      <valueType>dtype_EOC_OE.RUT</valueType>
+    </variable>
+    <variable name="NOMBRE" type="leaf">
+      <column>NOMBRE</column>
+      <table>EOC_CLIENTE</table>
+      <valueType>dtype_EOC_OE.NOMBRE</valueType>
+    </variable>
+    <variable name="DIRECCION" type="leaf">
+      <column>DIRECCION</column>
+      <table>EOC_CLIENTE</table>
+      <valueType>dtype_EOC_OE.DIRECCION</valueType>
+    </variable>
+    <variable name="COMUNA" type="leaf">
+      <column>COMUNA</column>
+      <table>EOC_CLIENTE</table>
+      <valueType>dtype_EOC_OE.COMUNA</valueType>
+    </variable>
+    <variable name="CIUDAD" type="leaf">
+      <column>CIUDAD</column>
+      <table>EOC_CLIENTE</table>
+      <valueType>dtype_EOC_OE.CIUDAD</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_EOC_OE.BUSCA_DATOS_CLIENTE</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="GeneraCliente" type="vform">
+            <label>GeneraCliente</label>
+            <root name="GeneraClienteGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DATOS_CLIENTEGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DATOS_CLIENTEHeader" type="elhdr">
+                      <label>Datos Cliente</label>
+                    </element>
+                    <element name="RUT" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_RUT</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="NOMBRE" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_NOMBRE</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="DIRECCION" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_DIRECCION</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="COMUNA" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_COMUNA</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="CIUDAD" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_CIUDAD</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="busca_cliente" type="vform">
+            <label>busca_cliente</label>
+            <root name="busca_clienteGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="BUSCA_DATOS_CLIENTEGrid" type="elgrd">
+                  <numOfCols>2</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="BUSCA_DATOS_CLIENTEHeader" type="elhdr">
+                      <label>Datos del Cliente</label>
+                    </element>
+                    <element name="RUT" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_RUT</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="NOMBRE" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_NOMBRE</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="DIRECCION" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_DIRECCION</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="COMUNA" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_COMUNA</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="CIUDAD" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_CIUDAD</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+    <methodList>
+      <method name="save" type="usrActionMethod">
+        <allowInvalidObject>true</allowInvalidObject>
+        <validate>true</validate>
+        <script><![CDATA[
+          if(this.isValid) {
+            this.model.save();
+          }
+          else {
+            Global.throwException("UE0116", this);
+          }
+        ]]></script>
+      </method>
+    </methodList>
+  </UserInterface>
+</document>

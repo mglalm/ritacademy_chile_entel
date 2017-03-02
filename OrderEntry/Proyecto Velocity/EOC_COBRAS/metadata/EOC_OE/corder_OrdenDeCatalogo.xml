@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<catOrder name="EOC_OE.OrdenDeCatalogo">
+  <dynamicDoc>doc_cwa_ecm.actionDocument</dynamicDoc>
+  <label>catalogo de orden</label>
+  <metaVersion>25</metaVersion>
+</catOrder>

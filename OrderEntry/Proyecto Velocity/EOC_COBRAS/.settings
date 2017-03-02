@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <DefaultDB>TRAIN3</DefaultDB>
+  <applicationString>EOC_COBRAS</applicationString>
+  <applicationVersionString>1</applicationVersionString>
+  <databasesMap>
+    <databases key="TRAIN3" type=".configdb">
+      <dbname>TRAIN3</dbname>
+      <driver type=".dbdriver">
+        <attributes>localhost;1521;orcl;false</attributes>
+        <driverType>Oracle thin</driverType>
+      </driver>
+      <password>D672FB19FDA87E5B</password>
+      <user>c##train3</user>
+    </databases>
+  </databasesMap>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <joinClusterPeUi>false</joinClusterPeUi>
+  <nodeString>PE_UI</nodeString>
+  <skin>Enterprise</skin>
+</project>

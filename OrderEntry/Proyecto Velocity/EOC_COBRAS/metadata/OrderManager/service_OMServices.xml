@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="OrderManager.OMServices">
+  <label>OMServices</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="OMServicio_SOAP_Port" type="port">
+      <binding>bind_OrderManager.OMProvisionOrderSOAPBinding</binding>
+      <label>OMServicio_SOAP_Port</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

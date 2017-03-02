@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="APP_GUI.Order_Entry">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>Order Entry</label>
+  <metaVersion>25</metaVersion>
+  <url>/GUIs</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayout" type="elext"/>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="Menu_Cliente" type="elmnu">
+                  <label>Menu Clientes</label>
+                  <elementList>
+                    <element name="Crea_Cliente" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_APP_GUI.Order_Entry/usrActionMethod_ingresa_cliente</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Ingresa Cliente</label>
+                    </element>
+                    <element name="Busca_Cliente" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_APP_GUI.Order_Entry/usrActionMethod_busca_cliente</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Busca Cliente</label>
+                    </element>
+                  </elementList>
+                </element>
+                <element name="Productos" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_APP_GUI.Order_Entry/usrActionMethod_busca_productos</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Busca Productos</label>
+                </element>
+                <element name="Ordenes" type="elmnu">
+                  <label>Ordendes</label>
+                  <elementList>
+                    <element name="CreaOrden" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_APP_GUI.Order_Entry/usrActionMethod_creaOrden</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Crea Orden</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="ingresa_cliente" type="usrActionMethod">
+      <form>doc_EOC_OE.DATOS_CLIENTE/ui_UserInterface/frmui_Forms/vform_GeneraCliente</form>
+      <userInterface>doc_EOC_OE.DATOS_CLIENTE</userInterface>
+      <valueType>doc_EOC_OE.DATOS_CLIENTE</valueType>
+    </method>
+    <method name="busca_cliente" type="usrActionMethod">
+      <parameterList>
+        <parameter name="Rut" type="rifp">
+          <type>dtype_EOC_OE.RUT</type>
+        </parameter>
+      </parameterList>
+      <userInterface>findDoc_EOC_OE.Busca_Cliente</userInterface>
+      <valueType>findDoc_EOC_OE.Busca_Cliente</valueType>
+    </method>
+    <method name="busca_productos" type="usrActionMethod">
+      <userInterface>findDoc_EOC_OE.Busca_items</userInterface>
+      <valueType>findDoc_EOC_OE.Busca_items</valueType>
+    </method>
+    <method name="creaOrden" type="usrActionMethod">
+      <userInterface>order_EOC_OE.creaOrden</userInterface>
+      <valueType>order_EOC_OE.creaOrden</valueType>
+    </method>
+  </methodList>
+</userInterface>

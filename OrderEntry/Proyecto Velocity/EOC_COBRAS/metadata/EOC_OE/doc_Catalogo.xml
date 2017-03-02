@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="EOC_OE.Catalogo">
+  <dbSchema>CATALOG</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{8b0b7569-f2de-43d5-b1d9-d4b0da6907c0}</guid>
+  <label>Items del Catalogo</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="PO" type="leaf">
+      <column>ITEMCODE</column>
+      <key>1</key>
+      <table>CWPC_ITEM</table>
+      <valueType>dtype_EOC_OE.PO</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_EOC_OE.Catalogo</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="items" type="vform">
+            <label>items</label>
+            <root name="itemsGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="CatalogoGrid" type="elgrd">
+                  <numOfCols>3</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="CatalogoHeader" type="elhdr">
+                      <label>Items del Catalogo</label>
+                    </element>
+                    <element name="PO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EOC_OE.Catalogo/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.Catalogo/leaf_PO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

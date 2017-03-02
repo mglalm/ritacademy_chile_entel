@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<order name="EOC_OE.creaOrden">
+  <extends>order_com.conceptwave.system.Order</extends>
+  <label>Crea Orden</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="Orden" type="order">
+      <label>Orden</label>
+      <mandatory>true</mandatory>
+      <orderItem>doc_EOC_OE.DATOS_ORDEN</orderItem>
+      <orderType>document</orderType>
+    </child>
+  </childList>
+  <UserInterface name="UserInterface" type="tree">
+    <autoExpand>true</autoExpand>
+    <defaultFolderImage>undefined</defaultFolderImage>
+    <defaultLeafImage>undefined</defaultLeafImage>
+    <element>order_EOC_OE.creaOrden</element>
+    <extends>tree_com.conceptwave.system.OrderUserInterface</extends>
+    <label>Crea Orden</label>
+    <tableDoc>doc_com.conceptwave.system.TreeDocument</tableDoc>
+    <childList>
+      <child name="Orden" type="tnOi">
+        <autoExpand>true</autoExpand>
+        <autoSave>true</autoSave>
+        <detailForm>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</detailForm>
+        <detailUI>doc_EOC_OE.DATOS_ORDEN/ui_UserInterface</detailUI>
+        <element>doc_EOC_OE.DATOS_ORDEN</element>
+        <extends>tn_com.conceptwave.system.TreeNode</extends>
+        <label>Orden</label>
+        <nodeType>4</nodeType>
+        <orderItem>order_EOC_OE.creaOrden/order_Orden</orderItem>
+        <vformList>
+          <vform name="Forms" type="frmui">
+            <extends>tn_com.conceptwave.system.TreeNode/frmui_Forms</extends>
+          </vform>
+        </vformList>
+      </child>
+    </childList>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>order_EOC_OE.creaOrden</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</order>
