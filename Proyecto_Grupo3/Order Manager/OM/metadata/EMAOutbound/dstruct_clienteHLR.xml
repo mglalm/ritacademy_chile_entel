@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="EMAOutbound.clienteHLR">
-  <abstract>true</abstract>
-  <label>clienteHLR</label>
-  <metaVersion>25</metaVersion>
-</dataStructure>

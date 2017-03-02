@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="oeInterface.oeScript">
+  <label>oeScript</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>nmeta_com.conceptwave.system.Object</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var IMSI = null;
+    var MSISDN = null;
+    var ID_CLIENTE = input.ID_Cliente;
+    var ID_PO = input.ID_PO;
+    var ID_ORDER = input.ID_Order;
+    var PLAN_BSCS = null;
+    var planCS = null;
+    var saldo = null;
+    var PROFILE = null;
+    var docprocess = new Document('oeInterface.documentoOE');
+
+    var findPO = new Finder('findOrder.finderPO');
+    findPO.searchDocument.ID_PO = ID_PO;
+
+    var result = findPO.search();
+    var docPO = result && result.length>0 ? result[0] : null;
+
+    if(docPO)
+    {
+        PLAN_BSCS = docPO.PLAN_BSCS;
+        planCS = docPO.planCS;
+        saldo = docPO.saldo;
+        PROFILE = docPO.PROFILE;
+
+    }
+
+    docprocess.ID_CLIENTE = ID_CLIENTE;
+    docprocess.ID_PO = ID_PO;
+    docprocess.ID_Order = ID_ORDER;
+
+    var ProcessID = Process.startProcess('orderManager.mainProcess',docprocess,null,null);
+
+    var ack = new DataStructure('oeInterface.Response');
+
+    ack.Ack = 0;
+
+    return ack;
+
+
+
+
+    /*var IMSI = null;
+    var ID_CLIENTE=input.ID_CLIENTE;
+
+    var IMSI=this.process.processDocument.IMSI;
+    var find = new Finder('bscsProxy.findIMSI');
+    find.searchDocument.varX = '';
+    var result = find.search();//retorna una DataObjectList()-->ARRAY
+    var doc = result && result.length>0 ? result(0) : null;
+
+    if(doc)
+    {
+            IMSI = doc.IMSI;
+            doc.ESTADO = 'ASIGNADO';
+            doc.ID_CLIENTE=ID_CLIENTE;e
+            doc.save();
+
+    }*/
+  ]]></script>
+</script>

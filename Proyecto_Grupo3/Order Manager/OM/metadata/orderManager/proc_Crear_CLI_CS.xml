@@ -9,26 +9,27 @@
         <element>iface_chargingSystem.Crea_CLI_CS/oper_creacionClienteCS</element>
         <label>Crear_Cli_CS</label>
         <participant>part_chargingSystemOutbound.Crea_Cli_CS_Part</participant>
-        <x>317.0</x>
-        <y>117.0</y>
+        <x>319.0</x>
+        <y>115.0</y>
         <methodList>
           <method name="cwOnProcActBefore" type="action">
             <category>before</category>
             <system>true</system>
             <script><![CDATA[
+              orderManager.dummy();
               this.activityData.IMSI = this.process.processDocument.IMSI;
               this.activityData.MSISDN = this.process.processDocument.MSISDN;
               this.activityData.saldo = this.process.processDocument.saldo;
               this.activityData.planCS = this.process.processDocument.planCS;
-              this.activityData.ID_CLIENTE = this.process.processDocument.ID_CLIENTE;
+              this.activityData.idCliente = this.process.processDocument.ID_CLIENTE;
             ]]></script>
           </method>
           <method name="cwOnProcActAfter" type="action">
             <category>script</category>
             <system>true</system>
             <script><![CDATA[
-              this.process.processDocument.mensaje = this.activityData.mensaje;
-              this.process.processDocument.estado = this.activityData.ESTADO;
+              this.process.processDocument.DESC = this.activityData.mensaje;
+              this.process.processDocument.ESTADO = this.activityData.estado;
             ]]></script>
           </method>
         </methodList>
