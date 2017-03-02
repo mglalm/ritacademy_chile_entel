@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="OrderManager.actualizaEstadoOrden">
+  <label>actualizaEstadoOrden</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="orderId" type="rifp">
+      <type>dtype_OrderManager.dtOrderId</type>
+    </parameter>
+    <parameter name="estado" type="rifp">
+      <type>dtype_OrderManager.dtEstado</type>
+    </parameter>
+    <parameter name="descEstado" type="rifp">
+      <type>dtype_OrderManager.dtMotivoEstado</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    /*
+     * Esta función actualiza el estado de una orden en la BD a partir del número de orden.
+     * Si no existe la orden en la BS, no hace nada
+     */
+
+    var orden = new Document("OrderManager.docOMOrden");  //documento asociado a la tabla de BD OM_ORDEN
+    var fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
+    var resultOM_Orden; //lista que retornara el finder
+
+    orden.orderId = orderId;
+
+    var resultOM_Orden = fnd.search(resultOM_Orden, orden);//retorna una DataObjectList() -> ARRAY
+    var doc = resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
+
+    //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
+    if(doc){
+        orden.estado = estado;
+        orden.motivoEstado = descEstado;
+        orden.save();
+        return;
+    }
+  ]]></script>
+</script>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="CSProvisionInterface.xs_serviciosCS">
+  <label>xs_serviciosCS</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="port_serviciosCS_SOAP" type="port">
+      <binding>bind_CSProvisionInterface.bind_provServicioCS_SOAP</binding>
+      <label>port_serviciosCS_SOAP</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

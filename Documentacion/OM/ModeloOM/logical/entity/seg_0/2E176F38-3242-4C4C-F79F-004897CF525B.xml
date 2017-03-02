@@ -5,6 +5,7 @@
 <generatorID>24C83DA6-B39C-B735-189E-EC1ED4B35922</generatorID>
 <ownerDesignName>ModeloOM</ownerDesignName>
 <engineerTo>
+<item key="157C8C60-A636-9FE5-9583-547E642FA168" value="true"/>
 <item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
@@ -23,6 +24,7 @@
 <generatorID>0A5AC7A6-136D-6218-242D-A16C0B933DB4</generatorID>
 <ownerDesignName>ModeloOM</ownerDesignName>
 <engineerTo>
+<item key="157C8C60-A636-9FE5-9583-547E642FA168" value="true"/>
 <item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
 </engineerTo>
 <referedAttribute>BB69F2A0-20B6-E68E-03AC-537202396CC2</referedAttribute>
@@ -37,6 +39,7 @@
 <generatorID>0A5AC7A6-136D-6218-242D-A16C0B933DB4</generatorID>
 <ownerDesignName>ModeloOM</ownerDesignName>
 <engineerTo>
+<item key="157C8C60-A636-9FE5-9583-547E642FA168" value="true"/>
 <item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
 </engineerTo>
 <referedAttribute>141FF443-77BC-B9BF-A03C-1D33B530AB9C</referedAttribute>
@@ -44,7 +47,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="NUMERO INTENTO" id="2F0BF027-A637-84B4-42BD-8DAE73CBB961">
 <createdBy>LDGonzalez</createdBy>
@@ -52,6 +55,7 @@
 <generatorID>6D0B4F1D-F2FF-0C6F-3B70-169580BF076D</generatorID>
 <ownerDesignName>ModeloOM</ownerDesignName>
 <engineerTo>
+<item key="157C8C60-A636-9FE5-9583-547E642FA168" value="true"/>
 <item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
@@ -65,6 +69,7 @@
 <generatorID>474B482E-A8A7-FAA9-AB33-7B6C532A7871</generatorID>
 <ownerDesignName>ModeloOM</ownerDesignName>
 <engineerTo>
+<item key="157C8C60-A636-9FE5-9583-547E642FA168" value="true"/>
 <item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
@@ -79,6 +84,7 @@
 <generatorID>930D47AD-955B-E801-7AB8-0C58690DE9B1</generatorID>
 <ownerDesignName>ModeloOM</ownerDesignName>
 <engineerTo>
+<item key="157C8C60-A636-9FE5-9583-547E642FA168" value="true"/>
 <item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
@@ -96,6 +102,7 @@
 <generatorID>0CDF0BD1-6CAF-74D4-A8AF-59BFDF9F90A5</generatorID>
 <ownerDesignName>ModeloOM</ownerDesignName>
 <engineerTo>
+<item key="157C8C60-A636-9FE5-9583-547E642FA168" value="true"/>
 <item key="977F4A07-DED2-6331-36BB-42C54ED6AF18" value="true"/>
 </engineerTo>
 <pk>true</pk>

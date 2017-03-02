@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="OrderManager.docOMOrdenPO">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{6b2b62ff-5884-4141-9806-8e8cda2a9646}</guid>
+  <label>docOMOrdenPO</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="POId" type="leaf">
+      <column>PO_ID</column>
+      <key>1</key>
+      <table>OM_ORDER_PO</table>
+      <valueType>dtype_OrderManager.dtPOId</valueType>
+    </variable>
+    <variable name="orderId" type="leaf">
+      <column>ORDER_ID</column>
+      <key>2</key>
+      <table>OM_ORDER_PO</table>
+      <valueType>dtype_OrderManager.dtOrderId</valueType>
+    </variable>
+    <variable name="fechaCreacion" type="leaf">
+      <column>FECHA_CREACION</column>
+      <table>OM_ORDER_PO</table>
+      <valueType>dtype_cwf.cwCreated</valueType>
+    </variable>
+    <variable name="estado" type="leaf">
+      <column>ESTADO</column>
+      <table>OM_ORDER_PO</table>
+      <valueType>dtype_OrderManager.dtEstado</valueType>
+    </variable>
+    <variable name="motivoEstado" type="leaf">
+      <column>MOTIVO_ESTADO</column>
+      <table>OM_ORDER_PO</table>
+      <valueType>dtype_OrderManager.dtMotivoEstado</valueType>
+    </variable>
+  </variableList>
+</document>

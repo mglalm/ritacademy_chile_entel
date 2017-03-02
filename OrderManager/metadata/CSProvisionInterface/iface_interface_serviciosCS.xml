@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="CSProvisionInterface.interface_serviciosCS">
+  <label>interface_serviciosCS</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="provServicioCS" type="oper">
+      <input>dstruct_CSProvisionInterface.input_provServicioCS</input>
+      <label>provServicioCS</label>
+      <output>dstruct_CSProvisionInterface.output_provServicioCS</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

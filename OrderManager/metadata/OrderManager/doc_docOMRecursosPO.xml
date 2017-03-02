@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="OrderManager.docOMRecursosPO">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{019d778b-c62f-451c-8bfa-9dbc33799389}</guid>
+  <label>docOMRecursosPO</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="orderId" type="leaf">
+      <column>ORDER_ID</column>
+      <key>1</key>
+      <table>OM_RECURSOS_PO</table>
+      <valueType>dtype_OrderManager.dtOrderId</valueType>
+    </variable>
+    <variable name="resourceId" type="leaf">
+      <column>RESOURCE_ID</column>
+      <key>3</key>
+      <table>OM_RECURSOS_PO</table>
+      <valueType>dtype_OrderManager.dtResourceId</valueType>
+    </variable>
+    <variable name="valor" type="leaf">
+      <column>VALOR</column>
+      <table>OM_RECURSOS_PO</table>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="POId" type="leaf">
+      <column>PO_ID</column>
+      <key>2</key>
+      <table>OM_RECURSOS_PO</table>
+      <valueType>dtype_OrderManager.dtPOId</valueType>
+    </variable>
+    <variable name="fechaCreacion" type="leaf">
+      <column>FECHA_CREACION</column>
+      <table>OM_RECURSOS_PO</table>
+      <valueType>dtype_cwf.cwCreated</valueType>
+    </variable>
+  </variableList>
+</document>

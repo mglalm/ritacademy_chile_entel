@@ -2,6 +2,6 @@
 <dataType name="OrderManager.dtEstado">
   <extends>dtype_com.conceptwave.system.String</extends>
   <label>dt Estado</label>
-  <length>10</length>
+  <length>20</length>
   <metaVersion>25</metaVersion>
 </dataType>

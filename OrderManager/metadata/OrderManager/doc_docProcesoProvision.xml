@@ -8,12 +8,6 @@
     <variable name="IN_orderId" type="leaf">
       <valueType>dtype_OrderManager.dtOrderId</valueType>
     </variable>
-    <variable name="CTRL_ERROR" type="leaf">
-      <valueType>dtype_com.conceptwave.system.String</valueType>
-    </variable>
-    <variable name="CTRL_DESC_ERROR" type="leaf">
-      <valueType>dtype_com.conceptwave.system.String</valueType>
-    </variable>
     <variable name="IN_rut" type="leaf">
       <valueType>dtype_OrderManager.dtRut</valueType>
     </variable>
@@ -40,6 +34,21 @@
     </variable>
     <variable name="OUT_MotivoEstadoPOAdicional" type="leaf">
       <valueType>dtype_OrderManager.dtMotivoEstado</valueType>
+    </variable>
+    <variable name="CTRL_ERROR" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="CTRL_DESC_ERROR" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="CTRL_planCS" type="leaf">
+      <valueType>dtype_OrderManager.dtIdPlan</valueType>
+    </variable>
+    <variable name="CTRL_planBSCS" type="leaf">
+      <valueType>dtype_OrderManager.dtIdPlan</valueType>
+    </variable>
+    <variable name="CTRL_profile" type="leaf">
+      <valueType>dtype_OrderManager.dtIdPlan</valueType>
     </variable>
   </variableList>
 </document>

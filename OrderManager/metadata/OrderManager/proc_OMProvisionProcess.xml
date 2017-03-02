@@ -2,118 +2,403 @@
 <process name="OrderManager.OMProvisionProcess">
   <activity name="inicio" type="seqActivity">
     <label>inicio</label>
-    <x>33.0</x>
-    <y>99.0</y>
+    <x>29.0</x>
+    <y>100.0</y>
     <childList>
-      <child name="obtenerMSISDN" type="opActivity">
-        <element>iface_billingNamespace.interface_serviciosBSCS/oper_getMsisdnReserveBSCS</element>
-        <label>obtenerMSISDN</label>
-        <participant>part_billingNamespace.billingParticipant</participant>
-        <x>234.0</x>
-        <y>90.0</y>
-        <childList>
-          <child name="validaOrden" type="switchActivity">
-            <label>validaOrden</label>
-            <x>424.0</x>
-            <y>95.0</y>
-            <childList>
-              <child name="nok" type="caseActivity">
-                <label>nok</label>
-                <x>424.0</x>
-                <y>195.0</y>
-                <childList>
-                  <child name="ordenNOCompletada" type="completeActivity">
-                    <label>ordenNOCompletada</label>
-                    <x>335.0</x>
-                    <y>238.0</y>
-                  </child>
-                </childList>
-              </child>
-              <child name="ok" type="caseActivity">
-                <label>ok</label>
-                <x>565.0</x>
-                <y>227.0</y>
-                <childList>
-                  <child name="provisionComplete" type="completeActivity">
-                    <label>provisionComplete</label>
-                    <x>565.0</x>
-                    <y>227.0</y>
-                  </child>
-                </childList>
-                <methodList>
-                  <method name="cwOnProcActCond" type="action">
-                    <category>cond</category>
-                    <system>true</system>
-                    <script><![CDATA[return this.process.processDocument.CTRL_ERROR == "0";]]></script>
-                  </method>
-                </methodList>
-              </child>
-            </childList>
-          </child>
-        </childList>
+      <child name="rescataParamCS" type="scriptActivity">
+        <label>validaParamCS</label>
+        <x>10.0</x>
+        <y>224.0</y>
         <methodList>
-          <method name="cwOnProcActAfter" type="action">
-            <category>script</category>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
             <system>true</system>
             <script><![CDATA[
               OrderManager.debug();
-              //Inicializa las variables de control
+
+              /*
+               * En este script se rescatan los parametros desde base de datos para provisionar
+               */
+
+              //Inicializa las variables de control, que indican si hay algun problema en el flujo. Quedan en el processDocument.
               OrderManager.inicializaVariableControl(this.process.processDocument);
 
-              //resp contiene el resultado de la busqueda de MSISDN
-              var resp = this.activityData;
 
+              // Primero rescato el parámetro para envío a CS
+              var parametro = new Document("OrderManager.docOMParametrosNodos");  //documento asociado a la tabla de BD OM_PARAMETROS_NODOS
+              var fnd = new Finder("OrderManager.finOM_Parametros_Nodos"); // finder del OM_PARAMETROS_NODOS
+              var resultOM_Par; //lista que retornara el finder
 
+              parametro.POId = this.process.processDocument.IN_POIdBasico;
+              //parametro.idNodo = "CS";
+              //parametro.idParametro = "ID_PLAN_CS";
 
-              /*************** Inicio de la creacion de la ORDEN **************************/
-              var orden = new Document("OrderManager.docOMOrden");  //documento asociado a OM_ORDEN
-              var fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
-              var resultOM_Orden; //lista que retornara el finder
+              var resultOM_Par = fnd.search(resultOM_Par, parametro);//retorna una DataObjectList() -> ARRAY
+              var doc = resultOM_Par && resultOM_Par.length>0 ? resultOM_Par[0] : null;
 
-
-              orden.orderId = this.process.processDocument.IN_orderId;
-
-              var resultOM_Orden = fnd.search(resultOM_Orden, orden);//retorna una DataObjectList() -> ARRAY
-              var doc = resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
-
-              //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
-              if(doc)
-              {
-                  this.process.processDocument.CTRL_ERROR = "1";
-                  this.process.processDocument.CTRL_DESC_ERROR = "La orden entregada ya existe en la base de datos";
+              //Si no lo encuentra en BD, debe entregar ERROR, ya que siempre debe encontrarse el plan que se requiere provisionar
+              if(!doc){
+                  this.process.processDocument.CTRL_ERROR = "4";
+                  this.process.processDocument.CTRL_DESC_ERROR = "No se encuentran los parámetros de provisión en BD para la PO ingresada";
                   return;
               }
-              else  // si no lo encuentra, lo crea
-              {
-                  orden.rut = this.process.processDocument.IN_rut;
-                  orden.estado = "En Proceso";
-                  orden.save();
+
+              var i=0;
+              var hayCS=false, hayBSCS=false, hayEMA = false;
+
+              for(i=0;i<resultOM_Par.length;i++){
+                  doc = resultOM_Par[i];
+                  if(doc.idNodo == "CS" && doc.idParametro == "ID_PLAN_CS"){
+                      this.process.processDocument.CTRL_planCS = doc.valor;
+                      hayCS = true;
+                  }
+                  if(doc.idNodo == "BSCS" && doc.idParametro == "ID_PLAN_BSCS"){
+                      this.process.processDocument.CTRL_planBSCS = doc.valor;
+                      hayBSCS = true;
+                  }
+                  if(doc.idNodo == "EMA" && doc.idParametro == "PROFILE"){
+                      this.process.processDocument.CTRL_profile = doc.valor;
+                      hayEMA = true;
+                  }
               }
 
-              /************* Fin de la creación de la ORDEN ****************/
-
-              /************ Inicio de la creación del recurso MSISDN *********/
-
-              //Si es servicio de consulta de MSISDN no fue exitoso, responde error
-              if(resp.estado == "NOOK"){
-                   this.process.processDocument.CTRL_ERROR = "2";
-                   this.process.processDocument.CTRL_DESC_ERROR = "Error al obtener un nuevo MSISDN desde BSCS";
-                   orden.estado = "ErrorMSISD";
-                   orden.save();
-                   return;
+              if(!hayCS){
+                  this.process.processDocument.CTRL_ERROR = "5";
+                  this.process.processDocument.CTRL_DESC_ERROR = "No se encuentra el código de plan de CS para la PO ingresada en la configuración de OM";
+                  return;
               }
-
-              /********** Fin de la creación del resurso MSISDN *************/
-              var a = 1;
+              if(!hayBSCS){
+                  this.process.processDocument.CTRL_ERROR = "6";
+                  this.process.processDocument.CTRL_DESC_ERROR = "No se encuentra el código de plan de BSCS para la PO ingresada en la configuración de OM";
+                  return;
+              }
+              if(!hayEMA){
+                  this.process.processDocument.CTRL_ERROR = "7";
+                  this.process.processDocument.CTRL_DESC_ERROR = "No se encuentra el código de profile de EMA para la PO ingresada en la configuración de OM";
+                  return;
+              }
             ]]></script>
           </method>
         </methodList>
       </child>
+      <child name="parametrosOK" type="switchActivity">
+        <label>parametrosOK</label>
+        <x>63.0</x>
+        <y>330.0</y>
+        <childList>
+          <child name="ok" type="caseActivity">
+            <label>ok</label>
+            <x>232.0</x>
+            <y>332.0</y>
+            <childList>
+              <child name="obtenerMSISDN" type="opActivity">
+                <element>iface_billingNamespace.interface_serviciosBSCS/oper_getMsisdnReserveBSCS</element>
+                <label>obtenerMSISDN</label>
+                <participant>part_billingNamespace.billingParticipant</participant>
+                <x>144.0</x>
+                <y>100.0</y>
+                <childList>
+                  <child name="validaOrden" type="switchActivity">
+                    <label>validaOrden</label>
+                    <x>310.0</x>
+                    <y>97.0</y>
+                    <childList>
+                      <child name="nok" type="caseActivity">
+                        <label>nok</label>
+                        <x>424.0</x>
+                        <y>195.0</y>
+                        <childList>
+                          <child name="ordenNOCompletada" type="completeActivity">
+                            <label>ordenNOCompletada</label>
+                            <x>232.0</x>
+                            <y>229.0</y>
+                          </child>
+                        </childList>
+                      </child>
+                      <child name="ok" type="caseActivity">
+                        <label>ok</label>
+                        <x>565.0</x>
+                        <y>227.0</y>
+                        <childList>
+                          <child name="provCS" type="seqActivity">
+                            <label>provCS</label>
+                            <x>392.0</x>
+                            <y>225.0</y>
+                            <childList>
+                              <child name="provCS" type="opActivity">
+                                <element>iface_CSProvisionInterface.interface_serviciosCS/oper_provServicioCS</element>
+                                <label>provCS</label>
+                                <participant>part_CSProvisionInterface.CSParticipant</participant>
+                                <x>482.0</x>
+                                <y>97.0</y>
+                                <childList>
+                                  <child name="provOK" type="switchActivity">
+                                    <label>provOK</label>
+                                    <x>597.0</x>
+                                    <y>97.0</y>
+                                    <childList>
+                                      <child name="nok" type="caseActivity">
+                                        <label>nok</label>
+                                        <x>536.0</x>
+                                        <y>227.0</y>
+                                        <childList>
+                                          <child name="ordenNoCompletada" type="completeActivity">
+                                            <label>ordenNoCompletada</label>
+                                            <x>536.0</x>
+                                            <y>227.0</y>
+                                          </child>
+                                        </childList>
+                                      </child>
+                                      <child name="ok" type="caseActivity">
+                                        <label>ok</label>
+                                        <x>597.0</x>
+                                        <y>197.0</y>
+                                        <childList>
+                                          <child name="provisionComplete" type="completeActivity">
+                                            <label>provisionComplete</label>
+                                            <x>697.0</x>
+                                            <y>195.0</y>
+                                          </child>
+                                        </childList>
+                                        <methodList>
+                                          <method name="cwOnProcActCond" type="action">
+                                            <category>cond</category>
+                                            <system>true</system>
+                                            <script><![CDATA[return this.process.processDocument.CTRL_ERROR == "0";]]></script>
+                                          </method>
+                                        </methodList>
+                                      </child>
+                                    </childList>
+                                  </child>
+                                </childList>
+                                <methodList>
+                                  <method name="cwOnProcActAfter" type="action">
+                                    <category>script</category>
+                                    <system>true</system>
+                                    <script><![CDATA[
+                                      OrderManager.debug();
+                                      //Inicializa las variables de control, que indican si hay algun problema en el flujo. Quedan en el processDocument.
+                                      var docProc = this.process.processDocument;
+                                      OrderManager.inicializaVariableControl(this.process.processDocument);
+
+                                      //resp contiene el resultado del WS, con la respuesta de la activación en CS
+                                      var resp = this.activityData;
+
+                                      if(resp==null || resp.estado=="NOOK"){
+                                           this.process.processDocument.CTRL_ERROR = "6";
+                                           this.process.processDocument.CTRL_DESC_ERROR = "Error al provisionar en CS. " + resp.mensaje;
+
+                                           OrderManager.actualizaEstadoOrden(this.process.processDocument.IN_orderId, "ErrorCS", "Error al provisionar en CS. " + resp.mensaje);
+                                           return;
+                                      }
+
+                                      var a=1;
+                                    ]]></script>
+                                  </method>
+                                  <method name="cwOnProcActBefore" type="action">
+                                    <category>before</category>
+                                    <system>true</system>
+                                    <script><![CDATA[
+                                      OrderManager.debug();
+
+                                      /** En esta sección, se deben completar los parámetros de entrada a la llamada del WS de provisión
+                                       *    de CS. En este caso, se requiere el MSISDN y el codigo del plan en CS.
+                                       */
+
+                                      this.activityData.orderid = this.process.processDocument.IN_orderId;
+                                      this.activityData.msisdn = this.process.processDocument.OUT_MSISDN;
+                                      this.activityData.id_plan_cs = this.process.processDocument.CTRL_planCS;
+                                      var a = 1;
+                                    ]]></script>
+                                  </method>
+                                </methodList>
+                              </child>
+                            </childList>
+                          </child>
+                        </childList>
+                        <methodList>
+                          <method name="cwOnProcActCond" type="action">
+                            <category>cond</category>
+                            <system>true</system>
+                            <script><![CDATA[return this.process.processDocument.CTRL_ERROR == "0";]]></script>
+                          </method>
+                        </methodList>
+                      </child>
+                    </childList>
+                  </child>
+                </childList>
+                <methodList>
+                  <method name="cwOnProcActAfter" type="action">
+                    <category>script</category>
+                    <system>true</system>
+                    <script><![CDATA[
+                      //OrderManager.debug();
+                      //Inicializa las variables de control, que indican si hay algun problema en el flujo. Quedan en el processDocument.
+                      OrderManager.inicializaVariableControl(this.process.processDocument);
+
+                      var docProc = this.process.processDocument;
+
+                      //resp contiene el resultado del WS, con la respuesta del MSISDN
+                      var resp = this.activityData;
+
+
+
+                      /*************** Inicio de la creacion de la ORDEN **************************/
+                      var orden = new Document("OrderManager.docOMOrden");  //documento asociado a la tabla de BD OM_ORDEN
+                      var fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
+                      var resultOM_Orden; //lista que retornara el finder
+
+                      orden.orderId = this.process.processDocument.IN_orderId;
+
+                      var resultOM_Orden = fnd.search(resultOM_Orden, orden);//retorna una DataObjectList() -> ARRAY
+                      var doc = resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
+
+                      //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
+                      if(doc){
+                          this.process.processDocument.CTRL_ERROR = "1";
+                          this.process.processDocument.CTRL_DESC_ERROR = "La orden entregada ya existe en la base de datos";
+                          return;
+                      }
+                      else{  // si no lo encuentra, lo crea
+                          orden.rut = docProc.IN_rut;
+                          orden.estado = "En Proceso";
+                          orden.motivoEstado = "La orden ha sido ingresada y se encuentra en proceso de creación."
+                          orden.save();
+                      }
+
+                      /************* Fin de la creación de la ORDEN ****************/
+
+
+
+                      /************ Inicio de la creación del recurso MSISDN *********/
+
+                      //Si es servicio de consulta de MSISDN no fue exitoso, responde error
+                      if(resp.estado == "NOOK"){
+                           this.process.processDocument.CTRL_ERROR = "2";
+                           this.process.processDocument.CTRL_DESC_ERROR = "Error al obtener un nuevo MSISDN desde BSCS";
+                           orden.estado = "ErrorMSISD";
+                           orden.motivoEstado = resp.mensaje;
+                           orden.save();
+                           return;
+                      }
+
+                      /********** Fin de la creación del resurso MSISDN *************/
+
+
+                      /*INICIO ********* Inicio Creación de PO BASICA *****************/
+
+                      var ordenPOBas = new Document("OrderManager.docOMOrdenPO");  //documento asociado a la tabla de BD OM_ORDEN
+
+                      //Como ya se validó que la orden no existía previamente, por integridad referencial la order_po tampoco existe, por lo que se crea directamente
+                      ordenPOBas.POId = docProc.IN_POIdBasico;
+                      ordenPOBas.orderId = docProc.IN_orderId;
+                      ordenPOBas.estado = "Creada";
+                      ordenPOBas.motivoEstado = "PO Creada exitosamente";
+                      ordenPOBas.save();
+
+                      /*FIN ********* Fin Creación de PO BASICA *****************/
+
+
+                      /*INICIO ********* Inicio Creación de PO Adicional *****************/
+
+                      var ordenPOAdi = new Document("OrderManager.docOMOrdenPO");  //documento asociado a la tabla de BD OM_ORDEN
+                      var hayAdicional = false;
+                      //Como ya se validó que la orden no existía previamente, por integridad referencial la order_po tampoco existe, por lo que se crea directamente
+
+                      //Primero se valida que la PO adicional venga informada
+                      if(docProc.IN_POIdAdicional!=null && docProc.IN_POIdAdicional.length > 0){
+                          //Se valida que no sea igual a la PO Basica
+                          if(docProc.IN_POIdAdicional != docProc.IN_POIdBasico){
+                              ordenPOAdi.POId = docProc.IN_POIdAdicional;
+                              ordenPOAdi.orderId = docProc.IN_orderId;
+                              ordenPOAdi.estado = "Creada";
+                              ordenPOAdi.motivoEstado = "PO Creada exitosamente";
+                              ordenPOAdi.save();
+                              hayAdicional = true;
+                          }
+                      }
+                      /*FIN ********* Fin Creación de PO Adicional *****************/
+
+
+                      /*INICIO ********* Inicio Creación del MSISDN *****************/
+
+                      var recurso = new Document("OrderManager.docOMRecursosPO");  //documento asociado a la tabla de BD OM_ORDEN
+                      //Como ya se validó que la orden no existía previamente, por integridad referencial la order_po tampoco existe, por lo que se crea directamente
+
+                      //Primero se valida que la MSISDN venga informada
+                      if(resp.msisdn!=null && resp.msisdn.length == 11){
+                              recurso.POId = docProc.IN_POIdBasico;
+                              recurso.orderId = docProc.IN_orderId;
+                              recurso.resourceId = "MSISDN";
+                              recurso.valor = resp.msisdn;
+                              recurso.save();
+                              docProc.OUT_MSISDN = resp.msisdn;
+                      }
+                      else{  // Si no viene el msisdn, se retorna error
+                           this.process.processDocument.CTRL_ERROR = "3";
+                           this.process.processDocument.CTRL_DESC_ERROR = "El MSISDN entregado es nulo o no tiene el largo adecuado";
+                           orden.estado = "ErrorMSISD";
+                           orden.motivoEstado = "El MSISDN entregado es nulo o no tiene el largo adecuado";
+                           orden.save();
+
+                           //Se actualiza estado de la PO Básica
+                           ordenPOBas.POId = docProc.IN_POIdBasico;
+                          ordenPOBas.orderId = docProc.IN_orderId;
+                          ordenPOBas.estado = "ErrorMSISD";
+                          ordenPOBas.motivoEstado = "El MSISDN entregado es nulo o no tiene el largo adecuado";
+                          ordenPOBas.save();
+
+                           return;
+                      }
+                      /*FIN ********* Fin Creación de MSISDN *****************/
+                    ]]></script>
+                  </method>
+                  <method name="cwOnProcActBefore" type="action">
+                    <category>before</category>
+                    <system>true</system>
+                    <script><![CDATA[
+                      //OrderManager.debug();
+                      this.activityData.orderid = this.process.processDocument.IN_orderId;
+                      this.activityData.rut = this.process.processDocument.IN_rut;
+                      var a = 1;
+                    ]]></script>
+                  </method>
+                </methodList>
+              </child>
+            </childList>
+            <methodList>
+              <method name="cwOnProcActCond" type="action">
+                <category>cond</category>
+                <system>true</system>
+                <script><![CDATA[return this.process.processDocument.CTRL_ERROR == "0";]]></script>
+              </method>
+            </methodList>
+          </child>
+          <child name="nok" type="caseActivity">
+            <label>nok</label>
+            <x>79.0</x>
+            <y>375.0</y>
+            <childList>
+              <child name="ordenNoCompletada" type="completeActivity">
+                <label>ordenNoCompletada</label>
+                <x>54.0</x>
+                <y>430.0</y>
+              </child>
+            </childList>
+          </child>
+        </childList>
+      </child>
       <child name="billingParticipant" type="participantActivity">
         <label>billingParticipant</label>
         <participant>part_billingNamespace.billingParticipant</participant>
-        <x>234.0</x>
-        <y>-1.0</y>
+        <x>142.0</x>
+        <y>-2.0</y>
+      </child>
+      <child name="CSParticipant" type="participantActivity">
+        <label>CSParticipant</label>
+        <participant>part_CSProvisionInterface.CSParticipant</participant>
+        <x>441.0</x>
+        <y>0.0</y>
       </child>
     </childList>
     <methodList>

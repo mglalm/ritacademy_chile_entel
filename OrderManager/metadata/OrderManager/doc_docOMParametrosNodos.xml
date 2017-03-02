@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="OrderManager.docOMParametrosNodos">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{31db86f2-3cc8-46f4-ab85-ef5a399fbbf4}</guid>
+  <label>docOMParametrosNodos</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID" type="leaf">
+      <column>ID</column>
+      <key>1</key>
+      <table>OM_PARAMETROS_NODOS</table>
+      <valueType>dtype_com.conceptwave.system.Integer</valueType>
+    </variable>
+    <variable name="POId" type="leaf">
+      <column>POID</column>
+      <table>OM_PARAMETROS_NODOS</table>
+      <valueType>dtype_OrderManager.dtPOId</valueType>
+    </variable>
+    <variable name="idNodo" type="leaf">
+      <column>IDNODO</column>
+      <table>OM_PARAMETROS_NODOS</table>
+      <valueType>dtype_OrderManager.dtIdNodo</valueType>
+    </variable>
+    <variable name="idParametro" type="leaf">
+      <column>IDPARAMETRO</column>
+      <table>OM_PARAMETROS_NODOS</table>
+      <valueType>dtype_OrderManager.dtIdParametro</valueType>
+    </variable>
+    <variable name="valor" type="leaf">
+      <column>VALOR</column>
+      <table>OM_PARAMETROS_NODOS</table>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+  </variableList>
+</document>

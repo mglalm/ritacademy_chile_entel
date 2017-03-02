@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="CSProvisionInterface.input_provServicioCS">
+  <container>true</container>
+  <description>input_provServicioCS</description>
+  <label>input_provServicioCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="orderid" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>orderid</label>
+    </child>
+    <child name="msisdn" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>msisdn</label>
+    </child>
+    <child name="id_plan_cs" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>id_plan_cs</label>
+    </child>
+  </childList>
+</dataStructure>

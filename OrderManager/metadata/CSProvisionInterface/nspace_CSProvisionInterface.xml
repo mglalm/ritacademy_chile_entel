@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<nameSpace name="CSProvisionInterface">
+  <label>CSProvisionInterface</label>
+  <metaVersion>25</metaVersion>
+  <targetNS>http://www.readinessit.com/namespaces/ProyectoCobras/CSProvisionInterface</targetNS>
+</nameSpace>

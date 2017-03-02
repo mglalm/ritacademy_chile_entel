@@ -22,6 +22,11 @@
       <table>OM_ORDEN</table>
       <valueType>dtype_OrderManager.dtEstado</valueType>
     </variable>
+    <variable name="motivoEstado" type="leaf">
+      <column>MOTIVO_ESTADO</column>
+      <table>OM_ORDEN</table>
+      <valueType>dtype_OrderManager.dtMotivoEstado</valueType>
+    </variable>
     <variable name="fechaCreacion" type="leaf">
       <column>FECHA_CREACION</column>
       <table>OM_ORDEN</table>

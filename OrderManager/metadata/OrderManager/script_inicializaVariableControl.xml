@@ -9,6 +9,6 @@
   </parameterList>
   <script><![CDATA[
     input.CTRL_ERROR="0";
-    input.CTRL_DESC_ERROR = "";
+    input.CTRL_DESC_ERROR = "Exito";
   ]]></script>
 </script>

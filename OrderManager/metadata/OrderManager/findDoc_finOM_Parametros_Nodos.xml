@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="OrderManager.finOM_Parametros_Nodos">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_OrderManager.docOMParametrosNodos</input>
+  <label>finOM_Parametros_Nodos</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_OrderManager.docOMParametrosNodos</output>
+  <type>document</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMParametrosNodos</document>
+      <mappedDocument>doc_OrderManager.docOMParametrosNodos</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMParametrosNodos/leaf_idNodo</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMParametrosNodos/leaf_idNodo</path>
+    </search>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMParametrosNodos</document>
+      <mappedDocument>doc_OrderManager.docOMParametrosNodos</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMParametrosNodos/leaf_idParametro</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMParametrosNodos/leaf_idParametro</path>
+    </search>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMParametrosNodos</document>
+      <mappedDocument>doc_OrderManager.docOMParametrosNodos</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMParametrosNodos/leaf_idPlan</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMParametrosNodos/leaf_idPlan</path>
+    </search>
+  </searchList>
+</findDoc>
