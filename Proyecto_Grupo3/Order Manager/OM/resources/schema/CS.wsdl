@@ -38,7 +38,7 @@
 					<documentation>ID Cliente</documentation>
 				</annotation>
 				<restriction base="xsd:string">
-					<maxLength value="16"/>
+					<maxLength value="32"/>
 				</restriction>
 			</simpleType>
 
@@ -83,7 +83,7 @@
 					<documentation>IMSI</documentation>
 				</annotation>
 				<restriction base="xsd:integer">
-					<totalDigits value="15"/>
+					<totalDigits value="16"/>
 				</restriction>
 			</simpleType>
 
@@ -130,8 +130,8 @@
 		</schema>
 	</types>
 
-	<message name="clienteChargingSystem">
-		<part name="clienteChargingSystem" type="chargingSystem:clienteChargingSystem"/>
+	<message name="requestCS">
+		<part name="requestCS" type="chargingSystem:requestCS"/>
 	</message>
 
 	<message name="responseCS">
@@ -140,7 +140,7 @@
 
 	<portType name="Crea_CLI_CS">
 		<operation name="creacionClienteCS">
-			<input message="tns:clienteChargingSystem"/>
+			<input message="tns:requestCS"/>
 			<output message="tns:responseCS"/>
 		</operation>
 	</portType>

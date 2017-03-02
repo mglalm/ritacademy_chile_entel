@@ -2,21 +2,22 @@
 <process name="orderManager.Provision_CLI_EMA">
   <activity name="Start" type="seqActivity">
     <label>Start</label>
-    <x>40.0</x>
-    <y>27.0</y>
+    <x>41.0</x>
+    <y>46.0</y>
     <childList>
       <child name="Provision_Servicio_Cli" type="opActivity">
-        <element>iface_EMA.Crea_CLI_HLR/oper_creacionClienteHLR</element>
+        <element>iface_EMAOutbound.Crea_CLI_HLR/oper_creacionClienteHLR</element>
         <label>Provision_Servicio_Cli</label>
-        <participant>part_EMAOutbound.Provision_Cli_Part</participant>
-        <x>278.0</x>
-        <y>111.0</y>
+        <participant>part_EMAOutbound.EMA_CLI_PERT</participant>
+        <x>226.0</x>
+        <y>28.0</y>
         <methodList>
           <method name="cwOnProcActAfter" type="action">
             <category>script</category>
             <system>true</system>
             <script><![CDATA[
-              this.process.processDocument.mensaje = this.activityData.mensaje;
+              orderManager.dummy();
+              this.process.processDocument.DESC = this.activityData.mensaje;
               this.process.processDocument.ESTADO = this.activityData.estado;
             ]]></script>
           </method>
@@ -32,11 +33,11 @@
           </method>
         </methodList>
       </child>
-      <child name="Provision_Cli_Part" type="participantActivity">
-        <label>Provision_Cli_Part</label>
-        <participant>part_EMAOutbound.Provision_Cli_Part</participant>
-        <x>445.0</x>
-        <y>-4.0</y>
+      <child name="EMA_CLI_PERT" type="participantActivity">
+        <label>EMA_CLI_PERT</label>
+        <participant>part_EMAOutbound.EMA_CLI_PERT</participant>
+        <x>420.0</x>
+        <y>46.0</y>
       </child>
     </childList>
   </activity>

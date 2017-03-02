@@ -53,9 +53,20 @@
 
 			<!-- Structures -->
 
-			<complexType name="response">
+			<complexType name="EMArequest">
 				<annotation>
-					<documentation>response</documentation>
+					<documentation>EMArequest</documentation>
+				</annotation>
+					<sequence>
+						<element name="IMSI" minOccurs="0" maxOccurs="1" type="EMA:IMSI"/>
+						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="EMA:MSISDN"/>
+						<element name="PROFILE" minOccurs="0" maxOccurs="1" type="EMA:PROFILE"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="responseEMA">
+				<annotation>
+					<documentation>responseEMA</documentation>
 				</annotation>
 					<sequence>
 						<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
@@ -79,18 +90,18 @@
 		</schema>
 	</types>
 
-	<message name="clienteHLR">
-		<part name="clienteHLR" type="EMA:clienteHLR"/>
+	<message name="EMArequest">
+		<part name="EMArequest" type="EMA:EMArequest"/>
 	</message>
 
-	<message name="response">
-		<part name="response" type="EMA:response"/>
+	<message name="responseEMA">
+		<part name="responseEMA" type="EMA:responseEMA"/>
 	</message>
 
 	<portType name="Crea_CLI_HLR">
 		<operation name="creacionClienteHLR">
-			<input message="tns:clienteHLR"/>
-			<output message="tns:response"/>
+			<input message="tns:EMArequest"/>
+			<output message="tns:responseEMA"/>
 		</operation>
 	</portType>
 

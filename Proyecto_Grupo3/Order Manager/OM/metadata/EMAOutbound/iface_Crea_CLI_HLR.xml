@@ -4,9 +4,9 @@
   <metaVersion>25</metaVersion>
   <operationList>
     <operation name="creacionClienteHLR" type="oper">
-      <input>doc_EMAOutbound.clienteHLR2</input>
+      <input>dstruct_EMAOutbound.EMArequest</input>
       <label>creacionClienteHLR</label>
-      <output>dstruct_EMAOutbound.response2</output>
+      <output>dstruct_EMAOutbound.responseEMA</output>
       <type>Request-Response</type>
     </operation>
   </operationList>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<nameSpace name="chargingSystemOutbound">
-  <label>charging System Outbound</label>
-  <metaVersion>25</metaVersion>
-  <targetNS>chargingSystem</targetNS>
-</nameSpace>

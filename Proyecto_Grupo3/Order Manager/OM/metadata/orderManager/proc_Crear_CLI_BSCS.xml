@@ -25,6 +25,7 @@
             <category>script</category>
             <system>true</system>
             <script><![CDATA[
+              orderManager.dummy();
               this.process.processDocument.IMSI = this.activityData.IMSI;
               this.process.processDocument.MSISDN = this.activityData.MSISDN;
               this.process.processDocument.ESTADO = this.activityData.ESTADO;

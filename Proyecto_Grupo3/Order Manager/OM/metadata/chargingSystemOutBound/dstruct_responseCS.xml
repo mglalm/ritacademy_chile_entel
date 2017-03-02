@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="chargingSystemOutbound.responseCS2">
+<dataStructure name="chargingSystemOutBound.responseCS">
   <container>true</container>
-  <jsonMap type="jmap">
-    <exclude>1</exclude>
-  </jsonMap>
-  <label>responseCS2</label>
+  <description>responseCS</description>
+  <label>responseCS</label>
   <metaVersion>25</metaVersion>
   <childList>
     <child name="mensaje" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_chargingSystem.mensaje</element>
+      <element>dtype_chargingSystemOutBound.mensaje</element>
       <label>mensaje</label>
     </child>
     <child name="estado" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_chargingSystem.estado</element>
+      <element>dtype_chargingSystemOutBound.estado</element>
       <label>estado</label>
     </child>
   </childList>

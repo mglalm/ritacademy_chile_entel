@@ -37,6 +37,11 @@
     docprocess.ID_CLIENTE = ID_CLIENTE;
     docprocess.ID_PO = ID_PO;
     docprocess.ID_Order = ID_ORDER;
+    docprocess.PLAN_BSCS = PLAN_BSCS;
+    docprocess.planCS =  planCS;
+    docprocess.saldo =  saldo;
+    docprocess.PROFILE =  PROFILE;
+
 
     var ProcessID = Process.startProcess('orderManager.mainProcess',docprocess,null,null);
 

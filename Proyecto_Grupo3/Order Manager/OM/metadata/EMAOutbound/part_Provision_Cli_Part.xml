@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<participant name="EMAOutbound.Provision_Cli_Part">
-  <label>Provision_Cli_Part</label>
-  <metaVersion>25</metaVersion>
-  <participant>iface_EMA.Crea_CLI_HLR</participant>
-</participant>
