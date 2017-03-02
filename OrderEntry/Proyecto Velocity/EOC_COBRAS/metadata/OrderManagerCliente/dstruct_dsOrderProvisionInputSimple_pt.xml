@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="OrderManagerCliente.dsOrderProvisionInputSimple_pt">
+  <abstract>true</abstract>
+  <label>dsOrderProvisionInputSimple_pt</label>
+  <metaVersion>25</metaVersion>
+</dataStructure>

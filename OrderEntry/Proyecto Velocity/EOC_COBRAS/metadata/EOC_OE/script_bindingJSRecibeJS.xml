@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="EOC_OE.bindingJSRecibeJS">
+  <label>bindingJSRecibeJS</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>dstruct_EOC_OE.dsOrderProvisionResponse</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var doc = new Document("EOC_OE.DATOS_ORDEN");
+    doc.rut = input.rut
+
+    return doc;
+  ]]></script>
+</script>

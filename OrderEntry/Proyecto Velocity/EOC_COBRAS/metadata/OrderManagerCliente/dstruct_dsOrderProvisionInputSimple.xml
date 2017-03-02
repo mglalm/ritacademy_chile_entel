@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="OrderManagerCliente.dsOrderProvisionInputSimple">
+  <container>true</container>
+  <description>dsOrderProvisionInputSimple</description>
+  <label>dsOrderProvisionInputSimple</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="orderId" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManagerCliente.dtOrderId</element>
+      <label>orderId</label>
+    </child>
+    <child name="rut" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManagerCliente.dtRut</element>
+      <label>rut</label>
+    </child>
+    <child name="POIdBasico" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManagerCliente.dtPOId</element>
+      <label>POIdBasico</label>
+    </child>
+    <child name="POIdAdicional" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManagerCliente.dtPOId</element>
+      <label>POIdAdicional</label>
+    </child>
+  </childList>
+</dataStructure>

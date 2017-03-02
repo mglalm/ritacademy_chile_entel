@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema targetNamespace="http://www.readinessit.com/namespaces/ProyectoCobras/OrderManager"	
+	xmlns="http://www.w3.org/2001/XMLSchema"	
+	xmlns:OrderManager="http://www.readinessit.com/namespaces/ProyectoCobras/OrderManager"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+
+	<annotation>
+		<documentation>OrderManager</documentation>
+		<appinfo>
+			<metadata>AVM Metadata</metadata>
+			<created>Mon Feb 27 16:14:06 CLT 2017</created>
+		</appinfo>
+	</annotation>
+
+	<!-- Data types and elements -->
+
+	<simpleType name="dtRut">
+		<annotation>
+			<documentation>dt Rut</documentation>
+			<appinfo>
+				<label>dtRut</label>
+			</appinfo>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="15"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="dtOrderId">
+		<annotation>
+			<documentation>dt Order Id</documentation>
+			<appinfo>
+				<label>dtOrderId</label>
+			</appinfo>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="16"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="dtPOId">
+		<annotation>
+			<documentation>dt PO Id</documentation>
+			<appinfo>
+				<label>dtPOId</label>
+			</appinfo>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="32"/>
+		</restriction>
+	</simpleType>
+
+	<!-- Structures -->
+
+	<complexType name="dsOrderProvisionInputSimple_pt">
+		<annotation>
+			<documentation>dsOrderProvisionInputSimple_pt</documentation>
+		</annotation>
+			<sequence>
+			</sequence>
+		</complexType>
+
+	<complexType name="dsOrderProvisionInputSimple">
+		<annotation>
+			<documentation>dsOrderProvisionInputSimple</documentation>
+		</annotation>
+			<sequence>
+				<element name="orderId" minOccurs="0" maxOccurs="1" type="OrderManager:dtOrderId"/>
+				<element name="rut" minOccurs="0" maxOccurs="1" type="OrderManager:dtRut"/>
+				<element name="POIdBasico" minOccurs="0" maxOccurs="1" type="OrderManager:dtPOId"/>
+				<element name="POIdAdicional" minOccurs="0" maxOccurs="1" type="OrderManager:dtPOId"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="ack_pt">
+		<annotation>
+			<documentation>ack_pt</documentation>
+		</annotation>
+			<sequence>
+			</sequence>
+		</complexType>
+
+	<complexType name="ack">
+		<annotation>
+			<documentation>ack</documentation>
+		</annotation>
+			<sequence>
+				<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="descripcion" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<!-- Documents -->
+
+</schema>

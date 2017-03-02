@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="EOC_OE.recibeProv">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>recibeProv</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="respuesta" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>respuesta de OM</label>
+    </child>
+    <child name="Orden" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>Id de la Orden</label>
+    </child>
+  </childList>
+</dataStructure>

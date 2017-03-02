@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="EOC_OE.dsOrderProvisionResponse">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>dsOrderProvisionResponse</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="orderId" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtOrderId</element>
+      <label>orderId</label>
+    </child>
+    <child name="rut" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtRut</element>
+      <label>rut</label>
+    </child>
+    <child name="estadoOrden" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtEstado</element>
+      <label>estadoOrden</label>
+    </child>
+    <child name="MSISDN" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtMSISDN</element>
+      <label>MSISDN</label>
+    </child>
+    <child name="POIdBasica" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtPOId</element>
+      <label>POIdBasica</label>
+    </child>
+    <child name="estadoPOBasica" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtEstado</element>
+      <label>estadoPOBasica</label>
+    </child>
+    <child name="motivoEstadoPOBasica" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtMotivoEstado</element>
+      <label>motivoEstadoPOBasica</label>
+    </child>
+    <child name="POIdAdicional" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtPOId</element>
+      <label>POIdAdicional</label>
+    </child>
+    <child name="estadoPOAdicional" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtEstado</element>
+      <label>estadoPOAdicional</label>
+    </child>
+    <child name="motivoEstadoPOAdicional" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtMotivoEstado</element>
+      <label>motivoEstadoPOAdicional</label>
+    </child>
+  </childList>
+</dataStructure>

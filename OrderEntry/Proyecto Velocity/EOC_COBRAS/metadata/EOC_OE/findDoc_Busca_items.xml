@@ -124,7 +124,10 @@
   </UserInterface>
   <viewList>
     <view name="Busca_itemsView" type="findVView">
+      <inputOverlay>doc_EOC_OE.Catalogo/ui_UserInterface/frmui_Forms/vform_items</inputOverlay>
       <outputOverlay>findDoc_EOC_OE.Busca_items/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <searchImmediately>true</searchImmediately>
+      <showSearchForm>true</showSearchForm>
     </view>
   </viewList>
 </findDoc>

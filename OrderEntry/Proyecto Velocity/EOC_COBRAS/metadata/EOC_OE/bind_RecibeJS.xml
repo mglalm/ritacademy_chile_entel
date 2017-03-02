@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="EOC_OE.RecibeJS">
+  <extensionList>
+    <extension name="OE_Ope_recibe_PROV" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="metadataScript">EOC_OE.bindingJSRecibeJS</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_EOC_OE.recibeFinalOM</interface>
+  <label>RecibeJS</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

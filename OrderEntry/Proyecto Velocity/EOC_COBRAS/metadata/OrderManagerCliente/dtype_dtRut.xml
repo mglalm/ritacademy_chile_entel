@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="EOC_OE.RUT">
-  <dataTypeFlags enum-type="dataTypeFlag">NON_NULLABLE</dataTypeFlags>
+<dataType name="OrderManagerCliente.dtRut">
+  <description>dt Rut</description>
   <extends>dtype_com.conceptwave.system.String</extends>
-  <label>RUT</label>
+  <label>dtRut</label>
   <length>15</length>
   <metaVersion>25</metaVersion>
 </dataType>

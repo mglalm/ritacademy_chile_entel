@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="EOC_OE.OE_RecibeProvision">
+  <interface>iface_EOC_OE.recibeFinalOM</interface>
+  <label>OE_RecibeProvision</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

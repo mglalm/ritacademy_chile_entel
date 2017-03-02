@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="OrderManagerCliente.ack_pt">
+  <abstract>true</abstract>
+  <label>ack_pt</label>
+  <metaVersion>25</metaVersion>
+</dataStructure>

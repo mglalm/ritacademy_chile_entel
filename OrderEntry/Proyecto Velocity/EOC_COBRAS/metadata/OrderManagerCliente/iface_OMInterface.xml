@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="OrderManagerCliente.OMInterface">
+  <label>OMInterface</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="OMProvisionarOrden" type="oper">
+      <input>dstruct_OrderManagerCliente.dsOrderProvisionInputSimple_pt</input>
+      <label>OMProvisionarOrden</label>
+      <output>dstruct_OrderManagerCliente.ack_pt</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

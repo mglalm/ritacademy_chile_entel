@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="OrderManagerCliente.OMProvisionOrderSOAPBinding">
+  <extensionList>
+    <extension name="OMProvisionarOrden" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">OMProvisionarOrden</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="OMProvisionarOrden$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="OMProvisionarOrden$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_OrderManagerCliente.OMInterface</interface>
+  <label>OMProvisionOrderSOAPBinding</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema targetNamespace="EOC_OE"	
+	xmlns="http://www.w3.org/2001/XMLSchema"	
+	xmlns:EOC_OE="EOC_OE"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	xmlns:cwf="http://www.conceptwave.com/system">
+
+
+
+	<import namespace="http://www.conceptwave.com/system" schemaLocation="cwf.xsd"/>
+
+	<annotation>
+		<documentation>ORDER ENTRY</documentation>
+		<appinfo>
+			<metadata>AVM Metadata</metadata>
+			<created>Mon Feb 27 16:14:06 CLT 2017</created>
+		</appinfo>
+	</annotation>
+
+	<!-- Data types and elements -->
+
+	<simpleType name="RUT">
+		<annotation>
+			<documentation>RUT</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="15"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="NOMBRE">
+		<annotation>
+			<documentation>NOMBRE</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="30"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="COMUNA">
+		<annotation>
+			<documentation>COMUNA</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="30"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="CIUDAD">
+		<annotation>
+			<documentation>CIUDAD</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="30"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DIRECCION">
+		<annotation>
+			<documentation>DIRECCION</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="30"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="PO">
+		<annotation>
+			<documentation>PO Item</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="30"/>
+		</restriction>
+	</simpleType>
+
+	<!-- Structures -->
+
+	<complexType name="recibeProv">
+		<annotation>
+			<documentation>recibeProv</documentation>
+		</annotation>
+			<sequence>
+				<element name="respuesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="Orden" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<!-- Documents -->
+
+	<complexType name="DATOS_CLIENTE">
+		<annotation>
+			<documentation>Datos del Cliente</documentation>
+		</annotation>
+			<sequence>
+				<element name="RUT" type="EOC_OE:RUT"/>
+				<element name="NOMBRE" type="EOC_OE:NOMBRE"/>
+				<element name="DIRECCION" type="EOC_OE:DIRECCION"/>
+				<element name="COMUNA" type="EOC_OE:COMUNA"/>
+				<element name="CIUDAD" type="EOC_OE:CIUDAD"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="Catalogo">
+		<annotation>
+			<documentation>Items del Catalogo</documentation>
+		</annotation>
+			<sequence>
+				<element name="PO" type="EOC_OE:PO"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="BUSCA_DATOS_CLIENTE">
+		<annotation>
+			<documentation>Busca Datos del Cliente</documentation>
+		</annotation>
+			<sequence>
+				<element name="RUT" type="EOC_OE:RUT"/>
+				<element name="NOMBRE" type="EOC_OE:NOMBRE"/>
+				<element name="DIRECCION" type="EOC_OE:DIRECCION"/>
+				<element name="COMUNA" type="EOC_OE:COMUNA"/>
+				<element name="CIUDAD" type="EOC_OE:CIUDAD"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="DATOS_ORDEN">
+		<annotation>
+			<documentation>Datos de la Orden</documentation>
+		</annotation>
+			<sequence>
+				<element name="cwOrderId" type="cwf:cwOrderId"/>
+				<element name="RUT" type="EOC_OE:RUT"/>
+				<element name="cwDocStamp" type="cwf:cwDocStamp"/>
+				<element name="cwOrderCreationDate" type="cwf:cwOrderCreationDate"/>
+				<element name="cwParentId" type="cwf:cwParentId"/>
+				<element name="cwSiteId" type="cwf:cwSiteId"/>
+				<element name="lastUpdatedDate" type="cwf:lastUpdatedDate"/>
+				<element name="updatedBy" type="cwf:updatedBy"/>
+				<element name="cwDocId" type="cwf:cwDocId"/>
+			</sequence>
+		</complexType>
+
+</schema>

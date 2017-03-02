@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="EOC_OE" targetNamespace="EOC_OE"
+	xmlns:tns="EOC_OE"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:EOC_OE="EOC_OE">
+
+	<types>
+		<schema targetNamespace="EOC_OE"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:EOC_OE="EOC_OE"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>ORDER ENTRY</documentation>
+				<appinfo>
+					<metadata>AVM Metadata</metadata>
+					<created>Mon Feb 27 16:14:06 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<!-- Structures -->
+
+			<complexType name="recibeProv">
+				<annotation>
+					<documentation>recibeProv</documentation>
+				</annotation>
+					<sequence>
+						<element name="respuesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="Orden" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+		</schema>
+	</types>
+
+	<message name="recibeProv">
+		<part name="recibeProv" type="EOC_OE:recibeProv"/>
+	</message>
+
+	<portType name="recibeFinalOM">
+		<operation name="OE_Ope_recibe_PROV">
+			<input message="tns:recibeProv"/>
+			<output message="tns:recibeProv"/>
+		</operation>
+	</portType>
+
+	<binding name="OE_RecibeProvision" type="tns:recibeFinalOM">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="OE_Ope_recibe_PROV">
+			<soap:operation soapAction="OE_Ope_recibe_PROV"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="OE_Servicio_Recibe_Provi">
+		<port name="OE_Recibe_Prov_SOAP" binding="tns:OE_RecibeProvision">
+			<soap:address location="http://localhost:8080/cwf/services/recibeFinalOM"/>
+		</port>
+	</service>
+
+</definitions>

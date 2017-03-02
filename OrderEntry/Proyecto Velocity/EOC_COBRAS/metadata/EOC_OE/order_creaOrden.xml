@@ -23,7 +23,7 @@
       <child name="Orden" type="tnOi">
         <autoExpand>true</autoExpand>
         <autoSave>true</autoSave>
-        <detailForm>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</detailForm>
+        <detailForm>doc_EOC_OE.DATOS_ORDEN/ui_UserInterface/frmui_Forms/vform_Crea_Order</detailForm>
         <detailUI>doc_EOC_OE.DATOS_ORDEN/ui_UserInterface</detailUI>
         <element>doc_EOC_OE.DATOS_ORDEN</element>
         <extends>tn_com.conceptwave.system.TreeNode</extends>
@@ -33,6 +33,130 @@
         <vformList>
           <vform name="Forms" type="frmui">
             <extends>tn_com.conceptwave.system.TreeNode/frmui_Forms</extends>
+            <overlayList>
+              <overlay name="orden" type="vform">
+                <label>orden</label>
+                <root name="ordenGrid_vCentering" type="elvltstck">
+                  <height>100%</height>
+                  <membersMargin>5</membersMargin>
+                  <width>100%</width>
+                  <elementList>
+                    <element name="DATOS_ORDENGrid" type="elgrd">
+                      <numOfCols>4</numOfCols>
+                      <useDefaultHeight>true</useDefaultHeight>
+                      <elementList>
+                        <element name="DATOS_ORDENHeader" type="elhdr">
+                          <label>Datos de la Orden</label>
+                        </element>
+                        <element name="cwOrderId" type="elfld">
+                          <editable type="varPath">
+                            <variablePathList>
+                              <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                            </variablePathList>
+                          </editable>
+                          <variable type="varPath">
+                            <variablePathList>
+                              <variablePath>doc_EOC_OE.DATOS_ORDEN/leaf_cwOrderId</variablePath>
+                            </variablePathList>
+                          </variable>
+                        </element>
+                        <element name="RUT" type="elfld">
+                          <variable type="varPath">
+                            <variablePathList>
+                              <variablePath>doc_EOC_OE.DATOS_ORDEN/leaf_RUT</variablePath>
+                            </variablePathList>
+                          </variable>
+                        </element>
+                        <element name="cwDocStamp" type="elfld">
+                          <editable type="varPath">
+                            <variablePathList>
+                              <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                            </variablePathList>
+                          </editable>
+                          <variable type="varPath">
+                            <variablePathList>
+                              <variablePath>doc_EOC_OE.DATOS_ORDEN/leaf_cwDocStamp</variablePath>
+                            </variablePathList>
+                          </variable>
+                        </element>
+                        <element name="cwOrderCreationDate" type="eldatetime">
+                          <editable type="varPath">
+                            <variablePathList>
+                              <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                            </variablePathList>
+                          </editable>
+                          <variable type="varPath">
+                            <variablePathList>
+                              <variablePath>doc_EOC_OE.DATOS_ORDEN/leaf_cwOrderCreationDate</variablePath>
+                            </variablePathList>
+                          </variable>
+                        </element>
+                        <element name="cwParentId" type="elfld">
+                          <editable type="varPath">
+                            <variablePathList>
+                              <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                            </variablePathList>
+                          </editable>
+                          <variable type="varPath">
+                            <variablePathList>
+                              <variablePath>doc_EOC_OE.DATOS_ORDEN/leaf_cwParentId</variablePath>
+                            </variablePathList>
+                          </variable>
+                        </element>
+                        <element name="cwSiteId" type="elfld">
+                          <editable type="varPath">
+                            <variablePathList>
+                              <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                            </variablePathList>
+                          </editable>
+                          <variable type="varPath">
+                            <variablePathList>
+                              <variablePath>doc_EOC_OE.DATOS_ORDEN/leaf_cwSiteId</variablePath>
+                            </variablePathList>
+                          </variable>
+                        </element>
+                        <element name="lastUpdatedDate" type="eldatetime">
+                          <editable type="varPath">
+                            <variablePathList>
+                              <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                            </variablePathList>
+                          </editable>
+                          <variable type="varPath">
+                            <variablePathList>
+                              <variablePath>doc_EOC_OE.DATOS_ORDEN/leaf_lastUpdatedDate</variablePath>
+                            </variablePathList>
+                          </variable>
+                        </element>
+                        <element name="updatedBy" type="elfld">
+                          <editable type="varPath">
+                            <variablePathList>
+                              <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                            </variablePathList>
+                          </editable>
+                          <variable type="varPath">
+                            <variablePathList>
+                              <variablePath>doc_EOC_OE.DATOS_ORDEN/leaf_updatedBy</variablePath>
+                            </variablePathList>
+                          </variable>
+                        </element>
+                        <element name="cwDocId" type="elfld">
+                          <editable type="varPath">
+                            <variablePathList>
+                              <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                            </variablePathList>
+                          </editable>
+                          <variable type="varPath">
+                            <variablePathList>
+                              <variablePath>doc_EOC_OE.DATOS_ORDEN/leaf_cwDocId</variablePath>
+                            </variablePathList>
+                          </variable>
+                        </element>
+                      </elementList>
+                    </element>
+                  </elementList>
+                </root>
+              </overlay>
+            </overlayList>
           </vform>
         </vformList>
       </child>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="EOC_OE.recibeFinalOM">
+  <label>recibeFinal Order Manager</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="OE_Ope_recibe_PROV" type="oper">
+      <input>dstruct_EOC_OE.recibeProv</input>
+      <label>OE_Ope_recibe_PROV</label>
+      <output>dstruct_EOC_OE.recibeProv</output>
+      <type>Notification</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>
