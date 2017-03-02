@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="EMA" targetNamespace="EMA"
+	xmlns:tns="EMA"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:cwf_system="http://www.conceptwave.com/com/conceptwave/system"
+	xmlns:EMA="EMA">
+
+	<types>
+		<schema targetNamespace="http://www.conceptwave.com/com/conceptwave/system"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>system</documentation>
+				<appinfo>
+					<metadata>AVM Metadata</metadata>
+					<created>Mon Feb 27 16:29:39 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Structures -->
+
+			<complexType name="DataStructure"/>
+
+			<!-- Documents -->
+
+			<complexType name="Document"/>
+
+		</schema>
+		<schema targetNamespace="EMA"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:EMA="EMA"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>EMA</documentation>
+				<appinfo>
+					<metadata>AVM Metadata</metadata>
+					<created>Mon Feb 27 16:29:39 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<simpleType name="IMSI">
+				<annotation>
+					<documentation>IMSI</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+					<totalDigits value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="MSISDN">
+				<annotation>
+					<documentation>MSISDN</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+					<totalDigits value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="PROFILE">
+				<annotation>
+					<documentation>PROFILE</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<!-- Structures -->
+
+			<complexType name="response">
+				<annotation>
+					<documentation>response</documentation>
+				</annotation>
+					<sequence>
+						<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+			<complexType name="clienteHLR">
+				<annotation>
+					<documentation>Cliente HLR</documentation>
+				</annotation>
+					<sequence>
+						<element name="IMSI" type="EMA:IMSI"/>
+						<element name="MSISDN" type="EMA:MSISDN"/>
+						<element name="PROFILE" type="EMA:PROFILE"/>
+					</sequence>
+				</complexType>
+
+		</schema>
+	</types>
+
+	<message name="clienteHLR">
+		<part name="clienteHLR" type="EMA:clienteHLR"/>
+	</message>
+
+	<message name="response">
+		<part name="response" type="EMA:response"/>
+	</message>
+
+	<portType name="Crea_CLI_HLR">
+		<operation name="creacionClienteHLR">
+			<input message="tns:clienteHLR"/>
+			<output message="tns:response"/>
+		</operation>
+	</portType>
+
+	<binding name="bindingSOAPRequestEMA" type="tns:Crea_CLI_HLR">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="creacionClienteHLR">
+			<soap:operation soapAction="creacionClienteHLR"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="requestEMA">
+		<port name="EMASOAPPort" binding="tns:bindingSOAPRequestEMA">
+		</port>
+	</service>
+
+</definitions>

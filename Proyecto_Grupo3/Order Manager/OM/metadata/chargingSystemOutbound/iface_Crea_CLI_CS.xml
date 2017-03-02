@@ -4,9 +4,9 @@
   <metaVersion>25</metaVersion>
   <operationList>
     <operation name="creacionClienteCS" type="oper">
-      <input>dstruct_chargingSystemOutbound.clienteChargingSystem</input>
+      <input>dstruct_chargingSystemOutbound.requestCS</input>
       <label>creacionClienteCS</label>
-      <output>dstruct_chargingSystemOutbound.responseCS</output>
+      <output>dstruct_chargingSystemOutbound.responseCS2</output>
       <type>Request-Response</type>
     </operation>
   </operationList>

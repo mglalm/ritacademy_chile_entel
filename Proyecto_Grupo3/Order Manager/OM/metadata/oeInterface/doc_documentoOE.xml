@@ -8,6 +8,12 @@
     <variable name="DESC" type="leaf">
       <valueType>dtype_oeInterface.DESC</valueType>
     </variable>
+    <variable name="ID_Order" type="leaf">
+      <valueType>dtype_oeInterface.ID_Order</valueType>
+    </variable>
+    <variable name="ID_PO" type="leaf">
+      <valueType>dtype_oeInterface.ID_PO</valueType>
+    </variable>
     <variable name="ESTADO" type="leaf">
       <valueType>dtype_oeInterface.ESTADO</valueType>
     </variable>

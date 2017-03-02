@@ -9,8 +9,8 @@
         <element>iface_EMA.Crea_CLI_HLR/oper_creacionClienteHLR</element>
         <label>Provision_Servicio_Cli</label>
         <participant>part_EMAOutbound.Provision_Cli_Part</participant>
-        <x>279.0</x>
-        <y>108.0</y>
+        <x>278.0</x>
+        <y>111.0</y>
         <methodList>
           <method name="cwOnProcActAfter" type="action">
             <category>script</category>
@@ -24,6 +24,7 @@
             <category>before</category>
             <system>true</system>
             <script><![CDATA[
+              orderManager.dummy();
               this.activityData.IMSI = this.process.processDocument.IMSI;
               this.activityData.MSISDN = this.process.processDocument.MSISDN;
               this.activityData.PROFILE = this.process.processDocument.PROFILE;

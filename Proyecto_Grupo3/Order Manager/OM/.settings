@@ -3,6 +3,11 @@
   <DefaultDB>TRAIN2</DefaultDB>
   <applicationString>train2</applicationString>
   <applicationVersionString>1</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="Start.Crear_Cli_CS.cwOnProcActBefore.orderManager.Crear_CLI_CS">0</breakpoint>
+    <breakpoint key="oeInterface.oeScript">0</breakpoint>
+    <breakpoint key="orderManager.dummy">0</breakpoint>
+  </breakpointMap>
   <databasesMap>
     <databases key="TRAIN2" type=".configdb">
       <dbname>TRAIN2</dbname>
@@ -18,6 +23,6 @@
   <excludedResource>.svn</excludedResource>
   <jarFolder>D:\</jarFolder>
   <joinCluster>true</joinCluster>
-  <nodeString>train2</nodeString>
+  <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
 </project>

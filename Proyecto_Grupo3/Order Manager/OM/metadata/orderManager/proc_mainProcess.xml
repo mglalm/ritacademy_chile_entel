@@ -54,6 +54,7 @@
                             <category>before</category>
                             <system>true</system>
                             <script><![CDATA[
+                              orderManager.dummy();
                               this.activityData.IMSI = this.process.processDocument.IMSI;
                               this.activityData.MSISDN = this.process.processDocument.MSISDN;
                               this.activityData.ESTADO = this.process.processDocument.ESTADO;
