@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<participant name="EMA_CONSUMER.EMAParticipant">
+  <label>EMAParticipant</label>
+  <metaVersion>25</metaVersion>
+  <participant>iface_EMA_CONSUMER.provisionaEMA</participant>
+</participant>

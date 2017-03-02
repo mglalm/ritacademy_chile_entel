@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="EOC_CONSUMER.ack">
+  <container>true</container>
+  <description>ack</description>
+  <label>ack</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="codigo" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>codigo</label>
+    </child>
+  </childList>
+</dataStructure>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="OM_LISTENER.OM_LISTENER">
+  <label>OM_LISTENER</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="portSOAP" type="port">
+      <binding>bind_OM_LISTENER.bindingSOAP</binding>
+      <label>portSOAP</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+    <port name="portJS" type="port">
+      <binding>bind_OM_LISTENER.bindingJS</binding>
+      <label>portJS</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="EOC_CONSUMER.respuesta_pt">
+  <abstract>true</abstract>
+  <label>respuesta_pt</label>
+  <metaVersion>25</metaVersion>
+</dataStructure>

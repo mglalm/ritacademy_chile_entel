@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions name="CS_IO" targetNamespace="CS_IO"
-	xmlns:tns="CS_IO"
+<definitions name="CS_LISTENER" targetNamespace="CS_LISTENER"
+	xmlns:tns="CS_LISTENER"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 	xmlns="http://schemas.xmlsoap.org/wsdl/"
-	xmlns:CS_IO="CS_IO">
+	xmlns:CS_LISTENER="CS_LISTENER">
 
 	<types>
-		<schema targetNamespace="CS_IO"			
+		<schema targetNamespace="CS_LISTENER"			
 	xmlns="http://www.w3.org/2001/XMLSchema"			
-	xmlns:CS_IO="CS_IO"			
+	xmlns:CS_LISTENER="CS_LISTENER"			
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 
 
 			<annotation>
-				<documentation>CS_IO</documentation>
+				<documentation>CS_LISTENER</documentation>
 				<appinfo>
 					<metadata>OM</metadata>
 					<created>Mon Feb 27 11:09:44 CLT 2017</created>
@@ -52,11 +52,11 @@
 	</types>
 
 	<message name="request">
-		<part name="request" type="CS_IO:request"/>
+		<part name="request" type="CS_LISTENER:request"/>
 	</message>
 
 	<message name="response">
-		<part name="response" type="CS_IO:response"/>
+		<part name="response" type="CS_LISTENER:response"/>
 	</message>
 
 	<portType name="CSInterfaz">
@@ -79,7 +79,7 @@
 		</operation>
 	</binding>
 
-	<service name="externalService">
+	<service name="CS_LISTENER">
 		<port name="portSOAP" binding="tns:bindingSOAP">
 		</port>
 	</service>

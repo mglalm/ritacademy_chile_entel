@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="EOC_CONSUMER.interfazEOC">
+  <label>interfazEOC</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="updateProvisioning" type="oper">
+      <input>dstruct_EOC_CONSUMER.respuesta_pt</input>
+      <label>updateProvisioning</label>
+      <output>dstruct_EOC_CONSUMER.ack_pt</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

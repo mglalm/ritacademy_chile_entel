@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="OM_CORE.procesaOrden">
+  <activity name="start" type="seqActivity">
+    <label>start</label>
+    <x>19.0</x>
+    <y>177.0</y>
+    <childList>
+      <child name="conectaBSCS" type="opActivity">
+        <element>iface_BSCS_CONSUMER.BSCSInterfaz/oper_getMsisdn</element>
+        <label>conectaBSCS</label>
+        <participant>part_BSCS_CONSUMER.BSCSParticipant</participant>
+        <x>189.0</x>
+        <y>244.0</y>
+        <methodList>
+          <method name="cwOnProcActAfter" type="action">
+            <category>script</category>
+            <system>true</system>
+            <script>this.process.processDocument.msisdn = this.activityData.respMSISDN;</script>
+          </method>
+        </methodList>
+      </child>
+      <child name="conectaCS" type="opActivity">
+        <element>iface_CS_CONSUMER.CSInterfaz/oper_assign</element>
+        <label>conectaCS</label>
+        <participant>part_CS_CONSUMER.CSParticipant</participant>
+        <x>470.0</x>
+        <y>301.0</y>
+        <childList>
+          <child name="conectaEMA" type="opActivity">
+            <element>iface_EMA_CONSUMER.provisionaEMA/oper_activateEMA</element>
+            <label>conectaEMA</label>
+            <participant>part_EMA_CONSUMER.EMAParticipant</participant>
+            <x>697.0</x>
+            <y>301.0</y>
+            <methodList>
+              <method name="cwOnProcActAfter" type="action">
+                <category>script</category>
+                <system>true</system>
+                <script>OM_CORE.dummy();</script>
+              </method>
+            </methodList>
+          </child>
+        </childList>
+        <methodList>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script><![CDATA[
+              this.activityData.msisdn=process.processDocument.msisdn;
+              this.activityData.po=process.processDocument.po;
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="fin" type="completeActivity">
+        <label>fin</label>
+        <x>912.0</x>
+        <y>256.0</y>
+      </child>
+      <child name="BSCSParticipant" type="participantActivity">
+        <label>BSCSParticipant</label>
+        <participant>part_BSCS_CONSUMER.BSCSParticipant</participant>
+        <x>214.0</x>
+        <y>50.0</y>
+      </child>
+      <child name="CSParticipant" type="participantActivity">
+        <label>CSParticipant</label>
+        <participant>part_CS_CONSUMER.CSParticipant</participant>
+        <x>469.0</x>
+        <y>56.0</y>
+      </child>
+      <child name="EMAParticipant" type="participantActivity">
+        <label>EMAParticipant</label>
+        <participant>part_EMA_CONSUMER.EMAParticipant</participant>
+        <x>697.0</x>
+        <y>82.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <document>doc_OM_CORE.processDocument</document>
+  <label>procesaOrden</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>User</type>
+</process>

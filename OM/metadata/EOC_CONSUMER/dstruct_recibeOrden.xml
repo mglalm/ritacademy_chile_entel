@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="EOC_CONSUMER.recibeOrden">
+  <container>true</container>
+  <description>Recibe Orden</description>
+  <label>recibeOrden</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="orderId" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_EOC_CONSUMER.orderId</element>
+      <label>orderId</label>
+      <mandatory>true</mandatory>
+    </child>
+  </childList>
+</dataStructure>

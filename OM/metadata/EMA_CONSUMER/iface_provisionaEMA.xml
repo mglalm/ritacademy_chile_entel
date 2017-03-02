@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="EMA_CONSUMER.provisionaEMA">
+  <label>provisionaEMA</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="activateEMA" type="oper">
+      <label>activateEMA</label>
+      <output>dstruct_EMA_CONSUMER.responseEMA</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<participant name="Core.EMAParticipant">
-  <label>EMAParticipant</label>
-  <metaVersion>25</metaVersion>
-  <participant>iface_EMA.EMAInterfaz</participant>
-</participant>

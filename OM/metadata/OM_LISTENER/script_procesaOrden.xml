@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="OM_LISTENER.procesaOrden">
+  <label>procesaOrden</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>nmeta_com.conceptwave.system.Object</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var i = 1;
+    var doc = new Document("OM_CORE.processDocument");
+    doc.po = input.productOfferId;
+    doc.orderId = input.orderId;
+    Process.startProcess("OM_CORE.procesaOrden",doc,null,null);
+
+    var dt = new DataStructure("OM_LISTENER.response");
+    dt.productOfferId = input.productOfferId;
+    dt.orderId = input.orderId;
+    dt.status = "P";
+
+    return dt;
+  ]]></script>
+</script>

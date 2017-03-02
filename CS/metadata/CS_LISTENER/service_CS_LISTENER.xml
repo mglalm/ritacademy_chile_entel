@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="CS_LISTENER.CS_LISTENER">
+  <label>CS_LISTENER</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="portJS" type="port">
+      <binding>bind_CS_LISTENER.bindingJS</binding>
+      <label>portJS</label>
+      <recover>5</recover>
+    </port>
+    <port name="portSOAP" type="port">
+      <binding>bind_CS_LISTENER.bindingSOAP</binding>
+      <exportReferencedOnly>true</exportReferencedOnly>
+      <exportSchemaInsideWsdl>true</exportSchemaInsideWsdl>
+      <label>portSOAP</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

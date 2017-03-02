@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="EOC_CONSUMER.msisdn">
+  <description>Msisdn</description>
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>msisdn</label>
+  <length>11</length>
+  <metaVersion>25</metaVersion>
+</dataType>

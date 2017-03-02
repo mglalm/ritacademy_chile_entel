@@ -21,6 +21,7 @@
   <templateList>
     <template>ecm</template>
     <template>CS</template>
+    <template>EMA Metadata</template>
     <template>BSCS Metadata</template>
   </templateList>
 </header>

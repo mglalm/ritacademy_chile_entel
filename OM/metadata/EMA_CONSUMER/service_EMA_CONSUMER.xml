@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="EMA_CONSUMER.EMA_CONSUMER">
+  <label>EMA_CONSUMER</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="portEMASOAP" type="port">
+      <binding>bind_EMA_CONSUMER.bindingEMASOAP</binding>
+      <label>portEMASOAP</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="EOC_CONSUMER.buscaOrden">
+  <container>true</container>
+  <description>Busca Orden</description>
+  <label>buscaOrden</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="orderId" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_EOC_CONSUMER.orderId</element>
+      <label>orderId</label>
+      <mandatory>true</mandatory>
+    </child>
+    <child name="productOffering" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_EOC_CONSUMER.productOffering</element>
+      <label>productOffering</label>
+      <mandatory>true</mandatory>
+    </child>
+    <child name="msisdn" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_EOC_CONSUMER.msisdn</element>
+      <label>msisdn</label>
+      <mandatory>true</mandatory>
+    </child>
+    <child name="debit" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_EOC_CONSUMER.debit</element>
+      <label>debit</label>
+      <mandatory>true</mandatory>
+    </child>
+    <child name="status" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_EOC_CONSUMER.status</element>
+      <label>status</label>
+      <mandatory>true</mandatory>
+    </child>
+  </childList>
+</dataStructure>

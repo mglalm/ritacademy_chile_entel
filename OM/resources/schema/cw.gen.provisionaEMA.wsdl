@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="EMA_LISTENER" targetNamespace="EMA_LISTENER"
+	xmlns:tns="EMA_LISTENER"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+		</schema>
+	</types>
+
+	<portType name="provisionaEMA">
+		<operation name="activateEMA">
+		</operation>
+	</portType>
+
+	<binding name="bindingEMASOAP" type="tns:provisionaEMA">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="activateEMA">
+			<soap:operation soapAction="activateEMA"/>
+		</operation>
+	</binding>
+
+	<service name="EMA_LISTENER">
+		<port name="portEMASOAP" binding="tns:bindingEMASOAP">
+		</port>
+	</service>
+
+</definitions>
