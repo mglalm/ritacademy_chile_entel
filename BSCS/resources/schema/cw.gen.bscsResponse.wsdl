@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions name="BSCS" targetNamespace="BSCS"
-	xmlns:tns="BSCS"
+<definitions name="BSCS_LISTENER" targetNamespace="BSCS_LISTENER"
+	xmlns:tns="BSCS_LISTENER"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 	xmlns="http://schemas.xmlsoap.org/wsdl/">
@@ -22,9 +22,8 @@
 		</operation>
 	</binding>
 
-	<service name="ExternalService">
+	<service name="BSCS_LISTENER">
 		<port name="portSOAP" binding="tns:bindingSOAP">
-			<soap:address location="http://localhost:8080/cwf/services/bscsResponse"/>
 		</port>
 	</service>
 

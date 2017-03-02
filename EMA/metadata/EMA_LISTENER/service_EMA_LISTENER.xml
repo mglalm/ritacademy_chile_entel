@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<externalService name="EMA.externalService">
+<externalService name="EMA_LISTENER.EMA_LISTENER">
   <label>External Service</label>
   <metaVersion>25</metaVersion>
   <portList>
     <port name="portEMASOAP" type="port">
-      <binding>bind_EMA.bindingEMASOAP</binding>
+      <binding>bind_EMA_LISTENER.bindingEMASOAP</binding>
       <label>Port EMA SOAP</label>
       <listener>true</listener>
       <recover>5</recover>
     </port>
     <port name="portEMAJS" type="port">
-      <binding>bind_EMA.bindingEMAJS</binding>
+      <binding>bind_EMA_LISTENER.bindingEMAJS</binding>
       <label>Port EMA JS</label>
       <recover>5</recover>
     </port>

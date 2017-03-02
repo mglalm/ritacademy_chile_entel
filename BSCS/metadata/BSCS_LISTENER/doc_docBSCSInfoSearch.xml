@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<document name="BSCS.docBSCSInfoSearch">
+<document name="BSCS_LISTENER.docBSCSInfoSearch">
   <extends>doc_com.conceptwave.system.Document</extends>
   <guid>{72950bf3-af4f-4812-b523-02bccc9a96fd}</guid>
   <label>Doc BSCS Info Search</label>
   <metaVersion>25</metaVersion>
   <variableList>
     <variable name="msisdn" type="leaf">
-      <valueType>dtype_BSCS.msisdn</valueType>
+      <valueType>dtype_BSCS_LISTENER.msisdn</valueType>
     </variable>
     <variable name="status" type="leaf">
-      <valueType>dtype_BSCS.status</valueType>
+      <valueType>dtype_BSCS_LISTENER.status</valueType>
     </variable>
   </variableList>
   <UserInterface name="UserInterface" type="ui">
@@ -17,7 +17,7 @@
     <variableList>
       <variable name="model" type="uivar">
         <label>model</label>
-        <valueType>doc_BSCS.docBSCSInfoSearch</valueType>
+        <valueType>doc_BSCS_LISTENER.docBSCSInfoSearch</valueType>
       </variable>
     </variableList>
     <vformList>
@@ -41,16 +41,16 @@
                     <element name="msisdn" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
-                          <variablePath>doc_BSCS.docBSCSInfoSearch/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_BSCS.docBSCSInfoSearch/leaf_msisdn</variablePath>
+                          <variablePath>doc_BSCS_LISTENER.docBSCSInfoSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_BSCS_LISTENER.docBSCSInfoSearch/leaf_msisdn</variablePath>
                         </variablePathList>
                       </variable>
                     </element>
                     <element name="status" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
-                          <variablePath>doc_BSCS.docBSCSInfoSearch/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_BSCS.docBSCSInfoSearch/leaf_status</variablePath>
+                          <variablePath>doc_BSCS_LISTENER.docBSCSInfoSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_BSCS_LISTENER.docBSCSInfoSearch/leaf_status</variablePath>
                         </variablePathList>
                       </variable>
                     </element>

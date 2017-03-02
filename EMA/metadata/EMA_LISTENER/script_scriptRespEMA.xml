@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<script name="EMA.scriptRespEMA">
+<script name="EMA_LISTENER.scriptRespEMA">
   <label>Script Resp EMA</label>
   <metaVersion>25</metaVersion>
   <script><![CDATA[
-    var dt = new DataStructure('EMA.responseEMA');
+    var dt = new DataStructure('EMA_LISTENER.responseEMA');
     dt.respEMA = "OK";
 
     return dt;

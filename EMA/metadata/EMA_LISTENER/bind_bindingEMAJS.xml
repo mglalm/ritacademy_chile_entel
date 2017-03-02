@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<binding name="EMA.bindingEMAJS">
+<binding name="EMA_LISTENER.bindingEMAJS">
   <extensionList>
     <extension name="activateEMA" type="ext">
       <element>Operation</element>
       <elementItemMap>
-        <elementItem key="metadataScript">EMA.scriptRespEMA</elementItem>
+        <elementItem key="metadataScript">EMA_LISTENER.scriptRespEMA</elementItem>
       </elementItemMap>
     </extension>
   </extensionList>
-  <interface>iface_EMA.provisionaEMA</interface>
+  <interface>iface_EMA_LISTENER.provisionaEMA</interface>
   <label>Binding EMA JS</label>
   <metaVersion>25</metaVersion>
   <provider>prov_cwf.jsprov</provider>

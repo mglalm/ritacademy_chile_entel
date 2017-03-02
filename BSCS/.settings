@@ -16,6 +16,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
+  <jarExportFolder>C:\Users\lapalma\Documents\ritacademy_chile_entel\BSCS\</jarExportFolder>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
 </project>

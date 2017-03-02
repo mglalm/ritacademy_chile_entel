@@ -52,14 +52,14 @@
   </vformList>
   <methodList>
     <method name="addMSISDNs" type="usrActionMethod">
-      <form>doc_BSCS.docBSCSinfo/ui_UserInterface/frmui_Forms/exov_Default</form>
-      <userInterface>doc_BSCS.docBSCSinfo</userInterface>
-      <valueType>doc_BSCS.docBSCSinfo</valueType>
+      <form>doc_BSCS_LISTENER.docBSCSinfo/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>doc_BSCS_LISTENER.docBSCSinfo</userInterface>
+      <valueType>doc_BSCS_LISTENER.docBSCSinfo</valueType>
     </method>
     <method name="findMSISDNs" type="usrActionMethod">
-      <form>findDoc_BSCS.buscaMSISDN/ui_UserInterface/frmui_Forms/exov_Default</form>
-      <userInterface>findDoc_BSCS.buscaMSISDN</userInterface>
-      <valueType>findDoc_BSCS.buscaMSISDN</valueType>
+      <form>findDoc_BSCS_LISTENER.buscaMSISDN/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>findDoc_BSCS_LISTENER.buscaMSISDN</userInterface>
+      <valueType>findDoc_BSCS_LISTENER.buscaMSISDN</valueType>
     </method>
   </methodList>
 </userInterface>

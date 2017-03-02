@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<binding name="BSCS.bindingSOAP">
-  <interface>iface_BSCS.bscsResponse</interface>
+<binding name="BSCS_LISTENER.bindingSOAP">
+  <interface>iface_BSCS_LISTENER.bscsResponse</interface>
   <label>Binding SOAP</label>
   <metaVersion>25</metaVersion>
   <provider>prov_cwf.soapprov</provider>

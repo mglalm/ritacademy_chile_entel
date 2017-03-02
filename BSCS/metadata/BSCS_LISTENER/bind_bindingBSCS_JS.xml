@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<binding name="BSCS.bindingBSCS_JS">
+<binding name="BSCS_LISTENER.bindingBSCS_JS">
   <extensionList>
     <extension name="getMsisdn" type="ext">
       <element>Operation</element>
       <elementItemMap>
-        <elementItem key="metadataScript">BSCS.scriptBSCS_response</elementItem>
+        <elementItem key="metadataScript">BSCS_LISTENER.scriptBSCS_response</elementItem>
       </elementItemMap>
     </extension>
   </extensionList>
-  <interface>iface_BSCS.bscsResponse</interface>
+  <interface>iface_BSCS_LISTENER.bscsResponse</interface>
   <label>Binding BSCS JS</label>
   <metaVersion>25</metaVersion>
   <provider>prov_cwf.jsprov</provider>

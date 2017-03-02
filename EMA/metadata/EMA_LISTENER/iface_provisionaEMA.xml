@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<interface name="BSCS.bscsResponse">
-  <label>BSCS Response</label>
+<interface name="EMA_LISTENER.provisionaEMA">
+  <label>Provisiona EMA</label>
   <metaVersion>25</metaVersion>
   <operationList>
-    <operation name="getMsisdn" type="oper">
-      <label>Get MSISDN</label>
+    <operation name="activateEMA" type="oper">
+      <label>Activate EMA</label>
       <type>Request-Response</type>
     </operation>
   </operationList>

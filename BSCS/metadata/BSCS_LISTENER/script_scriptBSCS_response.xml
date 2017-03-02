@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<script name="BSCS.scriptBSCS_response">
+<script name="BSCS_LISTENER.scriptBSCS_response">
   <label>Script BSCS Response</label>
   <metaVersion>25</metaVersion>
   <parameterList>
@@ -9,11 +9,11 @@
   </parameterList>
   <script><![CDATA[
     var MSISDN = null;
-    var fnd = new Finder('BSCS.buscaMSISDN');
+    var fnd = new Finder('BSCS_LISTENER.buscaMSISDN');
     var result = fnd.search();//retorna una DataObjectList() -> ARRAY
     // var doc = result && result.length>0 ? result[0] : null;
 
-    var dt = new DataStructure('BSCS.response');
+    var dt = new DataStructure('BSCS_LISTENER.response');
     dt.respSTATUS = "NOK";
     dt.respMSISDN = "0";
 
