@@ -157,7 +157,6 @@
     <view name="offerFinderView" type="findVView">
       <inputOverlay>doc_offerManagement.offerItemSearch/ui_UserInterface/frmui_Forms/vform_generatedForm</inputOverlay>
       <outputOverlay>findDoc_offerManagement.offerFinder/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
-      <searchImmediately>true</searchImmediately>
       <showSearchForm>true</showSearchForm>
     </view>
   </viewList>

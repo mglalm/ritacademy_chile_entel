@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="orderManagement.orderDataSearchResult">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{b93b3012-aa14-4866-a280-4c671082d57f}</guid>
+  <label>Order Data Search Result</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="customerReference" type="leaf">
+      <valueType>dtype_orderManagement.customerReference</valueType>
+    </variable>
+    <variable name="offerItemReference" type="leaf">
+      <valueType>dtype_orderManagement.offerItemReference</valueType>
+    </variable>
+    <variable name="purchaseOrderNumber" type="leaf">
+      <valueType>dtype_orderManagement.purchaseOrderNumber</valueType>
+    </variable>
+    <variable name="cwDocId" type="leaf">
+      <key>1</key>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_orderManagement.orderDataSearchResult</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="orderDataSearchResultGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="orderDataSearchResultHeader" type="elhdr">
+                      <label>Order Data Search Result</label>
+                    </element>
+                    <element name="customerReference" type="elref">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.orderDataSearchResult/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.orderDataSearchResult/leaf_customerReference</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="offerItemReference" type="elref">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.orderDataSearchResult/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.orderDataSearchResult/leaf_offerItemReference</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="purchaseOrderNumber" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.orderDataSearchResult/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.orderDataSearchResult/leaf_purchaseOrderNumber</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwDocId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.orderDataSearchResult/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.orderDataSearchResult/leaf_cwDocId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

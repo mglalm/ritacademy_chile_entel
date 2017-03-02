@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="orderManagement.orderDataSearch">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{6c20e50f-e09f-4695-9d2e-6ed38c7be4c5}</guid>
+  <label>Order Data Search</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="customerReference" type="leaf">
+      <valueType>dtype_orderManagement.customerReference</valueType>
+    </variable>
+    <variable name="offerItemReference" type="leaf">
+      <valueType>dtype_orderManagement.offerItemReference</valueType>
+    </variable>
+    <variable name="purchaseOrderNumber" type="leaf">
+      <valueType>dtype_orderManagement.purchaseOrderNumber</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_orderManagement.orderDataSearch</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="orderDataSearchGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="orderDataSearchHeader" type="elhdr">
+                      <label>Order Data Search</label>
+                    </element>
+                    <element name="customerReference" type="elref">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.orderDataSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.orderDataSearch/leaf_customerReference</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="offerItemReference" type="elref">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.orderDataSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.orderDataSearch/leaf_offerItemReference</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="purchaseOrderNumber" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.orderDataSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.orderDataSearch/leaf_purchaseOrderNumber</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

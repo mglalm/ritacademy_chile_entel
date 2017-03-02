@@ -44,6 +44,27 @@
                   </clickMethod>
                   <label>Productos Disponibles</label>
                 </element>
+                <element name="Orders" type="elmnu">
+                  <label>Órdenes</label>
+                  <elementList>
+                    <element name="addOrder" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.crmLite/usrActionMethod_addOrder</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Agregar Orden</label>
+                    </element>
+                    <element name="findOrder" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.crmLite/usrActionMethod_findOrder</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Buscar Orden</label>
+                    </element>
+                  </elementList>
+                </element>
               </elementList>
             </override>
           </overrideList>
@@ -73,6 +94,16 @@
       <form>findDoc_offerManagement.offerFinder/ui_UserInterface/frmui_Forms/exov_Default</form>
       <userInterface>findDoc_offerManagement.offerFinder</userInterface>
       <valueType>findDoc_offerManagement.offerFinder</valueType>
+    </method>
+    <method name="addOrder" type="usrActionMethod">
+      <form>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>order_orderManagement.poOrder</userInterface>
+      <valueType>order_orderManagement.poOrder</valueType>
+    </method>
+    <method name="findOrder" type="usrActionMethod">
+      <form>findOrder_orderManagement.poOrderFinder/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>findOrder_orderManagement.poOrderFinder</userInterface>
+      <valueType>findOrder_orderManagement.poOrderFinder</valueType>
     </method>
   </methodList>
 </userInterface>
