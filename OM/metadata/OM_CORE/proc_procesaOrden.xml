@@ -155,6 +155,7 @@
                       this.activityData.msisdn = this.process.processDocument.msisdn;
                       this.activityData.debit = this.process.processDocument.debit;
                       this.activityData.status = 1;
+                      OM_CORE.dummy();
                     ]]></script>
                   </method>
                 </methodList>

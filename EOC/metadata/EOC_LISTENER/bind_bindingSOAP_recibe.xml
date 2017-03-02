@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<binding name="EOC_LISTENER.bindingSOAP_recibe">
-  <interface>iface_EOC_LISTENER.interfazEOC</interface>
-  <metaVersion>25</metaVersion>
-  <provider>prov_cwf.soapprov</provider>
-</binding>
