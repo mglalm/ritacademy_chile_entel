@@ -19,8 +19,8 @@
   <metaVersion>25</metaVersion>
   <metadataVersion>20150818</metadataVersion>
   <templateList>
-    <template>BSCS_train</template>
     <template>CS</template>
     <template>EMA</template>
+    <template>BSCS_train</template>
   </templateList>
 </header>
