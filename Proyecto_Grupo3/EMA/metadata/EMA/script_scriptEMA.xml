@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="EMA.scriptEMA">
+  <label>ScriptEMA</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>nmeta_com.conceptwave.system.Object</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var fnd = new Finder('EMA.findIMSI');
+    var doc = fnd.search();
+
+    var i = 0;
+    var output = new DataStructure("EMA.responseEMA");
+    var grabarDocumento = new Document("EMA.clienteHLR");
+
+
+    var grabar = 0;
+
+    for (i=0;i<doc.length & grabar == 0;i=i+1)
+    {
+    if (doc[i].IMSI == input.IMSI) {grabar = 1; output.mensaje= "No/Ok"; output.estado = "MSISDN ya asignada"}
+    }
+
+    if (grabar == 0)
+      {
+          grabarDocumento.MSISDN = input.MSISDN;
+          grabarDocumento.IMSI = input.IMSI;
+          grabarDocumento.PROFILE = input.PROFILE;
+
+
+          grabarDocumento.save(); output.mensaje= "Ok"; output.estado = "Plan Asignado a la IMSI " + input.IMSI;}
+
+    return output;
+
+
+
+    /*
+    var output = new DataStructure("EMA.responseEMA");
+    var grabarDocumento = new Document("EMA.clienteHLR");
+
+
+    grabarDocumento.IMSI = input.IMSI;
+    grabarDocumento.MSISDN = input.MSISDN;
+    grabarDocumento.PROFILE = input.PROFILE;
+
+    grabarDocumento.save(); output.mensaje= "Ok"; output.estado = "Provisionada la MSISDN " + input.MSISDN;
+
+
+
+    return output;
+
+    */
+  ]]></script>
+</script>

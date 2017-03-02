@@ -9,17 +9,17 @@
     <variable name="IMSI" type="leaf">
       <column>IMSI</column>
       <key>1</key>
-      <table>clienteHLR</table>
+      <table>GG_clienteHLR</table>
       <valueType>dtype_EMA.IMSI</valueType>
     </variable>
     <variable name="MSISDN" type="leaf">
       <column>MSISDN</column>
-      <table>clienteHLR</table>
+      <table>GG_clienteHLR</table>
       <valueType>dtype_EMA.MSISDN</valueType>
     </variable>
     <variable name="PROFILE" type="leaf">
       <column>PROFILE</column>
-      <table>clienteHLR</table>
+      <table>GG_clienteHLR</table>
       <valueType>dtype_EMA.PROFILE</valueType>
     </variable>
   </variableList>

@@ -2,6 +2,6 @@
 <dataType name="chargingSystem.IMSI">
   <extends>dtype_com.conceptwave.system.Integer</extends>
   <label>IMSI</label>
-  <length>15</length>
+  <length>16</length>
   <metaVersion>25</metaVersion>
 </dataType>

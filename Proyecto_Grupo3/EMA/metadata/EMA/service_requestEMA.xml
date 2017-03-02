@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <externalService name="EMA.requestEMA">
-  <label>Request EMA</label>
+  <label>Request EMA Port</label>
   <metaVersion>25</metaVersion>
   <portList>
     <port name="EMASOAPPort" type="port">

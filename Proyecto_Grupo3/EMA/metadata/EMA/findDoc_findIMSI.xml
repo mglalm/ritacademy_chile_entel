@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="EMA.findIMSI">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <label>findIMSI</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_EMA.clienteHLR</output>
+  <type>document</type>
+</findDoc>

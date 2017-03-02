@@ -4,66 +4,9 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 	xmlns="http://schemas.xmlsoap.org/wsdl/"
-	xmlns:cwf="http://www.conceptwave.com/system"
-	xmlns:cwf_system="http://www.conceptwave.com/com/conceptwave/system"
 	xmlns:chargingSystem="chargingSystem">
 
 	<types>
-		<schema targetNamespace="http://www.conceptwave.com/system"			
-	xmlns="http://www.w3.org/2001/XMLSchema"			
-	xmlns:cwf="http://www.conceptwave.com/system"			
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-
-
-
-			<annotation>
-				<documentation>ConceptWave system namespace</documentation>
-				<appinfo>
-					<label>ConceptWave System</label>
-					<metadata>CS</metadata>
-					<created>Tue Feb 28 21:40:03 CLT 2017</created>
-				</appinfo>
-			</annotation>
-
-			<!-- Data types and elements -->
-
-			<simpleType name="processId">
-				<annotation>
-					<documentation>Process ID</documentation>
-				</annotation>
-				<restriction base="xsd:decimal">
-					<totalDigits value="16"/>
-				</restriction>
-			</simpleType>
-
-			<!-- Structures -->
-
-			<!-- Documents -->
-
-		</schema>
-		<schema targetNamespace="http://www.conceptwave.com/com/conceptwave/system"			
-	xmlns="http://www.w3.org/2001/XMLSchema"			
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-
-
-
-			<annotation>
-				<documentation>system</documentation>
-				<appinfo>
-					<metadata>CS</metadata>
-					<created>Tue Feb 28 21:40:03 CLT 2017</created>
-				</appinfo>
-			</annotation>
-
-			<!-- Structures -->
-
-			<complexType name="DataStructure"/>
-
-			<!-- Documents -->
-
-			<complexType name="Document"/>
-
-		</schema>
 		<schema targetNamespace="chargingSystem"			
 	xmlns="http://www.w3.org/2001/XMLSchema"			
 	xmlns:chargingSystem="chargingSystem"			
@@ -148,26 +91,58 @@
 					</sequence>
 				</complexType>
 
-			<!-- Documents -->
-
-			<complexType name="clienteChargingSystem">
+			<complexType name="requestCS">
 				<annotation>
-					<documentation>Cliente Charging System</documentation>
+					<documentation>requestCS</documentation>
 				</annotation>
 					<sequence>
-						<element name="MSISDN" type="chargingSystem:MSISDN"/>
-						<element name="IMSI" type="chargingSystem:IMSI"/>
-						<element name="idCliente" type="chargingSystem:idCliente"/>
-						<element name="planCS" type="chargingSystem:idCliente"/>
-						<element name="saldo" type="chargingSystem:saldo"/>
+						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="chargingSystem:MSISDN"/>
+						<element name="IMSI" minOccurs="0" maxOccurs="1" type="chargingSystem:IMSI"/>
+						<element name="idCliente" minOccurs="0" maxOccurs="1" type="chargingSystem:idCliente"/>
+						<element name="planCS" minOccurs="0" maxOccurs="1" type="chargingSystem:idCliente"/>
+						<element name="saldo" minOccurs="0" maxOccurs="1" type="chargingSystem:saldo"/>
 					</sequence>
 				</complexType>
+
+			<!-- Documents -->
+
+		</schema>
+		<schema targetNamespace="http://www.conceptwave.com/system"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:cwf="http://www.conceptwave.com/system"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>ConceptWave system namespace</documentation>
+				<appinfo>
+					<label>ConceptWave System</label>
+					<metadata>CS</metadata>
+					<created>Tue Feb 28 21:40:03 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<simpleType name="processId">
+				<annotation>
+					<documentation>Process ID</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="16"/>
+				</restriction>
+			</simpleType>
+
+			<!-- Structures -->
+
+			<!-- Documents -->
 
 		</schema>
 	</types>
 
-	<message name="clienteChargingSystem">
-		<part name="clienteChargingSystem" type="chargingSystem:clienteChargingSystem"/>
+	<message name="requestCS">
+		<part name="requestCS" type="chargingSystem:requestCS"/>
 	</message>
 
 	<message name="responseCS">
@@ -176,7 +151,7 @@
 
 	<portType name="Crea_CLI_CS">
 		<operation name="creacionClienteCS">
-			<input message="tns:clienteChargingSystem"/>
+			<input message="tns:requestCS"/>
 			<output message="tns:responseCS"/>
 		</operation>
 	</portType>

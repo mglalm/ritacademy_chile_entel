@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="chargingSystem.Script">
+  <label>Script</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>nmeta_com.conceptwave.system.Object</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var fnd = new Finder('chargingSystem.findMSISDN');
+    var doc = fnd.search();
+
+    var i = 0;
+    var output = new DataStructure("chargingSystem.responseCS");
+    var grabarDocumento = new Document("chargingSystem.clienteChargingSystem");
+
+
+    var grabar = 0;
+
+    for (i=0;i<doc.length & grabar == 0;i=i+1)
+    {
+    if (doc[i].MSISDN == input.MSISDN) {grabar = 1; output.mensaje= "No/Ok"; output.estado = "MSISDN ya asignada"}
+    }
+
+    if (grabar == 0)
+      {
+          grabarDocumento.MSISDN = input.MSISDN;
+          grabarDocumento.IMSI = input.IMSI;
+          grabarDocumento.idCliente = input.idCliente;
+          grabarDocumento.planCS = input.planCS;
+          grabarDocumento.saldo = input.saldo;
+
+
+          grabarDocumento.save(); output.mensaje= "Ok"; output.estado = "Plan Asignado a la MSISDN " + input.MSISDN;}
+
+    //var doc = result && result.length>0 ? result[0] : null;
+
+
+    //var output = new DataStructure("chargingSystem.responseCS");
+    //output.mensaje = doc[1].MSISDN;
+    //output.estado = "Plan Asignado a la MSISDN " + input.MSISDN;
+    return output;
+  ]]></script>
+</script>

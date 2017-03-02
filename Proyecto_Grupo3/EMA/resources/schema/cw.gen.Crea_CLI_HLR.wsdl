@@ -76,17 +76,6 @@
 
 			<!-- Documents -->
 
-			<complexType name="clienteHLR">
-				<annotation>
-					<documentation>Cliente HLR</documentation>
-				</annotation>
-					<sequence>
-						<element name="IMSI" type="EMA:IMSI"/>
-						<element name="MSISDN" type="EMA:MSISDN"/>
-						<element name="PROFILE" type="EMA:PROFILE"/>
-					</sequence>
-				</complexType>
-
 		</schema>
 	</types>
 

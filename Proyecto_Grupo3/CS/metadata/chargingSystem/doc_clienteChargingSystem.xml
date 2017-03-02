@@ -10,31 +10,31 @@
       <column>MSISDN</column>
       <key>1</key>
       <label>MSISDN</label>
-      <table>clienteChargingSystem</table>
+      <table>GG_clienteChargingSystem</table>
       <valueType>dtype_chargingSystem.MSISDN</valueType>
     </variable>
     <variable name="IMSI" type="leaf">
       <column>IMSI</column>
       <label>IMSI</label>
-      <table>clienteChargingSystem</table>
+      <table>GG_clienteChargingSystem</table>
       <valueType>dtype_chargingSystem.IMSI</valueType>
     </variable>
     <variable name="idCliente" type="leaf">
       <column>IDCLIENTE</column>
       <label>idCliente</label>
-      <table>clienteChargingSystem</table>
+      <table>GG_clienteChargingSystem</table>
       <valueType>dtype_chargingSystem.idCliente</valueType>
     </variable>
     <variable name="planCS" type="leaf">
       <column>PLANCS</column>
       <label>planCS</label>
-      <table>clienteChargingSystem</table>
+      <table>GG_clienteChargingSystem</table>
       <valueType>dtype_chargingSystem.idCliente</valueType>
     </variable>
     <variable name="saldo" type="leaf">
       <column>SALDO</column>
       <label>saldo</label>
-      <table>clienteChargingSystem</table>
+      <table>GG_clienteChargingSystem</table>
       <valueType>dtype_chargingSystem.saldo</valueType>
     </variable>
   </variableList>

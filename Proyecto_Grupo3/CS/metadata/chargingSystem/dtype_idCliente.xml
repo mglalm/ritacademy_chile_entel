@@ -2,6 +2,6 @@
 <dataType name="chargingSystem.idCliente">
   <extends>dtype_com.conceptwave.system.String</extends>
   <label>ID Cliente</label>
-  <length>16</length>
+  <length>32</length>
   <metaVersion>25</metaVersion>
 </dataType>
