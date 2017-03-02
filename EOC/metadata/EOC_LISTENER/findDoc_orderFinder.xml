@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="EOC_LISTENER.orderFinder">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_EOC_LISTENER.recibeOrden</input>
+  <label>Order Finder</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_EOC_LISTENER.buscaOrden</output>
+  <type>document</type>
+  <vDetailForm>doc_EOC_LISTENER.buscaOrden/ui_UserInterface/frmui_Forms/vform_generatedForm</vDetailForm>
+  <searchList>
+    <search type="sitem">
+      <document>doc_EOC_LISTENER.recibeOrden</document>
+      <mappedDocument>doc_EOC_LISTENER.buscaOrden</mappedDocument>
+      <mappedPath>doc_EOC_LISTENER.buscaOrden/leaf_cwDocId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_EOC_LISTENER.recibeOrden/leaf_cwDocId</path>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>doc_EOC_LISTENER.recibeOrden/ui_UserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>doc_EOC_LISTENER.buscaOrden/ui_UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_EOC_LISTENER.buscaOrden</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_EOC_LISTENER.orderFinder/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_EOC_LISTENER.orderFinder/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="orderFinderResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_EOC_LISTENER.orderFinder/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="productOffering" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_EOC_LISTENER.orderFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_EOC_LISTENER.buscaOrden/leaf_productOffering</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="msisdn" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_EOC_LISTENER.orderFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_EOC_LISTENER.buscaOrden/leaf_msisdn</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="debit" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_EOC_LISTENER.orderFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_EOC_LISTENER.buscaOrden/leaf_debit</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="status" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_EOC_LISTENER.orderFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_EOC_LISTENER.buscaOrden/leaf_status</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="orderFinderView" type="findVView">
+      <inputOverlay>doc_EOC_LISTENER.recibeOrden/ui_UserInterface/frmui_Forms/vform_generatedForm</inputOverlay>
+      <label>order Finder View</label>
+      <outputOverlay>findDoc_EOC_LISTENER.orderFinder/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <searchImmediately>true</searchImmediately>
+    </view>
+  </viewList>
+</findDoc>

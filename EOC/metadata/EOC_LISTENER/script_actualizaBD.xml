@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="EOC_LISTENER.actualizaBD">
+  <label>Actualiza BD</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>dstruct_EOC_LISTENER.respuesta</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var fnd = new Finder('EOC_LISTENER.orderFinder');
+    fnd.searchDocument.cwDocId = input.orderId;
+    fnd.search();
+    fnd.list[0].msisdn = input.msisdn;
+    fnd.list[0].debit = input.debit;
+    fnd.list[0].status = input.status;
+    fnd.list[0].save();
+  ]]></script>
+</script>

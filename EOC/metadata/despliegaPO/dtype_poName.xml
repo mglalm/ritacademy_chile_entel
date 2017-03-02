@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="despliegaPO.poName">
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>Nombre PO</label>
+  <length>128</length>
+  <metaVersion>25</metaVersion>
+</dataType>

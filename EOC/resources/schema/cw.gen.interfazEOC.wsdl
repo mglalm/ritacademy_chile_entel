@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="EOC_LISTENER" targetNamespace="EOC_LISTENER"
+	xmlns:tns="EOC_LISTENER"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:EOC_LISTENER="EOC_LISTENER">
+
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="EOC_LISTENER" schemaLocation="EOC_LISTENER.xsd"/>
+		</schema>
+	</types>
+
+	<message name="respuesta">
+		<part name="respuesta" type="EOC_LISTENER:respuesta"/>
+	</message>
+
+	<message name="ack">
+		<part name="ack" type="EOC_LISTENER:ack"/>
+	</message>
+
+	<portType name="interfazEOC">
+		<operation name="updateProvisioning">
+			<input message="tns:respuesta"/>
+			<output message="tns:ack"/>
+		</operation>
+	</portType>
+
+	<binding name="bindingSOAP_recibe" type="tns:interfazEOC">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="updateProvisioning">
+			<soap:operation soapAction="updateProvisioning"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="servicioExternoRecibe">
+		<port name="portSOAP_recibe" binding="tns:bindingSOAP_recibe">
+			<soap:address location="http://localhost:8080/cwf/services/interfazEOC"/>
+		</port>
+	</service>
+
+</definitions>

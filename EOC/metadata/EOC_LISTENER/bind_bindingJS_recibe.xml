@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="EOC_LISTENER.bindingJS_recibe">
+  <extensionList>
+    <extension name="updateProvisioning" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="metadataScript">EOC_LISTENER.actualizaBD</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_EOC_LISTENER.interfazEOC</interface>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

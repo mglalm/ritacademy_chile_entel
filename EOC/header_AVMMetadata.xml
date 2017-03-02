@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<header name="AVMMetadata">
+  <APIVersion>2</APIVersion>
+  <author>grojas</author>
+  <availableList>
+    <available type="loc">
+      <locale>en</locale>
+      <rightToLeft>false</rightToLeft>
+    </available>
+  </availableList>
+  <created>Mon Feb 27 12:00:01 CLT 2017</created>
+  <internalName>EOC</internalName>
+  <internalSysVersion>16.0 ICP16-01EP01</internalSysVersion>
+  <internalVersion>1</internalVersion>
+  <label>EOC</label>
+  <locale type="loc">
+    <locale>en</locale>
+    <rightToLeft>false</rightToLeft>
+  </locale>
+  <metaVersion>25</metaVersion>
+  <metadataVersion>20150818</metadataVersion>
+</header>

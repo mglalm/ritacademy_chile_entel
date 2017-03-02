@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="EOC_LISTENER.ack">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>ack</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="codigo" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>codigo</label>
+    </child>
+  </childList>
+</dataStructure>
