@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="billingNamespace.xs_serviciosBSCS">
+  <label>xs_serviciosBSCS</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="port_serviciosBSCS_SOAP" type="port">
+      <binding>bind_billingNamespace.bind_getMsisdnBSCS_SOAP</binding>
+      <label>port_serviciosBSCS_SOAP</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

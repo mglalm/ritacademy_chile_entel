@@ -8,6 +8,12 @@
     <variable name="IN_orderId" type="leaf">
       <valueType>dtype_OrderManager.dtOrderId</valueType>
     </variable>
+    <variable name="CTRL_ERROR" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="CTRL_DESC_ERROR" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
     <variable name="IN_rut" type="leaf">
       <valueType>dtype_OrderManager.dtRut</valueType>
     </variable>

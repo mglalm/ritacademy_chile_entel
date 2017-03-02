@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="billingNamespace.bind_getMsisdnBSCS_SOAP">
+  <extensionList>
+    <extension name="getMsisdnReserveBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">getMsisdnReserveBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnReserveBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnReserveBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_billingNamespace.interface_serviciosBSCS</interface>
+  <label>bind_getMsisdnBSCS_SOAP</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>
