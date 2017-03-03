@@ -21,6 +21,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
+  <jarExportFolder>E:\protecto_grp3\Proyecto_Grupo3\Order Manager\OM\</jarExportFolder>
   <jarFolder>D:\</jarFolder>
   <joinCluster>true</joinCluster>
   <nodeString>PE_UI</nodeString>
