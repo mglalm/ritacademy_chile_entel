@@ -13,6 +13,7 @@
   </childList>
   <UserInterface name="UserInterface" type="tree">
     <autoExpand>true</autoExpand>
+    <autoSaveInt>1</autoSaveInt>
     <defaultFolderImage>undefined</defaultFolderImage>
     <defaultLeafImage>undefined</defaultLeafImage>
     <element>order_EOC_OE.creaOrden</element>
@@ -23,7 +24,7 @@
       <child name="Orden" type="tnOi">
         <autoExpand>true</autoExpand>
         <autoSave>true</autoSave>
-        <detailForm>doc_EOC_OE.DATOS_ORDEN/ui_UserInterface/frmui_Forms/vform_Crea_Order</detailForm>
+        <detailForm>doc_EOC_OE.DATOS_ORDEN/ui_UserInterface/frmui_Forms/vform_GF</detailForm>
         <detailUI>doc_EOC_OE.DATOS_ORDEN/ui_UserInterface</detailUI>
         <element>doc_EOC_OE.DATOS_ORDEN</element>
         <extends>tn_com.conceptwave.system.TreeNode</extends>

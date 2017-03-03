@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="EOC_OE.ReferenciaItem">
+  <extends>dtype_cwf.sReference</extends>
+  <label>Referencia Item</label>
+  <length>30</length>
+  <metaVersion>25</metaVersion>
+  <reference>findDoc_EOC_OE.Busca_items</reference>
+</dataType>

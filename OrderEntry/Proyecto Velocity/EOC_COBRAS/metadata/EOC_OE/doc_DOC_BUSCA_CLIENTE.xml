@@ -1,108 +1,89 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<document name="EOC_OE.DATOS_CLIENTE">
-  <dbSchema>ORDER</dbSchema>
+<document name="EOC_OE.DOC_BUSCA_CLIENTE">
   <extends>doc_com.conceptwave.system.Document</extends>
-  <guid>{8f20abae-a309-4163-9cc7-5dff9592dc78}</guid>
-  <label>Datos del Cliente</label>
+  <guid>{b3b01123-df44-4572-b2d4-3fc0d1fb2596}</guid>
+  <label>Busca Cliente</label>
   <metaVersion>25</metaVersion>
   <variableList>
     <variable name="RUT" type="leaf">
-      <column>RUT</column>
-      <key>1</key>
-      <table>EOC_CLIENTE</table>
       <valueType>dtype_EOC_OE.RUT</valueType>
     </variable>
     <variable name="NOMBRE" type="leaf">
-      <column>NOMBRE</column>
-      <table>EOC_CLIENTE</table>
       <valueType>dtype_EOC_OE.NOMBRE</valueType>
     </variable>
     <variable name="DIRECCION" type="leaf">
-      <column>DIRECCION</column>
-      <table>EOC_CLIENTE</table>
       <valueType>dtype_EOC_OE.DIRECCION</valueType>
     </variable>
     <variable name="COMUNA" type="leaf">
-      <column>COMUNA</column>
-      <table>EOC_CLIENTE</table>
       <valueType>dtype_EOC_OE.COMUNA</valueType>
     </variable>
     <variable name="CIUDAD" type="leaf">
-      <column>CIUDAD</column>
-      <table>EOC_CLIENTE</table>
       <valueType>dtype_EOC_OE.CIUDAD</valueType>
     </variable>
   </variableList>
-  <methodList>
-    <method name="cwOnDocVisualKey" type="action">
-      <system>true</system>
-      <valueType>dtype_com.conceptwave.system.String</valueType>
-      <script>return this.RUT;</script>
-    </method>
-  </methodList>
   <UserInterface name="UserInterface" type="ui">
     <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
     <variableList>
       <variable name="model" type="uivar">
         <label>model</label>
-        <valueType>doc_EOC_OE.DATOS_CLIENTE</valueType>
+        <valueType>doc_EOC_OE.DOC_BUSCA_CLIENTE</valueType>
       </variable>
     </variableList>
     <vformList>
       <vform name="Forms" type="frmui">
         <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
         <overlayList>
-          <overlay name="GeneraCliente" type="vform">
-            <label>GeneraCliente</label>
-            <root name="GeneraClienteGrid_vCentering" type="elvltstck">
+          <overlay name="buscador" type="vform">
+            <label>buscador</label>
+            <root name="buscadorGrid_vCentering" type="elvltstck">
               <height>100%</height>
               <membersMargin>5</membersMargin>
               <width>100%</width>
               <elementList>
-                <element name="DATOS_CLIENTEGrid" type="elgrd">
+                <element name="DOC_BUSCA_CLIENTEGrid" type="elgrd">
                   <numOfCols>4</numOfCols>
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
-                    <element name="DATOS_CLIENTEHeader" type="elhdr">
-                      <label>Datos Cliente</label>
+                    <element name="DOC_BUSCA_CLIENTEHeader" type="elhdr">
+                      <label>Busca Cliente</label>
                     </element>
                     <element name="RUT" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
-                          <variablePath>doc_EOC_OE.DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_EOC_OE.DATOS_CLIENTE/leaf_RUT</variablePath>
+                          <variablePath>doc_EOC_OE.DOC_BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.DOC_BUSCA_CLIENTE/leaf_RUT</variablePath>
                         </variablePathList>
                       </variable>
                     </element>
                     <element name="NOMBRE" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
-                          <variablePath>doc_EOC_OE.DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_EOC_OE.DATOS_CLIENTE/leaf_NOMBRE</variablePath>
+                          <variablePath>doc_EOC_OE.DOC_BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.DOC_BUSCA_CLIENTE/leaf_NOMBRE</variablePath>
                         </variablePathList>
                       </variable>
                     </element>
                     <element name="DIRECCION" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
-                          <variablePath>doc_EOC_OE.DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_EOC_OE.DATOS_CLIENTE/leaf_DIRECCION</variablePath>
+                          <variablePath>doc_EOC_OE.DOC_BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.DOC_BUSCA_CLIENTE/leaf_DIRECCION</variablePath>
                         </variablePathList>
                       </variable>
                     </element>
                     <element name="COMUNA" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
-                          <variablePath>doc_EOC_OE.DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_EOC_OE.DATOS_CLIENTE/leaf_COMUNA</variablePath>
+                          <variablePath>doc_EOC_OE.DOC_BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.DOC_BUSCA_CLIENTE/leaf_COMUNA</variablePath>
                         </variablePathList>
                       </variable>
                     </element>
                     <element name="CIUDAD" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
-                          <variablePath>doc_EOC_OE.DATOS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_EOC_OE.DATOS_CLIENTE/leaf_CIUDAD</variablePath>
+                          <variablePath>doc_EOC_OE.DOC_BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.DOC_BUSCA_CLIENTE/leaf_CIUDAD</variablePath>
                         </variablePathList>
                       </variable>
                     </element>
@@ -114,19 +95,5 @@
         </overlayList>
       </vform>
     </vformList>
-    <methodList>
-      <method name="save" type="usrActionMethod">
-        <allowInvalidObject>true</allowInvalidObject>
-        <validate>true</validate>
-        <script><![CDATA[
-          if(this.isValid) {
-            this.model.save();
-          }
-          else {
-            Global.throwException("UE0116", this);
-          }
-        ]]></script>
-      </method>
-    </methodList>
   </UserInterface>
 </document>

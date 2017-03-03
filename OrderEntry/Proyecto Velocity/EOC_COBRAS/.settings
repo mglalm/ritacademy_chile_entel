@@ -16,7 +16,6 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <joinClusterPeUi>false</joinClusterPeUi>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
 </project>

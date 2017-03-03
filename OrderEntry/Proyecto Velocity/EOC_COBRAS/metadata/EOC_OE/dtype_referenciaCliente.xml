@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="EOC_OE.referenciaCliente">
+  <extends>dtype_cwf.sReference</extends>
+  <label>Referencia Cliente</label>
+  <length>15</length>
+  <metaVersion>25</metaVersion>
+  <reference>findDoc_EOC_OE.Busca_Cliente</reference>
+</dataType>

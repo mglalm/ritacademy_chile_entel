@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <dataType name="EOC_OE.NOMBRE">
-  <dataTypeFlags enum-type="dataTypeFlag">NON_NULLABLE</dataTypeFlags>
   <extends>dtype_com.conceptwave.system.String</extends>
   <label>NOMBRE</label>
   <length>30</length>

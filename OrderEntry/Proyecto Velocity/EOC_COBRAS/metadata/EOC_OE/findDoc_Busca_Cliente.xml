@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <findDoc name="EOC_OE.Busca_Cliente">
   <extends>find_com.conceptwave.system.Finder</extends>
-  <input>doc_EOC_OE.BUSCA_DATOS_CLIENTE</input>
+  <input>doc_EOC_OE.DOC_BUSCA_CLIENTE</input>
   <label>Busca Clientes</label>
   <metaVersion>25</metaVersion>
   <output>doc_EOC_OE.DATOS_CLIENTE</output>
   <type>document</type>
   <searchList>
     <search type="sitem">
-      <document>doc_EOC_OE.BUSCA_DATOS_CLIENTE</document>
+      <document>doc_EOC_OE.DOC_BUSCA_CLIENTE</document>
       <mappedDocument>doc_EOC_OE.DATOS_CLIENTE</mappedDocument>
       <mappedPath>doc_EOC_OE.DATOS_CLIENTE/leaf_CIUDAD</mappedPath>
       <operation>equal</operation>
-      <path>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_CIUDAD</path>
+      <path>doc_EOC_OE.DOC_BUSCA_CLIENTE/leaf_CIUDAD</path>
     </search>
     <search type="sitem">
-      <document>doc_EOC_OE.BUSCA_DATOS_CLIENTE</document>
+      <document>doc_EOC_OE.DOC_BUSCA_CLIENTE</document>
       <mappedDocument>doc_EOC_OE.DATOS_CLIENTE</mappedDocument>
       <mappedPath>doc_EOC_OE.DATOS_CLIENTE/leaf_COMUNA</mappedPath>
       <operation>equal</operation>
-      <path>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_COMUNA</path>
+      <path>doc_EOC_OE.DOC_BUSCA_CLIENTE/leaf_COMUNA</path>
     </search>
     <search type="sitem">
-      <document>doc_EOC_OE.BUSCA_DATOS_CLIENTE</document>
+      <document>doc_EOC_OE.DOC_BUSCA_CLIENTE</document>
       <mappedDocument>doc_EOC_OE.DATOS_CLIENTE</mappedDocument>
       <mappedPath>doc_EOC_OE.DATOS_CLIENTE/leaf_DIRECCION</mappedPath>
       <operation>equal</operation>
-      <path>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_DIRECCION</path>
+      <path>doc_EOC_OE.DOC_BUSCA_CLIENTE/leaf_DIRECCION</path>
     </search>
     <search type="sitem">
-      <document>doc_EOC_OE.BUSCA_DATOS_CLIENTE</document>
+      <document>doc_EOC_OE.DOC_BUSCA_CLIENTE</document>
       <mappedDocument>doc_EOC_OE.DATOS_CLIENTE</mappedDocument>
       <mappedPath>doc_EOC_OE.DATOS_CLIENTE/leaf_NOMBRE</mappedPath>
       <operation>equal</operation>
-      <path>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_NOMBRE</path>
+      <path>doc_EOC_OE.DOC_BUSCA_CLIENTE/leaf_NOMBRE</path>
     </search>
     <search type="sitem">
-      <document>doc_EOC_OE.BUSCA_DATOS_CLIENTE</document>
+      <document>doc_EOC_OE.DOC_BUSCA_CLIENTE</document>
       <mappedDocument>doc_EOC_OE.DATOS_CLIENTE</mappedDocument>
       <mappedPath>doc_EOC_OE.DATOS_CLIENTE/leaf_RUT</mappedPath>
       <operation>equal</operation>
-      <path>doc_EOC_OE.BUSCA_DATOS_CLIENTE/leaf_RUT</path>
+      <path>doc_EOC_OE.DOC_BUSCA_CLIENTE/leaf_RUT</path>
     </search>
     <search type="sitem">
       <mappedDocument>doc_EOC_OE.DATOS_CLIENTE</mappedDocument>
@@ -59,7 +59,7 @@
         <valueType>doc_EOC_OE.DATOS_CLIENTE</valueType>
       </variable>
       <variable name="search" type="uivar">
-        <valueType>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface</valueType>
+        <valueType>doc_EOC_OE.DOC_BUSCA_CLIENTE/ui_UserInterface</valueType>
       </variable>
       <variable name="detail" type="uivar">
         <flags enum-type="metadataFlag">VALIDATE</flags>
@@ -189,8 +189,9 @@
   </UserInterface>
   <viewList>
     <view name="Busca_ClienteView" type="findVView">
-      <inputOverlay>doc_EOC_OE.BUSCA_DATOS_CLIENTE/ui_UserInterface/frmui_Forms/vform_busca_cliente</inputOverlay>
+      <inputOverlay>doc_EOC_OE.DOC_BUSCA_CLIENTE/ui_UserInterface/frmui_Forms/vform_buscador</inputOverlay>
       <outputOverlay>findDoc_EOC_OE.Busca_Cliente/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <searchImmediately>true</searchImmediately>
       <showSearchForm>true</showSearchForm>
     </view>
   </viewList>

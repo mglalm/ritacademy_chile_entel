@@ -12,7 +12,17 @@
       <table>CWPC_ITEM</table>
       <valueType>dtype_EOC_OE.PO</valueType>
     </variable>
+    <variable name="ReferenciaItem" type="leaf">
+      <valueType>dtype_EOC_OE.ReferenciaItem</valueType>
+    </variable>
   </variableList>
+  <methodList>
+    <method name="cwOnDocVisualKey" type="action">
+      <system>true</system>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <script>return this.PO</script>
+    </method>
+  </methodList>
   <UserInterface name="UserInterface" type="ui">
     <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
     <variableList>
@@ -44,6 +54,15 @@
                         <variablePathList>
                           <variablePath>doc_EOC_OE.Catalogo/ui_UserInterface/uivar_model</variablePath>
                           <variablePath>doc_EOC_OE.Catalogo/leaf_PO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ReferenciaItem" type="elslct">
+                      <multiselect>false</multiselect>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EOC_OE.Catalogo/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EOC_OE.Catalogo/leaf_ReferenciaItem</variablePath>
                         </variablePathList>
                       </variable>
                     </element>
