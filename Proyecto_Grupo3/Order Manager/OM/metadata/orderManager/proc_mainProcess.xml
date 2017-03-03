@@ -47,13 +47,14 @@
                         <element>iface_oeInterface.Submit_Order_OE/oper_SubmitResponseOE</element>
                         <label>InformacionOE</label>
                         <participant>part_orderManager.InformacionOE</participant>
-                        <x>658.0</x>
+                        <x>659.21466</x>
                         <y>122.0</y>
                         <methodList>
                           <method name="cwOnProcActBefore" type="action">
                             <category>before</category>
                             <system>true</system>
                             <script><![CDATA[
+                              // Envio de Respuesta a OE
                               orderManager.dummy();
                               this.activityData.IMSI = this.process.processDocument.IMSI;
                               this.activityData.MSISDN = this.process.processDocument.MSISDN;

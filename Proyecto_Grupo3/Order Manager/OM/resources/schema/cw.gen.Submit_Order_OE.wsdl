@@ -68,21 +68,21 @@
 				</restriction>
 			</simpleType>
 
-			<simpleType name="ID_Order">
-				<annotation>
-					<documentation>ID_Order</documentation>
-				</annotation>
-				<restriction base="xsd:string">
-					<maxLength value="32"/>
-				</restriction>
-			</simpleType>
-
 			<simpleType name="IMSI">
 				<annotation>
 					<documentation>IMSI</documentation>
 				</annotation>
 				<restriction base="xsd:integer">
 					<totalDigits value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="ID_Order">
+				<annotation>
+					<documentation>ID_Order</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
 				</restriction>
 			</simpleType>
 
