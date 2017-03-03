@@ -12,13 +12,26 @@
     <parameter name="descEstado" type="rifp">
       <type>dtype_OrderManager.dtMotivoEstado</type>
     </parameter>
+    <parameter name="nodo" type="rifp">
+      <type>dtype_OrderManager.dtIdNodo</type>
+    </parameter>
+    <parameter name="POId" type="rifp">
+      <type>dtype_OrderManager.dtPOId</type>
+    </parameter>
   </parameterList>
   <script><![CDATA[
     /*
      * Esta función actualiza el estado de una orden en la BD a partir del número de orden.
      * Si no existe la orden en la BS, no hace nada
+     *
+     * Actualiza en cascada los estados de la orden, la PO, y el nodo en caso de ocurrir un problema
+     *
+     * LA PO y el Nodo son opcionales, si vienen como un string vacío o nulo no hace nada
+     *
      */
 
+
+    //Primero la Orden
     var orden = new Document("OrderManager.docOMOrden");  //documento asociado a la tabla de BD OM_ORDEN
     var fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
     var resultOM_Orden; //lista que retornara el finder
@@ -30,10 +43,31 @@
 
     //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
     if(doc){
+        orden = doc;
         orden.estado = estado;
         orden.motivoEstado = descEstado;
         orden.save();
-        return;
     }
+
+    //la PO
+    /*
+    var po = new Document("OrderManager.docOMOrdenPO");  //documento asociado a la tabla de BD OM_ORDEN
+    var fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
+    var resultOM_Orden; //lista que retornara el finder
+
+    orden.orderId = orderId;
+
+    var resultOM_Orden = fnd.search(resultOM_Orden, orden);//retorna una DataObjectList() -> ARRAY
+    var doc = resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
+
+    //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
+    if(doc){
+        orden = doc;
+        orden.estado = estado;
+        orden.motivoEstado = descEstado;
+        orden.save();
+    }
+
+    */
   ]]></script>
 </script>

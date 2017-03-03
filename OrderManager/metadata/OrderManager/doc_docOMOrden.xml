@@ -2,15 +2,21 @@
 <document name="OrderManager.docOMOrden">
   <dbSchema>ORDER</dbSchema>
   <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
   <guid>{4190f561-6f40-4bdc-91ad-db392877eb87}</guid>
   <label>docOMOrden</label>
   <metaVersion>25</metaVersion>
   <variableList>
-    <variable name="orderId" type="leaf">
-      <column>ORDER_ID</column>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
       <key>1</key>
       <table>OM_ORDEN</table>
-      <valueType>dtype_OrderManager.dtOrderId</valueType>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+    <variable name="orderId" type="leaf">
+      <column>ORDER_ID</column>
+      <table>OM_ORDEN</table>
+      <valueType>dtype_cwf.cwOrderId</valueType>
     </variable>
     <variable name="rut" type="leaf">
       <column>RUT</column>
@@ -31,6 +37,36 @@
       <column>FECHA_CREACION</column>
       <table>OM_ORDEN</table>
       <valueType>dtype_cwf.cwCreated</valueType>
+    </variable>
+    <variable name="cwDocStamp" type="leaf">
+      <column>CWDOCSTAMP</column>
+      <table>OM_ORDEN</table>
+      <valueType>dtype_cwf.cwDocStamp</valueType>
+    </variable>
+    <variable name="cwOrderCreationDate" type="leaf">
+      <column>CWORDERCREATIONDATE</column>
+      <table>OM_ORDEN</table>
+      <valueType>dtype_cwf.cwOrderCreationDate</valueType>
+    </variable>
+    <variable name="cwParentId" type="leaf">
+      <column>CWPARENTID</column>
+      <table>OM_ORDEN</table>
+      <valueType>dtype_cwf.cwParentId</valueType>
+    </variable>
+    <variable name="cwSiteId" type="leaf">
+      <column>CWSITEID</column>
+      <table>OM_ORDEN</table>
+      <valueType>dtype_cwf.cwSiteId</valueType>
+    </variable>
+    <variable name="lastUpdatedDate" type="leaf">
+      <column>LASTUPDATEDDATE</column>
+      <table>OM_ORDEN</table>
+      <valueType>dtype_cwf.lastUpdatedDate</valueType>
+    </variable>
+    <variable name="updatedBy" type="leaf">
+      <column>UPDATEDBY</column>
+      <table>OM_ORDEN</table>
+      <valueType>dtype_cwf.updatedBy</valueType>
     </variable>
   </variableList>
 </document>

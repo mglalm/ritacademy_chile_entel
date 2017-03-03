@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="CSProvisionInterface.input_desprovServicioCS">
+  <container>true</container>
+  <description>input_desprovServicioCS</description>
+  <label>input_desprovServicioCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="msisdn" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>msisdn</label>
+    </child>
+  </childList>
+</dataStructure>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="CSProvisionInterface.output_desprovServicioCS">
+  <container>true</container>
+  <description>output_desprovServicioCS</description>
+  <label>output_desprovServicioCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="estado" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>estado</label>
+    </child>
+    <child name="mensaje" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>mensaje</label>
+    </child>
+  </childList>
+</dataStructure>

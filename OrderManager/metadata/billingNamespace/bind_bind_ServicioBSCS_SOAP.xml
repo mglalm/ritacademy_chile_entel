@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<binding name="billingNamespace.bind_getMsisdnBSCS_SOAP">
+<binding name="billingNamespace.bind_ServicioBSCS_SOAP">
   <extensionList>
     <extension name="getMsisdnReserveBSCS" type="ext">
       <element>Operation</element>
@@ -19,9 +19,27 @@
         <elementItem key="use">literal</elementItem>
       </elementItemMap>
     </extension>
+    <extension name="provServicioBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">provServicioBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
   </extensionList>
   <interface>iface_billingNamespace.interface_serviciosBSCS</interface>
-  <label>bind_getMsisdnBSCS_SOAP</label>
+  <label>bind_ServicioBSCS_SOAP</label>
   <metaVersion>25</metaVersion>
   <provider>prov_cwf.soapprov</provider>
 </binding>

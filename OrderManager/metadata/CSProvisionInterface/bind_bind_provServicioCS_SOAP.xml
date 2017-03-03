@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <binding name="CSProvisionInterface.bind_provServicioCS_SOAP">
   <extensionList>
+    <extension name="desprovServicioCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">desprovServicioCS</elementItem>
+      </elementItemMap>
+    </extension>
     <extension name="provServicioCS" type="ext">
       <element>Operation</element>
       <elementItemMap>
         <elementItem key="soapAction">provServicioCS</elementItem>
-      </elementItemMap>
-    </extension>
-    <extension name="provServicioCS$Input" type="ext">
-      <element>Message</element>
-      <elementItemMap>
-        <elementItem key="use">literal</elementItem>
-      </elementItemMap>
-    </extension>
-    <extension name="provServicioCS$Output" type="ext">
-      <element>Message</element>
-      <elementItemMap>
-        <elementItem key="use">literal</elementItem>
       </elementItemMap>
     </extension>
   </extensionList>

@@ -137,7 +137,7 @@
 					<documentation>input_desprovServicioCS</documentation>
 				</annotation>
 					<sequence>
-						<element name="msisdn" minOccurs="0" maxOccurs="1" type="anyType"/>
+						<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
 					</sequence>
 				</complexType>
 

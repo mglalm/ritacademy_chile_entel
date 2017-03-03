@@ -19,7 +19,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarExportFolder>C:\EntrenReadiness\GIT\20170201\OrderManager\</jarExportFolder>
+  <jarExportFolder>C:\EntrenReadiness\GIT\20170201\</jarExportFolder>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
 </project>

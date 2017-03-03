@@ -95,8 +95,8 @@
                 <element>iface_billingNamespace.interface_serviciosBSCS/oper_getMsisdnReserveBSCS</element>
                 <label>obtenerMSISDN</label>
                 <participant>part_billingNamespace.billingParticipant</participant>
-                <x>144.0</x>
-                <y>100.0</y>
+                <x>126.0</x>
+                <y>103.0</y>
                 <childList>
                   <child name="validaOrden" type="switchActivity">
                     <label>validaOrden</label>
@@ -105,59 +105,226 @@
                     <childList>
                       <child name="nok" type="caseActivity">
                         <label>nok</label>
-                        <x>424.0</x>
-                        <y>195.0</y>
+                        <x>232.0</x>
+                        <y>229.0</y>
                         <childList>
-                          <child name="ordenNOCompletada" type="completeActivity">
-                            <label>ordenNOCompletada</label>
-                            <x>232.0</x>
-                            <y>229.0</y>
+                          <child name="seqNotificar" type="seqActivity">
+                            <label>seqNotificar</label>
+                            <x>259.0</x>
+                            <y>233.0</y>
+                            <childList>
+                              <child name="notificarError" type="scriptActivity">
+                                <label>notificarError</label>
+                                <x>249.0</x>
+                                <y>329.0</y>
+                                <methodList>
+                                  <method name="cwOnProcActBefore" type="action">
+                                    <category>before</category>
+                                    <system>true</system>
+                                    <script><![CDATA[
+                                      OrderManager.debug();
+
+                                      OrderManager.notificaErrorEnProceso(this.process.processDocument);
+
+                                      return;
+                                    ]]></script>
+                                  </method>
+                                </methodList>
+                              </child>
+                              <child name="ordenNoCompletada" type="completeActivity">
+                                <label>ordenNoCompletada</label>
+                                <x>230.0</x>
+                                <y>431.0</y>
+                              </child>
+                            </childList>
                           </child>
                         </childList>
                       </child>
                       <child name="ok" type="caseActivity">
                         <label>ok</label>
-                        <x>565.0</x>
-                        <y>227.0</y>
+                        <x>392.0</x>
+                        <y>225.0</y>
                         <childList>
-                          <child name="provCS" type="seqActivity">
-                            <label>provCS</label>
+                          <child name="provBSCS" type="seqActivity">
+                            <label>provBSCS</label>
                             <x>392.0</x>
                             <y>225.0</y>
                             <childList>
-                              <child name="provCS" type="opActivity">
-                                <element>iface_CSProvisionInterface.interface_serviciosCS/oper_provServicioCS</element>
-                                <label>provCS</label>
-                                <participant>part_CSProvisionInterface.CSParticipant</participant>
-                                <x>482.0</x>
-                                <y>97.0</y>
+                              <child name="provBSCS" type="opActivity">
+                                <element>iface_billingNamespace.interface_serviciosBSCS/oper_provServicioBSCS</element>
+                                <label>provBSCS</label>
+                                <participant>part_billingNamespace.billingParticipant</participant>
+                                <x>488.0</x>
+                                <y>105.0</y>
                                 <childList>
-                                  <child name="provOK" type="switchActivity">
-                                    <label>provOK</label>
-                                    <x>597.0</x>
-                                    <y>97.0</y>
+                                  <child name="provBSCSOK" type="switchActivity">
+                                    <label>provBSCSOK</label>
+                                    <x>614.0</x>
+                                    <y>104.0</y>
                                     <childList>
-                                      <child name="nok" type="caseActivity">
-                                        <label>nok</label>
-                                        <x>536.0</x>
-                                        <y>227.0</y>
-                                        <childList>
-                                          <child name="ordenNoCompletada" type="completeActivity">
-                                            <label>ordenNoCompletada</label>
-                                            <x>536.0</x>
-                                            <y>227.0</y>
-                                          </child>
-                                        </childList>
-                                      </child>
                                       <child name="ok" type="caseActivity">
                                         <label>ok</label>
-                                        <x>597.0</x>
-                                        <y>197.0</y>
+                                        <x>614.0</x>
+                                        <y>195.0</y>
                                         <childList>
-                                          <child name="provisionComplete" type="completeActivity">
-                                            <label>provisionComplete</label>
-                                            <x>697.0</x>
-                                            <y>195.0</y>
+                                          <child name="provCS" type="seqActivity">
+                                            <label>provCS</label>
+                                            <x>689.0</x>
+                                            <y>228.0</y>
+                                            <childList>
+                                              <child name="provCS" type="opActivity">
+                                                <element>iface_CSProvisionInterface.interface_serviciosCS/oper_provServicioCS</element>
+                                                <label>provCS</label>
+                                                <participant>part_CSProvisionInterface.CSParticipant</participant>
+                                                <x>790.0</x>
+                                                <y>98.0</y>
+                                                <childList>
+                                                  <child name="provOK" type="switchActivity">
+                                                    <label>provOK</label>
+                                                    <x>948.0</x>
+                                                    <y>96.0</y>
+                                                    <childList>
+                                                      <child name="nok" type="caseActivity">
+                                                        <label>nok</label>
+                                                        <x>536.0</x>
+                                                        <y>227.0</y>
+                                                        <childList>
+                                                          <child name="seqNotificar" type="seqActivity">
+                                                            <label>seqNotificar</label>
+                                                            <x>894.0</x>
+                                                            <y>221.0</y>
+                                                            <childList>
+                                                              <child name="notificarError" type="scriptActivity">
+                                                                <label>notificarError</label>
+                                                                <x>890.0</x>
+                                                                <y>317.0</y>
+                                                                <methodList>
+                                                                  <method name="cwOnProcActBefore" type="action">
+                                                                    <category>before</category>
+                                                                    <system>true</system>
+                                                                    <script><![CDATA[
+                                                                      OrderManager.debug();
+
+                                                                      OrderManager.notificaErrorEnProceso(this.process.processDocument);
+
+                                                                      return;
+                                                                    ]]></script>
+                                                                  </method>
+                                                                </methodList>
+                                                              </child>
+                                                              <child name="ordenNoCompletada" type="completeActivity">
+                                                                <label>ordenNoCompletada</label>
+                                                                <x>868.0</x>
+                                                                <y>418.0</y>
+                                                              </child>
+                                                            </childList>
+                                                          </child>
+                                                        </childList>
+                                                      </child>
+                                                      <child name="ok" type="caseActivity">
+                                                        <label>ok</label>
+                                                        <x>597.0</x>
+                                                        <y>197.0</y>
+                                                        <childList>
+                                                          <child name="provisionComplete" type="completeActivity">
+                                                            <label>provisionComplete</label>
+                                                            <x>1062.0</x>
+                                                            <y>231.0</y>
+                                                          </child>
+                                                        </childList>
+                                                        <methodList>
+                                                          <method name="cwOnProcActCond" type="action">
+                                                            <category>cond</category>
+                                                            <system>true</system>
+                                                            <script><![CDATA[return this.process.processDocument.CTRL_ERROR == "0";]]></script>
+                                                          </method>
+                                                        </methodList>
+                                                      </child>
+                                                    </childList>
+                                                  </child>
+                                                </childList>
+                                                <methodList>
+                                                  <method name="cwOnProcActAfter" type="action">
+                                                    <category>script</category>
+                                                    <system>true</system>
+                                                    <script><![CDATA[
+                                                      OrderManager.debug();
+                                                      //Inicializa las variables de control, que indican si hay algun problema en el flujo. Quedan en el processDocument.
+                                                      var docProc = this.process.processDocument;
+                                                      OrderManager.inicializaVariableControl(this.process.processDocument);
+
+                                                      //resp contiene el resultado del WS, con la respuesta de la activación en CS
+                                                      var resp = this.activityData;
+
+                                                      var prov = new Document("OrderManager.docOMProvCS");
+                                                      var param = new Document("OrderManager.docOMParamCS");
+
+
+                                                      if(resp==null || resp.estado=="NOOK"){
+                                                           this.process.processDocument.CTRL_ERROR = "9";
+                                                           this.process.processDocument.CTRL_DESC_ERROR = "Error al provisionar en CS. " + resp.mensaje;
+                                                           OrderManager.actualizaEstadoOrden(this.process.processDocument.IN_orderId, "ErrorCS", "Error al provisionar en CS. " + resp.mensaje, "", "");
+
+                                                           //Ingreso un registro en la tabla de provision
+                                                           prov.orderId = docProc.IN_orderId;
+                                                           prov.POId = docProc.IN_POIdBasico;
+                                                           prov.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
+                                                           prov.estado = "9";
+                                                           prov.motivoEstado = "Error al provisionar en CS. " + resp.mensaje;
+                                                           prov.save();
+
+                                                           //Ingreso un registro con los parámetros que se utilizaron
+                                                           param.orderId = docProc.IN_orderId;
+                                                           param.POId = docProc.IN_POIdBasico;
+                                                           param.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
+                                                           param.paramId = "ID_PLAN_CS";
+                                                           param.valor = docProc.CTRL_planCS;
+                                                           param.save();
+
+                                                           return;
+                                                      }
+
+                                                      //Si no hubo error, guardo un registro en la tabla de provisión y en la tabla de parámetros con el (o los) parámetro utilizado (s)
+
+                                                       //Ingreso un registro en la tabla de provision
+                                                           prov.orderId = docProc.IN_orderId;
+                                                           prov.POId = docProc.IN_POIdBasico;
+                                                           prov.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
+                                                           prov.estado = "0";
+                                                           prov.motivoEstado = "Provisión en CS ejecutada correctamente. CS: " + resp.mensaje;
+                                                           prov.save();
+
+                                                           //Ingreso un registro con los parámetros que se utilizaron
+                                                           param.orderId = docProc.IN_orderId;
+                                                           param.POId = docProc.IN_POIdBasico;
+                                                           param.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
+                                                           param.paramId = "ID_PLAN_CS";
+                                                           param.valor = docProc.CTRL_planCS;
+                                                           param.save();
+
+
+                                                      var a=1;
+                                                    ]]></script>
+                                                  </method>
+                                                  <method name="cwOnProcActBefore" type="action">
+                                                    <category>before</category>
+                                                    <system>true</system>
+                                                    <script><![CDATA[
+                                                      //OrderManager.debug();
+
+                                                      /** En esta sección, se deben completar los parámetros de entrada a la llamada del WS de provisión
+                                                       *    de CS. En este caso, se requiere el MSISDN y el codigo del plan en CS.
+                                                       */
+
+                                                      this.activityData.orderid = this.process.processDocument.IN_orderId;
+                                                      this.activityData.msisdn = this.process.processDocument.OUT_MSISDN;
+                                                      this.activityData.id_plan_cs = this.process.processDocument.CTRL_planCS;
+                                                      var a = 1;
+                                                    ]]></script>
+                                                  </method>
+                                                </methodList>
+                                              </child>
+                                            </childList>
                                           </child>
                                         </childList>
                                         <methodList>
@@ -168,6 +335,43 @@
                                           </method>
                                         </methodList>
                                       </child>
+                                      <child name="nok" type="caseActivity">
+                                        <label>nok</label>
+                                        <x>572.0</x>
+                                        <y>228.0</y>
+                                        <childList>
+                                          <child name="seqNotificar" type="seqActivity">
+                                            <label>seqNotificar</label>
+                                            <x>572.0</x>
+                                            <y>228.0</y>
+                                            <childList>
+                                              <child name="notificarError" type="scriptActivity">
+                                                <label>notificarError</label>
+                                                <x>560.0</x>
+                                                <y>318.0</y>
+                                                <methodList>
+                                                  <method name="cwOnProcActBefore" type="action">
+                                                    <category>before</category>
+                                                    <system>true</system>
+                                                    <script><![CDATA[
+                                                      OrderManager.debug();
+
+                                                      OrderManager.notificaErrorEnProceso(this.process.processDocument);
+
+                                                      return;
+                                                    ]]></script>
+                                                  </method>
+                                                </methodList>
+                                              </child>
+                                              <child name="ordenNoCompletada" type="completeActivity">
+                                                <label>ordenNoCompletada</label>
+                                                <x>541.0</x>
+                                                <y>412.0</y>
+                                              </child>
+                                            </childList>
+                                          </child>
+                                        </childList>
+                                      </child>
                                     </childList>
                                   </child>
                                 </childList>
@@ -177,38 +381,8 @@
                                     <system>true</system>
                                     <script><![CDATA[
                                       OrderManager.debug();
-                                      //Inicializa las variables de control, que indican si hay algun problema en el flujo. Quedan en el processDocument.
-                                      var docProc = this.process.processDocument;
-                                      OrderManager.inicializaVariableControl(this.process.processDocument);
-
-                                      //resp contiene el resultado del WS, con la respuesta de la activación en CS
-                                      var resp = this.activityData;
-
-                                      if(resp==null || resp.estado=="NOOK"){
-                                           this.process.processDocument.CTRL_ERROR = "6";
-                                           this.process.processDocument.CTRL_DESC_ERROR = "Error al provisionar en CS. " + resp.mensaje;
-
-                                           OrderManager.actualizaEstadoOrden(this.process.processDocument.IN_orderId, "ErrorCS", "Error al provisionar en CS. " + resp.mensaje);
-                                           return;
-                                      }
 
                                       var a=1;
-                                    ]]></script>
-                                  </method>
-                                  <method name="cwOnProcActBefore" type="action">
-                                    <category>before</category>
-                                    <system>true</system>
-                                    <script><![CDATA[
-                                      OrderManager.debug();
-
-                                      /** En esta sección, se deben completar los parámetros de entrada a la llamada del WS de provisión
-                                       *    de CS. En este caso, se requiere el MSISDN y el codigo del plan en CS.
-                                       */
-
-                                      this.activityData.orderid = this.process.processDocument.IN_orderId;
-                                      this.activityData.msisdn = this.process.processDocument.OUT_MSISDN;
-                                      this.activityData.id_plan_cs = this.process.processDocument.CTRL_planCS;
-                                      var a = 1;
                                     ]]></script>
                                   </method>
                                 </methodList>
@@ -232,7 +406,7 @@
                     <category>script</category>
                     <system>true</system>
                     <script><![CDATA[
-                      //OrderManager.debug();
+                      OrderManager.debug();
                       //Inicializa las variables de control, que indican si hay algun problema en el flujo. Quedan en el processDocument.
                       OrderManager.inicializaVariableControl(this.process.processDocument);
 
@@ -264,6 +438,16 @@
                           orden.estado = "En Proceso";
                           orden.motivoEstado = "La orden ha sido ingresada y se encuentra en proceso de creación."
                           orden.save();
+                          //Va a buscar el cwIdDoc
+                          /*fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
+                          resultOM_Orden = fnd.search(resultOM_Orden, orden);//retorna una DataObjectList() -> ARRAY
+                          resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
+                          if(!doc){
+                              this.process.processDocument.CTRL_ERROR = "8";
+                              this.process.processDocument.CTRL_DESC_ERROR = "Error al grabar la Orden en BD";
+                              return;
+                          }
+                          orden = doc;*/
                       }
 
                       /************* Fin de la creación de la ORDEN ****************/
@@ -279,6 +463,7 @@
                            orden.estado = "ErrorMSISD";
                            orden.motivoEstado = resp.mensaje;
                            orden.save();
+
                            return;
                       }
 
@@ -292,6 +477,7 @@
                       //Como ya se validó que la orden no existía previamente, por integridad referencial la order_po tampoco existe, por lo que se crea directamente
                       ordenPOBas.POId = docProc.IN_POIdBasico;
                       ordenPOBas.orderId = docProc.IN_orderId;
+                      ordenPOBas.cwDocId = orden.cwDocId;
                       ordenPOBas.estado = "Creada";
                       ordenPOBas.motivoEstado = "PO Creada exitosamente";
                       ordenPOBas.save();
@@ -310,6 +496,7 @@
                           //Se valida que no sea igual a la PO Basica
                           if(docProc.IN_POIdAdicional != docProc.IN_POIdBasico){
                               ordenPOAdi.POId = docProc.IN_POIdAdicional;
+                              ordenPOAdi.cwDocId = orden.cwDocId;
                               ordenPOAdi.orderId = docProc.IN_orderId;
                               ordenPOAdi.estado = "Creada";
                               ordenPOAdi.motivoEstado = "PO Creada exitosamente";
@@ -376,13 +563,38 @@
           </child>
           <child name="nok" type="caseActivity">
             <label>nok</label>
-            <x>79.0</x>
-            <y>375.0</y>
+            <x>68.0</x>
+            <y>442.0</y>
             <childList>
-              <child name="ordenNoCompletada" type="completeActivity">
-                <label>ordenNoCompletada</label>
-                <x>54.0</x>
-                <y>430.0</y>
+              <child name="seqNotificar" type="seqActivity">
+                <label>seqNotificar</label>
+                <x>82.0</x>
+                <y>425.0</y>
+                <childList>
+                  <child name="notificarError" type="scriptActivity">
+                    <label>notificarError</label>
+                    <x>68.0</x>
+                    <y>518.0</y>
+                    <methodList>
+                      <method name="cwOnProcActBefore" type="action">
+                        <category>before</category>
+                        <system>true</system>
+                        <script><![CDATA[
+                          OrderManager.debug();
+
+                          OrderManager.notificaErrorEnProceso(this.process.processDocument);
+
+                          return;
+                        ]]></script>
+                      </method>
+                    </methodList>
+                  </child>
+                  <child name="ordenNoCompletada" type="completeActivity">
+                    <label>ordenNoCompletada</label>
+                    <x>48.0</x>
+                    <y>613.0</y>
+                  </child>
+                </childList>
               </child>
             </childList>
           </child>
@@ -391,14 +603,14 @@
       <child name="billingParticipant" type="participantActivity">
         <label>billingParticipant</label>
         <participant>part_billingNamespace.billingParticipant</participant>
-        <x>142.0</x>
-        <y>-2.0</y>
+        <x>289.0</x>
+        <y>-34.0</y>
       </child>
       <child name="CSParticipant" type="participantActivity">
         <label>CSParticipant</label>
         <participant>part_CSProvisionInterface.CSParticipant</participant>
-        <x>441.0</x>
-        <y>0.0</y>
+        <x>752.0</x>
+        <y>-38.0</y>
       </child>
     </childList>
     <methodList>
