@@ -200,7 +200,7 @@
 
           Global.showUserMessage("PO enviada a proceso de provision.\n Numero de Orden:" +doc.cwDocId);
 
-          //var respuesta = Global.invokeInterface('OM_CONSUMER.OMInterfaz','provisioning',arr);
+          var respuesta = Global.invokeInterface('OM_CONSUMER.OMInterfaz','provisioning',arr);
         ]]></script>
       </method>
     </methodList>

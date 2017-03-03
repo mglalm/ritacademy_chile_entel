@@ -25,7 +25,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarExportFolder>C:\Users\grojas\Documents\ritacademy_chile_entel\EOC</jarExportFolder>
+  <jarExportFolder>D:\Proyectos TDE\CBiO\velocity\Proyecto_EOC</jarExportFolder>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
 </project>
