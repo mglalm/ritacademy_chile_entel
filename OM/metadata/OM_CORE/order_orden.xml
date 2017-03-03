@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<order name="OM_CORE.orden">
+  <extends>order_com.conceptwave.system.Order</extends>
+  <label>orden</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="datos" type="order">
+      <label>datos</label>
+      <mandatory>true</mandatory>
+      <orderItem>doc_OM_CORE.datosCompra</orderItem>
+      <orderType>document</orderType>
+    </child>
+  </childList>
+  <UserInterface name="UserInterface" type="tree">
+    <autoExpand>true</autoExpand>
+    <defaultFolderImage>undefined</defaultFolderImage>
+    <defaultLeafImage>undefined</defaultLeafImage>
+    <element>order_OM_CORE.orden</element>
+    <extends>tree_com.conceptwave.system.OrderUserInterface</extends>
+    <label>orden</label>
+    <tableDoc>doc_com.conceptwave.system.TreeDocument</tableDoc>
+    <childList>
+      <child name="datos" type="tnOi">
+        <autoExpand>true</autoExpand>
+        <autoSave>true</autoSave>
+        <detailForm>doc_OM_CORE.datosCompra/ui_UserInterface/frmui_Forms/vform_gf</detailForm>
+        <detailUI>doc_OM_CORE.datosCompra/ui_UserInterface</detailUI>
+        <element>doc_OM_CORE.datosCompra</element>
+        <extends>tn_com.conceptwave.system.TreeNode</extends>
+        <label>datos</label>
+        <nodeType>4</nodeType>
+        <orderItem>order_OM_CORE.orden/order_datos</orderItem>
+        <vformList>
+          <vform name="Forms" type="frmui">
+            <extends>tn_com.conceptwave.system.TreeNode/frmui_Forms</extends>
+          </vform>
+        </vformList>
+      </child>
+    </childList>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>order_OM_CORE.orden</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</order>

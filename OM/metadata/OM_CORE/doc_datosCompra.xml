@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="OM_CORE.datosCompra">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{3d7a9301-c918-44ff-8ffd-d831c243f584}</guid>
+  <label>datosCompra</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>datosCompra</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+    <variable name="cwDocStamp" type="leaf">
+      <column>CWDOCSTAMP</column>
+      <table>datosCompra</table>
+      <valueType>dtype_cwf.cwDocStamp</valueType>
+    </variable>
+    <variable name="cwOrderCreationDate" type="leaf">
+      <column>CWORDERCREATIONDATE</column>
+      <table>datosCompra</table>
+      <valueType>dtype_cwf.cwOrderCreationDate</valueType>
+    </variable>
+    <variable name="cwOrderId" type="leaf">
+      <column>CWORDERID</column>
+      <table>datosCompra</table>
+      <valueType>dtype_cwf.cwOrderId</valueType>
+    </variable>
+    <variable name="cwParentId" type="leaf">
+      <column>CWPARENTID</column>
+      <table>datosCompra</table>
+      <valueType>dtype_cwf.cwParentId</valueType>
+    </variable>
+    <variable name="cwSiteId" type="leaf">
+      <column>CWSITEID</column>
+      <table>datosCompra</table>
+      <valueType>dtype_cwf.cwSiteId</valueType>
+    </variable>
+    <variable name="lastUpdatedDate" type="leaf">
+      <column>LASTUPDATEDDATE</column>
+      <table>datosCompra</table>
+      <valueType>dtype_cwf.lastUpdatedDate</valueType>
+    </variable>
+    <variable name="updatedBy" type="leaf">
+      <column>UPDATEDBY</column>
+      <table>datosCompra</table>
+      <valueType>dtype_cwf.updatedBy</valueType>
+    </variable>
+    <variable name="debit" type="leaf">
+      <column>DEBIT</column>
+      <table>datosCompra</table>
+      <valueType>dtype_OM_CORE.debit</valueType>
+    </variable>
+    <variable name="msisdn" type="leaf">
+      <column>MSISDN</column>
+      <table>datosCompra</table>
+      <valueType>dtype_OM_CORE.msisdn</valueType>
+    </variable>
+    <variable name="po" type="leaf">
+      <column>PO</column>
+      <table>datosCompra</table>
+      <valueType>dtype_OM_CORE.po</valueType>
+    </variable>
+    <variable name="requesterId" type="leaf">
+      <column>REQUESTERID</column>
+      <table>datosCompra</table>
+      <valueType>dtype_OM_CORE.requesterId</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_OM_CORE.datosCompra</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="gf" type="vform">
+            <label>gf</label>
+            <root name="gfGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="datosCompraGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="msisdn" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OM_CORE.datosCompra/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OM_CORE.datosCompra/leaf_msisdn</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="po" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OM_CORE.datosCompra/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OM_CORE.datosCompra/leaf_po</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

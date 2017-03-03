@@ -45,7 +45,7 @@
           <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
           <label>Page</label>
           <stylesheet>/cwf/css/cwf.css</stylesheet>
-          <title>MSISDNs</title>
+          <title>BSCS - Avaliable MSISDN </title>
         </overlay>
       </overlayList>
     </vform>

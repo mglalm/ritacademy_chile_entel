@@ -8,11 +8,16 @@
     </parameter>
   </parameterList>
   <script><![CDATA[
-    var i = 1;
-    var doc = new Document("OM_CORE.processDocument");
-    doc.po = input.productOfferId;
-    doc.orderId = input.orderId;
-    Process.startProcess("OM_CORE.procesaOrden",doc,null,null);
+    //var doc = new Document("OM_CORE.processDocument");
+    //doc.po = input.productOfferId;
+    //doc.orderId = input.orderId;
+
+    var orden = new Order("OM_CORE.orden");
+    orden.datos.po = input.productOfferId;
+    orden.datos.requesterId = input.orderId;
+    orden.save();
+
+    Process.startProcess("OM_CORE.procesaOrden",orden.id,null,null);
 
     var dt = new DataStructure("OM_LISTENER.response");
     dt.productOfferId = input.productOfferId;

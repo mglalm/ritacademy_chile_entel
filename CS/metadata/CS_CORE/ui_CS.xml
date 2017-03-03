@@ -43,6 +43,13 @@
             </override>
           </overrideList>
         </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>CS - PO Initial debit / MSISDN debit</title>
+        </overlay>
       </overlayList>
     </vform>
   </vformList>

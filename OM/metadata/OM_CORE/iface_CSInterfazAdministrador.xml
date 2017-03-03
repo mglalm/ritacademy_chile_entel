@@ -5,18 +5,23 @@
   <operationList>
     <operation name="Reject" type="oper">
       <description>Reject</description>
-      <label>Reject</label>
+      <label>Rechazar</label>
       <type>Notification</type>
     </operation>
     <operation name="Submit" type="oper">
       <description>Submit</description>
-      <label>Submit</label>
+      <label>Ingresar </label>
       <type>Notification</type>
     </operation>
     <operation name="Assign" type="oper">
       <label>Assign</label>
       <type>One-Way</type>
     </operation>
+    <operation name="Restart" type="oper">
+      <description>Restart</description>
+      <label>Volver a BSCS</label>
+      <type>Notification</type>
+    </operation>
   </operationList>
-  <revision>2</revision>
+  <revision>3</revision>
 </interface>

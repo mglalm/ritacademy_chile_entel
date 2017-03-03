@@ -2,19 +2,19 @@
 <process name="OM_CORE.procesaOrden">
   <activity name="start" type="seqActivity">
     <label>start</label>
-    <x>112.8929</x>
+    <x>120.19825</x>
     <y>30.0</y>
     <childList>
       <child name="conectaBSCS" type="opActivity">
         <element>iface_BSCS_CONSUMER.BSCSInterfaz/oper_getMsisdn</element>
         <label>conectaBSCS</label>
         <participant>part_BSCS_CONSUMER.BSCSParticipant</participant>
-        <x>97.53938</x>
+        <x>104.844734</x>
         <y>122.0</y>
         <childList>
           <child name="existeMsisnd" type="switchActivity">
             <label>existeMsisnd</label>
-            <x>196.0</x>
+            <x>217.91605</x>
             <y>233.70117</y>
             <childList>
               <child name="no" type="caseActivity">
@@ -26,32 +26,69 @@
                     <element>iface_OM_CORE.CSInterfazAdministrador/oper_Assign</element>
                     <label>asignaMsisdn</label>
                     <participant>part_OM_CORE.CSAdministrador</participant>
-                    <x>267.24316</x>
+                    <x>289.1592</x>
                     <y>330.40234</y>
                     <childList>
                       <child name="elije" type="choiceActivity">
                         <label>elije</label>
-                        <x>225.42871</x>
+                        <x>247.34476</x>
                         <y>427.10352</y>
                         <childList>
                           <child name="acepta" type="opActivity">
                             <element>iface_OM_CORE.CSInterfazAdministrador/oper_Submit</element>
                             <label>acepta</label>
                             <participant>part_OM_CORE.CSAdministrador</participant>
-                            <x>196.94055</x>
+                            <x>243.88155</x>
                             <y>553.8047</y>
                           </child>
                           <child name="rechaza" type="opActivity">
                             <element>iface_OM_CORE.CSInterfazAdministrador/oper_Reject</element>
                             <label>rechaza</label>
                             <participant>part_OM_CORE.CSAdministrador</participant>
-                            <x>360.04465</x>
+                            <x>331.91086</x>
                             <y>553.8047</y>
                             <childList>
-                              <child name="abortado" type="completeActivity">
-                                <label>abortado</label>
-                                <x>357.70383</x>
-                                <y>650.50586</y>
+                              <child name="conectaEOC" type="opActivity">
+                                <element>iface_EOC_CONSUMER.interfazEOC/oper_updateProvisioning</element>
+                                <label>conectaEOC</label>
+                                <participant>part_EOC_CONSUMER.EOCParticipant</participant>
+                                <x>494.9109</x>
+                                <y>855.8047</y>
+                                <childList>
+                                  <child name="fin" type="completeActivity">
+                                    <label>fin</label>
+                                    <x>696.9109</x>
+                                    <y>812.8047</y>
+                                  </child>
+                                </childList>
+                                <methodList>
+                                  <method name="cwOnProcActBefore" type="action">
+                                    <category>before</category>
+                                    <system>true</system>
+                                    <script><![CDATA[
+                                      this.activityData.productOfferId = this.process.processOrder.datos.po;
+                                      this.activityData.orderId = this.process.processOrder.datos.requesterId;
+                                      //this.activityData.msisdn = this.process.processOrder.datos.msisdn;
+                                      //this.activityData.debit = this.process.processOrder.datos.debit;
+                                      this.activityData.status = 2;
+                                    ]]></script>
+                                  </method>
+                                </methodList>
+                              </child>
+                            </childList>
+                          </child>
+                          <child name="volver" type="opActivity">
+                            <element>iface_OM_CORE.CSInterfazAdministrador/oper_Restart</element>
+                            <label>volver</label>
+                            <participant>part_OM_CORE.CSAdministrador</participant>
+                            <x>505.34473</x>
+                            <y>561.1035</y>
+                            <childList>
+                              <child name="volver" type="repeatActivity">
+                                <element>proc_OM_CORE.procesaOrden/seqActivity_start</element>
+                                <label>volver</label>
+                                <x>551.3447</x>
+                                <y>256.10352</y>
                               </child>
                             </childList>
                           </child>
@@ -63,7 +100,7 @@
               </child>
               <child name="yes" type="caseActivity">
                 <label>yes</label>
-                <x>145.42871</x>
+                <x>167.34476</x>
                 <y>427.10352</y>
                 <methodList>
                   <method name="cwOnProcActCond" type="action">
@@ -82,6 +119,7 @@
             <system>true</system>
             <script><![CDATA[
               this.process.processDocument.msisdn = this.activityData.respMSISDN;
+              this.process.processOrder.datos.msisdn = this.activityData.respMSISDN;
               this.process.processDocument.statusBSCS = this.activityData.respSTATUS;
             ]]></script>
           </method>
@@ -89,85 +127,83 @@
       </child>
       <child name="all" type="allActivity">
         <label>all</label>
-        <x>169.33054</x>
+        <x>200.55951</x>
         <y>652.23755</y>
         <childList>
-          <child name="continua" type="seqActivity">
-            <label>continua</label>
-            <x>169.94788</x>
+          <child name="conectaCS" type="opActivity">
+            <element>iface_CS_CONSUMER.CSInterfaz/oper_assign</element>
+            <label>conectaCS</label>
+            <participant>part_CS_CONSUMER.CSParticipant</participant>
+            <x>281.16058</x>
+            <y>746.20703</y>
+            <methodList>
+              <method name="cwOnProcActBefore" type="action">
+                <category>before</category>
+                <system>true</system>
+                <script><![CDATA[
+                  this.activityData.msisdn=process.processOrder.datos.msisdn;
+                  this.activityData.po=process.processOrder.datos.po;
+                ]]></script>
+              </method>
+              <method name="cwOnProcActAfter" type="action">
+                <category>script</category>
+                <system>true</system>
+                <script><![CDATA[
+                  process.processDocument.debit=document.debit;
+                  process.processOrder.datos.debit=document.debit;
+                  process.processOrder.save();
+                  process.processDocument.statusCS = document.status;
+                ]]></script>
+              </method>
+            </methodList>
+          </child>
+          <child name="conectaEMA" type="opActivity">
+            <element>iface_EMA_CONSUMER.provisionaEMA/oper_activateEMA</element>
+            <label>conectaEMA</label>
+            <participant>part_EMA_CONSUMER.EMAParticipant</participant>
+            <x>101.826904</x>
             <y>747.20703</y>
-            <childList>
-              <child name="conectaCS" type="opActivity">
-                <element>iface_CS_CONSUMER.CSInterfaz/oper_assign</element>
-                <label>conectaCS</label>
-                <participant>part_CS_CONSUMER.CSParticipant</participant>
-                <x>162.59827</x>
-                <y>839.20703</y>
-                <methodList>
-                  <method name="cwOnProcActBefore" type="action">
-                    <category>before</category>
-                    <system>true</system>
-                    <script><![CDATA[
-                      this.activityData.msisdn=process.processDocument.msisdn;
-                      this.activityData.po=process.processDocument.po;
-                    ]]></script>
-                  </method>
-                  <method name="cwOnProcActAfter" type="action">
-                    <category>script</category>
-                    <system>true</system>
-                    <script><![CDATA[
-                      process.processDocument.debit=document.debit;
-                      process.processDocument.statusCS = document.status;
-                    ]]></script>
-                  </method>
-                </methodList>
-              </child>
-              <child name="conectaEMA" type="opActivity">
-                <element>iface_EMA_CONSUMER.provisionaEMA/oper_activateEMA</element>
-                <label>conectaEMA</label>
-                <participant>part_EMA_CONSUMER.EMAParticipant</participant>
-                <x>277.1118</x>
-                <y>950.9082</y>
-                <methodList>
-                  <method name="cwOnProcActAfter" type="action">
-                    <category>script</category>
-                    <system>true</system>
-                    <script><![CDATA[
-                      process.processDocument.statusEMA = document.respEMA;
-                      OM_CORE.dummy();
-                    ]]></script>
-                  </method>
-                </methodList>
-              </child>
-              <child name="conectaEOC" type="opActivity">
-                <element>iface_EOC_CONSUMER.interfazEOC/oper_updateProvisioning</element>
-                <label>conectaEOC</label>
-                <participant>part_EOC_CONSUMER.EOCParticipant</participant>
-                <x>384.37424</x>
-                <y>1062.6094</y>
-                <methodList>
-                  <method name="cwOnProcActBefore" type="action">
-                    <category>before</category>
-                    <system>true</system>
-                    <script><![CDATA[
-                      this.activityData.productOfferId = this.process.processDocument.po;
-                      this.activityData.orderId = this.process.processDocument.orderId;
-                      this.activityData.msisdn = this.process.processDocument.msisdn;
-                      this.activityData.debit = this.process.processDocument.debit;
-                      this.activityData.status = 1;
-                      OM_CORE.dummy();
-                    ]]></script>
-                  </method>
-                </methodList>
-              </child>
-            </childList>
+            <methodList>
+              <method name="cwOnProcActAfter" type="action">
+                <category>script</category>
+                <system>true</system>
+                <script>process.processDocument.statusEMA = document.respEMA;</script>
+              </method>
+            </methodList>
+          </child>
+        </childList>
+      </child>
+      <child name="continua" type="seqActivity">
+        <label>continua</label>
+        <x>202.17685</x>
+        <y>861.2588</y>
+        <childList>
+          <child name="conectaEOC" type="opActivity">
+            <element>iface_EOC_CONSUMER.interfazEOC/oper_updateProvisioning</element>
+            <label>conectaEOC</label>
+            <participant>part_EOC_CONSUMER.EOCParticipant</participant>
+            <x>189.16025</x>
+            <y>955.6094</y>
+            <methodList>
+              <method name="cwOnProcActBefore" type="action">
+                <category>before</category>
+                <system>true</system>
+                <script><![CDATA[
+                  this.activityData.productOfferId = this.process.processOrder.datos.po;
+                  this.activityData.orderId = this.process.processOrder.datos.requesterId;
+                  this.activityData.msisdn = this.process.processOrder.datos.msisdn;
+                  this.activityData.debit = this.process.processOrder.datos.debit;
+                  this.activityData.status = 1;
+                ]]></script>
+              </method>
+            </methodList>
           </child>
         </childList>
       </child>
       <child name="fin" type="completeActivity">
         <label>fin</label>
-        <x>339.89084</x>
-        <y>1159.3105</y>
+        <x>144.67685</x>
+        <y>1052.3105</y>
       </child>
       <child name="BSCSParticipant" type="participantActivity">
         <label>BSCSParticipant</label>
@@ -178,26 +214,26 @@
       <child name="CSAdministrador" type="participantActivity">
         <label>CSAdministrador</label>
         <participant>part_OM_CORE.CSAdministrador</participant>
-        <x>309.4287</x>
+        <x>331.34476</x>
         <y>427.10352</y>
       </child>
       <child name="CSParticipant" type="participantActivity">
         <label>CSParticipant</label>
         <participant>part_CS_CONSUMER.CSParticipant</participant>
-        <x>111.111786</x>
-        <y>950.9082</y>
+        <x>297.17685</x>
+        <y>858.9082</y>
       </child>
       <child name="EMAParticipant" type="participantActivity">
         <label>EMAParticipant</label>
         <participant>part_EMA_CONSUMER.EMAParticipant</participant>
-        <x>218.37424</x>
-        <y>1062.6094</y>
+        <x>35.17685</x>
+        <y>858.9082</y>
       </child>
       <child name="EOCParticipant" type="participantActivity">
         <label>EOCParticipant</label>
         <participant>part_EOC_CONSUMER.EOCParticipant</participant>
-        <x>580.89087</x>
-        <y>1039.3105</y>
+        <x>228.67685</x>
+        <y>1052.3105</y>
       </child>
     </childList>
   </activity>

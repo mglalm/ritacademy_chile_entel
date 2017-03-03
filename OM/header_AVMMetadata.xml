@@ -23,5 +23,6 @@
     <template>CS</template>
     <template>EMA Metadata</template>
     <template>BSCS Metadata</template>
+    <template>EOC</template>
   </templateList>
 </header>
