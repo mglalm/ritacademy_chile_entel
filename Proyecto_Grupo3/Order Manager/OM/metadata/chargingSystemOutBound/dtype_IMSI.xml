@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="chargingSystemOutBound.IMSI">
+<dataType name="chargingSystemOutbound.IMSI">
   <description>IMSI</description>
   <extends>dtype_com.conceptwave.system.Integer</extends>
   <label>IMSI</label>

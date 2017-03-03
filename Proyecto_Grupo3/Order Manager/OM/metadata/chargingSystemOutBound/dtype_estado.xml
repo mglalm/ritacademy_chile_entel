@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="chargingSystemOutBound.estado">
+<dataType name="chargingSystemOutbound.estado">
   <description>Estado</description>
   <extends>dtype_com.conceptwave.system.String</extends>
   <label>estado</label>

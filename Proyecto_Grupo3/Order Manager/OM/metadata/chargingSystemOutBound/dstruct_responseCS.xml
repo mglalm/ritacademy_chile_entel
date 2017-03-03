@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="chargingSystemOutBound.responseCS">
+<dataStructure name="chargingSystemOutbound.responseCS">
   <container>true</container>
   <description>responseCS</description>
   <label>responseCS</label>
@@ -7,12 +7,12 @@
   <childList>
     <child name="mensaje" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_chargingSystemOutBound.mensaje</element>
+      <element>dtype_chargingSystemOutbound.mensaje</element>
       <label>mensaje</label>
     </child>
     <child name="estado" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_chargingSystemOutBound.estado</element>
+      <element>dtype_chargingSystemOutbound.estado</element>
       <label>estado</label>
     </child>
   </childList>

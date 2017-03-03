@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<participant name="chargingSystemOutBound.CS_CLI_Part">
-  <label>CS_CLI_Part</label>
-  <metaVersion>25</metaVersion>
-  <participant>iface_chargingSystemOutBound.Crea_CLI_CS</participant>
-</participant>

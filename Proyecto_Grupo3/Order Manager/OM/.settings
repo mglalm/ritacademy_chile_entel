@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project>
   <DefaultDB>TRAIN2</DefaultDB>
-  <applicationString>train2</applicationString>
-  <applicationVersionString>1</applicationVersionString>
+  <applicationString>cbio</applicationString>
+  <applicationVersionString>3</applicationVersionString>
   <breakpointMap>
     <breakpoint key="Start.Crear_Cli_CS.cwOnProcActBefore.orderManager.Crear_CLI_CS">0</breakpoint>
     <breakpoint key="oeInterface.oeScript">0</breakpoint>
@@ -15,14 +15,14 @@
         <attributes>localhost;1521;orcl;false</attributes>
         <driverType>Oracle thin</driverType>
       </driver>
-      <password>5DC5700840C7B835</password>
-      <user>c##train2</user>
+      <password>49A225C3CBCC77BF5347C8B21011B9E7</password>
+      <user>c##train</user>
     </databases>
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarExportFolder>E:\protecto_grp3\Proyecto_Grupo3\Order Manager\OM\</jarExportFolder>
-  <jarFolder>D:\</jarFolder>
+  <jarExportFolder>D:\VBshare</jarExportFolder>
+  <jarFolder>D:\;E:\ProyectoG3_\Proyecto_Grupo3\CS</jarFolder>
   <joinCluster>true</joinCluster>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<interface name="chargingSystemOutBound.Crea_CLI_CS">
+<interface name="chargingSystemOutbound.Crea_CLI_CS">
   <label>Crea_CLI_CS</label>
   <metaVersion>25</metaVersion>
   <operationList>
     <operation name="creacionClienteCS" type="oper">
-      <input>dstruct_chargingSystemOutBound.requestCS</input>
+      <input>dstruct_chargingSystemOutbound.requestCS</input>
       <label>creacionClienteCS</label>
-      <output>dstruct_chargingSystemOutBound.responseCS</output>
+      <output>dstruct_chargingSystemOutbound.responseCS</output>
       <type>Request-Response</type>
     </operation>
   </operationList>

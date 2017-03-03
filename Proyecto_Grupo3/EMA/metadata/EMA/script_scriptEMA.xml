@@ -20,21 +20,22 @@
 
     for (i=0;i<doc.length & grabar == 0;i=i+1)
     {
-    if (doc[i].IMSI == input.IMSI || input.IMSI == null) {grabar = 1; output.mensaje= "No/Ok"; output.estado = "MSISDN ya asignada"}
-    if (input.IMSI == null) {grabar = 1; output.mensaje= "No/Ok"; output.estado = "IMSI nula"}
-
+    if (doc[i].MSISDN == input.MSISDN) {grabar = 1; output.mensaje= "Ok"; output.estado = "Perfil de MSISDN " + input.MSISDN + " actualizado";
+          doc[i].MSISDN = input.IMSI;
+          doc[i].PROFILE = input.PROFILE;
+          doc[i].save();
     }
 
 
+
+    if (input.IMSI == null) {grabar = 1; output.mensaje= "No/Ok"; output.estado = "IMSI nula"}}
 
     if (grabar == 0)
       {
           grabarDocumento.MSISDN = input.MSISDN;
           grabarDocumento.IMSI = input.IMSI;
           grabarDocumento.PROFILE = input.PROFILE;
-
-
-          grabarDocumento.save(); output.mensaje= "Ok"; output.estado = "Plan Asignado a la IMSI " + input.IMSI;}
+          grabarDocumento.save(); output.mensaje= "Ok"; output.estado = "Plan Asignado a la MSISDN " + input.MSISDN;}
 
     return output;
 

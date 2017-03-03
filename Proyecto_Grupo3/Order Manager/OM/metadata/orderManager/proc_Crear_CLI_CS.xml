@@ -2,15 +2,15 @@
 <process name="orderManager.Crear_CLI_CS">
   <activity name="Start" type="seqActivity">
     <label>Start</label>
-    <x>31.0</x>
-    <y>15.0</y>
+    <x>2.0</x>
+    <y>108.0</y>
     <childList>
-      <child name="Crear_Cli_CS" type="opActivity">
-        <element>iface_chargingSystemOutBound.Crea_CLI_CS/oper_creacionClienteCS</element>
-        <label>Crear_Cli_CS</label>
-        <participant>part_chargingSystemOutBound.CS_CLI_Part</participant>
-        <x>322.0</x>
-        <y>70.0</y>
+      <child name="CS" type="opActivity">
+        <element>iface_chargingSystem.Crea_CLI_CS/oper_creacionClienteCS</element>
+        <label>CS</label>
+        <participant>part_chargingSystemOutbound.Crea_CLI_CS_Part</participant>
+        <x>270.0</x>
+        <y>114.0</y>
         <methodList>
           <method name="cwOnProcActBefore" type="action">
             <category>before</category>
@@ -35,11 +35,11 @@
           </method>
         </methodList>
       </child>
-      <child name="CS_CLI_Part" type="participantActivity">
-        <label>CS_CLI_Part</label>
-        <participant>part_chargingSystemOutBound.CS_CLI_Part</participant>
-        <x>548.0</x>
-        <y>63.0</y>
+      <child name="Crea_CLI_CS_Part" type="participantActivity">
+        <label>Crea_CLI_CS_Part</label>
+        <participant>part_chargingSystemOutbound.Crea_CLI_CS_Part</participant>
+        <x>237.0</x>
+        <y>-5.0</y>
       </child>
     </childList>
   </activity>
