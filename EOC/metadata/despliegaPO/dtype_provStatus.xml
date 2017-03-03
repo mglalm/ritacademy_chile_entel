@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="despliegaPO.provStatus">
+  <enumeration type="enum">
+    <valueList>
+      <value name="Pendiente" type="enumItem" code="0"/>
+      <value name="Aceptada" type="enumItem" code="1"/>
+      <value name="Rechazada" type="enumItem" code="2"/>
+    </valueList>
+  </enumeration>
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>Estado Prov</label>
+  <length>1</length>
+  <metaVersion>25</metaVersion>
+</dataType>

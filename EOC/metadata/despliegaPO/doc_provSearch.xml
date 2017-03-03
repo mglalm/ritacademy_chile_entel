@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="despliegaPO.provSearch">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{5f96786e-c51a-4735-b5be-af830923688d}</guid>
+  <label>provSearch</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="poCode" type="leaf">
+      <column>PRODUCTOFFERING</column>
+      <table>EOC_PROVISION</table>
+      <valueType>dtype_despliegaPO.poCode</valueType>
+    </variable>
+    <variable name="fechaProv" type="leaf">
+      <column>FECHAPROV</column>
+      <table>EOC_PROVISION</table>
+      <valueType>dtype_despliegaPO.fechaProv</valueType>
+    </variable>
+    <variable name="msisdn" type="leaf">
+      <column>MSISDN</column>
+      <table>EOC_PROVISION</table>
+      <valueType>dtype_EOC_LISTENER.msisdn</valueType>
+    </variable>
+    <variable name="debit" type="leaf">
+      <column>DEBIT</column>
+      <table>EOC_PROVISION</table>
+      <valueType>dtype_EOC_LISTENER.debit</valueType>
+    </variable>
+    <variable name="provStatus" type="leaf">
+      <column>STATUS</column>
+      <table>EOC_PROVISION</table>
+      <valueType>dtype_despliegaPO.provStatus</valueType>
+    </variable>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>EOC_PROVISION</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_despliegaPO.provSearch</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="provSearchGrid" type="elgrd">
+                  <numOfCols>5</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="provSearchHeader" type="elhdr">
+                      <label>provSearch</label>
+                    </element>
+                    <element name="poCode" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.provSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.provSearch/leaf_poCode</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="msisdn" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.provSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.provSearch/leaf_msisdn</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="provStatus" type="elslct">
+                      <sorted>false</sorted>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.provSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.provSearch/leaf_provStatus</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="fechaProv" type="ellgetxt">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <label>Fecha Provisión</label>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.provSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.provSearch/leaf_fechaProv</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

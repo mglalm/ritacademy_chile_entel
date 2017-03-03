@@ -3,10 +3,6 @@
   <DefaultDB>TRAINING</DefaultDB>
   <applicationString>EOC</applicationString>
   <applicationVersionString>1</applicationVersionString>
-  <breakpointMap>
-    <breakpoint key="EOC_LISTENER.actualizaBD">0</breakpoint>
-    <breakpoint key="despliegaPO.poFinder.UserInterface.seleccionaPO">0</breakpoint>
-  </breakpointMap>
   <databasesMap>
     <databases key="EOC" type=".configdb">
       <dbname>EOC</dbname>

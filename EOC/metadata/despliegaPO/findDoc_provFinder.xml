@@ -1,53 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<findDoc name="despliegaPO.poFinder">
+<findDoc name="despliegaPO.provFinder">
   <extends>find_com.conceptwave.system.Finder</extends>
-  <input>doc_despliegaPO.poResult</input>
-  <label>Buscador PO</label>
+  <input>doc_despliegaPO.provResult</input>
+  <label>provFinder</label>
   <metaVersion>25</metaVersion>
-  <output>doc_despliegaPO.poSearch</output>
+  <output>doc_despliegaPO.provSearch</output>
   <type>document</type>
-  <vDetailForm>doc_despliegaPO.poSearch/ui_UserInterface/frmui_Forms/exov_Default</vDetailForm>
+  <vDetailForm>doc_despliegaPO.provSearch/ui_UserInterface/frmui_Forms/vform_generatedForm</vDetailForm>
   <searchList>
     <search type="sitem">
-      <document>doc_despliegaPO.poResult</document>
-      <mappedDocument>doc_despliegaPO.poSearch</mappedDocument>
-      <mappedPath>doc_despliegaPO.poSearch/leaf_poCode</mappedPath>
+      <document>doc_despliegaPO.provResult</document>
+      <mappedDocument>doc_despliegaPO.provSearch</mappedDocument>
+      <mappedPath>doc_despliegaPO.provSearch/leaf_cwDocId</mappedPath>
       <operation>equal</operation>
-      <path>doc_despliegaPO.poResult/leaf_poCode</path>
+      <path>doc_despliegaPO.provResult/leaf_cwDocId</path>
     </search>
     <search type="sitem">
-      <document>doc_despliegaPO.poResult</document>
-      <mappedDocument>doc_despliegaPO.poSearch</mappedDocument>
-      <mappedPath>doc_despliegaPO.poSearch/leaf_poDescr</mappedPath>
+      <document>doc_despliegaPO.provResult</document>
+      <mappedDocument>doc_despliegaPO.provSearch</mappedDocument>
+      <mappedPath>doc_despliegaPO.provSearch/leaf_debit</mappedPath>
       <operation>equal</operation>
-      <path>doc_despliegaPO.poResult/leaf_poDescr</path>
+      <path>doc_despliegaPO.provResult/leaf_debit</path>
     </search>
     <search type="sitem">
-      <document>doc_despliegaPO.poResult</document>
-      <mappedDocument>doc_despliegaPO.poSearch</mappedDocument>
-      <mappedPath>doc_despliegaPO.poSearch/leaf_poName</mappedPath>
+      <document>doc_despliegaPO.provResult</document>
+      <mappedDocument>doc_despliegaPO.provSearch</mappedDocument>
+      <mappedPath>doc_despliegaPO.provSearch/leaf_fechaProv</mappedPath>
       <operation>equal</operation>
-      <path>doc_despliegaPO.poResult/leaf_poName</path>
+      <path>doc_despliegaPO.provResult/leaf_fechaProv</path>
     </search>
     <search type="sitem">
-      <document>doc_despliegaPO.poResult</document>
-      <mappedDocument>doc_despliegaPO.poSearch</mappedDocument>
-      <mappedPath>doc_despliegaPO.poSearch/leaf_poStatus</mappedPath>
+      <document>doc_despliegaPO.provResult</document>
+      <mappedDocument>doc_despliegaPO.provSearch</mappedDocument>
+      <mappedPath>doc_despliegaPO.provSearch/leaf_msisdn</mappedPath>
       <operation>equal</operation>
-      <path>doc_despliegaPO.poResult/leaf_poStatus</path>
+      <path>doc_despliegaPO.provResult/leaf_msisdn</path>
     </search>
     <search type="sitem">
-      <document>doc_despliegaPO.poResult</document>
-      <mappedDocument>doc_despliegaPO.poSearch</mappedDocument>
-      <mappedPath>doc_despliegaPO.poSearch/leaf_poType</mappedPath>
+      <document>doc_despliegaPO.provResult</document>
+      <mappedDocument>doc_despliegaPO.provSearch</mappedDocument>
+      <mappedPath>doc_despliegaPO.provSearch/leaf_poCode</mappedPath>
       <operation>equal</operation>
-      <path>doc_despliegaPO.poResult/leaf_poType</path>
+      <path>doc_despliegaPO.provResult/leaf_poCode</path>
     </search>
     <search type="sitem">
-      <mappedDocument>doc_despliegaPO.poSearch</mappedDocument>
-      <mappedPath>doc_despliegaPO.poSearch/leaf_poType</mappedPath>
-      <operation>==</operation>
-      <staticValue>ProductOffering</staticValue>
+      <document>doc_despliegaPO.provResult</document>
+      <mappedDocument>doc_despliegaPO.provSearch</mappedDocument>
+      <mappedPath>doc_despliegaPO.provSearch/leaf_provStatus</mappedPath>
+      <operation>equal</operation>
+      <path>doc_despliegaPO.provResult/leaf_provStatus</path>
+    </search>
+    <search type="sitem">
+      <mappedDocument>doc_despliegaPO.provSearch</mappedDocument>
+      <mappedPath>doc_despliegaPO.provSearch/leaf_cwDocId</mappedPath>
+      <operation>is not null</operation>
+    </search>
+    <search type="sitem">
+      <mappedDocument>doc_despliegaPO.provSearch</mappedDocument>
+      <mappedPath>doc_despliegaPO.provSearch/leaf_poCode</mappedPath>
+      <operation>is not null</operation>
+    </search>
+    <search type="sitem">
+      <mappedDocument>doc_despliegaPO.provSearch</mappedDocument>
+      <mappedPath>doc_despliegaPO.provSearch/leaf_provStatus</mappedPath>
+      <operation>is not null</operation>
     </search>
   </searchList>
   <UserInterface name="UserInterface" type="ui">
@@ -57,15 +73,15 @@
         <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
       </variable>
       <variable name="search" type="uivar">
-        <valueType>doc_despliegaPO.poResult/ui_UserInterface</valueType>
+        <valueType>doc_despliegaPO.provResult/ui_UserInterface</valueType>
       </variable>
       <variable name="detail" type="uivar">
         <flags enum-type="metadataFlag">VALIDATE</flags>
-        <valueType>doc_despliegaPO.poSearch/ui_UserInterface</valueType>
+        <valueType>doc_despliegaPO.provSearch/ui_UserInterface</valueType>
       </variable>
       <variable name="result" type="uivar">
         <flags enum-type="metadataFlag">ARRAY</flags>
-        <valueType>doc_despliegaPO.poSearch</valueType>
+        <valueType>doc_despliegaPO.provSearch</valueType>
       </variable>
     </variableList>
     <vformList>
@@ -85,7 +101,7 @@
                 </formReference>
                 <variable type="varPath">
                   <variablePathList>
-                    <variablePath>findDoc_despliegaPO.poFinder/ui_UserInterface/uivar_detail</variablePath>
+                    <variablePath>findDoc_despliegaPO.provFinder/ui_UserInterface/uivar_detail</variablePath>
                   </variablePathList>
                 </variable>
                 <visible type="varPath">
@@ -102,7 +118,7 @@
                 </formReference>
                 <variable type="varPath">
                   <variablePathList>
-                    <variablePath>findDoc_despliegaPO.poFinder/ui_UserInterface/uivar_search</variablePath>
+                    <variablePath>findDoc_despliegaPO.provFinder/ui_UserInterface/uivar_search</variablePath>
                   </variablePathList>
                 </variable>
                 <visible type="varPath">
@@ -122,12 +138,7 @@
                 <height>100%</height>
                 <width>100%</width>
                 <elementList>
-                  <element name="poFinderResultTable" type="eltabl">
-                    <doubleClickMethod type="varPath">
-                      <variablePathList>
-                        <variablePath>findDoc_despliegaPO.poFinder/ui_UserInterface/usrActionMethod_activaProvision</variablePath>
-                      </variablePathList>
-                    </doubleClickMethod>
+                  <element name="provFinderResultTable" type="eltabl">
                     <onSelectChange type="varPath">
                       <variablePathList>
                         <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
@@ -135,40 +146,56 @@
                     </onSelectChange>
                     <variable type="varPath">
                       <variablePathList>
-                        <variablePath>findDoc_despliegaPO.poFinder/ui_UserInterface/uivar_result</variablePath>
+                        <variablePath>findDoc_despliegaPO.provFinder/ui_UserInterface/uivar_result</variablePath>
                       </variablePathList>
                     </variable>
                     <elementList>
+                      <element name="cwDocId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_despliegaPO.provFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_despliegaPO.provSearch/leaf_cwDocId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
                       <element name="poCode" type="elfld">
                         <variable type="varPath">
                           <variablePathList>
-                            <variablePath>findDoc_despliegaPO.poFinder/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_despliegaPO.poSearch/leaf_poCode</variablePath>
+                            <variablePath>findDoc_despliegaPO.provFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_despliegaPO.provSearch/leaf_poCode</variablePath>
                           </variablePathList>
                         </variable>
                       </element>
-                      <element name="poName" type="elfld">
+                      <element name="msisdn" type="elfld">
                         <variable type="varPath">
                           <variablePathList>
-                            <variablePath>findDoc_despliegaPO.poFinder/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_despliegaPO.poSearch/leaf_poName</variablePath>
+                            <variablePath>findDoc_despliegaPO.provFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_despliegaPO.provSearch/leaf_msisdn</variablePath>
                           </variablePathList>
                         </variable>
                       </element>
-                      <element name="poDescr" type="elfld">
+                      <element name="debit" type="elfld">
                         <variable type="varPath">
                           <variablePathList>
-                            <variablePath>findDoc_despliegaPO.poFinder/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_despliegaPO.poSearch/leaf_poDescr</variablePath>
+                            <variablePath>findDoc_despliegaPO.provFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_despliegaPO.provSearch/leaf_debit</variablePath>
                           </variablePathList>
                         </variable>
                       </element>
-                      <element name="poStatus" type="elslct">
-                        <emptyValueText>Todos</emptyValueText>
+                      <element name="provStatus" type="elslct">
                         <variable type="varPath">
                           <variablePathList>
-                            <variablePath>findDoc_despliegaPO.poFinder/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_despliegaPO.poSearch/leaf_poStatus</variablePath>
+                            <variablePath>findDoc_despliegaPO.provFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_despliegaPO.provSearch/leaf_provStatus</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="fechaProv" type="ellab">
+                        <label>Fecha Provisión</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_despliegaPO.provFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_despliegaPO.provSearch/leaf_fechaProv</variablePath>
                           </variablePathList>
                         </variable>
                       </element>
@@ -181,34 +208,11 @@
         </overlayList>
       </vform>
     </vformList>
-    <methodList>
-      <method name="activaProvision" type="usrActionMethod">
-        <script><![CDATA[
-          var doc = new Document('despliegaPO.agregaPO');
-          doc.poCode = this.result.selected[0].poCode;
-          doc.provStatus = 0;
-          doc.fechaProv = new Date();
-          doc.save();
-
-          var dt = new DataStructure('OM_CONSUMER.request');
-          dt.productOfferId = doc.poCode;
-          dt.orderId = doc.cwDocId;
-
-          var arr = new Array();
-          arr[0] = dt;
-          arr[1] = null;
-
-          Global.showUserMessage("PO enviada a proceso de provision.\n Numero de Orden:" +doc.cwDocId);
-
-          //var respuesta = Global.invokeInterface('OM_CONSUMER.OMInterfaz','provisioning',arr);
-        ]]></script>
-      </method>
-    </methodList>
   </UserInterface>
   <viewList>
-    <view name="vista" type="findVView">
-      <inputOverlay>doc_despliegaPO.poResult/ui_UserInterface/frmui_Forms/vform_generatedForm</inputOverlay>
-      <outputOverlay>findDoc_despliegaPO.poFinder/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+    <view name="Vista" type="findVView">
+      <inputOverlay>doc_despliegaPO.provResult/ui_UserInterface/frmui_Forms/vform_generatedForm</inputOverlay>
+      <outputOverlay>findDoc_despliegaPO.provFinder/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
       <searchImmediately>true</searchImmediately>
       <showSearchForm>true</showSearchForm>
     </view>

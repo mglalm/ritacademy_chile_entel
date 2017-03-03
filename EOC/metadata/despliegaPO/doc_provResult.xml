@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<document name="despliegaPO.poResult">
-  <dbSchema>ORDER</dbSchema>
+<document name="despliegaPO.provResult">
   <extends>doc_com.conceptwave.system.Document</extends>
-  <guid>{d12b75bc-4aab-402c-bca8-4c40aca7ae3b}</guid>
-  <label>Detalles PO</label>
+  <guid>{57bd1487-75f5-47b1-8e60-44cbe7f9566c}</guid>
+  <label>provResult</label>
   <metaVersion>25</metaVersion>
   <variableList>
     <variable name="poCode" type="leaf">
       <valueType>dtype_despliegaPO.poCode</valueType>
     </variable>
-    <variable name="poType" type="leaf">
-      <valueType>dtype_despliegaPO.poType</valueType>
+    <variable name="fechaProv" type="leaf">
+      <valueType>dtype_despliegaPO.fechaProv</valueType>
     </variable>
-    <variable name="poName" type="leaf">
-      <valueType>dtype_despliegaPO.poName</valueType>
+    <variable name="cwDocId" type="leaf">
+      <valueType>dtype_cwf.cwDocId</valueType>
     </variable>
-    <variable name="poDescr" type="leaf">
-      <valueType>dtype_despliegaPO.poDescr</valueType>
+    <variable name="provStatus" type="leaf">
+      <valueType>dtype_despliegaPO.provStatus</valueType>
     </variable>
-    <variable name="poStatus" type="leaf">
-      <valueType>dtype_despliegaPO.poStatus</valueType>
+    <variable name="msisdn" type="leaf">
+      <valueType>dtype_EOC_LISTENER.msisdn</valueType>
+    </variable>
+    <variable name="debit" type="leaf">
+      <valueType>dtype_EOC_LISTENER.debit</valueType>
     </variable>
   </variableList>
   <UserInterface name="UserInterface" type="ui">
@@ -27,7 +29,7 @@
     <variableList>
       <variable name="model" type="uivar">
         <label>model</label>
-        <valueType>doc_despliegaPO.poResult</valueType>
+        <valueType>doc_despliegaPO.provResult</valueType>
       </variable>
     </variableList>
     <vformList>
@@ -41,43 +43,47 @@
               <membersMargin>5</membersMargin>
               <width>100%</width>
               <elementList>
-                <element name="poResultGrid" type="elgrd">
+                <element name="Detalle" type="elgrd">
                   <numOfCols>4</numOfCols>
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
-                    <element name="poResultHeader" type="elhdr">
-                      <label>Detalle PO</label>
+                    <element name="provResultHeader" type="elhdr">
+                      <label>Detalle</label>
                     </element>
                     <element name="poCode" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
-                          <variablePath>doc_despliegaPO.poResult/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_despliegaPO.poResult/leaf_poCode</variablePath>
+                          <variablePath>doc_despliegaPO.provResult/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.provResult/leaf_poCode</variablePath>
                         </variablePathList>
                       </variable>
                     </element>
-                    <element name="poName" type="elfld">
-                      <variable type="varPath">
-                        <variablePathList>
-                          <variablePath>doc_despliegaPO.poResult/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_despliegaPO.poResult/leaf_poName</variablePath>
-                        </variablePathList>
-                      </variable>
-                    </element>
-                    <element name="poDescr" type="elfld">
-                      <variable type="varPath">
-                        <variablePathList>
-                          <variablePath>doc_despliegaPO.poResult/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_despliegaPO.poResult/leaf_poDescr</variablePath>
-                        </variablePathList>
-                      </variable>
-                    </element>
-                    <element name="poStatus" type="elslct">
+                    <element name="provStatus" type="elslct">
+                      <emptyValueText>Todos</emptyValueText>
+                      <label>Estado Provision</label>
                       <sorted>false</sorted>
                       <variable type="varPath">
                         <variablePathList>
-                          <variablePath>doc_despliegaPO.poResult/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_despliegaPO.poResult/leaf_poStatus</variablePath>
+                          <variablePath>doc_despliegaPO.provResult/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.provResult/leaf_provStatus</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="msisdn" type="elfld">
+                      <label>Número Teléfono</label>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.provResult/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.provResult/leaf_msisdn</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="fechaProv" type="eldate">
+                      <label>Fecha Provisión</label>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.provResult/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.provResult/leaf_fechaProv</variablePath>
                         </variablePathList>
                       </variable>
                     </element>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="applicationUI.OrderEntry">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <metaVersion>25</metaVersion>
+  <url>/Project</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayout" type="elext">
+              <elementList>
+                <element name="Opciones" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_applicationUI.OrderEntry/usrActionMethod_otraApp</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Otra Aplicación</label>
+                </element>
+              </elementList>
+            </override>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="poSelected" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_applicationUI.OrderEntry/usrActionMethod_ConsultaPO</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Consulta PO</label>
+                </element>
+                <element name="provEstado" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_applicationUI.OrderEntry/usrActionMethod_EstadoPO</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Estado Provision</label>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>Order Entry</title>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="ConsultaPO" type="usrActionMethod">
+      <userInterface>findDoc_despliegaPO.poFinder</userInterface>
+      <valueType>findDoc_despliegaPO.poFinder</valueType>
+    </method>
+    <method name="ingresaPO" type="usrActionMethod">
+      <form>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>doc_despliegaPO.agregaPO</userInterface>
+      <valueType>doc_despliegaPO.agregaPO</valueType>
+    </method>
+    <method name="EstadoPO" type="usrActionMethod">
+      <userInterface>findDoc_despliegaPO.provFinder</userInterface>
+      <valueType>findDoc_despliegaPO.provFinder</valueType>
+    </method>
+    <method name="otraApp" type="usrActionMethod">
+      <script>UserProfile.selectApp();</script>
+    </method>
+  </methodList>
+</userInterface>

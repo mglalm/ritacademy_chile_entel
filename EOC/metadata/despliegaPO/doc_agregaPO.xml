@@ -13,6 +13,16 @@
       <table>EOC_PROVISION</table>
       <valueType>dtype_cwf.cwDocId</valueType>
     </variable>
+    <variable name="fechaProv" type="leaf">
+      <column>FECHAPROV</column>
+      <table>EOC_PROVISION</table>
+      <valueType>dtype_despliegaPO.fechaProv</valueType>
+    </variable>
+    <variable name="provStatus" type="leaf">
+      <column>STATUS</column>
+      <table>EOC_PROVISION</table>
+      <valueType>dtype_despliegaPO.provStatus</valueType>
+    </variable>
     <variable name="poCode" type="leaf">
       <column>PRODUCTOFFERING</column>
       <table>EOC_PROVISION</table>

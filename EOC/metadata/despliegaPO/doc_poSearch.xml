@@ -117,6 +117,66 @@
               </override>
             </overrideList>
           </overlay>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="poSearchGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="poSearchHeader" type="elhdr">
+                      <label>Busqueda PO</label>
+                    </element>
+                    <element name="poCode" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.poSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.poSearch/leaf_poCode</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="poType" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.poSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.poSearch/leaf_poType</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="poName" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.poSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.poSearch/leaf_poName</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="poDescr" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.poSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.poSearch/leaf_poDescr</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="poStatus" type="elslct">
+                      <sorted>false</sorted>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.poSearch/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.poSearch/leaf_poStatus</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
         </overlayList>
       </vform>
     </vformList>

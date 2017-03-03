@@ -3,6 +3,7 @@
   <enumeration type="enum">
     <valueList>
       <value name="Activa" type="enumItem" code="ACT"/>
+      <value name="Definición" type="enumItem" code="DEF"/>
     </valueList>
   </enumeration>
   <extends>dtype_com.conceptwave.system.String</extends>
