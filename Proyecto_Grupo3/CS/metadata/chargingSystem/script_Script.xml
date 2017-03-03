@@ -21,6 +21,7 @@
     for (i=0;i<doc.length & grabar == 0;i=i+1)
     {
     if (doc[i].MSISDN == input.MSISDN) {grabar = 1; output.mensaje= "No/Ok"; output.estado = "MSISDN ya asignada"}
+    if (input.MSISDN == null) {grabar = 1; output.mensaje= "No/Ok"; output.estado = "MSISDN nula"}
     }
 
     if (grabar == 0)
