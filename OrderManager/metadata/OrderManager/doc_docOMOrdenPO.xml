@@ -33,5 +33,10 @@
       <table>OM_ORDER_PO</table>
       <valueType>dtype_OrderManager.dtMotivoEstado</valueType>
     </variable>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <table>OM_ORDER_PO</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
   </variableList>
 </document>

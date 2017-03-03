@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DA400F5D-8619-6FA2-99CF-853E0559BB5A" name="OE_CLIENTE">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-03-03 13:01:31 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="RUT" id="AB554468-F94E-3CF2-E70D-4327AF7CED38">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-03-03 13:04:18 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="0B88D7A4-3835-843C-35C5-635519AD7D65">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-03-03 13:04:18 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DIRECCION" id="7FB4F2DB-B0B2-1864-66C8-40A7F9BF6D5A">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-03-03 13:04:18 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COMUNA" id="9BEFFDFA-DF9A-EB1E-1E2D-AA19AB8AFA96">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-03-03 13:04:18 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CIUDAD" id="E353D93A-570A-A172-A108-70BF657E2834">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-03-03 13:04:18 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E786FFA1-3C7C-40CB-7B33-ACE625943790" name="OE_CLIENTE_PK">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-03-03 13:04:18 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB554468-F94E-3CF2-E70D-4327AF7CED38"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

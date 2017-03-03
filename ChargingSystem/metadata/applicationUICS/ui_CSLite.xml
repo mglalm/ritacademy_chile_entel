@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="applicationUICS.CSLite">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>CS</label>
+  <metaVersion>25</metaVersion>
+  <url>/CS</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayout" type="elext">
+              <elementList>
+                <element name="tools" type="elmnu">
+                  <label>Tools</label>
+                  <elementList>
+                    <element name="selectApp" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUICS.CSLite/usrActionMethod_selectApp</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Select Application</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="Planes" type="elmnu">
+                  <label>Planes</label>
+                  <elementList>
+                    <element name="Nuevo_Plan" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUICS.CSLite/usrActionMethod_nvoPlan</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Crear</label>
+                    </element>
+                    <element name="Buscar_Plan" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUICS.CSLite/usrActionMethod_buscarPlan</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Buscar</label>
+                    </element>
+                  </elementList>
+                </element>
+                <element name="Servicios" type="elmnu">
+                  <label>Servicios Por Clientes</label>
+                  <elementList>
+                    <element name="Servicios_Clientes" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUICS.CSLite/usrActionMethod_buscarServicios</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Servicios Por Cliente</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>CS</title>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="nvoCliente" type="usrActionMethod">
+      <form>doc_customerManagerCS.DOC_CLIENTE_BSCS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+      <userInterface>doc_customerManagerCS.DOC_CLIENTE_BSCS</userInterface>
+      <valueType>doc_customerManagerCS.DOC_CLIENTE_BSCS</valueType>
+    </method>
+    <method name="buscarCliente" type="usrActionMethod">
+      <userInterface>findDoc_customerManagerCS.busquedaCliente</userInterface>
+      <valueType>findDoc_customerManagerCS.busquedaCliente</valueType>
+    </method>
+    <method name="selectApp" type="usrActionMethod">
+      <script>UserProfile.selectApp();</script>
+    </method>
+    <method name="nvoPlan" type="usrActionMethod">
+      <form>doc_planManagerCS.DOC_PLAN_CS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+      <userInterface>doc_planManagerCS.DOC_PLAN_CS</userInterface>
+      <valueType>doc_planManagerCS.DOC_PLAN_CS</valueType>
+    </method>
+    <method name="buscarPlan" type="usrActionMethod">
+      <userInterface>findDoc_planManagerCS.busquedaPlan</userInterface>
+      <valueType>findDoc_planManagerCS.busquedaPlan</valueType>
+    </method>
+    <method name="buscarServicios" type="usrActionMethod">
+      <userInterface>findDoc_provisionManagerCS.busquedaServiciosCS</userInterface>
+      <valueType>findDoc_provisionManagerCS.busquedaServiciosCS</valueType>
+    </method>
+  </methodList>
+</userInterface>

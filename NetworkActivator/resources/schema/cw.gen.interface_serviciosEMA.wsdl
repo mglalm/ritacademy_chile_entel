@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="externalSystemEMA" targetNamespace="externalSystemEMA"
+	xmlns:tns="externalSystemEMA"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:externalSystemEMA="externalSystemEMA">
+
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="externalSystemEMA" schemaLocation="externalSystemEMA.xsd"/>
+		</schema>
+	</types>
+
+	<message name="input_provServicioEMA">
+		<part name="input_provServicioEMA" type="externalSystemEMA:input_provServicioEMA"/>
+	</message>
+
+	<message name="output_provServicioEMA">
+		<part name="output_provServicioEMA" type="externalSystemEMA:output_provServicioEMA"/>
+	</message>
+
+	<portType name="interface_serviciosEMA">
+		<operation name="provServicioEMA">
+			<input message="tns:input_provServicioEMA"/>
+			<output message="tns:output_provServicioEMA"/>
+		</operation>
+	</portType>
+
+	<binding name="bind_provServicioEMA_SOAP" type="tns:interface_serviciosEMA">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="provServicioEMA">
+			<soap:operation soapAction="provServicioEMA"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="xs_serviciosEMA">
+		<port name="port_serviciosEMA_SOAP" binding="tns:bind_provServicioEMA_SOAP">
+			<soap:address location="http://localhost:8080/cwf/services/interface_serviciosEMA"/>
+		</port>
+	</service>
+
+</definitions>

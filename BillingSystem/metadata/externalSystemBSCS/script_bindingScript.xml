@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="externalSystemBSCS.bindingScript">
+  <label>Binding Script</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>dstruct_externalSystemBSCS.input_getMsisdnReserveBSCS</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var output = new DataStructure("ExternalSystemSimulator.ack");
+    var valor1 = input.creditApprovalNumberOld;
+    var valor2 = input.origin.originProcess;
+    var valor3 = input.origin.originOrder;
+
+    ExternalSystemSimulator.test();
+
+    output.code = "OK";
+    output.description = "Mensaje Recibido";
+
+    //Process.sendMessageToQueue("ExternalSystemSimulator.creditApprovalNumberGenerator","COBRAS_GPgetCreditApprovalNumberRequest", input, null,null,null,null,null,false,false);
+    //Process.sendMessageToQueue("ExternalSystemSimulator.prueba","COBRAS_GPgetCreditApprovalNumberRequest", input, null,null,null,null,null,false,false);
+    //Process.sendMessageToProcess(1,null,"creditApprovalNumberGenerator",input,null,null,null);
+    Process.startProcess("ExternalSystemSimulator.procObtieneReservaMsisdn",null,null,null);
+
+    return output;
+  ]]></script>
+</script>

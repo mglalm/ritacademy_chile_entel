@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="externalSystemEMA.bind_provServicioEMA_JS">
+  <extensionList>
+    <extension name="provServicioEMA" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="metadataScript">externalSystemEMA.scr_provServicioEMA</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_externalSystemEMA.interface_serviciosEMA</interface>
+  <label>bind_provServicioEMA_JS</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

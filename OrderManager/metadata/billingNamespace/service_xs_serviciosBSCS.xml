@@ -4,7 +4,7 @@
   <metaVersion>25</metaVersion>
   <portList>
     <port name="port_serviciosBSCS_SOAP" type="port">
-      <binding>bind_billingNamespace.bind_getMsisdnBSCS_SOAP</binding>
+      <binding>bind_billingNamespace.bind_ServicioBSCS_SOAP</binding>
       <label>port_serviciosBSCS_SOAP</label>
       <recover>5</recover>
     </port>

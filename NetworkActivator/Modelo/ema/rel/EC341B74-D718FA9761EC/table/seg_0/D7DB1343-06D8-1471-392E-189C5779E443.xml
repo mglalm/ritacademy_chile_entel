@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D7DB1343-06D8-1471-392E-189C5779E443" name="EMA_SERVICIO">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:45:01 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MSISDN" id="101FA377-323A-CA34-FF2C-0738C5F0AF10">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:47:00 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_PROFILE" id="F8CB62BF-3173-9FB5-E085-CCD4D22BBB46">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:47:00 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EBB5316C-D073-9ED6-BB10-EB4D66743646" referredColumn="45EEB65F-23A6-2370-F664-A8D823B2175B"/>
+</associations>
+</Column>
+<Column name="ID_ESTADO" id="465375F5-7B25-339E-4B19-A17633347AEB">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:47:00 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="91358740-2176-C4E0-AE5B-E876BAFEAD31" referredColumn="4DAEF475-5951-E683-8714-2639D3E662B8"/>
+</associations>
+</Column>
+<Column name="FECHA_ACTIVACION" id="7671C4E6-DDB6-CAEA-6000-277F28323C9F">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:47:00 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_ID" id="AFC9954C-FC77-B0A6-7B8E-58C6E1816409">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:53:01 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7FF84E5E-31C0-1DAC-E768-33299A2BDC87" name="EMA_SERVICIO_PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 20:38:41 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="101FA377-323A-CA34-FF2C-0738C5F0AF10"/>
+<colUsage columnID="F8CB62BF-3173-9FB5-E085-CCD4D22BBB46"/>
+<colUsage columnID="465375F5-7B25-339E-4B19-A17633347AEB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9C3C9F4F-C979-0040-14A8-189FBCAA0CBD" name="EMA_SERVICIO_FK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:50:16 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="465375F5-7B25-339E-4B19-A17633347AEB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8A3A62D6-EBE5-96C7-5543-029430F38A43" name="EMA_SERVICIO_PROFILE_FK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:50:37 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F8CB62BF-3173-9FB5-E085-CCD4D22BBB46"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

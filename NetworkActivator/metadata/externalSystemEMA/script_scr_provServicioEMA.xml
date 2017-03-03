@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="externalSystemEMA.scr_provServicioEMA">
+  <label>Binding Script EMA</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>dstruct_externalSystemEMA.input_provServicioEMA</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var var_orderid = input.orderid;
+    var var_msisdn = input.msisdn;
+    var var_profile = input.id_profile;
+    var var_estado = 1;
+    var output = new DataStructure("externalSystemEMA.output_provServicioEMA");
+
+    externalSystemEMA.test();
+
+    //-----VALIDANDO SI EXISTE EL PROFILE QUE SE RECIBE COMO PARAMETRO
+    var perfiles_activos = new Finder("externalSystemEMA.DOC_PROFILE_EMA_FIND");
+    var resultado = perfiles_activos.search();
+
+    var existe_profile = 0 ;
+    if ( resultado.length > 0 )
+    {
+        for (var i=0 ;    i < resultado.length ; i++ )
+        {
+            if (resultado[i].ID_PROFILE_SERVICIO_EMA == var_profile )
+                existe_profile = 1;
+        }
+    }
+    if ( existe_profile == 0 )
+    {
+        output.estado = "NOOK";
+        output.mensaje = "No existe Profile en EMA";
+        return output;
+    }
+
+    //-----VALIDANDO SI LA TRIPLETA YA TIENEN SERVICIO ACTIVO
+    var servicios_activos = new Finder("externalSystemEMA.DOC_SERVICIO_EMA_FIND");
+    var resultado = servicios_activos.search();
+    var ya_tiene_servicio = 0 ;
+    if ( resultado.length > 0 )
+    {
+        for (var i=0 ;    i < resultado.length ; i++ )
+        {
+            if (resultado[i].ID_PROFILE_SERVICIO_EMA == var_profile && resultado[i].ID_ESTADO_SERVICIO_EMA == var_estado && resultado[i].MSISDN_SERVICIO_EMA == var_msisdn)
+                ya_tiene_servicio = 1;
+        }
+    }
+    if ( ya_tiene_servicio > 0 )
+    {
+        output.estado = "NOOK";
+        output.mensaje = "Ya tiene ese Profile Activo";
+        return output;
+    }
+
+
+
+    //-----DADO QUE SE PASARON TODAS LAS VALIDACIONES SE CREA EL SERVICIO, RESTA ACTIVAR LOS NODOS
+    var documento = new Document("externalSystemEMA.DOC_SERVICIO_GET_EMA");
+
+    documento.MSISDN_SERVICIO_EMA = var_msisdn;
+    documento.ID_PROFILE_SERVICIO_EMA = var_profile;
+    documento.ID_ESTADO_SERVICIO_EMA = var_estado;
+    documento.FECHA_ACTIVACION_SERVICIO_EMA = Date.now();
+    documento.ORDER_ID_SERVICIO_EMA = var_orderid;
+    documento.save();
+
+
+    //-----FALTA SOLO DEJAR EL REGISTRO EN LOS NODOS CORRESPONDIENTES
+
+
+    /*
+    if ( resultado.length > 0)
+    {
+        resultado[0].ID_MSISDN_ESTADO=2;
+
+        output.msisdn = resultado[0].MSISDN;
+        //resultado.save();
+        resultado[0].save();
+        output.estado = "OK";
+        output.mensaje = "Mensaje Recibido";
+
+    }
+    else
+    {
+        output.estado = "NOOK";
+        output.mensaje = "No hay MSISDN Disponibles";
+        output.msisdn = "";
+    }
+    */
+    //Process.sendMessageToQueue("ExternalSystemSimulator.creditApprovalNumberGenerator","COBRAS_GPgetCreditApprovalNumberRequest", input, null,null,null,null,null,false,false);
+    //Process.sendMessageToQueue("ExternalSystemSimulator.prueba","COBRAS_GPgetCreditApprovalNumberRequest", input, null,null,null,null,null,false,false);
+    //Process.sendMessageToProcess(1,null,"creditApprovalNumberGenerator",input,null,null,null);
+    //Process.startProcess("ExternalSystemSimulator.procObtieneReservaMsisdn",null,null,null);
+
+    output.estado = "OK";
+    output.mensaje = "Servicio Activado en EMA";
+
+    return output;
+  ]]></script>
+</script>

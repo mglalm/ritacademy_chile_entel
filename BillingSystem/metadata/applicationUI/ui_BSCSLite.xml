@@ -74,13 +74,39 @@
                     </element>
                   </elementList>
                 </element>
-                <element name="EjecutarWorkflow" type="elmnu">
-                  <clickMethod type="varPath">
-                    <variablePathList>
-                      <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_ejecWorkflow</variablePath>
-                    </variablePathList>
-                  </clickMethod>
-                  <label>Ejecutar WorkFlow</label>
+                <element name="Planes" type="elmnu">
+                  <label>Planes</label>
+                  <elementList>
+                    <element name="Nuevo_Plan" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_nvoPlan</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Crear</label>
+                    </element>
+                    <element name="Buscar_Plan" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_buscarPlan</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Buscar</label>
+                    </element>
+                  </elementList>
+                </element>
+                <element name="Servicios" type="elmnu">
+                  <label>Servicios Por Clientes</label>
+                  <elementList>
+                    <element name="Servicios_Clientes" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.BSCSLite/usrActionMethod_buscarServicios</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Servicios Por Cliente</label>
+                    </element>
+                  </elementList>
                 </element>
               </elementList>
             </override>
@@ -109,15 +135,6 @@
     <method name="selectApp" type="usrActionMethod">
       <script>UserProfile.selectApp();</script>
     </method>
-    <method name="ejecWorkflow" type="usrActionMethod">
-      <script><![CDATA[
-        //this.saveAllAction();
-        //Process.startProcess("msisdnManagerBSCS.creditApprobalmsisdn",this.model.id,null,null);
-        //Process.startProcess("msisdnManagerBSCS.creditApprobalmsisdn",null,null,null);
-        ExternalSystemSimulator.scr_Reserva_Msisdn();
-        //this.saveAllAction();
-      ]]></script>
-    </method>
     <method name="nvoMsisdn" type="usrActionMethod">
       <form>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
       <userInterface>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS</userInterface>
@@ -126,6 +143,19 @@
     <method name="buscarMsisdn" type="usrActionMethod">
       <userInterface>findDoc_msisdnManagerBSCS.busquedaMsisdn</userInterface>
       <valueType>findDoc_msisdnManagerBSCS.busquedaMsisdn</valueType>
+    </method>
+    <method name="nvoPlan" type="usrActionMethod">
+      <form>doc_planManagerBSCS.DOC_PLAN_BSCS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+      <userInterface>doc_planManagerBSCS.DOC_PLAN_BSCS</userInterface>
+      <valueType>doc_planManagerBSCS.DOC_PLAN_BSCS</valueType>
+    </method>
+    <method name="buscarPlan" type="usrActionMethod">
+      <userInterface>findDoc_planManagerBSCS.busquedaPlan</userInterface>
+      <valueType>findDoc_planManagerBSCS.busquedaPlan</valueType>
+    </method>
+    <method name="buscarServicios" type="usrActionMethod">
+      <userInterface>findDoc_provisionManagerBSCS.busquedaServicios</userInterface>
+      <valueType>findDoc_provisionManagerBSCS.busquedaServicios</valueType>
     </method>
   </methodList>
 </userInterface>

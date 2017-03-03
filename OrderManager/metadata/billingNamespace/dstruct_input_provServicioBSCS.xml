@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="billingNamespace.input_provServicioBSCS">
+  <container>true</container>
+  <description>input_provServicioBSCS</description>
+  <label>input_provServicioBSCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="orderid" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>orderid</label>
+    </child>
+    <child name="rut" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>rut</label>
+    </child>
+    <child name="msisdn" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>msisdn</label>
+    </child>
+    <child name="id_plan_bscs" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.Decimal</element>
+      <label>id_plan_bscs</label>
+    </child>
+  </childList>
+</dataStructure>

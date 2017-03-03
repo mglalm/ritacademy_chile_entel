@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="planManagerCS.DOC_PLAN_CS_FIND">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{7f8e6b82-a907-43f5-977c-26aa1cbd61d9}</guid>
+  <label>DOC_PLAN_CS_FIND</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_PLAN" type="leaf">
+      <valueType>dtype_planManagerCS.ID_PLAN</valueType>
+    </variable>
+    <variable name="DESC_PLAN" type="leaf">
+      <valueType>dtype_planManagerCS.DESC_PLAN</valueType>
+    </variable>
+    <variable name="SALDO_INICIAL" type="leaf">
+      <valueType>dtype_planManagerCS.SALDO_INICIAL</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_planManagerCS.DOC_PLAN_CS_FIND</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Busqueda" type="vform">
+            <label>Formulario_Busqueda</label>
+            <root name="Formulario_BusquedaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_PLAN_CS_FINDGrid" type="elgrd">
+                  <numOfCols>3</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DOC_PLAN_CS_FINDHeader" type="elhdr">
+                      <label>DOC_PLAN_CS_FIND</label>
+                    </element>
+                    <element name="ID_PLAN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/leaf_ID_PLAN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="DESC_PLAN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/leaf_DESC_PLAN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="SALDO_INICIAL" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/leaf_SALDO_INICIAL</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

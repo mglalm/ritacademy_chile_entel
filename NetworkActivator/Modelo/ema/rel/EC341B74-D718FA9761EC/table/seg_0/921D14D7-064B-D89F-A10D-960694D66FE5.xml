@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="921D14D7-064B-D89F-A10D-960694D66FE5" name="EMA_NODO">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:39:50 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_NODO" id="603F42D3-7358-9518-F453-71BD24C31976">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:41:22 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESC_NODO" id="F19AC0DE-4FD5-5ADD-815A-95C7EBE3ECE9">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:41:22 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PLATAFORMA" id="9D1C66E4-A5D8-762B-B32B-53ACBC9AECB7">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:41:22 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B692F8C9-03BC-7371-5695-9B5FF6E39667" name="EMA_NODO_PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:43:41 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="603F42D3-7358-9518-F453-71BD24C31976"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="externalSystemCS" targetNamespace="externalSystemCS"
+	xmlns:tns="externalSystemCS"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:externalSystemCS="externalSystemCS">
+
+	<types>
+		<schema targetNamespace="externalSystemCS"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:externalSystemCS="externalSystemCS"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>External System CS</documentation>
+				<appinfo>
+					<metadata>AVM Metadata CS</metadata>
+					<created>Wed Feb 22 13:53:02 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<simpleType name="ID_SERVICIO_SERVICO_CS">
+				<annotation>
+					<documentation>ID_SERVICIO_SERVICO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="5"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="SALDO_INICIAL_SERVICIO_CS">
+				<annotation>
+					<documentation>SALDO_INICIAL_SERVICIO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="10"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="ORDER_ID_SERVICIO_CS">
+				<annotation>
+					<documentation>ORDER_ID_SERVICIO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="16"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="ID_CAMPO">
+				<annotation>
+					<documentation>ID_CAMPO</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="5"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="ID_PLAN_SERVICIO_CS">
+				<annotation>
+					<documentation>ID_PLAN_SERVICIO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="5"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="FECHA_ULTIMO_SALDO_SERVICIO_CS">
+				<annotation>
+					<documentation>FECHA_ULTIMO_SALDO_SERVICIO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:dateTime">
+				</restriction>
+			</simpleType>
+
+			<simpleType name="MSISDN_SERVICIO_CS">
+				<annotation>
+					<documentation>MSISDN_SERVICIO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="SALDO_ACTUAL_SERVICIO_CS">
+				<annotation>
+					<documentation>SALDO_ACTUAL_SERVICIO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="10"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="DESC_PLAN_SERVICIO_CS">
+				<annotation>
+					<documentation>DESC_PLAN_SERVICIO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="30"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="DESC_CAMPO">
+				<annotation>
+					<documentation>DESC_CAMPO</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="ID_SERVICIO_ESTADO_SERVICO_CS">
+				<annotation>
+					<documentation>ID_SERVICIO_ESTADO_SERVICO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="1"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="FECHA_ACTIVACION_SERVICIO_CS">
+				<annotation>
+					<documentation>FECHA_ACTIVACION_SERVICIO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:dateTime">
+				</restriction>
+			</simpleType>
+
+			<!-- Structures -->
+
+			<complexType name="input_desprovServicioCS">
+				<annotation>
+					<documentation>input_desprovServicioCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="input_provServicioCS">
+				<annotation>
+					<documentation>input_provServicioCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="orderid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="id_plan_cs" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="output_desprovServicioCS">
+				<annotation>
+					<documentation>output_desprovServicioCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="output_provServicioCS">
+				<annotation>
+					<documentation>output_provServicioCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+			<complexType name="DOC_SERVICIO_SERVICIO_GET">
+				<annotation>
+					<documentation>DOC_SERVICIO_SERVICIO_GET</documentation>
+				</annotation>
+					<sequence>
+						<element name="ID_SERVICIO_SERVICO_CS" type="externalSystemCS:ID_SERVICIO_SERVICO_CS"/>
+						<element name="ID_PLAN_SERVICIO_CS" type="externalSystemCS:ID_PLAN_SERVICIO_CS"/>
+						<element name="MSISDN_SERVICIO_CS" type="externalSystemCS:MSISDN_SERVICIO_CS"/>
+						<element name="FECHA_ACTIVACION_SERVICIO_CS" type="externalSystemCS:FECHA_ACTIVACION_SERVICIO_CS"/>
+						<element name="ID_SERVICIO_ESTADO_SERVICO_CS" type="externalSystemCS:ID_SERVICIO_ESTADO_SERVICO_CS"/>
+						<element name="ORDER_ID_SERVICIO_CS" type="externalSystemCS:ORDER_ID_SERVICIO_CS"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="DOC_PLAN_SERVICIO_CS">
+				<annotation>
+					<documentation>DOC_PLAN_SERVICIO_CS</documentation>
+				</annotation>
+					<sequence>
+						<element name="ID_PLAN_SERVICIO_CS" type="externalSystemCS:ID_PLAN_SERVICIO_CS"/>
+						<element name="DESC_PLAN_SERVICIO_CS" type="externalSystemCS:DESC_PLAN_SERVICIO_CS"/>
+						<element name="SALDO_INICIAL_SERVICIO_CS" type="externalSystemCS:SALDO_INICIAL_SERVICIO_CS"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="DOC_SALDOS_SERVICIO_GET_CS">
+				<annotation>
+					<documentation>DOC_SALDOS_SERVICIO_GET_CS</documentation>
+				</annotation>
+					<sequence>
+						<element name="ID_SERVICIO_SERVICO_CS" type="externalSystemCS:ID_SERVICIO_SERVICO_CS"/>
+						<element name="SALDO_INICIAL_SERVICIO_CS" type="externalSystemCS:SALDO_INICIAL_SERVICIO_CS"/>
+						<element name="SALDO_ACTUAL_SERVICIO_CS" type="externalSystemCS:SALDO_ACTUAL_SERVICIO_CS"/>
+						<element name="FECHA_ULTIMO_SALDO_SERVICIO_CS" type="externalSystemCS:FECHA_ULTIMO_SALDO_SERVICIO_CS"/>
+					</sequence>
+				</complexType>
+
+		</schema>
+	</types>
+
+	<message name="input_provServicioCS">
+		<part name="input_provServicioCS" type="externalSystemCS:input_provServicioCS"/>
+	</message>
+
+	<message name="output_provServicioCS">
+		<part name="output_provServicioCS" type="externalSystemCS:output_provServicioCS"/>
+	</message>
+
+	<message name="input_desprovServicioCS">
+		<part name="input_desprovServicioCS" type="externalSystemCS:input_desprovServicioCS"/>
+	</message>
+
+	<message name="output_desprovServicioCS">
+		<part name="output_desprovServicioCS" type="externalSystemCS:output_desprovServicioCS"/>
+	</message>
+
+	<portType name="interface_serviciosCS">
+		<operation name="provServicioCS">
+			<input message="tns:input_provServicioCS"/>
+			<output message="tns:output_provServicioCS"/>
+		</operation>
+		<operation name="desprovServicioCS">
+			<input message="tns:input_desprovServicioCS"/>
+			<output message="tns:output_desprovServicioCS"/>
+		</operation>
+	</portType>
+
+	<binding name="bind_provServicioCS_SOAP" type="tns:interface_serviciosCS">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="provServicioCS">
+			<soap:operation soapAction="provServicioCS"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="desprovServicioCS">
+			<soap:operation soapAction="desprovServicioCS"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="xs_serviciosCS">
+		<port name="port_serviciosCS_SOAP" binding="tns:bind_provServicioCS_SOAP">
+		</port>
+	</service>
+
+</definitions>

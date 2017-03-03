@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="OrderManager.docOMProvEMA">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{215b946f-dbe5-4af7-bc60-334159ba841d}</guid>
+  <label>docOMProvEMA</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="orderId" type="leaf">
+      <column>ORDER_ID</column>
+      <key>2</key>
+      <table>OM_PROV_EMA</table>
+      <valueType>dtype_OrderManager.dtOrderId</valueType>
+    </variable>
+    <variable name="POId" type="leaf">
+      <column>PO_ID</column>
+      <key>1</key>
+      <table>OM_PROV_EMA</table>
+      <valueType>dtype_OrderManager.dtPOId</valueType>
+    </variable>
+    <variable name="numIntento" type="leaf">
+      <column>NUMERO_INTENTO</column>
+      <key>3</key>
+      <table>OM_PROV_EMA</table>
+      <valueType>dtype_com.conceptwave.system.Integer</valueType>
+    </variable>
+    <variable name="fechaCreacion" type="leaf">
+      <column>FECHA_CREACION</column>
+      <table>OM_PROV_EMA</table>
+      <valueType>dtype_cwf.cwCreated</valueType>
+    </variable>
+    <variable name="estado" type="leaf">
+      <column>ESTADO</column>
+      <table>OM_PROV_EMA</table>
+      <valueType>dtype_OrderManager.dtEstado</valueType>
+    </variable>
+    <variable name="motivoEstado" type="leaf">
+      <column>MOTIVO_ESTADO</column>
+      <table>OM_PROV_EMA</table>
+      <valueType>dtype_OrderManager.dtMotivoEstado</valueType>
+    </variable>
+  </variableList>
+</document>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="CSProvisionInterface.ORDER_ID_SERVICIO_CS">
-  <description>ORDER_ID_SERVICIO_CS</description>
-  <extends>dtype_com.conceptwave.system.String</extends>
-  <label>ORDER_ID_SERVICIO_CS</label>
-  <length>30</length>
-  <metaVersion>25</metaVersion>
-</dataType>

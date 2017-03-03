@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FB45039B-29AC-87BB-2E09-E56C03BD0640" containerWithKeyObject="2DD44884-DEB1-9B8B-A486-DA4AC8A690BE" localFKIndex="5421A399-04CC-2EAC-30FA-1ADD3508938C" name="OM_Orden_OE_CLIENTE_FK">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-03-03 13:06:39 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DA400F5D-8619-6FA2-99CF-853E0559BB5A</referredTableID>
+<keyObject>E786FFA1-3C7C-40CB-7B33-ACE625943790</keyObject>
+<referredKeyID>E786FFA1-3C7C-40CB-7B33-ACE625943790</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

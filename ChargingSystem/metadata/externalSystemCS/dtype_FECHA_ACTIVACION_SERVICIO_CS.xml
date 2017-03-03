@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="externalSystemCS.FECHA_ACTIVACION_SERVICIO_CS">
+  <extends>dtype_com.conceptwave.system.DateTime</extends>
+  <label>FECHA_ACTIVACION_SERVICIO_CS</label>
+  <metaVersion>25</metaVersion>
+</dataType>

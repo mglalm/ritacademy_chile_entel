@@ -8,7 +8,7 @@
     </parameter>
   </parameterList>
   <script><![CDATA[
-    OrderManager.debug();
+    //OrderManager.debug();
 
     var output = new DataStructure("OrderManager.ack");
     output.estado = "OK";

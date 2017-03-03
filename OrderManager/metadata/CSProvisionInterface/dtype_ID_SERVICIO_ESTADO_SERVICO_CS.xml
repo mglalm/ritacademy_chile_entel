@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="CSProvisionInterface.ID_SERVICIO_ESTADO_SERVICO_CS">
-  <description>ID_SERVICIO_ESTADO_SERVICO_CS</description>
-  <extends>dtype_com.conceptwave.system.String</extends>
-  <label>ID_SERVICIO_ESTADO_SERVICO_CS</label>
-  <length>1</length>
-  <metaVersion>25</metaVersion>
-</dataType>

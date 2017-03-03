@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="applicationUIEMA.EMALite">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>EMA</label>
+  <metaVersion>25</metaVersion>
+  <url>/EMA</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayout" type="elext">
+              <elementList>
+                <element name="tools" type="elmnu">
+                  <label>Tools</label>
+                  <elementList>
+                    <element name="selectApp" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUIEMA.EMALite/usrActionMethod_selectApp</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Select Application</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="Profile" type="elmnu">
+                  <label>Profile</label>
+                  <elementList>
+                    <element name="Nuevo_Profile" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUIEMA.EMALite/usrActionMethod_nvoProfile</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Crear</label>
+                    </element>
+                    <element name="Buscar_Profile" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUIEMA.EMALite/usrActionMethod_buscarProfile</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Buscar</label>
+                    </element>
+                  </elementList>
+                </element>
+                <element name="Servicios" type="elmnu">
+                  <label>Servicios Por Clientes</label>
+                  <elementList>
+                    <element name="Servicios_Clientes" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUIEMA.EMALite/usrActionMethod_buscarServicios</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Servicios Por Cliente</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>EMA</title>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="nvoCliente" type="usrActionMethod">
+      <form>doc_customerManagerEMA.DOC_CLIENTE_BSCS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+      <userInterface>doc_customerManagerEMA.DOC_CLIENTE_BSCS</userInterface>
+      <valueType>doc_customerManagerEMA.DOC_CLIENTE_BSCS</valueType>
+    </method>
+    <method name="buscarCliente" type="usrActionMethod">
+      <userInterface>findDoc_customerManagerEMA.busquedaCliente</userInterface>
+      <valueType>findDoc_customerManagerEMA.busquedaCliente</valueType>
+    </method>
+    <method name="selectApp" type="usrActionMethod">
+      <script>UserProfile.selectApp();</script>
+    </method>
+    <method name="nvoProfile" type="usrActionMethod">
+      <form>doc_profileManagerEMA.DOC_PROFILE_EMA/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+      <userInterface>doc_profileManagerEMA.DOC_PROFILE_EMA</userInterface>
+      <valueType>doc_profileManagerEMA.DOC_PROFILE_EMA</valueType>
+    </method>
+    <method name="buscarProfile" type="usrActionMethod">
+      <userInterface>findDoc_profileManagerEMA.busquedaProfile</userInterface>
+      <valueType>findDoc_profileManagerEMA.busquedaProfile</valueType>
+    </method>
+    <method name="buscarServicios" type="usrActionMethod">
+      <userInterface>findDoc_provisionManagerEMA.busquedaServiciosEMA</userInterface>
+      <valueType>findDoc_provisionManagerEMA.busquedaServiciosEMA</valueType>
+    </method>
+  </methodList>
+</userInterface>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="externalSystemBSCS.scr_provServicioBSCS">
+  <label>Binding Script</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>dstruct_externalSystemBSCS.input_provServicioBSCS</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var var_orderid = input.orderid;
+    var var_rut = input.rut;
+    var output = new DataStructure("externalSystemBSCS.output_getMsisdnReserveBSCS");
+
+    output.estado = "OK";
+    output.mensaje = "Servicio Provisionado";
+
+    return output;
+  ]]></script>
+</script>

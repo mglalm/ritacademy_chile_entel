@@ -9,6 +9,12 @@
       <output>dstruct_billingNamespace.output_getMsisdnReserveBSCS</output>
       <type>Request-Response</type>
     </operation>
+    <operation name="provServicioBSCS" type="oper">
+      <input>dstruct_billingNamespace.input_provServicioBSCS</input>
+      <label>provServicioBSCS</label>
+      <output>dstruct_billingNamespace.output_provServicioBSCS</output>
+      <type>Request-Response</type>
+    </operation>
   </operationList>
   <revision>1</revision>
 </interface>

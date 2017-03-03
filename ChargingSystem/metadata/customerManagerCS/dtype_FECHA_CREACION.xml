@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="customerManagerCS.FECHA_CREACION">
+  <extends>dtype_com.conceptwave.system.Date</extends>
+  <label>Fecha Creación</label>
+  <metaVersion>25</metaVersion>
+</dataType>

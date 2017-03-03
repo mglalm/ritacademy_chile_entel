@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="externalSystemCS.interface_serviciosCS">
+  <label>interface_serviciosCS</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="provServicioCS" type="oper">
+      <input>dstruct_externalSystemCS.input_provServicioCS</input>
+      <label>provServicioCS</label>
+      <output>dstruct_externalSystemCS.output_provServicioCS</output>
+      <type>Request-Response</type>
+    </operation>
+    <operation name="desprovServicioCS" type="oper">
+      <input>dstruct_externalSystemCS.input_desprovServicioCS</input>
+      <label>desprovServicioCS</label>
+      <output>dstruct_externalSystemCS.output_desprovServicioCS</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>2</revision>
+</interface>

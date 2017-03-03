@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="externalSystemCS.input_desprovServicioCS">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>input_desprovServicioCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="msisdn" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>msisdn</label>
+    </child>
+  </childList>
+</dataStructure>

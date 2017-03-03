@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="externalSystemCS.bind_provServicioCS_SOAP">
+  <interface>iface_externalSystemCS.interface_serviciosCS</interface>
+  <label>bind_provServicioCS_SOAP</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<binding name="ExternalSystemSimulator.COBRAS_ExtSysInboundSOAPBinding">
-  <interface>iface_ExternalSystemSimulator.COBRAS_externalSystemInboundInterface</interface>
-  <label>COBRAS_Ext Sys Inbound SOAP Binding</label>
-  <metaVersion>25</metaVersion>
-  <provider>prov_cwf.soapprov</provider>
-</binding>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="OrderManager.docOMParamBSCS">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{c79131b2-3d17-46fa-b8eb-07f848c4fb0e}</guid>
+  <label>docOMParamBSCS</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="orderId" type="leaf">
+      <column>ORDER_ID</column>
+      <key>1</key>
+      <table>OM_PARAM_BSCS</table>
+      <valueType>dtype_OrderManager.dtOrderId</valueType>
+    </variable>
+    <variable name="POId" type="leaf">
+      <column>PO_ID</column>
+      <key>3</key>
+      <table>OM_PARAM_BSCS</table>
+      <valueType>dtype_OrderManager.dtPOId</valueType>
+    </variable>
+    <variable name="numIntento" type="leaf">
+      <column>NUMERO_INTENTO</column>
+      <key>4</key>
+      <table>OM_PARAM_BSCS</table>
+      <valueType>dtype_com.conceptwave.system.Integer</valueType>
+    </variable>
+    <variable name="paramId" type="leaf">
+      <column>PARAM_ID</column>
+      <key>2</key>
+      <table>OM_PARAM_BSCS</table>
+      <valueType>dtype_OrderManager.dtIdParametro</valueType>
+    </variable>
+    <variable name="valor" type="leaf">
+      <column>VALOR</column>
+      <table>OM_PARAM_BSCS</table>
+      <valueType>dtype_OrderManager.dtParamValor</valueType>
+    </variable>
+  </variableList>
+</document>

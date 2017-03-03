@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="OrderManager.notificaErrorEnProceso">
+  <label>notificaErrorEnProceso</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="docProcess" type="rifp">
+      <type>doc_OrderManager.docProcesoProvision</type>
+    </parameter>
+  </parameterList>
+  <script>var a = 1;</script>
+</script>

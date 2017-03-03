@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1C2C594D-57EC-683E-83FF-727CE70913C9" containerWithKeyObject="91E649E2-AD63-7CAC-D56E-402F48C64437" localFKIndex="C5462EAA-73D2-CE99-0D2C-099784383360" name="EMA_ACTIVO_EMA_FK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-03 03:15:50 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>921D14D7-064B-D89F-A10D-960694D66FE5</referredTableID>
+<keyObject>B692F8C9-03BC-7371-5695-9B5FF6E39667</keyObject>
+<referredKeyID>B692F8C9-03BC-7371-5695-9B5FF6E39667</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

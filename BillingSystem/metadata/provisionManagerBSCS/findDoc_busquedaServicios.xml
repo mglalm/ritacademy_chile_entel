@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="provisionManagerBSCS.busquedaServicios">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND</input>
+  <label>Búsqueda Servicios</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS</output>
+  <type>document</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND</document>
+      <mappedDocument>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS</mappedDocument>
+      <mappedPath>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/leaf_FECHA_ACTIVACION</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND/leaf_FECHA_ACTIVACION</path>
+    </search>
+    <search type="sitem">
+      <document>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND</document>
+      <mappedDocument>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS</mappedDocument>
+      <mappedPath>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/leaf_ID_CLIENTE_BSCS</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND/leaf_ID_CLIENTE_BSCS</path>
+    </search>
+    <search type="sitem">
+      <document>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND</document>
+      <mappedDocument>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS</mappedDocument>
+      <mappedPath>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/leaf_ID_PLAN_BSCS</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND/leaf_ID_PLAN_BSCS</path>
+    </search>
+    <search type="sitem">
+      <document>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND</document>
+      <mappedDocument>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS</mappedDocument>
+      <mappedPath>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/leaf_ID_SERVICIO_ESTADO</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND/leaf_ID_SERVICIO_ESTADO</path>
+    </search>
+    <search type="sitem">
+      <document>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND</document>
+      <mappedDocument>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS</mappedDocument>
+      <mappedPath>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/leaf_MSISDN</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND/leaf_MSISDN</path>
+    </search>
+    <search type="sitem">
+      <document>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND</document>
+      <mappedDocument>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS</mappedDocument>
+      <mappedPath>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/leaf_ORDER_ID</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND/leaf_ORDER_ID</path>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND/ui_UserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/ui_UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_provisionManagerBSCS.busquedaServicios/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_provisionManagerBSCS.busquedaServicios/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="busquedaServiciosResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_provisionManagerBSCS.busquedaServicios/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="ID_CLIENTE_BSCS" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerBSCS.busquedaServicios/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/leaf_ID_CLIENTE_BSCS</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="ID_PLAN_BSCS" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerBSCS.busquedaServicios/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/leaf_ID_PLAN_BSCS</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="MSISDN" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerBSCS.busquedaServicios/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/leaf_MSISDN</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="FECHA_ACTIVACION" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerBSCS.busquedaServicios/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/leaf_FECHA_ACTIVACION</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="ID_SERVICIO_ESTADO" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerBSCS.busquedaServicios/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/leaf_ID_SERVICIO_ESTADO</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="ORDER_ID" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerBSCS.busquedaServicios/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS/leaf_ORDER_ID</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="busquedaServiciosView" type="findVView">
+      <inputOverlay>doc_provisionManagerBSCS.DOC_CLIENTE_SERVICIO_BSCS_FIND/ui_UserInterface/frmui_Forms/vform_Formulario_Busqueda</inputOverlay>
+      <label>Búsqueda Servicios</label>
+      <outputOverlay>findDoc_provisionManagerBSCS.busquedaServicios/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <showSearchForm>true</showSearchForm>
+    </view>
+  </viewList>
+</findDoc>

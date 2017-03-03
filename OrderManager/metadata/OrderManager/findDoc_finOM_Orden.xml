@@ -10,9 +10,30 @@
     <search type="sitem">
       <document>doc_OrderManager.docOMOrden</document>
       <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_estado</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_estado</path>
+    </search>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_fechaCreacion</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_fechaCreacion</path>
+    </search>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
       <mappedPath>doc_OrderManager.docOMOrden/leaf_orderId</mappedPath>
       <operation>equal</operation>
       <path>doc_OrderManager.docOMOrden/leaf_orderId</path>
+    </search>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_rut</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_rut</path>
     </search>
   </searchList>
 </findDoc>

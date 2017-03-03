@@ -10,6 +10,13 @@
     <search type="sitem">
       <document>doc_OrderManager.docOMParametrosNodos</document>
       <mappedDocument>doc_OrderManager.docOMParametrosNodos</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMParametrosNodos/leaf_POId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMParametrosNodos/leaf_POId</path>
+    </search>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMParametrosNodos</document>
+      <mappedDocument>doc_OrderManager.docOMParametrosNodos</mappedDocument>
       <mappedPath>doc_OrderManager.docOMParametrosNodos/leaf_idNodo</mappedPath>
       <operation>equal</operation>
       <path>doc_OrderManager.docOMParametrosNodos/leaf_idNodo</path>
@@ -20,13 +27,6 @@
       <mappedPath>doc_OrderManager.docOMParametrosNodos/leaf_idParametro</mappedPath>
       <operation>equal</operation>
       <path>doc_OrderManager.docOMParametrosNodos/leaf_idParametro</path>
-    </search>
-    <search type="sitem">
-      <document>doc_OrderManager.docOMParametrosNodos</document>
-      <mappedDocument>doc_OrderManager.docOMParametrosNodos</mappedDocument>
-      <mappedPath>doc_OrderManager.docOMParametrosNodos/leaf_idPlan</mappedPath>
-      <operation>equal</operation>
-      <path>doc_OrderManager.docOMParametrosNodos/leaf_idPlan</path>
     </search>
   </searchList>
 </findDoc>

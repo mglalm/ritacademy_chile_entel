@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="externalSystemCS.bind_provServicioCS_JS">
+  <extensionList>
+    <extension name="provServicioCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="metadataScript">externalSystemCS.scr_provServicioCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="metadataScript">externalSystemCS.scr_desprovServicioCS</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_externalSystemCS.interface_serviciosCS</interface>
+  <label>bind_provServicioCS_JS</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

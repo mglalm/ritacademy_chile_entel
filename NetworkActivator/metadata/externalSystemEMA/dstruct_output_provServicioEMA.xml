@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="externalSystemEMA.output_provServicioEMA">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>output_provServicioEMA</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="estado" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>estado</label>
+    </child>
+    <child name="mensaje" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>mensaje</label>
+    </child>
+  </childList>
+</dataStructure>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="ExternalSystemSimulator" targetNamespace="ExternalSystemSimulator"
+	xmlns:tns="ExternalSystemSimulator"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:ExternalSystemSimulator="ExternalSystemSimulator">
+
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="ExternalSystemSimulator" schemaLocation="ExternalSystemSimulator.xsd"/>
+		</schema>
+	</types>
+
+	<message name="getCreditApprovalNumberRequest">
+		<part name="getCreditApprovalNumberRequest" type="ExternalSystemSimulator:getCreditApprovalNumberRequest"/>
+	</message>
+
+	<message name="ack">
+		<part name="ack" type="ExternalSystemSimulator:ack"/>
+	</message>
+
+	<portType name="COBRAS_externalSystemInboundInterface">
+		<operation name="COBRAS_extSysInboundGetCreditApprovalNumber">
+			<input message="tns:getCreditApprovalNumberRequest"/>
+			<output message="tns:ack"/>
+		</operation>
+		<operation name="COBRAS_GPgetCreditApprovalNumberRequest">
+			<input message="tns:getCreditApprovalNumberRequest"/>
+		</operation>
+	</portType>
+
+	<binding name="COBRAS_ExtSysInboundSOAPBinding" type="tns:COBRAS_externalSystemInboundInterface">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="COBRAS_extSysInboundGetCreditApprovalNumber">
+			<soap:operation soapAction="COBRAS_extSysInboundGetCreditApprovalNumber"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="COBRAS_GPgetCreditApprovalNumberRequest">
+			<soap:operation soapAction="COBRAS_GPgetCreditApprovalNumberRequest"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+		</operation>
+	</binding>
+
+	<service name="COBRAS_ExternalService">
+		<port name="COBRAS_extSysInboundSOAPPort" binding="tns:COBRAS_ExtSysInboundSOAPBinding">
+			<soap:address location="http://localhost:8080/cwf/services/externalSystemInboundInterface"/>
+		</port>
+	</service>
+
+</definitions>
