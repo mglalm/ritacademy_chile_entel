@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="despliegaPO.poResult">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{d12b75bc-4aab-402c-bca8-4c40aca7ae3b}</guid>
+  <label>Resultado PO</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="poCode" type="leaf">
+      <valueType>dtype_despliegaPO.poCode</valueType>
+    </variable>
+    <variable name="poType" type="leaf">
+      <valueType>dtype_despliegaPO.poType</valueType>
+    </variable>
+    <variable name="poName" type="leaf">
+      <valueType>dtype_despliegaPO.poName</valueType>
+    </variable>
+    <variable name="poDescr" type="leaf">
+      <valueType>dtype_despliegaPO.poDescr</valueType>
+    </variable>
+    <variable name="poStatus" type="leaf">
+      <valueType>dtype_despliegaPO.poStatus</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_despliegaPO.poResult</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="poResultGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="poResultHeader" type="elhdr">
+                      <label>Resultado PO</label>
+                    </element>
+                    <element name="poCode" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.poResult/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.poResult/leaf_poCode</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="poName" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.poResult/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.poResult/leaf_poName</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="poDescr" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.poResult/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.poResult/leaf_poDescr</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="poStatus" type="elslct">
+                      <sorted>false</sorted>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_despliegaPO.poResult/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_despliegaPO.poResult/leaf_poStatus</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

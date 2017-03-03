@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="applicationUI.Project">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>Proyecto </label>
+  <metaVersion>25</metaVersion>
+  <url>/Project</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="poSelected" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_applicationUI.Project/usrActionMethod_ConsultaPO</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Busca PO</label>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="ConsultaPO" type="usrActionMethod">
+      <userInterface>findDoc_despliegaPO.poFinder</userInterface>
+      <valueType>findDoc_despliegaPO.poFinder</valueType>
+    </method>
+    <method name="ingresaPO" type="usrActionMethod">
+      <form>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>doc_despliegaPO.agregaPO</userInterface>
+      <valueType>doc_despliegaPO.agregaPO</valueType>
+    </method>
+  </methodList>
+</userInterface>

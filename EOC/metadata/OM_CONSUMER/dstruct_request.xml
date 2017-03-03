@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="OM_CONSUMER.request">
+  <container>true</container>
+  <description>request</description>
+  <label>request</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="productOfferId" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>productOfferId</label>
+    </child>
+    <child name="orderId" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>orderId</label>
+    </child>
+  </childList>
+</dataStructure>

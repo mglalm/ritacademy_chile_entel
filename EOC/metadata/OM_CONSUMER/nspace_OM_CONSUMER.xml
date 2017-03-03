@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<nameSpace name="OM_CONSUMER">
+  <label>OM_CONSUMER</label>
+  <metaVersion>25</metaVersion>
+  <targetNS>OM_LISTENER</targetNS>
+</nameSpace>

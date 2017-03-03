@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="OM_CONSUMER.bindingSOAP">
+  <extensionList>
+    <extension name="provisioning" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">provisioning</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provisioning$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provisioning$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provisioning" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">provisioning</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provisioning$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provisioning$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provisioning" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">provisioning</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provisioning$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provisioning$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_OM_CONSUMER.OMInterfaz</interface>
+  <label>bindingSOAP</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

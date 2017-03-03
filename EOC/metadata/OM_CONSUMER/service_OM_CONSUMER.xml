@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="OM_CONSUMER.OM_CONSUMER">
+  <label>OM_CONSUMER</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="portSOAP" type="port">
+      <binding>bind_OM_CONSUMER.bindingSOAP</binding>
+      <label>portSOAP</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>
