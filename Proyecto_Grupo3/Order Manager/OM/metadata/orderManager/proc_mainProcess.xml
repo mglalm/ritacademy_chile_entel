@@ -44,11 +44,11 @@
                     <y>25.0</y>
                     <childList>
                       <child name="InformacionOE" type="opActivity">
-                        <element>iface_oeInterface.Submit_Order_OE/oper_SubmitResponseOE</element>
+                        <element>iface_oeInterface.Submit_Response_OE/oper_submitResponseOE</element>
                         <label>InformacionOE</label>
                         <participant>part_orderManager.InformacionOE</participant>
-                        <x>659.21466</x>
-                        <y>122.0</y>
+                        <x>672.21466</x>
+                        <y>121.0</y>
                         <methodList>
                           <method name="cwOnProcActBefore" type="action">
                             <category>before</category>

@@ -9,12 +9,6 @@
       <output>dstruct_oeInterface.Response</output>
       <type>One-Way</type>
     </operation>
-    <operation name="SubmitResponseOE" type="oper">
-      <input>dstruct_oeInterface.RequestSendOE</input>
-      <label>Submit Response OE</label>
-      <output>dstruct_oeInterface.Response</output>
-      <type>Notification</type>
-    </operation>
   </operationList>
-  <revision>2</revision>
+  <revision>3</revision>
 </interface>
