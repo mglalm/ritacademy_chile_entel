@@ -83,9 +83,5 @@
     <template>uws_controller</template>
     <template>uws_controller_api</template>
     <template>wizard</template>
-    <template>cbioConSchema</template>
-    <template>BSCS_train</template>
-    <template>CS</template>
-    <template>EMA</template>
   </templateList>
 </header>

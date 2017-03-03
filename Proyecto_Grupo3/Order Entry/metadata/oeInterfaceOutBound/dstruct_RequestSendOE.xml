@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="oeInterfaceOutBound.RequestSendOE">
+  <container>true</container>
+  <description>RequestSendOE</description>
+  <label>RequestSendOE</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="MSISDN" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_oeInterfaceOutBound.MSISDN</element>
+      <label>MSISDN</label>
+    </child>
+    <child name="IMSI" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_oeInterfaceOutBound.IMSI</element>
+      <label>IMSI</label>
+    </child>
+    <child name="ESTADO" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_oeInterfaceOutBound.ESTADO</element>
+      <label>ESTADO</label>
+    </child>
+  </childList>
+</dataStructure>
