@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="externalSystemBSCS.bind_ServicioBSCS_SOAP">
+  <interface>iface_externalSystemBSCS.interface_serviciosBSCS</interface>
+  <label>bind_ServicioBSCS_SOAP</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

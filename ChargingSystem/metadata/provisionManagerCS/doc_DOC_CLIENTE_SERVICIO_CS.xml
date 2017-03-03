@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerCS.DOC_CLIENTE_SERVICIO_CS">
+  <dbSchema>PE_ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{e51815a0-081e-47df-a18d-977bcf004575}</guid>
+  <label>DOC_CLIENTE_SERVICIO_CS</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_SERVICIO" type="leaf">
+      <column>ID_SERVICIO</column>
+      <table>CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.ID_SERVICIO</valueType>
+    </variable>
+    <variable name="ID_PLAN_CS" type="leaf">
+      <column>ID_PLAN_CS</column>
+      <key>1</key>
+      <table>CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.ID_PLAN_CS</valueType>
+    </variable>
+    <variable name="ID_SERVICIO_ESTADO" type="leaf">
+      <column>ID_SERVICIO_ESTADO</column>
+      <key>2</key>
+      <table>CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.ID_SERVICIO_ESTADO</valueType>
+    </variable>
+    <variable name="MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <key>3</key>
+      <table>CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.MSISDN</valueType>
+    </variable>
+    <variable name="FECHA_ACTIVACION" type="leaf">
+      <column>FECHA_ACTIVACION</column>
+      <table>CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.FECHA_ACTIVACION</valueType>
+    </variable>
+    <variable name="ORDER_ID" type="leaf">
+      <column>ORDER_ID</column>
+      <table>CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.ORDER_ID</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

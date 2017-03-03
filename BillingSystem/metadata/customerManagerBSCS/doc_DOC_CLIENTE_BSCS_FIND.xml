@@ -44,7 +44,6 @@
                   <numOfCols>4</numOfCols>
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
-                    <element name="DOC_CLIENTE_BSCS_FINDHeader" type="elhdr"/>
                     <element name="ID_CLIENTE_BSCS" type="elfld">
                       <variable type="varPath">
                         <variablePathList>

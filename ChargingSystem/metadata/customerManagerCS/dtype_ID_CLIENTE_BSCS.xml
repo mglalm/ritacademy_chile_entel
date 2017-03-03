@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="customerManagerCS.ID_CLIENTE_BSCS">
+  <extends>dtype_com.conceptwave.system.Integer</extends>
+  <label>Id Cliente</label>
+  <length>5</length>
+  <metaVersion>25</metaVersion>
+</dataType>

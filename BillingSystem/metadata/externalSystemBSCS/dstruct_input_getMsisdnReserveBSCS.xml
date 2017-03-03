@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="externalSystemBSCS.input_getMsisdnReserveBSCS">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>input_getMsisdnReserveBSCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="orderid" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>orderid</label>
+    </child>
+    <child name="rut" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>rut</label>
+    </child>
+  </childList>
+</dataStructure>

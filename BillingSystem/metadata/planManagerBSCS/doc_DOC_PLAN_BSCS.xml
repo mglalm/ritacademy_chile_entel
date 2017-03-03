@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="planManagerBSCS.DOC_PLAN_BSCS">
+  <dbSchema>PE_ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{63ae6bcc-2ddd-4813-99c5-c656f38769c3}</guid>
+  <label>DOC_PLAN_BSCS</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_PLAN" type="leaf">
+      <column>ID_PLAN_BSCS</column>
+      <key>1</key>
+      <table>BSCS_PLAN</table>
+      <valueType>dtype_planManagerBSCS.ID_PLAN</valueType>
+    </variable>
+    <variable name="DESC_PLAN" type="leaf">
+      <column>DESC_PLAN_BSCS</column>
+      <table>BSCS_PLAN</table>
+      <valueType>dtype_planManagerBSCS.DESC_PLAN</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_planManagerBSCS.DOC_PLAN_BSCS</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Creacion" type="vform">
+            <label>Formulario_Creacion</label>
+            <root name="Formulario_CreacionGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_PLAN_BSCSGrid" type="elgrd">
+                  <numOfCols>2</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DOC_PLAN_BSCSHeader" type="elhdr">
+                      <label>Nuevo Plan</label>
+                    </element>
+                    <element name="ID_PLAN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS/leaf_ID_PLAN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="DESC_PLAN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS/leaf_DESC_PLAN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="provisionManagerCS.busquedaServiciosCS">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND</input>
+  <label>Búsqueda Servicios</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS</output>
+  <type>document</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND</document>
+      <mappedDocument>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS</mappedDocument>
+      <mappedPath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_FECHA_ACTIVACION</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_FECHA_ACTIVACION</path>
+    </search>
+    <search type="sitem">
+      <document>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND</document>
+      <mappedDocument>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS</mappedDocument>
+      <mappedPath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_PLAN_CS</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_ID_PLAN_CS</path>
+    </search>
+    <search type="sitem">
+      <document>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND</document>
+      <mappedDocument>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS</mappedDocument>
+      <mappedPath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_SERVICIO</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_ID_SERVICIO</path>
+    </search>
+    <search type="sitem">
+      <document>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND</document>
+      <mappedDocument>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS</mappedDocument>
+      <mappedPath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_SERVICIO_ESTADO</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_ID_SERVICIO_ESTADO</path>
+    </search>
+    <search type="sitem">
+      <document>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND</document>
+      <mappedDocument>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS</mappedDocument>
+      <mappedPath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_MSISDN</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_MSISDN</path>
+    </search>
+    <search type="sitem">
+      <document>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND</document>
+      <mappedDocument>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS</mappedDocument>
+      <mappedPath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ORDER_ID</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_ORDER_ID</path>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/ui_UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="busquedaServiciosCSResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="ID_SERVICIO" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_SERVICIO</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="ID_PLAN_CS" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_PLAN_CS</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="ID_SERVICIO_ESTADO" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_SERVICIO_ESTADO</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="MSISDN" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_MSISDN</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="FECHA_ACTIVACION" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_FECHA_ACTIVACION</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="ORDER_ID" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ORDER_ID</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="busquedaServiciosView" type="findVView">
+      <inputOverlay>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/ui_UserInterface/frmui_Forms/vform_Formulario_Busqueda</inputOverlay>
+      <label>Búsqueda Servicios</label>
+      <outputOverlay>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <showSearchForm>true</showSearchForm>
+    </view>
+  </viewList>
+</findDoc>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<binding name="ExternalSystemSimulator.bind_getMsisdnBSCS_SOAP">
-  <interface>iface_ExternalSystemSimulator.interface_serviciosBSCS</interface>
-  <label>bind_getMsisdnBSCS_SOAP</label>
-  <metaVersion>25</metaVersion>
-  <provider>prov_cwf.soapprov</provider>
-</binding>

@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C03B882B-D1D6-9A0D-9129-26C612C656DF" name="EMA_ESTADO_SERVICIO">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:48:47 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ESTADO" id="4DAEF475-5951-E683-8714-2639D3E662B8">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:49:24 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESC_ESTADO" id="A7C35D55-52F8-51EC-BF32-974E75DCD608">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:49:24 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3B7EC07A-2D54-8FC5-F1BC-FFA933CE6929" name="EMA_ESTADO_SERVICIO_PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 19:49:52 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4DAEF475-5951-E683-8714-2639D3E662B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

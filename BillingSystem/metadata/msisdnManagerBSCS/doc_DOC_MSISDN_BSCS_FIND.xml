@@ -38,7 +38,6 @@
                   <numOfCols>2</numOfCols>
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
-                    <element name="DOC_MSISDN_BSCS_FINDHeader" type="elhdr"/>
                     <element name="MSISDN" type="elfld">
                       <variable type="varPath">
                         <variablePathList>

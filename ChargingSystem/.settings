@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <DefaultDB>TRAIN3</DefaultDB>
+  <applicationString>charging</applicationString>
+  <applicationVersionString>2</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="ExternalSystemSimulator.test">0</breakpoint>
+    <breakpoint key="customerManagerBSCS.DOC_CLIENTE_BSCS_FIND.cwOnDocVisualKey">0</breakpoint>
+    <breakpoint key="externalSystemCS.quiebra_ejecucion">0</breakpoint>
+  </breakpointMap>
+  <databasesMap>
+    <databases key="TRAIN3" type=".configdb">
+      <dbname>TRAIN3</dbname>
+      <driver type=".dbdriver">
+        <attributes>10.0.5.2;1522;orcl2;false</attributes>
+        <driverType>Oracle thin</driverType>
+      </driver>
+      <password>CBC9FD8CBAC1D457</password>
+      <user>C##TRAIN3</user>
+    </databases>
+  </databasesMap>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <joinCluster>true</joinCluster>
+  <nodeString>PE_UI</nodeString>
+  <skin>Enterprise</skin>
+</project>

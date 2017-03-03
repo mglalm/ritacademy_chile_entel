@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="externalSystemEMA" targetNamespace="externalSystemEMA"
+	xmlns:tns="externalSystemEMA"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:externalSystemEMA="externalSystemEMA">
+
+	<types>
+		<schema targetNamespace="externalSystemEMA"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:externalSystemEMA="externalSystemEMA"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>External System EMA</documentation>
+				<appinfo>
+					<metadata>AVM Metadata CS</metadata>
+					<created>Wed Feb 22 13:53:02 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<simpleType name="ID_SERVICIO_SERVICO_CS">
+				<annotation>
+					<documentation>ID_SERVICIO_SERVICO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="5"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="ORDER_ID_SERVICIO_CS">
+				<annotation>
+					<documentation>ORDER_ID_SERVICIO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="30"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="ID_PLAN_SERVICIO_CS">
+				<annotation>
+					<documentation>ID_PLAN_SERVICIO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="5"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="MSISDN_SERVICIO_CS">
+				<annotation>
+					<documentation>MSISDN_SERVICIO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="ID_SERVICIO_ESTADO_SERVICO_CS">
+				<annotation>
+					<documentation>ID_SERVICIO_ESTADO_SERVICO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="1"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="FECHA_ACTIVACION_SERVICIO_CS">
+				<annotation>
+					<documentation>FECHA_ACTIVACION_SERVICIO_CS</documentation>
+				</annotation>
+				<restriction base="xsd:dateTime">
+				</restriction>
+			</simpleType>
+
+			<!-- Structures -->
+
+			<complexType name="input_provServicioEMA">
+				<annotation>
+					<documentation>input_provServicioEMA</documentation>
+				</annotation>
+					<sequence>
+						<element name="orderid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="id_profile" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="output_provServicioEMA">
+				<annotation>
+					<documentation>output_provServicioEMA</documentation>
+				</annotation>
+					<sequence>
+						<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+			<complexType name="DOC_SERVICIO_GET2">
+				<annotation>
+					<documentation>DOC_SERVICIO_GET2</documentation>
+				</annotation>
+					<sequence>
+						<element name="ID_SERVICIO_SERVICO_CS" type="externalSystemEMA:ID_SERVICIO_SERVICO_CS"/>
+						<element name="ID_PLAN_SERVICIO_CS" type="externalSystemEMA:ID_PLAN_SERVICIO_CS"/>
+						<element name="ID_SERVICIO_ESTADO_SERVICO_CS" type="externalSystemEMA:ID_SERVICIO_ESTADO_SERVICO_CS"/>
+						<element name="MSISDN_SERVICIO_CS" type="externalSystemEMA:MSISDN_SERVICIO_CS"/>
+						<element name="FECHA_ACTIVACION_SERVICIO_CS" type="externalSystemEMA:FECHA_ACTIVACION_SERVICIO_CS"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="DOC_MSISDN_PASO_GET">
+				<annotation>
+					<documentation>DOC_MSISDN_PASO_GET</documentation>
+				</annotation>
+					<sequence>
+						<element name="orderid" type="xsd:string"/>
+						<element name="rut" type="xsd:string"/>
+						<element name="estado" type="xsd:string"/>
+						<element name="mensaje" type="xsd:string"/>
+						<element name="msisdn" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+		</schema>
+	</types>
+
+	<message name="input_provServicioEMA">
+		<part name="input_provServicioEMA" type="externalSystemEMA:input_provServicioEMA"/>
+	</message>
+
+	<message name="output_provServicioEMA">
+		<part name="output_provServicioEMA" type="externalSystemEMA:output_provServicioEMA"/>
+	</message>
+
+	<portType name="interface_serviciosEMA">
+		<operation name="provServicioEMA">
+			<input message="tns:input_provServicioEMA"/>
+			<output message="tns:output_provServicioEMA"/>
+		</operation>
+	</portType>
+
+	<binding name="bind_provServicioEMA_SOAP" type="tns:interface_serviciosEMA">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="provServicioEMA">
+			<soap:operation soapAction="provServicioEMA"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="xs_serviciosEMA">
+		<port name="port_serviciosEMA_SOAP" binding="tns:bind_provServicioEMA_SOAP">
+		</port>
+	</service>
+
+</definitions>

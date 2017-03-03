@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="externalSystemCS" targetNamespace="externalSystemCS"
+	xmlns:tns="externalSystemCS"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:externalSystemCS="externalSystemCS">
+
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="externalSystemCS" schemaLocation="externalSystemCS.xsd"/>
+		</schema>
+	</types>
+
+	<message name="input_provServicioCS">
+		<part name="input_provServicioCS" type="externalSystemCS:input_provServicioCS"/>
+	</message>
+
+	<message name="output_provServicioCS">
+		<part name="output_provServicioCS" type="externalSystemCS:output_provServicioCS"/>
+	</message>
+
+	<portType name="interface_serviciosCS">
+		<operation name="provServicioCS">
+			<input message="tns:input_provServicioCS"/>
+			<output message="tns:output_provServicioCS"/>
+		</operation>
+	</portType>
+
+	<binding name="bind_provServicioCS_SOAP" type="tns:interface_serviciosCS">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="provServicioCS">
+			<soap:operation soapAction="provServicioCS"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="xs_serviciosCS">
+		<port name="port_serviciosCS_SOAP" binding="tns:bind_provServicioCS_SOAP">
+			<soap:address location="http://localhost:8080/cwf/services/interface_serviciosCS"/>
+		</port>
+	</service>
+
+</definitions>

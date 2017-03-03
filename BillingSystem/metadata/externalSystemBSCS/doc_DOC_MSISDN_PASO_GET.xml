@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemBSCS.DOC_MSISDN_PASO_GET">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{b4c60337-2580-43e7-a4d1-b71160f25e6f}</guid>
+  <label>DOC_MSISDN_PASO_GET</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="orderid" type="leaf">
+      <label>orderid</label>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="rut" type="leaf">
+      <label>rut</label>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="estado" type="leaf">
+      <label>estado</label>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="mensaje" type="leaf">
+      <label>mensaje</label>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="msisdn" type="leaf">
+      <label>msisdn</label>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+  </variableList>
+</document>

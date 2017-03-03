@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="externalSystemEMA.xs_serviciosEMA">
+  <label>xs_serviciosEMA</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="port_serviciosEMA_SOAP" type="port">
+      <binding>bind_externalSystemEMA.bind_provServicioEMA_SOAP</binding>
+      <label>port_serviciosEMA_SOAP</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+    <port name="port_serviciosEMA_JS" type="port">
+      <binding>bind_externalSystemEMA.bind_provServicioEMA_JS</binding>
+      <label>port_serviciosEMA_JS</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="externalSystemCS.scr_desprovServicioCS">
+  <label>Binding Script CS</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>dstruct_externalSystemCS.input_desprovServicioCS</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var var_msisdn = input.msisdn;
+    var var_id_servicio_estado = 3;  // ESTADO DESACTIVADO
+    var var_id_servicio;
+
+    externalSystemCS.quiebra_ejecucion();
+
+    var output = new DataStructure("externalSystemCS.output_desprovServicioCS");
+
+    //-----VERIFICAR QUE TENGA ACTIVO EL SERVICIO
+    var listado_servicios = new Finder("externalSystemCS.DOC_SERVICIO_CS_FIND");
+    var resultado = listado_servicios.search();
+    var ya_tiene_servicio = 0 ;
+    if ( resultado.length > 0)
+    {
+        for ( var i = 0 ; i < resultado.length ; i++ )
+        {
+            if ( resultado[i].ID_SERVICIO_ESTADO_SERVICO_CS == 1 && resultado[i].MSISDN_SERVICIO_CS == var_msisdn )
+            {
+                //-----SI LO ENCUENTRA LO DEJA EN ESTADO DESACTIVO
+                ya_tiene_servicio = 1;
+                var_id_servicio=resultado[i].ID_SERVICIO_SERVICO_CS;
+                resultado[i].ID_SERVICIO_ESTADO_SERVICO_CS=var_id_servicio_estado;
+                resultado[i].save();
+            }
+        }
+    }
+    if ( ya_tiene_servicio == 0 )
+    {
+        output.estado = "NOOK";
+        output.mensaje = "Ese Movil no tiene Servicio Activo en Charging";
+        return output;
+    }
+
+
+    //-----ELIMINA SALDOS
+    var listado_saldos = new Finder("externalSystemCS.DOC_SALDOS_CS_FIND");
+    var resultado = listado_saldos.search();
+    if ( resultado.length > 0)
+    {
+        for ( var i = 0 ; i < resultado.length ; i++ )
+        {
+            if ( resultado[i].ID_SERVICIO_SERVICO_CS == var_id_servicio )
+            {
+                //-----SI LO ENCUENTRA ELIMINA EL REGISTRO
+                resultado[i].deleteItem();
+    //            var_id_servicio=resultado[i].ID_SERVICIO_SERVICO_CS;
+    //            resultado[i].ID_SERVICIO_ESTADO_SERVICO_CS=var_id_servicio_estado;
+
+            }
+        }
+    }
+
+    output.estado = "OK";
+    output.mensaje = "Servicio desprovisionado en Charging";
+
+    return output;
+  ]]></script>
+</script>

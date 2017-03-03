@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="provisionManagerCS.ID_CLIENTE_CS">
+  <extends>dtype_com.conceptwave.system.Decimal</extends>
+  <label>Id Cliente</label>
+  <length>5</length>
+  <metaVersion>25</metaVersion>
+</dataType>

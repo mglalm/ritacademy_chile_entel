@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="91E649E2-AD63-7CAC-D56E-402F48C64437" name="EMA_SERVICIO_NODO_ACTIVO">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-03 03:09:21 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_NODO" id="B0CF67C9-7AFF-AF8E-3D06-B3D930A7B049">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-03 03:12:50 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1C2C594D-57EC-683E-83FF-727CE70913C9" referredColumn="603F42D3-7358-9518-F453-71BD24C31976"/>
+</associations>
+</Column>
+<Column name="MSISDN" id="95655314-279B-6878-5F2E-E5D95E87B667">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-03 03:12:50 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_ACTIVACION" id="0ACD50AA-9B05-CCF6-CE18-0B7B168B0221">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-03 03:12:50 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="41ADEB49-7233-1621-16F4-4FEDA87FCFF6" name="EMA_SERVICIO_NODO_ACTIVO_PK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-03 03:15:50 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B0CF67C9-7AFF-AF8E-3D06-B3D930A7B049"/>
+<colUsage columnID="95655314-279B-6878-5F2E-E5D95E87B667"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C5462EAA-73D2-CE99-0D2C-099784383360" name="EMA_ACTIVO_EMA_FK">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-03 03:15:50 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B0CF67C9-7AFF-AF8E-3D06-B3D930A7B049"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

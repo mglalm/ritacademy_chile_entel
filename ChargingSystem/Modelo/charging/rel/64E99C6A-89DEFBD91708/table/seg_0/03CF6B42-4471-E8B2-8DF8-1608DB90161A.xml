@@ -59,8 +59,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10</dataTypeSize>
-<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="FECHA_ACTIVACION" id="CE4DC469-247A-92DE-4352-D24A887096FF">
@@ -71,8 +71,20 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
+<logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_ID" id="24A56FB2-B0E0-E998-C898-1F25736353D0">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 15:33:15 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
@@ -99,7 +111,7 @@
 <colUsage columnID="3AE4ACB0-C4C6-F371-C416-AE45B21A5A48"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="1F36F3AF-5F8D-5DD7-037E-EE73C5ACA1E5" name="CS_SERVICIO_CS_SERVICIO_ESTADO_FK">
+<ind_PK_UK id="1F36F3AF-5F8D-5DD7-037E-EE73C5ACA1E5" name="CS_SERVICIO_CS_ESTADO_FK">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 17:54:39 UTC</createdTime>
 <ownerDesignName>charging</ownerDesignName>

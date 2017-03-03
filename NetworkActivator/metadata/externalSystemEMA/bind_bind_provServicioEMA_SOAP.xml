@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="externalSystemEMA.bind_provServicioEMA_SOAP">
+  <interface>iface_externalSystemEMA.interface_serviciosEMA</interface>
+  <label>bind_provServicioEMA_SOAP</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="customerManagerCS.DESC_CLIENTE_ESTADO_REF">
+  <extends>dtype_cwf.sReference</extends>
+  <label>Estado</label>
+  <length>1</length>
+  <metaVersion>25</metaVersion>
+  <propertyElement type="elslct">
+    <sorted>false</sorted>
+  </propertyElement>
+  <reference>findDoc_customerManagerCS.busquedaEstado</reference>
+</dataType>
