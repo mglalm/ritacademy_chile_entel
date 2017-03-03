@@ -113,7 +113,36 @@
     <vformList>
       <vform name="Forms" type="frmui">
         <extends>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Menu" type="exov">
+            <base>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms/exov_Menu</base>
+            <extends>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+            <overrideList>
+              <override name="HorizontalLayout" type="elext">
+                <elementList>
+                  <element name="submitOrder" type="elmnu">
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>order_orderManagement.poOrder/tree_UserInterface/usrActionMethod_submitOrder</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <label>Submit Order</label>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
       </vform>
     </vformList>
+    <methodList>
+      <method name="submitOrder" type="usrActionMethod">
+        <script><![CDATA[
+          this.saveAllAction();Process.startProcess("",this.model.id,null,null);
+          this.saveAllAction();
+        ]]></script>
+      </method>
+    </methodList>
   </UserInterface>
 </order>
