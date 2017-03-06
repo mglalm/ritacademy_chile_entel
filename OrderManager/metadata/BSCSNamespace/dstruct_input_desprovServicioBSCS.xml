@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="BSCSNamespace.input_desprovServicioBSCS">
+  <container>true</container>
+  <description>input_desprovServicioBSCS</description>
+  <label>input_desprovServicioBSCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="msisdn" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>msisdn</label>
+    </child>
+  </childList>
+</dataStructure>

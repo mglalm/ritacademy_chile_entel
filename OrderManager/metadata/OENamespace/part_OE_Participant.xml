@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<participant name="OENamespace.OE_Participant">
+  <label>OE_Participant</label>
+  <metaVersion>25</metaVersion>
+  <participant>iface_OENamespace.recibeFinalOM</participant>
+</participant>

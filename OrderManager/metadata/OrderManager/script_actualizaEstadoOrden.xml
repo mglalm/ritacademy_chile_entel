@@ -30,6 +30,7 @@
      *
      */
 
+    OrderManager.debug();
 
     //Primero la Orden
     var orden = new Document("OrderManager.docOMOrden");  //documento asociado a la tabla de BD OM_ORDEN
@@ -49,25 +50,33 @@
         orden.save();
     }
 
-    //la PO
-    /*
-    var po = new Document("OrderManager.docOMOrdenPO");  //documento asociado a la tabla de BD OM_ORDEN
-    var fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
-    var resultOM_Orden; //lista que retornara el finder
+    //si viene la PO
+    if(POId != null && POId.length>0){
 
-    orden.orderId = orderId;
+        var po = new Document("OrderManager.docOMOrdenPO");  //documento asociado a la tabla de BD OM_ORDEN_PO
+        var fnd = new Finder("OrderManager.finOM_OrdenPO"); // finder del OM_ORDEN_PO
+        var resultOM_OrdenPO; //lista que retornara el finder
+        var ordenPO = new Document("OrderManager.docOMOrdenPO");
 
-    var resultOM_Orden = fnd.search(resultOM_Orden, orden);//retorna una DataObjectList() -> ARRAY
-    var doc = resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
+        ordenPO.orderId = orderId;
+        ordenPO.POId = POId;
 
-    //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
-    if(doc){
-        orden = doc;
-        orden.estado = estado;
-        orden.motivoEstado = descEstado;
-        orden.save();
+
+        var resultOM_OrdenPO = fnd.search(resultOM_OrdenPO, ordenPO);//retorna una DataObjectList() -> ARRAY
+        var docPO = resultOM_OrdenPO && resultOM_OrdenPO.length>0 ? resultOM_OrdenPO[0] : null;
+
+        //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
+        if(docPO){
+            ordenPO = docPO;
+            ordenPO.estado = estado;
+            ordenPO.motivoEstado = descEstado;
+            ordenPO.save();
+        }
     }
 
-    */
+    //si viene el nodo, actualizo el sistema que tuvo el problema(puede ser EMA, CS o BSCS)
+    if(nodo != null && nodo.length > 0){
+        //pendiente
+    }
   ]]></script>
 </script>

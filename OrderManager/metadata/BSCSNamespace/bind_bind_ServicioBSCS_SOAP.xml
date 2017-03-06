@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="BSCSNamespace.bind_ServicioBSCS_SOAP">
+  <extensionList>
+    <extension name="getMsisdnReserveBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">getMsisdnReserveBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnReserveBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnReserveBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">provServicioBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">desprovServicioBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnLiberarBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">getMsisdnLiberarBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnLiberarBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnLiberarBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnReserveBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">getMsisdnReserveBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnReserveBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnReserveBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">provServicioBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">desprovServicioBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnLiberarBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">getMsisdnLiberarBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnLiberarBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnLiberarBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnReserveBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">getMsisdnReserveBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnReserveBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnReserveBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">provServicioBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">desprovServicioBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnLiberarBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">getMsisdnLiberarBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnLiberarBSCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnLiberarBSCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_BSCSNamespace.interface_serviciosBSCS</interface>
+  <label>bind_ServicioBSCS_SOAP</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

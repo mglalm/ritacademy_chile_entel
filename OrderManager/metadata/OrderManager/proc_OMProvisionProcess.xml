@@ -14,7 +14,7 @@
             <category>before</category>
             <system>true</system>
             <script><![CDATA[
-              OrderManager.debug();
+              //OrderManager.debug();
 
               /*
                * En este script se rescatan los parametros desde base de datos para provisionar
@@ -92,10 +92,10 @@
             <y>332.0</y>
             <childList>
               <child name="obtenerMSISDN" type="opActivity">
-                <element>iface_billingNamespace.interface_serviciosBSCS/oper_getMsisdnReserveBSCS</element>
+                <element>iface_BSCSNamespace.interface_serviciosBSCS/oper_getMsisdnReserveBSCS</element>
                 <label>obtenerMSISDN</label>
-                <participant>part_billingNamespace.billingParticipant</participant>
-                <x>126.0</x>
+                <participant>part_BSCSNamespace.billingParticipant</participant>
+                <x>124.0</x>
                 <y>103.0</y>
                 <childList>
                   <child name="validaOrden" type="switchActivity">
@@ -151,9 +151,9 @@
                             <y>225.0</y>
                             <childList>
                               <child name="provBSCS" type="opActivity">
-                                <element>iface_billingNamespace.interface_serviciosBSCS/oper_provServicioBSCS</element>
+                                <element>iface_BSCSNamespace.interface_serviciosBSCS/oper_provServicioBSCS</element>
                                 <label>provBSCS</label>
-                                <participant>part_billingNamespace.billingParticipant</participant>
+                                <participant>part_BSCSNamespace.billingParticipant</participant>
                                 <x>488.0</x>
                                 <y>105.0</y>
                                 <childList>
@@ -180,7 +180,7 @@
                                                 <y>98.0</y>
                                                 <childList>
                                                   <child name="provOK" type="switchActivity">
-                                                    <label>provOK</label>
+                                                    <label>provCSOK</label>
                                                     <x>948.0</x>
                                                     <y>96.0</y>
                                                     <childList>
@@ -223,13 +223,293 @@
                                                       </child>
                                                       <child name="ok" type="caseActivity">
                                                         <label>ok</label>
-                                                        <x>597.0</x>
-                                                        <y>197.0</y>
+                                                        <x>1062.0</x>
+                                                        <y>231.0</y>
                                                         <childList>
-                                                          <child name="provisionComplete" type="completeActivity">
-                                                            <label>provisionComplete</label>
+                                                          <child name="provEMA" type="seqActivity">
+                                                            <label>provEMA</label>
                                                             <x>1062.0</x>
                                                             <y>231.0</y>
+                                                            <childList>
+                                                              <child name="provEMA" type="opActivity">
+                                                                <element>iface_EMANamespace.interface_serviciosEMA/oper_provServicioEMA</element>
+                                                                <label>provEMA</label>
+                                                                <participant>part_EMANamespace.EMAParticipant</participant>
+                                                                <x>1128.0</x>
+                                                                <y>99.0</y>
+                                                                <childList>
+                                                                  <child name="provisionEMAOK" type="switchActivity">
+                                                                    <label>provisionEMAOK</label>
+                                                                    <x>1260.0</x>
+                                                                    <y>99.0</y>
+                                                                    <childList>
+                                                                      <child name="ok" type="caseActivity">
+                                                                        <label>ok</label>
+                                                                        <x>1399.0</x>
+                                                                        <y>240.0</y>
+                                                                        <childList>
+                                                                          <child name="notificarAlOrderEntry" type="seqActivity">
+                                                                            <label>notificarAlOrderEntry</label>
+                                                                            <x>1394.0</x>
+                                                                            <y>226.0</y>
+                                                                            <childList>
+                                                                              <child name="notificaOE" type="opActivity">
+                                                                                <element>iface_OENamespace.recibeFinalOM/oper_OE_Ope_recibe_PROV</element>
+                                                                                <label>notificaOE</label>
+                                                                                <participant>part_OENamespace.OE_Participant</participant>
+                                                                                <x>1494.0</x>
+                                                                                <y>97.0</y>
+                                                                                <childList>
+                                                                                  <child name="notificacionOK" type="switchActivity">
+                                                                                    <label>notificacionOK</label>
+                                                                                    <x>1647.0</x>
+                                                                                    <y>99.0</y>
+                                                                                    <childList>
+                                                                                      <child name="ok" type="caseActivity">
+                                                                                        <label>ok</label>
+                                                                                        <x>1647.0</x>
+                                                                                        <y>199.0</y>
+                                                                                        <childList>
+                                                                                          <child name="ordenProvisionadaCorrectamente" type="completeActivity">
+                                                                                            <label>ordenProvisionadaCorrectamente</label>
+                                                                                            <x>1740.0</x>
+                                                                                            <y>197.0</y>
+                                                                                          </child>
+                                                                                        </childList>
+                                                                                        <methodList>
+                                                                                          <method name="cwOnProcActCond" type="action">
+                                                                                            <category>cond</category>
+                                                                                            <system>true</system>
+                                                                                            <script><![CDATA[
+                                                                                              return this.process.processDocument.CTRL_NotificacionOK == "0";
+                                                                                            ]]></script>
+                                                                                          </method>
+                                                                                        </methodList>
+                                                                                      </child>
+                                                                                      <child name="nok" type="caseActivity">
+                                                                                        <label>nok</label>
+                                                                                        <x>1647.0</x>
+                                                                                        <y>199.0</y>
+                                                                                        <childList>
+                                                                                          <child name="reintentarNotificacion" type="seqActivity">
+                                                                                            <label>reintentarNotificacion</label>
+                                                                                            <x>1597.0</x>
+                                                                                            <y>204.0</y>
+                                                                                            <childList>
+                                                                                              <child name="enviarNotificacion" type="scriptActivity">
+                                                                                                <label>enviarNotificacion</label>
+                                                                                                <x>1605.0</x>
+                                                                                                <y>301.0</y>
+                                                                                                <methodList>
+                                                                                                  <method name="cwOnProcActBefore" type="action">
+                                                                                                    <category>before</category>
+                                                                                                    <system>true</system>
+                                                                                                    <script><![CDATA[
+                                                                                                      //Aqui en realidad se debería reintentar la notificacion al OE
+                                                                                                    ]]></script>
+                                                                                                  </method>
+                                                                                                </methodList>
+                                                                                              </child>
+                                                                                              <child name="notificacionNoEnviada" type="completeActivity">
+                                                                                                <label>notificacionNoEnviada</label>
+                                                                                                <x>1591.0</x>
+                                                                                                <y>402.0</y>
+                                                                                              </child>
+                                                                                            </childList>
+                                                                                          </child>
+                                                                                        </childList>
+                                                                                      </child>
+                                                                                    </childList>
+                                                                                  </child>
+                                                                                </childList>
+                                                                                <methodList>
+                                                                                  <method name="cwOnProcActBefore" type="action">
+                                                                                    <category>before</category>
+                                                                                    <system>true</system>
+                                                                                    <script><![CDATA[
+                                                                                      OrderManager.debug();
+
+                                                                                      /** En esta sección, se deben completar los parámetros de entrada a la llamada del WS de
+                                                                                       *    notificación del OE.
+                                                                                       *
+                                                                                       * Si llegó a este punto del proceso, significa que la provision fue exitosa, por lo que se
+                                                                                       * competan los estados de la orden en "OK" y se graba en base de datos. Porterior a eso, se genera
+                                                                                       * la respuesta al OE.
+                                                                                       *
+                                                                                       */
+
+
+                                                                                      this.process.processDocument.OUT_estadoOrden = "0";
+                                                                                      this.process.processDocument.OUT_EstadoPOBasica = "0";
+                                                                                      this.process.processDocument.OUT_MotivoEstadoPOBasica = "PO " + this.process.processDocument.IN_POIdBasico + " provisionada exitosamente";
+                                                                                      // si viene una PO adicional
+                                                                                      if(this.process.processDocument.IN_POIdAdicional != null && this.process.processDocument.IN_POIdAdicional.length > 0){
+                                                                                          this.process.processDocument.OUT_EstadoPOAdicional = "0";
+                                                                                          this.process.processDocument.OUT_MotivoEstadoPOAdicional = "PO " + this.process.processDocument.IN_POIdAdicional + " provisionada exitosamente";
+                                                                                      }
+
+                                                                                      //OrderManager.actualizaEstadoOrden(this.process.processDocument.IN_orderId, "ErrorEMA", "Error 11: Error al provisionar en EMA. EMA responde: " + resp.mensaje, "", this.process.processDocument.IN_POIdBasico);
+                                                                                      OrderManager.actualizaEstadoOrden(this.process.processDocument.IN_orderId, "Provisionada", "Orden provisionada correctamente", "", "");
+
+                                                                                      this.activityData.orderId = this.process.processDocument.IN_orderId;
+                                                                                      this.activityData.rut = this.process.processDocument.IN_rut;
+                                                                                      this.activityData.estadoOrden = this.process.processDocument.OUT_estadoOrden;
+                                                                                      this.activityData.MSISDN = this.process.processDocument.OUT_MSISDN;
+                                                                                      this.activityData.POIdBasica = this.process.processDocument.IN_POIdBasico;
+                                                                                      this.activityData.estadoPOBasica = this.process.processDocument.OUT_EstadoPOBasica;
+                                                                                      this.activityData.motivoEstadoPOBasica = this.process.processDocument.OUT_MotivoEstadoPOBasica;
+                                                                                      this.activityData.POIdAdicional = this.process.processDocument.IN_POIdAdicional;
+                                                                                      this.activityData.estadoPOAdicional = this.process.processDocument.OUT_EstadoPOAdicional;
+                                                                                      this.activityData.motivoEstadoPOAdicional = this.process.processDocument.OUT_MotivoEstadoPOAdicional;
+
+                                                                                      var a = 1;
+                                                                                    ]]></script>
+                                                                                  </method>
+                                                                                  <method name="cwOnProcActAfter" type="action">
+                                                                                    <category>script</category>
+                                                                                    <system>true</system>
+                                                                                    <script><![CDATA[
+                                                                                      var resp = this.activityData;
+
+                                                                                      var a = 1;
+                                                                                    ]]></script>
+                                                                                  </method>
+                                                                                </methodList>
+                                                                              </child>
+                                                                            </childList>
+                                                                          </child>
+                                                                        </childList>
+                                                                        <methodList>
+                                                                          <method name="cwOnProcActCond" type="action">
+                                                                            <category>cond</category>
+                                                                            <system>true</system>
+                                                                            <script><![CDATA[
+                                                                              return this.process.processDocument.CTRL_ERROR == "0";
+                                                                            ]]></script>
+                                                                          </method>
+                                                                        </methodList>
+                                                                      </child>
+                                                                      <child name="nok" type="caseActivity">
+                                                                        <label>nok</label>
+                                                                        <x>1280.0</x>
+                                                                        <y>208.0</y>
+                                                                        <childList>
+                                                                          <child name="seqNotificar" type="seqActivity">
+                                                                            <label>seqNotificar</label>
+                                                                            <x>1192.0</x>
+                                                                            <y>224.0</y>
+                                                                            <childList>
+                                                                              <child name="notificarError" type="scriptActivity">
+                                                                                <label>notificarError</label>
+                                                                                <x>1181.0</x>
+                                                                                <y>311.0</y>
+                                                                                <methodList>
+                                                                                  <method name="cwOnProcActBefore" type="action">
+                                                                                    <category>before</category>
+                                                                                    <system>true</system>
+                                                                                    <script><![CDATA[
+                                                                                      OrderManager.debug();
+
+                                                                                      OrderManager.notificaErrorEnProceso(this.process.processDocument);
+
+                                                                                      return;
+                                                                                    ]]></script>
+                                                                                  </method>
+                                                                                </methodList>
+                                                                              </child>
+                                                                              <child name="ordenNoCompletada" type="completeActivity">
+                                                                                <label>ordenNoCompletada</label>
+                                                                                <x>1163.0</x>
+                                                                                <y>417.0</y>
+                                                                              </child>
+                                                                            </childList>
+                                                                          </child>
+                                                                        </childList>
+                                                                      </child>
+                                                                    </childList>
+                                                                  </child>
+                                                                </childList>
+                                                                <methodList>
+                                                                  <method name="cwOnProcActBefore" type="action">
+                                                                    <category>before</category>
+                                                                    <system>true</system>
+                                                                    <script><![CDATA[
+                                                                      OrderManager.debug();
+
+                                                                      /** En esta sección, se deben completar los parámetros de entrada a la llamada del WS de provisión
+                                                                       *    de EMA. En este caso, se requiere el MSISDN solamente.
+                                                                       */
+
+                                                                      this.activityData.msisdn = this.process.processDocument.OUT_MSISDN;
+
+                                                                      var a = 1;
+                                                                    ]]></script>
+                                                                  </method>
+                                                                  <method name="cwOnProcActAfter" type="action">
+                                                                    <category>script</category>
+                                                                    <system>true</system>
+                                                                    <script><![CDATA[
+                                                                      OrderManager.debug();
+                                                                      //Inicializa las variables de control, que indican si hay algun problema en el flujo. Quedan en el processDocument.
+                                                                      var docProc = this.process.processDocument;
+                                                                      OrderManager.inicializaVariableControl(this.process.processDocument);
+
+                                                                      //resp contiene el resultado del WS, con la respuesta de la activación en EMA
+                                                                      var resp = this.activityData;
+
+                                                                      var prov = new Document("OrderManager.docOMProvEMA");
+                                                                      var param = new Document("OrderManager.docOMParamEMA");
+
+
+                                                                      if(resp==null || resp.estado=="NOOK"){
+                                                                           this.process.processDocument.CTRL_ERROR = "11";
+                                                                           this.process.processDocument.CTRL_DESC_ERROR = "Error 11: Error al provisionar en EMA. EMA responde: " + resp.mensaje;
+                                                                           OrderManager.actualizaEstadoOrden(this.process.processDocument.IN_orderId, "ErrorEMA", "Error 11: Error al provisionar en EMA. EMA responde: " + resp.mensaje, "", this.process.processDocument.IN_POIdBasico);
+
+                                                                           //Ingreso un registro en la tabla de provision
+                                                                           prov.orderId = docProc.IN_orderId;
+                                                                           prov.POId = docProc.IN_POIdBasico;
+                                                                           prov.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
+                                                                           prov.estado = "11";
+                                                                           prov.motivoEstado = "Error al provisionar en EMA. EMA responde: " + resp.mensaje;
+                                                                           prov.save();
+
+                                                                           //Ingreso un registro con los parámetros que se utilizaron
+                                                                           param.orderId = docProc.IN_orderId;
+                                                                           param.POId = docProc.IN_POIdBasico;
+                                                                           param.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
+                                                                           param.paramId = "PROFILE";
+                                                                           param.valor = docProc.CTRL_profile;
+                                                                           param.save();
+
+                                                                           return;
+                                                                      }
+
+                                                                      //Si no hubo error, guardo un registro en la tabla de provisión y en la tabla de parámetros con el (o los) parámetro utilizado (s)
+
+                                                                       //Ingreso un registro en la tabla de provision
+                                                                           prov.orderId = docProc.IN_orderId;
+                                                                           prov.POId = docProc.IN_POIdBasico;
+                                                                           prov.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
+                                                                           prov.estado = "0";
+                                                                           prov.motivoEstado = "Provisión en EMA ejecutada correctamente. EMA: " + resp.mensaje;
+                                                                           prov.save();
+
+                                                                           //Ingreso un registro con los parámetros que se utilizaron
+                                                                           param.orderId = docProc.IN_orderId;
+                                                                           param.POId = docProc.IN_POIdBasico;
+                                                                           param.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
+                                                                           param.paramId = "PROFILE";
+                                                                           param.valor = docProc.CTRL_profile;
+                                                                           param.save();
+
+
+                                                                      var a=1;
+                                                                    ]]></script>
+                                                                  </method>
+                                                                </methodList>
+                                                              </child>
+                                                            </childList>
                                                           </child>
                                                         </childList>
                                                         <methodList>
@@ -262,8 +542,8 @@
 
                                                       if(resp==null || resp.estado=="NOOK"){
                                                            this.process.processDocument.CTRL_ERROR = "9";
-                                                           this.process.processDocument.CTRL_DESC_ERROR = "Error al provisionar en CS. " + resp.mensaje;
-                                                           OrderManager.actualizaEstadoOrden(this.process.processDocument.IN_orderId, "ErrorCS", "Error al provisionar en CS. " + resp.mensaje, "", "");
+                                                           this.process.processDocument.CTRL_DESC_ERROR = "Error 9: Error al provisionar en CS. " + resp.mensaje;
+                                                           OrderManager.actualizaEstadoOrden(this.process.processDocument.IN_orderId, "ErrorCS", "Error 9: Error al provisionar en CS. " + resp.mensaje, "", this.process.processDocument.IN_POIdBasico);
 
                                                            //Ingreso un registro en la tabla de provision
                                                            prov.orderId = docProc.IN_orderId;
@@ -382,7 +662,75 @@
                                     <script><![CDATA[
                                       OrderManager.debug();
 
+
+                                      //Inicializa las variables de control, que indican si hay algun problema en el flujo. Quedan en el processDocument.
+                                      var docProc = this.process.processDocument;
+                                      OrderManager.inicializaVariableControl(this.process.processDocument);
+
+
+                                      //resp contiene el resultado del WS, con la respuesta de la activación en BSCS
+                                      var resp = this.activityData;
+
+                                      var prov = new Document("OrderManager.docOMProvBSCS");
+                                      var param = new Document("OrderManager.docOMParamBSCS");
+
+
+                                      if(resp==null || resp.estado=="NOOK"){
+                                           this.process.processDocument.CTRL_ERROR = "10";
+                                           this.process.processDocument.CTRL_DESC_ERROR = "Error 10: Error al provisionar en BSCS. BSCS responde: " + resp.mensaje;
+                                           OrderManager.actualizaEstadoOrden(this.process.processDocument.IN_orderId, "ErrorBSSC", "Error 10: Error al provisionar en BSCS. BSCS responde: " + resp.mensaje, "", this.process.processDocument.IN_POIdBasico);
+
+                                           //Ingreso un registro en la tabla de provision
+                                           prov.orderId = docProc.IN_orderId;
+                                           prov.POId = docProc.IN_POIdBasico;
+                                           prov.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
+                                           prov.estado = "10";
+                                           prov.motivoEstado = "Error 10: Error al provisionar en BSCS. BSCS responde: " + resp.mensaje;
+                                           prov.save();
+
+                                           //Ingreso un registro con los parámetros que se utilizaron
+                                           param.orderId = docProc.IN_orderId;
+                                           param.POId = docProc.IN_POIdBasico;
+                                           param.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
+                                           param.paramId = "ID_PLAN_BSCS";
+                                           param.valor = docProc.CTRL_planBSCS;
+                                           param.save();
+
+                                           return;
+                                      }
+
+                                      //Si no hubo error, guardo un registro en la tabla de provisión y en la tabla de parámetros con el (o los) parámetro utilizado (s)
+
+                                       //Ingreso un registro en la tabla de provision
+                                           prov.orderId = docProc.IN_orderId;
+                                           prov.POId = docProc.IN_POIdBasico;
+                                           prov.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
+                                           prov.estado = "0"; // 0 indica OK
+                                           prov.motivoEstado = "Provisión en BSCS ejecutada correctamente. BSCS responde: " + resp.mensaje;
+                                           prov.save();
+
+                                           //Ingreso un registro con los parámetros que se utilizaron
+                                           param.orderId = docProc.IN_orderId;
+                                           param.POId = docProc.IN_POIdBasico;
+                                           param.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
+                                           param.paramId = "ID_PLAN_BSCS";
+                                           param.valor = docProc.CTRL_planBSCS;
+                                           param.save();
+
+
                                       var a=1;
+                                    ]]></script>
+                                  </method>
+                                  <method name="cwOnProcActBefore" type="action">
+                                    <category>before</category>
+                                    <system>true</system>
+                                    <script><![CDATA[
+                                      OrderManager.debug();
+                                      this.activityData.orderid = this.process.processDocument.IN_orderId;
+                                      this.activityData.rut = this.process.processDocument.IN_rut;
+                                      this.activityData.msisdn = this.process.processDocument.OUT_MSISDN;
+                                      this.activityData.id_plan_bscs = this.process.processDocument.CTRL_planBSCS;
+                                      var a = 1;
                                     ]]></script>
                                   </method>
                                 </methodList>
@@ -406,7 +754,7 @@
                     <category>script</category>
                     <system>true</system>
                     <script><![CDATA[
-                      OrderManager.debug();
+                      //OrderManager.debug();
                       //Inicializa las variables de control, que indican si hay algun problema en el flujo. Quedan en el processDocument.
                       OrderManager.inicializaVariableControl(this.process.processDocument);
 
@@ -430,7 +778,7 @@
                       //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
                       if(doc){
                           this.process.processDocument.CTRL_ERROR = "1";
-                          this.process.processDocument.CTRL_DESC_ERROR = "La orden entregada ya existe en la base de datos";
+                          this.process.processDocument.CTRL_DESC_ERROR = "Error 1: La orden entregada ya existe en la base de datos";
                           return;
                       }
                       else{  // si no lo encuentra, lo crea
@@ -438,16 +786,6 @@
                           orden.estado = "En Proceso";
                           orden.motivoEstado = "La orden ha sido ingresada y se encuentra en proceso de creación."
                           orden.save();
-                          //Va a buscar el cwIdDoc
-                          /*fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
-                          resultOM_Orden = fnd.search(resultOM_Orden, orden);//retorna una DataObjectList() -> ARRAY
-                          resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
-                          if(!doc){
-                              this.process.processDocument.CTRL_ERROR = "8";
-                              this.process.processDocument.CTRL_DESC_ERROR = "Error al grabar la Orden en BD";
-                              return;
-                          }
-                          orden = doc;*/
                       }
 
                       /************* Fin de la creación de la ORDEN ****************/
@@ -459,12 +797,23 @@
                       //Si es servicio de consulta de MSISDN no fue exitoso, responde error
                       if(resp.estado == "NOOK"){
                            this.process.processDocument.CTRL_ERROR = "2";
-                           this.process.processDocument.CTRL_DESC_ERROR = "Error al obtener un nuevo MSISDN desde BSCS";
-                           orden.estado = "ErrorMSISD";
-                           orden.motivoEstado = resp.mensaje;
+                           this.process.processDocument.CTRL_DESC_ERROR = "Error 2: Error al obtener un nuevo MSISDN desde BSCS. BSCS: " + resp.mensaje;
+                           orden.estado = "ErrorMSISDN";
+                           orden.motivoEstado = "Error 2: Error al obtener un nuevo MSISDN desde BSCS. BSCS: " + resp.mensaje;
                            orden.save();
 
                            return;
+                      }
+                      else{
+                          //se valida el largo del MSISDN
+                          if(resp.msisdn==null || resp.msisdn.length != 11){
+                               this.process.processDocument.CTRL_ERROR = "3";
+                               this.process.processDocument.CTRL_DESC_ERROR = "Error 3: El MSISDN entregado es nulo o no tiene el largo adecuado";
+                               orden.estado = "ErrorMSISDN";
+                               orden.motivoEstado = "Error 3: El MSISDN entregado es nulo o no tiene el largo adecuado";
+                               orden.save();
+                               return;
+                          }
                       }
 
                       /********** Fin de la creación del resurso MSISDN *************/
@@ -474,6 +823,15 @@
 
                       var ordenPOBas = new Document("OrderManager.docOMOrdenPO");  //documento asociado a la tabla de BD OM_ORDEN
 
+                      //Se valida que venga una PO Basica
+                      if(docProc.IN_POIdBasico == null || docProc.IN_POIdBasico.length == 0){
+                           this.process.processDocument.CTRL_ERROR = "12";
+                           this.process.processDocument.CTRL_DESC_ERROR = "Error 12: No viene una PO Básica para provisionar";
+                           orden.estado = "ErrorPOBasica";
+                           orden.motivoEstado = "Error 12: No viene una PO Básica para provisionar";
+                           orden.save();
+                           return;
+                      }
                       //Como ya se validó que la orden no existía previamente, por integridad referencial la order_po tampoco existe, por lo que se crea directamente
                       ordenPOBas.POId = docProc.IN_POIdBasico;
                       ordenPOBas.orderId = docProc.IN_orderId;
@@ -521,22 +879,7 @@
                               recurso.save();
                               docProc.OUT_MSISDN = resp.msisdn;
                       }
-                      else{  // Si no viene el msisdn, se retorna error
-                           this.process.processDocument.CTRL_ERROR = "3";
-                           this.process.processDocument.CTRL_DESC_ERROR = "El MSISDN entregado es nulo o no tiene el largo adecuado";
-                           orden.estado = "ErrorMSISD";
-                           orden.motivoEstado = "El MSISDN entregado es nulo o no tiene el largo adecuado";
-                           orden.save();
 
-                           //Se actualiza estado de la PO Básica
-                           ordenPOBas.POId = docProc.IN_POIdBasico;
-                          ordenPOBas.orderId = docProc.IN_orderId;
-                          ordenPOBas.estado = "ErrorMSISD";
-                          ordenPOBas.motivoEstado = "El MSISDN entregado es nulo o no tiene el largo adecuado";
-                          ordenPOBas.save();
-
-                           return;
-                      }
                       /*FIN ********* Fin Creación de MSISDN *****************/
                     ]]></script>
                   </method>
@@ -602,15 +945,27 @@
       </child>
       <child name="billingParticipant" type="participantActivity">
         <label>billingParticipant</label>
-        <participant>part_billingNamespace.billingParticipant</participant>
-        <x>289.0</x>
-        <y>-34.0</y>
+        <participant>part_BSCSNamespace.billingParticipant</participant>
+        <x>284.0</x>
+        <y>-38.0</y>
       </child>
       <child name="CSParticipant" type="participantActivity">
         <label>CSParticipant</label>
         <participant>part_CSProvisionInterface.CSParticipant</participant>
-        <x>752.0</x>
-        <y>-38.0</y>
+        <x>748.0</x>
+        <y>-41.0</y>
+      </child>
+      <child name="EMAParticipant" type="participantActivity">
+        <label>EMAParticipant</label>
+        <participant>part_EMANamespace.EMAParticipant</participant>
+        <x>1108.0</x>
+        <y>-34.0</y>
+      </child>
+      <child name="OE_Participant" type="participantActivity">
+        <label>OE_Participant</label>
+        <participant>part_OENamespace.OE_Participant</participant>
+        <x>1485.0</x>
+        <y>-54.0</y>
       </child>
     </childList>
     <methodList>

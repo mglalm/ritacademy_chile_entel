@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="billingNamespace.input_getMsisdnReserveBSCS">
+<dataStructure name="OENamespace.ack">
   <container>true</container>
-  <description>input_getMsisdnReserveBSCS</description>
-  <label>input_getMsisdnReserveBSCS</label>
+  <description>ack</description>
+  <label>ack</label>
   <metaVersion>25</metaVersion>
   <childList>
-    <child name="orderid" type="dstruct">
+    <child name="estado" type="dstruct">
       <datatype>true</datatype>
       <element>dtype_com.conceptwave.system.String</element>
-      <label>orderid</label>
+      <label>estado</label>
     </child>
-    <child name="rut" type="dstruct">
+    <child name="descripcion" type="dstruct">
       <datatype>true</datatype>
       <element>dtype_com.conceptwave.system.String</element>
-      <label>rut</label>
+      <label>descripcion</label>
     </child>
   </childList>
 </dataStructure>

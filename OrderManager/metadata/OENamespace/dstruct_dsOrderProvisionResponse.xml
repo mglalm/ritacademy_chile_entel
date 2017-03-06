@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="OENamespace.dsOrderProvisionResponse">
+  <container>true</container>
+  <description>dsOrderProvisionResponse</description>
+  <label>dsOrderProvisionResponse</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="orderId" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OENamespace.dtOrderId</element>
+      <label>orderId</label>
+    </child>
+    <child name="rut" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OENamespace.dtRut</element>
+      <label>rut</label>
+    </child>
+    <child name="estadoOrden" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OENamespace.dtEstado</element>
+      <label>estadoOrden</label>
+    </child>
+    <child name="MSISDN" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OENamespace.dtMSISDN</element>
+      <label>MSISDN</label>
+    </child>
+    <child name="POIdBasica" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OENamespace.dtPOId</element>
+      <label>POIdBasica</label>
+    </child>
+    <child name="estadoPOBasica" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OENamespace.dtEstado</element>
+      <label>estadoPOBasica</label>
+    </child>
+    <child name="motivoEstadoPOBasica" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OENamespace.dtMotivoEstado</element>
+      <label>motivoEstadoPOBasica</label>
+    </child>
+    <child name="POIdAdicional" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OENamespace.dtPOId</element>
+      <label>POIdAdicional</label>
+    </child>
+    <child name="estadoPOAdicional" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OENamespace.dtEstado</element>
+      <label>estadoPOAdicional</label>
+    </child>
+    <child name="motivoEstadoPOAdicional" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OENamespace.dtMotivoEstado</element>
+      <label>motivoEstadoPOAdicional</label>
+    </child>
+  </childList>
+</dataStructure>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="BSCSNamespace.interface_serviciosBSCS">
+  <label>interface_serviciosBSCS</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="desprovServicioBSCS" type="oper">
+      <input>dstruct_BSCSNamespace.input_desprovServicioBSCS</input>
+      <label>desprovServicioBSCS</label>
+      <output>dstruct_BSCSNamespace.output_desprovServicioBSCS</output>
+      <type>Request-Response</type>
+    </operation>
+    <operation name="getMsisdnLiberarBSCS" type="oper">
+      <input>dstruct_BSCSNamespace.input_getMsisdnLiberarBSCS</input>
+      <label>getMsisdnLiberarBSCS</label>
+      <output>dstruct_BSCSNamespace.output_getMsisdnLiberarBSCS</output>
+      <type>Request-Response</type>
+    </operation>
+    <operation name="getMsisdnReserveBSCS" type="oper">
+      <input>dstruct_BSCSNamespace.input_getMsisdnReserveBSCS</input>
+      <label>getMsisdnReserveBSCS</label>
+      <output>dstruct_BSCSNamespace.output_getMsisdnReserveBSCS</output>
+      <type>Request-Response</type>
+    </operation>
+    <operation name="provServicioBSCS" type="oper">
+      <input>dstruct_BSCSNamespace.input_provServicioBSCS</input>
+      <label>provServicioBSCS</label>
+      <output>dstruct_BSCSNamespace.output_provServicioBSCS</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<participant name="BSCSNamespace.billingParticipant">
+  <label>billingParticipant</label>
+  <metaVersion>25</metaVersion>
+  <participant>iface_BSCSNamespace.interface_serviciosBSCS</participant>
+</participant>
