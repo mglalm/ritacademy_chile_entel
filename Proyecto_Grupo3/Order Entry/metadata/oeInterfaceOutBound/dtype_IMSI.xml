@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="oeInterfaceOutBound.IMSI">
+<dataType name="oeInterfaceOutbound.IMSI">
   <description>IMSI</description>
   <extends>dtype_com.conceptwave.system.Integer</extends>
   <label>IMSI</label>

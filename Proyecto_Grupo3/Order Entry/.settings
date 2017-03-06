@@ -3,6 +3,10 @@
   <DefaultDB>TRAIN2</DefaultDB>
   <applicationString>TRAINING METADATA</applicationString>
   <applicationVersionString>1</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="orderManagement.poOrder.UserInterface.submitOrder">0</breakpoint>
+    <breakpoint key="provisionManagement.dummy">0</breakpoint>
+  </breakpointMap>
   <databasesMap>
     <databases key="TRAIN2" type=".configdb">
       <dbname>TRAIN2</dbname>
@@ -16,7 +20,6 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <joinClusterPeUi>false</joinClusterPeUi>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
 </project>

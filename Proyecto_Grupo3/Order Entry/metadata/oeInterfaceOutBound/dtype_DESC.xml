@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="oeInterfaceOutBound.DESC">
+<dataType name="oeInterfaceOutbound.DESC">
   <description>Descripcion</description>
   <extends>dtype_com.conceptwave.system.String</extends>
   <label>DESC</label>

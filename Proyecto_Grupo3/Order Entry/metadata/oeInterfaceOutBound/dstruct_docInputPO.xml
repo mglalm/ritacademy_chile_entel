@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="oeInterfaceOutBound.docInputPO">
+<dataStructure name="oeInterfaceOutbound.docInputPO">
   <container>true</container>
   <description>Doc Input PO</description>
   <label>docInputPO</label>
@@ -7,7 +7,7 @@
   <childList>
     <child name="ID_PO" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_oeInterfaceOutBound.ID_PO</element>
+      <element>dtype_oeInterfaceOutbound.ID_PO</element>
       <label>ID_PO</label>
       <mandatory>true</mandatory>
     </child>

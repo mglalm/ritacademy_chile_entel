@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="chargingSystem" targetNamespace="chargingSystem"
+	xmlns:tns="chargingSystem"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:chargingSystem="chargingSystem">
+
+	<types>
+		<schema targetNamespace="chargingSystem"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:chargingSystem="chargingSystem"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>Charging System</documentation>
+				<appinfo>
+					<metadata>TRAINING METADATA</metadata>
+					<created>Tue Feb 28 17:26:00 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<simpleType name="IMSI">
+				<annotation>
+					<documentation>IMSI</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+					<totalDigits value="16"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="MSISDN">
+				<annotation>
+					<documentation>MSISDN</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+					<totalDigits value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="estado">
+				<annotation>
+					<documentation>Estado</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="idCliente">
+				<annotation>
+					<documentation>ID Cliente</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="mensaje">
+				<annotation>
+					<documentation>Mensaje</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="saldo">
+				<annotation>
+					<documentation>Saldo</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+					<totalDigits value="10"/>
+				</restriction>
+			</simpleType>
+
+			<!-- Structures -->
+
+			<complexType name="requestCS">
+				<annotation>
+					<documentation>requestCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="chargingSystem:MSISDN"/>
+						<element name="IMSI" minOccurs="0" maxOccurs="1" type="chargingSystem:IMSI"/>
+						<element name="idCliente" minOccurs="0" maxOccurs="1" type="chargingSystem:idCliente"/>
+						<element name="planCS" minOccurs="0" maxOccurs="1" type="chargingSystem:idCliente"/>
+						<element name="saldo" minOccurs="0" maxOccurs="1" type="chargingSystem:saldo"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="responseCS">
+				<annotation>
+					<documentation>responseCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="mensaje" minOccurs="0" maxOccurs="1" type="chargingSystem:mensaje"/>
+						<element name="estado" minOccurs="0" maxOccurs="1" type="chargingSystem:estado"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+		</schema>
+	</types>
+
+	<message name="requestCS">
+		<part name="requestCS" type="chargingSystem:requestCS"/>
+	</message>
+
+	<message name="responseCS">
+		<part name="responseCS" type="chargingSystem:responseCS"/>
+	</message>
+
+	<portType name="Crea_CLI_CS">
+		<operation name="creacionClienteCS">
+			<input message="tns:requestCS"/>
+			<output message="tns:responseCS"/>
+		</operation>
+	</portType>
+
+	<binding name="bindingSOAPCS" type="tns:Crea_CLI_CS">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="creacionClienteCS">
+			<soap:operation soapAction="creacionClienteCS"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="serviceCS">
+		<port name="chargingSystemSOAPPort" binding="tns:bindingSOAPCS">
+		</port>
+	</service>
+
+</definitions>

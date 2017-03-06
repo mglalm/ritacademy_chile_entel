@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="oeInterfaceOutbound.Response">
+<dataStructure name="gg_Response.Response">
   <container>true</container>
-  <description>Response</description>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
   <label>Response</label>
   <metaVersion>25</metaVersion>
   <childList>
     <child name="Ack" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_oeInterfaceOutbound.Codigo</element>
+      <element>dtype_com.conceptwave.system.Integer</element>
       <label>Ack</label>
     </child>
   </childList>

@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="oeInterfaceOutbound.RequestSendOE">
+<dataStructure name="gg_Response.RequestSendOE">
   <container>true</container>
-  <description>RequestSendOE</description>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
   <label>RequestSendOE</label>
   <metaVersion>25</metaVersion>
   <childList>
     <child name="MSISDN" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_oeInterfaceOutbound.MSISDN</element>
+      <element>dtype_gg_Response.MSISDN</element>
       <label>MSISDN</label>
     </child>
     <child name="IMSI" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_oeInterfaceOutbound.IMSI</element>
+      <element>dtype_gg_Response.IMSI</element>
       <label>IMSI</label>
     </child>
     <child name="ESTADO" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_oeInterfaceOutbound.ESTADO</element>
+      <element>dtype_gg_Response.ESTADO</element>
       <label>ESTADO</label>
     </child>
   </childList>

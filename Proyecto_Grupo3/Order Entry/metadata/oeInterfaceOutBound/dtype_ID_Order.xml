@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="oeInterfaceOutBound.ID_Order">
+<dataType name="oeInterfaceOutbound.ID_Order">
   <description>ID_Order</description>
   <extends>dtype_com.conceptwave.system.String</extends>
   <label>ID_Order</label>

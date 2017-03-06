@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<binding name="oeInterfaceOutBound.bindingSOAPOE">
+<binding name="oeInterfaceOutbound.bindingSOAPOE">
   <extensionList>
     <extension name="SubmitOrderOE" type="ext">
       <element>Operation</element>
@@ -56,7 +56,7 @@
       </elementItemMap>
     </extension>
   </extensionList>
-  <interface>iface_oeInterfaceOutBound.Submit_Order_OE</interface>
+  <interface>iface_oeInterfaceOutbound.Submit_Order_OE</interface>
   <label>bindingSOAPOE</label>
   <metaVersion>25</metaVersion>
   <provider>prov_cwf.soapprov</provider>

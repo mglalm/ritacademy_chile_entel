@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="oeInterfaceOutBound.Response_pt">
-  <abstract>true</abstract>
-  <label>Response_pt</label>
-  <metaVersion>25</metaVersion>
-</dataStructure>

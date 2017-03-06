@@ -14,6 +14,9 @@
     <variable name="purchaseOrderNumber" type="leaf">
       <valueType>dtype_orderManagement.purchaseOrderNumber</valueType>
     </variable>
+    <variable name="cwDocStamp" type="leaf">
+      <valueType>dtype_cwf.cwDocStamp</valueType>
+    </variable>
   </variableList>
   <UserInterface name="UserInterface" type="ui">
     <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>

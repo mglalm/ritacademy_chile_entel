@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<interface name="oeInterfaceOutBound.Submit_Order_OE">
+<interface name="oeInterfaceOutbound.Submit_Order_OE">
   <label>Submit_Order_OE</label>
   <metaVersion>25</metaVersion>
   <operationList>
     <operation name="SubmitOrderOE" type="oper">
-      <input>dstruct_oeInterfaceOutBound.Request_pt</input>
+      <input>dstruct_oeInterface.Request</input>
       <label>SubmitOrderOE</label>
-      <output>dstruct_oeInterfaceOutBound.Response_pt</output>
+      <output>dstruct_oeInterface.Response</output>
       <type>Request-Response</type>
     </operation>
   </operationList>
