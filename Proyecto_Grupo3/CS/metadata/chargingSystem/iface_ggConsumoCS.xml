@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="chargingSystem.ggConsumoCS">
+  <label>Consulta de Saldo</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="ggConsumoSaldoCS" type="oper">
+      <label>Consumo CS</label>
+      <type>Notification</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

@@ -16,5 +16,15 @@
       <listener>true</listener>
       <recover>5</recover>
     </port>
+    <port name="ggChargingSystemJSPortConsumo" type="port">
+      <binding>bind_chargingSystem.ggBindingJSConsumoCS</binding>
+      <label>CS JS Port Consumo Saldo</label>
+      <recover>5</recover>
+    </port>
+    <port name="ggChargingSystemSOAPConsumo" type="port">
+      <binding>bind_chargingSystem.ggBindingSOAPConsumoCS</binding>
+      <label>Charging System SOAP Consumo</label>
+      <recover>5</recover>
+    </port>
   </portList>
 </externalService>
