@@ -11,8 +11,7 @@
 	xmlns="http://www.w3.org/2001/XMLSchema"			
 	xmlns:EOC_OE="EOC_OE"			
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"			
-	xmlns:cwf="http://www.conceptwave.com/system"			
-	xmlns:OrderManager="http://www.readinessit.com/namespaces/ProyectoCobras/OrderManager">
+	xmlns:cwf="http://www.conceptwave.com/system">
 
 
 
@@ -32,6 +31,15 @@
 				</annotation>
 				<restriction base="xsd:string">
 					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="dtMotivoEstado">
+				<annotation>
+					<documentation>dt Motivo Estado</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="100"/>
 				</restriction>
 			</simpleType>
 
@@ -62,12 +70,39 @@
 				</restriction>
 			</simpleType>
 
+			<simpleType name="dtMSISDN">
+				<annotation>
+					<documentation>dt MSISDN</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="11"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="dtEstado">
+				<annotation>
+					<documentation>dt Estado</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="10"/>
+				</restriction>
+			</simpleType>
+
 			<simpleType name="CIUDAD">
 				<annotation>
 					<documentation>CIUDAD</documentation>
 				</annotation>
 				<restriction base="xsd:string">
 					<maxLength value="30"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="dtRut">
+				<annotation>
+					<documentation>dt Rut</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
 				</restriction>
 			</simpleType>
 
@@ -89,12 +124,30 @@
 				</restriction>
 			</simpleType>
 
+			<simpleType name="dtOrderId">
+				<annotation>
+					<documentation>dt Order Id</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="16"/>
+				</restriction>
+			</simpleType>
+
 			<simpleType name="PO">
 				<annotation>
 					<documentation>PO Item</documentation>
 				</annotation>
 				<restriction base="xsd:string">
 					<maxLength value="30"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="dtPOId">
+				<annotation>
+					<documentation>dt PO Id</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
 				</restriction>
 			</simpleType>
 
@@ -115,16 +168,16 @@
 					<documentation>dsOrderProvisionResponse</documentation>
 				</annotation>
 					<sequence>
-						<element name="orderId" minOccurs="0" maxOccurs="1" type="OrderManager:dtOrderId"/>
-						<element name="rut" minOccurs="0" maxOccurs="1" type="OrderManager:dtRut"/>
-						<element name="estadoOrden" minOccurs="0" maxOccurs="1" type="OrderManager:dtEstado"/>
-						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="OrderManager:dtMSISDN"/>
-						<element name="POIdBasica" minOccurs="0" maxOccurs="1" type="OrderManager:dtPOId"/>
-						<element name="estadoPOBasica" minOccurs="0" maxOccurs="1" type="OrderManager:dtEstado"/>
-						<element name="motivoEstadoPOBasica" minOccurs="0" maxOccurs="1" type="OrderManager:dtMotivoEstado"/>
-						<element name="POIdAdicional" minOccurs="0" maxOccurs="1" type="OrderManager:dtPOId"/>
-						<element name="estadoPOAdicional" minOccurs="0" maxOccurs="1" type="OrderManager:dtEstado"/>
-						<element name="motivoEstadoPOAdicional" minOccurs="0" maxOccurs="1" type="OrderManager:dtMotivoEstado"/>
+						<element name="orderId" minOccurs="0" maxOccurs="1" type="EOC_OE:dtOrderId"/>
+						<element name="rut" minOccurs="0" maxOccurs="1" type="EOC_OE:dtRut"/>
+						<element name="estadoOrden" minOccurs="0" maxOccurs="1" type="EOC_OE:dtEstado"/>
+						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="EOC_OE:dtMSISDN"/>
+						<element name="POIdBasica" minOccurs="0" maxOccurs="1" type="EOC_OE:dtPOId"/>
+						<element name="estadoPOBasica" minOccurs="0" maxOccurs="1" type="EOC_OE:dtEstado"/>
+						<element name="motivoEstadoPOBasica" minOccurs="0" maxOccurs="1" type="EOC_OE:dtMotivoEstado"/>
+						<element name="POIdAdicional" minOccurs="0" maxOccurs="1" type="EOC_OE:dtPOId"/>
+						<element name="estadoPOAdicional" minOccurs="0" maxOccurs="1" type="EOC_OE:dtEstado"/>
+						<element name="motivoEstadoPOAdicional" minOccurs="0" maxOccurs="1" type="EOC_OE:dtMotivoEstado"/>
 					</sequence>
 				</complexType>
 
@@ -2233,160 +2286,6 @@
 						<element name="language" type="cwf:languages"/>
 						<element name="translationText" type="cwf:translationText"/>
 						<element name="lastUpdatedDate" type="xsd:dateTime"/>
-					</sequence>
-				</complexType>
-
-		</schema>
-		<schema targetNamespace="http://www.readinessit.com/namespaces/ProyectoCobras/OrderManager"			
-	xmlns="http://www.w3.org/2001/XMLSchema"			
-	xmlns:OrderManager="http://www.readinessit.com/namespaces/ProyectoCobras/OrderManager"			
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-
-
-
-			<annotation>
-				<documentation>Order Manager</documentation>
-				<appinfo>
-					<metadata>AVM Metadata</metadata>
-					<created>Mon Feb 27 16:14:06 CLT 2017</created>
-				</appinfo>
-			</annotation>
-
-			<!-- Data types and elements -->
-
-			<simpleType name="dtEstado">
-				<annotation>
-					<documentation>dt Estado</documentation>
-				</annotation>
-				<restriction base="xsd:string">
-					<maxLength value="10"/>
-				</restriction>
-			</simpleType>
-
-			<simpleType name="dtMSISDN">
-				<annotation>
-					<documentation>dt MSISDN</documentation>
-				</annotation>
-				<restriction base="xsd:string">
-					<maxLength value="11"/>
-				</restriction>
-			</simpleType>
-
-			<simpleType name="dtMotivoEstado">
-				<annotation>
-					<documentation>dt Motivo Estado</documentation>
-				</annotation>
-				<restriction base="xsd:string">
-					<maxLength value="100"/>
-				</restriction>
-			</simpleType>
-
-			<simpleType name="dtOrderId">
-				<annotation>
-					<documentation>dt Order Id</documentation>
-				</annotation>
-				<restriction base="xsd:string">
-					<maxLength value="16"/>
-				</restriction>
-			</simpleType>
-
-			<simpleType name="dtPOId">
-				<annotation>
-					<documentation>dt PO Id</documentation>
-				</annotation>
-				<restriction base="xsd:string">
-					<maxLength value="32"/>
-				</restriction>
-			</simpleType>
-
-			<simpleType name="dtRut">
-				<annotation>
-					<documentation>dt Rut</documentation>
-				</annotation>
-				<restriction base="xsd:string">
-					<maxLength value="15"/>
-				</restriction>
-			</simpleType>
-
-			<!-- Structures -->
-
-			<complexType name="ack">
-				<annotation>
-					<documentation>ack</documentation>
-				</annotation>
-					<sequence>
-						<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
-						<element name="descripcion" minOccurs="0" maxOccurs="1" type="xsd:string"/>
-					</sequence>
-				</complexType>
-
-			<complexType name="dsOrderProvisionInput">
-				<annotation>
-					<documentation>dsOrderProvisionInput</documentation>
-				</annotation>
-					<sequence>
-						<element name="orderId" minOccurs="0" maxOccurs="1" type="OrderManager:dtOrderId"/>
-						<element name="rut" minOccurs="0" maxOccurs="1" type="OrderManager:dtRut"/>
-						<element name="listaPOs" minOccurs="1" maxOccurs="unbounded">
-							<annotation>
-								<documentation>Lista POs</documentation>
-							</annotation>
-							<complexType>
-								<sequence>
-									<element name="POId" minOccurs="0" maxOccurs="1" type="OrderManager:dtPOId"/>
-								</sequence>
-							</complexType>
-						</element>
-					</sequence>
-				</complexType>
-
-			<complexType name="dsOrderProvisionInputSimple">
-				<annotation>
-					<documentation>dsOrderProvisionInputSimple</documentation>
-				</annotation>
-					<sequence>
-						<element name="orderId" minOccurs="0" maxOccurs="1" type="OrderManager:dtOrderId"/>
-						<element name="rut" minOccurs="0" maxOccurs="1" type="OrderManager:dtRut"/>
-						<element name="POIdBasico" minOccurs="0" maxOccurs="1" type="OrderManager:dtPOId"/>
-						<element name="POIdAdicional" minOccurs="0" maxOccurs="1" type="OrderManager:dtPOId"/>
-					</sequence>
-				</complexType>
-
-			<complexType name="dsOrderProvisionResponse">
-				<annotation>
-					<documentation>dsOrderProvisionResponse</documentation>
-				</annotation>
-					<sequence>
-						<element name="orderId" minOccurs="0" maxOccurs="1" type="OrderManager:dtOrderId"/>
-						<element name="rut" minOccurs="0" maxOccurs="1" type="OrderManager:dtRut"/>
-						<element name="estadoOrden" minOccurs="0" maxOccurs="1" type="OrderManager:dtEstado"/>
-						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="OrderManager:dtMSISDN"/>
-						<element name="POIdBasica" minOccurs="0" maxOccurs="1" type="OrderManager:dtPOId"/>
-						<element name="estadoPOBasica" minOccurs="0" maxOccurs="1" type="OrderManager:dtEstado"/>
-						<element name="motivoEstadoPOBasica" minOccurs="0" maxOccurs="1" type="OrderManager:dtMotivoEstado"/>
-						<element name="POIdAdicional" minOccurs="0" maxOccurs="1" type="OrderManager:dtPOId"/>
-						<element name="estadoPOAdicional" minOccurs="0" maxOccurs="1" type="OrderManager:dtEstado"/>
-						<element name="motivoEstadoPOAdicional" minOccurs="0" maxOccurs="1" type="OrderManager:dtMotivoEstado"/>
-					</sequence>
-				</complexType>
-
-			<!-- Documents -->
-
-			<complexType name="docProcesoProvision">
-				<annotation>
-					<documentation>docProcesoProvision</documentation>
-				</annotation>
-					<sequence>
-						<element name="IN_orderId" type="OrderManager:dtOrderId"/>
-						<element name="IN_rut" type="OrderManager:dtRut"/>
-						<element name="IN_POIdBasico" type="OrderManager:dtPOId"/>
-						<element name="IN_POIdAdicional" type="OrderManager:dtPOId"/>
-						<element name="OUT_estadoOrden" type="OrderManager:dtEstado"/>
-						<element name="OUT_MSISDN" type="OrderManager:dtMSISDN"/>
-						<element name="OUT_EstadoPOBasica" type="OrderManager:dtEstado"/>
-						<element name="OUT_MotivoEstadoPOBasica" type="OrderManager:dtMotivoEstado"/>
-						<element name="OUT_EstadoPOAdicional" type="OrderManager:dtEstado"/>
-						<element name="OUT_MotivoEstadoPOAdicional" type="OrderManager:dtMotivoEstado"/>
 					</sequence>
 				</complexType>
 
