@@ -1,0 +1,41 @@
+<poOrder>
+  <orderInstance>
+    <cwDocId>25101007</cwDocId>
+    <createdBy>upadmin</createdBy>
+    <creationDate>2017-03-03T16:35:10-03:00</creationDate>
+    <updatedBy>upadmin</updatedBy>
+    <updateDate>2017-03-03T16:35:19.634-03:00</updateDate>
+    <state>NEW</state>
+    <metadataType>4074</metadataType>
+    <visualKey>Product Offer Order</visualKey>
+    <HasAttachment>0</HasAttachment>
+    <metadataVer>0</metadataVer>
+    <cwDocStamp>TpMN9</cwDocStamp>
+    <cwOrderSync>TpMN9</cwOrderSync>
+    <cwAppName>TRAINING METADATA</cwAppName>
+    <oState>O_NR_DRA</oState>
+    <orderNum>1021</orderNum>
+    <orderRole>Q</orderRole>
+  </orderInstance>
+    <orderData>
+        <customerReference>20103000</customerReference>
+        <purchaseOrderNumber>016</purchaseOrderNumber>
+        <cwDocId>25101009</cwDocId>
+        <cwDocStamp>TpMN9</cwDocStamp>
+        <cwOrderCreationDate>2017-03-03T16:35:10-03:00</cwOrderCreationDate>
+        <cwOrderId>25101007</cwOrderId>
+        <cwParentId>25101007</cwParentId>
+        <lastUpdatedDate>2017-03-03T16:35:19.634-03:00</lastUpdatedDate>
+        <updatedBy>upadmin</updatedBy>
+    </orderData>
+
+    <poItem>
+      <productOfferData>
+        <cwDocId>25101012</cwDocId>
+        <offerItemReference>PO_SIMPLE</offerItemReference>
+        <cwOrderCreationDate>2017-03-03T16:35:10-03:00</cwOrderCreationDate>
+        <cwOrderId>25101007</cwOrderId>
+        <cwParentId>25101011</cwParentId>
+      </productOfferData>
+    </poItem>
+</poOrder>
