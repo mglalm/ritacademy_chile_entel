@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="chargingSystem.clienteCS">
+  <activity name="start" type="seqActivity">
+    <label>start</label>
+    <x>82.0</x>
+    <y>152.0</y>
+    <childList>
+      <child name="BSCS" type="opActivity">
+        <element>iface_bscsProyOut.registroDeConsumo/oper_registroDesdeCS</element>
+        <label>BSCS</label>
+        <participant>part_chargingSystem.BSCSPart</participant>
+        <x>265.0</x>
+        <y>151.0</y>
+        <methodList>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script><![CDATA[
+              this.activityData.MSISDN = this.process.processDocument.MSISDN;
+              this.activityData.saldo = this.process.processDocument.saldo;
+              this.activityData.usage = this.process.processDocument.usage;
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="BSCSPart" type="participantActivity">
+        <label>BSCSPart</label>
+        <participant>part_chargingSystem.BSCSPart</participant>
+        <x>360.0</x>
+        <y>28.0</y>
+      </child>
+    </childList>
+    <methodList>
+      <method name="cwOnProcActBefore" type="action">
+        <category>before</category>
+        <system>true</system>
+        <script><![CDATA[
+          /*chargingSystem.dummy();
+          this.activityData.saldo = null;
+          this.activityData.MSISDN = null;
+          */
+        ]]></script>
+      </method>
+    </methodList>
+  </activity>
+  <curRevision>true</curRevision>
+  <document>doc_chargingSystem.procDoc</document>
+  <label>clienteCS</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <revision>2</revision>
+  <type>User</type>
+</process>

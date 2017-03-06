@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="bscsProy" targetNamespace="bscsProy"
+	xmlns:tns="bscsProy"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:bscsProy="bscsProy">
+
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="bscsProy" schemaLocation="bscsProy.xsd"/>
+		</schema>
+	</types>
+
+	<message name="consumoCliente">
+		<part name="consumoCliente" type="bscsProy:consumoCliente"/>
+	</message>
+
+	<portType name="registroDeConsumo">
+		<operation name="registroDesdeCS">
+			<input message="tns:consumoCliente"/>
+		</operation>
+	</portType>
+
+	<binding name="BindingRegistroDesdeCSSOAP" type="tns:registroDeConsumo">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="registroDesdeCS">
+			<soap:operation soapAction="registroDesdeCS"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+		</operation>
+	</binding>
+
+	<service name="ExtService_Crea_Cli_BSCS">
+		<port name="PortRegistroDesdeCSSOAP" binding="tns:BindingRegistroDesdeCSSOAP">
+		</port>
+	</service>
+
+</definitions>

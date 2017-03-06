@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="bscsProy.gg_clienteBSCS">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{1d603c6d-e810-4318-91ad-2bc246bf96c6}</guid>
+  <label>Cliente BSCS</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <key>1</key>
+      <table>gg_clienteBSCS</table>
+      <valueType>dtype_bscsProy.MSISDN</valueType>
+    </variable>
+    <variable name="usage" type="leaf">
+      <column>USAGE</column>
+      <table>gg_clienteBSCS</table>
+      <valueType>dtype_bscsProy.usage</valueType>
+    </variable>
+    <variable name="saldo" type="leaf">
+      <column>SALDO</column>
+      <table>gg_clienteBSCS</table>
+      <valueType>dtype_bscsProy.saldo</valueType>
+    </variable>
+  </variableList>
+</document>

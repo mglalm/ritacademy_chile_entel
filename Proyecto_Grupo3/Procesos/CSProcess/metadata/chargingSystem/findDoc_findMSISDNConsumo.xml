@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="chargingSystem.findMSISDNConsumo">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <label>findMSISDNConsumo</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_chargingSystem.gg_ConsumoClienteCS</output>
+  <type>document</type>
+</findDoc>

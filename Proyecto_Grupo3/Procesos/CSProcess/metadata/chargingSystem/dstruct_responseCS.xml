@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="chargingSystem.responseCS">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>responseCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="mensaje" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.mensaje</element>
+      <label>mensaje</label>
+    </child>
+    <child name="estado" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.estado</element>
+      <label>estado</label>
+    </child>
+  </childList>
+</dataStructure>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="bscsProyOut.consumoCliente">
+  <container>true</container>
+  <description>consumoCliente</description>
+  <label>consumoCliente</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="MSISDN" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_bscsProyOut.MSISDN</element>
+      <label>MSISDN</label>
+    </child>
+    <child name="saldo" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_bscsProyOut.saldo</element>
+      <label>saldo</label>
+    </child>
+    <child name="usage" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_bscsProyOut.usage</element>
+      <label>usage</label>
+    </child>
+  </childList>
+</dataStructure>

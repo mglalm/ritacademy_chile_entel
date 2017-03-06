@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="chargingSystem.ggConsumoABSCS">
+  <label>Consumo a BSCS</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="sendConsumoBSCS" type="oper">
+      <label>Send Consumo BSCS</label>
+      <output>dstruct_chargingSystem.sendBSCS</output>
+      <type>Notification</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

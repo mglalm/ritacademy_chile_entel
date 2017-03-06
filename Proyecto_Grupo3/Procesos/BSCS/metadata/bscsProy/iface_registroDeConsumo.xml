@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="bscsProy.registroDeConsumo">
+  <label>Registro De Consumo</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="registroDesdeCS" type="oper">
+      <input>dstruct_bscsProy.consumoCliente</input>
+      <label>registro Desde CS</label>
+      <type>One-Way</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="chargingSystem.clienteChargingSystem">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{612ae199-5e57-411e-b70f-d8fe1e2eb624}</guid>
+  <label>Cliente Charging System</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <key>1</key>
+      <label>MSISDN</label>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.MSISDN</valueType>
+    </variable>
+    <variable name="usage" type="leaf">
+      <column>USAGE</column>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.usage</valueType>
+    </variable>
+    <variable name="tarifa" type="leaf">
+      <column>TARIFA</column>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.tarifa</valueType>
+    </variable>
+    <variable name="IMSI" type="leaf">
+      <column>IMSI</column>
+      <label>IMSI</label>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.IMSI</valueType>
+    </variable>
+    <variable name="idCliente" type="leaf">
+      <column>IDCLIENTE</column>
+      <label>idCliente</label>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.idCliente</valueType>
+    </variable>
+    <variable name="planCS" type="leaf">
+      <column>PLANCS</column>
+      <label>planCS</label>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.idCliente</valueType>
+    </variable>
+    <variable name="saldo" type="leaf">
+      <column>SALDO</column>
+      <label>saldo</label>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.saldo</valueType>
+    </variable>
+  </variableList>
+</document>

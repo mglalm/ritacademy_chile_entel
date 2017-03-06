@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="bscsProy.Consumo">
+  <label>Consumo</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>nmeta_com.conceptwave.system.Object</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var doc = new Document('bscsProy.gg_clienteBSCS');
+    var fnd = new Finder('bscsProy.busquedaCliente');
+    var fnd = fnd.search();
+    var i = 0;
+    var salir =0;
+
+    /*doc.MSISDN = input.MSISDN;
+    doc.saldo = input.saldo;
+    doc.usage = input.usage;
+    */
+    for(i=0;i<fnd.length;i=i+1)
+    {
+        if(fnd[i].MSISDN == input.MSISDN & salir ==0)
+        {
+        fnd[i].saldo = input.saldo;
+        fnd[i].usage = input.usage;
+        salir=1;
+        fnd[i].save();
+        }
+
+
+    }
+  ]]></script>
+</script>
