@@ -9,52 +9,52 @@
   <childList>
     <child name="orderId" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_OrderManager.dtOrderId</element>
+      <element>dtype_EOC_OE.dtOrderId</element>
       <label>orderId</label>
     </child>
     <child name="rut" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_OrderManager.dtRut</element>
+      <element>dtype_EOC_OE.dtRut</element>
       <label>rut</label>
     </child>
     <child name="estadoOrden" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_OrderManager.dtEstado</element>
+      <element>dtype_EOC_OE.dtEstado</element>
       <label>estadoOrden</label>
     </child>
     <child name="MSISDN" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_OrderManager.dtMSISDN</element>
+      <element>dtype_EOC_OE.dtMSISDN</element>
       <label>MSISDN</label>
     </child>
     <child name="POIdBasica" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_OrderManager.dtPOId</element>
+      <element>dtype_EOC_OE.dtPOId</element>
       <label>POIdBasica</label>
     </child>
     <child name="estadoPOBasica" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_OrderManager.dtEstado</element>
+      <element>dtype_EOC_OE.dtEstado</element>
       <label>estadoPOBasica</label>
     </child>
     <child name="motivoEstadoPOBasica" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_OrderManager.dtMotivoEstado</element>
+      <element>dtype_EOC_OE.dtMotivoEstado</element>
       <label>motivoEstadoPOBasica</label>
     </child>
     <child name="POIdAdicional" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_OrderManager.dtPOId</element>
+      <element>dtype_EOC_OE.dtPOId</element>
       <label>POIdAdicional</label>
     </child>
     <child name="estadoPOAdicional" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_OrderManager.dtEstado</element>
+      <element>dtype_EOC_OE.dtEstado</element>
       <label>estadoPOAdicional</label>
     </child>
     <child name="motivoEstadoPOAdicional" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_OrderManager.dtMotivoEstado</element>
+      <element>dtype_EOC_OE.dtMotivoEstado</element>
       <label>motivoEstadoPOAdicional</label>
     </child>
   </childList>

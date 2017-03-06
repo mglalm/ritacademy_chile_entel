@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <header name="AVMMetadata">
   <APIVersion>2</APIVersion>
+  <DebugUIPath>true</DebugUIPath>
   <author>Gonzalo </author>
   <availableList>
     <available type="loc">

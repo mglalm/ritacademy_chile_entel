@@ -4,9 +4,9 @@
   <metaVersion>25</metaVersion>
   <operationList>
     <operation name="OE_Ope_recibe_PROV" type="oper">
-      <input>dstruct_EOC_OE.recibeProv</input>
+      <input>dstruct_EOC_OE.dsOrderProvisionResponse</input>
       <label>OE_Ope_recibe_PROV</label>
-      <output>dstruct_EOC_OE.recibeProv</output>
+      <output>dstruct_EOC_OE.ack</output>
       <type>Notification</type>
     </operation>
   </operationList>

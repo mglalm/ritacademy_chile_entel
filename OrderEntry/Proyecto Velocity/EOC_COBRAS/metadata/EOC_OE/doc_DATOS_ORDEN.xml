@@ -314,5 +314,39 @@
         </overlayList>
       </vform>
     </vformList>
+    <methodList>
+      <method name="save" type="usrActionMethod">
+        <allowInvalidObject>true</allowInvalidObject>
+        <validate>true</validate>
+        <script><![CDATA[
+          EOC_OE.debug();
+
+          if(this.isValid) {
+            this.model.save();
+
+            var ds = new DataStructure('OrderManagerCliente.dsOrderProvisionInputSimple');
+            //COMPLETAR LA ESTRUTURA
+            //ds.var1 = ''VALUE''; this.model.Orden.RUT;
+            ds.orderId = this.model.cwOrderId;
+            ds.rut = this.model.referenciaCliente;
+            ds.POIdBasico = this.model.ReferenciaItem;
+            ds.POIdAdicional = "343434";
+
+            var resp = Global.invokeInterface('OrderManagerCliente.OMInterface','OMProvisionarOrden',ds);//DOCUMENTATION resp response from OM ( ACK)
+            //  var resp = Global.invokeInterface('String ','String operationName',arr);
+
+             //Global.ShowUserMessage("IMPECAVEL", this);
+            var msg1 = "ORDEN: " +ds.orderId ;
+            var msg2 = " " +resp[0].descripcion ;
+            var msg = msg1 +msg2;
+             Global.showUserMessage(msg);
+             return;
+          }
+          else {
+            Global.throwException("UE0116", this);
+          }
+        ]]></script>
+      </method>
+    </methodList>
   </UserInterface>
 </document>

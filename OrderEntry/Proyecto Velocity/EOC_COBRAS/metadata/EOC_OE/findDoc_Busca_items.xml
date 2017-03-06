@@ -5,6 +5,7 @@
   <label>Busca productos</label>
   <metaVersion>25</metaVersion>
   <output>doc_EOC_OE.Catalogo</output>
+  <rtConfigurable>true</rtConfigurable>
   <type>document</type>
   <searchList>
     <search type="sitem">
@@ -124,7 +125,7 @@
   </UserInterface>
   <viewList>
     <view name="Busca_itemsView" type="findVView">
-      <inputOverlay>doc_EOC_OE.Catalogo/ui_UserInterface/frmui_Forms/vform_items</inputOverlay>
+      <inputEvent>evt_ecmRT.getItemInfo</inputEvent>
       <outputOverlay>findDoc_EOC_OE.Busca_items/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
       <searchImmediately>true</searchImmediately>
       <showSearchForm>true</showSearchForm>

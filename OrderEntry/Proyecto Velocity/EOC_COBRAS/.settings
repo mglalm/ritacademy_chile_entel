@@ -3,6 +3,9 @@
   <DefaultDB>TRAIN3</DefaultDB>
   <applicationString>EOC_COBRAS</applicationString>
   <applicationVersionString>1</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="EOC_OE.debug">0</breakpoint>
+  </breakpointMap>
   <databasesMap>
     <databases key="TRAIN3" type=".configdb">
       <dbname>TRAIN3</dbname>

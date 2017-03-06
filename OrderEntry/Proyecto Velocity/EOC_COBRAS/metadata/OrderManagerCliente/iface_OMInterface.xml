@@ -4,9 +4,9 @@
   <metaVersion>25</metaVersion>
   <operationList>
     <operation name="OMProvisionarOrden" type="oper">
-      <input>dstruct_OrderManagerCliente.dsOrderProvisionInputSimple_pt</input>
+      <input>dstruct_OrderManagerCliente.dsOrderProvisionInputSimple</input>
       <label>OMProvisionarOrden</label>
-      <output>dstruct_OrderManagerCliente.ack_pt</output>
+      <output>dstruct_OrderManagerCliente.ack</output>
       <type>Request-Response</type>
     </operation>
   </operationList>

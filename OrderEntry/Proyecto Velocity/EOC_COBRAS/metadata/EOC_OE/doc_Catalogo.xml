@@ -20,7 +20,7 @@
     <method name="cwOnDocVisualKey" type="action">
       <system>true</system>
       <valueType>dtype_com.conceptwave.system.String</valueType>
-      <script>return this.PO</script>
+      <script>//return this.PO</script>
     </method>
   </methodList>
   <UserInterface name="UserInterface" type="ui">
