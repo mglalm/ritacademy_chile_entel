@@ -23,14 +23,14 @@
             <category>before</category>
             <system>true</system>
             <script><![CDATA[
-              provisionManagement.dummy();
+              //provisionManagement.dummy();
 
               document.ID_Cliente = this.process.processDocument.customerReference;
               document.ID_Order = this.process.processDocument.orderReference;
               document.ID_PO = this.process.processDocument.offerItemReference;
 
 
-              provisionManagement.dummy();
+              //provisionManagement.dummy();
             ]]></script>
           </method>
         </methodList>

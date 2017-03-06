@@ -4,7 +4,6 @@
   <applicationString>TRAINING METADATA</applicationString>
   <applicationVersionString>1</applicationVersionString>
   <breakpointMap>
-    <breakpoint key="orderManagement.poOrder.UserInterface.submitOrder">0</breakpoint>
     <breakpoint key="provisionManagement.dummy">0</breakpoint>
   </breakpointMap>
   <databasesMap>

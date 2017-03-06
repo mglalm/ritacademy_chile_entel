@@ -139,6 +139,10 @@
     <methodList>
       <method name="submitOrder" type="usrActionMethod">
         <script><![CDATA[
+          provisionManagement.dummy();
+
+
+
           var procDoc = new Document("provisionManagement.procDoc");
 
           procDoc.orderReference = this.model.id;
@@ -146,10 +150,10 @@
           procDoc.offerItemReference = this.model.poItem[0].productOfferData.offerItemReference;
           procDoc.purchaseOrderNumber = this.model.orderData.purchaseOrderNumber;
 
-          provisionManagement.dummy();
 
 
-          this.saveAllAction();Process.startProcess("provisionManagement.SubmitOrder",procDoc,null,null);
+          this.saveAllAction();
+          Process.startProcess("provisionManagement.SubmitOrder",procDoc,null,null);
           this.saveAllAction();
         ]]></script>
       </method>
