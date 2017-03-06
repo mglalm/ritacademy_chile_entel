@@ -21,7 +21,8 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarFolder>D:\</jarFolder>
+  <jarExportFolder>D:\VBshare</jarExportFolder>
+  <jarFolder>D:\;E:\ProyectoG3_\Proyecto_Grupo3\CS</jarFolder>
   <joinCluster>true</joinCluster>
   <nodeString>cbio</nodeString>
   <skin>Enterprise</skin>

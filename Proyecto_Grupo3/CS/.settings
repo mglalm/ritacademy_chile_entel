@@ -16,7 +16,11 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
+<<<<<<< HEAD
   <jarExportFolder>E:\ProyectoG3\Proyecto_Grupo3\CS</jarExportFolder>
+=======
+  <jarExportFolder>E:\ProyectoG3_\Proyecto_Grupo3\CS</jarExportFolder>
+>>>>>>> 0caed73e43000339d038887eee66b5381e1c7f53
   <joinCluster>true</joinCluster>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>

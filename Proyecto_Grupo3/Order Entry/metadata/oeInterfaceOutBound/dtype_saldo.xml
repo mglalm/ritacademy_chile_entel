@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="oeInterfaceOutbound.saldo">
+  <description>Saldo</description>
+  <extends>dtype_com.conceptwave.system.Integer</extends>
+  <label>saldo</label>
+  <length>10</length>
+  <metaVersion>25</metaVersion>
+  <pattern>[\-+]?[0-9]+</pattern>
+</dataType>

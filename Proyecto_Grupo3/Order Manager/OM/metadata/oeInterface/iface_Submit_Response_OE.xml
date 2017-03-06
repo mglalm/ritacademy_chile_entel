@@ -2,5 +2,13 @@
 <interface name="oeInterface.Submit_Response_OE">
   <label>Submit Response OE</label>
   <metaVersion>25</metaVersion>
-  <revision>1</revision>
+  <operationList>
+    <operation name="submitResponseOE" type="oper">
+      <input>dstruct_oeInterface.RequestSendOE</input>
+      <label>Submit Response OE</label>
+      <output>dstruct_oeInterface.Response</output>
+      <type>Notification</type>
+    </operation>
+  </operationList>
+  <revision>2</revision>
 </interface>

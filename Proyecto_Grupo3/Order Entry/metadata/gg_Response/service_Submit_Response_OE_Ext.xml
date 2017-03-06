@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="gg_Response.Submit_Response_OE_Ext">
+  <label>Submit Response </label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="Submit_Response_OE_Ex_JS" type="port">
+      <binding>bind_gg_Response.Submit_Response_OE_JS</binding>
+      <label>Submit_Response_OE_Ex_JS</label>
+      <recover>5</recover>
+    </port>
+    <port name="Submit_Response_OE_Ext_SOAP" type="port">
+      <binding>bind_gg_Response.Submit_Response_OE_SOAP</binding>
+      <exportReferencedOnly>true</exportReferencedOnly>
+      <exportSchemaInsideWsdl>true</exportSchemaInsideWsdl>
+      <label>Submit_Response_OE_Ext_SOAP</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

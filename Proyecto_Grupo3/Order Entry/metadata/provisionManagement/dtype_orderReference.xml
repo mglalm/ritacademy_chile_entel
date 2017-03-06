@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="provisionManagement.orderReference">
+  <extends>dtype_cwf.sReference</extends>
+  <label>Order Reference</label>
+  <length>16</length>
+  <metaVersion>25</metaVersion>
+  <reference>findOrder_orderManagement.poOrderFinder</reference>
+</dataType>
