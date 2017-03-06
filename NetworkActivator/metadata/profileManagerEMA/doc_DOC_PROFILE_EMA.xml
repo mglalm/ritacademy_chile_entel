@@ -42,7 +42,7 @@
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
                     <element name="DOC_PROFILE_EMAHeader" type="elhdr">
-                      <label>DOC_PROFILE_EMA</label>
+                      <label>Crear Perfil</label>
                     </element>
                     <element name="ID_PROFILE" type="elfld">
                       <variable type="varPath">

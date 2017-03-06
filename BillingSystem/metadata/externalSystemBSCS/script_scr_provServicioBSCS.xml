@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <script name="externalSystemBSCS.scr_provServicioBSCS">
-  <label>Binding Script</label>
   <metaVersion>25</metaVersion>
   <parameterList>
     <parameter name="input" type="rifp">
@@ -10,10 +9,151 @@
   <script><![CDATA[
     var var_orderid = input.orderid;
     var var_rut = input.rut;
-    var output = new DataStructure("externalSystemBSCS.output_getMsisdnReserveBSCS");
+    var var_msisdn = input.msisdn;
+    var var_id_plan_bscs = input.id_plan_bscs;
+    var var_id_cliente2;
+    var output = new DataStructure("externalSystemBSCS.output_provServicioBSCS");
+
+    //-----CREAR CLIENTE SI ES QUE NO EXISTE
+    externalSystemBSCS.quiebra_ejecucion();
+    var clientes_existentes = new Finder("externalSystemBSCS.FIND_SERV_CLIENTE_BSCS");
+    var resultado = clientes_existentes.search();
+    var existe_cliente = 0;
+
+    if ( resultado.length > 0)
+    {
+        for (var i=0 ; i < resultado.length ; i++ )
+        {
+            if (resultado[i].RUT_SERVICIO_BSCS == var_rut && resultado[i].ID_CLIENTE_ESTADO_SERV_BSCS == 1)
+            {
+                existe_cliente = 1;
+                var_id_cliente2=resultado[i].ID_CLIENTE_SERVICIO_BSCS;
+            }
+            if (resultado[i].RUT_SERVICIO_BSCS == var_rut && resultado[i].ID_CLIENTE_ESTADO_SERV_BSCS == 2)
+            {
+                //-----CLIENTE EXISTE PERO CON ESTADO SUSPENDIDO, NO SE PUEDEN ACTIVAR NUEVOS SERVICIOS
+                output.estado = "NOOK";
+                output.mensaje = "No se puede activar servicios ya que el Cliente se encuentra Suspendido";
+                return output;
+            }
+        }
+    }
+    if ( existe_cliente == 0 )
+    {
+        //-----CREAR CLIENTE DADO QUE NO EXISTE EN LA BD
+        //-----OBTIENE NUEVA SECUENCIA PARA EL SERVICIO
+        var doc_secuencia = new Finder("externalSystemBSCS.SEQ_ID_CLIENTE_BSCS");
+        var nueva_secuencia = doc_secuencia.search();
+        var var_id_cliente=nueva_secuencia[0].type;  //Obtiene el valor desde el finder
+        var fecha_hoy = new Date();
+        var documento = new Document("externalSystemBSCS.DOC_SERV_CLIENTE_BSCS");
+        documento.ID_CLIENTE_SERVICIO_BSCS=var_id_cliente;
+        documento.FECHA_CREACION_SERVICIO_BSCS=fecha_hoy;
+        documento.ID_CLIENTE_ESTADO_SERV_BSCS=1;
+        documento.RUT_SERVICIO_BSCS=var_rut;
+        documento.save();
+    }
+    else
+        var_id_cliente=var_id_cliente2;
+
+    //-----VALIDAR SI EL PLAN EXISTE
+    externalSystemBSCS.quiebra_ejecucion();
+    var planes_existentes = new Finder("externalSystemBSCS.FIND_SERV_PLAN_BSCS");
+    var resultado = planes_existentes.search();
+    var existe_plan = 0;
+
+    if ( resultado.length > 0)
+    {
+        for (var i=0 ; i < resultado.length ; i++ )
+        {
+            if (resultado[i].ID_PLAN_SERVICIO_BSCS == var_id_plan_bscs)
+                existe_plan = 1;
+        }
+    }
+    if ( existe_plan == 0 )
+    {
+        output.estado = "NOOK";
+        output.mensaje = "No Existe ese plan en BSCS";
+        return output;
+    }
+
+    //-----VALIDAR SI EL MSIDDN ESTA EN ESTADO RESERVADO
+    externalSystemBSCS.quiebra_ejecucion();
+    var msisdn_existentes = new Finder("externalSystemBSCS.FIND_SERV_MSISDN_BSCS");
+    var resultado = msisdn_existentes.search();
+    var existe_msisdn = 0;
+
+    if ( resultado.length > 0)
+    {
+        for (var i=0 ; i < resultado.length ; i++ )
+        {
+            if (resultado[i].MSISDN_SERVICIO_BSCS == var_msisdn && resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS == 2 )
+                existe_msisdn = 1;
+        }
+    }
+    if ( existe_msisdn == 0 )
+    {
+        output.estado = "NOOK";
+        output.mensaje = "El MSISDN no se encuentra en estado RESERVADO";
+        return output;
+    }
+
+    //REGISTRAR SERVICIO y LUEGO CAMBIAR ESTADO DE MSISDN a ASIGNADO
+    //-----VALIDAR SI MSISDN/CLIENTE NO TIENEN EL SERVICIO ACTIVO
+    externalSystemBSCS.quiebra_ejecucion();
+    var servicios_existentes = new Finder("externalSystemBSCS.FIND_SERV_SERVICIO_BSCS");
+    var resultado = servicios_existentes.search();
+    var existe_servicio = 0;
+
+    if ( resultado.length > 0)
+    {
+        for (var i=0 ; i < resultado.length ; i++ )
+        {
+            if (resultado[i].MSISDN_SERVICIO_BSCS == var_msisdn && resultado[i].ID_SERV_ESTADO_SERVICIO_BSCS == 1 )
+                existe_servicio = 1;
+        }
+    }
+    if ( existe_servicio > 0 )
+    {
+        output.estado = "NOOK";
+        output.mensaje = "El MSISDN se encuentra Activo en un Servicio";
+        return output;
+    }
+
+
+    //-----SE ACTIVAN LOS SERVICIOS
+    externalSystemBSCS.quiebra_ejecucion();
+    var fecha_hoy = new Date();
+    var documento = new Document("externalSystemBSCS.DOC_SERV_SERVICIOS_BSCS");
+    documento.ID_CLIENTE_SERVICIO_BSCS=var_id_cliente;
+    documento.MSISDN_SERVICIO_BSCS=var_msisdn;
+    documento.FECHA_ACTIVACION_SERVICIO_BSCS=fecha_hoy;
+    documento.ID_SERV_ESTADO_SERVICIO_BSCS=1;
+    documento.ID_PLAN_SERVICIO_BSCS=var_id_plan_bscs;
+    documento.ORDER_ID_SERVICIO_BSCS=var_orderid;
+    documento.save();
+
+    //-----CAMBIAMOS EL ESTADO DEL MSISDN A ASIGNADO
+    externalSystemBSCS.quiebra_ejecucion();
+    var msisdn_existentes = new Finder("externalSystemBSCS.FIND_SERV_MSISDN_BSCS");
+    var resultado = msisdn_existentes.search();
+    var existe_msisdn = 0;
+
+    if ( resultado.length > 0)
+    {
+        for (var i=0 ; i < resultado.length ; i++ )
+        {
+            if (resultado[i].MSISDN_SERVICIO_BSCS == var_msisdn && resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS == 2 )
+            {
+                existe_msisdn = 1;
+                resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS = 3;
+                resultado[i].save();
+            }
+        }
+    }
 
     output.estado = "OK";
-    output.mensaje = "Servicio Provisionado";
+    output.mensaje = "Servicio Provisionado en BSCS";
 
     return output;
   ]]></script>

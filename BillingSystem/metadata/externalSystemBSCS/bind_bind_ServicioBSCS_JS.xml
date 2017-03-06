@@ -13,6 +13,18 @@
         <elementItem key="metadataScript">externalSystemBSCS.scr_provServicioBSCS</elementItem>
       </elementItemMap>
     </extension>
+    <extension name="desprovServicioBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="metadataScript">externalSystemBSCS.scr_desprovServicioBSCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="getMsisdnLiberarBSCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="metadataScript">externalSystemBSCS.scr_getMsisdnLiberarBSCS</elementItem>
+      </elementItemMap>
+    </extension>
   </extensionList>
   <interface>iface_externalSystemBSCS.interface_serviciosBSCS</interface>
   <label>bind_ServicioBSCS_JS</label>

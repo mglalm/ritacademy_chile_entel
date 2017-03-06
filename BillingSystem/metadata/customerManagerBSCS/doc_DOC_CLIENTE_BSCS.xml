@@ -27,6 +27,7 @@
     </variable>
     <variable name="FECHA_CREACION" type="leaf">
       <column>FECHA_CREACION</column>
+      <propertyElement type="eldatetime"/>
       <table>BSCS_CLIENTE</table>
       <valueType>dtype_customerManagerBSCS.FECHA_CREACION</valueType>
     </variable>

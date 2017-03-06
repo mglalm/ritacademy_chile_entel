@@ -10,6 +10,13 @@
     <search type="sitem">
       <document>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND</document>
       <mappedDocument>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS</mappedDocument>
+      <mappedPath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_SERVICIO_ESTADO</mappedPath>
+      <operation>equal</operation>
+      <path>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_DESC_ESTADO_SERVICIO_REF</path>
+    </search>
+    <search type="sitem">
+      <document>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND</document>
+      <mappedDocument>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS</mappedDocument>
       <mappedPath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_FECHA_ACTIVACION</mappedPath>
       <operation>equal</operation>
       <path>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_FECHA_ACTIVACION</path>
@@ -27,13 +34,6 @@
       <mappedPath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_SERVICIO</mappedPath>
       <operation>equal</operation>
       <path>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_ID_SERVICIO</path>
-    </search>
-    <search type="sitem">
-      <document>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND</document>
-      <mappedDocument>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS</mappedDocument>
-      <mappedPath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_SERVICIO_ESTADO</mappedPath>
-      <operation>equal</operation>
-      <path>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_ID_SERVICIO_ESTADO</path>
     </search>
     <search type="sitem">
       <document>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND</document>
@@ -123,11 +123,20 @@
                 <width>100%</width>
                 <elementList>
                   <element name="busquedaServiciosCSResultTable" type="eltabl">
+                    <doubleClickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.UserInterface/uimthd_cwCreateDialog</variablePath>
+                      </variablePathList>
+                    </doubleClickMethod>
+                    <loadDataMessage>Cargando Datos...</loadDataMessage>
+                    <noItemsMessage>No hay Registros.</noItemsMessage>
                     <onSelectChange type="varPath">
                       <variablePathList>
                         <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
                       </variablePathList>
                     </onSelectChange>
+                    <selectionAppearance>checkbox</selectionAppearance>
+                    <selectionType>single</selectionType>
                     <variable type="varPath">
                       <variablePathList>
                         <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/uivar_result</variablePath>
@@ -141,6 +150,7 @@
                             <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_SERVICIO</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>10%</width>
                       </element>
                       <element name="ID_PLAN_CS" type="elfld">
                         <variable type="varPath">
@@ -149,6 +159,7 @@
                             <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_PLAN_CS</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>10%</width>
                       </element>
                       <element name="ID_SERVICIO_ESTADO" type="elfld">
                         <variable type="varPath">
@@ -157,6 +168,7 @@
                             <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_SERVICIO_ESTADO</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>20%</width>
                       </element>
                       <element name="MSISDN" type="elfld">
                         <variable type="varPath">
@@ -165,6 +177,7 @@
                             <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_MSISDN</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>10%</width>
                       </element>
                       <element name="FECHA_ACTIVACION" type="eldate">
                         <variable type="varPath">
@@ -173,6 +186,7 @@
                             <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_FECHA_ACTIVACION</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>10%</width>
                       </element>
                       <element name="ORDER_ID" type="elfld">
                         <variable type="varPath">
@@ -181,6 +195,7 @@
                             <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ORDER_ID</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>10%</width>
                       </element>
                     </elementList>
                   </element>
@@ -191,6 +206,123 @@
         </overlayList>
       </vform>
     </vformList>
+    <methodList>
+      <method name="cwCreateDialog" type="uimthd">
+        <description><![CDATA[
+          <p style="margin-top: 0">
+            Override the method to create a dialog object for user actions (per user
+            interface)
+          </p>
+        ]]></description>
+        <parameterList>
+          <parameter name="actionName" type="rifp">
+            <description>&lt;html&gt;&#xd;
+  &lt;head&gt;&#xd;
+&#xd;
+  &lt;/head&gt;&#xd;
+  &lt;body&gt;&#xd;
+    &lt;p style=&quot;margin-top: 0&quot;&gt;&#xd;
+      Pop up user action name&#xd;
+    &lt;/p&gt;&#xd;
+  &lt;/body&gt;&#xd;
+&lt;/html&gt;&#xd;
+</description>
+            <mandatory>true</mandatory>
+            <type>dtype_com.conceptwave.system.String</type>
+          </parameter>
+          <parameter name="dialogMDName" type="rifp">
+            <description>&lt;html&gt;&#xd;
+  &lt;head&gt;&#xd;
+&#xd;
+  &lt;/head&gt;&#xd;
+  &lt;body&gt;&#xd;
+    &lt;p style=&quot;margin-top: 0&quot;&gt;&#xd;
+      Dialog metadata name specified in the action&#xd;
+    &lt;/p&gt;&#xd;
+  &lt;/body&gt;&#xd;
+&lt;/html&gt;&#xd;
+</description>
+            <mandatory>true</mandatory>
+            <type>dtype_com.conceptwave.system.String</type>
+          </parameter>
+          <parameter name="width" type="rifp">
+            <description>&lt;html&gt;&#xd;
+  &lt;head&gt;&#xd;
+&#xd;
+  &lt;/head&gt;&#xd;
+  &lt;body&gt;&#xd;
+    &lt;p style=&quot;margin-top: 0&quot;&gt;&#xd;
+      Dialog width specified in the action&#xd;
+    &lt;/p&gt;&#xd;
+  &lt;/body&gt;&#xd;
+&lt;/html&gt;&#xd;
+</description>
+            <mandatory>true</mandatory>
+            <type>dtype_com.conceptwave.system.Integer</type>
+          </parameter>
+          <parameter name="height" type="rifp">
+            <description>&lt;html&gt;&#xd;
+  &lt;head&gt;&#xd;
+&#xd;
+  &lt;/head&gt;&#xd;
+  &lt;body&gt;&#xd;
+    &lt;p style=&quot;margin-top: 0&quot;&gt;&#xd;
+      Dialog height specified in the action&#xd;
+    &lt;/p&gt;&#xd;
+  &lt;/body&gt;&#xd;
+&lt;/html&gt;&#xd;
+</description>
+            <mandatory>true</mandatory>
+            <type>dtype_com.conceptwave.system.Integer</type>
+          </parameter>
+          <parameter name="x" type="rifp">
+            <description>&lt;html&gt;&#xd;
+  &lt;head&gt;&#xd;
+&#xd;
+  &lt;/head&gt;&#xd;
+  &lt;body&gt;&#xd;
+    &lt;p style=&quot;margin-top: 0&quot;&gt;&#xd;
+      Dialog X position specified in the action&#xd;
+    &lt;/p&gt;&#xd;
+  &lt;/body&gt;&#xd;
+&lt;/html&gt;&#xd;
+</description>
+            <mandatory>true</mandatory>
+            <type>dtype_com.conceptwave.system.Integer</type>
+          </parameter>
+          <parameter name="y" type="rifp">
+            <description>&lt;html&gt;&#xd;
+  &lt;head&gt;&#xd;
+&#xd;
+  &lt;/head&gt;&#xd;
+  &lt;body&gt;&#xd;
+    &lt;p style=&quot;margin-top: 0&quot;&gt;&#xd;
+      Dialog Y position specified in the action&#xd;
+    &lt;/p&gt;&#xd;
+  &lt;/body&gt;&#xd;
+&lt;/html&gt;&#xd;
+</description>
+            <mandatory>true</mandatory>
+            <type>dtype_com.conceptwave.system.Integer</type>
+          </parameter>
+        </parameterList>
+        <valueType>ui_com.conceptwave.system.Dialog</valueType>
+        <script><![CDATA[
+          if (theApp && theApp.hasMethod("cwCreateDialogDefault")) { return theApp.cwCreateDialogDefault(this, actionName, dialogMDName, width, height, x, y); }
+        ]]></script>
+      </method>
+      <method name="muestra_detalle" type="usrActionMethod">
+        <actionCategory>muestra_detalle</actionCategory>
+        <parameterList>
+          <parameter name="dialog" type="rifp">
+            <type>ui_com.conceptwave.system.Dialog</type>
+          </parameter>
+        </parameterList>
+        <showInPopup>true</showInPopup>
+        <userInterface>doc_provisionManagerCS.doc_prueba</userInterface>
+        <valueType>doc_provisionManagerCS.doc_prueba</valueType>
+      </method>
+    </methodList>
   </UserInterface>
   <viewList>
     <view name="busquedaServiciosView" type="findVView">

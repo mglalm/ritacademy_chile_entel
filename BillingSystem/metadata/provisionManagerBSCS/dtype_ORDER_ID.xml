@@ -2,6 +2,6 @@
 <dataType name="provisionManagerBSCS.ORDER_ID">
   <extends>dtype_com.conceptwave.system.String</extends>
   <label>Nro Orden</label>
-  <length>30</length>
+  <length>16</length>
   <metaVersion>25</metaVersion>
 </dataType>

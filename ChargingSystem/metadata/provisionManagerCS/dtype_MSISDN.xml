@@ -4,4 +4,5 @@
   <label>Msisdn</label>
   <length>15</length>
   <metaVersion>25</metaVersion>
+  <textLength>30</textLength>
 </dataType>

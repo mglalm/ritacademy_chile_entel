@@ -135,6 +135,7 @@
   <viewList>
     <view name="busquedaProfileView" type="findVView">
       <inputOverlay>doc_profileManagerEMA.DOC_PROFILE_EMA_FIND/ui_UserInterface/frmui_Forms/vform_Formulario_Busqueda</inputOverlay>
+      <label>Búsqueda Perfiles</label>
       <outputOverlay>findDoc_profileManagerEMA.busquedaProfile/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
       <showSearchForm>true</showSearchForm>
     </view>

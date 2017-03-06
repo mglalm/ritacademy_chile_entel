@@ -24,7 +24,7 @@
                           <variablePath>ui_applicationUIEMA.EMALite/usrActionMethod_selectApp</variablePath>
                         </variablePathList>
                       </clickMethod>
-                      <label>Select Application</label>
+                      <label>Aplicaciones</label>
                     </element>
                   </elementList>
                 </element>
@@ -33,7 +33,7 @@
             <override name="HorizontalLayoutForMenuItems" type="elext">
               <elementList>
                 <element name="Profile" type="elmnu">
-                  <label>Profile</label>
+                  <label>Perfiles</label>
                   <elementList>
                     <element name="Nuevo_Profile" type="elmnu">
                       <clickMethod type="varPath">
@@ -53,8 +53,29 @@
                     </element>
                   </elementList>
                 </element>
+                <element name="Nodos" type="elmnu">
+                  <label>Nodos</label>
+                  <elementList>
+                    <element name="Crear" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUIEMA.EMALite/usrActionMethod_nvoNodo</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Crear</label>
+                    </element>
+                    <element name="Buscar" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUIEMA.EMALite/usrActionMethod_buscarNodo</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Buscar</label>
+                    </element>
+                  </elementList>
+                </element>
                 <element name="Servicios" type="elmnu">
-                  <label>Servicios Por Clientes</label>
+                  <label>Servicios Por Móvil</label>
                   <elementList>
                     <element name="Servicios_Clientes" type="elmnu">
                       <clickMethod type="varPath">
@@ -62,7 +83,7 @@
                           <variablePath>ui_applicationUIEMA.EMALite/usrActionMethod_buscarServicios</variablePath>
                         </variablePathList>
                       </clickMethod>
-                      <label>Servicios Por Cliente</label>
+                      <label>Servicios Por Móvil</label>
                     </element>
                   </elementList>
                 </element>
@@ -81,18 +102,6 @@
     </vform>
   </vformList>
   <methodList>
-    <method name="nvoCliente" type="usrActionMethod">
-      <form>doc_customerManagerEMA.DOC_CLIENTE_BSCS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
-      <userInterface>doc_customerManagerEMA.DOC_CLIENTE_BSCS</userInterface>
-      <valueType>doc_customerManagerEMA.DOC_CLIENTE_BSCS</valueType>
-    </method>
-    <method name="buscarCliente" type="usrActionMethod">
-      <userInterface>findDoc_customerManagerEMA.busquedaCliente</userInterface>
-      <valueType>findDoc_customerManagerEMA.busquedaCliente</valueType>
-    </method>
-    <method name="selectApp" type="usrActionMethod">
-      <script>UserProfile.selectApp();</script>
-    </method>
     <method name="nvoProfile" type="usrActionMethod">
       <form>doc_profileManagerEMA.DOC_PROFILE_EMA/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
       <userInterface>doc_profileManagerEMA.DOC_PROFILE_EMA</userInterface>
@@ -102,9 +111,21 @@
       <userInterface>findDoc_profileManagerEMA.busquedaProfile</userInterface>
       <valueType>findDoc_profileManagerEMA.busquedaProfile</valueType>
     </method>
+    <method name="nvoNodo" type="usrActionMethod">
+      <form>doc_profileManagerEMA.DOC_NODO_EMA/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+      <userInterface>doc_profileManagerEMA.DOC_NODO_EMA</userInterface>
+      <valueType>doc_profileManagerEMA.DOC_NODO_EMA</valueType>
+    </method>
+    <method name="buscarNodo" type="usrActionMethod">
+      <userInterface>findDoc_profileManagerEMA.busquedaNodo</userInterface>
+      <valueType>findDoc_profileManagerEMA.busquedaNodo</valueType>
+    </method>
     <method name="buscarServicios" type="usrActionMethod">
       <userInterface>findDoc_provisionManagerEMA.busquedaServiciosEMA</userInterface>
       <valueType>findDoc_provisionManagerEMA.busquedaServiciosEMA</valueType>
+    </method>
+    <method name="selectApp" type="usrActionMethod">
+      <script>UserProfile.selectApp();</script>
     </method>
   </methodList>
 </userInterface>

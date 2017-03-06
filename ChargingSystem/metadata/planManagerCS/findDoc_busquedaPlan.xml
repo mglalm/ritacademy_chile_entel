@@ -107,11 +107,14 @@
                 <width>100%</width>
                 <elementList>
                   <element name="busquedaPlanResultTable" type="eltabl">
+                    <loadDataMessage>Cargando Datos...</loadDataMessage>
+                    <noItemsMessage>No hay Registros</noItemsMessage>
                     <onSelectChange type="varPath">
                       <variablePathList>
                         <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
                       </variablePathList>
                     </onSelectChange>
+                    <selectionAppearance>checkbox</selectionAppearance>
                     <variable type="varPath">
                       <variablePathList>
                         <variablePath>findDoc_planManagerCS.busquedaPlan/ui_UserInterface/uivar_result</variablePath>
@@ -125,6 +128,7 @@
                             <variablePath>doc_planManagerCS.DOC_PLAN_CS/leaf_ID_PLAN</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>20%</width>
                       </element>
                       <element name="DESC_PLAN" type="elfld">
                         <variable type="varPath">
@@ -133,6 +137,7 @@
                             <variablePath>doc_planManagerCS.DOC_PLAN_CS/leaf_DESC_PLAN</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>20%</width>
                       </element>
                       <element name="SALDO_INICIAL" type="elfld">
                         <variable type="varPath">
@@ -141,6 +146,7 @@
                             <variablePath>doc_planManagerCS.DOC_PLAN_CS/leaf_SALDO_INICIAL</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>20%</width>
                       </element>
                     </elementList>
                   </element>

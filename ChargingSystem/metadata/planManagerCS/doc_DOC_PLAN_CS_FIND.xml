@@ -35,13 +35,12 @@
               <width>100%</width>
               <elementList>
                 <element name="DOC_PLAN_CS_FINDGrid" type="elgrd">
+                  <labeAlign>center</labeAlign>
                   <numOfCols>3</numOfCols>
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
-                    <element name="DOC_PLAN_CS_FINDHeader" type="elhdr">
-                      <label>DOC_PLAN_CS_FIND</label>
-                    </element>
                     <element name="ID_PLAN" type="elfld">
+                      <cellAlignment></cellAlignment>
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/ui_UserInterface/uivar_model</variablePath>

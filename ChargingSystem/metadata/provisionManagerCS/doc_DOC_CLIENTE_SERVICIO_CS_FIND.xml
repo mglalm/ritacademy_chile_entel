@@ -8,16 +8,20 @@
     <variable name="ID_SERVICIO" type="leaf">
       <valueType>dtype_provisionManagerCS.ID_SERVICIO</valueType>
     </variable>
+    <variable name="DESC_ESTADO_SERVICIO_REF" type="leaf">
+      <propertyElement type="elslct">
+        <sorted>false</sorted>
+      </propertyElement>
+      <valueType>dtype_provisionManagerCS.DESC_ESTADO_SERVICIO_REF</valueType>
+    </variable>
     <variable name="ID_PLAN_CS" type="leaf">
       <valueType>dtype_provisionManagerCS.ID_PLAN_CS</valueType>
-    </variable>
-    <variable name="ID_SERVICIO_ESTADO" type="leaf">
-      <valueType>dtype_provisionManagerCS.ID_SERVICIO_ESTADO</valueType>
     </variable>
     <variable name="MSISDN" type="leaf">
       <valueType>dtype_provisionManagerCS.MSISDN</valueType>
     </variable>
     <variable name="FECHA_ACTIVACION" type="leaf">
+      <propertyElement type="eldatetime"/>
       <valueType>dtype_provisionManagerCS.FECHA_ACTIVACION</valueType>
     </variable>
     <variable name="ORDER_ID" type="leaf">
@@ -44,12 +48,9 @@
               <width>100%</width>
               <elementList>
                 <element name="DOC_CLIENTE_SERVICIO_CS_FINDGrid" type="elgrd">
-                  <numOfCols>6</numOfCols>
+                  <numOfCols>7</numOfCols>
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
-                    <element name="DOC_CLIENTE_SERVICIO_CS_FINDHeader" type="elhdr">
-                      <label>DOC_CLIENTE_SERVICIO_CS_FIND</label>
-                    </element>
                     <element name="ID_SERVICIO" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
@@ -66,11 +67,11 @@
                         </variablePathList>
                       </variable>
                     </element>
-                    <element name="ID_SERVICIO_ESTADO" type="elfld">
+                    <element name="DESC_ESTADO_SERVICIO_REF" type="elslct">
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_ID_SERVICIO_ESTADO</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_DESC_ESTADO_SERVICIO_REF</variablePath>
                         </variablePathList>
                       </variable>
                     </element>

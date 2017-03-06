@@ -166,16 +166,6 @@
                           </variablePathList>
                         </variable>
                       </element>
-                      <element name="ID_CLIENTE_ESTADO1" type="elslct">
-                        <enumRefDataType>dtype_customerManagerBSCS.DESC_CLIENTE_ESTADO_REF</enumRefDataType>
-                        <multiselect>false</multiselect>
-                        <variable type="varPath">
-                          <variablePathList>
-                            <variablePath>findDoc_customerManagerBSCS.busquedaCliente/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_customerManagerBSCS.DOC_CLIENTE_BSCS/leaf_ID_CLIENTE_ESTADO</variablePath>
-                          </variablePathList>
-                        </variable>
-                      </element>
                     </elementList>
                   </element>
                 </elementList>

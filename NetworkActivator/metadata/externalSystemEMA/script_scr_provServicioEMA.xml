@@ -14,7 +14,7 @@
     var var_estado = 1;
     var output = new DataStructure("externalSystemEMA.output_provServicioEMA");
 
-    externalSystemEMA.test();
+    externalSystemEMA.quiebra_ejecucion();
 
     //-----VALIDANDO SI EXISTE EL PROFILE QUE SE RECIBE COMO PARAMETRO
     var perfiles_activos = new Finder("externalSystemEMA.DOC_PROFILE_EMA_FIND");
@@ -36,6 +36,27 @@
         return output;
     }
 
+    //-----VALIDANDO SI EL PERFIL TIENE PLATAFORMAS CONFIGURADAS PARA LA ACTIVACION
+    var perfiles_nodos_activos = new Finder("externalSystemEMA.DOC_PROF_DETALLE_EMA_FIND");
+    var resultado = perfiles_nodos_activos.search();
+
+    var existe_profile_nodo = 0 ;
+    if ( resultado.length > 0 )
+    {
+        for (var i=0 ;    i < resultado.length ; i++ )
+        {
+            if (resultado[i].ID_PROFILE_SERVICIO_EMA == var_profile )
+                existe_profile_nodo = 1;
+        }
+    }
+    if ( existe_profile_nodo == 0 )
+    {
+        output.estado = "NOOK";
+        output.mensaje = "No existen Nodos Configurados para ese Profile en EMA";
+        return output;
+    }
+
+
     //-----VALIDANDO SI LA TRIPLETA YA TIENEN SERVICIO ACTIVO
     var servicios_activos = new Finder("externalSystemEMA.DOC_SERVICIO_EMA_FIND");
     var resultado = servicios_activos.search();
@@ -51,49 +72,43 @@
     if ( ya_tiene_servicio > 0 )
     {
         output.estado = "NOOK";
-        output.mensaje = "Ya tiene ese Profile Activo";
+        output.mensaje = "El movil ya tiene ese Profile Activo en EMA";
         return output;
     }
 
-
-
     //-----DADO QUE SE PASARON TODAS LAS VALIDACIONES SE CREA EL SERVICIO, RESTA ACTIVAR LOS NODOS
     var documento = new Document("externalSystemEMA.DOC_SERVICIO_GET_EMA");
-
+    var fecha_hoy = new Date();
     documento.MSISDN_SERVICIO_EMA = var_msisdn;
     documento.ID_PROFILE_SERVICIO_EMA = var_profile;
     documento.ID_ESTADO_SERVICIO_EMA = var_estado;
-    documento.FECHA_ACTIVACION_SERVICIO_EMA = Date.now();
+    documento.FECHA_ACTIVACION_SERVICIO_EMA = fecha_hoy;
     documento.ORDER_ID_SERVICIO_EMA = var_orderid;
     documento.save();
 
 
     //-----FALTA SOLO DEJAR EL REGISTRO EN LOS NODOS CORRESPONDIENTES
+    var perfiles_nodos_activos = new Finder("externalSystemEMA.DOC_PROF_DETALLE_EMA_FIND");
+    var resultado = perfiles_nodos_activos.search();
 
-
-    /*
-    if ( resultado.length > 0)
+    var existe_profile_nodo = 0 ;
+    var var_id_nodo;
+    if ( resultado.length > 0 )
     {
-        resultado[0].ID_MSISDN_ESTADO=2;
-
-        output.msisdn = resultado[0].MSISDN;
-        //resultado.save();
-        resultado[0].save();
-        output.estado = "OK";
-        output.mensaje = "Mensaje Recibido";
-
+        for (var i=0 ;    i < resultado.length ; i++ )
+        {
+            if (resultado[i].ID_PROFILE_SERVICIO_EMA == var_profile )
+            {
+               //-----SE INSERTA REGISTRO EN TABLA DE ACTIVACION DE NODOS
+                var_id_nodo=resultado[i].ID_NODO_SERVICIO_EMA;
+                var documento = new Document("externalSystemEMA.DOC_SERVICIO_NOD_ACT_GET_EMA");
+                documento.ID_NODO_SERVICIO_EMA = var_id_nodo;
+                documento.MSISDN_SERVICIO_EMA = var_msisdn
+                documento.FECHA_ACTIVACION_SERVICIO_EMA = fecha_hoy;
+                documento.save();
+            }
+        }
     }
-    else
-    {
-        output.estado = "NOOK";
-        output.mensaje = "No hay MSISDN Disponibles";
-        output.msisdn = "";
-    }
-    */
-    //Process.sendMessageToQueue("ExternalSystemSimulator.creditApprovalNumberGenerator","COBRAS_GPgetCreditApprovalNumberRequest", input, null,null,null,null,null,false,false);
-    //Process.sendMessageToQueue("ExternalSystemSimulator.prueba","COBRAS_GPgetCreditApprovalNumberRequest", input, null,null,null,null,null,false,false);
-    //Process.sendMessageToProcess(1,null,"creditApprovalNumberGenerator",input,null,null,null);
-    //Process.startProcess("ExternalSystemSimulator.procObtieneReservaMsisdn",null,null,null);
 
     output.estado = "OK";
     output.mensaje = "Servicio Activado en EMA";

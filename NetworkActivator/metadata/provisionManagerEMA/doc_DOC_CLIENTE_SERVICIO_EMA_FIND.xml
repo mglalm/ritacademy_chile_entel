@@ -44,9 +44,6 @@
                   <numOfCols>5</numOfCols>
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
-                    <element name="DOC_CLIENTE_SERVICIO_EMA_FINDHeader" type="elhdr">
-                      <label>DOC_CLIENTE_SERVICIO_EMA_FIND</label>
-                    </element>
                     <element name="MSISDN" type="elfld">
                       <variable type="varPath">
                         <variablePathList>

@@ -3,4 +3,5 @@
   <extends>dtype_com.conceptwave.system.DateTime</extends>
   <label>Fecha Activación</label>
   <metaVersion>25</metaVersion>
+  <propertyElement type="eldatetime"/>
 </dataType>

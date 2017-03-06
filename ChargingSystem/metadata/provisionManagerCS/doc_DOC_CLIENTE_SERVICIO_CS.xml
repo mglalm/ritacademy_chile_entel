@@ -20,8 +20,11 @@
     <variable name="ID_SERVICIO_ESTADO" type="leaf">
       <column>ID_SERVICIO_ESTADO</column>
       <key>2</key>
+      <propertyElement type="elslct">
+        <sorted>false</sorted>
+      </propertyElement>
       <table>CS_SERVICIO</table>
-      <valueType>dtype_provisionManagerCS.ID_SERVICIO_ESTADO</valueType>
+      <valueType>dtype_provisionManagerCS.DESC_ESTADO_SERVICIO_REF</valueType>
     </variable>
     <variable name="MSISDN" type="leaf">
       <column>MSISDN</column>
@@ -31,6 +34,7 @@
     </variable>
     <variable name="FECHA_ACTIVACION" type="leaf">
       <column>FECHA_ACTIVACION</column>
+      <propertyElement type="eldatetime"/>
       <table>CS_SERVICIO</table>
       <valueType>dtype_provisionManagerCS.FECHA_ACTIVACION</valueType>
     </variable>

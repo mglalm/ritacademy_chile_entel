@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="externalSystemBSCS.scr_desprovServicioBSCS">
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>dstruct_externalSystemBSCS.input_desprovServicioBSCS</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var var_msisdn = input.msisdn;
+    var var_id_servicio_estado = 3;  // ESTADO DESACTIVADO
+    var var_id_servicio;
+
+    //-----SE SUPONE QUE EL SERVICIO SE ENCUENTRA ACTIVO POR LO QUE HAY QUE
+    //-----CAMBIAR EL ESTADO EN SERVICIOS Y LIBERAR EL MSISDN
+
+    externalSystemBSCS.quiebra_ejecucion();
+
+    var output = new DataStructure("externalSystemBSCS.output_desprovServicioBSCS");
+
+    //-----VERIFICAR QUE TENGA ACTIVO EL SERVICIO
+    var listado_servicios = new Finder("externalSystemBSCS.FIND_SERV_SERVICIO_BSCS");
+    var resultado = listado_servicios.search();
+    var ya_tiene_servicio = 0 ;
+    if ( resultado.length > 0)
+    {
+        for ( var i = 0 ; i < resultado.length ; i++ )
+        {
+            if ( resultado[i].ID_SERV_ESTADO_SERVICIO_BSCS == 1 && resultado[i].MSISDN_SERVICIO_BSCS == var_msisdn )
+            {
+                //-----SI LO ENCUENTRA LO DEJA EN ESTADO DESACTIVO
+                ya_tiene_servicio = 1;
+                resultado[i].ID_SERV_ESTADO_SERVICIO_BSCS=var_id_servicio_estado;
+                resultado[i].save();
+            }
+        }
+    }
+    if ( ya_tiene_servicio == 0 )
+    {
+        output.estado = "NOOK";
+        output.mensaje = "Ese Movil no tiene Servicio Activo en BSCS";
+        return output;
+    }
+
+    //-----CAMBIAMOS EL ESTADO DEL MSISDN A DISPONIBLE
+    externalSystemBSCS.quiebra_ejecucion();
+    var msisdn_existentes = new Finder("externalSystemBSCS.FIND_SERV_MSISDN_BSCS");
+    var resultado = msisdn_existentes.search();
+    var existe_msisdn = 0;
+
+    if ( resultado.length > 0)
+    {
+        for (var i=0 ; i < resultado.length ; i++ )
+        {
+            if (resultado[i].MSISDN_SERVICIO_BSCS == var_msisdn && resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS == 3 )
+            {
+                existe_msisdn = 1;
+                resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS = 1;
+                resultado[i].save();
+            }
+        }
+    }
+
+    output.estado = "OK";
+    output.mensaje = "Servicio desprovisionado en BSCS";
+
+    return output;
+  ]]></script>
+</script>

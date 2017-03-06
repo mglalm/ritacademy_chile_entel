@@ -180,6 +180,7 @@
   <viewList>
     <view name="busquedaServiciosEMAView" type="findVView">
       <inputOverlay>doc_provisionManagerEMA.DOC_CLIENTE_SERVICIO_EMA_FIND/ui_UserInterface/frmui_Forms/vform_Formulario_Busqueda</inputOverlay>
+      <label>Búsqueda de Servicios por Móvil</label>
       <outputOverlay>findDoc_provisionManagerEMA.busquedaServiciosEMA/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
       <showSearchForm>true</showSearchForm>
     </view>

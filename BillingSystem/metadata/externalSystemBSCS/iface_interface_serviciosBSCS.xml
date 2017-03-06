@@ -15,6 +15,18 @@
       <output>dstruct_externalSystemBSCS.output_provServicioBSCS</output>
       <type>Request-Response</type>
     </operation>
+    <operation name="desprovServicioBSCS" type="oper">
+      <input>dstruct_externalSystemBSCS.input_desprovServicioBSCS</input>
+      <label>desprovServicioBSCS</label>
+      <output>dstruct_externalSystemBSCS.output_desprovServicioBSCS</output>
+      <type>Request-Response</type>
+    </operation>
+    <operation name="getMsisdnLiberarBSCS" type="oper">
+      <input>dstruct_externalSystemBSCS.input_getMsisdnLiberarBSCS</input>
+      <label>getMsisdnLiberarBSCS</label>
+      <output>dstruct_externalSystemBSCS.output_getMsisdnLiberarBSCS</output>
+      <type>Request-Response</type>
+    </operation>
   </operationList>
-  <revision>2</revision>
+  <revision>4</revision>
 </interface>

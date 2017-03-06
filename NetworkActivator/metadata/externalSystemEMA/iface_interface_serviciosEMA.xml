@@ -9,6 +9,12 @@
       <output>dstruct_externalSystemEMA.output_provServicioEMA</output>
       <type>Request-Response</type>
     </operation>
+    <operation name="desprovServicioEMA" type="oper">
+      <input>dstruct_externalSystemEMA.input_desprovServicioEMA</input>
+      <label>desprovServicioEMA</label>
+      <output>dstruct_externalSystemEMA.output_desprovServicioEMA</output>
+      <type>Request-Response</type>
+    </operation>
   </operationList>
-  <revision>1</revision>
+  <revision>2</revision>
 </interface>

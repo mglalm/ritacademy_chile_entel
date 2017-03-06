@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerCS.DOC_ESTADO_SERVICIO_CS">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{726c2a66-c564-49b5-b681-b8d498064d7b}</guid>
+  <label>DOC_ESTADO_SERVICIO_CS</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_SERVICIO_ESTADO" type="leaf">
+      <column>ID_SERVICIO_ESTADO</column>
+      <key>1</key>
+      <table>CS_SERVICIO_ESTADO</table>
+      <valueType>dtype_provisionManagerCS.ID_SERVICIO_ESTADO</valueType>
+    </variable>
+    <variable name="DESC_ESTADO_SERVICIO" type="leaf">
+      <column>DESC_ESTADO</column>
+      <table>CS_SERVICIO_ESTADO</table>
+      <valueType>dtype_provisionManagerCS.DESC_ESTADO_SERVICIO</valueType>
+    </variable>
+  </variableList>
+  <methodList>
+    <method name="cwOnDocVisualKey" type="action">
+      <system>true</system>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <script>return this.DESC_ESTADO_SERVICIO;</script>
+    </method>
+  </methodList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerCS.DOC_ESTADO_SERVICIO_CS</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_ESTADO_SERVICIO_CSGrid" type="elgrd">
+                  <numOfCols>2</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DOC_ESTADO_SERVICIO_CSHeader" type="elhdr">
+                      <label>DOC_ESTADO_SERVICIO_CS</label>
+                    </element>
+                    <element name="ID_SERVICIO_ESTADO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_ESTADO_SERVICIO_CS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_ESTADO_SERVICIO_CS/leaf_ID_SERVICIO_ESTADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="DESC_ESTADO_SERVICIO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_ESTADO_SERVICIO_CS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_ESTADO_SERVICIO_CS/leaf_DESC_ESTADO_SERVICIO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerCS.doc_prueba">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{f38be64f-e074-439c-99fc-4c4bd004d580}</guid>
+  <label>doc_prueba</label>
+  <metaVersion>25</metaVersion>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerCS.doc_prueba</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="prueba" type="vform">
+            <label>prueba</label>
+            <root name="pruebaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="doc_pruebaGrid" type="elgrd">
+                  <numOfCols>3</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="doc_pruebaHeader" type="elhdr">
+                      <label>doc_prueba</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

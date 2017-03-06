@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemEMA.DOC_SERVICIO_NOD_ACT_GET_EMA">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{0aeb6eee-1648-4ee5-960e-291c253f2402}</guid>
+  <label>DOC_SERVICIO_NOD_ACT_GET_EMA</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_NODO_SERVICIO_EMA" type="leaf">
+      <column>ID_NODO</column>
+      <key>1</key>
+      <table>EMA_SERVICIO_NODO_ACTIVO</table>
+      <valueType>dtype_externalSystemEMA.ID_NODO_SERVICIO_EMA</valueType>
+    </variable>
+    <variable name="MSISDN_SERVICIO_EMA" type="leaf">
+      <column>MSISDN</column>
+      <key>2</key>
+      <table>EMA_SERVICIO_NODO_ACTIVO</table>
+      <valueType>dtype_externalSystemEMA.MSISDN_SERVICIO_EMA</valueType>
+    </variable>
+    <variable name="FECHA_ACTIVACION_SERVICIO_EMA" type="leaf">
+      <column>FECHA_ACTIVACION</column>
+      <table>EMA_SERVICIO_NODO_ACTIVO</table>
+      <valueType>dtype_externalSystemEMA.FECHA_ACTIVACION_SERVICIO_EMA</valueType>
+    </variable>
+  </variableList>
+</document>

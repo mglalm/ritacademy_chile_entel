@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="externalSystemBSCS.scr_getMsisdnLiberarBSCS">
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>dstruct_externalSystemBSCS.input_getMsisdnLiberarBSCS</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    //SOLO SI EL MSISDN ESTA EN ESTADO RESERVADO
+    var var_msisdn = input.msisdn;
+    var output = new DataStructure("externalSystemBSCS.output_getMsisdnLiberarBSCS");
+
+    externalSystemBSCS.quiebra_ejecucion();
+
+    var msisdn_disponibles = new Finder("externalSystemBSCS.FIND_SERV_MSISDN_BSCS");
+    var resultado = msisdn_disponibles.search();
+
+    if ( resultado.length > 0)
+    {
+        for ( var i = 0 ; i < resultado.length ; i++ )
+        {
+            //-----SE BUSCA MSISDN CON ESTADO RESERVADO
+            if ( resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS == 2 && resultado[i].MSISDN_SERVICIO_BSCS == var_msisdn)
+            {
+                resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS=1;
+                output.estado = "OK";
+                output.mensaje = "MSISDN Liberado";
+                resultado[i].save();
+                return output;
+            }
+        }
+    }
+
+    output.estado = "NOOK";
+    output.mensaje = "Ese MSISDN no esta en estado Reservado";
+
+    return output;
+  ]]></script>
+</script>

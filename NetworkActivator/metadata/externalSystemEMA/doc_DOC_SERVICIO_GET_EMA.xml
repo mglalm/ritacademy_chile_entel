@@ -8,19 +8,18 @@
   <variableList>
     <variable name="MSISDN_SERVICIO_EMA" type="leaf">
       <column>MSISDN</column>
-      <key>3</key>
+      <key>2</key>
       <table>EMA_SERVICIO</table>
       <valueType>dtype_externalSystemEMA.MSISDN_SERVICIO_EMA</valueType>
     </variable>
     <variable name="ID_PROFILE_SERVICIO_EMA" type="leaf">
       <column>ID_PROFILE</column>
-      <key>2</key>
+      <key>1</key>
       <table>EMA_SERVICIO</table>
       <valueType>dtype_externalSystemEMA.ID_PROFILE_SERVICIO_EMA</valueType>
     </variable>
     <variable name="ID_ESTADO_SERVICIO_EMA" type="leaf">
       <column>ID_ESTADO</column>
-      <key>1</key>
       <table>EMA_SERVICIO</table>
       <valueType>dtype_externalSystemEMA.ID_ESTADO_SERVICIO_EMA</valueType>
     </variable>

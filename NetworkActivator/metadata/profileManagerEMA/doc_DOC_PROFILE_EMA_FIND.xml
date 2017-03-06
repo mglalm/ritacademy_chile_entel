@@ -35,22 +35,19 @@
                   <numOfCols>2</numOfCols>
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
-                    <element name="DOC_PROFILE_EMA_FINDHeader" type="elhdr">
-                      <label>DOC_PROFILE_EMA_FIND</label>
+                    <element name="ID_PROFILE" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_PROFILE_EMA_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_PROFILE_EMA_FIND/leaf_ID_PROFILE</variablePath>
+                        </variablePathList>
+                      </variable>
                     </element>
                     <element name="DESC_PROFILE" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_profileManagerEMA.DOC_PROFILE_EMA_FIND/ui_UserInterface/uivar_model</variablePath>
                           <variablePath>doc_profileManagerEMA.DOC_PROFILE_EMA_FIND/leaf_DESC_PROFILE</variablePath>
-                        </variablePathList>
-                      </variable>
-                    </element>
-                    <element name="ID_PROFILE" type="elfld">
-                      <variable type="varPath">
-                        <variablePathList>
-                          <variablePath>doc_profileManagerEMA.DOC_PROFILE_EMA_FIND/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_profileManagerEMA.DOC_PROFILE_EMA_FIND/leaf_ID_PROFILE</variablePath>
                         </variablePathList>
                       </variable>
                     </element>

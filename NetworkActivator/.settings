@@ -2,11 +2,11 @@
 <project>
   <DefaultDB>TRAIN3</DefaultDB>
   <applicationString>ema</applicationString>
-  <applicationVersionString>1</applicationVersionString>
+  <applicationVersionString>2</applicationVersionString>
   <breakpointMap>
     <breakpoint key="ExternalSystemSimulator.test">0</breakpoint>
     <breakpoint key="customerManagerBSCS.DOC_CLIENTE_BSCS_FIND.cwOnDocVisualKey">0</breakpoint>
-    <breakpoint key="externalSystemEMA.test">0</breakpoint>
+    <breakpoint key="externalSystemEMA.quiebra_ejecucion">0</breakpoint>
   </breakpointMap>
   <databasesMap>
     <databases key="TRAIN3" type=".configdb">
@@ -21,6 +21,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
+  <jarExportFolder>C:\SJM\Archivos\Velocity\Proyecto_Cobras_NetworkActivator\JAR</jarExportFolder>
   <joinCluster>true</joinCluster>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
