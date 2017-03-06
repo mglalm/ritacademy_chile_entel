@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="billingNamespace.output_provServicioBSCS">
+<dataStructure name="EMANamespace.output_desprovServicioEMA">
   <container>true</container>
-  <description>output_provServicioBSCS</description>
-  <label>output_provServicioBSCS</label>
+  <description>output_desprovServicioEMA</description>
+  <label>output_desprovServicioEMA</label>
   <metaVersion>25</metaVersion>
   <childList>
     <child name="estado" type="dstruct">

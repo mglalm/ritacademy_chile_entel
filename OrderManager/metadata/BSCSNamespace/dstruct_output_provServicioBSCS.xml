@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="billingNamespace.output_getMsisdnReserveBSCS">
+<dataStructure name="BSCSNamespace.output_provServicioBSCS">
   <container>true</container>
-  <description>output_getMsisdnReserveBSCS</description>
-  <label>output_getMsisdnReserveBSCS</label>
+  <description>output_provServicioBSCS</description>
+  <label>output_provServicioBSCS</label>
   <metaVersion>25</metaVersion>
   <childList>
     <child name="estado" type="dstruct">
@@ -14,11 +14,6 @@
       <datatype>true</datatype>
       <element>dtype_com.conceptwave.system.String</element>
       <label>mensaje</label>
-    </child>
-    <child name="msisdn" type="dstruct">
-      <datatype>true</datatype>
-      <element>dtype_com.conceptwave.system.String</element>
-      <label>msisdn</label>
     </child>
   </childList>
 </dataStructure>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="OrderManager.finOM_OrdenPO">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_OrderManager.docOMOrdenPO</input>
+  <label>finOM_OrdenPO</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_OrderManager.docOMOrdenPO</output>
+  <type>document</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMOrdenPO</document>
+      <mappedDocument>doc_OrderManager.docOMOrdenPO</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMOrdenPO/leaf_POId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrdenPO/leaf_POId</path>
+    </search>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMOrdenPO</document>
+      <mappedDocument>doc_OrderManager.docOMOrdenPO</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMOrdenPO/leaf_orderId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrdenPO/leaf_orderId</path>
+    </search>
+  </searchList>
+</findDoc>

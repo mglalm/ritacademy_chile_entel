@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<participant name="EMANamespace.EMAParticipant">
+  <label>EMAParticipant</label>
+  <metaVersion>25</metaVersion>
+  <participant>iface_EMANamespace.interface_serviciosEMA</participant>
+</participant>

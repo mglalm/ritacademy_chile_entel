@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="EMANamespace.interface_serviciosEMA">
+  <label>interface_serviciosEMA</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="desprovServicioEMA" type="oper">
+      <input>dstruct_EMANamespace.input_desprovServicioEMA</input>
+      <label>desprovServicioEMA</label>
+      <output>dstruct_EMANamespace.output_desprovServicioEMA</output>
+      <type>Request-Response</type>
+    </operation>
+    <operation name="provServicioEMA" type="oper">
+      <input>dstruct_EMANamespace.input_provServicioEMA</input>
+      <label>provServicioEMA</label>
+      <output>dstruct_EMANamespace.output_provServicioEMA</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

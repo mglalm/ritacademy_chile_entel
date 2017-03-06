@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="EMANamespace.bind_provServicioEMA_SOAP">
+  <extensionList>
+    <extension name="provServicioEMA" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">provServicioEMA</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioEMA$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioEMA$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioEMA" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">desprovServicioEMA</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioEMA$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioEMA$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioEMA" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">provServicioEMA</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioEMA$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioEMA$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioEMA" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">desprovServicioEMA</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioEMA$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioEMA$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioEMA" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">provServicioEMA</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioEMA$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="provServicioEMA$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioEMA" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">desprovServicioEMA</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioEMA$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="desprovServicioEMA$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_EMANamespace.interface_serviciosEMA</interface>
+  <label>bind_provServicioEMA_SOAP</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

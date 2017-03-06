@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<nameSpace name="billingNamespace">
-  <label>billingNamespace</label>
+<nameSpace name="BSCSNamespace">
+  <label>BSCSNamespace</label>
   <metaVersion>25</metaVersion>
   <targetNS>http://www.readinessit.com/namespaces/ProyectoCobra/billingNamespace</targetNS>
 </nameSpace>

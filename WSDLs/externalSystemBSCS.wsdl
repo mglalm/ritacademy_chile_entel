@@ -17,28 +17,107 @@
 			<annotation>
 				<documentation>externalSystemBSCS</documentation>
 				<appinfo>
-					<metadata>AVM Metadata</metadata>
+					<metadata>AVM Metadata BSCS</metadata>
 					<created>Wed Feb 22 13:53:02 CLT 2017</created>
 				</appinfo>
 			</annotation>
 
 			<!-- Data types and elements -->
 
-			<simpleType name="ID_MSISDN_ESTADO_SERVICIO">
+			<simpleType name="SERV_ID_CLIENTE_BSCS">
 				<annotation>
-					<documentation>Id Estado</documentation>
+					<documentation>SERV_ID_CLIENTE_BSCS</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="5"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="SERV_ORDER_ID_SCS">
+				<annotation>
+					<documentation>SERV_ORDER_ID_SCS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="16"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="SERV_MSISDN_sBSCS">
+				<annotation>
+					<documentation></documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="SERV_ID_MSISDN_ESTADO_BSCS">
+				<annotation>
+					<documentation></documentation>
 				</annotation>
 				<restriction base="xsd:string">
 					<maxLength value="1"/>
 				</restriction>
 			</simpleType>
 
-			<simpleType name="MSISDN_SERVICIO">
+			<simpleType name="SERV_FECHA_CREACION_BSCS">
 				<annotation>
-					<documentation>Msisdn</documentation>
+					<documentation>SERV_FECHA_CREACION_BSCS</documentation>
+				</annotation>
+				<restriction base="xsd:dateTime">
+				</restriction>
+			</simpleType>
+
+			<simpleType name="SERV_FECHA_ACTIVACION_BSCS">
+				<annotation>
+					<documentation>SERV_FECHA_ACTIVACION_BSCS</documentation>
+				</annotation>
+				<restriction base="xsd:dateTime">
+				</restriction>
+			</simpleType>
+
+			<simpleType name="SERV_DESC_PLAN_BSCS">
+				<annotation>
+					<documentation>SERV_DESC_PLAN_BSCS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="30"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="SERV_ID_SERVICIO_ESTADO_BSCS">
+				<annotation>
+					<documentation>SERV_ID_SERVICIO_ESTADO_BSCS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="1"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="SERV_ID_CLIENTE_ESTADO_BSCS">
+				<annotation>
+					<documentation>SERV_ID_CLIENTE_ESTADO_BSCS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="1"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="SERV_RUT_BSCS">
+				<annotation>
+					<documentation>SERV_RUT_BSCS</documentation>
 				</annotation>
 				<restriction base="xsd:string">
 					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="SERV_ID_PLAN_BSCS">
+				<annotation>
+					<documentation>SERV_ID_PLAN_BSCS</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="5"/>
 				</restriction>
 			</simpleType>
 
@@ -77,6 +156,44 @@
 					</sequence>
 				</complexType>
 
+			<complexType name="output_desprovServicioBSCS">
+				<annotation>
+					<documentation>output_desprovServicioBSCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="input_getMsisdnLiberarBSCS">
+				<annotation>
+					<documentation>input_getMsisdnLiberarBSCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="output_getMsisdnLiberarBSCS">
+				<annotation>
+					<documentation>output_getMsisdnLiberarBSCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="input_desprovServicioBSCS">
+				<annotation>
+					<documentation>input_desprovServicioBSCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
 			<complexType name="output_provServicioBSCS">
 				<annotation>
 					<documentation>output_provServicioBSCS</documentation>
@@ -89,26 +206,49 @@
 
 			<!-- Documents -->
 
-			<complexType name="DOC_MSISDN_PASO_GET">
+			<complexType name="SERV_SERVICIOS_BSCS">
 				<annotation>
-					<documentation>DOC_MSISDN_PASO_GET</documentation>
+					<documentation>SERV_SERVICIOS_BSCS</documentation>
 				</annotation>
 					<sequence>
-						<element name="orderid" type="xsd:string"/>
-						<element name="rut" type="xsd:string"/>
-						<element name="estado" type="xsd:string"/>
-						<element name="mensaje" type="xsd:string"/>
-						<element name="msisdn" type="xsd:string"/>
+						<element name="ID_CLIENTE_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_CLIENTE_BSCS"/>
+						<element name="MSISDN_SERVICIO_BSCS" type="externalSystemBSCS:SERV_MSISDN_sBSCS"/>
+						<element name="FECHA_ACTIVACION_SERVICIO_BSCS" type="externalSystemBSCS:SERV_FECHA_ACTIVACION_BSCS"/>
+						<element name="ID_SERV_ESTADO_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_SERVICIO_ESTADO_BSCS"/>
+						<element name="ID_PLAN_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_PLAN_BSCS"/>
+						<element name="ORDER_ID_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ORDER_ID_SCS"/>
 					</sequence>
 				</complexType>
 
-			<complexType name="DOC_MSISDN_GET2">
+			<complexType name="SERV_PLAN_BSCS">
 				<annotation>
-					<documentation>DOC_MSISDN_GET2</documentation>
+					<documentation>SERV_PLAN_BSCS</documentation>
 				</annotation>
 					<sequence>
-						<element name="MSISDN" type="externalSystemBSCS:MSISDN_SERVICIO"/>
-						<element name="ID_MSISDN_ESTADO" type="externalSystemBSCS:ID_MSISDN_ESTADO_SERVICIO"/>
+						<element name="ID_PLAN_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_PLAN_BSCS"/>
+						<element name="DESC_PLAN_SERVICIO_BSCS" type="externalSystemBSCS:SERV_DESC_PLAN_BSCS"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="SERV_MSISDN_BSCS">
+				<annotation>
+					<documentation>SERV_MSISDN_BSCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="ID_MSISDN_ESTADO_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_MSISDN_ESTADO_BSCS"/>
+						<element name="MSISDN_SERVICIO_BSCS" type="externalSystemBSCS:SERV_MSISDN_sBSCS"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="SERV_CLIENTE_BSCS">
+				<annotation>
+					<documentation>SERV_CLIENTE_BSCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="ID_CLIENTE_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_CLIENTE_BSCS"/>
+						<element name="FECHA_CREACION_SERVICIO_BSCS" type="externalSystemBSCS:SERV_FECHA_CREACION_BSCS"/>
+						<element name="ID_CLIENTE_ESTADO_SERV_BSCS" type="externalSystemBSCS:SERV_ID_CLIENTE_ESTADO_BSCS"/>
+						<element name="RUT_SERVICIO_BSCS" type="externalSystemBSCS:SERV_RUT_BSCS"/>
 					</sequence>
 				</complexType>
 
@@ -131,6 +271,22 @@
 		<part name="output_provServicioBSCS" type="externalSystemBSCS:output_provServicioBSCS"/>
 	</message>
 
+	<message name="input_desprovServicioBSCS">
+		<part name="input_desprovServicioBSCS" type="externalSystemBSCS:input_desprovServicioBSCS"/>
+	</message>
+
+	<message name="output_desprovServicioBSCS">
+		<part name="output_desprovServicioBSCS" type="externalSystemBSCS:output_desprovServicioBSCS"/>
+	</message>
+
+	<message name="input_getMsisdnLiberarBSCS">
+		<part name="input_getMsisdnLiberarBSCS" type="externalSystemBSCS:input_getMsisdnLiberarBSCS"/>
+	</message>
+
+	<message name="output_getMsisdnLiberarBSCS">
+		<part name="output_getMsisdnLiberarBSCS" type="externalSystemBSCS:output_getMsisdnLiberarBSCS"/>
+	</message>
+
 	<portType name="interface_serviciosBSCS">
 		<operation name="getMsisdnReserveBSCS">
 			<input message="tns:input_getMsisdnReserveBSCS"/>
@@ -139,6 +295,14 @@
 		<operation name="provServicioBSCS">
 			<input message="tns:input_provServicioBSCS"/>
 			<output message="tns:output_provServicioBSCS"/>
+		</operation>
+		<operation name="desprovServicioBSCS">
+			<input message="tns:input_desprovServicioBSCS"/>
+			<output message="tns:output_desprovServicioBSCS"/>
+		</operation>
+		<operation name="getMsisdnLiberarBSCS">
+			<input message="tns:input_getMsisdnLiberarBSCS"/>
+			<output message="tns:output_getMsisdnLiberarBSCS"/>
 		</operation>
 	</portType>
 
@@ -155,6 +319,24 @@
 		</operation>
 		<operation name="provServicioBSCS">
 			<soap:operation soapAction="provServicioBSCS"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="desprovServicioBSCS">
+			<soap:operation soapAction="desprovServicioBSCS"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getMsisdnLiberarBSCS">
+			<soap:operation soapAction="getMsisdnLiberarBSCS"/>
 			<input>
 				<soap:body use="literal"/>
 			</input>

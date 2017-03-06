@@ -50,5 +50,8 @@
     <variable name="CTRL_profile" type="leaf">
       <valueType>dtype_OrderManager.dtIdPlan</valueType>
     </variable>
+    <variable name="CTRL_NotificacionOK" type="leaf">
+      <valueType>dtype_com.conceptwave.system.Boolean</valueType>
+    </variable>
   </variableList>
 </document>

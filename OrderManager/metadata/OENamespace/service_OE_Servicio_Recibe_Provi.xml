@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="OENamespace.OE_Servicio_Recibe_Provi">
+  <label>OE_Servicio_Recibe_Provi</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="OE_Recibe_Prov_SOAP" type="port">
+      <binding>bind_OENamespace.OE_RecibeProvision</binding>
+      <label>OE_Recibe_Prov_SOAP</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

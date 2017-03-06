@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="OENamespace.recibeFinalOM">
+  <label>recibeFinalOM</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="OE_Ope_recibe_PROV" type="oper">
+      <input>dstruct_OENamespace.dsOrderProvisionResponse</input>
+      <label>OE_Ope_recibe_PROV</label>
+      <output>dstruct_OENamespace.ack</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>
