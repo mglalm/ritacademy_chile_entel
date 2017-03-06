@@ -2,4 +2,5 @@
 <nameSpace name="planManagerBSCS">
   <label>Plan Manager BSCS</label>
   <metaVersion>25</metaVersion>
+  <targetNS>http://www.readinessit.com/namespaces/proyectoBSCS/planManagerBSCS</targetNS>
 </nameSpace>

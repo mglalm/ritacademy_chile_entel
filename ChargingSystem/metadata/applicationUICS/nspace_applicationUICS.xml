@@ -2,4 +2,5 @@
 <nameSpace name="applicationUICS">
   <label>Application UI CS</label>
   <metaVersion>25</metaVersion>
+  <targetNS>http://www.readinessit.com/namespaces/proyectoCS/applicationUICS</targetNS>
 </nameSpace>

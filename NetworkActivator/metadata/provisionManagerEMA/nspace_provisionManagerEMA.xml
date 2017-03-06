@@ -2,4 +2,5 @@
 <nameSpace name="provisionManagerEMA">
   <label>Provision Manager EMA</label>
   <metaVersion>25</metaVersion>
+  <targetNS>http://www.readinessit.com/namespaces/proyectoEMA/provisionManagerEMA</targetNS>
 </nameSpace>

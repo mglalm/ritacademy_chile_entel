@@ -2,5 +2,5 @@
 <nameSpace name="externalSystemEMA">
   <label>External System EMA</label>
   <metaVersion>25</metaVersion>
-  <targetNS>externalSystemEMA</targetNS>
+  <targetNS>http://www.readinessit.com/namespaces/proyectoEMA/externalSystemEMA</targetNS>
 </nameSpace>

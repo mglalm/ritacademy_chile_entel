@@ -2,5 +2,5 @@
 <nameSpace name="externalSystemCS">
   <label>External System CS</label>
   <metaVersion>25</metaVersion>
-  <targetNS>externalSystemCS</targetNS>
+  <targetNS>http://www.readinessit.com/namespaces/proyectoCS/externalSystemCS</targetNS>
 </nameSpace>

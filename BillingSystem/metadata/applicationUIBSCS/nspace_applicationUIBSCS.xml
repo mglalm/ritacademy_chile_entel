@@ -2,4 +2,5 @@
 <nameSpace name="applicationUIBSCS">
   <label>Application UI BSCS</label>
   <metaVersion>25</metaVersion>
+  <targetNS>http://www.readinessit.com/namespaces/proyectoBSCS/applicationUIBSCS</targetNS>
 </nameSpace>

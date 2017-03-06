@@ -21,7 +21,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarExportFolder>C:\SJM\Archivos\Velocity\Proyecto_Cobras_NetworkActivator\JAR</jarExportFolder>
+  <jarExportFolder>C:\SJM\Archivos\Velocity\Proyecto_Cobras\JARs</jarExportFolder>
   <joinCluster>true</joinCluster>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>

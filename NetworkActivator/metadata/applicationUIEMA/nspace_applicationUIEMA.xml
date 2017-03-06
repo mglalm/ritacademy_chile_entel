@@ -2,4 +2,5 @@
 <nameSpace name="applicationUIEMA">
   <label>Application UI EMA</label>
   <metaVersion>25</metaVersion>
+  <targetNS>http://www.readinessit.com/namespaces/proyectoEMA/applicationUIEMA</targetNS>
 </nameSpace>

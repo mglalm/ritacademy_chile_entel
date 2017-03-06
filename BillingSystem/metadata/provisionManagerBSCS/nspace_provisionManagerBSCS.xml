@@ -2,4 +2,5 @@
 <nameSpace name="provisionManagerBSCS">
   <label>Provision Manager BSCS</label>
   <metaVersion>25</metaVersion>
+  <targetNS>http://www.readinessit.com/namespaces/proyectoBSCS/provisionManagerBSCS</targetNS>
 </nameSpace>

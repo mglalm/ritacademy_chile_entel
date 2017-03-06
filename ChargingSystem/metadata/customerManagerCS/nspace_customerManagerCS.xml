@@ -2,4 +2,5 @@
 <nameSpace name="customerManagerCS">
   <label>Customer Management CS</label>
   <metaVersion>25</metaVersion>
+  <targetNS>http://www.readinessit.com/namespaces/proyectoCS/customerManagerCS</targetNS>
 </nameSpace>

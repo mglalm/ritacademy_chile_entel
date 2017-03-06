@@ -2,4 +2,5 @@
 <nameSpace name="profileManagerEMA">
   <label>Profile Manager EMA</label>
   <metaVersion>25</metaVersion>
+  <targetNS>http://www.readinessit.com/namespaces/proyectoEMA/profileManagerEMA</targetNS>
 </nameSpace>
