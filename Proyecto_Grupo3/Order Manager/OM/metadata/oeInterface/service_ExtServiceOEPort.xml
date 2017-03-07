@@ -16,15 +16,5 @@
       <listener>true</listener>
       <recover>5</recover>
     </port>
-    <port name="ExtServiceSendPortJS_OE" type="port">
-      <binding>bind_oeInterface.bindingReqSendJSOE</binding>
-      <label>Ext Service Send Port JS OE</label>
-      <recover>5</recover>
-    </port>
-    <port name="ExtServiceSendPortSOAP_OE" type="port">
-      <binding>bind_oeInterface.bindingReqSendSOAPOE</binding>
-      <label>Ext Service Send Port SOAP OE</label>
-      <recover>5</recover>
-    </port>
   </portList>
 </externalService>

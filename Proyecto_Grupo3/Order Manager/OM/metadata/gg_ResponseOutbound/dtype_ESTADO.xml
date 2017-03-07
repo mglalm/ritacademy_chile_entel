@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="chargingSystemOutBound.estado">
-  <description>Estado</description>
+<dataType name="gg_ResponseOutbound.ESTADO">
+  <description>ESTADO</description>
   <extends>dtype_com.conceptwave.system.String</extends>
-  <label>estado</label>
+  <label>ESTADO</label>
   <length>32</length>
   <metaVersion>25</metaVersion>
 </dataType>

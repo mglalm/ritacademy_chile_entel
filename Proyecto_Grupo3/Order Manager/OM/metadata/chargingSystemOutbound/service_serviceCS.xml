@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<externalService name="chargingSystemOutbound.serviceCS">
+<externalService name="chargingSystemOutBound.serviceCS">
   <label>serviceCS</label>
   <metaVersion>25</metaVersion>
   <portList>
     <port name="chargingSystemSOAPPort" type="port">
-      <binding>bind_chargingSystemOutbound.bindingSOAPCS</binding>
+      <binding>bind_chargingSystemOutBound.bindingSOAPCS</binding>
       <label>chargingSystemSOAPPort</label>
       <recover>5</recover>
     </port>

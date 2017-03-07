@@ -44,11 +44,18 @@
                     <y>25.0</y>
                     <childList>
                       <child name="InformacionOE" type="opActivity">
-                        <element>iface_oeInterface.Submit_Response_OE/oper_submitResponseOE</element>
+                        <element>iface_gg_ResponseOutbound.Submit_Response_OE/oper_submitResponseOE</element>
                         <label>InformacionOE</label>
                         <participant>part_orderManager.InformacionOE</participant>
                         <x>672.21466</x>
                         <y>121.0</y>
+                        <childList>
+                          <child name="OrdenCompletada" type="completeActivity">
+                            <label>OrdenCompletada</label>
+                            <x>763.21466</x>
+                            <y>216.0</y>
+                          </child>
+                        </childList>
                         <methodList>
                           <method name="cwOnProcActBefore" type="action">
                             <category>before</category>
@@ -59,6 +66,15 @@
                               this.activityData.IMSI = this.process.processDocument.IMSI;
                               this.activityData.MSISDN = this.process.processDocument.MSISDN;
                               this.activityData.ESTADO = this.process.processDocument.ESTADO;
+                            ]]></script>
+                          </method>
+                          <method name="cwOnProcActAfter" type="action">
+                            <category>script</category>
+                            <system>true</system>
+                            <script><![CDATA[
+                              orderManager.dummy();
+
+                              this.process.processDocumet.Ack = this.activityData.Ack;
                             ]]></script>
                           </method>
                         </methodList>
