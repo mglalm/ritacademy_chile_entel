@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="CS_CORE.descuentoSaldo">
+  <activity name="start" type="seqActivity">
+    <label>start</label>
+    <x>126.0</x>
+    <y>133.0</y>
+    <childList>
+      <child name="descontar" type="scriptActivity">
+        <label>descontar</label>
+        <schedule type="sched">
+          <duration type="dur">
+            <length>P0Y0M0DT0H1M0S</length>
+          </duration>
+        </schedule>
+        <x>423.0</x>
+        <y>42.0</y>
+        <methodList>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script><![CDATA[
+              var finder = new Finder("CS_CORE.msisdnDebitFinder");
+              var resultado = finder.search();
+              var tamano = resultado.size;
+
+              for (var i=0; i<tamano;i++){
+                  var nuevo_debit = resultado[i].debit=resultado[i].debit-(Math.random()*10);
+                  if (nuevo_debit<0)
+                      resultado[i].estado = "SIN SALDO";
+                  else
+                      resultado[i].estado = "CON SALDO";
+                  resultado[i].save();
+              }
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="volver" type="repeatActivity">
+        <element>proc_CS_CORE.descuentoSaldo/seqActivity_start</element>
+        <label>volver</label>
+        <x>311.0</x>
+        <y>283.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <label>descuentoSaldo</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>Global</type>
+</process>

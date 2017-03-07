@@ -87,6 +87,15 @@
                           </variablePathList>
                         </variable>
                       </element>
+                      <element name="estado" type="elfld">
+                        <label>Estado</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_CS_CORE.msisdnDebitFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_CS_CORE.cs_msisdn_debit/leaf_estado</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
                     </elementList>
                   </element>
                 </elementList>

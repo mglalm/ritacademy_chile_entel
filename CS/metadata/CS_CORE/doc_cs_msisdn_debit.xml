@@ -23,6 +23,11 @@
       <table>cs_msisdn_debit</table>
       <valueType>dtype_CS_CORE.debit</valueType>
     </variable>
+    <variable name="estado" type="leaf">
+      <column>ESTADO</column>
+      <table>cs_msisdn_debit</table>
+      <valueType>dtype_CS_CORE.estado</valueType>
+    </variable>
   </variableList>
   <UserInterface name="UserInterface" type="ui">
     <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
@@ -62,6 +67,15 @@
                         <variablePathList>
                           <variablePath>doc_CS_CORE.cs_msisdn_debit/ui_UserInterface/uivar_model</variablePath>
                           <variablePath>doc_CS_CORE.cs_msisdn_debit/leaf_debit</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="estado" type="elfld">
+                      <label>Estado</label>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_CS_CORE.cs_msisdn_debit/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_CS_CORE.cs_msisdn_debit/leaf_estado</variablePath>
                         </variablePathList>
                       </variable>
                     </element>

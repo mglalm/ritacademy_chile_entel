@@ -3,6 +3,9 @@
   <DefaultDB>TRAINING</DefaultDB>
   <applicationString>CS</applicationString>
   <applicationVersionString>1</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="CS_CORE.dummy">0</breakpoint>
+  </breakpointMap>
   <databasesMap>
     <databases key="TRAINING" type=".configdb">
       <dbname>TRAINING</dbname>
