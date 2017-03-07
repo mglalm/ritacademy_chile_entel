@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="gg_oeinterfOutbound.Submit_Response_OE">
+  <label>Submit_Response_OE</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="submitResponseOE" type="oper">
+      <input>dstruct_gg_oeinterfOutbound.RequestSendOE</input>
+      <label>submitResponseOE</label>
+      <output>dstruct_gg_oeinterfOutbound.Response</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

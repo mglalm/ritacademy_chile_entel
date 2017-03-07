@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="chargingSystemOutbound.tarifa">
+  <description>Tarifa</description>
+  <extends>dtype_com.conceptwave.system.Integer</extends>
+  <label>tarifa</label>
+  <length>5</length>
+  <metaVersion>25</metaVersion>
+  <pattern>[\-+]?[0-9]+</pattern>
+</dataType>

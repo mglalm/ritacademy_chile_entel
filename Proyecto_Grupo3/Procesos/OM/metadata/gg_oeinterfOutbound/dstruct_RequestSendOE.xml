@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="gg_oeinterfOutbound.RequestSendOE">
+  <container>true</container>
+  <description>RequestSendOE</description>
+  <label>RequestSendOE</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="MSISDN" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_gg_oeinterfOutbound.MSISDN</element>
+      <label>MSISDN</label>
+    </child>
+    <child name="IMSI" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_gg_oeinterfOutbound.IMSI</element>
+      <label>IMSI</label>
+    </child>
+    <child name="ESTADO" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_gg_oeinterfOutbound.ESTADO</element>
+      <label>ESTADO</label>
+    </child>
+    <child name="ID_CLIENTE" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_gg_oeinterfOutbound.ID_CLIENTE</element>
+      <label>ID_CLIENTE</label>
+    </child>
+    <child name="ID_ORDER" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_gg_oeinterfOutbound.ID_ORDER</element>
+      <label>ID_ORDER</label>
+    </child>
+  </childList>
+</dataStructure>

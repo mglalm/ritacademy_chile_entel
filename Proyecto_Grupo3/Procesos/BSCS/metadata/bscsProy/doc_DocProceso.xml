@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <document name="bscsProy.DocProceso">
+  <dbSchema>ORDER</dbSchema>
   <extends>doc_com.conceptwave.system.Document</extends>
   <guid>{4063fa76-f164-4548-9e45-ee9a92f6565d}</guid>
   <label>Documento Proceso</label>

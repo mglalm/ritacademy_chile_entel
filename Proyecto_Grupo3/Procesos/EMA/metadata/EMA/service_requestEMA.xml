@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="EMA.requestEMA">
+  <label>Request EMA Port</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="EMASOAPPort" type="port">
+      <binding>bind_EMA.bindingSOAPRequestEMA</binding>
+      <exportReferencedOnly>true</exportReferencedOnly>
+      <exportSchemaInsideWsdl>true</exportSchemaInsideWsdl>
+      <label>EMA SOAP Port</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+    <port name="EMAJSPort" type="port">
+      <binding>bind_EMA.bindingJSRequestEMA</binding>
+      <label>EMA JS Port</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

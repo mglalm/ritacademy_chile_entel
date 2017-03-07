@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="gg_oeinterfOutbound.ID_ORDER">
+  <description>ID_ORDER</description>
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>ID_ORDER</label>
+  <length>32</length>
+  <metaVersion>25</metaVersion>
+</dataType>

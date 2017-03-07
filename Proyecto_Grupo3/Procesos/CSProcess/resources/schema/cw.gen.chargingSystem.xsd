@@ -2,12 +2,10 @@
 <schema targetNamespace="chargingSystem"	
 	xmlns="http://www.w3.org/2001/XMLSchema"	
 	xmlns:chargingSystem="chargingSystem"	
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
-	xmlns:cwf="http://www.conceptwave.com/system">
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 
 
-	<import namespace="http://www.conceptwave.com/system" schemaLocation="cwf.xsd"/>
 
 	<annotation>
 		<documentation>Charging System</documentation>
@@ -55,6 +53,15 @@
 		</restriction>
 	</simpleType>
 
+	<simpleType name="consumo">
+		<annotation>
+			<documentation>Consumo</documentation>
+		</annotation>
+		<restriction base="xsd:integer">
+			<totalDigits value="10"/>
+		</restriction>
+	</simpleType>
+
 	<simpleType name="tarifa">
 		<annotation>
 			<documentation>Tarifa</documentation>
@@ -86,8 +93,8 @@
 		<annotation>
 			<documentation>MSISDN</documentation>
 		</annotation>
-		<restriction base="cwf:processId">
-			<totalDigits value="15"/>
+		<restriction base="xsd:string">
+			<maxLength value="15"/>
 		</restriction>
 	</simpleType>
 
@@ -104,8 +111,8 @@
 		<annotation>
 			<documentation>IMSI</documentation>
 		</annotation>
-		<restriction base="xsd:integer">
-			<totalDigits value="16"/>
+		<restriction base="xsd:string">
+			<maxLength value="16"/>
 		</restriction>
 	</simpleType>
 
@@ -128,6 +135,8 @@
 			<sequence>
 				<element name="saldo" minOccurs="0" maxOccurs="1" type="chargingSystem:saldo"/>
 				<element name="MSISDN" minOccurs="0" maxOccurs="1" type="chargingSystem:MSISDN"/>
+				<element name="consumo" minOccurs="0" maxOccurs="1" type="chargingSystem:consumo"/>
+				<element name="usage" minOccurs="0" maxOccurs="1" type="chargingSystem:usage"/>
 			</sequence>
 		</complexType>
 
@@ -165,15 +174,13 @@
 
 	<!-- Documents -->
 
-	<complexType name="gg_ConsumoClienteCS">
+	<complexType name="gg_trarifas">
 		<annotation>
-			<documentation>ConsumoClienteCS</documentation>
+			<documentation>Tarifas</documentation>
 		</annotation>
 			<sequence>
-				<element name="MSISDN" type="chargingSystem:MSISDN"/>
-				<element name="tarifa" type="chargingSystem:tarifa"/>
-				<element name="saldo" type="chargingSystem:saldo"/>
 				<element name="planCS" type="chargingSystem:planCS"/>
+				<element name="tarifa" type="chargingSystem:tarifa"/>
 			</sequence>
 		</complexType>
 
@@ -198,6 +205,8 @@
 		</annotation>
 			<sequence>
 				<element name="usage" type="chargingSystem:usage"/>
+				<element name="consumo" type="chargingSystem:consumo"/>
+				<element name="saldo" type="chargingSystem:saldo"/>
 				<element name="MSISDN" type="chargingSystem:MSISDN"/>
 			</sequence>
 		</complexType>

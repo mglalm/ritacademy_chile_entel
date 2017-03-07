@@ -64,7 +64,7 @@
              clienteBSCS.MSISDN = MSISDN;
              clienteBSCS.IMSI = IMSI;
              clienteBSCS.PLAN_BSCS = input.PLAN_BSCS;
-            // clienteBSCS.saldo = input.saldo;
+             clienteBSCS.saldo = input.saldo;
              clienteBSCS.usage = 0;
              clienteBSCS.save();
             }

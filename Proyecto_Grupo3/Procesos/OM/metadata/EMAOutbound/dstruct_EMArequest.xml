@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="EMAOutbound.EMArequest">
+  <container>true</container>
+  <description>EMArequest</description>
+  <label>EMArequest</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="IMSI" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_EMAOutbound.IMSI</element>
+      <label>IMSI</label>
+    </child>
+    <child name="MSISDN" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_EMAOutbound.MSISDN</element>
+      <label>MSISDN</label>
+    </child>
+    <child name="PROFILE" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_EMAOutbound.PROFILE</element>
+      <label>PROFILE</label>
+    </child>
+  </childList>
+</dataStructure>

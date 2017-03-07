@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="gg_oeinterfOutbound.Response">
+  <container>true</container>
+  <description>Response</description>
+  <label>Response</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="Ack" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>Ack</label>
+    </child>
+  </childList>
+</dataStructure>

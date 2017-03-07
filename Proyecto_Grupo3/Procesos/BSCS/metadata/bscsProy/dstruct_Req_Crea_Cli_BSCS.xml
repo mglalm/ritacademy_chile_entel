@@ -17,5 +17,10 @@
       <element>dtype_bscsProy.PLAN_BSCS</element>
       <label>PLAN_BSCS</label>
     </child>
+    <child name="saldo" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_bscsProy.saldo</element>
+      <label>saldo</label>
+    </child>
   </childList>
 </dataStructure>

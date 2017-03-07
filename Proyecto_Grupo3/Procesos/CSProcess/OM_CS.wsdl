@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="chargingSystem" targetNamespace="chargingSystem"
+	xmlns:tns="chargingSystem"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:chargingSystem="chargingSystem">
+
+	<types>
+		<schema targetNamespace="chargingSystem"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:chargingSystem="chargingSystem"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>Charging System</documentation>
+				<appinfo>
+					<metadata>CS</metadata>
+					<created>Tue Feb 28 21:40:03 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<simpleType name="estado">
+				<annotation>
+					<documentation>Estado</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="idCliente">
+				<annotation>
+					<documentation>ID Cliente</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="usage">
+				<annotation>
+					<documentation>Usage</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+					<totalDigits value="10"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="planCS">
+				<annotation>
+					<documentation>Plan CS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="consumo">
+				<annotation>
+					<documentation>Consumo</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+					<totalDigits value="10"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="tarifa">
+				<annotation>
+					<documentation>Tarifa</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+					<totalDigits value="5"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="ackConsumo">
+				<annotation>
+					<documentation>ack Consumo</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="saldo">
+				<annotation>
+					<documentation>Saldo</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+					<totalDigits value="10"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="MSISDN">
+				<annotation>
+					<documentation>MSISDN</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="mensaje">
+				<annotation>
+					<documentation>Mensaje</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="IMSI">
+				<annotation>
+					<documentation>IMSI</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="16"/>
+				</restriction>
+			</simpleType>
+
+			<!-- Structures -->
+
+			<complexType name="responseCS">
+				<annotation>
+					<documentation>responseCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="mensaje" minOccurs="0" maxOccurs="1" type="chargingSystem:mensaje"/>
+						<element name="estado" minOccurs="0" maxOccurs="1" type="chargingSystem:estado"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="sendBSCS">
+				<annotation>
+					<documentation>sendBSCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="saldo" minOccurs="0" maxOccurs="1" type="chargingSystem:saldo"/>
+						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="chargingSystem:MSISDN"/>
+						<element name="consumo" minOccurs="0" maxOccurs="1" type="chargingSystem:consumo"/>
+						<element name="usage" minOccurs="0" maxOccurs="1" type="chargingSystem:usage"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="ackConsumoCS">
+				<annotation>
+					<documentation>ackConsumoCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="ackConsumo" minOccurs="0" maxOccurs="1" type="chargingSystem:ackConsumo"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="consumoCS">
+				<annotation>
+					<documentation>consumoCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="usage" minOccurs="0" maxOccurs="1" type="chargingSystem:usage"/>
+						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="chargingSystem:MSISDN"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="requestCS">
+				<annotation>
+					<documentation>requestCS</documentation>
+				</annotation>
+					<sequence>
+						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="chargingSystem:MSISDN"/>
+						<element name="IMSI" minOccurs="0" maxOccurs="1" type="chargingSystem:IMSI"/>
+						<element name="idCliente" minOccurs="0" maxOccurs="1" type="chargingSystem:idCliente"/>
+						<element name="planCS" minOccurs="0" maxOccurs="1" type="chargingSystem:idCliente"/>
+						<element name="saldo" minOccurs="0" maxOccurs="1" type="chargingSystem:saldo"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+			<complexType name="gg_trarifas">
+				<annotation>
+					<documentation>Tarifas</documentation>
+				</annotation>
+					<sequence>
+						<element name="planCS" type="chargingSystem:planCS"/>
+						<element name="tarifa" type="chargingSystem:tarifa"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="clienteChargingSystem">
+				<annotation>
+					<documentation>Cliente Charging System</documentation>
+				</annotation>
+					<sequence>
+						<element name="MSISDN" type="chargingSystem:MSISDN"/>
+						<element name="usage" type="chargingSystem:usage"/>
+						<element name="tarifa" type="chargingSystem:tarifa"/>
+						<element name="IMSI" type="chargingSystem:IMSI"/>
+						<element name="idCliente" type="chargingSystem:idCliente"/>
+						<element name="planCS" type="chargingSystem:idCliente"/>
+						<element name="saldo" type="chargingSystem:saldo"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="procDoc">
+				<annotation>
+					<documentation>ProcDoc</documentation>
+				</annotation>
+					<sequence>
+						<element name="usage" type="chargingSystem:usage"/>
+						<element name="consumo" type="chargingSystem:consumo"/>
+						<element name="saldo" type="chargingSystem:saldo"/>
+						<element name="MSISDN" type="chargingSystem:MSISDN"/>
+					</sequence>
+				</complexType>
+
+		</schema>
+	</types>
+
+	<message name="requestCS">
+		<part name="requestCS" type="chargingSystem:requestCS"/>
+	</message>
+
+	<message name="responseCS">
+		<part name="responseCS" type="chargingSystem:responseCS"/>
+	</message>
+
+	<message name="consumoCS">
+		<part name="consumoCS" type="chargingSystem:consumoCS"/>
+	</message>
+
+	<message name="ackConsumoCS">
+		<part name="ackConsumoCS" type="chargingSystem:ackConsumoCS"/>
+	</message>
+
+	<portType name="Crea_CLI_CS">
+		<operation name="creacionClienteCS">
+			<input message="tns:requestCS"/>
+			<output message="tns:responseCS"/>
+		</operation>
+	</portType>
+
+	<portType name="ggConsumoCS">
+		<operation name="ggConsumoSaldoCS">
+			<input message="tns:consumoCS"/>
+			<output message="tns:ackConsumoCS"/>
+		</operation>
+	</portType>
+
+	<binding name="bindingSOAPCS" type="tns:Crea_CLI_CS">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="creacionClienteCS">
+			<soap:operation soapAction="creacionClienteCS"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<binding name="ggBindingSOAPConsumoCS" type="tns:ggConsumoCS">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ggConsumoSaldoCS">
+			<soap:operation soapAction="ggConsumoSaldoCS"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="serviceCS">
+		<port name="chargingSystemSOAPPort" binding="tns:bindingSOAPCS">
+		</port>
+		<port name="ggChargingSystemSOAPConsumo" binding="tns:ggBindingSOAPConsumoCS">
+		</port>
+	</service>
+
+</definitions>

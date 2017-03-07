@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="chargingSystemOutbound.ggConsumoCS">
+  <label>ggConsumoCS</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="ggConsumoSaldoCS" type="oper">
+      <input>dstruct_chargingSystemOutbound.consumoCS</input>
+      <label>ggConsumoSaldoCS</label>
+      <output>dstruct_chargingSystemOutbound.ackConsumoCS</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>
