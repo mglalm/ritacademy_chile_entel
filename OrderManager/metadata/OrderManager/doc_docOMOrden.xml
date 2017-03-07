@@ -28,6 +28,11 @@
       <table>OM_ORDEN</table>
       <valueType>dtype_OrderManager.dtEstado</valueType>
     </variable>
+    <variable name="tipoOrden" type="leaf">
+      <column>TIPO_ORDEN</column>
+      <table>OM_ORDEN</table>
+      <valueType>dtype_OrderManager.dtTipoOrden</valueType>
+    </variable>
     <variable name="motivoEstado" type="leaf">
       <column>MOTIVO_ESTADO</column>
       <table>OM_ORDEN</table>

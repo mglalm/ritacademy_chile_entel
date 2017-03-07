@@ -27,6 +27,11 @@
       <element>dtype_OrderManager.dtPOId</element>
       <label>PO Id Adicional</label>
     </child>
+    <child name="tipoOrden" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_OrderManager.dtTipoOrden</element>
+      <label>tipoOrden</label>
+    </child>
   </childList>
   <UserInterface name="UserInterface" type="tree">
     <defaultFolderImage>undefined</defaultFolderImage>
