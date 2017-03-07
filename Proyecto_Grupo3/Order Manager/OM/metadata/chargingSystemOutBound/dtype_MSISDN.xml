@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="chargingSystemOutbound.MSISDN">
+<dataType name="chargingSystemOutBound.MSISDN">
   <description>MSISDN</description>
   <extends>dtype_com.conceptwave.system.Integer</extends>
   <label>MSISDN</label>

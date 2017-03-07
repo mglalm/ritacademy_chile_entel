@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="chargingSystemOutbound.requestCS">
+<dataStructure name="chargingSystemOutBound.requestCS">
   <container>true</container>
   <description>requestCS</description>
   <label>requestCS</label>
@@ -7,27 +7,27 @@
   <childList>
     <child name="MSISDN" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_chargingSystemOutbound.MSISDN</element>
+      <element>dtype_chargingSystemOutBound.MSISDN</element>
       <label>MSISDN</label>
     </child>
     <child name="IMSI" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_chargingSystemOutbound.IMSI</element>
+      <element>dtype_chargingSystemOutBound.IMSI</element>
       <label>IMSI</label>
     </child>
     <child name="idCliente" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_chargingSystemOutbound.idCliente</element>
+      <element>dtype_chargingSystemOutBound.idCliente</element>
       <label>idCliente</label>
     </child>
     <child name="planCS" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_chargingSystemOutbound.idCliente</element>
+      <element>dtype_chargingSystemOutBound.idCliente</element>
       <label>planCS</label>
     </child>
     <child name="saldo" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_chargingSystemOutbound.saldo</element>
+      <element>dtype_chargingSystemOutBound.saldo</element>
       <label>saldo</label>
     </child>
   </childList>

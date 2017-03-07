@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<participant name="bscsProyOutbound.Crea_Cli_BSCS_Part">
-  <label>Crea_Cli_BSCS_Part</label>
-  <metaVersion>25</metaVersion>
-  <participant>iface_bscsProyOutbound.Crea_Cli_BSCS</participant>
-</participant>

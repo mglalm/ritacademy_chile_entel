@@ -2,5 +2,5 @@
 <participant name="orderManager.InformacionOE">
   <label>InformacionOE</label>
   <metaVersion>25</metaVersion>
-  <participant>iface_oeInterface.Submit_Response_OE</participant>
+  <participant>iface_gg_ResponseOutbound.Submit_Response_OE</participant>
 </participant>

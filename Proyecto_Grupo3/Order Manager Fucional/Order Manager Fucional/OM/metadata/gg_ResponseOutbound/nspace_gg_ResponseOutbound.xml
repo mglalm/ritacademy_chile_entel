@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<nameSpace name="gg_ResponseOutbound">
-  <label>gg_ResponseOutbound</label>
-  <metaVersion>25</metaVersion>
-  <targetNS>gg_Response</targetNS>
-</nameSpace>
