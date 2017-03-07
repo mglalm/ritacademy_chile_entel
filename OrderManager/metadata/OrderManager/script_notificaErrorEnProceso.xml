@@ -7,5 +7,24 @@
       <type>doc_OrderManager.docProcesoProvision</type>
     </parameter>
   </parameterList>
-  <script>var a = 1;</script>
+  <script><![CDATA[
+    OrderManager.debug();
+
+    var ds = new DataStructure("OENamespace.dsOrderProvisionResponse");
+
+    ds.orderId = docProcess.IN_orderId;
+    ds.rut = docProcess.IN_rut;
+    ds.estadoOrden = docProcess.OUT_estadoOrden;
+    ds.MSISDN = docProcess.OUT_MSISDN;
+    ds.POIdBasica = docProcess.IN_POIdBasico;
+    ds.estadoPOBasica = docProcess.OUT_EstadoPOBasica;
+    ds.motivoEstadoPOBasica = docProcess.OUT_MotivoEstadoPOBasica;
+    ds.POIdAdicional = docProcess.IN_POIdAdicional;
+    ds.estadoPOAdicional = docProcess.OUT_EstadoPOAdicional;
+    ds.motivoEstadoPOAdicional = docProcess.OUT_MotivoEstadoPOAdicional;
+
+    var resp = Global.invokeInterface('OENamespace.recibeFinalOM','OE_Ope_recibe_PROV',ds);//DOCUMENTATION resp response from OM ( ACK)
+
+    var a = 1;
+  ]]></script>
 </script>

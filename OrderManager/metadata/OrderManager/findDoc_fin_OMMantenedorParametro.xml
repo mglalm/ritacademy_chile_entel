@@ -5,7 +5,13 @@
   <label>fin_OMMantenedorParametro</label>
   <metaVersion>25</metaVersion>
   <output>doc_OrderManager.docOMParametrosNodos</output>
+  <sortList>
+    <sort type="stitem">
+      <path>doc_OrderManager.docOMParametrosNodos/leaf_ID</path>
+    </sort>
+  </sortList>
   <type>document</type>
+  <vDetailForm>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/frmui_Forms/exov_Default</vDetailForm>
   <searchList>
     <search type="sitem">
       <document>doc_OrderManager.docOMFiltroParametros</document>
@@ -36,11 +42,25 @@
         <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
       </variable>
       <variable name="search" type="uivar">
-        <valueType>doc_OrderManager.docOMFiltroParametros/ui_UserInterface</valueType>
+        <propertyElement type="elovf">
+          <visible type="varPath">
+            <variablePathList>
+              <variablePath>dtype_com.conceptwave.system.Boolean/leaf_TRUE</variablePath>
+            </variablePathList>
+          </visible>
+        </propertyElement>
+        <valueType>doc_OrderManager.docOMFiltroParametros</valueType>
       </variable>
       <variable name="detail" type="uivar">
         <flags enum-type="metadataFlag">VALIDATE</flags>
-        <valueType>doc_OrderManager.docOMParametrosNodos/ui_UserInterface</valueType>
+        <propertyElement type="elovf">
+          <visible type="varPath">
+            <variablePathList>
+              <variablePath>dtype_com.conceptwave.system.Boolean/leaf_TRUE</variablePath>
+            </variablePathList>
+          </visible>
+        </propertyElement>
+        <valueType>doc_OrderManager.docOMParametrosNodos</valueType>
       </variable>
       <variable name="result" type="uivar">
         <flags enum-type="metadataFlag">ARRAY</flags>
@@ -107,6 +127,7 @@
                         <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
                       </variablePathList>
                     </onSelectChange>
+                    <selectionAppearance>checkbox</selectionAppearance>
                     <variable type="varPath">
                       <variablePathList>
                         <variablePath>findDoc_OrderManager.fin_OMMantenedorParametro/ui_UserInterface/uivar_result</variablePath>
@@ -114,46 +135,100 @@
                     </variable>
                     <elementList>
                       <element name="ID" type="elfld">
+                        <label>Id Interno</label>
                         <variable type="varPath">
                           <variablePathList>
                             <variablePath>findDoc_OrderManager.fin_OMMantenedorParametro/ui_UserInterface/uivar_result</variablePath>
                             <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_ID</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>20%</width>
                       </element>
                       <element name="POId" type="elfld">
+                        <label>PO Id</label>
                         <variable type="varPath">
                           <variablePathList>
                             <variablePath>findDoc_OrderManager.fin_OMMantenedorParametro/ui_UserInterface/uivar_result</variablePath>
                             <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_POId</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>20%</width>
                       </element>
                       <element name="idNodo" type="elfld">
+                        <label>Id Nodo</label>
                         <variable type="varPath">
                           <variablePathList>
                             <variablePath>findDoc_OrderManager.fin_OMMantenedorParametro/ui_UserInterface/uivar_result</variablePath>
                             <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_idNodo</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>20%</width>
                       </element>
                       <element name="idParametro" type="elfld">
+                        <label>Id Parametro</label>
                         <variable type="varPath">
                           <variablePathList>
                             <variablePath>findDoc_OrderManager.fin_OMMantenedorParametro/ui_UserInterface/uivar_result</variablePath>
                             <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_idParametro</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>20%</width>
                       </element>
                       <element name="valor" type="elfld">
+                        <label>Valor Parametro</label>
                         <variable type="varPath">
                           <variablePathList>
                             <variablePath>findDoc_OrderManager.fin_OMMantenedorParametro/ui_UserInterface/uivar_result</variablePath>
                             <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_valor</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>20%</width>
                       </element>
                     </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Menu" type="exov">
+            <base>ui_com.conceptwave.system.BaseFinderUserInterface/frmui_Forms/exov_Menu</base>
+            <extends>ui_com.conceptwave.system.BaseFinderUserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+            <overrideList>
+              <override name="cwfAdd" type="eldel"/>
+              <override name="cwfCopy" type="eldel"/>
+              <override name="cwfUpdate" type="elmnu">
+                <menuAccel type="mAccelP"/>
+                <clickMethod type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_OrderManager.fin_OMMantenedorParametro/ui_UserInterface/usrActionMethod_actualizar</variablePath>
+                  </variablePathList>
+                </clickMethod>
+                <icon>/cwf/MenuIconEdit.gif</icon>
+                <tooltip>Edit</tooltip>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.UserInterface/uivar_model</variablePath>
+                    <variablePath>mdl_com.conceptwave.system.Model/permMethod_editablePerm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="finderMenuLayout" type="elext">
+                <elementList>
+                  <element name="Agregar" type="elmnu">
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_OrderManager.fin_OMMantenedorParametro/ui_UserInterface/usrActionMethod_agregarParametro</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <icon>/cwf/MenuIconAdd.gif</icon>
+                    <tooltip>Add</tooltip>
+                    <visible type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.UserInterface/uivar_model</variablePath>
+                        <variablePath>mdl_com.conceptwave.system.Model/permMethod_addPerm</variablePath>
+                      </variablePathList>
+                    </visible>
                   </element>
                 </elementList>
               </override>
@@ -162,6 +237,27 @@
         </overlayList>
       </vform>
     </vformList>
+    <methodList>
+      <method name="agregarParametro" type="usrActionMethod">
+        <form>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/frmui_Forms/vform_formParametros</form>
+        <userInterface>doc_OrderManager.docOMParametrosNodos</userInterface>
+        <valueType>doc_OrderManager.docOMParametrosNodos</valueType>
+      </method>
+      <method name="actualizar" type="usrActionMethod">
+        <script><![CDATA[
+          if (this.result.selected!=null && this.result.selected.length == 1) {
+            this.detail = new this.result.selected[0].UserInterface(this.result.selected[0], this);
+            this.isSearchButtonVisible = false;
+          }
+          else{
+              if (this.result.selected==null || this.result.selected.length < 1)
+                  Global.showUserMessage("Debe seleccionar un registro para actualizar");
+              else
+                  Global.showUserMessage("Debe seleccionar solamente un registro para actualizar, no puede editar más de un registro a la vez");
+          }
+        ]]></script>
+      </method>
+    </methodList>
   </UserInterface>
   <viewList>
     <view name="UIFinderMantenedor" type="findVView">

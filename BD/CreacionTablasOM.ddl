@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 4.1.5.907
---   en:        2017-03-06 16:17:28 CLST
+--   en:        2017-03-07 17:31:59 CLST
 --   sitio:      Oracle Database 12c
 --   tipo:      Oracle Database 12c
 
@@ -27,6 +27,8 @@ DROP TABLE OM_PROV_CS CASCADE CONSTRAINTS ;
 DROP TABLE OM_PROV_EMA CASCADE CONSTRAINTS ;
 
 DROP TABLE OM_RECURSOS_PO CASCADE CONSTRAINTS ;
+
+DROP TABLE PO_Cliente CASCADE CONSTRAINTS ;
 
 CREATE TABLE OE_CLIENTE
   (
@@ -57,6 +59,7 @@ CREATE TABLE OM_Orden
     ORDER_ID            VARCHAR2 (16) NOT NULL ,
     RUT                 VARCHAR2 (15) NOT NULL ,
     ESTADO              VARCHAR2 (20) ,
+    TIPO_ORDEN          VARCHAR2 (20) ,
     MOTIVO_ESTADO       VARCHAR2 (1000) ,
     FECHA_CREACION      DATE ,
     cwDocStamp          VARCHAR2 (9) ,
@@ -165,6 +168,17 @@ CREATE TABLE OM_RECURSOS_PO
 ALTER TABLE OM_RECURSOS_PO ADD CONSTRAINT OM_RECURSOS_PO_PK PRIMARY KEY ( ORDER_ID, PO_ID, RESOURCE_ID ) ;
 
 
+CREATE TABLE PO_Cliente
+  (
+    PO_Id              VARCHAR2 (32) ,
+    RUT                VARCHAR2 (15) NOT NULL ,
+    ESTADO             VARCHAR2 (20) ,
+    FechaCreacion      DATE ,
+    fechaDesactivacion DATE ,
+    MSISDN             VARCHAR2 (11)
+  ) ;
+
+
 ALTER TABLE OM_ORDER_PO ADD CONSTRAINT OM_ORDER_PO_OM_Orden_FK FOREIGN KEY ( cwDocId ) REFERENCES OM_Orden ( cwDocId ) ;
 
 ALTER TABLE OM_Orden ADD CONSTRAINT OM_Orden_OE_CLIENTE_FK FOREIGN KEY ( RUT ) REFERENCES OE_CLIENTE ( RUT ) ;
@@ -181,14 +195,16 @@ ALTER TABLE OM_PROV_EMA ADD CONSTRAINT OM_PROV_EMA_OM_ORDER_PO_FK FOREIGN KEY ( 
 
 ALTER TABLE OM_RECURSOS_PO ADD CONSTRAINT OM_RECURSOS_PO_OM_ORDER_PO_FK FOREIGN KEY ( ORDER_ID, PO_ID ) REFERENCES OM_ORDER_PO ( ORDER_ID, PO_ID ) ;
 
+ALTER TABLE PO_Cliente ADD CONSTRAINT PO_Cliente_OE_CLIENTE_FK FOREIGN KEY ( RUT ) REFERENCES OE_CLIENTE ( RUT ) ;
+
 ALTER TABLE OM_PARAM_BSCS ADD CONSTRAINT TABLE_10_OM_PROV_BSCS_FK FOREIGN KEY ( ORDER_ID, PO_ID, NUMERO_INTENTO ) REFERENCES OM_PROV_BSCS ( ORDER_ID, PO_ID, NUMERO_INTENTO ) ;
 
 
 -- Informe de Resumen de Oracle SQL Developer Data Modeler: 
 -- 
--- CREATE TABLE                            11
+-- CREATE TABLE                            12
 -- CREATE INDEX                             1
--- ALTER TABLE                             20
+-- ALTER TABLE                             21
 -- CREATE VIEW                              0
 -- ALTER VIEW                               0
 -- CREATE PACKAGE                           0
