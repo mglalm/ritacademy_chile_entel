@@ -174,7 +174,6 @@
 				<element name="tarifa" type="chargingSystem:tarifa"/>
 				<element name="saldo" type="chargingSystem:saldo"/>
 				<element name="planCS" type="chargingSystem:planCS"/>
-				<element name="ackConsumo" type="chargingSystem:ackConsumo"/>
 			</sequence>
 		</complexType>
 
@@ -190,6 +189,16 @@
 				<element name="idCliente" type="chargingSystem:idCliente"/>
 				<element name="planCS" type="chargingSystem:idCliente"/>
 				<element name="saldo" type="chargingSystem:saldo"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="procDoc">
+		<annotation>
+			<documentation>ProcDoc</documentation>
+		</annotation>
+			<sequence>
+				<element name="usage" type="chargingSystem:usage"/>
+				<element name="MSISDN" type="chargingSystem:MSISDN"/>
 			</sequence>
 		</complexType>
 

@@ -14,8 +14,6 @@
       <valueType>dtype_chargingSystem.MSISDN</valueType>
     </variable>
     <variable name="usage" type="leaf">
-      <column>USAGE</column>
-      <table>GG_clienteChargingSystem</table>
       <valueType>dtype_chargingSystem.usage</valueType>
     </variable>
     <variable name="tarifa" type="leaf">

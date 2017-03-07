@@ -12,6 +12,16 @@
       <table>gg_clienteBSCS</table>
       <valueType>dtype_bscsProy.MSISDN</valueType>
     </variable>
+    <variable name="IMSI" type="leaf">
+      <column>IMSI</column>
+      <table>gg_clienteBSCS</table>
+      <valueType>dtype_bscsProy.IMSI</valueType>
+    </variable>
+    <variable name="PLAN_BSCS" type="leaf">
+      <column>PLAN_BSCS</column>
+      <table>gg_clienteBSCS</table>
+      <valueType>dtype_bscsProy.PLAN_BSCS</valueType>
+    </variable>
     <variable name="usage" type="leaf">
       <column>USAGE</column>
       <table>gg_clienteBSCS</table>
