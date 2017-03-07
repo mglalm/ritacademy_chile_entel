@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<process name="orderManager.mainProcess">
+<process name="orderManager.OMProcess">
   <activity name="Start" type="seqActivity">
     <label>Start</label>
     <x>31.0</x>
@@ -44,11 +44,11 @@
                     <y>25.0</y>
                     <childList>
                       <child name="InformacionOE" type="opActivity">
-                        <element>iface_gg_ResponseOutbound.Submit_Response_OE/oper_submitResponseOE</element>
+                        <element>iface_gg_oeinterfOutbound.Submit_Response_OE/oper_submitResponseOE</element>
                         <label>InformacionOE</label>
                         <participant>part_orderManager.InformacionOE</participant>
-                        <x>672.21466</x>
-                        <y>121.0</y>
+                        <x>680.21466</x>
+                        <y>123.0</y>
                         <childList>
                           <child name="OrdenCompletada" type="completeActivity">
                             <label>OrdenCompletada</label>
@@ -66,6 +66,8 @@
                               this.activityData.IMSI = this.process.processDocument.IMSI;
                               this.activityData.MSISDN = this.process.processDocument.MSISDN;
                               this.activityData.ESTADO = this.process.processDocument.ESTADO;
+                              this.activityData.ID_CLIENTE = this.process.processDocument.ID_CLIENTE;
+                              this.activityData.ID_ORDER = this.process.processDocument.ID_Order;
                             ]]></script>
                           </method>
                           <method name="cwOnProcActAfter" type="action">
@@ -74,7 +76,7 @@
                             <script><![CDATA[
                               orderManager.dummy();
 
-                              this.process.processDocumet.Ack = this.activityData.Ack;
+                              //this.process.processDocumet.Ack = this.activityData.Ack;
                             ]]></script>
                           </method>
                         </methodList>
@@ -97,7 +99,7 @@
   </activity>
   <curRevision>true</curRevision>
   <document>doc_oeInterface.documentoOE</document>
-  <label>mainProcess</label>
+  <label>OM Process</label>
   <metaVersion>25</metaVersion>
   <priority>8</priority>
   <subflowReferenceList>

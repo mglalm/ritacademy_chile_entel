@@ -43,7 +43,7 @@
     docprocess.PROFILE =  PROFILE;
 
 
-    var ProcessID = Process.startProcess('orderManager.mainProcess',docprocess,null,null);
+    var ProcessID = Process.startProcess('orderManager.OMProcess',docprocess,null,null);
 
     var ack = new DataStructure('oeInterface.Response');
 

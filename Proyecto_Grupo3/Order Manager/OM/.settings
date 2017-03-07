@@ -3,6 +3,10 @@
   <DefaultDB>TRAIN2</DefaultDB>
   <applicationString>train2</applicationString>
   <applicationVersionString>1</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="Start.CreaCliBSCS.CreaCliCS.ProvisionCliEMA.Responder.InformacionOE.cwOnProcActAfter.orderManager.OMProcess">0</breakpoint>
+    <breakpoint key="Start.CreaCliBSCS.CreaCliCS.ProvisionCliEMA.Responder.InformacionOE.cwOnProcActBefore.orderManager.OMProcess">0</breakpoint>
+  </breakpointMap>
   <databasesMap>
     <databases key="TRAIN2" type=".configdb">
       <dbname>TRAIN2</dbname>
