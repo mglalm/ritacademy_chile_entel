@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<externalService name="oeInterfaceOutbound.ExtServiceOEPort">
+<externalService name="oeInterfaceOutBound.ExtServiceOEPort">
   <label>ExtServiceOEPort</label>
   <metaVersion>25</metaVersion>
   <portList>
     <port name="ExtServicePortSOAP_OE" type="port">
-      <binding>bind_oeInterfaceOutbound.bindingSOAPOE</binding>
+      <binding>bind_oeInterfaceOutBound.bindingSOAPOE</binding>
       <label>ExtServicePortSOAP_OE</label>
       <recover>5</recover>
     </port>

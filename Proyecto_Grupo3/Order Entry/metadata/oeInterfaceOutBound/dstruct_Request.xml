@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="oeInterfaceOutbound.Request">
+<dataStructure name="oeInterfaceOutBound.Request">
   <container>true</container>
   <description>Request</description>
   <label>Request</label>
@@ -7,17 +7,17 @@
   <childList>
     <child name="ID_Cliente" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_oeInterfaceOutbound.ID_CLIENTE</element>
+      <element>dtype_oeInterfaceOutBound.ID_CLIENTE</element>
       <label>ID_Cliente</label>
     </child>
     <child name="ID_Order" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_oeInterfaceOutbound.ID_Order</element>
+      <element>dtype_oeInterfaceOutBound.ID_Order</element>
       <label>ID_Order</label>
     </child>
     <child name="ID_PO" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_oeInterfaceOutbound.ID_PO</element>
+      <element>dtype_oeInterfaceOutBound.ID_PO</element>
       <label>ID_PO</label>
     </child>
   </childList>

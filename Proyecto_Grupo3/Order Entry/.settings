@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project>
   <DefaultDB>TRAIN2</DefaultDB>
-  <applicationString>TRAINING METADATA</applicationString>
+  <applicationString>OE</applicationString>
   <applicationVersionString>1</applicationVersionString>
   <breakpointMap>
     <breakpoint key="provisionManagement.dummy">0</breakpoint>
@@ -14,11 +14,12 @@
         <driverType>Oracle thin</driverType>
       </driver>
       <password>49A225C3CBCC77BF5347C8B21011B9E7</password>
-      <user>C##TRAIN_2</user>
+      <user>C##TRAIN</user>
     </databases>
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <nodeString>PE_UI</nodeString>
+  <joinCluster>true</joinCluster>
+  <nodeString>OE</nodeString>
   <skin>Enterprise</skin>
 </project>

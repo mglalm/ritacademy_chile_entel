@@ -6,10 +6,10 @@
     <y>69.0</y>
     <childList>
       <child name="InvocaOM" type="opActivity">
-        <element>iface_oeInterfaceOutbound.Submit_Order_OE/oper_SubmitOrderOE</element>
+        <element>iface_oeInterfaceOutBound.Submit_Order_OE/oper_SubmitOrderOE</element>
         <label>InvocaOM</label>
         <participant>part_provisionManagement.OM_PART</participant>
-        <x>230.0</x>
+        <x>231.0</x>
         <y>87.0</y>
         <childList>
           <child name="Fin" type="completeActivity">
