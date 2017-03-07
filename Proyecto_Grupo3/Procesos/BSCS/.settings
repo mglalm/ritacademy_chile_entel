@@ -28,7 +28,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarExportFolder>E:\protecto_grp3\Proyecto_Grupo3\BSCS\</jarExportFolder>
+  <jarExportFolder>D:\VBshare\ProyectoG3_\Proyecto_Grupo3\Procesos\BSCS\</jarExportFolder>
   <joinCluster>true</joinCluster>
   <nodeString>BSCS_train</nodeString>
   <skin>Enterprise</skin>
