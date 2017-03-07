@@ -20,5 +20,10 @@
       <element>dtype_bscsProyOut.usage</element>
       <label>usage</label>
     </child>
+    <child name="consumo" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.consumo</element>
+      <label>consumo</label>
+    </child>
   </childList>
 </dataStructure>

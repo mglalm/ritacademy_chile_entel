@@ -4,7 +4,7 @@
     <extension name="registroDesdeCS" type="ext">
       <element>Operation</element>
       <elementItemMap>
-        <elementItem key="metadataScript">bscsProy.Consumo</elementItem>
+        <elementItem key="metadataScript">bscsProy.ScriptConsumo</elementItem>
       </elementItemMap>
     </extension>
   </extensionList>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<script name="bscsProy.Consumo">
-  <label>Consumo</label>
+<script name="bscsProy.ScriptConsumo">
+  <label>ScriptConsumo</label>
   <metaVersion>25</metaVersion>
   <parameterList>
     <parameter name="input" type="rifp">
@@ -8,9 +8,13 @@
     </parameter>
   </parameterList>
   <script><![CDATA[
-    var doc = new Document('bscsProy.gg_clienteBSCS');
+    var doc = new Document('bscsProy.gg_clienteBSCS');            //Documento de cliente, contiene el saldo acutal.
     var fnd = new Finder('bscsProy.busquedaCliente');
     var fnd = fnd.search();
+
+
+    var detalle = new Document('bscsProy.gg_detalleTrafico');            //Documento de detalle de trafico, contiene el historial de consumos.
+
     var i = 0;
     var salir =0;
 
@@ -25,5 +29,12 @@
         fnd[i].save();
         }
     }
+
+    detalle.MSISDN = input.MSISDN;
+    detalle.saldo = input.saldo;
+    detalle.usage = input.usage;
+    detalle.consumo = input.consumo;
+
+    detalle.save();
   ]]></script>
 </script>

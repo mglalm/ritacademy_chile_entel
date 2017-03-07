@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<findDoc name="bscsProy.busquedaCliente">
+<findDoc name="bscsProy.findBusquedaIMSI">
   <extends>find_com.conceptwave.system.Finder</extends>
-  <input>doc_bscsProy.gg_clienteBSCS</input>
-  <label>Busqueda Cliente</label>
+  <input>doc_bscsProy.recIMSI</input>
+  <label>Find IMSI</label>
   <metaVersion>25</metaVersion>
-  <output>doc_bscsProy.gg_clienteBSCS</output>
+  <output>doc_bscsProy.recIMSI</output>
   <type>document</type>
   <searchList>
     <search type="sitem">
-      <document>doc_bscsProy.gg_clienteBSCS</document>
-      <mappedDocument>doc_bscsProy.gg_clienteBSCS</mappedDocument>
-      <mappedPath>doc_bscsProy.gg_clienteBSCS/leaf_MSISDN</mappedPath>
+      <document>doc_bscsProy.recIMSI</document>
+      <mappedDocument>doc_bscsProy.recIMSI</mappedDocument>
+      <mappedPath>doc_bscsProy.recIMSI/leaf_ESTADO</mappedPath>
       <operation>equal</operation>
-      <path>doc_bscsProy.gg_clienteBSCS/leaf_MSISDN</path>
+      <path>doc_bscsProy.recIMSI/leaf_ESTADO</path>
+    </search>
+    <search type="sitem">
+      <document>doc_bscsProy.recIMSI</document>
+      <mappedDocument>doc_bscsProy.recIMSI</mappedDocument>
+      <mappedPath>doc_bscsProy.recIMSI/leaf_ID_CLIENTE</mappedPath>
+      <operation>equal</operation>
+      <path>doc_bscsProy.recIMSI/leaf_ID_CLIENTE</path>
+    </search>
+    <search type="sitem">
+      <document>doc_bscsProy.recIMSI</document>
+      <mappedDocument>doc_bscsProy.recIMSI</mappedDocument>
+      <mappedPath>doc_bscsProy.recIMSI/leaf_IMSI</mappedPath>
+      <operation>equal</operation>
+      <path>doc_bscsProy.recIMSI/leaf_IMSI</path>
     </search>
   </searchList>
   <UserInterface name="UserInterface" type="ui">
@@ -27,7 +41,7 @@
       </variable>
       <variable name="result" type="uivar">
         <flags enum-type="metadataFlag">ARRAY</flags>
-        <valueType>doc_bscsProy.gg_clienteBSCS</valueType>
+        <valueType>doc_bscsProy.recIMSI</valueType>
       </variable>
       <variable name="search" type="uivar">
         <valueType>ui_com.conceptwave.system.UserInterface</valueType>
@@ -50,7 +64,7 @@
                 </formReference>
                 <variable type="varPath">
                   <variablePathList>
-                    <variablePath>findDoc_bscsProy.busquedaCliente/ui_UserInterface/uivar_detail</variablePath>
+                    <variablePath>findDoc_bscsProy.findBusquedaIMSI/ui_UserInterface/uivar_detail</variablePath>
                   </variablePathList>
                 </variable>
                 <visible type="varPath">
@@ -67,7 +81,7 @@
                 </formReference>
                 <variable type="varPath">
                   <variablePathList>
-                    <variablePath>findDoc_bscsProy.busquedaCliente/ui_UserInterface/uivar_search</variablePath>
+                    <variablePath>findDoc_bscsProy.findBusquedaIMSI/ui_UserInterface/uivar_search</variablePath>
                   </variablePathList>
                 </variable>
                 <visible type="varPath">
@@ -87,7 +101,7 @@
                 <height>100%</height>
                 <width>100%</width>
                 <elementList>
-                  <element name="busquedaClienteResultTable" type="eltabl">
+                  <element name="findBusquedaIMSIResultTable" type="eltabl">
                     <onSelectChange type="varPath">
                       <variablePathList>
                         <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
@@ -95,39 +109,31 @@
                     </onSelectChange>
                     <variable type="varPath">
                       <variablePathList>
-                        <variablePath>findDoc_bscsProy.busquedaCliente/ui_UserInterface/uivar_result</variablePath>
+                        <variablePath>findDoc_bscsProy.findBusquedaIMSI/ui_UserInterface/uivar_result</variablePath>
                       </variablePathList>
                     </variable>
                     <elementList>
-                      <element name="MSISDN" type="elfld">
-                        <variable type="varPath">
-                          <variablePathList>
-                            <variablePath>findDoc_bscsProy.busquedaCliente/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_bscsProy.gg_clienteBSCS/leaf_MSISDN</variablePath>
-                          </variablePathList>
-                        </variable>
-                      </element>
                       <element name="IMSI" type="elfld">
                         <variable type="varPath">
                           <variablePathList>
-                            <variablePath>findDoc_bscsProy.busquedaCliente/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_bscsProy.gg_clienteBSCS/leaf_IMSI</variablePath>
+                            <variablePath>findDoc_bscsProy.findBusquedaIMSI/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_bscsProy.recIMSI/leaf_IMSI</variablePath>
                           </variablePathList>
                         </variable>
                       </element>
-                      <element name="PLAN_BSCS" type="elfld">
+                      <element name="ESTADO" type="elfld">
                         <variable type="varPath">
                           <variablePathList>
-                            <variablePath>findDoc_bscsProy.busquedaCliente/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_bscsProy.gg_clienteBSCS/leaf_PLAN_BSCS</variablePath>
+                            <variablePath>findDoc_bscsProy.findBusquedaIMSI/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_bscsProy.recIMSI/leaf_ESTADO</variablePath>
                           </variablePathList>
                         </variable>
                       </element>
-                      <element name="saldo" type="elfld">
+                      <element name="ID_CLIENTE" type="elfld">
                         <variable type="varPath">
                           <variablePathList>
-                            <variablePath>findDoc_bscsProy.busquedaCliente/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_bscsProy.gg_clienteBSCS/leaf_saldo</variablePath>
+                            <variablePath>findDoc_bscsProy.findBusquedaIMSI/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_bscsProy.recIMSI/leaf_ID_CLIENTE</variablePath>
                           </variablePathList>
                         </variable>
                       </element>
@@ -142,9 +148,9 @@
     </vformList>
   </UserInterface>
   <viewList>
-    <view name="busquedaClienteView" type="findVView">
-      <inputOverlay>doc_bscsProy.gg_clienteBSCS/ui_UserInterface/frmui_Forms/vform_generatedForm</inputOverlay>
-      <outputOverlay>findDoc_bscsProy.busquedaCliente/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+    <view name="findBusquedaIMSIView" type="findVView">
+      <inputOverlay>doc_bscsProy.recIMSI/ui_UserInterface/frmui_Forms/vform_generatedForm</inputOverlay>
+      <outputOverlay>findDoc_bscsProy.findBusquedaIMSI/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
       <searchImmediately>true</searchImmediately>
       <showSearchForm>true</showSearchForm>
     </view>

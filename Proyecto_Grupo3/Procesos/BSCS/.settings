@@ -4,7 +4,7 @@
   <applicationString>BSCS_train</applicationString>
   <applicationVersionString>2</applicationVersionString>
   <breakpointMap>
-    <breakpoint key="bscsProy.Consumo">0</breakpoint>
+    <breakpoint key="bscsProy.ScriptConsumo">0</breakpoint>
   </breakpointMap>
   <databasesMap>
     <databases key="BSCS_TRAIN" type=".configdb">

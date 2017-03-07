@@ -9,6 +9,9 @@
       <label>usage</label>
       <valueType>dtype_chargingSystem.usage</valueType>
     </variable>
+    <variable name="consumo" type="leaf">
+      <valueType>dtype_chargingSystem.consumo</valueType>
+    </variable>
     <variable name="saldo" type="leaf">
       <valueType>dtype_chargingSystem.saldo</valueType>
     </variable>

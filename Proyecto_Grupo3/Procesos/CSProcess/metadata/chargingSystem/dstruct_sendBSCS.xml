@@ -17,5 +17,15 @@
       <element>dtype_chargingSystem.MSISDN</element>
       <label>MSISDN</label>
     </child>
+    <child name="consumo" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.consumo</element>
+      <label>consumo</label>
+    </child>
+    <child name="usage" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.usage</element>
+      <label>usage</label>
+    </child>
   </childList>
 </dataStructure>

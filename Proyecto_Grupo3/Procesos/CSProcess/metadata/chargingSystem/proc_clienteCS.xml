@@ -10,7 +10,7 @@
         <label>BSCS</label>
         <participant>part_chargingSystem.BSCSPart</participant>
         <x>265.0</x>
-        <y>151.0</y>
+        <y>152.0</y>
         <methodList>
           <method name="cwOnProcActBefore" type="action">
             <category>before</category>
@@ -19,6 +19,7 @@
               this.activityData.MSISDN = this.process.processDocument.MSISDN;
               this.activityData.saldo = this.process.processDocument.saldo;
               this.activityData.usage = this.process.processDocument.usage;
+              this.activityData.consumo = this.process.processDocument.consumo;
             ]]></script>
           </method>
         </methodList>
