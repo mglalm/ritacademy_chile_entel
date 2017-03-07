@@ -2,22 +2,15 @@
 <process name="provisionManagement.SubmitOrder">
   <activity name="Start" type="seqActivity">
     <label>Start</label>
-    <x>69.0</x>
-    <y>69.0</y>
+    <x>70.0</x>
+    <y>107.0</y>
     <childList>
-      <child name="InvocaOM" type="opActivity">
-        <element>iface_oeInterfaceOutBound.Submit_Order_OE/oper_SubmitOrderOE</element>
-        <label>InvocaOM</label>
-        <participant>part_provisionManagement.OM_PART</participant>
+      <child name="SubmitOrder" type="opActivity">
+        <element>iface_oeInterfaceOutbound.Submit_Order_OE/oper_SubmitOrderOE</element>
+        <label>SubmitOrder</label>
+        <participant>part_provisionManagement.ClienteOE</participant>
         <x>231.0</x>
-        <y>87.0</y>
-        <childList>
-          <child name="Fin" type="completeActivity">
-            <label>Fin</label>
-            <x>229.0</x>
-            <y>191.0</y>
-          </child>
-        </childList>
+        <y>106.0</y>
         <methodList>
           <method name="cwOnProcActBefore" type="action">
             <category>before</category>
@@ -35,11 +28,11 @@
           </method>
         </methodList>
       </child>
-      <child name="OM_PART" type="participantActivity">
-        <label>OM_PART</label>
-        <participant>part_provisionManagement.OM_PART</participant>
-        <x>334.0</x>
-        <y>10.0</y>
+      <child name="ClienteOE" type="participantActivity">
+        <label>ClienteOE</label>
+        <participant>part_provisionManagement.ClienteOE</participant>
+        <x>510.0</x>
+        <y>90.0</y>
       </child>
     </childList>
   </activity>

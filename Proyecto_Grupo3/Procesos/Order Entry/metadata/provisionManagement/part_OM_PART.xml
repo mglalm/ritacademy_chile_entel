@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<participant name="provisionManagement.OM_PART">
-  <label>OM_PART</label>
-  <metaVersion>25</metaVersion>
-  <participant>iface_oeInterfaceOutBound.Submit_Order_OE</participant>
-</participant>
