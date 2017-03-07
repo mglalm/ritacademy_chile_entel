@@ -19,7 +19,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarExportFolder>E:\ProyectoG3_\Proyecto_Grupo3\CS</jarExportFolder>
+  <jarExportFolder>E:\ProyectoG3_\Proyecto_Grupo3\Procesos\CSProcess</jarExportFolder>
   <joinCluster>true</joinCluster>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
