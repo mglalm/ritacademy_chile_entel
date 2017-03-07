@@ -22,7 +22,7 @@
     var dt = new DataStructure("OM_LISTENER.response");
     dt.productOfferId = input.productOfferId;
     dt.orderId = input.orderId;
-    dt.status = "P";
+    dt.status = 0;
 
     return dt;
   ]]></script>

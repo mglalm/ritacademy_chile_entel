@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<header name="AVMMetadata">
+  <APIVersion>2</APIVersion>
+  <author>G1</author>
+  <availableList>
+    <available type="loc">
+      <locale>en</locale>
+      <rightToLeft>false</rightToLeft>
+    </available>
+  </availableList>
+  <created>Tue Mar 07 09:30:30 CLT 2017</created>
+  <cwfBuildID>1</cwfBuildID>
+  <internalName>PROYECTO</internalName>
+  <internalSysVersion>16.0 ICP16-01EP01</internalSysVersion>
+  <label>PROYECTO</label>
+  <locale type="loc">
+    <locale>en</locale>
+    <rightToLeft>false</rightToLeft>
+  </locale>
+  <metaVersion>25</metaVersion>
+  <metadataVersion>20150818</metadataVersion>
+  <templateList>
+    <template>EOC</template>
+    <template>CS</template>
+    <template>BSCS Metadata</template>
+    <template>EMA Metadata</template>
+    <template>ecm</template>
+    <template>OM</template>
+  </templateList>
+</header>

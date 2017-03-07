@@ -18,11 +18,4 @@
   </locale>
   <metaVersion>25</metaVersion>
   <metadataVersion>20150818</metadataVersion>
-  <templateList>
-    <template>ecm</template>
-    <template>CS</template>
-    <template>EMA Metadata</template>
-    <template>BSCS Metadata</template>
-    <template>EOC</template>
-  </templateList>
 </header>

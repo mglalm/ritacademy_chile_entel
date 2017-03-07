@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="OM_LISTENER" targetNamespace="OM_LISTENER"
+	xmlns:tns="OM_LISTENER"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:OM_LISTENER="OM_LISTENER">
+
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="OM_LISTENER" schemaLocation="OM_LISTENER.xsd"/>
+		</schema>
+	</types>
+
+	<message name="request">
+		<part name="request" type="OM_LISTENER:request"/>
+	</message>
+
+	<message name="response">
+		<part name="response" type="OM_LISTENER:response"/>
+	</message>
+
+	<portType name="OMInterfaz">
+		<operation name="provisioning">
+			<input message="tns:request"/>
+			<output message="tns:response"/>
+		</operation>
+	</portType>
+
+	<binding name="bindingSOAP" type="tns:OMInterfaz">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="provisioning">
+			<soap:operation soapAction="provisioning"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="OM_LISTENER">
+		<port name="portSOAP" binding="tns:bindingSOAP">
+		</port>
+	</service>
+
+</definitions>
