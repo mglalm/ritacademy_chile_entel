@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="gg_ResponseOutbound.Response">
+<dataStructure name="gg_oeinterfOutbound.Response">
   <container>true</container>
   <description>Response</description>
   <label>Response</label>
