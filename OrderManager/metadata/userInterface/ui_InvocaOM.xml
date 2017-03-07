@@ -22,6 +22,11 @@
                     </variablePathList>
                   </clickMethod>
                   <label>Invocar OM</label>
+                  <visible type="varPath">
+                    <variablePathList>
+                      <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                    </variablePathList>
+                  </visible>
                 </element>
                 <element name="InvocaOMSimple" type="elmnu">
                   <clickMethod type="varPath">
@@ -30,10 +35,43 @@
                     </variablePathList>
                   </clickMethod>
                   <label>Invoca OM Simple</label>
+                  <visible type="varPath">
+                    <variablePathList>
+                      <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                    </variablePathList>
+                  </visible>
+                </element>
+                <element name="ParametrosOM" type="elmnu">
+                  <label>Parametros OM</label>
+                  <elementList>
+                    <element name="AgregaParametro" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_userInterface.InvocaOM/usrActionMethod_agregarParametro</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Agregar Parámetro</label>
+                    </element>
+                    <element name="buscarParametro" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_userInterface.InvocaOM/usrActionMethod_parametrosOM</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Buscar Parametro</label>
+                    </element>
+                  </elementList>
                 </element>
               </elementList>
             </override>
           </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>OM</title>
         </overlay>
       </overlayList>
     </vform>
@@ -48,6 +86,15 @@
       <form>dstruct_OrderManager.dsOrderProvisionInputSimple/tree_UserInterface/frmui_Forms/vform_ingresoDatosOrden</form>
       <userInterface>dstruct_OrderManager.dsOrderProvisionInputSimple</userInterface>
       <valueType>dstruct_OrderManager.dsOrderProvisionInputSimple</valueType>
+    </method>
+    <method name="parametrosOM" type="usrActionMethod">
+      <userInterface>findDoc_OrderManager.fin_OMMantenedorParametro</userInterface>
+      <valueType>findDoc_OrderManager.fin_OMMantenedorParametro</valueType>
+    </method>
+    <method name="agregarParametro" type="usrActionMethod">
+      <form>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/frmui_Forms/vform_formParametros</form>
+      <userInterface>doc_OrderManager.docOMParametrosNodos</userInterface>
+      <valueType>doc_OrderManager.docOMParametrosNodos</valueType>
     </method>
   </methodList>
 </userInterface>

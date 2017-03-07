@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="OrderManager.docOMFiltroParametros">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{186d59ab-c467-43e4-a617-60ced4bcd7ee}</guid>
+  <label>docOMFiltroParametros</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="POId" type="leaf">
+      <valueType>dtype_OrderManager.dtPOId</valueType>
+    </variable>
+    <variable name="idParametro" type="leaf">
+      <valueType>dtype_OrderManager.dtIdParametro</valueType>
+    </variable>
+    <variable name="idNodo" type="leaf">
+      <valueType>dtype_OrderManager.dtIdNodo</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_OrderManager.docOMFiltroParametros</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="formFiltroParam" type="vform">
+            <label>formFiltroParam</label>
+            <root name="formFiltroParamGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="docOMFiltroParametrosGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="docOMFiltroParametrosHeader" type="elhdr">
+                      <label>docOMFiltroParametros</label>
+                    </element>
+                    <element name="POId" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMFiltroParametros/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMFiltroParametros/leaf_POId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="idParametro" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMFiltroParametros/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMFiltroParametros/leaf_idParametro</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="idNodo" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMFiltroParametros/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMFiltroParametros/leaf_idNodo</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

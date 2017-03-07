@@ -33,4 +33,79 @@
       <valueType>dtype_com.conceptwave.system.String</valueType>
     </variable>
   </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_OrderManager.docOMParametrosNodos</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="formParametros" type="vform">
+            <label>formParametros</label>
+            <root name="formParametrosGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="docOMParametrosNodosGrid" type="elgrd">
+                  <numOfCols>5</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="docOMParametrosNodosHeader" type="elhdr">
+                      <label>docOMParametrosNodos</label>
+                    </element>
+                    <element name="ID" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_ID</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="POId" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_POId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="idNodo" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_idNodo</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="idParametro" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_idParametro</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="valor" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_valor</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
 </document>

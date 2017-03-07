@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project>
   <DefaultDB>ORACLE THIN</DefaultDB>
-  <applicationString>ProyectoCobras_OM</applicationString>
+  <applicationString>ProyectoCobraIntegrado</applicationString>
   <applicationVersionString>1</applicationVersionString>
-  <breakpointMap>
-    <breakpoint key="OrderManager.debug">0</breakpoint>
-  </breakpointMap>
   <databasesMap>
     <databases key="ORACLE THIN" type=".configdb">
       <dbname>ORACLE THIN</dbname>
@@ -19,7 +16,6 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarExportFolder>C:\EntrenReadiness\GIT\20170201\JARs</jarExportFolder>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
 </project>

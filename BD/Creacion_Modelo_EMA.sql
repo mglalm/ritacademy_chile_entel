@@ -91,4 +91,6 @@ COMMIT;
 insert into EMA_PROFILE_DETALLE values ('1','1','VOZ');
 insert into EMA_PROFILE_DETALLE values ('1','2','SMS');
 insert into EMA_PROFILE_DETALLE values ('2','2','SMS');
+
+
 COMMIT;

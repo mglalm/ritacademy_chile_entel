@@ -57,4 +57,10 @@ CREATE SEQUENCE SEQ_ID_SERVICIO_CS MINVALUE 1 MAXVALUE 9999999999999999999999999
 insert into cs_servicio_estado values ('1','ACTIVO');
 insert into cs_servicio_estado values ('2','SUSPENDIDO');
 insert into cs_servicio_estado values ('3','DESACTIVADO');
+
+/*plan*/
+insert into CS_PLAN
+values(1, 'PLAN_CS', 10000);
+
+
 commit;

@@ -440,7 +440,9 @@
                                                                        *    de EMA. En este caso, se requiere el MSISDN solamente.
                                                                        */
 
+                                                                      this.activityData.orderid = this.process.processDocument.IN_orderId;
                                                                       this.activityData.msisdn = this.process.processDocument.OUT_MSISDN;
+                                                                      this.activityData.id_profile = this.process.processDocument.CTRL_profile;
 
                                                                       var a = 1;
                                                                     ]]></script>
@@ -754,7 +756,7 @@
                     <category>script</category>
                     <system>true</system>
                     <script><![CDATA[
-                      //OrderManager.debug();
+                      OrderManager.debug();
                       //Inicializa las variables de control, que indican si hay algun problema en el flujo. Quedan en el processDocument.
                       OrderManager.inicializaVariableControl(this.process.processDocument);
 
@@ -777,15 +779,17 @@
 
                       //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
                       if(doc){
-                          this.process.processDocument.CTRL_ERROR = "1";
-                          this.process.processDocument.CTRL_DESC_ERROR = "Error 1: La orden entregada ya existe en la base de datos";
-                          return;
-                      }
-                      else{  // si no lo encuentra, lo crea
+                          orden = doc;
                           orden.rut = docProc.IN_rut;
                           orden.estado = "En Proceso";
                           orden.motivoEstado = "La orden ha sido ingresada y se encuentra en proceso de creación."
                           orden.save();
+                      }
+                      else{  // si no lo encuentra, lo crea
+
+                          this.process.processDocument.CTRL_ERROR = "1";
+                          this.process.processDocument.CTRL_DESC_ERROR = "Error 1: La orden entregada no existe en la base de datos";
+                          return;
                       }
 
                       /************* Fin de la creación de la ORDEN ****************/

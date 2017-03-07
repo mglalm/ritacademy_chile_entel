@@ -101,4 +101,35 @@ COMMIT;
 insert into BSCS_SERVICIO_ESTADO values ('1','ACTIVO');
 insert into BSCS_SERVICIO_ESTADO values ('2','SUSPENDIDO');
 insert into BSCS_SERVICIO_ESTADO values ('3','DESACTIVADO');
+
+/* plan */
+insert into BSCS_PLAN(ID_PLAN_BSCS, DESC_PLAN_BSCS)
+values('1', 'PLAN_BSCS');
+
+/*MSISDN*/
+insert into BSCS_MSISDN
+values('56992270351', 1);
+insert into BSCS_MSISDN
+values('56992270352', 1);
+insert into BSCS_MSISDN
+values('56992270353', 1);
+insert into BSCS_MSISDN
+values('56992270354', 1);
+insert into BSCS_MSISDN
+values('56992270355', 1);
+insert into BSCS_MSISDN
+values('56992270356', 1);
+insert into BSCS_MSISDN
+values('56992270357', 1);
+insert into BSCS_MSISDN
+values('56992270358', 1);
+insert into BSCS_MSISDN
+values('56992270359', 1);
+
+
+
+
+
 COMMIT;
+
+

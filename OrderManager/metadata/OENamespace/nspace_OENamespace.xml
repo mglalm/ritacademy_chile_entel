@@ -2,5 +2,5 @@
 <nameSpace name="OENamespace">
   <label>OENamespace</label>
   <metaVersion>25</metaVersion>
-  <targetNS>EOC_OE</targetNS>
+  <targetNS>http://www.readinessit.com/namespaces/ProyectoCobras/OENamespace</targetNS>
 </nameSpace>
