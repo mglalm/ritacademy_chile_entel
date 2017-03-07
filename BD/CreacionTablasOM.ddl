@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 4.1.5.907
---   en:        2017-03-07 17:31:59 CLST
+--   en:        2017-03-07 18:05:25 CLST
 --   sitio:      Oracle Database 12c
 --   tipo:      Oracle Database 12c
 
@@ -170,13 +170,15 @@ ALTER TABLE OM_RECURSOS_PO ADD CONSTRAINT OM_RECURSOS_PO_PK PRIMARY KEY ( ORDER_
 
 CREATE TABLE PO_Cliente
   (
-    PO_Id              VARCHAR2 (32) ,
-    RUT                VARCHAR2 (15) NOT NULL ,
-    ESTADO             VARCHAR2 (20) ,
-    FechaCreacion      DATE ,
-    fechaDesactivacion DATE ,
-    MSISDN             VARCHAR2 (11)
+    cwDocId             VARCHAR2 (16) NOT NULL ,
+    PO_Id               VARCHAR2 (32) ,
+    RUT                 VARCHAR2 (15) NOT NULL ,
+    ESTADO              VARCHAR2 (20) ,
+    FECHA_CREACION      DATE ,
+    FECHA_DESACTIVACION DATE ,
+    MSISDN              VARCHAR2 (11)
   ) ;
+ALTER TABLE PO_Cliente ADD CONSTRAINT PO_Cliente_PK PRIMARY KEY ( cwDocId ) ;
 
 
 ALTER TABLE OM_ORDER_PO ADD CONSTRAINT OM_ORDER_PO_OM_Orden_FK FOREIGN KEY ( cwDocId ) REFERENCES OM_Orden ( cwDocId ) ;
@@ -204,7 +206,7 @@ ALTER TABLE OM_PARAM_BSCS ADD CONSTRAINT TABLE_10_OM_PROV_BSCS_FK FOREIGN KEY ( 
 -- 
 -- CREATE TABLE                            12
 -- CREATE INDEX                             1
--- ALTER TABLE                             21
+-- ALTER TABLE                             22
 -- CREATE VIEW                              0
 -- ALTER VIEW                               0
 -- CREATE PACKAGE                           0

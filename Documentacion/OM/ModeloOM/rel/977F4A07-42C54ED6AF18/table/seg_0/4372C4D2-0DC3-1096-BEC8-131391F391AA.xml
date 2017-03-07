@@ -8,6 +8,17 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cwDocId" id="681A5341-4CB4-7526-9B05-7468841D509E">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-03-07 20:58:22 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="PO_Id" id="289FA296-5B85-D834-F81A-4C08A3A331EC">
 <createdBy>LDGonzalez</createdBy>
 <createdTime>2017-03-07 20:16:32 UTC</createdTime>
@@ -46,7 +57,7 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="FechaCreacion" id="B20FC8E6-DBF5-8587-BF92-88EFC46C610A">
+<Column name="FECHA_CREACION" id="B20FC8E6-DBF5-8587-BF92-88EFC46C610A">
 <createdBy>LDGonzalez</createdBy>
 <createdTime>2017-03-07 20:18:26 UTC</createdTime>
 <ownerDesignName>ModeloOM</ownerDesignName>
@@ -57,7 +68,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="fechaDesactivacion" id="23C88EC3-9F6B-5BCA-9B43-63CA5FA564B5">
+<Column name="FECHA_DESACTIVACION" id="23C88EC3-9F6B-5BCA-9B43-63CA5FA564B5">
 <createdBy>LDGonzalez</createdBy>
 <createdTime>2017-03-07 20:18:26 UTC</createdTime>
 <ownerDesignName>ModeloOM</ownerDesignName>
@@ -82,6 +93,17 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1958AD6A-744C-7AF1-2D25-C7FDD8DD4DEA" name="PO_Cliente_PK">
+<createdBy>LDGonzalez</createdBy>
+<createdTime>2017-03-07 20:58:22 UTC</createdTime>
+<ownerDesignName>ModeloOM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="681A5341-4CB4-7526-9B05-7468841D509E"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="152B8FAF-270B-9B4E-6F8F-506B0901D62E" name="PO_Cliente_OE_CLIENTE_FK">
 <createdBy>LDGonzalez</createdBy>
 <createdTime>2017-03-07 20:18:26 UTC</createdTime>
