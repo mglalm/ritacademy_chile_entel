@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<findDoc name="chargingSystem.findMSISDNConsumo">
+<findDoc name="chargingSystem.findTarifa">
   <extends>find_com.conceptwave.system.Finder</extends>
-  <label>findMSISDNConsumo</label>
+  <label>Finder Tarifa</label>
   <metaVersion>25</metaVersion>
-  <output>doc_chargingSystem.clienteChargingSystem</output>
+  <output>doc_chargingSystem.gg_trarifas</output>
   <type>document</type>
 </findDoc>

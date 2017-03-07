@@ -13,9 +13,8 @@
     var doc = fnd.search();
     var i = 0;
     var output = new DataStructure("chargingSystem.ackConsumoCS");
-    var grabarDocumento = new Document("chargingSystem.gg_ConsumoClienteCS");
+    //var grabarDocumento = new Document("chargingSystem.gg_ConsumoClienteCS");
     var saldoDespuesConsumo = 0;
-    docprocess.saldo = 0;
 
     for(i=0;i<doc.length;i=i+1)
     {
@@ -26,13 +25,12 @@
             saldoDespuesConsumo= doc[i].saldo;
         }
     }
+
     docprocess.MSISDN = input.MSISDN;
     docprocess.saldo = saldoDespuesConsumo;
     docprocess.usage = input.usage;
 
-
     var ProcessID = Process.startProcess('chargingSystem.clienteCS',docprocess,null,null);
-
 
     output.ackConsumo = saldoDespuesConsumo;
 

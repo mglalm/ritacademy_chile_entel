@@ -14,10 +14,7 @@
     var i = 0;
     var salir =0;
 
-    /*doc.MSISDN = input.MSISDN;
-    doc.saldo = input.saldo;
-    doc.usage = input.usage;
-    */
+
     for(i=0;i<fnd.length;i=i+1)
     {
         if(fnd[i].MSISDN == input.MSISDN & salir ==0)
@@ -27,8 +24,6 @@
         salir=1;
         fnd[i].save();
         }
-
-
     }
   ]]></script>
 </script>

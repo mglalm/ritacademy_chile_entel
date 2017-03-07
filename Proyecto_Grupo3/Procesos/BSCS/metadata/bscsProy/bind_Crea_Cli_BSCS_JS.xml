@@ -13,6 +13,7 @@
           var MSISDN = null;
           var ID_CLIENTE=input.ID_CLIENTE;
           var output=new DataStructure("bscsProy.Resonse_Crea_Cli_BSCS");
+          var clienteBSCS = new Document('bscsProy.gg_clienteBSCS');
 
           //var IMSI=this.process.processDocument.IMSI;
           var fnd = new Finder('bscsProy.findIMSI');
@@ -59,6 +60,13 @@
              output.IMSI=IMSI;
              output.MSISDN=MSISDN;
              output.DESC='EXITO';
+
+             clienteBSCS.MSISDN = MSISDN;
+             clienteBSCS.IMSI = IMSI;
+             clienteBSCS.PLAN_BSCS = input.PLAN_BSCS;
+            // clienteBSCS.saldo = input.saldo;
+             clienteBSCS.usage = 0;
+             clienteBSCS.save();
             }
           else
           {
