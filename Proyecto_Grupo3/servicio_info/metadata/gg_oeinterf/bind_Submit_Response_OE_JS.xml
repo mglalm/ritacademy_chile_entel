@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="gg_oeinterf.Submit_Response_OE_JS">
+  <extensionList>
+    <extension name="submitResponseOE" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="script"><![CDATA[
+          var IMSI = input.IMSI;
+          var MSISDN =  input.MSISDN;
+          var ESTADO=input.ESTADO;
+          var output=new DataStructure("gg_oeinterf.Response");
+          output.Ack=10;
+
+          return output;
+        ]]></elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_gg_oeinterf.Submit_Response_OE</interface>
+  <label>Submit Response OE JS</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>
