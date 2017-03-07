@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="oeInterface.bindingJSOE">
+  <extensionList>
+    <extension name="SubmitOrderOE" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="metadataScript">oeInterface.oeScript</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_oeInterface.Submit_Order_OE</interface>
+  <label>Binding JS OE</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

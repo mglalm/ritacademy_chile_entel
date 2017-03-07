@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="gg_ResponseOutbound.Submit_Response_OE_Ext">
+  <label>Submit_Response_OE_Ext</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="Submit_Response_OE_Ext_SOAP" type="port">
+      <binding>bind_gg_ResponseOutbound.Submit_Response_OE_SOAP</binding>
+      <label>Submit_Response_OE_Ext_SOAP</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

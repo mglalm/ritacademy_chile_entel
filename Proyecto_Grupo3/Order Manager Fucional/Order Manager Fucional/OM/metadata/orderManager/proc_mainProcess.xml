@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="orderManager.mainProcess">
+  <activity name="Start" type="seqActivity">
+    <label>Start</label>
+    <x>31.0</x>
+    <y>124.0</y>
+    <childList>
+      <child name="CreaCliBSCS" type="seqActivity">
+        <label>Crea Cli BSCS</label>
+        <x>215.0</x>
+        <y>24.0</y>
+        <childList>
+          <child name="CrearCliBSCS" type="subflowActivity">
+            <element>proc_orderManager.Crear_CLI_BSCS</element>
+            <label>Crear Cli BSCS</label>
+            <x>230.0</x>
+            <y>193.0</y>
+          </child>
+          <child name="CreaCliCS" type="seqActivity">
+            <label>Crea Cli CS</label>
+            <x>339.0</x>
+            <y>24.0</y>
+            <childList>
+              <child name="CrearCliCS" type="subflowActivity">
+                <element>proc_orderManager.Crear_CLI_CS</element>
+                <label>Crear Cli CS</label>
+                <x>381.0</x>
+                <y>191.0</y>
+              </child>
+              <child name="ProvisionCliEMA" type="seqActivity">
+                <label>Provision Cli EMA</label>
+                <x>471.0</x>
+                <y>23.0</y>
+                <childList>
+                  <child name="ProvisionCliEMA" type="subflowActivity">
+                    <element>proc_orderManager.Provision_CLI_EMA</element>
+                    <label>Provision Cli EMA</label>
+                    <x>547.0</x>
+                    <y>191.0</y>
+                  </child>
+                  <child name="Responder" type="seqActivity">
+                    <label>Responder</label>
+                    <x>658.0</x>
+                    <y>25.0</y>
+                    <childList>
+                      <child name="InformacionOE" type="opActivity">
+                        <element>iface_gg_ResponseOutbound.Submit_Response_OE/oper_submitResponseOE</element>
+                        <label>InformacionOE</label>
+                        <participant>part_orderManager.InformacionOE</participant>
+                        <x>672.21466</x>
+                        <y>121.0</y>
+                        <childList>
+                          <child name="OrdenCompletada" type="completeActivity">
+                            <label>OrdenCompletada</label>
+                            <x>763.21466</x>
+                            <y>216.0</y>
+                          </child>
+                        </childList>
+                        <methodList>
+                          <method name="cwOnProcActBefore" type="action">
+                            <category>before</category>
+                            <system>true</system>
+                            <script><![CDATA[
+                              // Envio de Respuesta a OE
+                              orderManager.dummy();
+                              this.activityData.IMSI = this.process.processDocument.IMSI;
+                              this.activityData.MSISDN = this.process.processDocument.MSISDN;
+                              this.activityData.ESTADO = this.process.processDocument.ESTADO;
+                            ]]></script>
+                          </method>
+                          <method name="cwOnProcActAfter" type="action">
+                            <category>script</category>
+                            <system>true</system>
+                            <script><![CDATA[
+                              orderManager.dummy();
+
+                              this.process.processDocumet.Ack = this.activityData.Ack;
+                            ]]></script>
+                          </method>
+                        </methodList>
+                      </child>
+                    </childList>
+                  </child>
+                </childList>
+              </child>
+            </childList>
+          </child>
+        </childList>
+      </child>
+      <child name="InformacionOE" type="participantActivity">
+        <label>InformacionOE</label>
+        <participant>part_orderManager.InformacionOE</participant>
+        <x>767.0</x>
+        <y>20.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <document>doc_oeInterface.documentoOE</document>
+  <label>mainProcess</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <subflowReferenceList>
+    <subflowReference type="sref">
+      <revision>1</revision>
+      <subflow>proc_orderManager.Crear_CLI_CS</subflow>
+    </subflowReference>
+    <subflowReference type="sref">
+      <revision>1</revision>
+      <subflow>proc_orderManager.Provision_CLI_EMA</subflow>
+    </subflowReference>
+    <subflowReference type="sref">
+      <revision>1</revision>
+      <subflow>proc_orderManager.Crear_CLI_BSCS</subflow>
+    </subflowReference>
+  </subflowReferenceList>
+  <type>User</type>
+</process>

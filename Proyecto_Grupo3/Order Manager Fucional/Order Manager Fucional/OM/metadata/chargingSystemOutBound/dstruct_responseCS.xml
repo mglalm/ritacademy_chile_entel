@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="chargingSystemOutBound.responseCS">
+  <container>true</container>
+  <description>responseCS</description>
+  <label>responseCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="mensaje" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutBound.mensaje</element>
+      <label>mensaje</label>
+    </child>
+    <child name="estado" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutBound.estado</element>
+      <label>estado</label>
+    </child>
+  </childList>
+</dataStructure>

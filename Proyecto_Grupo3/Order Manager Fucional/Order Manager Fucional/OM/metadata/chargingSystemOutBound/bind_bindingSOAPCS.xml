@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="chargingSystemOutBound.bindingSOAPCS">
+  <extensionList>
+    <extension name="creacionClienteCS" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">creacionClienteCS</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="creacionClienteCS$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="creacionClienteCS$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_chargingSystemOutBound.Crea_CLI_CS</interface>
+  <label>bindingSOAPCS</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

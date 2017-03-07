@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="bscsProyOutbound.Crea_Cli_BSCS">
+  <label>Crea_Cli_BSCS</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="Crea_cli_bscs" type="oper">
+      <input>dstruct_bscsProyOutbound.Req_Crea_Cli_BSCS</input>
+      <label>Crea_cli_bscs</label>
+      <output>dstruct_bscsProyOutbound.Resonse_Crea_Cli_BSCS</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

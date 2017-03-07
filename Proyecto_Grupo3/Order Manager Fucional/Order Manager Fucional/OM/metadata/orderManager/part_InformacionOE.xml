@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<participant name="orderManager.InformacionOE">
+  <label>InformacionOE</label>
+  <metaVersion>25</metaVersion>
+  <participant>iface_gg_ResponseOutbound.Submit_Response_OE</participant>
+</participant>

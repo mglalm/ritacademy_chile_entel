@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="chargingSystemOutBound.idCliente">
+  <description>ID Cliente</description>
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>idCliente</label>
+  <length>32</length>
+  <metaVersion>25</metaVersion>
+</dataType>
