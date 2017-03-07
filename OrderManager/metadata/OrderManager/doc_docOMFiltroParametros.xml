@@ -39,9 +39,10 @@
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
                     <element name="docOMFiltroParametrosHeader" type="elhdr">
-                      <label>docOMFiltroParametros</label>
+                      <label>Mantenedor de Parámetros de OM</label>
                     </element>
                     <element name="POId" type="elfld">
+                      <label>PO Id</label>
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_OrderManager.docOMFiltroParametros/ui_UserInterface/uivar_model</variablePath>
@@ -50,6 +51,7 @@
                       </variable>
                     </element>
                     <element name="idParametro" type="elfld">
+                      <label>Id Parametro</label>
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_OrderManager.docOMFiltroParametros/ui_UserInterface/uivar_model</variablePath>
@@ -58,6 +60,7 @@
                       </variable>
                     </element>
                     <element name="idNodo" type="elfld">
+                      <label>Id Nodo (EMA, CS, BSCS)</label>
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_OrderManager.docOMFiltroParametros/ui_UserInterface/uivar_model</variablePath>
@@ -69,6 +72,16 @@
                 </element>
               </elementList>
             </root>
+          </overlay>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="TextField" type="elfld">
+                <label>prueba2</label>
+              </override>
+            </overrideList>
           </overlay>
         </overlayList>
       </vform>

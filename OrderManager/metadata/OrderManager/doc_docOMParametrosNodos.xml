@@ -57,9 +57,10 @@
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
                     <element name="docOMParametrosNodosHeader" type="elhdr">
-                      <label>docOMParametrosNodos</label>
+                      <label>Ingresar los valores para el nuevo parámetro</label>
                     </element>
                     <element name="ID" type="elfld">
+                      <label>Id Interno</label>
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
@@ -68,6 +69,7 @@
                       </variable>
                     </element>
                     <element name="POId" type="elfld">
+                      <label>PO Id</label>
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
@@ -76,6 +78,7 @@
                       </variable>
                     </element>
                     <element name="idNodo" type="elfld">
+                      <label>Id Nodo</label>
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
@@ -84,6 +87,7 @@
                       </variable>
                     </element>
                     <element name="idParametro" type="elfld">
+                      <label>ID Parametro</label>
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
@@ -92,6 +96,7 @@
                       </variable>
                     </element>
                     <element name="valor" type="elfld">
+                      <label>Valor</label>
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
@@ -104,8 +109,129 @@
               </elementList>
             </root>
           </overlay>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="formParametrosGrid_vCentering" type="elvltstck">
+                <height>100%</height>
+                <membersMargin>5</membersMargin>
+                <width>100%</width>
+                <elementList>
+                  <element name="docOMParametrosNodosGrid" type="elgrd">
+                    <numOfCols>5</numOfCols>
+                    <useDefaultHeight>true</useDefaultHeight>
+                    <elementList>
+                      <element name="docOMParametrosNodosHeader" type="elhdr">
+                        <label>Ingrese los nuevos valores</label>
+                      </element>
+                      <element name="ID" type="elfld">
+                        <editable type="varPath">
+                          <variablePathList>
+                            <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                          </variablePathList>
+                        </editable>
+                        <label>Id Interno</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
+                            <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_ID</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="POId" type="elfld">
+                        <label>PO Id</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
+                            <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_POId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="idNodo" type="elfld">
+                        <label>Id Nodo</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
+                            <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_idNodo</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="idParametro" type="elfld">
+                        <label>Id Parametro</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
+                            <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_idParametro</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="valor" type="elfld">
+                        <label>Valor</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
+                            <variablePath>doc_OrderManager.docOMParametrosNodos/leaf_valor</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Menu" type="exov">
+            <base>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</base>
+            <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+            <overrideList>
+              <override name="cwfSave" type="eldel"/>
+              <override name="hl1" type="elext">
+                <elementList>
+                  <element name="Grabar" type="elmnu">
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/usrActionMethod_grabar</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <icon>/cwf/MenuIconSave.gif</icon>
+                    <label>Grabar</label>
+                    <tooltip>Save</tooltip>
+                    <visible type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_com.conceptwave.system.Document/permMethod_cwfSaveView</variablePath>
+                      </variablePathList>
+                    </visible>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="quickActionMenu" type="exov">
+            <base>ui_com.conceptwave.system.UserInterface/frmui_Forms/vform_quickActionMenu</base>
+            <extends>ui_com.conceptwave.system.UserInterface/frmui_Forms/vform_quickActionMenu</extends>
+            <label>quickActionMenu</label>
+            <overrideList>
+              <override name="TextField" type="elfld">
+                <label>prueba</label>
+              </override>
+            </overrideList>
+          </overlay>
         </overlayList>
       </vform>
     </vformList>
+    <methodList>
+      <method name="grabar" type="usrActionMethod">
+        <userInterface>findDoc_OrderManager.fin_OMMantenedorParametro</userInterface>
+        <valueType>findDoc_OrderManager.fin_OMMantenedorParametro</valueType>
+        <script><![CDATA[
+          this.save();
+          Global.showUserMessage("Parámetro almacenado correctamente");
+        ]]></script>
+      </method>
+    </methodList>
   </UserInterface>
 </document>

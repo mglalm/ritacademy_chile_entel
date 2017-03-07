@@ -14,7 +14,7 @@
             <category>before</category>
             <system>true</system>
             <script><![CDATA[
-              //OrderManager.debug();
+              OrderManager.debug();
 
               /*
                * En este script se rescatan los parametros desde base de datos para provisionar
@@ -40,6 +40,7 @@
               if(!doc){
                   this.process.processDocument.CTRL_ERROR = "4";
                   this.process.processDocument.CTRL_DESC_ERROR = "No se encuentran los parámetros de provisión en BD para la PO ingresada";
+                  this.process.processDocument.OUT_estadoOrden = "ErrorParamProvision";
                   return;
               }
 
@@ -65,16 +66,19 @@
               if(!hayCS){
                   this.process.processDocument.CTRL_ERROR = "5";
                   this.process.processDocument.CTRL_DESC_ERROR = "No se encuentra el código de plan de CS para la PO ingresada en la configuración de OM";
+                  this.process.processDocument.OUT_estadoOrden = "ErrorParamCS";
                   return;
               }
               if(!hayBSCS){
                   this.process.processDocument.CTRL_ERROR = "6";
                   this.process.processDocument.CTRL_DESC_ERROR = "No se encuentra el código de plan de BSCS para la PO ingresada en la configuración de OM";
+                   this.process.processDocument.OUT_estadoOrden = "ErrorParamBSCS";
                   return;
               }
               if(!hayEMA){
                   this.process.processDocument.CTRL_ERROR = "7";
                   this.process.processDocument.CTRL_DESC_ERROR = "No se encuentra el código de profile de EMA para la PO ingresada en la configuración de OM";
+                   this.process.processDocument.OUT_estadoOrden = "ErrorParamEMA";
                   return;
               }
             ]]></script>
@@ -95,7 +99,7 @@
                 <element>iface_BSCSNamespace.interface_serviciosBSCS/oper_getMsisdnReserveBSCS</element>
                 <label>obtenerMSISDN</label>
                 <participant>part_BSCSNamespace.billingParticipant</participant>
-                <x>124.0</x>
+                <x>125.0</x>
                 <y>103.0</y>
                 <childList>
                   <child name="validaOrden" type="switchActivity">
@@ -467,6 +471,7 @@
                                                                            this.process.processDocument.CTRL_ERROR = "11";
                                                                            this.process.processDocument.CTRL_DESC_ERROR = "Error 11: Error al provisionar en EMA. EMA responde: " + resp.mensaje;
                                                                            OrderManager.actualizaEstadoOrden(this.process.processDocument.IN_orderId, "ErrorEMA", "Error 11: Error al provisionar en EMA. EMA responde: " + resp.mensaje, "", this.process.processDocument.IN_POIdBasico);
+                                                                          this.process.processDocument.OUT_estadoOrden = "ErrorEMA";
 
                                                                            //Ingreso un registro en la tabla de provision
                                                                            prov.orderId = docProc.IN_orderId;
@@ -546,6 +551,7 @@
                                                            this.process.processDocument.CTRL_ERROR = "9";
                                                            this.process.processDocument.CTRL_DESC_ERROR = "Error 9: Error al provisionar en CS. " + resp.mensaje;
                                                            OrderManager.actualizaEstadoOrden(this.process.processDocument.IN_orderId, "ErrorCS", "Error 9: Error al provisionar en CS. " + resp.mensaje, "", this.process.processDocument.IN_POIdBasico);
+                                                           this.process.processDocument.OUT_estadoOrden = "ErrorCS";
 
                                                            //Ingreso un registro en la tabla de provision
                                                            prov.orderId = docProc.IN_orderId;
@@ -680,6 +686,7 @@
                                       if(resp==null || resp.estado=="NOOK"){
                                            this.process.processDocument.CTRL_ERROR = "10";
                                            this.process.processDocument.CTRL_DESC_ERROR = "Error 10: Error al provisionar en BSCS. BSCS responde: " + resp.mensaje;
+                                           this.process.processDocument.OUT_estadoOrden = "ErrorBSSC";
                                            OrderManager.actualizaEstadoOrden(this.process.processDocument.IN_orderId, "ErrorBSSC", "Error 10: Error al provisionar en BSCS. BSCS responde: " + resp.mensaje, "", this.process.processDocument.IN_POIdBasico);
 
                                            //Ingreso un registro en la tabla de provision
@@ -688,6 +695,7 @@
                                            prov.numIntento = 1; // por ahora queda fijo ya que no manejamos re-intentos
                                            prov.estado = "10";
                                            prov.motivoEstado = "Error 10: Error al provisionar en BSCS. BSCS responde: " + resp.mensaje;
+
                                            prov.save();
 
                                            //Ingreso un registro con los parámetros que se utilizaron
@@ -778,8 +786,11 @@
                       var doc = resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
 
                       //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
-                      if(doc){
-                          orden = doc;
+
+                      //Descomentar estas dos lineas para exportar JAR
+                      //if(doc){
+                      //    orden = doc;
+                      if(!doc){
                           orden.rut = docProc.IN_rut;
                           orden.estado = "En Proceso";
                           orden.motivoEstado = "La orden ha sido ingresada y se encuentra en proceso de creación."
@@ -789,6 +800,7 @@
 
                           this.process.processDocument.CTRL_ERROR = "1";
                           this.process.processDocument.CTRL_DESC_ERROR = "Error 1: La orden entregada no existe en la base de datos";
+                          this.process.processDocument.OUT_estadoOrden = "ErrorOrden";
                           return;
                       }
 
@@ -802,6 +814,7 @@
                       if(resp.estado == "NOOK"){
                            this.process.processDocument.CTRL_ERROR = "2";
                            this.process.processDocument.CTRL_DESC_ERROR = "Error 2: Error al obtener un nuevo MSISDN desde BSCS. BSCS: " + resp.mensaje;
+                           this.process.processDocument.OUT_estadoOrden = "ErrorMSISDN";
                            orden.estado = "ErrorMSISDN";
                            orden.motivoEstado = "Error 2: Error al obtener un nuevo MSISDN desde BSCS. BSCS: " + resp.mensaje;
                            orden.save();
@@ -813,6 +826,7 @@
                           if(resp.msisdn==null || resp.msisdn.length != 11){
                                this.process.processDocument.CTRL_ERROR = "3";
                                this.process.processDocument.CTRL_DESC_ERROR = "Error 3: El MSISDN entregado es nulo o no tiene el largo adecuado";
+                               this.process.processDocument.OUT_estadoOrden = "ErrorMSISDN";
                                orden.estado = "ErrorMSISDN";
                                orden.motivoEstado = "Error 3: El MSISDN entregado es nulo o no tiene el largo adecuado";
                                orden.save();
@@ -831,6 +845,7 @@
                       if(docProc.IN_POIdBasico == null || docProc.IN_POIdBasico.length == 0){
                            this.process.processDocument.CTRL_ERROR = "12";
                            this.process.processDocument.CTRL_DESC_ERROR = "Error 12: No viene una PO Básica para provisionar";
+                           this.process.processDocument.OUT_estadoOrden = "ErrorPOBasica";
                            orden.estado = "ErrorPOBasica";
                            orden.motivoEstado = "Error 12: No viene una PO Básica para provisionar";
                            orden.save();
