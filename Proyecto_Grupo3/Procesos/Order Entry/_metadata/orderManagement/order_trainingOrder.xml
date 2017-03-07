@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<order name="orderManagement.trainingOrder">
+  <extends>order_com.conceptwave.system.Order</extends>
+  <label>Training Order</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="orderData" type="order">
+      <label>Order Data</label>
+      <mandatory>true</mandatory>
+      <orderItem>doc_orderManagement.orderData</orderItem>
+      <orderType>document</orderType>
+    </child>
+  </childList>
+  <UserInterface name="UserInterface" type="tree">
+    <autoExpand>true</autoExpand>
+    <autoSaveInt>1</autoSaveInt>
+    <defaultFolderImage>undefined</defaultFolderImage>
+    <defaultLeafImage>undefined</defaultLeafImage>
+    <element>order_orderManagement.trainingOrder</element>
+    <extends>tree_com.conceptwave.system.OrderUserInterface</extends>
+    <label>Training Order</label>
+    <tableDoc>doc_com.conceptwave.system.TreeDocument</tableDoc>
+    <childList>
+      <child name="orderData" type="tnOi">
+        <autoExpand>true</autoExpand>
+        <autoSave>true</autoSave>
+        <detailForm>doc_orderManagement.orderData/ui_UserInterface/frmui_Forms/exov_Default</detailForm>
+        <detailUI>doc_orderManagement.orderData/ui_UserInterface</detailUI>
+        <element>doc_orderManagement.orderData</element>
+        <extends>tn_com.conceptwave.system.TreeNode</extends>
+        <label>Order Data</label>
+        <nodeType>4</nodeType>
+        <orderItem>order_orderManagement.trainingOrder/order_orderData</orderItem>
+        <vformList>
+          <vform name="Forms" type="frmui">
+            <extends>tn_com.conceptwave.system.TreeNode/frmui_Forms</extends>
+          </vform>
+        </vformList>
+      </child>
+    </childList>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>order_orderManagement.trainingOrder</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Menu" type="exov">
+            <base>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms/exov_Menu</base>
+            <extends>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+            <overrideList>
+              <override name="HorizontalLayout" type="elext">
+                <elementList>
+                  <element name="submitOrder" type="elmnu">
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>order_orderManagement.trainingOrder/tree_UserInterface/usrActionMethod_submitOrder</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <label>Submit Order</label>
+                  </element>
+                </elementList>
+              </override>
+              <override name="Order" type="elext"/>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+    <methodList>
+      <method name="submitOrder" type="usrActionMethod">
+        <script><![CDATA[
+          this.saveAllAction();
+          Process.startProcess("humanInterfaces.mainProcess",this.model.id,null,null);
+          this.saveAllAction();
+        ]]></script>
+      </method>
+    </methodList>
+  </UserInterface>
+</order>
