@@ -13,13 +13,40 @@
     var output = new DataStructure("OrderManager.ack");
     output.estado = "OK";
     output.descripcion = "Provision de la Orden en Proceso";
-    var doc = new Document("OrderManager.docProcesoProvision");
-    doc.IN_orderId = input.orderId;
-    doc.IN_rut = input.rut;
-    doc.IN_POIdBasico = input.POIdBasico;
-    doc.IN_POIdAdicional = input.POIdAdicional;
+
     //Process.sendMessageToQueue("OrderManager.OMProvisionGlobalProcess","userProcessProvisionarOrdenRequest",input,null,null,null,null,null,false,false);
-    Process.startProcess("OrderManager.OMProvisionProcess",doc,null,null);
+    if(input.tipoOrden == "PROVISION"){
+        var doc = new Document("OrderManager.docProcesoProvision");
+        doc.IN_orderId = input.orderId;
+        doc.IN_rut = input.rut;
+        doc.IN_POIdBasico = input.POIdBasico;
+        doc.IN_POIdAdicional = input.POIdAdicional;
+        doc.IN_tipoOrden = input.tipoOrden;
+        Process.startProcess("OrderManager.OMProvisionProcess",doc,null,null);
+    }
+    else{
+        if(input.tipoOrden == "BAJA"){
+            var doc = new Document("OrderManager.docProcesoDesprovision");
+            doc.IN_orderId = input.orderId;
+            doc.IN_rut = input.rut;
+            doc.IN_POId = input.POIdBasico;
+            doc.IN_tipoOrden = input.tipoOrden;
+            doc.OUT_estadoOrden = "EnProceso";
+            doc.CTRL_MSISDN = "";
+            doc.CTRL_ERROR = "0";
+            doc.CTRL_DESC_ERROR = "";
+            doc.CTRL_ERROR_DesprovisionBSCS = false;
+            doc.CTRL_ERROR_DesprovisionCS = false;
+            doc.CTRL_ERROR_DesprovisionEMA = false;
+            doc.CTRL_NotificacionOK = false;
+
+            Process.startProcess("OrderManager.OMDesProvisionProcess",doc,null,null);
+        }
+        else{
+            output.estado = "NOK";
+            output.descripcion = "No se reconoce el tipo de Orden entregado como parámetro de entrada. Tipo: " + input.tipoOrden;
+        }
+    }
     return output;
   ]]></script>
 </script>

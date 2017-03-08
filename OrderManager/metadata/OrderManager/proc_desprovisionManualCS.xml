@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="OrderManager.desprovisionManualCS">
+  <activity name="inicio" type="seqActivity">
+    <label>inicio</label>
+    <x>58.0</x>
+    <y>39.0</y>
+    <childList>
+      <child name="hayErrorEnCS" type="switchActivity">
+        <label>hayErrorEnCS</label>
+        <x>180.0</x>
+        <y>37.0</y>
+        <childList>
+          <child name="SI" type="caseActivity">
+            <label>SI</label>
+            <x>413.0</x>
+            <y>38.0</y>
+            <childList>
+              <child name="desprovisionManualCS" type="opActivity">
+                <element>iface_OrderManager.CSManualInterface/oper_DesprovisionManualCS</element>
+                <label>Desprovision Manual en CS</label>
+                <participant>part_OrderManager.CSManual</participant>
+                <x>265.0</x>
+                <y>156.0</y>
+                <childList>
+                  <child name="Decision" type="seqActivity">
+                    <label>Decision</label>
+                    <x>306.0</x>
+                    <y>263.0</y>
+                    <childList>
+                      <child name="LogroDesprovisionar" type="choiceActivity">
+                        <label>Logró Desprovisionar</label>
+                        <x>290.0</x>
+                        <y>368.0</y>
+                        <childList>
+                          <child name="desprovisionOK" type="opActivity">
+                            <element>iface_OrderManager.CSManualInterface/oper_DesprovisionOK</element>
+                            <label>desprovisionOK</label>
+                            <participant>part_OrderManager.CSManual</participant>
+                            <x>451.0</x>
+                            <y>258.0</y>
+                          </child>
+                          <child name="desprovisionNOK" type="opActivity">
+                            <element>iface_OrderManager.CSManualInterface/oper_DesprovisionNOK</element>
+                            <label>desprovisionNOK</label>
+                            <participant>part_OrderManager.CSManual</participant>
+                            <x>617.0</x>
+                            <y>365.0</y>
+                            <childList>
+                              <child name="informarCliente" type="seqActivity">
+                                <label>informarCliente</label>
+                                <x>656.0</x>
+                                <y>489.0</y>
+                                <childList>
+                                  <child name="InformarCliente" type="opActivity">
+                                    <element>iface_OrderManager.ServicioClienteInterface/oper_InformarCliente</element>
+                                    <label>InformarCliente</label>
+                                    <participant>part_OrderManager.servicioCliente</participant>
+                                    <x>656.0</x>
+                                    <y>589.0</y>
+                                    <childList>
+                                      <child name="respuesta" type="seqActivity">
+                                        <label>respuesta</label>
+                                        <x>656.0</x>
+                                        <y>689.0</y>
+                                        <childList>
+                                          <child name="Finalizado" type="opActivity">
+                                            <element>iface_OrderManager.ServicioClienteInterface/oper_Finalizado</element>
+                                            <label>Finalizado</label>
+                                            <participant>part_OrderManager.servicioCliente</participant>
+                                            <x>816.0</x>
+                                            <y>686.0</y>
+                                          </child>
+                                        </childList>
+                                      </child>
+                                    </childList>
+                                  </child>
+                                </childList>
+                              </child>
+                            </childList>
+                          </child>
+                        </childList>
+                      </child>
+                    </childList>
+                  </child>
+                </childList>
+              </child>
+            </childList>
+            <methodList>
+              <method name="cwOnProcActCond" type="action">
+                <category>cond</category>
+                <system>true</system>
+                <script>return this.process.processDocument.CTRL_ERROR_DesprovisionCS;</script>
+              </method>
+            </methodList>
+          </child>
+        </childList>
+      </child>
+      <child name="servicioCliente" type="participantActivity">
+        <label>servicioCliente</label>
+        <participant>part_OrderManager.servicioCliente</participant>
+        <x>775.0</x>
+        <y>414.0</y>
+      </child>
+      <child name="CSManual" type="participantActivity">
+        <label>CSManual</label>
+        <participant>part_OrderManager.CSManual</participant>
+        <x>590.0</x>
+        <y>72.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <label>desprovisionManualCS</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>Sub-flow</type>
+</process>

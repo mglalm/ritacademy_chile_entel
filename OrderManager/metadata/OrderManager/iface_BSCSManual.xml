@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="OrderManager.BSCSManual">
+  <label>BSCSManual</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="DesprovisionManualBSCS" type="oper">
+      <label>DesprovisionManualBSCS</label>
+      <type>One-Way</type>
+    </operation>
+    <operation name="DesprovisionOK" type="oper">
+      <label>Desprovision en BSCS OK</label>
+      <type>Notification</type>
+    </operation>
+    <operation name="DesprovisionManualBSCSNOK" type="oper">
+      <label>Desprovision Manual en BSCS NO OK</label>
+      <type>Notification</type>
+    </operation>
+  </operationList>
+  <revision>2</revision>
+</interface>

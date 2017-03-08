@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="OrderManager.finOM_POCliente">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_OrderManager.docOMPOCliente</input>
+  <label>finOM_POCliente</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_OrderManager.docOMPOCliente</output>
+  <type>document</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMPOCliente</document>
+      <mappedDocument>doc_OrderManager.docOMPOCliente</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMPOCliente/leaf_POId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMPOCliente/leaf_POId</path>
+    </search>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMPOCliente</document>
+      <mappedDocument>doc_OrderManager.docOMPOCliente</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMPOCliente/leaf_rut</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMPOCliente/leaf_rut</path>
+    </search>
+  </searchList>
+</findDoc>
