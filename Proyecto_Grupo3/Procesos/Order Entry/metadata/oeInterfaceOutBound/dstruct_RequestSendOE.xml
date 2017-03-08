@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="oeInterfaceOutbound.RequestSendOE">
+<dataStructure name="oeInterfaceOutBound.RequestSendOE">
   <container>true</container>
   <description>RequestSendOE</description>
   <label>RequestSendOE</label>
@@ -7,17 +7,17 @@
   <childList>
     <child name="MSISDN" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_oeInterfaceOutbound.MSISDN</element>
+      <element>dtype_oeInterfaceOutBound.MSISDN</element>
       <label>MSISDN</label>
     </child>
     <child name="IMSI" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_oeInterfaceOutbound.IMSI</element>
+      <element>dtype_oeInterfaceOutBound.IMSI</element>
       <label>IMSI</label>
     </child>
     <child name="ESTADO" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_oeInterfaceOutbound.ESTADO</element>
+      <element>dtype_bscsProyOutbound.ESTADO</element>
       <label>ESTADO</label>
     </child>
   </childList>
