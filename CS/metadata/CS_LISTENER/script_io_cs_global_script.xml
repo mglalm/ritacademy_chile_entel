@@ -28,6 +28,7 @@
     }
 
     //se actualiza CS_CORE
+    doc.estado = "CON SALDO";
     doc.save();
 
     var dt = new DataStructure("CS_LISTENER.response");

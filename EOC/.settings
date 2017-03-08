@@ -25,7 +25,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarExportFolder>D:\Proyectos TDE\CBiO\velocity\Proyecto_EOC</jarExportFolder>
+  <jarExportFolder>D:\Proyectos TDE\CBiO\PROYECTO</jarExportFolder>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>
 </project>

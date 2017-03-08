@@ -186,9 +186,6 @@
         <script><![CDATA[
           var doc = new Document('despliegaPO.agregaPO');
           doc.poCode = this.result.selected[0].poCode;
-          doc.provStatus = 0;
-          doc.fechaProv = new Date();
-          doc.save();
 
           var dt = new DataStructure('OM_CONSUMER.request');
           dt.productOfferId = doc.poCode;
@@ -198,9 +195,13 @@
           arr[0] = dt;
           arr[1] = null;
 
-          Global.showUserMessage("PO enviada a proceso de provision.\n Numero de Orden:" +doc.cwDocId);
-
           var respuesta = Global.invokeInterface('OM_CONSUMER.OMInterfaz','provisioning',arr);
+
+          doc.provStatus = respuesta[0].status;
+          doc.fechaProv = new Date();
+          doc.save();
+
+          Global.showUserMessage("PO enviada a proceso de provision.\n Numero de Orden:" +doc.cwDocId);
         ]]></script>
       </method>
     </methodList>
