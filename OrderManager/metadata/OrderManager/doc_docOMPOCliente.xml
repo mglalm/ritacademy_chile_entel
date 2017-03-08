@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<document name="OrderManager.docOMPOCliente">
+<document name="OrderManager.docOMPOCiente">
   <dbSchema>ORDER</dbSchema>
   <extends>doc_com.conceptwave.system.Document</extends>
   <generatedKey>true</generatedKey>
   <guid>{e458a23c-e37f-41a5-b953-3d9f71290da3}</guid>
-  <label>docOMPOCliente</label>
+  <label>docOMPOCiente</label>
   <metaVersion>25</metaVersion>
   <variableList>
     <variable name="cwDocId" type="leaf">
