@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<event name="CS_CORE.nuevoDebito">
+  <eventType>nuevoDebito</eventType>
+  <label>nuevoDebito</label>
+  <metaVersion>25</metaVersion>
+  <parametersList>
+    <parameters name="debitoAnt" type="rifp">
+      <type>dtype_com.conceptwave.system.Integer</type>
+    </parameters>
+  </parametersList>
+</event>
