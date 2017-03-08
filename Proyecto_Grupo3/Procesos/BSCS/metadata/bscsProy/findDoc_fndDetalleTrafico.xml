@@ -14,6 +14,34 @@
       <operation>equal</operation>
       <path>doc_bscsProy.gg_detalleTrafico/leaf_MSISDN</path>
     </search>
+    <search type="sitem">
+      <document>doc_bscsProy.gg_detalleTrafico</document>
+      <mappedDocument>doc_bscsProy.gg_detalleTrafico</mappedDocument>
+      <mappedPath>doc_bscsProy.gg_detalleTrafico/leaf_consumo</mappedPath>
+      <operation>equal</operation>
+      <path>doc_bscsProy.gg_detalleTrafico/leaf_consumo</path>
+    </search>
+    <search type="sitem">
+      <document>doc_bscsProy.gg_detalleTrafico</document>
+      <mappedDocument>doc_bscsProy.gg_detalleTrafico</mappedDocument>
+      <mappedPath>doc_bscsProy.gg_detalleTrafico/leaf_cwDocId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_bscsProy.gg_detalleTrafico/leaf_cwDocId</path>
+    </search>
+    <search type="sitem">
+      <document>doc_bscsProy.gg_detalleTrafico</document>
+      <mappedDocument>doc_bscsProy.gg_detalleTrafico</mappedDocument>
+      <mappedPath>doc_bscsProy.gg_detalleTrafico/leaf_saldo</mappedPath>
+      <operation>equal</operation>
+      <path>doc_bscsProy.gg_detalleTrafico/leaf_saldo</path>
+    </search>
+    <search type="sitem">
+      <document>doc_bscsProy.gg_detalleTrafico</document>
+      <mappedDocument>doc_bscsProy.gg_detalleTrafico</mappedDocument>
+      <mappedPath>doc_bscsProy.gg_detalleTrafico/leaf_usage</mappedPath>
+      <operation>equal</operation>
+      <path>doc_bscsProy.gg_detalleTrafico/leaf_usage</path>
+    </search>
   </searchList>
   <UserInterface name="UserInterface" type="ui">
     <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
@@ -152,7 +180,7 @@
   <viewList>
     <view name="vista" type="findVView">
       <inputOverlay>doc_bscsProy.gg_detalleTrafico/ui_UserInterface/frmui_Forms/vform_generatedForm</inputOverlay>
-      <label>vista</label>
+      <label>Detalle de Trafico</label>
       <outputOverlay>findDoc_bscsProy.fndDetalleTrafico/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
       <searchImmediately>true</searchImmediately>
       <showSearchForm>true</showSearchForm>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="chargingSystem.busquedaCliente">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{f878786a-3db3-408d-8adf-4f81ab8354dd}</guid>
+  <label>Busqueda Cliente</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="MSISDN" type="leaf">
+      <label>MSISDN</label>
+      <valueType>dtype_chargingSystem.MSISDN</valueType>
+    </variable>
+    <variable name="IMSI" type="leaf">
+      <label>IMSI</label>
+      <valueType>dtype_chargingSystem.IMSI</valueType>
+    </variable>
+    <variable name="idCliente" type="leaf">
+      <label>idCliente</label>
+      <valueType>dtype_chargingSystem.idCliente</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_chargingSystem.busquedaCliente</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="busquedaClienteGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="busquedaClienteHeader" type="elhdr">
+                      <label>Busqueda Cliente</label>
+                    </element>
+                    <element name="MSISDN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_chargingSystem.busquedaCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_chargingSystem.busquedaCliente/leaf_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="IMSI" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_chargingSystem.busquedaCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_chargingSystem.busquedaCliente/leaf_IMSI</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="idCliente" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_chargingSystem.busquedaCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_chargingSystem.busquedaCliente/leaf_idCliente</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

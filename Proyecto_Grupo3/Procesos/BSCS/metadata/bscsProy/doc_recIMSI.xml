@@ -78,6 +78,46 @@
               </elementList>
             </root>
           </overlay>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="recIMSIGrid" type="elgrd">
+                <numOfCols>4</numOfCols>
+                <useDefaultHeight>true</useDefaultHeight>
+                <elementList>
+                  <element name="recIMSIHeader" type="elhdr">
+                    <label>Recurso IMSI</label>
+                  </element>
+                  <element name="IMSI" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_bscsProy.recIMSI/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_bscsProy.recIMSI/leaf_IMSI</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="ESTADO" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_bscsProy.recIMSI/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_bscsProy.recIMSI/leaf_ESTADO</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="ID_CLIENTE" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_bscsProy.recIMSI/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_bscsProy.recIMSI/leaf_ID_CLIENTE</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
         </overlayList>
       </vform>
     </vformList>

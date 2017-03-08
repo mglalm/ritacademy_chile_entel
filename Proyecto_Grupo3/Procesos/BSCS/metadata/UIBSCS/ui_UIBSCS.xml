@@ -3,7 +3,7 @@
   <extends>ui_com.conceptwave.system.Application</extends>
   <label>UI BSCS</label>
   <metaVersion>25</metaVersion>
-  <url>/UIBSCS</url>
+  <url>/BSCS</url>
   <vformList>
     <vform name="Forms" type="frmui">
       <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
@@ -60,6 +60,14 @@
               </elementList>
             </override>
           </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <skin>Cupertino</skin>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>BSCS</title>
         </overlay>
       </overlayList>
     </vform>

@@ -6,13 +6,42 @@
   <metaVersion>25</metaVersion>
   <output>doc_bscsProy.gg_clienteBSCS</output>
   <type>document</type>
+  <vDetailForm>doc_bscsProy.gg_clienteBSCS/ui_UserInterface/frmui_Forms/exov_Default</vDetailForm>
   <searchList>
+    <search type="sitem">
+      <document>doc_bscsProy.gg_clienteBSCS</document>
+      <mappedDocument>doc_bscsProy.gg_clienteBSCS</mappedDocument>
+      <mappedPath>doc_bscsProy.gg_clienteBSCS/leaf_IMSI</mappedPath>
+      <operation>equal</operation>
+      <path>doc_bscsProy.gg_clienteBSCS/leaf_IMSI</path>
+    </search>
     <search type="sitem">
       <document>doc_bscsProy.gg_clienteBSCS</document>
       <mappedDocument>doc_bscsProy.gg_clienteBSCS</mappedDocument>
       <mappedPath>doc_bscsProy.gg_clienteBSCS/leaf_MSISDN</mappedPath>
       <operation>equal</operation>
       <path>doc_bscsProy.gg_clienteBSCS/leaf_MSISDN</path>
+    </search>
+    <search type="sitem">
+      <document>doc_bscsProy.gg_clienteBSCS</document>
+      <mappedDocument>doc_bscsProy.gg_clienteBSCS</mappedDocument>
+      <mappedPath>doc_bscsProy.gg_clienteBSCS/leaf_PLAN_BSCS</mappedPath>
+      <operation>equal</operation>
+      <path>doc_bscsProy.gg_clienteBSCS/leaf_PLAN_BSCS</path>
+    </search>
+    <search type="sitem">
+      <document>doc_bscsProy.gg_clienteBSCS</document>
+      <mappedDocument>doc_bscsProy.gg_clienteBSCS</mappedDocument>
+      <mappedPath>doc_bscsProy.gg_clienteBSCS/leaf_saldo</mappedPath>
+      <operation>equal</operation>
+      <path>doc_bscsProy.gg_clienteBSCS/leaf_saldo</path>
+    </search>
+    <search type="sitem">
+      <document>doc_bscsProy.gg_clienteBSCS</document>
+      <mappedDocument>doc_bscsProy.gg_clienteBSCS</mappedDocument>
+      <mappedPath>doc_bscsProy.gg_clienteBSCS/leaf_usage</mappedPath>
+      <operation>equal</operation>
+      <path>doc_bscsProy.gg_clienteBSCS/leaf_usage</path>
     </search>
   </searchList>
   <UserInterface name="UserInterface" type="ui">
@@ -144,6 +173,7 @@
   <viewList>
     <view name="busquedaClienteView" type="findVView">
       <inputOverlay>doc_bscsProy.gg_clienteBSCS/ui_UserInterface/frmui_Forms/vform_generatedForm</inputOverlay>
+      <label>Busqueda de Cliente</label>
       <outputOverlay>findDoc_bscsProy.busquedaCliente/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
       <searchImmediately>true</searchImmediately>
       <showSearchForm>true</showSearchForm>

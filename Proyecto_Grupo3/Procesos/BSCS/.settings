@@ -2,7 +2,7 @@
 <project>
   <DefaultDB>TRAIN2</DefaultDB>
   <applicationString>BSCS_train</applicationString>
-  <applicationVersionString>2</applicationVersionString>
+  <applicationVersionString>1</applicationVersionString>
   <breakpointMap>
     <breakpoint key="bscsProy.ScriptConsumo">0</breakpoint>
   </breakpointMap>
