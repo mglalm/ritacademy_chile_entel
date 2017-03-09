@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findOrder name="OrderManager.finOrder">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_OrderManager.docOMOrden</input>
+  <itemTypeList>
+    <itemType>order_OrderManager.OrdenProvision</itemType>
+  </itemTypeList>
+  <label>finOrder</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_OrderManager.docOMOrden</output>
+  <type>order</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_orderId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_orderId</path>
+    </search>
+  </searchList>
+  <selectResultList>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedOrder>order_OrderManager.OrdenProvision/order_docOrden</mappedOrder>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_cwDocId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_cwDocId</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedOrder>order_OrderManager.OrdenProvision/order_docOrden</mappedOrder>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_orderId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_orderId</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedOrder>order_OrderManager.OrdenProvision/order_docOrden</mappedOrder>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_rut</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_rut</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedOrder>order_OrderManager.OrdenProvision/order_docOrden</mappedOrder>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_estado</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_estado</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedOrder>order_OrderManager.OrdenProvision/order_docOrden</mappedOrder>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_tipoOrden</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_tipoOrden</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedOrder>order_OrderManager.OrdenProvision/order_docOrden</mappedOrder>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_motivoEstado</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_motivoEstado</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedOrder>order_OrderManager.OrdenProvision/order_docOrden</mappedOrder>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_fechaCreacion</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_fechaCreacion</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_cwDocStamp</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_cwDocStamp</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedOrder>order_OrderManager.OrdenProvision/order_docOrden</mappedOrder>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_cwOrderCreationDate</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_cwOrderCreationDate</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedOrder>order_OrderManager.OrdenProvision/order_docOrden</mappedOrder>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_cwParentId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_cwParentId</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedOrder>order_OrderManager.OrdenProvision/order_docOrden</mappedOrder>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_cwSiteId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_cwSiteId</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedOrder>order_OrderManager.OrdenProvision/order_docOrden</mappedOrder>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_lastUpdatedDate</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_lastUpdatedDate</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_OrderManager.docOMOrden</document>
+      <mappedDocument>doc_OrderManager.docOMOrden</mappedDocument>
+      <mappedOrder>order_OrderManager.OrdenProvision/order_docOrden</mappedOrder>
+      <mappedPath>doc_OrderManager.docOMOrden/leaf_updatedBy</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMOrden/leaf_updatedBy</path>
+    </selectResult>
+  </selectResultList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>doc_OrderManager.docOMOrden/ui_UserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>doc_OrderManager.docOMOrden/ui_UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_OrderManager.docOMOrden</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="finOrderResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="cwDocId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_cwDocId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="orderId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_orderId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="rut" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_rut</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="estado" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_estado</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="tipoOrden" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_tipoOrden</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="motivoEstado" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_motivoEstado</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="fechaCreacion" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_fechaCreacion</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwDocStamp" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_cwDocStamp</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwOrderCreationDate" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_cwOrderCreationDate</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwParentId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_cwParentId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwSiteId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_cwSiteId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="lastUpdatedDate" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_lastUpdatedDate</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="updatedBy" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_OrderManager.finOrder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_OrderManager.docOMOrden/leaf_updatedBy</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="finOrderView" type="findVView">
+      <inputOverlay>doc_OrderManager.docOMOrden/ui_UserInterface/frmui_Forms/vform_datosOrden</inputOverlay>
+      <outputOverlay>findOrder_OrderManager.finOrder/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <searchImmediately>true</searchImmediately>
+      <showSearchForm>true</showSearchForm>
+    </view>
+  </viewList>
+</findOrder>

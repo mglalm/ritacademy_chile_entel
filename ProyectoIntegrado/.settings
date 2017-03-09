@@ -3,6 +3,10 @@
   <DefaultDB>ORACLE THIN</DefaultDB>
   <applicationString>ProyectoCobraIntegrado</applicationString>
   <applicationVersionString>1</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="EOC_OE.debug">0</breakpoint>
+    <breakpoint key="OrderManager.debug">0</breakpoint>
+  </breakpointMap>
   <databasesMap>
     <databases key="ORACLE THIN" type=".configdb">
       <dbname>ORACLE THIN</dbname>

@@ -18,16 +18,32 @@
 
               var docProc = this.process.processDocument;
 
+
+              var finOrder = new Finder("OrderManager.finOrder");
+              var ordenCons = new Document("OrderManager.docOMOrden");
+              ordenCons.orderId = this.process.processDocument.IN_orderId;
+
+              var resp = finOrder.search(resp, ordenCons);
+              var ordenResp = resp && resp.length>0 ? resp[0] : null;
+
+              if(ordenResp){
+                  //asigno la orden al proceso
+                  this.process.processOrderId = ordenResp.docOrden.orderId;
+              }
+
               var poCliente = new Document("OrderManager.docOMPOCliente");  //documento asociado a la tabla de BD OM_PO_CLIENTE
               var fnd = new Finder("OrderManager.finOM_POCliente"); // finder del PO_CLIENTE
 
               poCliente.rut = this.process.processDocument.IN_rut;
               poCliente.POId = this.process.processDocument.IN_POId;
+              poCliente.estado = "ACTIVO";
 
               var resultOM_POCliente = fnd.search(resultOM_POCliente, poCliente);//retorna una DataObjectList() -> ARRAY
               var doc = resultOM_POCliente && resultOM_POCliente.length>0 ? resultOM_POCliente[0] : null;
 
               //Si no lo encuentra en BD, debe entregar ERROR, ya que no hay nada que desprovisionar
+
+
 
               if(doc){
                   poCliente = doc;
@@ -58,6 +74,7 @@
                   orden.estado = "En Proceso";
                   orden.motivoEstado = "La orden ha sido ingresada y se encuentra en proceso de creación."
                   orden.tipoOrden = docProc.IN_tipoOrden;
+                  orden.fechaCreacion = new Date();
                   orden.save();
               }
               else{
@@ -231,7 +248,7 @@
       <child name="continuar" type="seqActivity">
         <label>continuar</label>
         <x>255.0</x>
-        <y>399.0</y>
+        <y>398.0</y>
         <childList>
           <child name="hayError" type="switchActivity">
             <label>hayError</label>
@@ -240,13 +257,76 @@
             <childList>
               <child name="ok" type="caseActivity">
                 <label>NO</label>
-                <x>255.0</x>
-                <y>599.0</y>
+                <x>40.0</x>
+                <y>498.0</y>
                 <childList>
-                  <child name="DesprovisionComplete" type="completeActivity">
-                    <label>DesprovisionComplete</label>
-                    <x>40.0</x>
-                    <y>498.0</y>
+                  <child name="grabaOrden" type="seqActivity">
+                    <label>grabaOrden</label>
+                    <x>419.0</x>
+                    <y>503.0</y>
+                    <childList>
+                      <child name="actualizaOrden" type="scriptActivity">
+                        <label>actualizaOrden</label>
+                        <x>546.0</x>
+                        <y>502.0</y>
+                        <methodList>
+                          <method name="cwOnProcActBefore" type="action">
+                            <category>before</category>
+                            <system>true</system>
+                            <script><![CDATA[
+                              OrderManager.debug();
+
+                              var docProc = this.process.processDocument;
+
+                              var poCliente = new Document("OrderManager.docOMPOCliente");  //documento asociado a la tabla de BD OM_PO_CLIENTE
+                              var fnd = new Finder("OrderManager.finOM_POCliente"); // finder del PO_CLIENTE
+
+                              poCliente.rut = this.process.processDocument.IN_rut;
+                              poCliente.POId = this.process.processDocument.IN_POId;
+                              poCliente.estado = "ACTIVO";
+
+                              var resultOM_POCliente = fnd.search(resultOM_POCliente, poCliente);//retorna una DataObjectList() -> ARRAY
+                              var doc = resultOM_POCliente && resultOM_POCliente.length>0 ? resultOM_POCliente[0] : null;
+
+                              //Si no lo encuentra en BD, debe entregar ERROR, ya que no hay nada que desprovisionar
+
+                              if(doc){
+                                  poCliente = doc;
+                                  poCliente.estado = "INACTIVO";
+                                  poCliente.fechaDesactivacion = new Date();
+                                  poCliente.save();
+
+                              }
+
+                              var orden = new Document("OrderManager.docOMOrden");  //documento asociado a la tabla de BD OM_ORDEN
+                              var fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
+                              var resultOM_Orden; //lista que retornara el finder
+
+                              orden.orderId = this.process.processDocument.IN_orderId;
+
+                              var resultOM_Orden = fnd.search(resultOM_Orden, orden);//retorna una DataObjectList() -> ARRAY
+                              doc = resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
+
+                              //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
+
+                              //Descomentar estas dos lineas para exportar JAR
+                              if(doc){
+                                  orden = doc;
+                                  orden.rut = docProc.IN_rut;
+                                  orden.estado = "Finalizada";
+                                  orden.motivoEstado = "La desprovision se ejecuto de manera correcta."
+                                  orden.save();
+                              }
+                            ]]></script>
+                          </method>
+                        </methodList>
+                      </child>
+                      <child name="OrdenCompletada" type="completeActivity">
+                        <label>OrdenCompletada</label>
+                        <x>709.0</x>
+                        <y>502.0</y>
+                      </child>
+                    </childList>
                   </child>
                 </childList>
               </child>
@@ -295,10 +375,73 @@
               </child>
             </childList>
           </child>
+          <child name="continuar" type="seqActivity">
+            <label>continuar</label>
+            <x>261.0</x>
+            <y>841.0</y>
+            <childList>
+              <child name="grabarOrden" type="scriptActivity">
+                <label>grabarOrden</label>
+                <x>249.0</x>
+                <y>942.0</y>
+                <methodList>
+                  <method name="cwOnProcActBefore" type="action">
+                    <category>before</category>
+                    <system>true</system>
+                    <script><![CDATA[
+                      OrderManager.debug();
+
+                      var docProc = this.process.processDocument;
+
+                      var poCliente = new Document("OrderManager.docOMPOCliente");  //documento asociado a la tabla de BD OM_PO_CLIENTE
+                      var fnd = new Finder("OrderManager.finOM_POCliente"); // finder del PO_CLIENTE
+
+                      poCliente.rut = this.process.processDocument.IN_rut;
+                      poCliente.POId = this.process.processDocument.IN_POId;
+                      poCliente.estado = "ACTIVO";
+
+                      var resultOM_POCliente = fnd.search(resultOM_POCliente, poCliente);//retorna una DataObjectList() -> ARRAY
+                      var doc = resultOM_POCliente && resultOM_POCliente.length>0 ? resultOM_POCliente[0] : null;
+
+                      //Si no lo encuentra en BD, debe entregar ERROR, ya que no hay nada que desprovisionar
+
+                      if(doc){
+                          poCliente = doc;
+                          poCliente.estado = "INACTIVO";
+                          poCliente.fechaDesactivacion = new Date();
+                          poCliente.save();
+
+                      }
+
+                      var orden = new Document("OrderManager.docOMOrden");  //documento asociado a la tabla de BD OM_ORDEN
+                      var fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
+                      var resultOM_Orden; //lista que retornara el finder
+
+                      orden.orderId = this.process.processDocument.IN_orderId;
+
+                      var resultOM_Orden = fnd.search(resultOM_Orden, orden);//retorna una DataObjectList() -> ARRAY
+                      doc = resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
+
+                      //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
+
+                      //Descomentar estas dos lineas para exportar JAR
+                      if(doc){
+                          orden = doc;
+                          orden.rut = docProc.IN_rut;
+                          orden.estado = "FinalizadaManual";
+                          orden.motivoEstado = "La desprovision falló en algunos nodos, se solicitó dar de baja en forma manual."
+                          orden.save();
+                      }
+                    ]]></script>
+                  </method>
+                </methodList>
+              </child>
+            </childList>
+          </child>
           <child name="ProcesoFinalizado" type="completeActivity">
             <label>ProcesoFinalizado</label>
-            <x>233.0</x>
-            <y>841.0</y>
+            <x>426.0</x>
+            <y>941.0</y>
           </child>
         </childList>
       </child>
@@ -334,11 +477,11 @@
     </subflowReference>
     <subflowReference type="sref">
       <revision>1</revision>
-      <subflow>proc_OrderManager.desprovisionManualBSCS</subflow>
+      <subflow>proc_OrderManager.desprovisionManualEMA</subflow>
     </subflowReference>
     <subflowReference type="sref">
       <revision>1</revision>
-      <subflow>proc_OrderManager.desprovisionManualEMA</subflow>
+      <subflow>proc_OrderManager.desprovisionManualBSCS</subflow>
     </subflowReference>
   </subflowReferenceList>
   <type>User</type>

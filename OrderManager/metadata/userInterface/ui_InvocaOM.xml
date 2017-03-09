@@ -54,7 +54,7 @@
                   <label>Invoca OM Simple</label>
                   <visible type="varPath">
                     <variablePathList>
-                      <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                      <variablePath>dtype_com.conceptwave.system.Boolean/leaf_TRUE</variablePath>
                     </variablePathList>
                   </visible>
                 </element>
@@ -100,9 +100,8 @@
       <valueType>dstruct_OrderManager.dsOrderProvisionInput</valueType>
     </method>
     <method name="InvocaOMSimpleUA" type="usrActionMethod">
-      <form>dstruct_OrderManager.dsOrderProvisionInputSimple/tree_UserInterface/frmui_Forms/vform_ingresoDatosOrden</form>
-      <userInterface>dstruct_OrderManager.dsOrderProvisionInputSimple</userInterface>
-      <valueType>dstruct_OrderManager.dsOrderProvisionInputSimple</valueType>
+      <userInterface>order_OrderManager.OrdenProvision</userInterface>
+      <valueType>order_OrderManager.OrdenProvision</valueType>
     </method>
     <method name="parametrosOM" type="usrActionMethod">
       <userInterface>findDoc_OrderManager.fin_OMMantenedorParametro</userInterface>

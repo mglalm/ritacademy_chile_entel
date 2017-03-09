@@ -1,13 +1,18 @@
 DROP VIEW OE_ORDENVIEW;
-CREATE VIEW OE_ORDENVIEW
-AS SELECT 
-    b.ORDER_ID,c.PO_ID, a.RUT, a.NOMBRE, a.DIRECCION, a.COMUNA, a.CIUDAD , b.CWDOCID, b.ESTADO, b.MOTIVO_ESTADO, d.valor, b.FECHA_CREACION
-FROM 
-    OE_CLIENTE a, OM_ORDEN b, OM_ORDER_PO c, OM_RECURSOS_PO d
-WHERE a.RUT = b.RUT 
-and b.cwDocId = c.cwDocId
-and c.PO_Id = d.PO_Id
-and c.Order_Id = d.ORDER_ID
-and d.RESOURCE_ID = 'MSISDN'; 
 
-commit;
+CREATE VIEW OE_ORDENVIEW AS
+
+SELECT 
+
+    b.ORDER_ID, b.TIPO_ORDEN, c.PO_ID, a.RUT, a.NOMBRE, a.DIRECCION, a.COMUNA, a.CIUDAD , b.CWDOCID, b.ESTADO, b.MOTIVO_ESTADO, d.valor, b.FECHA_CREACION
+
+FROM 
+
+    OE_CLIENTE a, OM_ORDEN b
+
+    LEFT JOIN OM_ORDER_PO c ON(b.cwDocId = c.cwDocId)
+
+    left join OM_RECURSOS_PO d on (c.PO_Id = d.PO_Id and c.Order_Id = d.ORDER_ID and d.RESOURCE_ID = 'MSISDN')
+
+WHERE a.RUT = b.RUT; 
+

@@ -17,6 +17,13 @@
     <search type="sitem">
       <document>doc_OrderManager.docOMPOCliente</document>
       <mappedDocument>doc_OrderManager.docOMPOCliente</mappedDocument>
+      <mappedPath>doc_OrderManager.docOMPOCliente/leaf_estado</mappedPath>
+      <operation>equal</operation>
+      <path>doc_OrderManager.docOMPOCliente/leaf_estado</path>
+    </search>
+    <search type="sitem">
+      <document>doc_OrderManager.docOMPOCliente</document>
+      <mappedDocument>doc_OrderManager.docOMPOCliente</mappedDocument>
       <mappedPath>doc_OrderManager.docOMPOCliente/leaf_rut</mappedPath>
       <operation>equal</operation>
       <path>doc_OrderManager.docOMPOCliente/leaf_rut</path>

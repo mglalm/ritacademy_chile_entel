@@ -791,7 +791,7 @@
                     <category>script</category>
                     <system>true</system>
                     <script><![CDATA[
-                      //OrderManager.debug();
+                      OrderManager.debug();
                       //Inicializa las variables de control, que indican si hay algun problema en el flujo. Quedan en el processDocument.
                       OrderManager.inicializaVariableControl(this.process.processDocument);
 
@@ -815,9 +815,9 @@
                       //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
 
                       //Descomentar estas dos lineas para exportar JAR
-                      //if(doc){
-                      //    orden = doc;
-                      if(!doc){
+                      if(doc){
+                          orden = doc;
+                      //if(!doc){ //Descomentar estas dos lineas para probar local
                           orden.rut = docProc.IN_rut;
                           orden.estado = "En Proceso";
                           orden.motivoEstado = "La orden ha sido ingresada y se encuentra en proceso de creación."
@@ -870,7 +870,7 @@
                       var ordenPOBas = new Document("OrderManager.docOMOrdenPO");  //documento asociado a la tabla de BD OM_ORDEN
 
                       //Se valida que venga una PO Basica
-                      if(docProc.IN_POIdBasico == null || docProc.IN_POIdBasico.length == 0){
+                      if(docProc.IN_POIdBasico == null || docProc.IN_POIdBasico.length == 0  && docProc.IN_POIdBasico!="null" && docProc.IN_POIdBasico!="NULL"){
                            this.process.processDocument.CTRL_ERROR = "12";
                            this.process.processDocument.CTRL_DESC_ERROR = "Error 12: No viene una PO Básica para provisionar";
                            this.process.processDocument.OUT_estadoOrden = "ErrorPOBasica";
@@ -897,7 +897,7 @@
                       //Como ya se validó que la orden no existía previamente, por integridad referencial la order_po tampoco existe, por lo que se crea directamente
 
                       //Primero se valida que la PO adicional venga informada
-                      if(docProc.IN_POIdAdicional!=null && docProc.IN_POIdAdicional.length > 0){
+                      if(docProc.IN_POIdAdicional!=null && docProc.IN_POIdAdicional.length > 0 && docProc.IN_POIdAdicional!="null" && docProc.IN_POIdAdicional!="NULL"){
                           //Se valida que no sea igual a la PO Basica
                           if(docProc.IN_POIdAdicional != docProc.IN_POIdBasico){
                               ordenPOAdi.POId = docProc.IN_POIdAdicional;
