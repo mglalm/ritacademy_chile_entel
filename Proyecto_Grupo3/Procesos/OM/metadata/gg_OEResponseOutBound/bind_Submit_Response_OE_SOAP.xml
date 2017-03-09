@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<binding name="gg_oeinterfOutbound.Submit_Response_OE_SOAP">
+<binding name="gg_OEResponseOutBound.Submit_Response_OE_SOAP">
   <extensionList>
     <extension name="submitResponseOE" type="ext">
       <element>Operation</element>
@@ -56,7 +56,7 @@
       </elementItemMap>
     </extension>
   </extensionList>
-  <interface>iface_gg_oeinterfOutbound.Submit_Response_OE</interface>
+  <interface>iface_gg_OEResponseOutBound.Submit_Response_OE</interface>
   <label>Submit_Response_OE_SOAP</label>
   <metaVersion>25</metaVersion>
   <provider>prov_cwf.soapprov</provider>

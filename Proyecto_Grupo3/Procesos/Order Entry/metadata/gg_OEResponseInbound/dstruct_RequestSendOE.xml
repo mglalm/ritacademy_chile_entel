@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataStructure name="gg_oeinterfOutbound.RequestSendOE">
+<dataStructure name="gg_OEResponseInbound.RequestSendOE">
   <container>true</container>
-  <description>RequestSendOE</description>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
   <label>RequestSendOE</label>
   <metaVersion>25</metaVersion>
   <childList>
     <child name="MSISDN" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_gg_oeinterfOutbound.MSISDN</element>
+      <element>dtype_gg_OEResponseInbound.MSISDN</element>
       <label>MSISDN</label>
     </child>
     <child name="IMSI" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_gg_oeinterfOutbound.IMSI</element>
+      <element>dtype_gg_OEResponseInbound.IMSI</element>
       <label>IMSI</label>
     </child>
     <child name="ESTADO" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_gg_oeinterfOutbound.ESTADO</element>
+      <element>dtype_gg_OEResponseInbound.ESTADO</element>
       <label>ESTADO</label>
     </child>
     <child name="ID_CLIENTE" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_gg_oeinterfOutbound.ID_CLIENTE</element>
+      <element>dtype_gg_OEResponseInbound.ID_ORDER</element>
       <label>ID_CLIENTE</label>
     </child>
     <child name="ID_ORDER" type="dstruct">
       <datatype>true</datatype>
-      <element>dtype_gg_oeinterfOutbound.ID_ORDER</element>
+      <element>dtype_gg_OEResponseInbound.ID_ORDER</element>
       <label>ID_ORDER</label>
     </child>
   </childList>

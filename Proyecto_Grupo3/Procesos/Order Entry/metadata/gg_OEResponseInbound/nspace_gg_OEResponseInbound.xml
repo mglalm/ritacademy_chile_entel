@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<nameSpace name="gg_Response">
-  <label>GG RESPONSe</label>
+<nameSpace name="gg_OEResponseInbound">
+  <label>GG OE Response Inbound</label>
   <metaVersion>25</metaVersion>
 </nameSpace>

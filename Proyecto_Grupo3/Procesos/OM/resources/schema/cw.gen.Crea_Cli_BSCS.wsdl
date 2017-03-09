@@ -78,6 +78,15 @@
 				</restriction>
 			</simpleType>
 
+			<simpleType name="saldo">
+				<annotation>
+					<documentation>Saldo</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+					<totalDigits value="10"/>
+				</restriction>
+			</simpleType>
+
 			<!-- Structures -->
 
 			<complexType name="Req_Crea_Cli_BSCS">
@@ -87,6 +96,7 @@
 					<sequence>
 						<element name="ID_CLIENTE" minOccurs="0" maxOccurs="1" type="bscsProy:ID_CLIENTE"/>
 						<element name="PLAN_BSCS" minOccurs="0" maxOccurs="1" type="bscsProy:PLAN_BSCS"/>
+						<element name="saldo" minOccurs="0" maxOccurs="1" type="bscsProy:saldo"/>
 					</sequence>
 				</complexType>
 

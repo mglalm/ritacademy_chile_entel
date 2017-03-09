@@ -9,6 +9,9 @@
     <variable name="customerReference" type="leaf">
       <valueType>dtype_orderManagement.customerReference</valueType>
     </variable>
+    <variable name="Estado" type="leaf">
+      <valueType>dtype_orderManagement.Estado</valueType>
+    </variable>
     <variable name="offerItemReference" type="leaf">
       <valueType>dtype_orderManagement.offerItemReference</valueType>
     </variable>

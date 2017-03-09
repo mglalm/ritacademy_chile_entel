@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<binding name="gg_Response.Submit_Response_OE_JS">
-  <interface>iface_gg_Response.Submit_Response_OE</interface>
-  <label>Submit_Response_OE_JS</label>
-  <metaVersion>25</metaVersion>
-  <provider>prov_cwf.jsprov</provider>
-</binding>

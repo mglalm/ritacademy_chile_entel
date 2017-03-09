@@ -11,6 +11,13 @@
     <search type="sitem">
       <document>doc_customerManagement.customerSearch</document>
       <mappedDocument>doc_customerManagement.customerProfile</mappedDocument>
+      <mappedPath>doc_customerManagement.customerProfile/leaf_customerId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_customerManagement.customerSearch/leaf_ID_CLIENTE</path>
+    </search>
+    <search type="sitem">
+      <document>doc_customerManagement.customerSearch</document>
+      <mappedDocument>doc_customerManagement.customerProfile</mappedDocument>
       <mappedPath>doc_customerManagement.customerProfile/leaf_customerMsisdn</mappedPath>
       <operation>equal</operation>
       <path>doc_customerManagement.customerSearch/leaf_customerMsisdn</path>
@@ -35,6 +42,13 @@
       <mappedPath>doc_customerManagement.customerProfile/leaf_customerType</mappedPath>
       <operation>equal</operation>
       <path>doc_customerManagement.customerSearch/leaf_customerType</path>
+    </search>
+    <search type="sitem">
+      <document>doc_customerManagement.customerSearch</document>
+      <mappedDocument>doc_customerManagement.customerProfile</mappedDocument>
+      <mappedPath>doc_customerManagement.customerProfile/leaf_customerId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_customerManagement.customerSearch/leaf_custumerId</path>
     </search>
     <search type="sitem">
       <mappedDocument>doc_customerManagement.customerProfile</mappedDocument>

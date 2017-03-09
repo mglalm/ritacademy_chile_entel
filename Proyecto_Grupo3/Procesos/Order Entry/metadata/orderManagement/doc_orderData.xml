@@ -58,6 +58,11 @@
       <table>gg_orderData</table>
       <valueType>dtype_cwf.updatedBy</valueType>
     </variable>
+    <variable name="Estado" type="leaf">
+      <column>ESTADO</column>
+      <table>gg_orderData</table>
+      <valueType>dtype_orderManagement.Estado</valueType>
+    </variable>
   </variableList>
   <UserInterface name="UserInterface" type="ui">
     <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>

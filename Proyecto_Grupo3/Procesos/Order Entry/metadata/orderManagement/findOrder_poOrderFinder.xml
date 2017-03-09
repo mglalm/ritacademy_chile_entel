@@ -13,6 +13,20 @@
     <search type="sitem">
       <document>doc_orderManagement.orderDataSearch</document>
       <mappedDocument>doc_orderManagement.orderData</mappedDocument>
+      <mappedPath>doc_orderManagement.orderData/leaf_Estado</mappedPath>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearch/leaf_Estado</path>
+    </search>
+    <search type="sitem">
+      <document>doc_orderManagement.orderDataSearch</document>
+      <mappedDocument>doc_cwt_do.orderInstance</mappedDocument>
+      <mappedPath>doc_cwf.orderInstance/leaf_cwDocId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearch/leaf_ID_ORDER</path>
+    </search>
+    <search type="sitem">
+      <document>doc_orderManagement.orderDataSearch</document>
+      <mappedDocument>doc_orderManagement.orderData</mappedDocument>
       <mappedOrder>order_orderManagement.poOrder/order_orderData</mappedOrder>
       <mappedPath>doc_orderManagement.orderData/leaf_customerReference</mappedPath>
       <operation>equal</operation>
@@ -43,6 +57,11 @@
       <mappedPath>doc_orderManagement.orderData/leaf_customerReference</mappedPath>
       <operation>equal</operation>
       <path>doc_orderManagement.orderDataSearchResult/leaf_customerReference</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_orderManagement.orderDataSearchResult</document>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearchResult/leaf_Estado</path>
     </selectResult>
     <selectResult type="sitem">
       <document>doc_orderManagement.orderDataSearchResult</document>

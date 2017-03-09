@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="gg_oeinterfOutbound.ESTADO">
-  <description>ESTADO</description>
+<dataType name="gg_OEResponseInbound.ESTADO">
   <extends>dtype_com.conceptwave.system.String</extends>
   <label>ESTADO</label>
   <length>32</length>

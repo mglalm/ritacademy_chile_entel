@@ -8,14 +8,17 @@
     <variable name="customerReference" type="leaf">
       <valueType>dtype_orderManagement.customerReference</valueType>
     </variable>
+    <variable name="Estado" type="leaf">
+      <valueType>dtype_orderManagement.Estado</valueType>
+    </variable>
     <variable name="offerItemReference" type="leaf">
       <valueType>dtype_orderManagement.offerItemReference</valueType>
     </variable>
     <variable name="purchaseOrderNumber" type="leaf">
       <valueType>dtype_orderManagement.purchaseOrderNumber</valueType>
     </variable>
-    <variable name="cwDocStamp" type="leaf">
-      <valueType>dtype_cwf.cwDocStamp</valueType>
+    <variable name="ID_ORDER" type="leaf">
+      <valueType>dtype_orderManagement.ID_ORDER</valueType>
     </variable>
   </variableList>
   <UserInterface name="UserInterface" type="ui">

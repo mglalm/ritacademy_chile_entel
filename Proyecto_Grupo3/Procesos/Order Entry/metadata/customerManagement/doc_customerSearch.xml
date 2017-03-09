@@ -20,6 +20,12 @@
     <variable name="customerType" type="leaf">
       <valueType>dtype_customerManagement.customerType</valueType>
     </variable>
+    <variable name="custumerId" type="leaf">
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+    <variable name="ID_CLIENTE" type="leaf">
+      <valueType>dtype_gg_OEResponseInbound.ID_CLIENTE</valueType>
+    </variable>
   </variableList>
   <UserInterface name="UserInterface" type="ui">
     <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>

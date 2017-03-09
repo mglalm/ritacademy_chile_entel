@@ -17,7 +17,7 @@
 			<annotation>
 				<documentation>Charging System</documentation>
 				<appinfo>
-					<metadata>AVM Metadata</metadata>
+					<metadata>OM</metadata>
 					<created>Mon Feb 27 16:29:39 CLT 2017</created>
 				</appinfo>
 			</annotation>
@@ -28,8 +28,8 @@
 				<annotation>
 					<documentation>IMSI</documentation>
 				</annotation>
-				<restriction base="xsd:integer">
-					<totalDigits value="16"/>
+				<restriction base="xsd:string">
+					<maxLength value="16"/>
 				</restriction>
 			</simpleType>
 
@@ -37,8 +37,8 @@
 				<annotation>
 					<documentation>MSISDN</documentation>
 				</annotation>
-				<restriction base="xsd:integer">
-					<totalDigits value="15"/>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
 				</restriction>
 			</simpleType>
 

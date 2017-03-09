@@ -22,8 +22,8 @@
         <attributes>localhost;1521;orcl;false</attributes>
         <driverType>Oracle thin</driverType>
       </driver>
-      <password>49A225C3CBCC77BF5347C8B21011B9E7</password>
-      <user>c##train</user>
+      <password>5DC5700840C7B835</password>
+      <user>c##train2</user>
     </databases>
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>

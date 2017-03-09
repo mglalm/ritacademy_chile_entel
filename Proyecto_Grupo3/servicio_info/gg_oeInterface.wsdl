@@ -1,35 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions name="gg_oeinterf" targetNamespace="gg_oeinterf"
-	xmlns:tns="gg_oeinterf"
+<definitions name="oeInterface" targetNamespace="oeInterface"
+	xmlns:tns="oeInterface"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 	xmlns="http://schemas.xmlsoap.org/wsdl/"
-	xmlns:gg_oeinterf="gg_oeinterf">
+	xmlns:oeInterface="oeInterface">
 
 	<types>
-		<schema targetNamespace="gg_oeinterf"			
+		<schema targetNamespace="oeInterface"			
 	xmlns="http://www.w3.org/2001/XMLSchema"			
-	xmlns:gg_oeinterf="gg_oeinterf"			
+	xmlns:oeInterface="oeInterface"			
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 
 
 			<annotation>
-				<documentation>Order Care Interface</documentation>
+				<documentation>OE Interface</documentation>
 				<appinfo>
-					<metadata>ServInfo</metadata>
-					<created>Fri Mar 03 15:07:48 CLT 2017</created>
+					<metadata>OM</metadata>
+					<created>Mon Feb 27 16:29:39 CLT 2017</created>
 				</appinfo>
 			</annotation>
 
 			<!-- Data types and elements -->
 
-			<simpleType name="ID_ORDER">
+			<simpleType name="DESC">
 				<annotation>
-					<documentation>ID_ORDER</documentation>
+					<documentation>Descripcion</documentation>
 				</annotation>
 				<restriction base="xsd:string">
 					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="idCliente">
+				<annotation>
+					<documentation>ID Cliente</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="16"/>
 				</restriction>
 			</simpleType>
 
@@ -42,12 +51,82 @@
 				</restriction>
 			</simpleType>
 
+			<simpleType name="ID_PO">
+				<annotation>
+					<documentation>ID_PO</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="16"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="Codigo">
+				<annotation>
+					<documentation>Codigo</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+				</restriction>
+			</simpleType>
+
+			<simpleType name="planCS">
+				<annotation>
+					<documentation>Plan CS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="saldo">
+				<annotation>
+					<documentation>Saldo</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+					<totalDigits value="10"/>
+				</restriction>
+			</simpleType>
+
 			<simpleType name="MSISDN">
 				<annotation>
 					<documentation>MSISDN</documentation>
 				</annotation>
 				<restriction base="xsd:integer">
 					<totalDigits value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="ProvisionCompleta">
+				<annotation>
+					<documentation>ProvisionCompleta</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+				</restriction>
+			</simpleType>
+
+			<simpleType name="PLAN_BSCS">
+				<annotation>
+					<documentation>PLAN_BSCS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="PROFILE">
+				<annotation>
+					<documentation>PROFILE</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="mensaje">
+				<annotation>
+					<documentation>Mensaje</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
 				</restriction>
 			</simpleType>
 
@@ -65,6 +144,16 @@
 					<documentation>IMSI</documentation>
 				</annotation>
 				<restriction base="xsd:integer">
+					<totalDigits value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="ID_Order">
+				<annotation>
+					<documentation>ID_Order</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
 				</restriction>
 			</simpleType>
 
@@ -75,7 +164,18 @@
 					<documentation>Response</documentation>
 				</annotation>
 					<sequence>
-						<element name="Ack" minOccurs="0" maxOccurs="1" type="xsd:integer"/>
+						<element name="Ack" minOccurs="0" maxOccurs="1" type="oeInterface:Codigo"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="Request">
+				<annotation>
+					<documentation>Request</documentation>
+				</annotation>
+					<sequence>
+						<element name="ID_Cliente" minOccurs="0" maxOccurs="1" type="oeInterface:ID_CLIENTE"/>
+						<element name="ID_Order" minOccurs="0" maxOccurs="1" type="oeInterface:ID_Order"/>
+						<element name="ID_PO" minOccurs="0" maxOccurs="1" type="oeInterface:ID_PO"/>
 					</sequence>
 				</complexType>
 
@@ -84,38 +184,77 @@
 					<documentation>RequestSendOE</documentation>
 				</annotation>
 					<sequence>
-						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="gg_oeinterf:MSISDN"/>
-						<element name="IMSI" minOccurs="0" maxOccurs="1" type="gg_oeinterf:IMSI"/>
-						<element name="ESTADO" minOccurs="0" maxOccurs="1" type="gg_oeinterf:ESTADO"/>
-						<element name="ID_CLIENTE" minOccurs="0" maxOccurs="1" type="gg_oeinterf:ID_CLIENTE"/>
-						<element name="ID_ORDER" minOccurs="0" maxOccurs="1" type="gg_oeinterf:ID_ORDER"/>
+						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="oeInterface:MSISDN"/>
+						<element name="IMSI" minOccurs="0" maxOccurs="1" type="oeInterface:IMSI"/>
+						<element name="ESTADO" minOccurs="0" maxOccurs="1" type="oeInterface:ESTADO"/>
 					</sequence>
 				</complexType>
 
 			<!-- Documents -->
 
+			<complexType name="docInputPO">
+				<annotation>
+					<documentation>Doc Input PO</documentation>
+				</annotation>
+					<sequence>
+						<element name="ID_PO" type="oeInterface:ID_PO"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="docPOCaracteristicas">
+				<annotation>
+					<documentation>Doc PO Caracteristicas</documentation>
+				</annotation>
+					<sequence>
+						<element name="PLAN_BSCS" type="oeInterface:PLAN_BSCS"/>
+						<element name="saldo" type="oeInterface:saldo"/>
+						<element name="ID_PO" type="oeInterface:ID_PO"/>
+						<element name="planCS" type="oeInterface:planCS"/>
+						<element name="PROFILE" type="oeInterface:PROFILE"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="documentoOE">
+				<annotation>
+					<documentation>Documento OE</documentation>
+				</annotation>
+					<sequence>
+						<element name="DESC" type="oeInterface:DESC"/>
+						<element name="ID_Order" type="oeInterface:ID_Order"/>
+						<element name="ID_PO" type="oeInterface:ID_PO"/>
+						<element name="ESTADO" type="oeInterface:ESTADO"/>
+						<element name="ID_CLIENTE" type="oeInterface:ID_CLIENTE"/>
+						<element name="IMSI" type="oeInterface:IMSI"/>
+						<element name="MSISDN" type="oeInterface:MSISDN"/>
+						<element name="PLAN_BSCS" type="oeInterface:PLAN_BSCS"/>
+						<element name="planCS" type="oeInterface:planCS"/>
+						<element name="PROFILE" type="oeInterface:PROFILE"/>
+						<element name="saldo" type="oeInterface:saldo"/>
+					</sequence>
+				</complexType>
+
 		</schema>
 	</types>
 
-	<message name="RequestSendOE">
-		<part name="RequestSendOE" type="gg_oeinterf:RequestSendOE"/>
+	<message name="Request">
+		<part name="Request" type="oeInterface:Request"/>
 	</message>
 
 	<message name="Response">
-		<part name="Response" type="gg_oeinterf:Response"/>
+		<part name="Response" type="oeInterface:Response"/>
 	</message>
 
-	<portType name="Submit_Response_OE">
-		<operation name="submitResponseOE">
-			<input message="tns:RequestSendOE"/>
+	<portType name="Submit_Order_OE">
+		<operation name="SubmitOrderOE">
+			<input message="tns:Request"/>
 			<output message="tns:Response"/>
 		</operation>
 	</portType>
 
-	<binding name="Submit_Response_OE_SOAP" type="tns:Submit_Response_OE">
+	<binding name="bindingSOAPOE" type="tns:Submit_Order_OE">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
-		<operation name="submitResponseOE">
-			<soap:operation soapAction="submitResponseOE"/>
+		<operation name="SubmitOrderOE">
+			<soap:operation soapAction="SubmitOrderOE"/>
 			<input>
 				<soap:body use="literal"/>
 			</input>
@@ -125,8 +264,8 @@
 		</operation>
 	</binding>
 
-	<service name="Submit_Response_OE_Ext">
-		<port name="Submit_Response_OE_Ex_SOAP" binding="tns:Submit_Response_OE_SOAP">
+	<service name="ExtServiceOEPort">
+		<port name="ExtServicePortSOAP_OE" binding="tns:bindingSOAPOE">
 		</port>
 	</service>
 

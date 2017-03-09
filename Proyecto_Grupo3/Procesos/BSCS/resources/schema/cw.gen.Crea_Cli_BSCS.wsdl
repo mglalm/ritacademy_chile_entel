@@ -17,7 +17,7 @@
 			<annotation>
 				<documentation>bscsProy</documentation>
 				<appinfo>
-					<metadata>AVM Metadata</metadata>
+					<metadata>BSCS_train</metadata>
 					<created>Mon Feb 27 16:17:09 CLT 2017</created>
 				</appinfo>
 			</annotation>
@@ -42,12 +42,21 @@
 				</restriction>
 			</simpleType>
 
+			<simpleType name="saldo">
+				<annotation>
+					<documentation>Saldo</documentation>
+				</annotation>
+				<restriction base="xsd:integer">
+					<totalDigits value="10"/>
+				</restriction>
+			</simpleType>
+
 			<simpleType name="MSISDN">
 				<annotation>
 					<documentation>MSISDN</documentation>
 				</annotation>
-				<restriction base="xsd:integer">
-					<totalDigits value="15"/>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
 				</restriction>
 			</simpleType>
 
@@ -73,8 +82,8 @@
 				<annotation>
 					<documentation>IMSI</documentation>
 				</annotation>
-				<restriction base="xsd:integer">
-					<totalDigits value="15"/>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
 				</restriction>
 			</simpleType>
 
@@ -99,6 +108,7 @@
 					<sequence>
 						<element name="ID_CLIENTE" minOccurs="0" maxOccurs="1" type="bscsProy:ID_CLIENTE"/>
 						<element name="PLAN_BSCS" minOccurs="0" maxOccurs="1" type="bscsProy:PLAN_BSCS"/>
+						<element name="saldo" minOccurs="0" maxOccurs="1" type="bscsProy:saldo"/>
 					</sequence>
 				</complexType>
 

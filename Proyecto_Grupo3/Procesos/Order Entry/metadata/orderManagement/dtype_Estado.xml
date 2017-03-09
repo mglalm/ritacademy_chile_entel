@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="customerManagement.customerMsisdn">
+<dataType name="orderManagement.Estado">
   <extends>dtype_com.conceptwave.system.String</extends>
-  <label>Customer MSISDN</label>
-  <length>15</length>
+  <label>Estado</label>
+  <length>32</length>
   <metaVersion>25</metaVersion>
 </dataType>

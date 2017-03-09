@@ -145,7 +145,7 @@
 
           var procDoc = new Document("provisionManagement.procDoc");
 
-          procDoc.orderReference = this.model.id;
+          procDoc.orderReference = this.model.orderData.cwDocId;
           procDoc.customerReference = this.model.orderData.customerReference;
           procDoc.offerItemReference = this.model.poItem[0].productOfferData.offerItemReference;
           procDoc.purchaseOrderNumber = this.model.orderData.purchaseOrderNumber;

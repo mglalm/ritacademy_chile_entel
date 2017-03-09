@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<interface name="gg_oeinterfOutbound.Submit_Response_OE">
+<interface name="gg_OEResponseOutBound.Submit_Response_OE">
   <label>Submit_Response_OE</label>
   <metaVersion>25</metaVersion>
   <operationList>
     <operation name="submitResponseOE" type="oper">
-      <input>dstruct_gg_oeinterfOutbound.RequestSendOE</input>
+      <input>dstruct_gg_OEResponseOutBound.RequestSendOE</input>
       <label>submitResponseOE</label>
-      <output>dstruct_gg_oeinterfOutbound.Response</output>
+      <output>dstruct_gg_OEResponseOutBound.Response</output>
       <type>Request-Response</type>
     </operation>
   </operationList>
