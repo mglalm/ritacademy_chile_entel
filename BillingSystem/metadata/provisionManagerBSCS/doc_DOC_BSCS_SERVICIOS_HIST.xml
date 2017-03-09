@@ -11,6 +11,11 @@
       <table>PR_BSCS_SERVICIO</table>
       <valueType>dtype_provisionManagerBSCS.DT_BSCS_ID_CLIENTE_N</valueType>
     </variable>
+    <variable name="DT_BSCS_ID_CLIENTE_C" type="leaf">
+      <column>SYSTEM_ID_CLIENTE_C_BSCS</column>
+      <table>PR_BSCS_SERVICIO</table>
+      <valueType>dtype_provisionManagerBSCS.DT_BSCS_ID_CLIENTE_C_REF</valueType>
+    </variable>
     <variable name="DT_SERV_BSCS_FECHA_ACTUALIZACION" type="leaf">
       <column>FECHA_ACTUALIZACION</column>
       <table>PR_BSCS_SERVICIO</table>
@@ -57,9 +62,6 @@
       <column>ORDER_ID</column>
       <table>PR_BSCS_SERVICIO</table>
       <valueType>dtype_provisionManagerBSCS.DT_BSCS_ORDER_ID</valueType>
-    </variable>
-    <variable name="DT_BSCS_ID_CLIENT_C" type="leaf">
-      <valueType>dtype_provisionManagerBSCS.DT_BSCS_ID_CLIENTE_C</valueType>
     </variable>
   </variableList>
   <UserInterface name="UserInterface" type="ui">

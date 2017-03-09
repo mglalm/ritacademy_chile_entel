@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="provisionManagerBSCS.DT_BSCS_ID_CLIENTE_C_REF">
+  <extends>dtype_cwf.sReference</extends>
+  <label>Rut Cliente</label>
+  <length>10</length>
+  <metaVersion>25</metaVersion>
+  <reference>findDoc_provisionManagerBSCS.FIND_BSCS_LISTADO_CLIENTES</reference>
+</dataType>
