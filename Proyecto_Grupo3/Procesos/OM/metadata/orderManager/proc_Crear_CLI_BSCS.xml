@@ -6,6 +6,11 @@
     <y>95.0</y>
     <childList>
       <child name="Crear_CLI_BSCS" type="opActivity">
+        <duration type="dur">
+          <calendar>chile_default</calendar>
+          <length>P0Y0M0DT0H1M0S</length>
+          <useCalendar>true</useCalendar>
+        </duration>
         <element>iface_bscsProyOutbound.Crea_Cli_BSCS/oper_Crea_cli_bscs</element>
         <label>Crear_CLI_BSCS</label>
         <participant>part_orderManager.clienteBSCS</participant>
@@ -41,8 +46,8 @@
         <childList>
           <child name="script" type="scriptActivity">
             <label>script</label>
-            <x>54.0</x>
-            <y>208.0</y>
+            <x>56.0</x>
+            <y>209.0</y>
             <methodList>
               <method name="cwOnProcActBefore" type="action">
                 <category>before</category>

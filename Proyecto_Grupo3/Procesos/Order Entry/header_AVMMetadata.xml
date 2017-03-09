@@ -38,7 +38,6 @@
     <template>cwl_customer</template>
     <template>cwl_dbqueue</template>
     <template>cwl_digital</template>
-    <template>cwl_fullStack</template>
     <template>cwl_od</template>
     <template>cwl_om</template>
     <template>cwl_on</template>

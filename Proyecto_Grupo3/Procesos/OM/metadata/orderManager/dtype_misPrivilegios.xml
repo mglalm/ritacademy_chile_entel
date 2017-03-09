@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="orderManager.misPrivilegios">
+  <extends>dtype_cwf.privilege</extends>
+  <label>Mis Privilegios</label>
+  <metaVersion>25</metaVersion>
+  <overrides>dtype_cwf.privilege</overrides>
+</dataType>

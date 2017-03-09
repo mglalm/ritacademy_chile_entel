@@ -6,8 +6,6 @@
   <breakpointMap>
     <breakpoint key="Start.CreaCliBSCS.CreaCliCS.ProvisionCliEMA.Responder.InformacionOE.cwOnProcActAfter.orderManager.OMProcess">0</breakpoint>
     <breakpoint key="Start.CreaCliBSCS.CreaCliCS.ProvisionCliEMA.Responder.InformacionOE.cwOnProcActBefore.orderManager.OMProcess">0</breakpoint>
-    <breakpoint key="Start.exp_interface.exp_tm.cwOnProcActBefore.orderManager.OMProcess">0</breakpoint>
-    <breakpoint key="orderManager.dummy">0</breakpoint>
   </breakpointMap>
   <databasesMap>
     <databases key="TRAIN2" type=".configdb">
