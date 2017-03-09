@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerBSCS.DOC_BSCS_LISTADO_CLIENTES">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{834c4cc7-91cf-4118-82da-61705a05bc8f}</guid>
+  <label>DOC_BSCS_LISTADO_CLIENTES</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_BSCS_ID_CLIENTE_C" type="leaf">
+      <column>SYSTEM_ID_CLIENTE_C_BSCS</column>
+      <key>1</key>
+      <table>PR_BSCS_CLIENTE</table>
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_ID_CLIENTE_C</valueType>
+    </variable>
+    <variable name="DT_BSCS_RUT" type="leaf">
+      <column>RUT</column>
+      <table>PR_BSCS_CLIENTE</table>
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_RUT</valueType>
+    </variable>
+  </variableList>
+  <methodList>
+    <method name="cwOnDocVisualKey" type="action">
+      <system>true</system>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <script>return this.DT_BSCS_RUT;</script>
+    </method>
+  </methodList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerBSCS.DOC_BSCS_LISTADO_CLIENTES</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

@@ -331,6 +331,14 @@
                         </visible>
                         <width>10%</width>
                       </element>
+                      <element name="DT_BSCS_ID_CLIENTE_C" type="elslct">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_provisionManagerBSCS.FIND_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_ID_CLIENTE_C</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
                       <element name="ID_PLAN_BSCS" type="elslct">
                         <multiselect>false</multiselect>
                         <variable type="varPath">
