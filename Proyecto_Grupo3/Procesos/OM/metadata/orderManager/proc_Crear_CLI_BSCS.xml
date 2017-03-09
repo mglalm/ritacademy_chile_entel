@@ -2,8 +2,8 @@
 <process name="orderManager.Crear_CLI_BSCS">
   <activity name="Start" type="seqActivity">
     <label>Start</label>
-    <x>45.0</x>
-    <y>55.0</y>
+    <x>48.0</x>
+    <y>95.0</y>
     <childList>
       <child name="Crear_CLI_BSCS" type="opActivity">
         <element>iface_bscsProyOutbound.Crea_Cli_BSCS/oper_Crea_cli_bscs</element>
@@ -33,6 +33,25 @@
             ]]></script>
           </method>
         </methodList>
+      </child>
+      <child name="vuelve" type="compensateActivity">
+        <label>vuelve</label>
+        <x>50.0</x>
+        <y>207.0</y>
+        <childList>
+          <child name="script" type="scriptActivity">
+            <label>script</label>
+            <x>54.0</x>
+            <y>208.0</y>
+            <methodList>
+              <method name="cwOnProcActBefore" type="action">
+                <category>before</category>
+                <system>true</system>
+                <script>return;</script>
+              </method>
+            </methodList>
+          </child>
+        </childList>
       </child>
       <child name="clienteBSCS" type="participantActivity">
         <label>clienteBSCS</label>

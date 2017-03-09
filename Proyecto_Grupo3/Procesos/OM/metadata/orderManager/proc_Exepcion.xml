@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="orderManager.Exepcion">
+  <activity name="Start" type="seqActivity">
+    <label>Start</label>
+    <x>24.0</x>
+    <y>169.0</y>
+    <childList>
+      <child name="ManualBscs" type="opActivity">
+        <element>iface_gg_OM_HumanInterface.manualProvisionInterface/oper_AsgProvisionManual</element>
+        <label>Aprobacion manual</label>
+        <participant>part_gg_OM_HumanInterface.manualProvisioningPart</participant>
+        <x>149.0</x>
+        <y>151.0</y>
+        <childList>
+          <child name="EvaluaAct" type="choiceActivity">
+            <label>EvaluaAct</label>
+            <x>266.0</x>
+            <y>170.0</y>
+            <childList>
+              <child name="ActSubmit" type="opActivity">
+                <element>iface_gg_OM_HumanInterface.manualProvisionInterface/oper_Submit</element>
+                <label>ActSubmit</label>
+                <participant>part_gg_OM_HumanInterface.manualProvisioningPart</participant>
+                <x>370.0</x>
+                <y>157.0</y>
+                <childList>
+                  <child name="compensa" type="compensateActivity">
+                    <label>compensa</label>
+                    <x>528.0</x>
+                    <y>128.0</y>
+                  </child>
+                </childList>
+              </child>
+              <child name="cancell" type="opActivity">
+                <element>iface_gg_OM_HumanInterface.manualProvisionInterface/oper_Cancel</element>
+                <label>cancel</label>
+                <participant>part_gg_OM_HumanInterface.manualProvisioningPart</participant>
+                <x>478.0</x>
+                <y>267.0</y>
+                <childList>
+                  <child name="Rolbaquea" type="rollbackActivity">
+                    <label>Rolbaquea</label>
+                    <x>583.0</x>
+                    <y>269.0</y>
+                  </child>
+                </childList>
+              </child>
+            </childList>
+          </child>
+        </childList>
+      </child>
+      <child name="manualProvisioningPart" type="participantActivity">
+        <label>manualProvisioningPart</label>
+        <participant>part_gg_OM_HumanInterface.manualProvisioningPart</participant>
+        <x>309.0</x>
+        <y>28.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <label>Exepcion</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>Sub-flow</type>
+</process>

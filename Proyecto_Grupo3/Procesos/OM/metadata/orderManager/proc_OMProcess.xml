@@ -2,18 +2,32 @@
 <process name="orderManager.OMProcess">
   <activity name="Start" type="seqActivity">
     <label>Start</label>
-    <x>31.0</x>
-    <y>124.0</y>
+    <x>15.0</x>
+    <y>127.0</y>
     <childList>
+      <child name="prueba" type="opActivity">
+        <element>iface_gg_OM_HumanInterface.manualProvisionInterface/oper_AsgProvisionManual</element>
+        <label>prueba</label>
+        <participant>part_gg_OM_HumanInterface.manualProvisioningPart</participant>
+        <x>111.0</x>
+        <y>30.0</y>
+        <methodList>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script>orderManager.dummy();</script>
+          </method>
+        </methodList>
+      </child>
       <child name="CreaCliBSCS" type="seqActivity">
         <label>Crea Cli BSCS</label>
-        <x>215.0</x>
-        <y>24.0</y>
+        <x>245.99998</x>
+        <y>32.0</y>
         <childList>
           <child name="CrearCliBSCS" type="subflowActivity">
             <element>proc_orderManager.Crear_CLI_BSCS</element>
             <label>Crear Cli BSCS</label>
-            <x>230.0</x>
+            <x>228.0</x>
             <y>193.0</y>
           </child>
           <child name="CreaCliCS" type="seqActivity">
@@ -89,11 +103,117 @@
           </child>
         </childList>
       </child>
+      <child name="exp_interface" type="onExceptionActivity">
+        <element>excp_cwf.interfaceExcp</element>
+        <label>exp_interface</label>
+        <x>33.0</x>
+        <y>223.0</y>
+        <childList>
+          <child name="exp_tm" type="seqActivity">
+            <label>exp_tm</label>
+            <x>44.0</x>
+            <y>252.0</y>
+            <childList>
+              <child name="tareaManuel" type="opActivity">
+                <element>iface_gg_OM_HumanInterface.manualProvisionInterface/oper_AsgProvisionManual</element>
+                <label>tareaManuel</label>
+                <participant>part_gg_OM_HumanInterface.manualProvisioningPart</participant>
+                <x>131.0</x>
+                <y>323.0</y>
+                <childList>
+                  <child name="choice" type="choiceActivity">
+                    <label>choice</label>
+                    <x>288.0</x>
+                    <y>305.0</y>
+                    <childList>
+                      <child name="cancel" type="opActivity">
+                        <element>iface_gg_OM_HumanInterface.manualProvisionInterface/oper_Cancel</element>
+                        <label>cancel</label>
+                        <participant>part_gg_OM_HumanInterface.manualProvisioningPart</participant>
+                        <x>415.0</x>
+                        <y>418.0</y>
+                        <childList>
+                          <child name="seq" type="seqActivity">
+                            <label>seq</label>
+                            <x>533.0</x>
+                            <y>433.0</y>
+                            <childList>
+                              <child name="recharorden" type="scriptActivity">
+                                <label>recharorden</label>
+                                <x>625.0</x>
+                                <y>426.0</y>
+                              </child>
+                              <child name="canceled" type="completeActivity">
+                                <label>canceled</label>
+                                <x>768.0</x>
+                                <y>419.0</y>
+                              </child>
+                            </childList>
+                          </child>
+                        </childList>
+                      </child>
+                      <child name="resubmit" type="opActivity">
+                        <element>iface_gg_OM_HumanInterface.manualProvisionInterface/oper_Submit</element>
+                        <label>resubmit</label>
+                        <participant>part_gg_OM_HumanInterface.manualProvisioningPart</participant>
+                        <x>408.0</x>
+                        <y>306.0</y>
+                        <childList>
+                          <child name="seq" type="seqActivity">
+                            <label>seq</label>
+                            <x>539.0</x>
+                            <y>322.0</y>
+                            <childList>
+                              <child name="rollback" type="rollbackActivity">
+                                <label>rollback</label>
+                                <x>635.0</x>
+                                <y>325.0</y>
+                                <methodList>
+                                  <method name="cwOnProcActBefore" type="action">
+                                    <category>before</category>
+                                    <system>true</system>
+                                    <script><![CDATA[return 'cpBSCS';]]></script>
+                                  </method>
+                                </methodList>
+                              </child>
+                              <child name="resume" type="resumeActivity">
+                                <label>resume</label>
+                                <x>775.0</x>
+                                <y>305.0</y>
+                              </child>
+                            </childList>
+                          </child>
+                        </childList>
+                      </child>
+                    </childList>
+                  </child>
+                </childList>
+              </child>
+            </childList>
+            <methodList>
+              <method name="cwOnProcActBefore" type="action">
+                <category>before</category>
+                <system>true</system>
+                <script><![CDATA[
+                  orderManager.dummy();
+                  return ;
+                ]]></script>
+              </method>
+            </methodList>
+          </child>
+        </childList>
+      </child>
       <child name="InformacionOE" type="participantActivity">
         <label>InformacionOE</label>
         <participant>part_orderManager.InformacionOE</participant>
         <x>767.0</x>
         <y>20.0</y>
+      </child>
+      <child name="manualProvisioningPart" type="participantActivity">
+        <label>manualProvisioningPart</label>
+        <participant>part_gg_OM_HumanInterface.manualProvisioningPart</participant>
+        <x>38.0</x>
+        <y>409.0</y>
       </child>
     </childList>
   </activity>
@@ -109,11 +229,11 @@
     </subflowReference>
     <subflowReference type="sref">
       <revision>1</revision>
-      <subflow>proc_orderManager.Provision_CLI_EMA</subflow>
+      <subflow>proc_orderManager.Crear_CLI_BSCS</subflow>
     </subflowReference>
     <subflowReference type="sref">
       <revision>1</revision>
-      <subflow>proc_orderManager.Crear_CLI_BSCS</subflow>
+      <subflow>proc_orderManager.Provision_CLI_EMA</subflow>
     </subflowReference>
   </subflowReferenceList>
   <type>User</type>
