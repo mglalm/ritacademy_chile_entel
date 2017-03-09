@@ -123,12 +123,10 @@ CREATE SEQUENCE SEQ_ID_SERVICIO_BSCS 	MINVALUE 	1 MAXVALUE 999999999999999999999
 
 insert into PR_BSCS_CLIENTE_ESTADO values ('1','ACTIVO');
 insert into PR_BSCS_CLIENTE_ESTADO values ('2','DESACTIVO');
-COMMIT;
 
 insert into PR_BSCS_MSISDN_ESTADO values ('1','DISPONIBLE');
 insert into PR_BSCS_MSISDN_ESTADO values ('2','RESERVADO');
 insert into PR_BSCS_MSISDN_ESTADO values ('3','ASIGNADO');
-COMMIT;
 
 insert into PR_BSCS_SERVICIO_ESTADO values ('1','ACTIVO');
 insert into PR_BSCS_SERVICIO_ESTADO values ('2','SUSPENDIDO');
@@ -137,7 +135,7 @@ insert into PR_BSCS_SERVICIO_ESTADO values ('3','DESACTIVADO');
 insert into PR_BSCS_PLAN values(1,'1', 'Plan Anita');
 insert into PR_BSCS_PLAN values(2,'2', 'Plan Carlitos');
 insert into PR_BSCS_PLAN values(3,'3', 'Plan Global');
-insert into PR_BSCS_PLAN values(3,'A', 'Plan CC');
+insert into PR_BSCS_PLAN values(4,'A', 'Plan CC');
 
 insert into PR_BSCS_MSISDN values('56992270351', 1);
 insert into PR_BSCS_MSISDN values('56992270352', 1);
