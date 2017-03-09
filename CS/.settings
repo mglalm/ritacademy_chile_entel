@@ -19,7 +19,7 @@
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
-  <jarExportFolder>D:\Proyectos TDE\CBiO\PROYECTO</jarExportFolder>
+  <jarExportFolder>C:\Users\EOC\Documents\ritacademy_chile_entel\CS\</jarExportFolder>
   <joinCluster>true</joinCluster>
   <nodeString>PE_UI</nodeString>
   <skin>Enterprise</skin>

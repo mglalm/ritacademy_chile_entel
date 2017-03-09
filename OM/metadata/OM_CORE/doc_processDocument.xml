@@ -6,16 +6,16 @@
   <metaVersion>25</metaVersion>
   <variableList>
     <variable name="po" type="leaf">
-      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <valueType>dtype_OM_CORE.po</valueType>
     </variable>
     <variable name="msisdn" type="leaf">
-      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <valueType>dtype_OM_CORE.msisdn</valueType>
     </variable>
     <variable name="orderId" type="leaf">
-      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <valueType>dtype_OM_CORE.requesterId</valueType>
     </variable>
     <variable name="debit" type="leaf">
-      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <valueType>dtype_OM_CORE.debit</valueType>
     </variable>
     <variable name="statusBSCS" type="leaf">
       <valueType>dtype_com.conceptwave.system.String</valueType>
