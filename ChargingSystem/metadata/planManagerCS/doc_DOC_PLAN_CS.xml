@@ -162,26 +162,33 @@
     </vformList>
     <methodList>
       <method name="btn_grabar" type="usrActionMethod">
-        <userInterface>findDoc_planManagerCS.busquedaPlan</userInterface>
-        <valueType>findDoc_planManagerCS.busquedaPlan</valueType>
         <script><![CDATA[
-          planManagerCS.quiebra_ejecucion();
-
+          externalSystemCS.quiebra_ejecucion();
 
           if ( this.model.DT_ID_PLAN_C_CS != null && this.model.DT_ID_PLAN_C_CS != "" )
           {
-              if ( this.model.DT_ID_PLAN_N_CS == null )
+              if (this.model.DT_SALDO_INICIAL_CS != null && this.model.DT_SALDO_INICIAL_CS != "" )
               {
-                  //-----OBTIENE NUEVA SECUENCIA PARA EL NUEVO PLAN
-                  var doc_secuencia = new Finder("planManagerCS.SEQ_ID_PLAN_CS");
-                  var nueva_secuencia = doc_secuencia.search();
-                  var var_id_plan=nueva_secuencia[0].type;  //Obtiene el valor desde el finder
-                  this.model.DT_ID_PLAN_N_CS=var_id_plan;
-              }
+                  if ( this.model.DT_ID_PLAN_N_CS == null )
+                  {
+                      //-----OBTIENE NUEVA SECUENCIA PARA EL NUEVO PLAN
+                      var doc_secuencia = new Finder("planManagerCS.SEQ_ID_PLAN_CS");
+                      var nueva_secuencia = doc_secuencia.search();
+                      var var_id_plan=nueva_secuencia[0].type;  //Obtiene el valor desde el finder
+                      this.model.DT_ID_PLAN_N_CS=var_id_plan;
+                  }
 
-              this.save();
-              Global.showUserMessage("Plan Almacenado");
+                  this.save();
+                  Global.showUserMessage("Plan Almacenado");
+
+                  var finderUI = new planManagerCS.busquedaPlan.UserInterface(null, this);
+                  return finderUI;
+              }
+              else
+                  Global.showUserMessage("Debe ingresar un Saldo Inicial para el Plan");
           }
+          else
+              Global.showUserMessage("Debe ingresar un ID");
         ]]></script>
       </method>
     </methodList>
