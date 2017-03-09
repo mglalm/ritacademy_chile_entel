@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="512D759C-B57F-5431-F746-F71EA93DD404" name="BSCS_SERVICIO">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="512D759C-B57F-5431-F746-F71EA93DD404" name="PR_BSCS_SERVICIO">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 15:42:13 UTC</createdTime>
 <ownerDesignName>modelo_bscs</ownerDesignName>
@@ -8,19 +8,53 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_CLIENTE_BSCS" id="BC520B90-B8E8-6CBD-8BDE-5F77BE856760">
+<Column name="SYSTEM_ID_SERVICIO_N_BSCS" id="F4F38D1F-E2D8-18B7-0438-9D5CC97B72C1">
 <createdBy>EOC</createdBy>
-<createdTime>2017-02-27 15:44:24 UTC</createdTime>
+<createdTime>2017-03-08 20:41:05 UTC</createdTime>
 <ownerDesignName>modelo_bscs</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="7DA1DC10-A7A9-FE56-A625-C4B0C8056AB7" referredColumn="0B77458B-C10B-AE82-55F9-B69CAB245BC7"/>
-</associations>
+</Column>
+<Column name="SYSTEM_ID_SERVICIO_C_BSCS" id="19A33726-45C2-FD61-8974-96E4EF6F596D">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-08 20:41:05 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SYSTEM_ID_CLIENTE_N_BSCS" id="BFA4B9A7-F6A7-E878-E9EB-55B879DEEA5C">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-08 20:40:19 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SYSTEM_ID_CLIENTE_C_BSCS" id="E6BF0D12-F04E-FEDD-37D8-C0B43405D829">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-08 20:40:19 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="MSISDN" id="886852A6-84DB-39CF-C201-EAC0D0EF3EEC">
 <createdBy>EOC</createdBy>
@@ -36,15 +70,40 @@
 <colAssociation fkAssociation="154AA1C8-7C60-1B4F-5D61-93EED3B01D9D" referredColumn="6ED62064-9826-4B95-3959-5BE6F081896E"/>
 </associations>
 </Column>
-<Column name="FECHA_ACTIVACION" id="38CDC3BA-3E76-FBBE-E71B-8D622AE796D7">
+<Column name="SYSTEM_ID_PLAN_N_BSCS" id="3C5B5E48-7A5E-B467-B508-7186727C617A">
 <createdBy>EOC</createdBy>
-<createdTime>2017-02-27 15:52:26 UTC</createdTime>
+<createdTime>2017-03-08 20:37:25 UTC</createdTime>
 <ownerDesignName>modelo_bscs</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SYSTEM_ID_PLAN_C_BSCS" id="9902F5D5-09F8-BDFB-0EEC-A828C631F282">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-08 20:37:25 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_ID" id="C628DE8B-0B19-0026-D064-3517652323A7">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-04 03:19:55 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="ID_SERVICIO_ESTADO" id="31CB7177-A079-8DBD-BE20-01CB6E62A5B8">
@@ -61,45 +120,31 @@
 <colAssociation fkAssociation="5C9A876E-123B-954E-25F5-9840BFB0E95D" referredColumn="31E1B86C-54F7-2B24-C7B4-D49D6858FF2A"/>
 </associations>
 </Column>
-<Column name="ID_PLAN_BSCS" id="474A2E39-1F1D-37D7-BBDB-31AC6286114C">
+<Column name="FECHA_ACTIVACION" id="38CDC3BA-3E76-FBBE-E71B-8D622AE796D7">
 <createdBy>EOC</createdBy>
-<createdTime>2017-02-27 15:53:54 UTC</createdTime>
-<ownerDesignName>modelo_bscs</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="D8A267F4-39D5-5BFC-156E-2792DD8A9650" referredColumn="A8357848-0FFA-5382-F69C-78AA5455F00F"/>
-</associations>
-</Column>
-<Column name="ORDER_ID" id="C628DE8B-0B19-0026-D064-3517652323A7">
-<createdBy>EOC</createdBy>
-<createdTime>2017-03-04 03:19:55 UTC</createdTime>
+<createdTime>2017-02-27 15:52:26 UTC</createdTime>
 <ownerDesignName>modelo_bscs</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>16</dataTypeSize>
-<ownDataTypeParameters>16,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_ACTUALIZACION" id="C650A95C-563F-666C-6DEB-B94DFA098CE4">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-08 20:48:33 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="0DF9A9DC-8719-93F0-C06A-9C98F9825C58" name="BSCS_SERVICIO_BSCS_CLIENTE_FK">
-<createdBy>EOC</createdBy>
-<createdTime>2017-02-27 15:51:16 UTC</createdTime>
-<ownerDesignName>modelo_bscs</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="BC520B90-B8E8-6CBD-8BDE-5F77BE856760"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="A6EA832D-2387-0BC0-C27C-AD45F2C71711" name="BSCS_SERVICIO_BSCS_MSISDN_FK">
+<ind_PK_UK id="A6EA832D-2387-0BC0-C27C-AD45F2C71711" name="PR_BSCS_SERIO_BSCS_CLIENTE_FK">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 15:51:24 UTC</createdTime>
 <ownerDesignName>modelo_bscs</ownerDesignName>
@@ -109,17 +154,7 @@
 <colUsage columnID="886852A6-84DB-39CF-C201-EAC0D0EF3EEC"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="3F68C441-F3FE-A48A-81AE-C59E33824CFF" name="BSCS_SERVICIO_BSCS_PLAN_FK">
-<createdBy>EOC</createdBy>
-<createdTime>2017-02-27 15:53:54 UTC</createdTime>
-<ownerDesignName>modelo_bscs</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="474A2E39-1F1D-37D7-BBDB-31AC6286114C"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="46C3690D-E1B5-A253-C473-1AABE6B0008B" name="BSCS_SERVICIO_ESTADO_FK">
+<ind_PK_UK id="46C3690D-E1B5-A253-C473-1AABE6B0008B" name="PR_BSCS_SERVICIO_ESTADO_FK">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 15:55:40 UTC</createdTime>
 <ownerDesignName>modelo_bscs</ownerDesignName>

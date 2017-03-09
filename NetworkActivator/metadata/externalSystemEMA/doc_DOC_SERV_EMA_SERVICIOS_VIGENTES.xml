@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemEMA.DOC_SERV_EMA_SERVICIOS_VIGENTES">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{6e0ac2ac-23be-4dd7-b2a2-e466982924f9}</guid>
+  <label>DOC_SERV_EMA_SERVICIOS_VIGENTES</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_EMA_FECHA_ACTIVACION" type="leaf">
+      <column>FECHA_ACTIVACION</column>
+      <table>PR_EMA_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_FECHA_ACTIVACION</valueType>
+    </variable>
+    <variable name="DT_EMA_FECHA_ACTUALIZACION" type="leaf">
+      <column>FECHA_ACTUALIZACION</column>
+      <table>PR_EMA_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_FECHA_ACTUALIZACION</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_ESTADO_SERVICIO" type="leaf">
+      <column>ID_ESTADO</column>
+      <table>PR_EMA_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_ESTADO_SERVICIO</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_PROFILE_C" type="leaf">
+      <column>SYSTEM_ID_PROFILE_C_EMA</column>
+      <table>PR_EMA_SERVICIO_VIGENTE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_C</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_PROFILE_N" type="leaf">
+      <column>SYSTEM_ID_PROFILE_N_EMA</column>
+      <table>PR_EMA_SERVICIO_VIGENTE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_N</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_SERVICIO_C" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_C_EMA</column>
+      <table>PR_EMA_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_SERVICIO_C</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_SERVICIO_N" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_N_EMA</column>
+      <key>1</key>
+      <table>PR_EMA_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_SERVICIO_N</valueType>
+    </variable>
+    <variable name="DT_EMA_MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <table>PR_EMA_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_MSISDN</valueType>
+    </variable>
+    <variable name="DT_EMA_ORDER_ID" type="leaf">
+      <column>ORDER_ID</column>
+      <table>PR_EMA_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ORDER_ID</valueType>
+    </variable>
+  </variableList>
+</document>

@@ -9,16 +9,16 @@
     <variable name="MSISDN" type="leaf">
       <column>MSISDN</column>
       <key>1</key>
-      <table>BSCS_MSISDN</table>
-      <valueType>dtype_msisdnManagerBSCS.MSISDN</valueType>
+      <table>PR_BSCS_MSISDN</table>
+      <valueType>dtype_msisdnManagerBSCS.DT_BSCS_MSISDN</valueType>
     </variable>
     <variable name="ID_MSISDN_ESTADO" type="leaf">
       <column>ID_MSISDN_ESTADO</column>
       <propertyElement type="elslct">
         <sorted>false</sorted>
       </propertyElement>
-      <table>BSCS_MSISDN</table>
-      <valueType>dtype_msisdnManagerBSCS.DESC_MSISDN_ESTADO_REF</valueType>
+      <table>PR_BSCS_MSISDN</table>
+      <valueType>dtype_msisdnManagerBSCS.DT_BSCS_DESC_MSISDN_ESTADO_REF</valueType>
     </variable>
   </variableList>
   <UserInterface name="UserInterface" type="ui">
@@ -45,7 +45,7 @@
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
                     <element name="DOC_MSISDN_BSCSHeader" type="elhdr">
-                      <label>Nuevo MSISDN</label>
+                      <label>Crear MSISDN</label>
                     </element>
                     <element name="MSISDN" type="elfld">
                       <variable type="varPath">
@@ -54,6 +54,7 @@
                           <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/leaf_MSISDN</variablePath>
                         </variablePathList>
                       </variable>
+                      <width>20%</width>
                     </element>
                     <element name="ID_MSISDN_ESTADO" type="elslct">
                       <multiselect>false</multiselect>
@@ -69,8 +70,79 @@
               </elementList>
             </root>
           </overlay>
+          <overlay name="Menu" type="exov">
+            <base>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</base>
+            <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+            <overrideList>
+              <override name="cwfSave" type="elmnu">
+                <menuAccel type="mAccelP"/>
+                <clickMethod type="varPath">
+                  <variablePathList>
+                    <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/ui_UserInterface/usrActionMethod_btn_guardar</variablePath>
+                  </variablePathList>
+                </clickMethod>
+                <icon>/cwf/MenuIconSave.gif</icon>
+                <iconHeight>30px</iconHeight>
+                <iconWidth>30px</iconWidth>
+                <label>Guardar</label>
+                <showDown>true</showDown>
+                <tooltip>Save</tooltip>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Formulario_Edicion" type="vform">
+            <label>Formulario_Edicion</label>
+            <root name="Formulario_EdicionGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_MSISDN_BSCSGrid" type="elgrd">
+                  <numOfCols>2</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DOC_MSISDN_BSCSHeader" type="elhdr">
+                      <label>Editar MSISDN</label>
+                    </element>
+                    <element name="MSISDN" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/leaf_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ID_MSISDN_ESTADO" type="elslct">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_msisdnManagerBSCS.DOC_MSISDN_BSCS/leaf_ID_MSISDN_ESTADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
         </overlayList>
       </vform>
     </vformList>
+    <methodList>
+      <method name="btn_guardar" type="usrActionMethod">
+        <script><![CDATA[
+          externalSystemBSCS.quiebra_ejecucion();
+
+          this.save();
+          Global.showUserMessage("MSISDN Almacenado");
+        ]]></script>
+      </method>
+    </methodList>
   </UserInterface>
 </document>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="OrderManager.CSManualInterface">
+  <label>CSManualInterface</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="DesprovisionManualCS" type="oper">
+      <label>DesprovisionManualCS</label>
+      <type>One-Way</type>
+    </operation>
+    <operation name="DesprovisionOK" type="oper">
+      <label>Desprovision OK</label>
+      <type>Notification</type>
+    </operation>
+    <operation name="DesprovisionNOK" type="oper">
+      <label>Desprovision NO OK</label>
+      <type>Notification</type>
+    </operation>
+  </operationList>
+  <revision>2</revision>
+</interface>

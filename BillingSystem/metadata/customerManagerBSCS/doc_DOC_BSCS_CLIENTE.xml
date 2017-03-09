@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="customerManagerBSCS.DOC_BSCS_CLIENTE">
+  <dbSchema>PE_ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{bf1f3565-f73b-4501-a74f-7696db1fffee}</guid>
+  <label>DOC_BSCS_CLIENTE</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_CLIENTE_BSCS_N" type="leaf">
+      <column>SYSTEM_ID_CLIENTE_N_BSCS</column>
+      <key>1</key>
+      <table>PR_BSCS_CLIENTE</table>
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_ID_CLIENTE_N</valueType>
+    </variable>
+    <variable name="ID_CLIENTE_BSCS_C" type="leaf">
+      <column>SYSTEM_ID_CLIENTE_C_BSCS</column>
+      <table>PR_BSCS_CLIENTE</table>
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_ID_CLIENTE_C</valueType>
+    </variable>
+    <variable name="RUT" type="leaf">
+      <column>RUT</column>
+      <table>PR_BSCS_CLIENTE</table>
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_RUT</valueType>
+    </variable>
+    <variable name="ID_CLIENTE_ESTADO" type="leaf">
+      <column>ID_CLIENTE_ESTADO</column>
+      <propertyElement type="elslct">
+        <sorted>false</sorted>
+      </propertyElement>
+      <table>PR_BSCS_CLIENTE</table>
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_DESC_CLIENTE_ESTADO_REF</valueType>
+    </variable>
+    <variable name="FECHA_CREACION" type="leaf">
+      <column>FECHA_CREACION</column>
+      <propertyElement type="eldatetime"/>
+      <table>PR_BSCS_CLIENTE</table>
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_FECHA_CREACION</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_customerManagerBSCS.DOC_BSCS_CLIENTE</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Creacion" type="vform">
+            <label>Formulario_Creacion</label>
+            <root name="Formulario_CreacionGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_CLIENTE_BSCSGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="ID_CLIENTE_BSCS_C" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE/leaf_ID_CLIENTE_BSCS_C</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="RUT" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE/leaf_RUT</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="FECHA_CREACION" type="eldatetime">
+                      <displayFormat>dd/MM/yyyy HH:mm</displayFormat>
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <showPickerIcon>false</showPickerIcon>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE/leaf_FECHA_CREACION</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="ID_CLIENTE_ESTADO1" type="elslct">
+                      <multiselect>false</multiselect>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE/leaf_ID_CLIENTE_ESTADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="Menu" type="exov">
+            <base>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</base>
+            <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+            <overrideList>
+              <override name="cwfSave" type="elmnu">
+                <menuAccel type="mAccelP"/>
+                <clickMethod type="varPath">
+                  <variablePathList>
+                    <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE/ui_UserInterface/usrActionMethod_btn_guardar</variablePath>
+                  </variablePathList>
+                </clickMethod>
+                <icon>/cwf/MenuIconSave.gif</icon>
+                <label>Guardar</label>
+                <showDown>true</showDown>
+                <tooltip>Save</tooltip>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+    <methodList>
+      <method name="btn_guardar" type="usrActionMethod">
+        <script><![CDATA[
+          externalSystemBSCS.quiebra_ejecucion();
+
+          this.save();
+          Global.showUserMessage("Cliente Almacenado");
+        ]]></script>
+      </method>
+    </methodList>
+  </UserInterface>
+</document>

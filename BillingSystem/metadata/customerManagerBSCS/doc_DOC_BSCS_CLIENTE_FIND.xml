@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="customerManagerBSCS.DOC_BSCS_CLIENTE_FIND">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{14eae187-96b7-4e84-8f56-da5ce995b7d1}</guid>
+  <label>DOC_BSCS_CLIENTE_FIND</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_CLIENTE_BSCS_N" type="leaf">
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_ID_CLIENTE_N</valueType>
+    </variable>
+    <variable name="ID_CLIENTE_BSCS_C" type="leaf">
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_ID_CLIENTE_C</valueType>
+    </variable>
+    <variable name="ID_CLIENTE_ESTADO" type="leaf">
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_ID_CLIENTE_ESTADO</valueType>
+    </variable>
+    <variable name="FECHA_CREACION" type="leaf">
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_FECHA_CREACION</valueType>
+    </variable>
+    <variable name="RUT" type="leaf">
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_RUT</valueType>
+    </variable>
+    <variable name="ID_ESTADO_CLIENTE_REF" type="leaf">
+      <valueType>dtype_customerManagerBSCS.DT_BSCS_DESC_CLIENTE_ESTADO_REF</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_customerManagerBSCS.DOC_BSCS_CLIENTE_FIND</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Busqueda" type="vform">
+            <label>Formulario_Busqueda</label>
+            <root name="FormularioBusquedaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_CLIENTE_BSCS_FINDGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="ID_CLIENTE_BSCS_C" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE_FIND/leaf_ID_CLIENTE_BSCS_C</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="ID_ESTADO_CLIENTE_REF" type="elslct">
+                      <multiselect>false</multiselect>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE_FIND/leaf_ID_ESTADO_CLIENTE_REF</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="RUT" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE_FIND/leaf_RUT</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="FECHA_CREACION" type="eldatetime">
+                      <showPickerIcon>false</showPickerIcon>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_customerManagerBSCS.DOC_BSCS_CLIENTE_FIND/leaf_FECHA_CREACION</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                      <width>20%</width>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

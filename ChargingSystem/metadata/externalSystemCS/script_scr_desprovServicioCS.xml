@@ -9,28 +9,56 @@
   </parameterList>
   <script><![CDATA[
     var var_msisdn = input.msisdn;
+    var var_orderid = input.orderid;
     var var_id_servicio_estado = 3;  // ESTADO DESACTIVADO
     var var_id_servicio;
 
-    externalSystemCS.quiebra_ejecucion();
+
 
     var output = new DataStructure("externalSystemCS.output_desprovServicioCS");
 
     //-----VERIFICAR QUE TENGA ACTIVO EL SERVICIO
-    var listado_servicios = new Finder("externalSystemCS.DOC_SERVICIO_CS_FIND");
+    var listado_servicios = new Finder("externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES");
     var resultado = listado_servicios.search();
     var ya_tiene_servicio = 0 ;
     if ( resultado.length > 0)
     {
         for ( var i = 0 ; i < resultado.length ; i++ )
         {
-            if ( resultado[i].ID_SERVICIO_ESTADO_SERVICO_CS == 1 && resultado[i].MSISDN_SERVICIO_CS == var_msisdn )
+            if ( resultado[i].DT_SERV_CS_ID_SERVICIO_ESTADO == 1 && resultado[i].DT_SERV_CS_MSISDN == var_msisdn )
             {
-                //-----SI LO ENCUENTRA LO DEJA EN ESTADO DESACTIVO
-                ya_tiene_servicio = 1;
-                var_id_servicio=resultado[i].ID_SERVICIO_SERVICO_CS;
-                resultado[i].ID_SERVICIO_ESTADO_SERVICO_CS=var_id_servicio_estado;
-                resultado[i].save();
+                //Si el numero de orden que viene como entrada es el mismo que con el que se activo entonces solo se actualiza el registro
+                //de lo contrario hay que ingresar otro
+
+                if (resultado[i].DT_SERV_CS_ORDER_ID == var_orderid )   //LA ORDEN ES LA MISMA POR LO QUE VIENE DE LA MISMA PARTE QUE LA PROVISION
+                {           //-----SI LO ENCUENTRA LO DEJA EN ESTADO DESACTIVO
+                    var fecha_hoy = new Date();
+                    ya_tiene_servicio = 1;
+                    var_id_servicio=resultado[i].DT_SERV_CS_ID_SERVICIO_N;
+                    resultado[i].DT_SERV_CS_ID_SERVICIO_ESTADO=var_id_servicio_estado;
+                    resultado[i].DT_SERV_CS_FECHA_ACTUALIZACION=fecha_hoy;
+                    resultado[i].save();
+                    i=resultado.length;
+                }
+                else
+                 {  //CREAR NUEVO REGISTRO CON ESTADO DESACTIVADO ASOCIADO A LOS MISMOS DATOS DE LA ORDEN ORIGINAL
+                     //-----SE ACTIVAN LOS SERVICIOS
+                    ya_tiene_servicio = 1;
+                    externalSystemCS.quiebra_ejecucion();
+                    var fecha_hoy = new Date();
+                    var documento = new Document("externalSystemCS.DOC_SERV_CS_SERVICIOS_HIST");
+                    documento.DT_SERV_CS_ID_SERVICIO_N=resultado[i].DT_SERV_CS_ID_SERVICIO_N;
+                    var_id_servicio=resultado[i].DT_SERV_CS_ID_SERVICIO_N;
+                    documento.DT_SERV_CS_ID_SERVICIO_C=resultado[i].DT_SERV_CS_ID_SERVICIO_C;
+                    documento.DT_SERV_CS_MSISDN=resultado[i].DT_SERV_CS_MSISDN;
+                    documento.DT_SERV_CS_ID_PLAN_C=resultado[i].DT_SERV_CS_ID_PLAN_C;
+                    documento.DT_SERV_CS_ORDER_ID=var_orderid;
+                    documento.DT_SERV_CS_ID_SERVICIO_ESTADO=var_id_servicio_estado;
+                    documento.DT_SERV_CS_FECHA_ACTIVACION=resultado[i].DT_SERV_CS_FECHA_ACTIVACION;
+                    documento.DT_SERV_CS_FECHA_ACTUALIZACION=fecha_hoy;
+                    documento.save();
+                    i=resultado.length;
+                 }
             }
         }
     }
@@ -41,9 +69,10 @@
         return output;
     }
 
+    externalSystemCS.quiebra_ejecucion();
 
     //-----ELIMINA SALDOS
-    var listado_saldos = new Finder("externalSystemCS.DOC_SALDOS_CS_FIND");
+    var listado_saldos = new Finder("externalSystemCS.FIND_SERV_CS_SALDOS");
     var resultado = listado_saldos.search();
     if ( resultado.length > 0)
     {
@@ -55,7 +84,6 @@
                 resultado[i].deleteItem();
     //            var_id_servicio=resultado[i].ID_SERVICIO_SERVICO_CS;
     //            resultado[i].ID_SERVICIO_ESTADO_SERVICO_CS=var_id_servicio_estado;
-
             }
         }
     }

@@ -8,6 +8,7 @@
   </parameterList>
   <script><![CDATA[
     var var_msisdn = input.msisdn;
+    var var_orderid=input.orderid;
     var var_id_servicio_estado = 3;  // ESTADO DESACTIVADO
     var var_id_servicio;
 
@@ -19,19 +20,51 @@
     var output = new DataStructure("externalSystemBSCS.output_desprovServicioBSCS");
 
     //-----VERIFICAR QUE TENGA ACTIVO EL SERVICIO
-    var listado_servicios = new Finder("externalSystemBSCS.FIND_SERV_SERVICIO_BSCS");
+    var listado_servicios = new Finder("externalSystemBSCS.FIND_SERV_BSCS_SERVICIOS_VIGENTES");
     var resultado = listado_servicios.search();
     var ya_tiene_servicio = 0 ;
     if ( resultado.length > 0)
     {
         for ( var i = 0 ; i < resultado.length ; i++ )
         {
-            if ( resultado[i].ID_SERV_ESTADO_SERVICIO_BSCS == 1 && resultado[i].MSISDN_SERVICIO_BSCS == var_msisdn )
+            if ( resultado[i].DT_SERV_BSCS_ID_SERVICIO_ESTADO == 1 && resultado[i].DT_SERV_BSCS_MSISDN == var_msisdn )
             {
-                //-----SI LO ENCUENTRA LO DEJA EN ESTADO DESACTIVO
-                ya_tiene_servicio = 1;
-                resultado[i].ID_SERV_ESTADO_SERVICIO_BSCS=var_id_servicio_estado;
-                resultado[i].save();
+                //Si el numero de orden que viene como entrada es el mismo que con el que se activo entonces solo se actualiza el registro
+                //de lo contrario hay que ingresar otro
+
+                if (resultado[i].DT_SERV_BSCS_ORDER_ID == var_orderid )   //LA ORDEN ES LA MISMA POR LO QUE VIENE DE LA MISMA PARTE QUE LA PROVISION
+                {           //-----SI LO ENCUENTRA LO DEJA EN ESTADO DESACTIVO
+                    var fecha_hoy = new Date();
+                    ya_tiene_servicio = 1;
+                    var_id_servicio=resultado[i].DT_SERV_BSCS_ID_SERVICIO_N;
+                    resultado[i].DT_SERV_BSCS_ID_SERVICIO_ESTADO=var_id_servicio_estado;
+                    resultado[i].DT_SERV_BSCS_FECHA_ACTUALIZACION=fecha_hoy;
+                    resultado[i].save();
+                    i=resultado.length;
+                }
+                else
+                 {  //CREAR NUEVO REGISTRO CON ESTADO DESACTIVADO ASOCIADO A LOS MISMOS DATOS DE LA ORDEN ORIGINAL
+                     //-----SE ACTIVAN LOS SERVICIOS
+                    ya_tiene_servicio = 1;
+                    externalSystemBSCS.quiebra_ejecucion();
+                    var fecha_hoy = new Date();
+                    var documento = new Document("externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST");
+                    var_id_servicio=resultado[i].DT_SERV_BSCS_ID_SERVICIO_N;
+
+                    documento.DT_SERV_BSCS_ID_SERVICIO_N=resultado[i].DT_SERV_BSCS_ID_SERVICIO_N;
+                    documento.DT_SERV_BSCS_ID_SERVICIO_C=resultado[i].DT_SERV_BSCS_ID_SERVICIO_C;
+                    documento.DT_SERV_BSCS_ID_CLIENTE_N=resultado[i].DT_SERV_BSCS_ID_CLIENTE_N;
+                    documento.DT_SERV_BSCS_ID_CLIENTE_C=resultado[i].DT_SERV_BSCS_ID_CLIENTE_C;
+                    documento.DT_SERV_BSCS_MSISDN=resultado[i].DT_SERV_BSCS_MSISDN;
+                    documento.DT_SERV_BSCS_ID_PLAN_C=resultado[i].DT_SERV_BSCS_ID_PLAN_C;
+                    documento.DT_SERV_BSCS_ID_PLAN_N=resultado[i].DT_SERV_BSCS_ID_PLAN_N;
+                    documento.DT_SERV_BSCS_ORDER_ID=var_orderid;
+                    documento.DT_SERV_BSCS_ID_SERVICIO_ESTADO=var_id_servicio_estado;
+                    documento.DT_SERV_BSCS_FECHA_ACTIVACION=resultado[i].DT_SERV_BSCS_FECHA_ACTIVACION;
+                    documento.DT_SERV_BSCS_FECHA_ACTUALIZACION=fecha_hoy;
+                    documento.save();
+                    i=resultado.length;
+                 }
             }
         }
     }
@@ -44,7 +77,7 @@
 
     //-----CAMBIAMOS EL ESTADO DEL MSISDN A DISPONIBLE
     externalSystemBSCS.quiebra_ejecucion();
-    var msisdn_existentes = new Finder("externalSystemBSCS.FIND_SERV_MSISDN_BSCS");
+    var msisdn_existentes = new Finder("externalSystemBSCS.FIND_SERV_BSCS_MSISDN");
     var resultado = msisdn_existentes.search();
     var existe_msisdn = 0;
 
@@ -52,10 +85,10 @@
     {
         for (var i=0 ; i < resultado.length ; i++ )
         {
-            if (resultado[i].MSISDN_SERVICIO_BSCS == var_msisdn && resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS == 3 )
+            if (resultado[i].DT_SERV_BSCS_MSISDN == var_msisdn && resultado[i].DT_SERV_BSCS_ID_MSISDN_ESTADO == 3 )
             {
                 existe_msisdn = 1;
-                resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS = 1;
+                resultado[i].DT_SERV_BSCS_ID_MSISDN_ESTADO = 1;
                 resultado[i].save();
             }
         }

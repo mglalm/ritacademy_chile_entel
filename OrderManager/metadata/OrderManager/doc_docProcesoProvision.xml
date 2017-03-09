@@ -17,6 +17,9 @@
     <variable name="IN_POIdAdicional" type="leaf">
       <valueType>dtype_OrderManager.dtPOId</valueType>
     </variable>
+    <variable name="IN_tipoOrden" type="leaf">
+      <valueType>dtype_OrderManager.dtTipoOrden</valueType>
+    </variable>
     <variable name="OUT_estadoOrden" type="leaf">
       <valueType>dtype_OrderManager.dtEstado</valueType>
     </variable>

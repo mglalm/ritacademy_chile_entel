@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findSql name="planManagerBSCS.SEQ_ID_PLAN_BSCS">
+  <dbSchema>ORDER</dbSchema>
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <label>SEQ_ID_PLAN_BSCS</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_api_common.searchContextResult</output>
+  <type>SQL</type>
+  <methodList>
+    <method name="cwOnFinderSQLSel" type="action">
+      <system>true</system>
+      <script>select SEQ_ID_PLAN_BSCS.nextval from dual</script>
+    </method>
+  </methodList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>ui_com.conceptwave.system.UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_api_common.searchContextResult</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findSql_planManagerBSCS.SEQ_ID_PLAN_BSCS/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="SEQ_ID_PLAN_BSCSResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findSql_planManagerBSCS.SEQ_ID_PLAN_BSCS/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="type" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findSql_planManagerBSCS.SEQ_ID_PLAN_BSCS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_api_common.searchContextResult/leaf_type</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="objectId" type="elfld">
+                        <dataLength>24</dataLength>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findSql_planManagerBSCS.SEQ_ID_PLAN_BSCS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_api_common.searchContextResult/leaf_objectId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="parentId" type="elfld">
+                        <dataLength>24</dataLength>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findSql_planManagerBSCS.SEQ_ID_PLAN_BSCS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_api_common.searchContextResult/leaf_parentId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="score" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findSql_planManagerBSCS.SEQ_ID_PLAN_BSCS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_api_common.searchContextResult/leaf_score</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="SEQ_ID_PLAN_BSCSView" type="findVView">
+      <outputOverlay>findSql_planManagerBSCS.SEQ_ID_PLAN_BSCS/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+    </view>
+  </viewList>
+</findSql>

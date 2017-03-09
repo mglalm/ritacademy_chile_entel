@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerCS.DOC_CS_SALDOS">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{8d13ac24-76b7-4eaa-859e-9e905b0f2cd1}</guid>
+  <label>DOC_CS_SALDOS</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_ID_SERVICIO_N_CS" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_N_CS</column>
+      <key>1</key>
+      <table>PR_CS_SALDOS</table>
+      <valueType>dtype_provisionManagerCS.DT_ID_SERVICIO_N_CS</valueType>
+    </variable>
+    <variable name="DT_CS_SALDO_INICIAL" type="leaf">
+      <column>SALDO_INICIAL</column>
+      <table>PR_CS_SALDOS</table>
+      <valueType>dtype_provisionManagerCS.DT_CS_SALDO_INICIAL</valueType>
+    </variable>
+    <variable name="DT_CS_FECHA_ULTIMO_SALDO" type="leaf">
+      <column>FECHA_ULTIMO_SALDO</column>
+      <table>PR_CS_SALDOS</table>
+      <valueType>dtype_provisionManagerCS.DT_CS_FECHA_ULTIMO_SALDO</valueType>
+    </variable>
+    <variable name="DT_CS_SALDO_ACTUAL" type="leaf">
+      <column>SALDO_ACTUAL</column>
+      <table>PR_CS_SALDOS</table>
+      <valueType>dtype_provisionManagerCS.DT_CS_SALDO_ACTUAL</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerCS.DOC_CS_SALDOS</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

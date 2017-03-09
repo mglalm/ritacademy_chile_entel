@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="externalSystemBSCS.SERV_FECHA_ACTIVACION_BSCS">
-  <extends>dtype_com.conceptwave.system.DateTime</extends>
-  <label>SERV_FECHA_ACTIVACION_BSCS</label>
-  <metaVersion>25</metaVersion>
-</dataType>

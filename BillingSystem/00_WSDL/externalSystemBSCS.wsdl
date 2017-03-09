@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions name="externalSystemBSCS" targetNamespace="externalSystemBSCS"
-	xmlns:tns="externalSystemBSCS"
+<definitions name="externalSystemBSCS" targetNamespace="http://www.readinessit.com/namespaces/proyectoBSCS/externalSystemBSCS"
+	xmlns:tns="http://www.readinessit.com/namespaces/proyectoBSCS/externalSystemBSCS"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 	xmlns="http://schemas.xmlsoap.org/wsdl/"
-	xmlns:externalSystemBSCS="externalSystemBSCS">
+	xmlns:externalSystemBSCS="http://www.readinessit.com/namespaces/proyectoBSCS/externalSystemBSCS">
 
 	<types>
-		<schema targetNamespace="externalSystemBSCS"			
+		<schema targetNamespace="http://www.readinessit.com/namespaces/proyectoBSCS/externalSystemBSCS"			
 	xmlns="http://www.w3.org/2001/XMLSchema"			
-	xmlns:externalSystemBSCS="externalSystemBSCS"			
+	xmlns:externalSystemBSCS="http://www.readinessit.com/namespaces/proyectoBSCS/externalSystemBSCS"			
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 
@@ -39,15 +39,6 @@
 				</annotation>
 				<restriction base="xsd:string">
 					<maxLength value="16"/>
-				</restriction>
-			</simpleType>
-
-			<simpleType name="SERV_MSISDN_sBSCS">
-				<annotation>
-					<documentation></documentation>
-				</annotation>
-				<restriction base="xsd:string">
-					<maxLength value="15"/>
 				</restriction>
 			</simpleType>
 
@@ -103,9 +94,9 @@
 				</restriction>
 			</simpleType>
 
-			<simpleType name="SERV_RUT_BSCS">
+			<simpleType name="SERV_MSISDN_BSCS">
 				<annotation>
-					<documentation>SERV_RUT_BSCS</documentation>
+					<documentation></documentation>
 				</annotation>
 				<restriction base="xsd:string">
 					<maxLength value="15"/>
@@ -116,8 +107,17 @@
 				<annotation>
 					<documentation>SERV_ID_PLAN_BSCS</documentation>
 				</annotation>
-				<restriction base="xsd:decimal">
-					<totalDigits value="5"/>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="SERV_RUT_BSCS">
+				<annotation>
+					<documentation>SERV_RUT_BSCS</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
 				</restriction>
 			</simpleType>
 
@@ -191,6 +191,7 @@
 				</annotation>
 					<sequence>
 						<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="orderid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
 					</sequence>
 				</complexType>
 
@@ -206,23 +207,21 @@
 
 			<!-- Documents -->
 
-			<complexType name="SERV_SERVICIOS_BSCS">
+			<complexType name="DOC_SERV_CLIENTE_BSCS">
 				<annotation>
-					<documentation>SERV_SERVICIOS_BSCS</documentation>
+					<documentation>DOC_SERV_CLIENTE_BSCS</documentation>
 				</annotation>
 					<sequence>
 						<element name="ID_CLIENTE_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_CLIENTE_BSCS"/>
-						<element name="MSISDN_SERVICIO_BSCS" type="externalSystemBSCS:SERV_MSISDN_sBSCS"/>
-						<element name="FECHA_ACTIVACION_SERVICIO_BSCS" type="externalSystemBSCS:SERV_FECHA_ACTIVACION_BSCS"/>
-						<element name="ID_SERV_ESTADO_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_SERVICIO_ESTADO_BSCS"/>
-						<element name="ID_PLAN_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_PLAN_BSCS"/>
-						<element name="ORDER_ID_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ORDER_ID_SCS"/>
+						<element name="FECHA_CREACION_SERVICIO_BSCS" type="externalSystemBSCS:SERV_FECHA_CREACION_BSCS"/>
+						<element name="ID_CLIENTE_ESTADO_SERV_BSCS" type="externalSystemBSCS:SERV_ID_CLIENTE_ESTADO_BSCS"/>
+						<element name="RUT_SERVICIO_BSCS" type="externalSystemBSCS:SERV_RUT_BSCS"/>
 					</sequence>
 				</complexType>
 
-			<complexType name="SERV_PLAN_BSCS">
+			<complexType name="DOC_SERV_PLAN_BSCS">
 				<annotation>
-					<documentation>SERV_PLAN_BSCS</documentation>
+					<documentation>DOC_SERV_PLAN_BSCS</documentation>
 				</annotation>
 					<sequence>
 						<element name="ID_PLAN_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_PLAN_BSCS"/>
@@ -230,25 +229,27 @@
 					</sequence>
 				</complexType>
 
-			<complexType name="SERV_MSISDN_BSCS">
+			<complexType name="DOC_SERV_MSISDN_BSCS">
 				<annotation>
-					<documentation>SERV_MSISDN_BSCS</documentation>
+					<documentation>DOC_SERV_MSISDN_BSCS</documentation>
 				</annotation>
 					<sequence>
 						<element name="ID_MSISDN_ESTADO_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_MSISDN_ESTADO_BSCS"/>
-						<element name="MSISDN_SERVICIO_BSCS" type="externalSystemBSCS:SERV_MSISDN_sBSCS"/>
+						<element name="MSISDN_SERVICIO_BSCS" type="externalSystemBSCS:SERV_MSISDN_BSCS"/>
 					</sequence>
 				</complexType>
 
-			<complexType name="SERV_CLIENTE_BSCS">
+			<complexType name="DOC_SERV_SERVICIOS_BSCS">
 				<annotation>
-					<documentation>SERV_CLIENTE_BSCS</documentation>
+					<documentation>DOC_SERV_SERVICIOS_BSCS</documentation>
 				</annotation>
 					<sequence>
 						<element name="ID_CLIENTE_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_CLIENTE_BSCS"/>
-						<element name="FECHA_CREACION_SERVICIO_BSCS" type="externalSystemBSCS:SERV_FECHA_CREACION_BSCS"/>
-						<element name="ID_CLIENTE_ESTADO_SERV_BSCS" type="externalSystemBSCS:SERV_ID_CLIENTE_ESTADO_BSCS"/>
-						<element name="RUT_SERVICIO_BSCS" type="externalSystemBSCS:SERV_RUT_BSCS"/>
+						<element name="MSISDN_SERVICIO_BSCS" type="externalSystemBSCS:SERV_MSISDN_BSCS"/>
+						<element name="FECHA_ACTIVACION_SERVICIO_BSCS" type="externalSystemBSCS:SERV_FECHA_ACTIVACION_BSCS"/>
+						<element name="ID_SERV_ESTADO_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_SERVICIO_ESTADO_BSCS"/>
+						<element name="ID_PLAN_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ID_PLAN_BSCS"/>
+						<element name="ORDER_ID_SERVICIO_BSCS" type="externalSystemBSCS:SERV_ORDER_ID_SCS"/>
 					</sequence>
 				</complexType>
 

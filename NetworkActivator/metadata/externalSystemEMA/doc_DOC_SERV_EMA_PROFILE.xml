@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemEMA.DOC_SERV_EMA_PROFILE">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{f19c08ae-e629-4fdf-a614-d0380b43e812}</guid>
+  <label>DOC_SERV_EMA_PROFILE</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_PROFILE_SERVICIO_EMA_N" type="leaf">
+      <column>SYSTEM_ID_PROFILE_N_EMA</column>
+      <key>1</key>
+      <table>PR_EMA_PROFILE</table>
+      <valueType>dtype_externalSystemEMA.DT_SERV_EMA_ID_PROFILE_N</valueType>
+    </variable>
+    <variable name="ID_PROFILE_SERVICIO_EMA_C" type="leaf">
+      <column>SYSTEM_ID_PROFILE_C_EMA</column>
+      <table>PR_EMA_PROFILE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_C</valueType>
+    </variable>
+    <variable name="DESC_PROFILE_SERVICIO_EMA" type="leaf">
+      <column>DESC_PROFILE</column>
+      <table>PR_EMA_PROFILE</table>
+      <valueType>dtype_externalSystemEMA.DT_SERV_EMA_DESC_PROFILE</valueType>
+    </variable>
+  </variableList>
+</document>

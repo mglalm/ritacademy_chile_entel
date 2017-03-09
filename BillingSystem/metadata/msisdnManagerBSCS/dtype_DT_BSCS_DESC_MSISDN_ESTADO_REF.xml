@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="msisdnManagerBSCS.DT_BSCS_DESC_MSISDN_ESTADO_REF">
+  <extends>dtype_cwf.sReference</extends>
+  <label>Estado</label>
+  <length>1</length>
+  <metaVersion>25</metaVersion>
+  <propertyElement type="elslct">
+    <sorted>false</sorted>
+  </propertyElement>
+  <reference>findDoc_msisdnManagerBSCS.busquedaEstado</reference>
+</dataType>

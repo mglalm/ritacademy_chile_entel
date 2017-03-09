@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="1607E868-3FCE-E366-9391-1F161418ECFD" name="PR_CS_SERVICIO_VIGENTE">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-07 17:34:26 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<ordsAlias>view_1</ordsAlias>
+<userDefined>true</userDefined>
+<userDefinedSQL>SELECT c.SYSTEM_ID_SERVICIO_N_CS,&lt;br/&gt;  c.SYSTEM_ID_SERVICIO_C_CS,&lt;br/&gt;  c.MSISDN,&lt;br/&gt;  c.SYSTEM_ID_PLAN_C_CS,&lt;br/&gt;  c.ORDER_ID,&lt;br/&gt;  c.ID_SERVICIO_ESTADO,&lt;br/&gt;  c.FECHA_ACTIVACION,&lt;br/&gt;  c.FECHA_ACTUALIZACION&lt;br/&gt;FROM&lt;br/&gt;  (SELECT a.MSISDN,&lt;br/&gt;    MAX(a.FECHA_ACTUALIZACION) FECHA_ACTUALIZACION&lt;br/&gt;  FROM PR_CS_SERVICIO a&lt;br/&gt;  GROUP BY a.MSISDN&lt;br/&gt;  ) b,&lt;br/&gt;  PR_CS_SERVICIO c&lt;br/&gt;WHERE b.MSISDN            = c.MSISDN&lt;br/&gt;AND b.FECHA_ACTUALIZACION = c.FECHA_ACTUALIZACION</userDefinedSQL>
+<parsed>true</parsed>
+<usedContainers>
+<container alias="c" containerID="03CF6B42-4471-E8B2-8DF8-1608DB90161A"/>
+</usedContainers>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="SYSTEM_ID_SERVICIO_N_CS" id="5A2E271F-0795-116C-D546-A2974E54AAA7">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-07 17:36:02 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<dataType>NUMBER (10)</dataType>
+<reference>false</reference>
+<referencedColumn>8E50A1EA-FBB1-526E-103F-BC9ECC0C2D9D</referencedColumn>
+<table>03CF6B42-4471-E8B2-8DF8-1608DB90161A</table>
+<tableAlias>c</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="SYSTEM_ID_SERVICIO_C_CS" id="368BCF94-4AF2-E560-3912-2225482D5C47">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-07 17:36:02 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<dataType>VARCHAR2 (10)</dataType>
+<reference>false</reference>
+<referencedColumn>F82B6587-B81D-D8DD-1523-0439589CA2ED</referencedColumn>
+<table>03CF6B42-4471-E8B2-8DF8-1608DB90161A</table>
+<tableAlias>c</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="MSISDN" id="9EA25ECD-6F14-A107-FB62-EB46E546464E">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-07 17:36:02 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<dataType>VARCHAR2 (15)</dataType>
+<reference>false</reference>
+<referencedColumn>2B2B5B19-58D9-2AF5-E80E-7464C812230A</referencedColumn>
+<table>03CF6B42-4471-E8B2-8DF8-1608DB90161A</table>
+<tableAlias>c</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="SYSTEM_ID_PLAN_C_CS" id="BFB5B213-FC9A-9117-6717-BE6DC916EA6D">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-07 17:36:02 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<dataType>VARCHAR2 (10)</dataType>
+<reference>false</reference>
+<referencedColumn>3AE4ACB0-C4C6-F371-C416-AE45B21A5A48</referencedColumn>
+<table>03CF6B42-4471-E8B2-8DF8-1608DB90161A</table>
+<tableAlias>c</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="ORDER_ID" id="2983F991-C420-8A36-D378-301CD5396E9F">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-07 17:36:02 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<dataType>VARCHAR2 (16)</dataType>
+<reference>false</reference>
+<referencedColumn>24A56FB2-B0E0-E998-C898-1F25736353D0</referencedColumn>
+<table>03CF6B42-4471-E8B2-8DF8-1608DB90161A</table>
+<tableAlias>c</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="ID_SERVICIO_ESTADO" id="BCE5D5AC-EB2E-A0C8-0FF9-BA5E611A06FD">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-07 17:36:02 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<dataType>VARCHAR2 (1)</dataType>
+<reference>false</reference>
+<referencedColumn>BED7B163-F104-3BF3-9EF7-1BE602ECACF7</referencedColumn>
+<table>03CF6B42-4471-E8B2-8DF8-1608DB90161A</table>
+<tableAlias>c</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="FECHA_ACTIVACION" id="2C94877B-EE35-2D3F-778A-DBB14EEA3CD2">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-07 17:36:02 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<dataType>DATE</dataType>
+<reference>false</reference>
+<referencedColumn>CE4DC469-247A-92DE-4352-D24A887096FF</referencedColumn>
+<table>03CF6B42-4471-E8B2-8DF8-1608DB90161A</table>
+<tableAlias>c</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="FECHA_ACTUALIZACION" id="137FCE44-C694-8C04-34CF-121A27989FAD">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-07 17:36:02 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<dataType>DATE</dataType>
+<reference>false</reference>
+<referencedColumn>750D4F40-53B5-F799-8AA6-B62D21F0936A</referencedColumn>
+<table>03CF6B42-4471-E8B2-8DF8-1608DB90161A</table>
+<tableAlias>c</tableAlias>
+</viewElement>
+</viewElements>
+<usedObjects>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="03CF6B42-4471-E8B2-8DF8-1608DB90161A">
+<container>true</container>
+<tableName>PR_CS_SERVICIO</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="8E50A1EA-FBB1-526E-103F-BC9ECC0C2D9D">
+<columnName>SYSTEM_ID_SERVICIO_N_CS</columnName>
+<tableName>PR_CS_SERVICIO</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="F82B6587-B81D-D8DD-1523-0439589CA2ED">
+<columnName>SYSTEM_ID_SERVICIO_C_CS</columnName>
+<tableName>PR_CS_SERVICIO</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="2B2B5B19-58D9-2AF5-E80E-7464C812230A">
+<columnName>MSISDN</columnName>
+<tableName>PR_CS_SERVICIO</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="3AE4ACB0-C4C6-F371-C416-AE45B21A5A48">
+<columnName>SYSTEM_ID_PLAN_C_CS</columnName>
+<tableName>PR_CS_SERVICIO</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="24A56FB2-B0E0-E998-C898-1F25736353D0">
+<columnName>ORDER_ID</columnName>
+<tableName>PR_CS_SERVICIO</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="BED7B163-F104-3BF3-9EF7-1BE602ECACF7">
+<columnName>ID_SERVICIO_ESTADO</columnName>
+<tableName>PR_CS_SERVICIO</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="CE4DC469-247A-92DE-4352-D24A887096FF">
+<columnName>FECHA_ACTIVACION</columnName>
+<tableName>PR_CS_SERVICIO</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="750D4F40-53B5-F799-8AA6-B62D21F0936A">
+<columnName>FECHA_ACTUALIZACION</columnName>
+<tableName>PR_CS_SERVICIO</tableName>
+</UsedObject>
+</usedObjects>
+</TableView>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_VIGENTES">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{52814c4c-6cb4-4de9-94da-1b0c7f2169ce}</guid>
+  <label>DOC_SERV_BSCS_SERVICIOS_VIGENTES</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_SERV_BSCS_ID_SERVICIO_N" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_N_BSCS</column>
+      <key>1</key>
+      <table>PR_BSCS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_SERVICIO_N</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_ID_SERVICIO_C" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_C_BSCS</column>
+      <table>PR_BSCS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_SERVICIO_C</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_ID_CLIENTE_N" type="leaf">
+      <column>SYSTEM_ID_CLIENTE_N_BSCS</column>
+      <table>PR_BSCS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_CLIENTE_N</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_ID_CLIENTE_C" type="leaf">
+      <column>SYSTEM_ID_CLIENTE_C_BSCS</column>
+      <table>PR_BSCS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_CLIENTE_C</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <table>PR_BSCS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_MSISDN</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_ID_PLAN_N" type="leaf">
+      <column>SYSTEM_ID_PLAN_N_BSCS</column>
+      <table>PR_BSCS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_PLAN_N</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_ID_PLAN_C" type="leaf">
+      <column>SYSTEM_ID_PLAN_C_BSCS</column>
+      <table>PR_BSCS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_PLAN_C</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_ORDER_ID" type="leaf">
+      <column>ORDER_ID</column>
+      <table>PR_BSCS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ORDER_ID</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_ID_SERVICIO_ESTADO" type="leaf">
+      <column>ID_SERVICIO_ESTADO</column>
+      <table>PR_BSCS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_SERVICIO_ESTADO</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_FECHA_ACTIVACION" type="leaf">
+      <column>FECHA_ACTIVACION</column>
+      <table>PR_BSCS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_FECHA_ACTIVACION</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_FECHA_ACTUALIZACION" type="leaf">
+      <column>FECHA_ACTUALIZACION</column>
+      <table>PR_BSCS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_FECHA_ACTUALIZACION</valueType>
+    </variable>
+  </variableList>
+</document>

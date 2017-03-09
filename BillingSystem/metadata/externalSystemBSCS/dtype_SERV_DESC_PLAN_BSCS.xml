@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="externalSystemBSCS.SERV_DESC_PLAN_BSCS">
-  <extends>dtype_com.conceptwave.system.String</extends>
-  <label>SERV_DESC_PLAN_BSCS</label>
-  <length>30</length>
-  <metaVersion>25</metaVersion>
-</dataType>

@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2C4E2B51-CBEB-5F37-19A8-55CC30BA3B0D" name="BSCS_PLAN">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2C4E2B51-CBEB-5F37-19A8-55CC30BA3B0D" name="PR_BSCS_PLAN">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 15:33:11 UTC</createdTime>
 <ownerDesignName>modelo_bscs</ownerDesignName>
@@ -8,15 +8,27 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_PLAN_BSCS" id="A8357848-0FFA-5382-F69C-78AA5455F00F">
+<Column name="SYSTEM_ID_PLAN_N_BSCS" id="2E437944-2E0E-187D-CD02-061145183CEB">
 <createdBy>EOC</createdBy>
-<createdTime>2017-02-27 15:33:43 UTC</createdTime>
+<createdTime>2017-03-08 20:35:24 UTC</createdTime>
 <ownerDesignName>modelo_bscs</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SYSTEM_ID_PLAN_C_BSCS" id="46DEB687-8CB7-F57E-C505-FE22110C82E0">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-08 20:35:51 UTC</createdTime>
+<ownerDesignName>modelo_bscs</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="DESC_PLAN_BSCS" id="197CA460-EB18-C4A8-F7A6-6174D6EBD22F">
@@ -33,7 +45,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="7F3865E9-6C84-9C8A-8B98-587D3062C1B1" name="BSCS_PLAN_PK">
+<ind_PK_UK id="7F3865E9-6C84-9C8A-8B98-587D3062C1B1" name="PR_BSCS_PLAN_PK">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 15:33:43 UTC</createdTime>
 <ownerDesignName>modelo_bscs</ownerDesignName>
@@ -41,7 +53,7 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="A8357848-0FFA-5382-F69C-78AA5455F00F"/>
+<colUsage columnID="2E437944-2E0E-187D-CD02-061145183CEB"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

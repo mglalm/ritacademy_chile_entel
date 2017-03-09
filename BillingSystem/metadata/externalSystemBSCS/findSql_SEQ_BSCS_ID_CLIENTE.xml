@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findSql name="externalSystemBSCS.SEQ_BSCS_ID_CLIENTE">
+  <dbSchema>ORDER</dbSchema>
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <label>SEQ_BSCS_ID_CLIENTE</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_api_common.searchContextResult</output>
+  <type>SQL</type>
+  <methodList>
+    <method name="cwOnFinderSQLSel" type="action">
+      <system>true</system>
+      <script>select SEQ_ID_CLIENTE_BSCS.nextval from dual</script>
+    </method>
+  </methodList>
+</findSql>

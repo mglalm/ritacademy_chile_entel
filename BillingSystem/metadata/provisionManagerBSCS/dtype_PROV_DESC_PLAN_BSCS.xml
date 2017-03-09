@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="provisionManagerBSCS.PROV_DESC_PLAN_BSCS">
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>PROV_DESC_PLAN_BSCS</label>
+  <length>15</length>
+  <metaVersion>25</metaVersion>
+</dataType>

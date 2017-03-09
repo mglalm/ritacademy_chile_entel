@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="provisionManagerBSCS.PROV_DESC_PLAN_BSCS_REF">
+  <extends>dtype_cwf.sReference</extends>
+  <label>Plan</label>
+  <length>10</length>
+  <metaVersion>25</metaVersion>
+  <propertyElement type="elslct">
+    <sorted>false</sorted>
+  </propertyElement>
+  <reference>findDoc_provisionManagerBSCS.busquedaPlanesServicios</reference>
+</dataType>

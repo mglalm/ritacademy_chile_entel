@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<participant name="msisdnManagerBSCS.automatico">
-  <label>automatico</label>
-  <metaVersion>25</metaVersion>
-  <participant>iface_msisdnManagerBSCS.msisdnServiceInterface</participant>
-</participant>

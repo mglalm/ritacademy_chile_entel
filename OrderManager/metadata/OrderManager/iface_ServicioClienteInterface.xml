@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="OrderManager.ServicioClienteInterface">
+  <label>ServicioClienteInterface</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="InformarCliente" type="oper">
+      <label>Informar al cliente</label>
+      <type>One-Way</type>
+    </operation>
+    <operation name="Finalizado" type="oper">
+      <label>Finzalizado</label>
+      <type>Notification</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

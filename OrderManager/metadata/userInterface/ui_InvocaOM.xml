@@ -13,6 +13,23 @@
           <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
           <label>Menu</label>
           <overrideList>
+            <override name="HorizontalLayout" type="elext">
+              <elementList>
+                <element name="Tools" type="elmnu">
+                  <label>Tools</label>
+                  <elementList>
+                    <element name="selectApp" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_userInterface.InvocaOM/usrActionMethod_selectApp</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Select Application</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
             <override name="HorizontalLayoutForMenuItems" type="elext">
               <elementList>
                 <element name="InvocaOM" type="elmnu">
@@ -95,6 +112,9 @@
       <form>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/frmui_Forms/vform_formParametros</form>
       <userInterface>doc_OrderManager.docOMParametrosNodos</userInterface>
       <valueType>doc_OrderManager.docOMParametrosNodos</valueType>
+    </method>
+    <method name="selectApp" type="usrActionMethod">
+      <script>UserProfile.selectApp();</script>
     </method>
   </methodList>
 </userInterface>

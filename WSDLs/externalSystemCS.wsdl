@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions name="externalSystemCS" targetNamespace="externalSystemCS"
-	xmlns:tns="externalSystemCS"
+<definitions name="externalSystemCS" targetNamespace="http://www.readinessit.com/namespaces/proyectoCS/externalSystemCS"
+	xmlns:tns="http://www.readinessit.com/namespaces/proyectoCS/externalSystemCS"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 	xmlns="http://schemas.xmlsoap.org/wsdl/"
-	xmlns:externalSystemCS="externalSystemCS">
+	xmlns:externalSystemCS="http://www.readinessit.com/namespaces/proyectoCS/externalSystemCS">
 
 	<types>
-		<schema targetNamespace="externalSystemCS"			
+		<schema targetNamespace="http://www.readinessit.com/namespaces/proyectoCS/externalSystemCS"			
 	xmlns="http://www.w3.org/2001/XMLSchema"			
-	xmlns:externalSystemCS="externalSystemCS"			
+	xmlns:externalSystemCS="http://www.readinessit.com/namespaces/proyectoCS/externalSystemCS"			
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 
@@ -24,27 +24,88 @@
 
 			<!-- Data types and elements -->
 
-			<simpleType name="ID_SERVICIO_SERVICO_CS">
+			<simpleType name="DT_SERV_CS_DESC_CAMPO">
 				<annotation>
-					<documentation>ID_SERVICIO_SERVICO_CS</documentation>
+					<documentation>DT_SERV_CS_DESC_CAMPO</documentation>
 				</annotation>
-				<restriction base="xsd:decimal">
-					<totalDigits value="5"/>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
 				</restriction>
 			</simpleType>
 
-			<simpleType name="SALDO_INICIAL_SERVICIO_CS">
+			<simpleType name="DT_SERV_CS_DESC_PLAN">
 				<annotation>
-					<documentation>SALDO_INICIAL_SERVICIO_CS</documentation>
+					<documentation>DT_SERV_CS_DESC_PLAN</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="30"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="DT_SERV_CS_SALDO_INICIAL">
+				<annotation>
+					<documentation>DT_SERV_CS_SALDO_INICIAL</documentation>
 				</annotation>
 				<restriction base="xsd:decimal">
 					<totalDigits value="10"/>
 				</restriction>
 			</simpleType>
 
-			<simpleType name="ORDER_ID_SERVICIO_CS">
+			<simpleType name="DT_SERV_CS_ID_PLAN_N">
 				<annotation>
-					<documentation>ORDER_ID_SERVICIO_CS</documentation>
+					<documentation>DT_SERV_CS_ID_PLAN_N</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="10"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="DT_SERV_CS_ID_PLAN_C">
+				<annotation>
+					<documentation>DT_SERV_CS_ID_PLAN_C</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="10"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="DT_SERV_CS_SALDO_ACTUAL">
+				<annotation>
+					<documentation>DT_SERV_CS_SALDO_ACTUAL</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="10"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="DT_SERV_CS_MSISDN">
+				<annotation>
+					<documentation>DT_SERV_CS_MSISDN</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="DT_SERV_CS_FECHA_ACTUALIZACION">
+				<annotation>
+					<documentation>DT_SERV_CS_FECHA_ACTUALIZACION</documentation>
+				</annotation>
+				<restriction base="xsd:dateTime">
+				</restriction>
+			</simpleType>
+
+			<simpleType name="DT_SERV_CS_FECHA_ULTIMO_SALDO">
+				<annotation>
+					<documentation>DT_SERV_CS_FECHA_ULTIMO_SALDO</documentation>
+				</annotation>
+				<restriction base="xsd:dateTime">
+				</restriction>
+			</simpleType>
+
+			<simpleType name="DT_SERV_CS_ORDER_ID">
+				<annotation>
+					<documentation>DT_SERV_CS_ORDER_ID</documentation>
 				</annotation>
 				<restriction base="xsd:string">
 					<maxLength value="16"/>
@@ -60,71 +121,36 @@
 				</restriction>
 			</simpleType>
 
-			<simpleType name="ID_PLAN_SERVICIO_CS">
+			<simpleType name="DT_SERV_CS_ID_SERVICIO_C">
 				<annotation>
-					<documentation>ID_PLAN_SERVICIO_CS</documentation>
-				</annotation>
-				<restriction base="xsd:decimal">
-					<totalDigits value="5"/>
-				</restriction>
-			</simpleType>
-
-			<simpleType name="FECHA_ULTIMO_SALDO_SERVICIO_CS">
-				<annotation>
-					<documentation>FECHA_ULTIMO_SALDO_SERVICIO_CS</documentation>
-				</annotation>
-				<restriction base="xsd:dateTime">
-				</restriction>
-			</simpleType>
-
-			<simpleType name="MSISDN_SERVICIO_CS">
-				<annotation>
-					<documentation>MSISDN_SERVICIO_CS</documentation>
+					<documentation>DT_SERV_CS_ID_SERVICIO_C</documentation>
 				</annotation>
 				<restriction base="xsd:string">
-					<maxLength value="15"/>
+					<maxLength value="10"/>
 				</restriction>
 			</simpleType>
 
-			<simpleType name="SALDO_ACTUAL_SERVICIO_CS">
+			<simpleType name="DT_SERV_CS_ID_SERVICIO_ESTADO">
 				<annotation>
-					<documentation>SALDO_ACTUAL_SERVICIO_CS</documentation>
-				</annotation>
-				<restriction base="xsd:decimal">
-					<totalDigits value="10"/>
-				</restriction>
-			</simpleType>
-
-			<simpleType name="DESC_PLAN_SERVICIO_CS">
-				<annotation>
-					<documentation>DESC_PLAN_SERVICIO_CS</documentation>
-				</annotation>
-				<restriction base="xsd:string">
-					<maxLength value="30"/>
-				</restriction>
-			</simpleType>
-
-			<simpleType name="DESC_CAMPO">
-				<annotation>
-					<documentation>DESC_CAMPO</documentation>
-				</annotation>
-				<restriction base="xsd:string">
-					<maxLength value="15"/>
-				</restriction>
-			</simpleType>
-
-			<simpleType name="ID_SERVICIO_ESTADO_SERVICO_CS">
-				<annotation>
-					<documentation>ID_SERVICIO_ESTADO_SERVICO_CS</documentation>
+					<documentation>DT_SERV_CS_ID_SERVICIO_ESTADO</documentation>
 				</annotation>
 				<restriction base="xsd:string">
 					<maxLength value="1"/>
 				</restriction>
 			</simpleType>
 
-			<simpleType name="FECHA_ACTIVACION_SERVICIO_CS">
+			<simpleType name="DT_SERV_CS_ID_SERVICIO_N">
 				<annotation>
-					<documentation>FECHA_ACTIVACION_SERVICIO_CS</documentation>
+					<documentation>DT_SERV_CS_ID_SERVICIO_N</documentation>
+				</annotation>
+				<restriction base="xsd:decimal">
+					<totalDigits value="10"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="DT_SERV_CS_FECHA_ACTIVACION">
+				<annotation>
+					<documentation>DT_SERV_CS_FECHA_ACTIVACION</documentation>
 				</annotation>
 				<restriction base="xsd:dateTime">
 				</restriction>
@@ -138,6 +164,7 @@
 				</annotation>
 					<sequence>
 						<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="orderid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
 					</sequence>
 				</complexType>
 
@@ -179,12 +206,30 @@
 					<documentation>DOC_SERVICIO_SERVICIO_GET</documentation>
 				</annotation>
 					<sequence>
-						<element name="ID_SERVICIO_SERVICO_CS" type="externalSystemCS:ID_SERVICIO_SERVICO_CS"/>
-						<element name="ID_PLAN_SERVICIO_CS" type="externalSystemCS:ID_PLAN_SERVICIO_CS"/>
-						<element name="MSISDN_SERVICIO_CS" type="externalSystemCS:MSISDN_SERVICIO_CS"/>
-						<element name="FECHA_ACTIVACION_SERVICIO_CS" type="externalSystemCS:FECHA_ACTIVACION_SERVICIO_CS"/>
-						<element name="ID_SERVICIO_ESTADO_SERVICO_CS" type="externalSystemCS:ID_SERVICIO_ESTADO_SERVICO_CS"/>
-						<element name="ORDER_ID_SERVICIO_CS" type="externalSystemCS:ORDER_ID_SERVICIO_CS"/>
+						<element name="DT_SERV_CS_ID_SERVICIO_N" type="externalSystemCS:DT_SERV_CS_ID_SERVICIO_N"/>
+						<element name="DT_SERV_CS_ID_SERVICIO_C" type="externalSystemCS:DT_SERV_CS_ID_SERVICIO_C"/>
+						<element name="DT_SERV_CS_MSISDN" type="externalSystemCS:DT_SERV_CS_MSISDN"/>
+						<element name="DT_SERV_CS_ID_PLAN_C" type="externalSystemCS:DT_SERV_CS_ID_PLAN_C"/>
+						<element name="DT_SERV_CS_ORDER_ID" type="externalSystemCS:DT_SERV_CS_ORDER_ID"/>
+						<element name="DT_SERV_CS_ID_SERVICIO_ESTADO" type="externalSystemCS:DT_SERV_CS_ID_SERVICIO_ESTADO"/>
+						<element name="DT_SERV_CS_FECHA_ACTIVACION" type="externalSystemCS:DT_SERV_CS_FECHA_ACTIVACION"/>
+						<element name="DT_SERV_CS_FECHA_ACTUALIZACION" type="externalSystemCS:DT_SERV_CS_FECHA_ACTUALIZACION"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="DOC_SERV_CS_SERVICIOS_VIGENTES">
+				<annotation>
+					<documentation>DOC_SERV_CS_SERVICIOS_VIGENTES</documentation>
+				</annotation>
+					<sequence>
+						<element name="DT_SERV_CS_ID_SERVICIO_N" type="externalSystemCS:DT_SERV_CS_ID_SERVICIO_N"/>
+						<element name="DT_SERV_CS_ID_SERVICIO_C" type="externalSystemCS:DT_SERV_CS_ID_SERVICIO_C"/>
+						<element name="DT_SERV_CS_MSISDN" type="externalSystemCS:DT_SERV_CS_MSISDN"/>
+						<element name="DT_SERV_CS_ID_PLAN_C" type="externalSystemCS:DT_SERV_CS_ID_PLAN_C"/>
+						<element name="DT_SERV_CS_ORDER_ID" type="externalSystemCS:DT_SERV_CS_ORDER_ID"/>
+						<element name="DT_SERV_CS_ID_SERVICIO_ESTADO" type="externalSystemCS:DT_SERV_CS_ID_SERVICIO_ESTADO"/>
+						<element name="DT_SERV_CS_FECHA_ACTIVACION" type="externalSystemCS:DT_SERV_CS_FECHA_ACTIVACION"/>
+						<element name="DT_SERV_CS_FECHA_ACTUALIZACION" type="externalSystemCS:DT_SERV_CS_FECHA_ACTUALIZACION"/>
 					</sequence>
 				</complexType>
 
@@ -193,9 +238,10 @@
 					<documentation>DOC_PLAN_SERVICIO_CS</documentation>
 				</annotation>
 					<sequence>
-						<element name="ID_PLAN_SERVICIO_CS" type="externalSystemCS:ID_PLAN_SERVICIO_CS"/>
-						<element name="DESC_PLAN_SERVICIO_CS" type="externalSystemCS:DESC_PLAN_SERVICIO_CS"/>
-						<element name="SALDO_INICIAL_SERVICIO_CS" type="externalSystemCS:SALDO_INICIAL_SERVICIO_CS"/>
+						<element name="DT_SERV_CS_ID_PLAN_N" type="externalSystemCS:DT_SERV_CS_ID_PLAN_N"/>
+						<element name="DT_SERV_CS_ID_PLAN_C" type="externalSystemCS:DT_SERV_CS_ID_PLAN_C"/>
+						<element name="DT_SERV_CS_DESC_PLAN" type="externalSystemCS:DT_SERV_CS_DESC_PLAN"/>
+						<element name="DT_SERV_CS_SALDO_INICIAL" type="externalSystemCS:DT_SERV_CS_SALDO_INICIAL"/>
 					</sequence>
 				</complexType>
 
@@ -204,10 +250,10 @@
 					<documentation>DOC_SALDOS_SERVICIO_GET_CS</documentation>
 				</annotation>
 					<sequence>
-						<element name="ID_SERVICIO_SERVICO_CS" type="externalSystemCS:ID_SERVICIO_SERVICO_CS"/>
-						<element name="SALDO_INICIAL_SERVICIO_CS" type="externalSystemCS:SALDO_INICIAL_SERVICIO_CS"/>
-						<element name="SALDO_ACTUAL_SERVICIO_CS" type="externalSystemCS:SALDO_ACTUAL_SERVICIO_CS"/>
-						<element name="FECHA_ULTIMO_SALDO_SERVICIO_CS" type="externalSystemCS:FECHA_ULTIMO_SALDO_SERVICIO_CS"/>
+						<element name="ID_SERVICIO_SERVICO_CS" type="externalSystemCS:DT_SERV_CS_ID_SERVICIO_N"/>
+						<element name="SALDO_INICIAL_SERVICIO_CS" type="externalSystemCS:DT_SERV_CS_SALDO_INICIAL"/>
+						<element name="SALDO_ACTUAL_SERVICIO_CS" type="externalSystemCS:DT_SERV_CS_SALDO_ACTUAL"/>
+						<element name="FECHA_ULTIMO_SALDO_SERVICIO_CS" type="externalSystemCS:DT_SERV_CS_FECHA_ULTIMO_SALDO"/>
 					</sequence>
 				</complexType>
 

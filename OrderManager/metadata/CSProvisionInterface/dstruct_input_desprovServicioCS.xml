@@ -10,5 +10,10 @@
       <element>dtype_com.conceptwave.system.String</element>
       <label>msisdn</label>
     </child>
+    <child name="orderid" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>orderid</label>
+    </child>
   </childList>
 </dataStructure>

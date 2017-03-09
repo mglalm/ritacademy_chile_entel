@@ -16,7 +16,7 @@
             <override name="HorizontalLayout" type="elext">
               <elementList>
                 <element name="tools" type="elmnu">
-                  <label>Tools</label>
+                  <label>Aplicaciones</label>
                   <elementList>
                     <element name="selectApp" type="elmnu">
                       <clickMethod type="varPath">
@@ -24,7 +24,7 @@
                           <variablePath>ui_applicationUICS.CSLite/usrActionMethod_selectApp</variablePath>
                         </variablePathList>
                       </clickMethod>
-                      <label>Select Application</label>
+                      <label>Seleccionar Aplicación</label>
                     </element>
                   </elementList>
                 </element>
@@ -81,15 +81,6 @@
     </vform>
   </vformList>
   <methodList>
-    <method name="nvoCliente" type="usrActionMethod">
-      <form>doc_customerManagerCS.DOC_CLIENTE_BSCS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
-      <userInterface>doc_customerManagerCS.DOC_CLIENTE_BSCS</userInterface>
-      <valueType>doc_customerManagerCS.DOC_CLIENTE_BSCS</valueType>
-    </method>
-    <method name="buscarCliente" type="usrActionMethod">
-      <userInterface>findDoc_customerManagerCS.busquedaCliente</userInterface>
-      <valueType>findDoc_customerManagerCS.busquedaCliente</valueType>
-    </method>
     <method name="selectApp" type="usrActionMethod">
       <script>UserProfile.selectApp();</script>
     </method>

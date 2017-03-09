@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="externalSystemBSCS.FIND_SERV_BSCS_SERVICIOS_HIST">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</input>
+  <label>FIND_SERV_BSCS_SERVICIOS_HIST</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</output>
+  <type>document</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</document>
+      <mappedDocument>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</mappedDocument>
+      <mappedPath>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_FECHA_ACTIVACION</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_FECHA_ACTIVACION</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</document>
+      <mappedDocument>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</mappedDocument>
+      <mappedPath>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_FECHA_ACTUALIZACION</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_FECHA_ACTUALIZACION</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</document>
+      <mappedDocument>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</mappedDocument>
+      <mappedPath>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_CLIENTE_C</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_CLIENTE_C</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</document>
+      <mappedDocument>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</mappedDocument>
+      <mappedPath>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_CLIENTE_N</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_CLIENTE_N</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</document>
+      <mappedDocument>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</mappedDocument>
+      <mappedPath>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_PLAN_C</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_PLAN_C</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</document>
+      <mappedDocument>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</mappedDocument>
+      <mappedPath>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_PLAN_N</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_PLAN_N</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</document>
+      <mappedDocument>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</mappedDocument>
+      <mappedPath>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_SERVICIO_C</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_SERVICIO_C</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</document>
+      <mappedDocument>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</mappedDocument>
+      <mappedPath>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_SERVICIO_ESTADO</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_SERVICIO_ESTADO</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</document>
+      <mappedDocument>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</mappedDocument>
+      <mappedPath>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_SERVICIO_N</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ID_SERVICIO_N</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</document>
+      <mappedDocument>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</mappedDocument>
+      <mappedPath>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_MSISDN</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_MSISDN</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</document>
+      <mappedDocument>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST</mappedDocument>
+      <mappedPath>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ORDER_ID</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_HIST/leaf_DT_SERV_BSCS_ORDER_ID</path>
+    </search>
+  </searchList>
+</findDoc>

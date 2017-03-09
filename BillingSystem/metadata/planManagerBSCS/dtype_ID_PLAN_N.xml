@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="planManagerBSCS.ID_PLAN_N">
+  <extends>dtype_com.conceptwave.system.Decimal</extends>
+  <label>Id Plan</label>
+  <length>10</length>
+  <metaVersion>25</metaVersion>
+</dataType>

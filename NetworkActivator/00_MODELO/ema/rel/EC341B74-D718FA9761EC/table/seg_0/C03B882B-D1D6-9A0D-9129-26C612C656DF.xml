@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C03B882B-D1D6-9A0D-9129-26C612C656DF" name="EMA_ESTADO_SERVICIO">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C03B882B-D1D6-9A0D-9129-26C612C656DF" name="PR_EMA_ESTADO_SERVICIO">
 <createdBy>EOC</createdBy>
 <createdTime>2017-03-02 19:48:47 UTC</createdTime>
 <ownerDesignName>ema</ownerDesignName>

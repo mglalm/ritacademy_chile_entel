@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="provisionManagerCS.DT_FECHA_ACTUALIZACION">
+  <extends>dtype_com.conceptwave.system.DateTime</extends>
+  <label>Fecha Actualización</label>
+  <metaVersion>25</metaVersion>
+  <propertyElement type="eldatetime"/>
+</dataType>

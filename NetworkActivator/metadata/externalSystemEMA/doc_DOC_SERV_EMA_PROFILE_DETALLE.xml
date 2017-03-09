@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemEMA.DOC_SERV_EMA_PROFILE_DETALLE">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{649aff4d-8cbe-473e-a9ac-7fe08fcdd702}</guid>
+  <label>DOC_SERV_EMA_PROFILE_DETALLE</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_NODO_SERVICIO_EMA_N" type="leaf">
+      <column>SYSTEM_ID_NODO_N_EMA</column>
+      <key>1</key>
+      <table>PR_EMA_PROFILE_DETALLE</table>
+      <valueType>dtype_externalSystemEMA.DT_SERV_EMA_ID_NODO_N</valueType>
+    </variable>
+    <variable name="ID_NODO_SERVICIO_EMA_C" type="leaf">
+      <column>SYSTEM_ID_NODO_C_EMA</column>
+      <table>PR_EMA_PROFILE_DETALLE</table>
+      <valueType>dtype_externalSystemEMA.DT_SERV_EMA_ID_NODO_C</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_PROFILE_C" type="leaf">
+      <column>SYSTEM_ID_PROFILE_C_EMA</column>
+      <table>PR_EMA_PROFILE_DETALLE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_C</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_PROFILE_N" type="leaf">
+      <column>SYSTEM_ID_PROFILE_N_EMA</column>
+      <table>PR_EMA_PROFILE_DETALLE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_N</valueType>
+    </variable>
+    <variable name="DESC_PROF_DETALLE_SERVICIO_EMA" type="leaf">
+      <column>DESC_PROFILE_DETALLE</column>
+      <table>PR_EMA_PROFILE_DETALLE</table>
+      <valueType>dtype_externalSystemEMA.DT_SERV_EMA_DESC_PROF_DETALLE</valueType>
+    </variable>
+  </variableList>
+</document>

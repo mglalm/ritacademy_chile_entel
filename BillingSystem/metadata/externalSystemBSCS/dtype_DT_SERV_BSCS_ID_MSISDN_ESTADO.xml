@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="externalSystemBSCS.DT_SERV_BSCS_ID_MSISDN_ESTADO">
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <length>1</length>
+  <metaVersion>25</metaVersion>
+</dataType>

@@ -6,15 +6,20 @@
   <label>DOC_PLAN_BSCS</label>
   <metaVersion>25</metaVersion>
   <variableList>
-    <variable name="ID_PLAN" type="leaf">
-      <column>ID_PLAN_BSCS</column>
+    <variable name="ID_PLAN_C" type="leaf">
+      <column>SYSTEM_ID_PLAN_C_BSCS</column>
       <key>1</key>
-      <table>BSCS_PLAN</table>
-      <valueType>dtype_planManagerBSCS.ID_PLAN</valueType>
+      <table>PR_BSCS_PLAN</table>
+      <valueType>dtype_planManagerBSCS.ID_PLAN_C</valueType>
+    </variable>
+    <variable name="ID_PLAN_N" type="leaf">
+      <column>SYSTEM_ID_PLAN_N_BSCS</column>
+      <table>PR_BSCS_PLAN</table>
+      <valueType>dtype_planManagerBSCS.ID_PLAN_N</valueType>
     </variable>
     <variable name="DESC_PLAN" type="leaf">
       <column>DESC_PLAN_BSCS</column>
-      <table>BSCS_PLAN</table>
+      <table>PR_BSCS_PLAN</table>
       <valueType>dtype_planManagerBSCS.DESC_PLAN</valueType>
     </variable>
   </variableList>
@@ -42,13 +47,81 @@
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
                     <element name="DOC_PLAN_BSCSHeader" type="elhdr">
-                      <label>Nuevo Plan</label>
+                      <label>Creación Plan</label>
                     </element>
                     <element name="ID_PLAN" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS/leaf_ID_PLAN</variablePath>
+                          <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS/leaf_ID_PLAN_C</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="DESC_PLAN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS/leaf_DESC_PLAN</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="Menu" type="exov">
+            <base>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</base>
+            <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+            <overrideList>
+              <override name="hl1" type="elhlt">
+                <alignment>left,center</alignment>
+                <elementList>
+                  <element name="cwfSave" type="elmnu">
+                    <menuAccel type="mAccelP"/>
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS/ui_UserInterface/usrActionMethod_btn_guardar</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <icon>/cwf/MenuIconSave.gif</icon>
+                    <iconHeight>30px</iconHeight>
+                    <iconWidth>30px</iconWidth>
+                    <label>Guardar</label>
+                    <showDown>true</showDown>
+                    <tooltip>Save</tooltip>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Formulario_Edicion" type="vform">
+            <label>Formulario_Edicion</label>
+            <root name="Formulario_EdicionGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_PLAN_BSCSGrid" type="elgrd">
+                  <numOfCols>2</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DOC_PLAN_BSCSHeader" type="elhdr">
+                      <label>Editar Plan</label>
+                    </element>
+                    <element name="ID_PLAN" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS/leaf_ID_PLAN_C</variablePath>
                         </variablePathList>
                       </variable>
                     </element>
@@ -68,5 +141,27 @@
         </overlayList>
       </vform>
     </vformList>
+    <methodList>
+      <method name="btn_guardar" type="usrActionMethod">
+        <script><![CDATA[
+          externalSystemBSCS.quiebra_ejecucion();
+
+          if ( this.model.ID_PLAN_C != null && this.model.ID_PLAN_C != "" )
+          {
+              if ( this.model.ID_PLAN_N == null )
+              {
+                  //-----OBTIENE NUEVA SECUENCIA PARA EL NUEVO PLAN
+                  var doc_secuencia = new Finder("planManagerBSCS.SEQ_ID_PLAN_BSCS");
+                  var nueva_secuencia = doc_secuencia.search();
+                  var var_id_plan=nueva_secuencia[0].type;
+                  this.model.ID_PLAN_N=var_id_plan;
+              }
+
+              this.save();
+              Global.showUserMessage("Plan Almacenado");
+          }
+        ]]></script>
+      </method>
+    </methodList>
   </UserInterface>
 </document>

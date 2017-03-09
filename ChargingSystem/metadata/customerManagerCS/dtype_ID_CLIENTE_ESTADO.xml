@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="customerManagerCS.ID_CLIENTE_ESTADO">
-  <extends>dtype_com.conceptwave.system.String</extends>
-  <label>Id Estado</label>
-  <length>1</length>
-  <metaVersion>25</metaVersion>
-</dataType>

@@ -20,7 +20,7 @@
     var output = new DataStructure("externalSystemCS.output_provServicioCS");
 
     //-----VALIDANDO SI EXISTE EL PLAN QUE SE RECIBE COMO PARAMETRO
-    var planes_activos = new Finder("externalSystemCS.DOC_PLAN_CS_FIND");
+    var planes_activos = new Finder("externalSystemCS.FIND_SERV_CS_DOC_PLAN");
     var resultado = planes_activos.search();
 
     var existe_plan = 0 ;
@@ -28,10 +28,10 @@
     {
         for (var i=0 ;    i < resultado.length ; i++ )
         {
-            if (resultado[i].ID_PLAN_SERVICIO_CS == var_idplancs )
+            if (resultado[i].DT_SERV_CS_ID_PLAN_C == var_idplancs )
             {
                 existe_plan = 1;
-                var_saldo_inicial=resultado[i].SALDO_INICIAL_SERVICIO_CS;
+                var_saldo_inicial=resultado[i].DT_SERV_CS_SALDO_INICIAL;
             }
         }
     }
@@ -44,14 +44,14 @@
 
 
     //-----VERIFICAR QUE NO TENGA ACTIVO PREVIAMENTE EL SERVICIO
-    var listado_servicios = new Finder("externalSystemCS.DOC_SERVICIO_CS_FIND");
+    var listado_servicios = new Finder("externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES");
     var resultado = listado_servicios.search();
     var ya_tiene_servicio = 0 ;
     if ( resultado.length > 0)
     {
         for ( var i = 0 ; i < resultado.length ; i++ )
         {
-            if ( resultado[i].ID_SERVICIO_ESTADO_SERVICO_CS == var_id_servicio_estado && resultado[i].MSISDN_SERVICIO_CS == var_msisdn )
+            if ( resultado[i].DT_SERV_CS_ID_SERVICIO_ESTADO == var_id_servicio_estado && resultado[i].DT_SERV_CS_MSISDN == var_msisdn )
                 ya_tiene_servicio = 1;
         }
     }
@@ -67,23 +67,26 @@
     var doc_secuencia = new Finder("externalSystemCS.SEQ_ID_SERVICIO_CS");
     var nueva_secuencia = doc_secuencia.search();
     var_id_servicio=nueva_secuencia[0].type;  //Obtiene el valor desde el finder
+    var var_id_servicio_c=var_id_servicio.toString();
 
     //-----SE ACTIVAN LOS SERVICIOS
     externalSystemCS.quiebra_ejecucion();
     var fecha_hoy = new Date();
-    var documento = new Document("externalSystemCS.DOC_SERVICIO_SERVICIO_GET");
-    documento.ID_SERVICIO_SERVICO_CS=var_id_servicio;
-    documento.ID_PLAN_SERVICIO_CS=var_idplancs;
-    documento.MSISDN_SERVICIO_CS=var_msisdn;
-    documento.ID_SERVICIO_ESTADO_SERVICO_CS=var_id_servicio_estado;
-    documento.ORDER_ID_SERVICIO_CS=var_orderid;
-    documento.FECHA_ACTIVACION_SERVICIO_CS=fecha_hoy;
+    var documento = new Document("externalSystemCS.DOC_SERV_CS_SERVICIOS_HIST");
+    documento.DT_SERV_CS_ID_SERVICIO_N=var_id_servicio;
+    documento.DT_SERV_CS_ID_SERVICIO_C=var_id_servicio_c;
+    documento.DT_SERV_CS_MSISDN=var_msisdn;
+    documento.DT_SERV_CS_ID_PLAN_C=var_idplancs;
+    documento.DT_SERV_CS_ORDER_ID=var_orderid;
+    documento.DT_SERV_CS_ID_SERVICIO_ESTADO=var_id_servicio_estado;
+    documento.DT_SERV_CS_FECHA_ACTIVACION=fecha_hoy;
+    documento.DT_SERV_CS_FECHA_ACTUALIZACION=fecha_hoy;
     documento.save();
 
     //-----SE ACTIVA EL SALDO INICIAL
 
     var fecha_hoy = new Date();
-    var documento = new Document("externalSystemCS.DOC_SALDOS_SERVICIO_GET_CS");
+    var documento = new Document("externalSystemCS.DOC_SERV_CS_SALDOS");
 
     documento.ID_SERVICIO_SERVICO_CS=var_id_servicio;
     documento.SALDO_INICIAL_SERVICIO_CS=var_saldo_inicial;

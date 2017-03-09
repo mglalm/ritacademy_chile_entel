@@ -11,12 +11,16 @@
     var var_rut = input.rut;
     var var_msisdn = input.msisdn;
     var var_id_plan_bscs = input.id_plan_bscs;
+
     var var_id_cliente2;
+    var var_id_cliente_n;
+    var var_id_cliente_c;
+
     var output = new DataStructure("externalSystemBSCS.output_provServicioBSCS");
 
-    //-----CREAR CLIENTE SI ES QUE NO EXISTE
+    //----------------------------------------------------CREAR CLIENTE SI ES QUE NO EXISTE
     externalSystemBSCS.quiebra_ejecucion();
-    var clientes_existentes = new Finder("externalSystemBSCS.FIND_SERV_CLIENTE_BSCS");
+    var clientes_existentes = new Finder("externalSystemBSCS.FIND_SERV_BSCS_CLIENTE");
     var resultado = clientes_existentes.search();
     var existe_cliente = 0;
 
@@ -24,12 +28,13 @@
     {
         for (var i=0 ; i < resultado.length ; i++ )
         {
-            if (resultado[i].RUT_SERVICIO_BSCS == var_rut && resultado[i].ID_CLIENTE_ESTADO_SERV_BSCS == 1)
+            if (resultado[i].DT_SERV_BSCS_RUT == var_rut && resultado[i].DT_SERV_BSCS_ID_CLIENTE_ESTADO == 1)
             {
                 existe_cliente = 1;
-                var_id_cliente2=resultado[i].ID_CLIENTE_SERVICIO_BSCS;
+                var_id_cliente_n=resultado[i].DT_SERV_BSCS_ID_CLIENTE_N;
+                var_id_cliente_c=resultado[i].DT_SERV_BSCS_ID_CLIENTE_C;
             }
-            if (resultado[i].RUT_SERVICIO_BSCS == var_rut && resultado[i].ID_CLIENTE_ESTADO_SERV_BSCS == 2)
+            if (resultado[i].DT_SERV_BSCS_RUT == var_rut && resultado[i].DT_SERV_BSCS_ID_CLIENTE_ESTADO == 2)
             {
                 //-----CLIENTE EXISTE PERO CON ESTADO SUSPENDIDO, NO SE PUEDEN ACTIVAR NUEVOS SERVICIOS
                 output.estado = "NOOK";
@@ -38,27 +43,30 @@
             }
         }
     }
+
     if ( existe_cliente == 0 )
     {
         //-----CREAR CLIENTE DADO QUE NO EXISTE EN LA BD
         //-----OBTIENE NUEVA SECUENCIA PARA EL SERVICIO
-        var doc_secuencia = new Finder("externalSystemBSCS.SEQ_ID_CLIENTE_BSCS");
+        var doc_secuencia = new Finder("externalSystemBSCS.SEQ_BSCS_ID_CLIENTE");
         var nueva_secuencia = doc_secuencia.search();
-        var var_id_cliente=nueva_secuencia[0].type;  //Obtiene el valor desde el finder
+        var_id_cliente_n=nueva_secuencia[0].type;  //Obtiene el valor desde el finder
         var fecha_hoy = new Date();
-        var documento = new Document("externalSystemBSCS.DOC_SERV_CLIENTE_BSCS");
-        documento.ID_CLIENTE_SERVICIO_BSCS=var_id_cliente;
-        documento.FECHA_CREACION_SERVICIO_BSCS=fecha_hoy;
-        documento.ID_CLIENTE_ESTADO_SERV_BSCS=1;
-        documento.RUT_SERVICIO_BSCS=var_rut;
+        var documento = new Document("externalSystemBSCS.DOC_SERV_BSCS_CLIENTE");
+        var_id_cliente_c=var_id_cliente_n.toString();
+        documento.DT_SERV_BSCS_ID_CLIENTE_N=var_id_cliente_n;
+        documento.DT_SERV_BSCS_ID_CLIENTE_C=var_id_cliente_c;
+        documento.DT_SERV_BSCS_FECHA_CREACION=fecha_hoy;
+        documento.DT_SERV_BSCS_ID_CLIENTE_ESTADO=1;
+        documento.DT_SERV_BSCS_RUT=var_rut;
         documento.save();
     }
-    else
-        var_id_cliente=var_id_cliente2;
+    //else
+    //    var_id_cliente=var_id_cliente2;
 
-    //-----VALIDAR SI EL PLAN EXISTE
+    //----------------------------------------------------VALIDAR SI EL PLAN EXISTE
     externalSystemBSCS.quiebra_ejecucion();
-    var planes_existentes = new Finder("externalSystemBSCS.FIND_SERV_PLAN_BSCS");
+    var planes_existentes = new Finder("externalSystemBSCS.FIND_SERV_BSCS_PLAN");
     var resultado = planes_existentes.search();
     var existe_plan = 0;
 
@@ -66,8 +74,12 @@
     {
         for (var i=0 ; i < resultado.length ; i++ )
         {
-            if (resultado[i].ID_PLAN_SERVICIO_BSCS == var_id_plan_bscs)
+            if (resultado[i].DT_SERV_BSCS_ID_PLAN_C == var_id_plan_bscs)
+            {
                 existe_plan = 1;
+                var var_id_plan_bscs_c=resultado[i].DT_SERV_BSCS_ID_PLAN_C;
+                var var_id_plan_bscs_n=resultado[i].DT_SERV_BSCS_ID_PLAN_N;
+            }
         }
     }
     if ( existe_plan == 0 )
@@ -77,9 +89,9 @@
         return output;
     }
 
-    //-----VALIDAR SI EL MSIDDN ESTA EN ESTADO RESERVADO
+    //----------------------------------------------------VALIDAR SI EL MSISDN ESTA EN ESTADO RESERVADO
     externalSystemBSCS.quiebra_ejecucion();
-    var msisdn_existentes = new Finder("externalSystemBSCS.FIND_SERV_MSISDN_BSCS");
+    var msisdn_existentes = new Finder("externalSystemBSCS.FIND_SERV_BSCS_MSISDN");
     var resultado = msisdn_existentes.search();
     var existe_msisdn = 0;
 
@@ -87,7 +99,7 @@
     {
         for (var i=0 ; i < resultado.length ; i++ )
         {
-            if (resultado[i].MSISDN_SERVICIO_BSCS == var_msisdn && resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS == 2 )
+            if (resultado[i].DT_SERV_BSCS_MSISDN == var_msisdn && resultado[i].DT_SERV_BSCS_ID_MSISDN_ESTADO == 2 )
                 existe_msisdn = 1;
         }
     }
@@ -101,7 +113,7 @@
     //REGISTRAR SERVICIO y LUEGO CAMBIAR ESTADO DE MSISDN a ASIGNADO
     //-----VALIDAR SI MSISDN/CLIENTE NO TIENEN EL SERVICIO ACTIVO
     externalSystemBSCS.quiebra_ejecucion();
-    var servicios_existentes = new Finder("externalSystemBSCS.FIND_SERV_SERVICIO_BSCS");
+    var servicios_existentes = new Finder("externalSystemBSCS.FIND_SERV_BSCS_SERVICIOS_VIGENTES");
     var resultado = servicios_existentes.search();
     var existe_servicio = 0;
 
@@ -109,7 +121,7 @@
     {
         for (var i=0 ; i < resultado.length ; i++ )
         {
-            if (resultado[i].MSISDN_SERVICIO_BSCS == var_msisdn && resultado[i].ID_SERV_ESTADO_SERVICIO_BSCS == 1 )
+            if (resultado[i].DT_SERV_BSCS_MSISDN == var_msisdn && resultado[i].DT_SERV_BSCS_ID_SERVICIO_ESTADO == 1 )
                 existe_servicio = 1;
         }
     }
@@ -121,21 +133,32 @@
     }
 
 
-    //-----SE ACTIVAN LOS SERVICIOS
+    //----------------------------------------------------SE ACTIVAN LOS SERVICIOS
     externalSystemBSCS.quiebra_ejecucion();
+    //-----OBTIENE NUEVA SECUENCIA PARA EL SERVICIO
+    var doc_secuencia = new Finder("externalSystemBSCS.SEQ_BSCS_ID_SERVICIO");
+    var nueva_secuencia = doc_secuencia.search();
+    var var_id_servicio_n=nueva_secuencia[0].type;  //Obtiene el valor desde el finder
+    var var_id_servicio_c=var_id_servicio_n.toString();
+
     var fecha_hoy = new Date();
-    var documento = new Document("externalSystemBSCS.DOC_SERV_SERVICIOS_BSCS");
-    documento.ID_CLIENTE_SERVICIO_BSCS=var_id_cliente;
-    documento.MSISDN_SERVICIO_BSCS=var_msisdn;
-    documento.FECHA_ACTIVACION_SERVICIO_BSCS=fecha_hoy;
-    documento.ID_SERV_ESTADO_SERVICIO_BSCS=1;
-    documento.ID_PLAN_SERVICIO_BSCS=var_id_plan_bscs;
-    documento.ORDER_ID_SERVICIO_BSCS=var_orderid;
+    var documento = new Document("externalSystemBSCS.DOC_SERV_BSCS_SERVICIOS_VIGENTES");
+    documento.DT_SERV_BSCS_ID_SERVICIO_N=var_id_servicio_n;
+    documento.DT_SERV_BSCS_ID_SERVICIO_C=var_id_servicio_c;
+    documento.DT_SERV_BSCS_ID_CLIENTE_N=var_id_cliente_n;
+    documento.DT_SERV_BSCS_ID_CLIENTE_C=var_id_cliente_c;
+    documento.DT_SERV_BSCS_MSISDN=var_msisdn;
+    documento.DT_SERV_BSCS_ID_PLAN_C=var_id_plan_bscs_c;
+    documento.DT_SERV_BSCS_ID_PLAN_N=var_id_plan_bscs_n;
+    documento.DT_SERV_BSCS_ORDER_ID=var_orderid;
+    documento.DT_SERV_BSCS_ID_SERVICIO_ESTADO=1;
+    documento.DT_SERV_BSCS_FECHA_ACTIVACION=fecha_hoy;
+    documento.DT_SERV_BSCS_FECHA_ACTUALIZACION=fecha_hoy;
     documento.save();
 
     //-----CAMBIAMOS EL ESTADO DEL MSISDN A ASIGNADO
     externalSystemBSCS.quiebra_ejecucion();
-    var msisdn_existentes = new Finder("externalSystemBSCS.FIND_SERV_MSISDN_BSCS");
+    var msisdn_existentes = new Finder("externalSystemBSCS.FIND_SERV_BSCS_MSISDN");
     var resultado = msisdn_existentes.search();
     var existe_msisdn = 0;
 
@@ -143,10 +166,10 @@
     {
         for (var i=0 ; i < resultado.length ; i++ )
         {
-            if (resultado[i].MSISDN_SERVICIO_BSCS == var_msisdn && resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS == 2 )
+            if (resultado[i].DT_SERV_BSCS_MSISDN == var_msisdn && resultado[i].DT_SERV_BSCS_ID_MSISDN_ESTADO == 2 )
             {
                 existe_msisdn = 1;
-                resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS = 3;
+                resultado[i].DT_SERV_BSCS_ID_MSISDN_ESTADO = 3;
                 resultado[i].save();
             }
         }

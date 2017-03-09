@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemBSCS.DOC_SERV_BSCS_MSISDN">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{da694eb2-94df-4fa5-8438-c79b185e951a}</guid>
+  <label>DOC_SERV_BSCS_MSISDN</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_SERV_BSCS_MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <key>1</key>
+      <table>PR_BSCS_MSISDN</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_MSISDN</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_ID_MSISDN_ESTADO" type="leaf">
+      <column>ID_MSISDN_ESTADO</column>
+      <table>PR_BSCS_MSISDN</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_MSISDN_ESTADO</valueType>
+    </variable>
+  </variableList>
+</document>

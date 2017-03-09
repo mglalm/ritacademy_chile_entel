@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemCS.DOC_SERV_CS_PLAN">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{59161a05-fbf5-4c96-821b-256d2d1ef977}</guid>
+  <label>DOC_SERV_CS_PLAN</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_SERV_CS_ID_PLAN_N" type="leaf">
+      <column>SYSTEM_ID_PLAN_N_CS</column>
+      <key>1</key>
+      <table>PR_CS_PLAN</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_ID_PLAN_N</valueType>
+    </variable>
+    <variable name="DT_SERV_CS_ID_PLAN_C" type="leaf">
+      <column>SYSTEM_ID_PLAN_C_CS</column>
+      <table>PR_CS_PLAN</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_ID_PLAN_C</valueType>
+    </variable>
+    <variable name="DT_SERV_CS_DESC_PLAN" type="leaf">
+      <column>DESC_PLAN</column>
+      <table>PR_CS_PLAN</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_DESC_PLAN</valueType>
+    </variable>
+    <variable name="DT_SERV_CS_SALDO_INICIAL" type="leaf">
+      <column>SALDO_INICIAL</column>
+      <table>PR_CS_PLAN</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_SALDO_INICIAL</valueType>
+    </variable>
+  </variableList>
+</document>

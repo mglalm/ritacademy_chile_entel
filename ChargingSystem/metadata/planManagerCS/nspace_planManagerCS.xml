@@ -2,5 +2,6 @@
 <nameSpace name="planManagerCS">
   <label>Plan Manager CS</label>
   <metaVersion>25</metaVersion>
+  <targetJavaNS>planManagerCS</targetJavaNS>
   <targetNS>http://www.readinessit.com/namespaces/proyectoCS/planManagerCS</targetNS>
 </nameSpace>

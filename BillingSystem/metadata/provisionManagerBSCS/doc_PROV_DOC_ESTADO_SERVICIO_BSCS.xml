@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerBSCS.PROV_DOC_ESTADO_SERVICIO_BSCS">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{1404d96c-0b46-40f0-96f8-c0fd9a8a4033}</guid>
+  <label>PROV_DOC_ESTADO_SERVICIO_BSCS</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_SERVICIO_ESTADO" type="leaf">
+      <column>ID_SERVICIO_ESTADO</column>
+      <key>1</key>
+      <table>PR_BSCS_SERVICIO_ESTADO</table>
+      <valueType>dtype_provisionManagerBSCS.DT_BSCS_ID_SERVICIO_ESTADO</valueType>
+    </variable>
+    <variable name="DESC_ESTADO_SERVICIO_BSCS" type="leaf">
+      <column>DESC_SERVICIO_ESTADO</column>
+      <table>PR_BSCS_SERVICIO_ESTADO</table>
+      <valueType>dtype_provisionManagerBSCS.PROV_DESC_ESTADO_SERVICIO_BSCS</valueType>
+    </variable>
+  </variableList>
+  <methodList>
+    <method name="cwOnDocVisualKey" type="action">
+      <system>true</system>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <script>return this.DESC_ESTADO_SERVICIO_BSCS;</script>
+    </method>
+  </methodList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerBSCS.PROV_DOC_ESTADO_SERVICIO_BSCS</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

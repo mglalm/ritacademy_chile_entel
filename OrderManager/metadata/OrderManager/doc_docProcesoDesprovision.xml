@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="OrderManager.docProcesoDesprovision">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{b38738d7-3760-4f09-af45-8a4dad5b8cc9}</guid>
+  <label>docProcesoDesprovision</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="IN_orderId" type="leaf">
+      <valueType>dtype_OrderManager.dtOrderId</valueType>
+    </variable>
+    <variable name="IN_rut" type="leaf">
+      <valueType>dtype_OrderManager.dtRut</valueType>
+    </variable>
+    <variable name="IN_POId" type="leaf">
+      <valueType>dtype_OrderManager.dtPOId</valueType>
+    </variable>
+    <variable name="IN_tipoOrden" type="leaf">
+      <valueType>dtype_OrderManager.dtTipoOrden</valueType>
+    </variable>
+    <variable name="OUT_estadoOrden" type="leaf">
+      <valueType>dtype_OrderManager.dtEstado</valueType>
+    </variable>
+    <variable name="CTRL_MSISDN" type="leaf">
+      <valueType>dtype_OrderManager.dtMSISDN</valueType>
+    </variable>
+    <variable name="CTRL_ERROR" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="CTRL_DESC_ERROR" type="leaf">
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+    </variable>
+    <variable name="CTRL_NotificacionOK" type="leaf">
+      <valueType>dtype_com.conceptwave.system.Boolean</valueType>
+    </variable>
+    <variable name="CTRL_ERROR_DesprovisionBSCS" type="leaf">
+      <valueType>dtype_com.conceptwave.system.Boolean</valueType>
+    </variable>
+    <variable name="CTRL_ERROR_DesprovisionCS" type="leaf">
+      <valueType>dtype_com.conceptwave.system.Boolean</valueType>
+    </variable>
+    <variable name="CTRL_ERROR_DesprovisionEMA" type="leaf">
+      <valueType>dtype_com.conceptwave.system.Boolean</valueType>
+    </variable>
+  </variableList>
+</document>

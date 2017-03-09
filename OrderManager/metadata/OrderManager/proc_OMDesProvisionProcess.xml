@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="OrderManager.OMDesProvisionProcess">
+  <activity name="inicio" type="seqActivity">
+    <label>inicio</label>
+    <x>-67.0</x>
+    <y>-2.0</y>
+    <childList>
+      <child name="rescataParametros" type="scriptActivity">
+        <label>rescataParametros</label>
+        <x>43.0</x>
+        <y>-3.0</y>
+        <methodList>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script><![CDATA[
+              OrderManager.debug();
+
+              var docProc = this.process.processDocument;
+
+              var poCliente = new Document("OrderManager.docOMPOCliente");  //documento asociado a la tabla de BD OM_PO_CLIENTE
+              var fnd = new Finder("OrderManager.finOM_POCliente"); // finder del PO_CLIENTE
+
+              poCliente.rut = this.process.processDocument.IN_rut;
+              poCliente.POId = this.process.processDocument.IN_POId;
+
+              var resultOM_POCliente = fnd.search(resultOM_POCliente, poCliente);//retorna una DataObjectList() -> ARRAY
+              var doc = resultOM_POCliente && resultOM_POCliente.length>0 ? resultOM_POCliente[0] : null;
+
+              //Si no lo encuentra en BD, debe entregar ERROR, ya que no hay nada que desprovisionar
+
+              if(doc){
+                  poCliente = doc;
+                  this.process.processDocument.CTRL_MSISDN = doc.MSISDN;
+              }
+              else{
+                  this.process.processDocument.CTRL_ERROR = "14";
+                  this.process.processDocument.CTRL_DESC_ERROR = "Error 14: No se encuentra el servicio que se desea dar de baja.";
+                  this.process.processDocument.OUT_estadoOrden = "ErrorPOCliente";
+                  return;
+              }
+
+              var orden = new Document("OrderManager.docOMOrden");  //documento asociado a la tabla de BD OM_ORDEN
+              var fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
+              var resultOM_Orden; //lista que retornara el finder
+
+              orden.orderId = this.process.processDocument.IN_orderId;
+
+              var resultOM_Orden = fnd.search(resultOM_Orden, orden);//retorna una DataObjectList() -> ARRAY
+              doc = resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
+
+              //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
+
+              //Descomentar estas dos lineas para exportar JAR
+              if(doc){
+                  orden = doc;
+                  orden.rut = docProc.IN_rut;
+                  orden.estado = "En Proceso";
+                  orden.motivoEstado = "La orden ha sido ingresada y se encuentra en proceso de creación."
+                  orden.tipoOrden = docProc.IN_tipoOrden;
+                  orden.save();
+              }
+              else{
+                  this.process.processDocument.CTRL_ERROR = "1";
+                  this.process.processDocument.CTRL_DESC_ERROR = "Error 1: La orden entregada no existe en la base de datos";
+                  this.process.processDocument.OUT_estadoOrden = "ErrorOrden";
+                  return;
+              }
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="parametrosOK" type="switchActivity">
+        <label>parametrosOK</label>
+        <x>242.0</x>
+        <y>-2.0</y>
+        <childList>
+          <child name="ok" type="caseActivity">
+            <label>ok</label>
+            <x>105.0</x>
+            <y>194.0</y>
+            <childList>
+              <child name="desprovisionar" type="allActivity">
+                <label>desprovisionar</label>
+                <x>252.0</x>
+                <y>121.0</y>
+                <childList>
+                  <child name="desProvBSCS" type="opActivity">
+                    <element>iface_BSCSNamespace.interface_serviciosBSCS/oper_desprovServicioBSCS</element>
+                    <label>desProvBSCS</label>
+                    <participant>part_BSCSNamespace.billingParticipant</participant>
+                    <x>87.0</x>
+                    <y>271.0</y>
+                    <methodList>
+                      <method name="cwOnProcActBefore" type="action">
+                        <category>before</category>
+                        <system>true</system>
+                        <script><![CDATA[
+                          OrderManager.debug();
+
+                          this.activityData.orderid = this.process.processDocument.IN_orderId;
+                          this.activityData.msisdn = this.process.processDocument.CTRL_MSISDN;
+                          var a = 1;
+                        ]]></script>
+                      </method>
+                      <method name="cwOnProcActAfter" type="action">
+                        <category>script</category>
+                        <system>true</system>
+                        <script><![CDATA[
+                          OrderManager.debug();
+
+                          var docProc = this.process.processDocument;
+
+                          //resp contiene el resultado del WS, con la respuesta del servicio
+                          var resp = this.activityData;
+
+                          //Se setea la variable de control en verdadero o falso dependiendo de la respuesta
+                          if(resp.estado != "OK")
+                               this.process.processDocument.CTRL_ERROR_DesprovisionBSCS = true;
+                          else
+                              this.process.processDocument.CTRL_ERROR_DesprovisionBSCS = false;
+                        ]]></script>
+                      </method>
+                    </methodList>
+                  </child>
+                  <child name="desProvCS" type="opActivity">
+                    <element>iface_CSProvisionInterface.interface_serviciosCS/oper_desprovServicioCS</element>
+                    <label>desProvCS</label>
+                    <participant>part_CSProvisionInterface.CSParticipant</participant>
+                    <x>250.0</x>
+                    <y>266.0</y>
+                    <methodList>
+                      <method name="cwOnProcActBefore" type="action">
+                        <category>before</category>
+                        <system>true</system>
+                        <script><![CDATA[
+                          OrderManager.debug();
+
+                          this.activityData.orderid = this.process.processDocument.IN_orderId;
+                          this.activityData.msisdn = this.process.processDocument.CTRL_MSISDN;
+                          var a = 1;
+                        ]]></script>
+                      </method>
+                      <method name="cwOnProcActAfter" type="action">
+                        <category>script</category>
+                        <system>true</system>
+                        <script><![CDATA[
+                          OrderManager.debug();
+
+                          var docProc = this.process.processDocument;
+
+                          //resp contiene el resultado del WS, con la respuesta del servicio
+                          var resp = this.activityData;
+
+                          //Se setea la variable de control en verdadero o falso dependiendo de la respuesta
+                          if(resp.estado != "OK")
+                               this.process.processDocument.CTRL_ERROR_DesprovisionCS = true;
+                          else
+                              this.process.processDocument.CTRL_ERROR_DesprovisionCS = false;
+                        ]]></script>
+                      </method>
+                    </methodList>
+                  </child>
+                  <child name="desProvEMA" type="opActivity">
+                    <element>iface_EMANamespace.interface_serviciosEMA/oper_desprovServicioEMA</element>
+                    <label>desProvEMA</label>
+                    <participant>part_EMANamespace.EMAParticipant</participant>
+                    <x>382.0</x>
+                    <y>261.0</y>
+                    <methodList>
+                      <method name="cwOnProcActAfter" type="action">
+                        <category>script</category>
+                        <system>true</system>
+                        <script><![CDATA[
+                          OrderManager.debug();
+
+                          var docProc = this.process.processDocument;
+
+                          //resp contiene el resultado del WS, con la respuesta del servicio
+                          var resp = this.activityData;
+
+                          //Se setea la variable de control en verdadero o falso dependiendo de la respuesta
+                          if(resp.estado != "OK")
+                               this.process.processDocument.CTRL_ERROR_DesprovisionEMA = true;
+                          else
+                              this.process.processDocument.CTRL_ERROR_DesprovisionEMA = false;
+                        ]]></script>
+                      </method>
+                      <method name="cwOnProcActBefore" type="action">
+                        <category>before</category>
+                        <system>true</system>
+                        <script><![CDATA[
+                          OrderManager.debug();
+
+                          this.activityData.orderid = this.process.processDocument.IN_orderId;
+                          this.activityData.msisdn = this.process.processDocument.CTRL_MSISDN;
+                          var a = 1;
+                        ]]></script>
+                      </method>
+                    </methodList>
+                  </child>
+                </childList>
+              </child>
+            </childList>
+            <methodList>
+              <method name="cwOnProcActCond" type="action">
+                <category>cond</category>
+                <system>true</system>
+                <script><![CDATA[
+                  var doc = this.process.processDocument;
+
+                  return (doc.CTRL_ERROR==0);
+                ]]></script>
+              </method>
+            </methodList>
+          </child>
+          <child name="nok" type="caseActivity">
+            <label>nok</label>
+            <x>105.0</x>
+            <y>194.0</y>
+            <childList>
+              <child name="OrdenNoCompletada" type="completeActivity">
+                <label>OrdenNoCompletada</label>
+                <x>454.0</x>
+                <y>-5.0</y>
+              </child>
+            </childList>
+          </child>
+        </childList>
+      </child>
+      <child name="continuar" type="seqActivity">
+        <label>continuar</label>
+        <x>255.0</x>
+        <y>399.0</y>
+        <childList>
+          <child name="hayError" type="switchActivity">
+            <label>hayError</label>
+            <x>254.0</x>
+            <y>499.0</y>
+            <childList>
+              <child name="ok" type="caseActivity">
+                <label>NO</label>
+                <x>255.0</x>
+                <y>599.0</y>
+                <childList>
+                  <child name="DesprovisionComplete" type="completeActivity">
+                    <label>DesprovisionComplete</label>
+                    <x>40.0</x>
+                    <y>498.0</y>
+                  </child>
+                </childList>
+              </child>
+              <child name="nok" type="caseActivity">
+                <label>SI</label>
+                <x>255.0</x>
+                <y>599.0</y>
+                <childList>
+                  <child name="desprovisionManual" type="allActivity">
+                    <label>desprovisionManual</label>
+                    <x>242.0</x>
+                    <y>611.0</y>
+                    <childList>
+                      <child name="despBSCS" type="subflowActivity">
+                        <element>proc_OrderManager.desprovisionManualBSCS</element>
+                        <label>despBSCS</label>
+                        <x>252.0</x>
+                        <y>719.0</y>
+                      </child>
+                      <child name="despCS" type="subflowActivity">
+                        <element>proc_OrderManager.desprovisionManualCS</element>
+                        <label>despCS</label>
+                        <x>75.0</x>
+                        <y>715.0</y>
+                      </child>
+                      <child name="despEMA" type="subflowActivity">
+                        <element>proc_OrderManager.desprovisionManualEMA</element>
+                        <label>despEMA</label>
+                        <x>465.0</x>
+                        <y>717.0</y>
+                      </child>
+                    </childList>
+                  </child>
+                </childList>
+                <methodList>
+                  <method name="cwOnProcActCond" type="action">
+                    <category>cond</category>
+                    <system>true</system>
+                    <script><![CDATA[
+                      var doc = this.process.processDocument;
+
+                      return (doc.CTRL_ERROR_DesprovisionBSCS || doc.CTRL_ERROR_DesprovisionCS || doc.CTRL_ERROR_DesprovisionEMA);
+                    ]]></script>
+                  </method>
+                </methodList>
+              </child>
+            </childList>
+          </child>
+          <child name="ProcesoFinalizado" type="completeActivity">
+            <label>ProcesoFinalizado</label>
+            <x>233.0</x>
+            <y>841.0</y>
+          </child>
+        </childList>
+      </child>
+      <child name="billingParticipant" type="participantActivity">
+        <label>billingParticipant</label>
+        <participant>part_BSCSNamespace.billingParticipant</participant>
+        <x>-87.0</x>
+        <y>287.0</y>
+      </child>
+      <child name="CSParticipant" type="participantActivity">
+        <label>CSParticipant</label>
+        <participant>part_CSProvisionInterface.CSParticipant</participant>
+        <x>566.0</x>
+        <y>372.0</y>
+      </child>
+      <child name="EMAParticipant" type="participantActivity">
+        <label>EMAParticipant</label>
+        <participant>part_EMANamespace.EMAParticipant</participant>
+        <x>551.0</x>
+        <y>249.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <document>doc_OrderManager.docProcesoDesprovision</document>
+  <label>OMDesProvisionProcess</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <subflowReferenceList>
+    <subflowReference type="sref">
+      <revision>1</revision>
+      <subflow>proc_OrderManager.desprovisionManualCS</subflow>
+    </subflowReference>
+    <subflowReference type="sref">
+      <revision>1</revision>
+      <subflow>proc_OrderManager.desprovisionManualBSCS</subflow>
+    </subflowReference>
+    <subflowReference type="sref">
+      <revision>1</revision>
+      <subflow>proc_OrderManager.desprovisionManualEMA</subflow>
+    </subflowReference>
+  </subflowReferenceList>
+  <type>User</type>
+</process>

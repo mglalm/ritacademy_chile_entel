@@ -1,14 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="56F84C5A-FCE2-20E5-E23F-48764F9F6A5D" name="CS_PLAN">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="56F84C5A-FCE2-20E5-E23F-48764F9F6A5D" name="PR_CS_PLAN">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 17:39:00 UTC</createdTime>
 <generatorID>1296FB4C-44ED-1472-A14A-C5EAC917DA08</generatorID>
 <ownerDesignName>charging</ownerDesignName>
+<ordsAlias>cs_plan</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_PLAN_CS" id="1328197B-F68D-362C-A548-782291DC39BA">
+<Column name="SYSTEM_ID_PLAN_N_CS" id="1328197B-F68D-362C-A548-782291DC39BA">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 17:39:00 UTC</createdTime>
 <generatorID>DAB8C65A-544A-9FE2-73EE-BBA9502F4429</generatorID>
@@ -16,8 +17,20 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SYSTEM_ID_PLAN_C_CS" id="0DFEA431-2B74-5088-6B2B-6D55E543D579">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-07 17:21:47 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="DESC_PLAN" id="23F8F6C5-7F80-9171-ADDF-72561BEEB6EC">
@@ -47,7 +60,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="06C4D851-5CEF-F825-5F37-81CE8F7AFF2E" name="CS_PLAN_PK">
+<ind_PK_UK id="06C4D851-5CEF-F825-5F37-81CE8F7AFF2E" name="PR_PLAN_PK">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 17:39:00 UTC</createdTime>
 <ownerDesignName>charging</ownerDesignName>

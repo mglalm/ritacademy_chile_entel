@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="externalSystemEMA.DT_SERV_EMA_ID_NODO_C">
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>DT_SERV_EMA_ID_NODO_C</label>
+  <length>10</length>
+  <metaVersion>25</metaVersion>
+</dataType>

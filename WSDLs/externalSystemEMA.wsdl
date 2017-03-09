@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions name="externalSystemEMA" targetNamespace="externalSystemEMA"
-	xmlns:tns="externalSystemEMA"
+<definitions name="externalSystemEMA" targetNamespace="http://www.readinessit.com/namespaces/proyectoEMA/externalSystemEMA"
+	xmlns:tns="http://www.readinessit.com/namespaces/proyectoEMA/externalSystemEMA"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 	xmlns="http://schemas.xmlsoap.org/wsdl/"
-	xmlns:externalSystemEMA="externalSystemEMA">
+	xmlns:externalSystemEMA="http://www.readinessit.com/namespaces/proyectoEMA/externalSystemEMA">
 
 	<types>
-		<schema targetNamespace="externalSystemEMA"			
+		<schema targetNamespace="http://www.readinessit.com/namespaces/proyectoEMA/externalSystemEMA"			
 	xmlns="http://www.w3.org/2001/XMLSchema"			
-	xmlns:externalSystemEMA="externalSystemEMA"			
+	xmlns:externalSystemEMA="http://www.readinessit.com/namespaces/proyectoEMA/externalSystemEMA"			
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 
@@ -103,6 +103,7 @@
 				</annotation>
 					<sequence>
 						<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="orderid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
 					</sequence>
 				</complexType>
 

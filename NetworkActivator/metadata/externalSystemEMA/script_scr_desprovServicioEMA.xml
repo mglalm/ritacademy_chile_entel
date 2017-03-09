@@ -9,6 +9,7 @@
   </parameterList>
   <script><![CDATA[
     var var_msisdn = input.msisdn;
+    var var_orderid = input.orderid;
     var var_id_servicio_estado = 3;  // ESTADO DESACTIVADO
     var var_id_servicio;
 
@@ -17,21 +18,49 @@
     var output = new DataStructure("externalSystemEMA.output_desprovServicioEMA");
 
     //-----VERIFICAR QUE TENGA ACTIVO EL SERVICIO
-    var listado_servicios = new Finder("externalSystemEMA.DOC_SERVICIO_EMA_FIND");
+    var listado_servicios = new Finder("externalSystemEMA.FIND_SERV_EMA_SERVICIOS_VIGENTES");
     var resultado = listado_servicios.search();
     var ya_tiene_servicio = 0 ;
     if ( resultado.length > 0)
     {
         for ( var i = 0 ; i < resultado.length ; i++ )
         {
-            if ( resultado[i].ID_ESTADO_SERVICIO_EMA == 1 && resultado[i].MSISDN_SERVICIO_EMA == var_msisdn )
+            if ( resultado[i].DT_EMA_ID_ESTADO_SERVICIO == 1 && resultado[i].DT_EMA_MSISDN == var_msisdn )
             {
-                //-----SI LO ENCUENTRA LO DEJA EN ESTADO DESACTIVO
-                ya_tiene_servicio = 1;
-                var_id_servicio=resultado[i].ID_PROFILE_SERVICIO_EMA;
-                resultado[i].ID_ESTADO_SERVICIO_EMA=var_id_servicio_estado;
-                //resultado[i].saveToDB();
-                resultado[i].save();
+                //Si el numero de orden que viene como entrada es el mismo que con el que se activo entonces solo se actualiza el registro
+                //de lo contrario hay que ingresar otro
+
+                if (resultado[i].DT_EMA_ORDER_ID == var_orderid )   //LA ORDEN ES LA MISMA POR LO QUE VIENE DE LA MISMA PARTE QUE LA PROVISION
+                {   //-----SI LO ENCUENTRA LO DEJA EN ESTADO DESACTIVO
+                    var fecha_hoy = new Date();
+                    ya_tiene_servicio = 1;
+                    var_id_servicio=resultado[i].DT_EMA_ID_SERVICIO_N;
+                    resultado[i].DT_EMA_ID_ESTADO_SERVICIO=var_id_servicio_estado;
+                    resultado[i].DT_EMA_FECHA_ACTUALIZACION=fecha_hoy;
+                    resultado[i].save();
+                    i=resultado.length;
+                }
+                else
+                 {  //CREAR NUEVO REGISTRO CON ESTADO DESACTIVADO ASOCIADO A LOS MISMOS DATOS DE LA ORDEN ORIGINAL
+                     //-----SE ACTIVAN LOS SERVICIOS
+                    ya_tiene_servicio = 1;
+                    externalSystemEMA.quiebra_ejecucion();
+                    var fecha_hoy = new Date();
+                    var documento = new Document("externalSystemEMA.DOC_SERV_EMA_SERVICIOS_HIST");
+
+                    documento.DT_EMA_ID_SERVICIO_N=resultado[i].DT_EMA_ID_SERVICIO_N;
+                    var_id_servicio=resultado[i].DT_EMA_ID_SERVICIO_N;
+                    documento.DT_EMA_ID_SERVICIO_C=resultado[i].DT_EMA_ID_SERVICIO_C;
+                    documento.DT_EMA_MSISDN=resultado[i].DT_EMA_MSISDN;
+                    documento.DT_EMA_ID_PROFILE_N=resultado[i].DT_EMA_ID_PROFILE_N;
+                    documento.DT_EMA_ID_PROFILE_C=resultado[i].DT_EMA_ID_PROFILE_C;
+                    documento.DT_EMA_ORDER_ID=var_orderid;
+                    documento.DT_EMA_ID_ESTADO_SERVICIO=var_id_servicio_estado;
+                    documento.DT_EMA_FECHA_ACTIVACION=resultado[i].DT_EMA_FECHA_ACTIVACION;
+                    documento.DT_EMA_FECHA_ACTUALIZACION=fecha_hoy;
+                    documento.save();
+                    i=resultado.length;
+                 }
             }
         }
     }
@@ -42,9 +71,8 @@
         return output;
     }
 
-
     //-----ELIMINA SALDOS
-    var listado_nodos = new Finder("externalSystemEMA.DOC_SERV_NOD_EMA_FIND");
+    var listado_nodos = new Finder("externalSystemEMA.FIND_SERV_EMA_NOD_EMA");
     var resultado = listado_nodos.search();
     if ( resultado.length > 0)
     {

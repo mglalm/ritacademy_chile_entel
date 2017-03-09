@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="91E649E2-AD63-7CAC-D56E-402F48C64437" name="EMA_SERVICIO_NODO_ACTIVO">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="91E649E2-AD63-7CAC-D56E-402F48C64437" name="PR_EMA_SERVICIO_NODO_ACTIVO">
 <createdBy>EOC</createdBy>
 <createdTime>2017-03-03 03:09:21 UTC</createdTime>
 <ownerDesignName>ema</ownerDesignName>
@@ -8,19 +8,27 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_NODO" id="B0CF67C9-7AFF-AF8E-3D06-B3D930A7B049">
+<Column name="SYSTEM_ID_NODO_N_EMA" id="496A44C7-A406-2319-EDDF-15EB94266AE6">
 <createdBy>EOC</createdBy>
-<createdTime>2017-03-03 03:12:50 UTC</createdTime>
+<createdTime>2017-03-08 14:34:42 UTC</createdTime>
 <ownerDesignName>ema</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="1C2C594D-57EC-683E-83FF-727CE70913C9" referredColumn="603F42D3-7358-9518-F453-71BD24C31976"/>
-</associations>
+</Column>
+<Column name="SYSTEM_ID_NODO_C_EMA" id="AC6542F1-8E0B-3BDF-AC4F-79C93EE7656F">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-08 14:34:42 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="MSISDN" id="95655314-279B-6878-5F2E-E5D95E87B667">
 <createdBy>EOC</createdBy>
@@ -45,28 +53,4 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
-<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="41ADEB49-7233-1621-16F4-4FEDA87FCFF6" name="EMA_SERVICIO_NODO_ACTIVO_PK">
-<createdBy>EOC</createdBy>
-<createdTime>2017-03-03 03:15:50 UTC</createdTime>
-<ownerDesignName>ema</ownerDesignName>
-<pk>true</pk>
-<indexState>Primary Constraint</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="B0CF67C9-7AFF-AF8E-3D06-B3D930A7B049"/>
-<colUsage columnID="95655314-279B-6878-5F2E-E5D95E87B667"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="C5462EAA-73D2-CE99-0D2C-099784383360" name="EMA_ACTIVO_EMA_FK">
-<createdBy>EOC</createdBy>
-<createdTime>2017-03-03 03:15:50 UTC</createdTime>
-<ownerDesignName>ema</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="B0CF67C9-7AFF-AF8E-3D06-B3D930A7B049"/>
-</indexColumnUsage>
-</ind_PK_UK>
-</indexes>
 </Table>

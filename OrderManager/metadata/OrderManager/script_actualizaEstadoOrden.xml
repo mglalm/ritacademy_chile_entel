@@ -30,7 +30,7 @@
      *
      */
 
-    OrderManager.debug();
+    //OrderManager.debug();
 
     //Primero la Orden
     var orden = new Document("OrderManager.docOMOrden");  //documento asociado a la tabla de BD OM_ORDEN

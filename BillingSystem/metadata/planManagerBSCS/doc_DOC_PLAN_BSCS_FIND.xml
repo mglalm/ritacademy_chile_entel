@@ -5,8 +5,8 @@
   <label>DOC_PLAN_BSCS_FIND</label>
   <metaVersion>25</metaVersion>
   <variableList>
-    <variable name="ID_PLAN" type="leaf">
-      <valueType>dtype_planManagerBSCS.ID_PLAN</valueType>
+    <variable name="ID_PLAN_C" type="leaf">
+      <valueType>dtype_planManagerBSCS.ID_PLAN_C</valueType>
     </variable>
     <variable name="DESC_PLAN" type="leaf">
       <valueType>dtype_planManagerBSCS.DESC_PLAN</valueType>
@@ -39,9 +39,10 @@
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS_FIND/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS_FIND/leaf_ID_PLAN</variablePath>
+                          <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS_FIND/leaf_ID_PLAN_C</variablePath>
                         </variablePathList>
                       </variable>
+                      <width>20%</width>
                     </element>
                     <element name="DESC_PLAN" type="elfld">
                       <variable type="varPath">
@@ -50,6 +51,7 @@
                           <variablePath>doc_planManagerBSCS.DOC_PLAN_BSCS_FIND/leaf_DESC_PLAN</variablePath>
                         </variablePathList>
                       </variable>
+                      <width>20%</width>
                     </element>
                   </elementList>
                 </element>

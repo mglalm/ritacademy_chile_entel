@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerEMA.DOC_EMA_SERVICIOS_HIST_FIND">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{1873f4e6-7636-4c96-a54c-44d0b24f62b5}</guid>
+  <label>DOC_EMA_SERVICIOS_HIST_FIND</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="MSISDN" type="leaf">
+      <valueType>dtype_provisionManagerEMA.DT_EMA_MSISDN</valueType>
+    </variable>
+    <variable name="ID_PROFILE_N" type="leaf">
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_N</valueType>
+    </variable>
+    <variable name="ID_PROFILE_C" type="leaf">
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_C</valueType>
+    </variable>
+    <variable name="ID_SERVICIO_ESTADO" type="leaf">
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_ESTADO_SERVICIO</valueType>
+    </variable>
+    <variable name="FECHA_ACTIVACION" type="leaf">
+      <valueType>dtype_provisionManagerEMA.DT_EMA_FECHA_ACTIVACION</valueType>
+    </variable>
+    <variable name="ORDER_ID" type="leaf">
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ORDER_ID</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_HIST_FIND</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Busqueda" type="vform">
+            <label>Formulario_Busqueda</label>
+            <root name="Formulario_BusquedaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_CLIENTE_SERVICIO_EMA_FINDGrid" type="elgrd">
+                  <numOfCols>5</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="MSISDN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_HIST_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_HIST_FIND/leaf_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="ID_PROFILE" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_HIST_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_HIST_FIND/leaf_ID_PROFILE_N</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="ID_SERVICIO_ESTADO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_HIST_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_HIST_FIND/leaf_ID_SERVICIO_ESTADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="FECHA_ACTIVACION" type="eldatetime">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_HIST_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_HIST_FIND/leaf_FECHA_ACTIVACION</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="ORDER_ID" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_HIST_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_HIST_FIND/leaf_ORDER_ID</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>
