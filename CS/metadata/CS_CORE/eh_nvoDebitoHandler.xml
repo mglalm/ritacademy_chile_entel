@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<event__handler name="CS_CORE.nvoDebitoHandler">
+  <flags enum-type="metadataFlag">FINAL</flags>
+  <event>evt_CS_CORE.nuevoDebito</event>
+  <eventID>nvoDebitoHandler</eventID>
+  <eventType>nuevoDebito</eventType>
+  <label>nvoDebitoHandler</label>
+  <metaVersion>25</metaVersion>
+  <script><![CDATA[
+    var resultado = debitoAnt-(Math.random()*10);
+    return resultado;
+  ]]></script>
+</event__handler>

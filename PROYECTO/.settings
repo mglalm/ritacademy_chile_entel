@@ -3,9 +3,6 @@
   <DefaultDB>PROYECTO</DefaultDB>
   <applicationString>PROYECTO</applicationString>
   <applicationVersionString>1</applicationVersionString>
-  <breakpointMap>
-    <breakpoint key="despliegaPO.poFinder.UserInterface.activaProvision">0</breakpoint>
-  </breakpointMap>
   <databasesMap>
     <databases key="PROYECTO" type=".configdb">
       <dbname>PROYECTO</dbname>

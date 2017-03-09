@@ -186,6 +186,8 @@
         <script><![CDATA[
           var doc = new Document('despliegaPO.agregaPO');
           doc.poCode = this.result.selected[0].poCode;
+          doc.fechaProv = new Date();
+          doc.save();
 
           var dt = new DataStructure('OM_CONSUMER.request');
           dt.productOfferId = doc.poCode;
@@ -198,7 +200,6 @@
           var respuesta = Global.invokeInterface('OM_CONSUMER.OMInterfaz','provisioning',arr);
 
           doc.provStatus = respuesta[0].status;
-          doc.fechaProv = new Date();
           doc.save();
 
           Global.showUserMessage("PO enviada a proceso de provision.\n Numero de Orden:" +doc.cwDocId);

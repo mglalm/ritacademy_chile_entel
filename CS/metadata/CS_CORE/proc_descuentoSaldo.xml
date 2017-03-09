@@ -24,11 +24,12 @@
               var tamano = resultado.size;
 
               for (var i=0; i<tamano;i++){
-                  var nuevo_debit = resultado[i].debit=resultado[i].debit-(Math.random()*10);
+                  var nuevo_debit = CS_CORE.nvoDebitoHandler(resultado[i].debit);
                   if (nuevo_debit<0)
                       resultado[i].estado = "SIN SALDO";
                   else
                       resultado[i].estado = "CON SALDO";
+                  resultado[i].debit = nuevo_debit;
                   resultado[i].save();
               }
             ]]></script>
