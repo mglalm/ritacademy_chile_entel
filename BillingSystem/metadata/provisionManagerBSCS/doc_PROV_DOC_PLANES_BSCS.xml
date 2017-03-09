@@ -7,14 +7,14 @@
   <metaVersion>25</metaVersion>
   <variableList>
     <variable name="PROV_ID_PLAN_BSCS" type="leaf">
-      <column>ID_PLAN_BSCS</column>
+      <column>SYSTEM_ID_PLAN_C_BSCS</column>
       <key>1</key>
-      <table>BSCS_PLAN</table>
+      <table>PR_BSCS_PLAN</table>
       <valueType>dtype_provisionManagerBSCS.PROV_ID_PLAN_BSCS</valueType>
     </variable>
     <variable name="PROV_DESC_PLAN_BSCS" type="leaf">
       <column>DESC_PLAN_BSCS</column>
-      <table>BSCS_PLAN</table>
+      <table>PR_BSCS_PLAN</table>
       <valueType>dtype_provisionManagerBSCS.PROV_DESC_PLAN_BSCS</valueType>
     </variable>
   </variableList>
