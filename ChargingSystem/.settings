@@ -8,7 +8,7 @@
     <breakpoint key="customerManagerBSCS.DOC_CLIENTE_BSCS_FIND.cwOnDocVisualKey">0</breakpoint>
     <breakpoint key="externalSystemCS.quiebra_ejecucion">0</breakpoint>
     <breakpoint key="planManagerCS.quiebra_ejecucion">0</breakpoint>
-    <breakpoint key="provisionManagerCS.busquedaServiciosCS.UserInterface.muestra_detalle">0</breakpoint>
+    <breakpoint key="provisionManagerCS.busquedaServiciosCS.UserInterface.btn_historico">0</breakpoint>
   </breakpointMap>
   <databasesMap>
     <databases key="TRAIN3" type=".configdb">

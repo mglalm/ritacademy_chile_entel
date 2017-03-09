@@ -45,6 +45,20 @@
                           <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND/leaf_ID_PROFILE_N</variablePath>
                         </variablePathList>
                       </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                      <width>20%</width>
+                    </element>
+                    <element name="ID_PROFILE_C" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND/leaf_ID_PROFILE_C</variablePath>
+                        </variablePathList>
+                      </variable>
                       <width>20%</width>
                     </element>
                     <element name="DESC_PROFILE" type="elfld">

@@ -278,7 +278,6 @@
                         <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
                       </variablePathList>
                     </onSelectChange>
-                    <selectionAppearance>checkbox</selectionAppearance>
                     <showDetailColumn>false</showDetailColumn>
                     <variable type="varPath">
                       <variablePathList>

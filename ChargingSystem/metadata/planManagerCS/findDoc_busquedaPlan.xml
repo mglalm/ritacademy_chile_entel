@@ -287,6 +287,7 @@
                       </variablePathList>
                     </onSelectChange>
                     <selectionAppearance>checkbox</selectionAppearance>
+                    <selectionType>single</selectionType>
                     <showDetailColumn>false</showDetailColumn>
                     <variable type="varPath">
                       <variablePathList>
@@ -342,7 +343,6 @@
                 <iconHeight>30px</iconHeight>
                 <iconWidth>30px</iconWidth>
                 <label>Agregar</label>
-                <tooltip>Add</tooltip>
                 <visible type="varPath">
                   <variablePathList>
                     <variablePath>ui_com.conceptwave.system.UserInterface/uivar_model</variablePath>
@@ -408,7 +408,6 @@
                 <iconHeight>30px</iconHeight>
                 <iconWidth>30px</iconWidth>
                 <label>Editar</label>
-                <tooltip>Edit</tooltip>
                 <visible type="varPath">
                   <variablePathList>
                     <variablePath>ui_com.conceptwave.system.UserInterface/uivar_model</variablePath>

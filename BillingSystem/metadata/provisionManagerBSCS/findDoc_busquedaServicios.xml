@@ -7,6 +7,9 @@
   <output>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_VIGENTES</output>
   <sortList>
     <sort type="stitem">
+      <path>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_VIGENTES/leaf_DT_BSCS_ID_CLIENT_C</path>
+    </sort>
+    <sort type="stitem">
       <path>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_VIGENTES/leaf_DT_BSCS_FECHA_ACTIVACION</path>
     </sort>
     <sort type="stitem">
@@ -14,7 +17,6 @@
     </sort>
   </sortList>
   <type>document</type>
-  <vDetailForm>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_VIGENTES/ui_UserInterface/frmui_Forms/vform_Formulario_Edicion</vDetailForm>
   <searchList>
     <search type="sitem">
       <document>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_VIGENTES_FIND</document>
@@ -523,17 +525,23 @@
         <dialogWidth>2700</dialogWidth>
         <showInPopup>true</showInPopup>
         <script><![CDATA[
-          var var_msisdn = this.result.selected[0].DT_BSCS_MSISDN;
-          var finder = new Finder("provisionManagerBSCS.FIND_BSCS_SERVICIOS_HIST");
+          externalSystemBSCS.quiebra_ejecucion();
+          if (this.result.selected!=null && this.result.selected.length == 1)
+          {
+              var var_msisdn = this.result.selected[0].DT_BSCS_MSISDN;
+              var finder = new Finder("provisionManagerBSCS.FIND_BSCS_SERVICIOS_HIST");
 
-          finder.searchDocument.DT_BSCS_MSISDN = var_msisdn;
+              finder.searchDocument.DT_BSCS_MSISDN = var_msisdn;
 
-          var res = finder.search();
+              var res = finder.search();
 
-          var finderUI = new provisionManagerBSCS.FIND_BSCS_SERVICIOS_HIST.UserInterface(null, this);
-          finderUI.result = res;
+              var finderUI = new provisionManagerBSCS.FIND_BSCS_SERVICIOS_HIST.UserInterface(null, this);
+              finderUI.result = res;
 
-          return finderUI;
+              return finderUI;
+          }
+          else
+              Global.showUserMessage("Debe seleccionar un registro para visualizar");
         ]]></script>
       </method>
     </methodList>

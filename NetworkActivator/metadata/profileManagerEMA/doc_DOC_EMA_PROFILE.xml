@@ -56,6 +56,20 @@
                           <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE/leaf_ID_PROFILE_N</variablePath>
                         </variablePathList>
                       </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                      <width>20%</width>
+                    </element>
+                    <element name="ID_PROFILE_C" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE/leaf_ID_PROFILE_C</variablePath>
+                        </variablePathList>
+                      </variable>
                       <width>20%</width>
                     </element>
                     <element name="DESC_PROFILE" type="elfld">
@@ -81,7 +95,7 @@
                 <menuAccel type="mAccelP"/>
                 <clickMethod type="varPath">
                   <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.DocumentUserInterface/usrActionMethod_save</variablePath>
+                    <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE/ui_UserInterface/usrActionMethod_btn_guardar</variablePath>
                   </variablePathList>
                 </clickMethod>
                 <icon>/cwf/MenuIconSave.gif</icon>
@@ -118,6 +132,25 @@
                           <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE/leaf_ID_PROFILE_N</variablePath>
                         </variablePathList>
                       </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                      <width>20%</width>
+                    </element>
+                    <element name="ID_PROFILE_C" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE/leaf_ID_PROFILE_C</variablePath>
+                        </variablePathList>
+                      </variable>
                       <width>20%</width>
                     </element>
                     <element name="DESC_PROFILE" type="elfld">
@@ -137,5 +170,31 @@
         </overlayList>
       </vform>
     </vformList>
+    <methodList>
+      <method name="btn_guardar" type="usrActionMethod">
+        <script><![CDATA[
+          if ( this.model.ID_PROFILE_C != null && this.model.ID_PROFILE_C != "" )
+          {
+              if ( this.model.ID_PROFILE_N == null )
+              {
+                  //-----OBTIENE NUEVA SECUENCIA PARA EL NUEVO PLAN
+                  var doc_secuencia = new Finder("profileManagerEMA.SEQ_ID_PERFIL_EMA");
+                  var nueva_secuencia = doc_secuencia.search();
+                  var var_id_valor=nueva_secuencia[0].type;
+                  this.model.ID_PROFILE_N=var_id_valor;
+              }
+
+              this.save();
+              Global.showUserMessage("Perfil Almacenado");
+
+              var finderUI = new profileManagerEMA.FIND_EMA_PROFILE.UserInterface(null, this);
+              return finderUI;
+
+          }
+          else
+              Global.showUserMessage("Debe ingresar un ID");
+        ]]></script>
+      </method>
+    </methodList>
   </UserInterface>
 </document>
