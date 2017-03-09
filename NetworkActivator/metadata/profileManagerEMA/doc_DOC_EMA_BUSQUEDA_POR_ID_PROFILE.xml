@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="profileManagerEMA.DOC_EMA_BUSQUEDA_POR_ID_PROFILE">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{2e759d7c-9fe7-44ce-a420-8d904d538779}</guid>
+  <label>DOC_EMA_BUSQUEDA_POR_ID_PROFILE</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_PROFILE_N" type="leaf">
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_N</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_profileManagerEMA.DOC_EMA_BUSQUEDA_POR_ID_PROFILE</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

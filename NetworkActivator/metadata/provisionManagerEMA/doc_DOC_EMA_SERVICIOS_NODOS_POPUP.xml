@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerEMA.DOC_EMA_SERVICIOS_NODOS_POPUP">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{a18e1d28-8be7-4bcc-8861-80aa42c0156a}</guid>
+  <label>DOC_EMA_SERVICIOS_NODOS_POPUP</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_EMA_DESC_NODO" type="leaf">
+      <column>DESC_NONO</column>
+      <table>PR_EMA_SERVICIO_NODO_DETALLE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_DESC_NODO</valueType>
+    </variable>
+    <variable name="DT_FECHA_ACTIVACION_NODO" type="leaf">
+      <column>FECHA_ACTIVACION</column>
+      <table>PR_EMA_SERVICIO_NODO_DETALLE</table>
+      <valueType>dtype_profileManagerEMA.DT_FECHA_ACTIVACION_NODO</valueType>
+    </variable>
+    <variable name="DT_EMA_MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <table>PR_EMA_SERVICIO_NODO_DETALLE</table>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_MSISDN</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_NODO_N" type="leaf">
+      <column>SYSTEM_ID_NODO_N_EMA</column>
+      <key>1</key>
+      <table>PR_EMA_SERVICIO_NODO_DETALLE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_NODO_N</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_NODOS_POPUP</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

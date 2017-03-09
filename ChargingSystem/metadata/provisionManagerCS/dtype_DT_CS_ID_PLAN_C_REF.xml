@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="provisionManagerCS.DT_CS_ID_PLAN_C_REF">
+  <extends>dtype_cwf.sReference</extends>
+  <label>Plan</label>
+  <length>10</length>
+  <metaVersion>25</metaVersion>
+  <reference>findDoc_provisionManagerCS.FIND_CS_LISTADO_PLANES</reference>
+</dataType>

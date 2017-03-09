@@ -624,8 +624,8 @@
       </method>
       <method name="muestra_detalle" type="usrActionMethod">
         <actionCategory>muestra_detalle</actionCategory>
-        <dialogHeight>1500</dialogHeight>
-        <dialogWidth>1000</dialogWidth>
+        <dialogHeight>400</dialogHeight>
+        <dialogWidth>2700</dialogWidth>
         <parameterList>
           <parameter name="dialog" type="rifp">
             <type>ui_com.conceptwave.system.Dialog</type>

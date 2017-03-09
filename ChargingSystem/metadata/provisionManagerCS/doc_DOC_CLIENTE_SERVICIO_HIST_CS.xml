@@ -25,7 +25,7 @@
     <variable name="ID_PLAN_C_CS" type="leaf">
       <column>SYSTEM_ID_PLAN_C_CS</column>
       <table>PR_CS_SERVICIO</table>
-      <valueType>dtype_planManagerCS.DT_ID_PLAN_C_CS</valueType>
+      <valueType>dtype_provisionManagerCS.DT_CS_ID_PLAN_C_REF</valueType>
     </variable>
     <variable name="ORDER_ID" type="leaf">
       <column>ORDER_ID</column>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="provisionManagerEMA.DT_EMA_DESC_PROFILE_REF">
+  <extends>dtype_cwf.sReference</extends>
+  <label>Perfil</label>
+  <length>10</length>
+  <metaVersion>25</metaVersion>
+  <reference>findDoc_provisionManagerEMA.FIND_EMA_LISTADO_PROFILE</reference>
+</dataType>

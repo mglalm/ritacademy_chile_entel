@@ -285,12 +285,15 @@
                 <width>100%</width>
                 <elementList>
                   <element name="FIND_EMA_SERVICIOS_VIGENTESResultTable" type="eltabl">
+                    <loadDataMessage>Cargando Datos...</loadDataMessage>
+                    <noItemsMessage>No se encontraron registros.</noItemsMessage>
                     <onSelectChange type="varPath">
                       <variablePathList>
                         <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
                       </variablePathList>
                     </onSelectChange>
                     <selectionAppearance>checkbox</selectionAppearance>
+                    <showDetailColumn>false</showDetailColumn>
                     <variable type="varPath">
                       <variablePathList>
                         <variablePath>findDoc_provisionManagerEMA.FIND_EMA_SERVICIOS_VIGENTES/ui_UserInterface/uivar_result</variablePath>
@@ -490,7 +493,12 @@
                     <label>Historico</label>
                   </element>
                   <element name="NodosActivos" type="elmnu">
-                    <icon>/cwf/TreeFolderValid.gif</icon>
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_provisionManagerEMA.FIND_EMA_SERVICIOS_VIGENTES/ui_UserInterface/usrActionMethod_btn_mostrar_nodos</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <icon>/cwf/all.gif</icon>
                     <iconHeight>30px</iconHeight>
                     <iconWidth>30px</iconWidth>
                     <label>Nodos Activos</label>
@@ -517,6 +525,25 @@
 
           //var finderUI = new provisionManagerCS.busquedaServiciosHistCS.UserInterface(null, null);
           var finderUI = new provisionManagerEMA.FIND_EMA_SERVICIOS_HIST.UserInterface(null, this);
+          finderUI.result = res;
+
+          return finderUI;
+        ]]></script>
+      </method>
+      <method name="btn_mostrar_nodos" type="usrActionMethod">
+        <dialogHeight>400</dialogHeight>
+        <dialogWidth>2700</dialogWidth>
+        <showInPopup>true</showInPopup>
+        <script><![CDATA[
+          externalSystemEMA.quiebra_ejecucion();
+
+          var var_valor = this.result.selected[0].DT_EMA_MSISDN;
+          var finder = new Finder("provisionManagerEMA.FIND_EMA_SERVICIOS_NODOS_POPUP");
+          finder.searchDocument.DT_EMA_MSISDN = var_valor;
+
+          var res = finder.search();
+
+          var finderUI = new provisionManagerEMA.FIND_EMA_SERVICIOS_NODOS_POPUP.UserInterface(null, this);
           finderUI.result = res;
 
           return finderUI;
