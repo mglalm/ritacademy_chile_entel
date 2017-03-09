@@ -18,10 +18,10 @@
   <metaVersion>25</metaVersion>
   <metadataVersion>20150818</metadataVersion>
   <templateList>
+    <template>EOCCOBRAS</template>
+    <template>ProyectoCobras_OM</template>
     <template>bscs</template>
     <template>cs</template>
     <template>ema</template>
-    <template>EOCCOBRAS</template>
-    <template>ProyectoCobras_OM</template>
   </templateList>
 </header>
