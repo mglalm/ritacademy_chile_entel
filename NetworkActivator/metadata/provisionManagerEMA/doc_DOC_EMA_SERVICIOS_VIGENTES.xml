@@ -30,7 +30,7 @@
     <variable name="DT_EMA_ID_PROFILE_C" type="leaf">
       <column>SYSTEM_ID_PROFILE_C_EMA</column>
       <table>PR_EMA_SERVICIO_VIGENTE</table>
-      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_C</valueType>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_DESC_PROFILE_REF</valueType>
     </variable>
     <variable name="DT_EMA_ORDER_ID" type="leaf">
       <column>ORDER_ID</column>
@@ -40,7 +40,7 @@
     <variable name="DT_EMA_ID_ESTADO_SERVICIO" type="leaf">
       <column>ID_ESTADO</column>
       <table>PR_EMA_SERVICIO_VIGENTE</table>
-      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_ESTADO_SERVICIO</valueType>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_ESTADO_SERVICIO_REF</valueType>
     </variable>
     <variable name="DT_EMA_FECHA_ACTIVACION" type="leaf">
       <column>FECHA_ACTIVACION</column>

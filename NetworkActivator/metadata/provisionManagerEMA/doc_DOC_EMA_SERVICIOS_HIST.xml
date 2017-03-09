@@ -31,13 +31,13 @@
     <variable name="ID_PROFILE_C" type="leaf">
       <column>SYSTEM_ID_PROFILE_C_EMA</column>
       <table>PR_EMA_SERVICIO</table>
-      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_C</valueType>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_DESC_PROFILE_REF</valueType>
     </variable>
     <variable name="ID_SERVICIO_ESTADO" type="leaf">
       <column>ID_ESTADO</column>
       <key>2</key>
       <table>PR_EMA_SERVICIO</table>
-      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_ESTADO_SERVICIO</valueType>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_ESTADO_SERVICIO_REF</valueType>
     </variable>
     <variable name="FECHA_ACTIVACION" type="leaf">
       <column>FECHA_ACTIVACION</column>

@@ -1,33 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<findDoc name="profileManagerEMA.FIND_EMA_PROFILE">
+<findDoc name="profileManagerEMA.FIND_EMA_NODO_PROFILE_POPUP">
   <extends>find_com.conceptwave.system.Finder</extends>
-  <input>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND</input>
-  <label>Búsqueda Profile</label>
+  <input>doc_profileManagerEMA.DOC_EMA_BUSQUEDA_POR_ID_PROFILE</input>
+  <label>Detalles del Perfil</label>
   <metaVersion>25</metaVersion>
-  <output>doc_profileManagerEMA.DOC_EMA_PROFILE</output>
+  <output>doc_profileManagerEMA.DOC_EMA_NODO_PROFILE_POPUP</output>
   <type>document</type>
-  <vDetailForm>doc_profileManagerEMA.DOC_EMA_PROFILE/ui_UserInterface/frmui_Forms/vform_Formulario_Edicion</vDetailForm>
   <searchList>
     <search type="sitem">
-      <document>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND</document>
-      <mappedDocument>doc_profileManagerEMA.DOC_EMA_PROFILE</mappedDocument>
-      <mappedPath>doc_profileManagerEMA.DOC_EMA_PROFILE/leaf_DESC_PROFILE</mappedPath>
+      <document>doc_profileManagerEMA.DOC_EMA_BUSQUEDA_POR_ID_PROFILE</document>
+      <mappedDocument>doc_profileManagerEMA.DOC_EMA_NODO_PROFILE_POPUP</mappedDocument>
+      <mappedPath>doc_profileManagerEMA.DOC_EMA_NODO_PROFILE_POPUP/leaf_DT_EMA_ID_PROFILE_N</mappedPath>
       <operation>equal</operation>
-      <path>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND/leaf_DESC_PROFILE</path>
-    </search>
-    <search type="sitem">
-      <document>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND</document>
-      <mappedDocument>doc_profileManagerEMA.DOC_EMA_PROFILE</mappedDocument>
-      <mappedPath>doc_profileManagerEMA.DOC_EMA_PROFILE/leaf_ID_PROFILE_C</mappedPath>
-      <operation>equal</operation>
-      <path>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND/leaf_ID_PROFILE_C</path>
-    </search>
-    <search type="sitem">
-      <document>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND</document>
-      <mappedDocument>doc_profileManagerEMA.DOC_EMA_PROFILE</mappedDocument>
-      <mappedPath>doc_profileManagerEMA.DOC_EMA_PROFILE/leaf_ID_PROFILE_N</mappedPath>
-      <operation>equal</operation>
-      <path>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND/leaf_ID_PROFILE_N</path>
+      <path>doc_profileManagerEMA.DOC_EMA_BUSQUEDA_POR_ID_PROFILE/leaf_ID_PROFILE_N</path>
     </search>
   </searchList>
   <UserInterface name="UserInterface" type="ui">
@@ -37,15 +22,15 @@
         <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
       </variable>
       <variable name="search" type="uivar">
-        <valueType>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND/ui_UserInterface</valueType>
+        <valueType>ui_com.conceptwave.system.UserInterface</valueType>
       </variable>
       <variable name="detail" type="uivar">
         <flags enum-type="metadataFlag">VALIDATE</flags>
-        <valueType>doc_profileManagerEMA.DOC_EMA_PROFILE/ui_UserInterface</valueType>
+        <valueType>doc_profileManagerEMA.DOC_EMA_NODO_PROFILE_POPUP/ui_UserInterface</valueType>
       </variable>
       <variable name="result" type="uivar">
         <flags enum-type="metadataFlag">ARRAY</flags>
-        <valueType>doc_profileManagerEMA.DOC_EMA_PROFILE</valueType>
+        <valueType>doc_profileManagerEMA.DOC_EMA_NODO_PROFILE_POPUP</valueType>
       </variable>
     </variableList>
     <vformList>
@@ -57,22 +42,6 @@
             <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
             <label>Default</label>
             <overrideList>
-              <override name="back" type="elmnu">
-                <clickMethod type="varPath">
-                  <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/action_hideDetailAction</variablePath>
-                  </variablePathList>
-                </clickMethod>
-                <icon>/cwfv/nav_left_blue.png</icon>
-                <iconHeight>15px</iconHeight>
-                <iconWidth>15px</iconWidth>
-                <label>Volver</label>
-                <visible type="varPath">
-                  <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_backVisible</variablePath>
-                  </variablePathList>
-                </visible>
-              </override>
               <override name="detailSection" type="elsect">
                 <formReference type="varPath">
                   <variablePathList>
@@ -81,7 +50,7 @@
                 </formReference>
                 <variable type="varPath">
                   <variablePathList>
-                    <variablePath>findDoc_profileManagerEMA.FIND_EMA_PROFILE/ui_UserInterface/uivar_detail</variablePath>
+                    <variablePath>findDoc_profileManagerEMA.FIND_EMA_NODO_PROFILE_POPUP/ui_UserInterface/uivar_detail</variablePath>
                   </variablePathList>
                 </variable>
                 <visible type="varPath">
@@ -246,7 +215,7 @@
                 </formReference>
                 <variable type="varPath">
                   <variablePathList>
-                    <variablePath>findDoc_profileManagerEMA.FIND_EMA_PROFILE/ui_UserInterface/uivar_search</variablePath>
+                    <variablePath>findDoc_profileManagerEMA.FIND_EMA_NODO_PROFILE_POPUP/ui_UserInterface/uivar_search</variablePath>
                   </variablePathList>
                 </variable>
                 <visible type="varPath">
@@ -266,39 +235,77 @@
                 <height>100%</height>
                 <width>100%</width>
                 <elementList>
-                  <element name="busquedaProfileResultTable" type="eltabl">
+                  <element name="FIND_EMA_NODO_PROFILE_POPUPResultTable" type="eltabl">
                     <loadDataMessage>Cargando Datos...</loadDataMessage>
-                    <noItemsMessage>No se encontraron registros.</noItemsMessage>
+                    <noItemsMessage>No hay registros.</noItemsMessage>
                     <onSelectChange type="varPath">
                       <variablePathList>
                         <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
                       </variablePathList>
                     </onSelectChange>
-                    <selectionAppearance>checkbox</selectionAppearance>
                     <showDetailColumn>false</showDetailColumn>
                     <variable type="varPath">
                       <variablePathList>
-                        <variablePath>findDoc_profileManagerEMA.FIND_EMA_PROFILE/ui_UserInterface/uivar_result</variablePath>
+                        <variablePath>findDoc_profileManagerEMA.FIND_EMA_NODO_PROFILE_POPUP/ui_UserInterface/uivar_result</variablePath>
                       </variablePathList>
                     </variable>
                     <elementList>
-                      <element name="ID_PROFILE" type="elfld">
+                      <element name="DT_EMA_ID_PROFILE_N" type="elfld">
                         <variable type="varPath">
                           <variablePathList>
-                            <variablePath>findDoc_profileManagerEMA.FIND_EMA_PROFILE/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE/leaf_ID_PROFILE_N</variablePath>
+                            <variablePath>findDoc_profileManagerEMA.FIND_EMA_NODO_PROFILE_POPUP/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_profileManagerEMA.DOC_EMA_NODO_PROFILE_POPUP/leaf_DT_EMA_ID_PROFILE_N</variablePath>
                           </variablePathList>
                         </variable>
-                        <width>20%</width>
+                        <visible type="varPath">
+                          <variablePathList>
+                            <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                          </variablePathList>
+                        </visible>
                       </element>
-                      <element name="DESC_PROFILE" type="elfld">
+                      <element name="DT_EMA_ID_PROFILE_C" type="elfld">
                         <variable type="varPath">
                           <variablePathList>
-                            <variablePath>findDoc_profileManagerEMA.FIND_EMA_PROFILE/ui_UserInterface/uivar_result</variablePath>
-                            <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE/leaf_DESC_PROFILE</variablePath>
+                            <variablePath>findDoc_profileManagerEMA.FIND_EMA_NODO_PROFILE_POPUP/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_profileManagerEMA.DOC_EMA_NODO_PROFILE_POPUP/leaf_DT_EMA_ID_PROFILE_C</variablePath>
                           </variablePathList>
                         </variable>
-                        <width>20%</width>
+                        <visible type="varPath">
+                          <variablePathList>
+                            <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                          </variablePathList>
+                        </visible>
+                      </element>
+                      <element name="DT_EMA_DESC_PROFILE" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_profileManagerEMA.FIND_EMA_NODO_PROFILE_POPUP/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_profileManagerEMA.DOC_EMA_NODO_PROFILE_POPUP/leaf_DT_EMA_DESC_PROFILE</variablePath>
+                          </variablePathList>
+                        </variable>
+                        <visible type="varPath">
+                          <variablePathList>
+                            <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                          </variablePathList>
+                        </visible>
+                      </element>
+                      <element name="DT_EMA_DESC_NODO" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_profileManagerEMA.FIND_EMA_NODO_PROFILE_POPUP/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_profileManagerEMA.DOC_EMA_NODO_PROFILE_POPUP/leaf_DT_EMA_DESC_NODO</variablePath>
+                          </variablePathList>
+                        </variable>
+                        <width>30%</width>
+                      </element>
+                      <element name="DT_EMA_PLATAFORMA" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_profileManagerEMA.FIND_EMA_NODO_PROFILE_POPUP/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_profileManagerEMA.DOC_EMA_NODO_PROFILE_POPUP/leaf_DT_EMA_PLATAFORMA</variablePath>
+                          </variablePathList>
+                        </variable>
+                        <width>30%</width>
                       </element>
                     </elementList>
                   </element>
@@ -311,161 +318,151 @@
             <extends>ui_com.conceptwave.system.BaseFinderUserInterface/frmui_Forms/exov_Menu</extends>
             <label>Menu</label>
             <overrideList>
-              <override name="cwfAdd" type="elmnu">
-                <clickMethod type="varPath">
-                  <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/action_addAction</variablePath>
-                  </variablePathList>
-                </clickMethod>
-                <icon>/cwf/MenuIconAdd.gif</icon>
-                <iconHeight>30px</iconHeight>
-                <iconWidth>30px</iconWidth>
-                <label>Agregar</label>
+              <override name="finderMenuLayout" type="elhlt">
+                <alignment>left,center</alignment>
                 <visible type="varPath">
                   <variablePathList>
                     <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
                   </variablePathList>
                 </visible>
-              </override>
-              <override name="cwfCopy" type="elmnu">
-                <clickMethod type="varPath">
-                  <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/action_copyAction</variablePath>
-                  </variablePathList>
-                </clickMethod>
-                <icon>/cwf/MenuIconCopy.gif</icon>
-                <tooltip>Copy</tooltip>
-                <visible type="varPath">
-                  <variablePathList>
-                    <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
-                  </variablePathList>
-                </visible>
-              </override>
-              <override name="cwfDelete" type="elmnu">
-                <clickMethod type="varPath">
-                  <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/usrActionMethod_deleteAction</variablePath>
-                  </variablePathList>
-                </clickMethod>
-                <icon>/cwf/MenuIconDelete.gif</icon>
-                <tooltip>Delete</tooltip>
-                <visible type="varPath">
-                  <variablePathList>
-                    <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
-                  </variablePathList>
-                </visible>
-              </override>
-              <override name="cwfSearch" type="elmnu">
-                <menuAccel type="mAccelP"/>
-                <clickMethod type="varPath">
-                  <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/usrActionMethod_searchAction</variablePath>
-                  </variablePathList>
-                </clickMethod>
-                <icon>/cwf/MenuIconSearch.gif</icon>
-                <iconHeight>30px</iconHeight>
-                <iconWidth>30px</iconWidth>
-                <label>Buscar</label>
-                <showDown>true</showDown>
-                <showFocused>true</showFocused>
-                <visible type="varPath">
-                  <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_searchVisible</variablePath>
-                  </variablePathList>
-                </visible>
-              </override>
-              <override name="cwfUpdate" type="elmnu">
-                <menuAccel type="mAccelP"/>
-                <clickMethod type="varPath">
-                  <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/action_updateAction</variablePath>
-                  </variablePathList>
-                </clickMethod>
-                <icon>/cwf/MenuIconEdit.gif</icon>
-                <iconHeight>30px</iconHeight>
-                <iconWidth>30px</iconWidth>
-                <label>Editar</label>
-                <tooltip>Edit</tooltip>
-                <visible type="varPath">
-                  <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.UserInterface/uivar_model</variablePath>
-                    <variablePath>mdl_com.conceptwave.system.Model/permMethod_editablePerm</variablePath>
-                  </variablePathList>
-                </visible>
-              </override>
-              <override name="finderMenuLayout" type="elext">
+                <width>100%</width>
                 <elementList>
-                  <element name="MnuNodos" type="elmnu">
+                  <element name="cwfSearch" type="elmnu">
+                    <menuAccel type="mAccelP"/>
                     <clickMethod type="varPath">
                       <variablePathList>
-                        <variablePath>findDoc_profileManagerEMA.FIND_EMA_PROFILE/ui_UserInterface/usrActionMethod_btn_nodosactivos</variablePath>
+                        <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/usrActionMethod_searchAction</variablePath>
                       </variablePathList>
                     </clickMethod>
-                    <icon>/cwf/all.gif</icon>
-                    <iconHeight>30px</iconHeight>
-                    <iconWidth>30px</iconWidth>
-                    <label>Nodos Activos</label>
+                    <icon>/cwf/MenuIconSearch.gif</icon>
+                    <label>Search</label>
+                    <showDown>true</showDown>
+                    <showFocused>true</showFocused>
+                    <tooltip>Search</tooltip>
+                    <visible type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_searchVisible</variablePath>
+                      </variablePathList>
+                    </visible>
+                  </element>
+                  <element name="cwfSelect" type="elmnu">
+                    <menuAccel type="mAccelP"/>
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_showDetailAction</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <icon>/cwf/MenuIconSelect.gif</icon>
+                    <label>Select</label>
+                    <visible type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/permMethod_cwfSelectView</variablePath>
+                      </variablePathList>
+                    </visible>
+                  </element>
+                  <element name="cwfDetail" type="elmnu">
+                    <menuAccel type="mAccelP"/>
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/action_updateAction</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <label>Detail</label>
+                    <tooltip>Edit</tooltip>
+                    <visible type="varPath">
+                      <variablePathList>
+                        <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                      </variablePathList>
+                    </visible>
+                  </element>
+                  <element name="cwfAdd" type="elmnu">
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/action_addAction</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <icon>/cwf/MenuIconAdd.gif</icon>
+                    <tooltip>Add</tooltip>
+                    <visible type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.UserInterface/uivar_model</variablePath>
+                        <variablePath>mdl_com.conceptwave.system.Model/permMethod_addPerm</variablePath>
+                      </variablePathList>
+                    </visible>
+                  </element>
+                  <element name="cwfCopy" type="elmnu">
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/action_copyAction</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <icon>/cwf/MenuIconCopy.gif</icon>
+                    <tooltip>Copy</tooltip>
+                    <visible type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.UserInterface/uivar_model</variablePath>
+                        <variablePath>mdl_com.conceptwave.system.Model/permMethod_addPerm</variablePath>
+                      </variablePathList>
+                    </visible>
+                  </element>
+                  <element name="cwfUpdate" type="elmnu">
+                    <menuAccel type="mAccelP"/>
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/action_updateAction</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <icon>/cwf/MenuIconEdit.gif</icon>
+                    <tooltip>Edit</tooltip>
+                    <visible type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.UserInterface/uivar_model</variablePath>
+                        <variablePath>mdl_com.conceptwave.system.Model/permMethod_editablePerm</variablePath>
+                      </variablePathList>
+                    </visible>
+                  </element>
+                  <element name="cwfDelete" type="elmnu">
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/usrActionMethod_deleteAction</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <icon>/cwf/MenuIconDelete.gif</icon>
+                    <tooltip>Delete</tooltip>
+                    <visible type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/permMethod_canDelete</variablePath>
+                      </variablePathList>
+                    </visible>
+                  </element>
+                  <element name="detailMenu" type="elovf">
+                    <formReference type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detail</variablePath>
+                        <variablePath>ui_com.conceptwave.system.UserInterface/frmui_Forms/vform_Menu</variablePath>
+                      </variablePathList>
+                    </formReference>
+                    <overflow>visible</overflow>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detail</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <width>1px</width>
                   </element>
                 </elementList>
-              </override>
-            </overrideList>
-          </overlay>
-          <overlay name="ReferenceForm" type="exov">
-            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_ReferenceForm</base>
-            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_ReferenceForm</extends>
-            <label>ReferenceForm</label>
-            <overrideList>
-              <override name="back" type="elmnu">
-                <clickMethod type="varPath">
-                  <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/action_hideDetailAction</variablePath>
-                  </variablePathList>
-                </clickMethod>
-                <icon>/cwfv/nav_left_blue.png</icon>
-                <iconHeight>15px</iconHeight>
-                <iconWidth>15px</iconWidth>
-                <label>Volver</label>
-                <tooltip>Back to results</tooltip>
-                <visible type="varPath">
-                  <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
-                  </variablePathList>
-                </visible>
               </override>
             </overrideList>
           </overlay>
         </overlayList>
       </vform>
     </vformList>
-    <methodList>
-      <method name="btn_nodosactivos" type="usrActionMethod">
-        <dialogHeight>400</dialogHeight>
-        <dialogWidth>2700</dialogWidth>
-        <showInPopup>true</showInPopup>
-        <script><![CDATA[
-          externalSystemEMA.quiebra_ejecucion();
-
-          var var_valor = this.result.selected[0].ID_PROFILE_N;
-          var finder = new Finder("profileManagerEMA.FIND_EMA_NODO_PROFILE_POPUP");
-          finder.searchDocument.ID_PROFILE_N = var_valor;
-
-          var res = finder.search();
-
-          var finderUI = new profileManagerEMA.FIND_EMA_NODO_PROFILE_POPUP.UserInterface(null, this);
-          finderUI.result = res;
-
-          return finderUI;
-        ]]></script>
-      </method>
-    </methodList>
   </UserInterface>
   <viewList>
-    <view name="busquedaProfileView" type="findVView">
-      <inputOverlay>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND/ui_UserInterface/frmui_Forms/vform_Formulario_Busqueda</inputOverlay>
-      <label>Búsqueda Perfiles</label>
-      <outputOverlay>findDoc_profileManagerEMA.FIND_EMA_PROFILE/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+    <view name="FIND_EMA_NODO_PROFILE_POPUPView" type="findVView">
+      <label>Plataformas Configuradas para el Perfil</label>
+      <outputOverlay>findDoc_profileManagerEMA.FIND_EMA_NODO_PROFILE_POPUP/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
       <searchImmediately>true</searchImmediately>
-      <showSearchForm>true</showSearchForm>
     </view>
   </viewList>
 </findDoc>

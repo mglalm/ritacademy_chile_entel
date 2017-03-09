@@ -12,10 +12,10 @@
       <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_N</valueType>
     </variable>
     <variable name="ID_PROFILE_C" type="leaf">
-      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_C</valueType>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_DESC_PROFILE_REF</valueType>
     </variable>
     <variable name="ID_SERVICIO_ESTADO" type="leaf">
-      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_ESTADO_SERVICIO</valueType>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_ESTADO_SERVICIO_REF</valueType>
     </variable>
     <variable name="FECHA_ACTIVACION" type="leaf">
       <valueType>dtype_provisionManagerEMA.DT_EMA_FECHA_ACTIVACION</valueType>

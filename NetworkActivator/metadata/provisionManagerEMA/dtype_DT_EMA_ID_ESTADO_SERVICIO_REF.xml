@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="provisionManagerEMA.DT_EMA_ID_ESTADO_SERVICIO_REF">
+  <extends>dtype_cwf.sReference</extends>
+  <label>Estado del Servicio</label>
+  <length>1</length>
+  <metaVersion>25</metaVersion>
+  <reference>findDoc_provisionManagerEMA.FIND_EMA_ESTADOS_SERVICIOS</reference>
+</dataType>

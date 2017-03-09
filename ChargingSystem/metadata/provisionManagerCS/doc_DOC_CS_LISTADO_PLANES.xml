@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerCS.DOC_CS_LISTADO_PLANES">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{a8a029cf-8670-4ea1-8fb4-dc0e6be55767}</guid>
+  <label>DOC_CS_LISTADO_PLANES</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_DESC_PLAN_CS" type="leaf">
+      <column>DESC_PLAN</column>
+      <table>PR_CS_PLAN</table>
+      <valueType>dtype_planManagerCS.DT_DESC_PLAN_CS</valueType>
+    </variable>
+    <variable name="DT_ID_PLAN_C_CS" type="leaf">
+      <column>SYSTEM_ID_PLAN_C_CS</column>
+      <key>1</key>
+      <table>PR_CS_PLAN</table>
+      <valueType>dtype_planManagerCS.DT_ID_PLAN_C_CS</valueType>
+    </variable>
+  </variableList>
+  <methodList>
+    <method name="cwOnDocVisualKey" type="action">
+      <system>true</system>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <script>return this.DT_DESC_PLAN_CS;</script>
+    </method>
+  </methodList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerCS.DOC_CS_LISTADO_PLANES</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

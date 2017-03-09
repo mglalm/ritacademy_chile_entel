@@ -15,7 +15,7 @@
       <valueType>dtype_provisionManagerCS.DT_DESC_ESTADO_SERVICIO_REF</valueType>
     </variable>
     <variable name="ID_PLAN_CS" type="leaf">
-      <valueType>dtype_planManagerCS.DT_ID_PLAN_C_CS</valueType>
+      <valueType>dtype_provisionManagerCS.DT_CS_ID_PLAN_C_REF</valueType>
     </variable>
     <variable name="MSISDN" type="leaf">
       <valueType>dtype_provisionManagerCS.DT_MSISDN</valueType>
@@ -60,14 +60,13 @@
                       </variable>
                       <width>15%</width>
                     </element>
-                    <element name="ID_PLAN_CS" type="elfld">
+                    <element name="ID_PLAN_CS" type="elslct">
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/ui_UserInterface/uivar_model</variablePath>
                           <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_ID_PLAN_CS</variablePath>
                         </variablePathList>
                       </variable>
-                      <width>20%</width>
                     </element>
                     <element name="DESC_ESTADO_SERVICIO_REF" type="elslct">
                       <variable type="varPath">

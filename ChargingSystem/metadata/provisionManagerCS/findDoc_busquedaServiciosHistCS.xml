@@ -385,7 +385,7 @@
                             <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS/leaf_ID_SERVICIO_C_CS</variablePath>
                           </variablePathList>
                         </variable>
-                        <width>15%</width>
+                        <width>10%</width>
                       </element>
                       <element name="MSISDN" type="elfld">
                         <variable type="varPath">
@@ -403,6 +403,7 @@
                             <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS/leaf_ID_PLAN_C_CS</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>20%</width>
                       </element>
                       <element name="ORDER_ID" type="elfld">
                         <variable type="varPath">
@@ -421,6 +422,7 @@
                             <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS/leaf_ID_SERVICIO_ESTADO</variablePath>
                           </variablePathList>
                         </variable>
+                        <width>20%</width>
                       </element>
                       <element name="FECHA_ACTIVACION" type="eldatetime">
                         <displayFormat>dd/MM/yyyy HH:mm</displayFormat>
