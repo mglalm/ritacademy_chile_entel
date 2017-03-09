@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="provisionManagerCS.DT_ID_SERVICIO_N_CS">
+  <extends>dtype_com.conceptwave.system.Decimal</extends>
+  <label>Id Servicio</label>
+  <length>10</length>
+  <metaVersion>25</metaVersion>
+</dataType>

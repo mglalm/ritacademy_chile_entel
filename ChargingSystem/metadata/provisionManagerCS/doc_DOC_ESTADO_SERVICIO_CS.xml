@@ -10,12 +10,12 @@
       <column>ID_SERVICIO_ESTADO</column>
       <key>1</key>
       <table>CS_SERVICIO_ESTADO</table>
-      <valueType>dtype_provisionManagerCS.ID_SERVICIO_ESTADO</valueType>
+      <valueType>dtype_provisionManagerCS.DT_ID_ESTADO_SERVICIO</valueType>
     </variable>
     <variable name="DESC_ESTADO_SERVICIO" type="leaf">
       <column>DESC_ESTADO</column>
       <table>CS_SERVICIO_ESTADO</table>
-      <valueType>dtype_provisionManagerCS.DESC_ESTADO_SERVICIO</valueType>
+      <valueType>dtype_provisionManagerCS.DT_DESC_ESTADO_SERVICIO</valueType>
     </variable>
   </variableList>
   <methodList>

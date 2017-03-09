@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemBSCS.DOC_SERV_BSCS_PLAN">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{52d36b9b-f157-4d8c-bfe7-c39342fce020}</guid>
+  <label>DOC_SERV_BSCS_PLAN</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_SERV_BSCS_ID_PLAN_N" type="leaf">
+      <column>SYSTEM_ID_PLAN_N_BSCS</column>
+      <key>1</key>
+      <table>PR_BSCS_PLAN</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_PLAN_N</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_ID_PLAN_C" type="leaf">
+      <column>SYSTEM_ID_PLAN_C_BSCS</column>
+      <table>PR_BSCS_PLAN</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_PLAN_C</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_DESC_PLAN" type="leaf">
+      <column>DESC_PLAN_BSCS</column>
+      <table>PR_BSCS_PLAN</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_DESC_PLAN</valueType>
+    </variable>
+  </variableList>
+</document>

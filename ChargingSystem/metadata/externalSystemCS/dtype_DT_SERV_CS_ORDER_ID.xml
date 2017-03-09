@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="externalSystemCS.DT_SERV_CS_ORDER_ID">
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>DT_SERV_CS_ORDER_ID</label>
+  <length>16</length>
+  <metaVersion>25</metaVersion>
+</dataType>

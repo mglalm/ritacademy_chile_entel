@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</input>
+  <label>FIND_SERV_CS_SERVICIOS_VIGENTES</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</output>
+  <type>document</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</document>
+      <mappedDocument>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</mappedDocument>
+      <mappedPath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_FECHA_ACTIVACION</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_FECHA_ACTIVACION</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</document>
+      <mappedDocument>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</mappedDocument>
+      <mappedPath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_FECHA_ACTUALIZACION</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_FECHA_ACTUALIZACION</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</document>
+      <mappedDocument>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</mappedDocument>
+      <mappedPath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ID_PLAN_C</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ID_PLAN_C</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</document>
+      <mappedDocument>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</mappedDocument>
+      <mappedPath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ID_SERVICIO_C</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ID_SERVICIO_C</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</document>
+      <mappedDocument>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</mappedDocument>
+      <mappedPath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ID_SERVICIO_ESTADO</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ID_SERVICIO_ESTADO</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</document>
+      <mappedDocument>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</mappedDocument>
+      <mappedPath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ID_SERVICIO_N</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ID_SERVICIO_N</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</document>
+      <mappedDocument>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</mappedDocument>
+      <mappedPath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_MSISDN</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_MSISDN</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</document>
+      <mappedDocument>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</mappedDocument>
+      <mappedPath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ORDER_ID</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ORDER_ID</path>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>ui_com.conceptwave.system.UserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>ui_com.conceptwave.system.UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="FIND_SERV_CS_SERVICIOS_VIGENTESResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="DT_SERV_CS_ID_SERVICIO_N" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ID_SERVICIO_N</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="DT_SERV_CS_ID_SERVICIO_C" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ID_SERVICIO_C</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="DT_SERV_CS_MSISDN" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_MSISDN</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="DT_SERV_CS_ID_PLAN_C" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ID_PLAN_C</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="DT_SERV_CS_ORDER_ID" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ORDER_ID</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="DT_SERV_CS_ID_SERVICIO_ESTADO" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_ID_SERVICIO_ESTADO</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="DT_SERV_CS_FECHA_ACTIVACION" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_FECHA_ACTIVACION</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="DT_SERV_CS_FECHA_ACTUALIZACION" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES/leaf_DT_SERV_CS_FECHA_ACTUALIZACION</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="FIND_SERV_CS_SERVICIOS_VIGENTESView" type="findVView">
+      <outputOverlay>findDoc_externalSystemCS.FIND_SERV_CS_SERVICIOS_VIGENTES/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+    </view>
+  </viewList>
+</findDoc>

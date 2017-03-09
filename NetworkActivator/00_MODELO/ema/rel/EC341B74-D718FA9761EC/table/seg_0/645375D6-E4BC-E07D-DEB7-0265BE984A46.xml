@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="645375D6-E4BC-E07D-DEB7-0265BE984A46" name="EMA_PROFILE_DETALLE">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="645375D6-E4BC-E07D-DEB7-0265BE984A46" name="PR_EMA_PROFILE_DETALLE">
 <createdBy>EOC</createdBy>
 <createdTime>2017-03-02 19:38:22 UTC</createdTime>
 <ownerDesignName>ema</ownerDesignName>
@@ -8,33 +8,59 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_NODO" id="CBD324F4-6605-E954-33C8-179776993727">
+<Column name="SYSTEM_ID_PROFILE_N_EMA" id="2AE1B9C8-DAF2-B7D6-1365-16D8AB886431">
 <createdBy>EOC</createdBy>
-<createdTime>2017-03-02 19:39:49 UTC</createdTime>
+<createdTime>2017-03-08 14:32:12 UTC</createdTime>
 <ownerDesignName>ema</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
+<dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="284DE612-675F-829F-7F6D-54FB5E211BE9" referredColumn="603F42D3-7358-9518-F453-71BD24C31976"/>
+<colAssociation fkAssociation="C3F2986D-8046-D33E-8F92-F72152DC15DE" referredColumn="30C13B14-A290-8873-9E42-1CF4E76C9652"/>
 </associations>
 </Column>
-<Column name="ID_PROFILE" id="2671832E-0DED-76CA-531B-49F0CCF76B8D">
+<Column name="SYSTEM_ID_PROFILE_C_EMA" id="53DA3293-5EA7-99DB-BA6A-1648B5FB891C">
 <createdBy>EOC</createdBy>
-<createdTime>2017-03-02 19:42:11 UTC</createdTime>
+<createdTime>2017-03-08 14:33:57 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SYSTEM_ID_NODO_N_EMA" id="8FE1D905-8183-3AA9-3751-D671850CECF0">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-08 14:37:26 UTC</createdTime>
 <ownerDesignName>ema</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
+<dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="C3F2986D-8046-D33E-8F92-F72152DC15DE" referredColumn="45EEB65F-23A6-2370-F664-A8D823B2175B"/>
+<colAssociation fkAssociation="284DE612-675F-829F-7F6D-54FB5E211BE9" referredColumn="17FCF050-F7DA-3D28-BF87-17E101A4BBE7"/>
 </associations>
+</Column>
+<Column name="SYSTEM_ID_NODO_C_EMA" id="B31DB078-57F0-4E9A-9713-2312C3C9DAB9">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-08 14:38:17 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="DESC_PROFILE_DETALLE" id="B6BE73CD-573E-2B80-4C55-2D2412E6D545">
 <createdBy>EOC</createdBy>
@@ -57,7 +83,7 @@
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="2671832E-0DED-76CA-531B-49F0CCF76B8D"/>
+<colUsage columnID="2AE1B9C8-DAF2-B7D6-1365-16D8AB886431"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="FBCD453D-CD98-3FAB-8BE3-9FD224759F13" name="EMA_PROFILE_NODO_FK">
@@ -67,7 +93,7 @@
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="CBD324F4-6605-E954-33C8-179776993727"/>
+<colUsage columnID="8FE1D905-8183-3AA9-3751-D671850CECF0"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

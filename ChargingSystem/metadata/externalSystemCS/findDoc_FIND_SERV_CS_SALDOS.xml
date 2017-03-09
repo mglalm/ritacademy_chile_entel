@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="externalSystemCS.FIND_SERV_CS_SALDOS">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_externalSystemCS.DOC_SERV_CS_SALDOS</input>
+  <label>FIND_SERV_CS_SALDOS</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_externalSystemCS.DOC_SERV_CS_SALDOS</output>
+  <type>document</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_externalSystemCS.DOC_SERV_CS_SALDOS</document>
+      <mappedDocument>doc_externalSystemCS.DOC_SERV_CS_SALDOS</mappedDocument>
+      <mappedPath>doc_externalSystemCS.DOC_SERV_CS_SALDOS/leaf_FECHA_ULTIMO_SALDO_SERVICIO_CS</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemCS.DOC_SERV_CS_SALDOS/leaf_FECHA_ULTIMO_SALDO_SERVICIO_CS</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemCS.DOC_SERV_CS_SALDOS</document>
+      <mappedDocument>doc_externalSystemCS.DOC_SERV_CS_SALDOS</mappedDocument>
+      <mappedPath>doc_externalSystemCS.DOC_SERV_CS_SALDOS/leaf_ID_SERVICIO_SERVICO_CS</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemCS.DOC_SERV_CS_SALDOS/leaf_ID_SERVICIO_SERVICO_CS</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemCS.DOC_SERV_CS_SALDOS</document>
+      <mappedDocument>doc_externalSystemCS.DOC_SERV_CS_SALDOS</mappedDocument>
+      <mappedPath>doc_externalSystemCS.DOC_SERV_CS_SALDOS/leaf_SALDO_ACTUAL_SERVICIO_CS</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemCS.DOC_SERV_CS_SALDOS/leaf_SALDO_ACTUAL_SERVICIO_CS</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemCS.DOC_SERV_CS_SALDOS</document>
+      <mappedDocument>doc_externalSystemCS.DOC_SERV_CS_SALDOS</mappedDocument>
+      <mappedPath>doc_externalSystemCS.DOC_SERV_CS_SALDOS/leaf_SALDO_INICIAL_SERVICIO_CS</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemCS.DOC_SERV_CS_SALDOS/leaf_SALDO_INICIAL_SERVICIO_CS</path>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>ui_com.conceptwave.system.UserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>ui_com.conceptwave.system.UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_externalSystemCS.DOC_SERV_CS_SALDOS</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SALDOS/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SALDOS/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="DOC_SALDOS_CS_FINDResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SALDOS/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="ID_SERVICIO_SERVICO_CS" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SALDOS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemCS.DOC_SERV_CS_SALDOS/leaf_ID_SERVICIO_SERVICO_CS</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="SALDO_INICIAL_SERVICIO_CS" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SALDOS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemCS.DOC_SERV_CS_SALDOS/leaf_SALDO_INICIAL_SERVICIO_CS</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="SALDO_ACTUAL_SERVICIO_CS" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SALDOS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemCS.DOC_SERV_CS_SALDOS/leaf_SALDO_ACTUAL_SERVICIO_CS</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="FECHA_ULTIMO_SALDO_SERVICIO_CS" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemCS.FIND_SERV_CS_SALDOS/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemCS.DOC_SERV_CS_SALDOS/leaf_FECHA_ULTIMO_SALDO_SERVICIO_CS</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="DOC_SALDOS_CS_FINDView" type="findVView">
+      <outputOverlay>findDoc_externalSystemCS.FIND_SERV_CS_SALDOS/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+    </view>
+  </viewList>
+</findDoc>

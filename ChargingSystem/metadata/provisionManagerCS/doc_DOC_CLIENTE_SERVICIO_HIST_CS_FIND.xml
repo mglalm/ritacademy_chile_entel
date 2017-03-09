@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{e5e98ded-3168-4afd-9dfd-ba57a6a1a34e}</guid>
+  <label>DOC_CLIENTE_SERVICIO_HIST_CS_FIND</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_SERVICIO_N_CS" type="leaf">
+      <key>1</key>
+      <valueType>dtype_provisionManagerCS.DT_ID_SERVICIO_N_CS</valueType>
+    </variable>
+    <variable name="ID_SERVICIO_C_CS" type="leaf">
+      <valueType>dtype_provisionManagerCS.DT_ID_SERVICIO_C_CS</valueType>
+    </variable>
+    <variable name="MSISDN" type="leaf">
+      <valueType>dtype_provisionManagerCS.DT_MSISDN</valueType>
+    </variable>
+    <variable name="ID_PLAN_C_CS" type="leaf">
+      <valueType>dtype_planManagerCS.DT_ID_PLAN_C_CS</valueType>
+    </variable>
+    <variable name="ORDER_ID" type="leaf">
+      <valueType>dtype_provisionManagerCS.DT_ORDER_ID</valueType>
+    </variable>
+    <variable name="ID_SERVICIO_ESTADO" type="leaf">
+      <propertyElement type="elslct">
+        <sorted>false</sorted>
+      </propertyElement>
+      <valueType>dtype_provisionManagerCS.DT_DESC_ESTADO_SERVICIO_REF</valueType>
+    </variable>
+    <variable name="FECHA_ACTIVACION" type="leaf">
+      <propertyElement type="eldatetime"/>
+      <valueType>dtype_provisionManagerCS.DT_FECHA_ACTIVACION</valueType>
+    </variable>
+    <variable name="FECHA_ACTUALIZACION" type="leaf">
+      <propertyElement type="eldatetime"/>
+      <valueType>dtype_provisionManagerCS.DT_FECHA_ACTUALIZACION</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Busqueda" type="vform">
+            <label>Formulario_Busqueda</label>
+            <root name="Formulario_BusquedaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_CLIENTE_SERVICIO_HIST_CS_FINDGrid" type="elgrd">
+                  <numOfCols>8</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DOC_CLIENTE_SERVICIO_HIST_CS_FINDHeader" type="elhdr">
+                      <label>DOC_CLIENTE_SERVICIO_HIST_CS_FIND</label>
+                    </element>
+                    <element name="ID_SERVICIO_N_CS" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/leaf_ID_SERVICIO_N_CS</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ID_SERVICIO_C_CS" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/leaf_ID_SERVICIO_C_CS</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="MSISDN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/leaf_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ID_PLAN_C_CS" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/leaf_ID_PLAN_C_CS</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ORDER_ID" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/leaf_ORDER_ID</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ID_SERVICIO_ESTADO" type="elslct">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/leaf_ID_SERVICIO_ESTADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="FECHA_ACTIVACION" type="eldatetime">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/leaf_FECHA_ACTIVACION</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="FECHA_ACTUALIZACION" type="eldatetime">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS_FIND/leaf_FECHA_ACTUALIZACION</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

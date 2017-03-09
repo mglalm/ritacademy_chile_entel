@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemCS.DOC_SERV_CS_SERVICIOS_VIGENTES">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{b9578783-9c05-48ba-9eb4-869f22f32e5c}</guid>
+  <label>DOC_SERV_CS_SERVICIOS_VIGENTES</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_SERV_CS_ID_SERVICIO_N" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_N_CS</column>
+      <key>1</key>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_ID_SERVICIO_N</valueType>
+    </variable>
+    <variable name="DT_SERV_CS_ID_SERVICIO_C" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_C_CS</column>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_ID_SERVICIO_C</valueType>
+    </variable>
+    <variable name="DT_SERV_CS_MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_MSISDN</valueType>
+    </variable>
+    <variable name="DT_SERV_CS_ID_PLAN_C" type="leaf">
+      <column>SYSTEM_ID_PLAN_C_CS</column>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_ID_PLAN_C</valueType>
+    </variable>
+    <variable name="DT_SERV_CS_ORDER_ID" type="leaf">
+      <column>ORDER_ID</column>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_ORDER_ID</valueType>
+    </variable>
+    <variable name="DT_SERV_CS_ID_SERVICIO_ESTADO" type="leaf">
+      <column>ID_SERVICIO_ESTADO</column>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_ID_SERVICIO_ESTADO</valueType>
+    </variable>
+    <variable name="DT_SERV_CS_FECHA_ACTIVACION" type="leaf">
+      <column>FECHA_ACTIVACION</column>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_FECHA_ACTIVACION</valueType>
+    </variable>
+    <variable name="DT_SERV_CS_FECHA_ACTUALIZACION" type="leaf">
+      <column>FECHA_ACTUALIZACION</column>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_FECHA_ACTUALIZACION</valueType>
+    </variable>
+  </variableList>
+</document>

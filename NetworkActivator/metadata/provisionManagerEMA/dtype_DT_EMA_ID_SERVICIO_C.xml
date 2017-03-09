@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="provisionManagerEMA.DT_EMA_ID_SERVICIO_C">
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>Id Servicio</label>
+  <length>10</length>
+  <metaVersion>25</metaVersion>
+</dataType>

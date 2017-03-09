@@ -9,24 +9,25 @@
   <script><![CDATA[
     var var_orderid = input.orderid;
     var var_rut = input.rut;
+
     var output = new DataStructure("externalSystemBSCS.output_getMsisdnReserveBSCS");
 
     externalSystemBSCS.quiebra_ejecucion();
 
-    var msisdn_disponibles = new Finder("externalSystemBSCS.FIND_SERV_MSISDN_BSCS");
+    var msisdn_disponibles = new Finder("externalSystemBSCS.FIND_SERV_BSCS_MSISDN");
     var resultado = msisdn_disponibles.search();
 
     if ( resultado.length > 0)
     {
         for ( var i = 0 ; i < resultado.length ; i++ )
         {
-            if ( resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS == 1 )
+            if ( resultado[i].DT_SERV_BSCS_ID_MSISDN_ESTADO == 1 )
             {
                 //-----SE BUSCA MSISDN CON ESTADO DISPONIBLE
-                resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS=2;
+                resultado[i].DT_SERV_BSCS_ID_MSISDN_ESTADO=2;
                 output.estado = "OK";
                 output.mensaje = "Mensaje Recibido";
-                output.msisdn = resultado[i].MSISDN_SERVICIO_BSCS;
+                output.msisdn = resultado[i].DT_SERV_BSCS_MSISDN;
                 resultado[i].save();
                 return output;
             }

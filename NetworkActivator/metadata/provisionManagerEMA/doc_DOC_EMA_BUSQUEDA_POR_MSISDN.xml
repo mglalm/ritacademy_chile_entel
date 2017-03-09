@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerEMA.DOC_EMA_BUSQUEDA_POR_MSISDN">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{e15593ef-65d4-4d26-9590-dfb9a8d70c82}</guid>
+  <label>DOC_EMA_BUSQUEDA_POR_MSISDN</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_EMA_MSISDN" type="leaf">
+      <valueType>dtype_provisionManagerEMA.DT_EMA_MSISDN</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerEMA.DOC_EMA_BUSQUEDA_POR_MSISDN</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

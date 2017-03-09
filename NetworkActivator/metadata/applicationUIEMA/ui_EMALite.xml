@@ -16,7 +16,7 @@
             <override name="HorizontalLayout" type="elext">
               <elementList>
                 <element name="tools" type="elmnu">
-                  <label>Tools</label>
+                  <label>Aplicaciones</label>
                   <elementList>
                     <element name="selectApp" type="elmnu">
                       <clickMethod type="varPath">
@@ -24,7 +24,7 @@
                           <variablePath>ui_applicationUIEMA.EMALite/usrActionMethod_selectApp</variablePath>
                         </variablePathList>
                       </clickMethod>
-                      <label>Aplicaciones</label>
+                      <label>Seleccionar Aplicación</label>
                     </element>
                   </elementList>
                 </element>
@@ -103,26 +103,26 @@
   </vformList>
   <methodList>
     <method name="nvoProfile" type="usrActionMethod">
-      <form>doc_profileManagerEMA.DOC_PROFILE_EMA/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
-      <userInterface>doc_profileManagerEMA.DOC_PROFILE_EMA</userInterface>
-      <valueType>doc_profileManagerEMA.DOC_PROFILE_EMA</valueType>
+      <form>doc_profileManagerEMA.DOC_EMA_PROFILE/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+      <userInterface>doc_profileManagerEMA.DOC_EMA_PROFILE</userInterface>
+      <valueType>doc_profileManagerEMA.DOC_EMA_PROFILE</valueType>
     </method>
     <method name="buscarProfile" type="usrActionMethod">
-      <userInterface>findDoc_profileManagerEMA.busquedaProfile</userInterface>
-      <valueType>findDoc_profileManagerEMA.busquedaProfile</valueType>
+      <userInterface>findDoc_profileManagerEMA.FIND_EMA_PROFILE</userInterface>
+      <valueType>findDoc_profileManagerEMA.FIND_EMA_PROFILE</valueType>
     </method>
     <method name="nvoNodo" type="usrActionMethod">
-      <form>doc_profileManagerEMA.DOC_NODO_EMA/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
-      <userInterface>doc_profileManagerEMA.DOC_NODO_EMA</userInterface>
-      <valueType>doc_profileManagerEMA.DOC_NODO_EMA</valueType>
+      <form>doc_profileManagerEMA.DOC_EMA_NODO/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+      <userInterface>doc_profileManagerEMA.DOC_EMA_NODO</userInterface>
+      <valueType>doc_profileManagerEMA.DOC_EMA_NODO</valueType>
     </method>
     <method name="buscarNodo" type="usrActionMethod">
-      <userInterface>findDoc_profileManagerEMA.busquedaNodo</userInterface>
-      <valueType>findDoc_profileManagerEMA.busquedaNodo</valueType>
+      <userInterface>findDoc_profileManagerEMA.FIND_EMA_NODO</userInterface>
+      <valueType>findDoc_profileManagerEMA.FIND_EMA_NODO</valueType>
     </method>
     <method name="buscarServicios" type="usrActionMethod">
-      <userInterface>findDoc_provisionManagerEMA.busquedaServiciosEMA</userInterface>
-      <valueType>findDoc_provisionManagerEMA.busquedaServiciosEMA</valueType>
+      <userInterface>findDoc_provisionManagerEMA.FIND_EMA_SERVICIOS_VIGENTES</userInterface>
+      <valueType>findDoc_provisionManagerEMA.FIND_EMA_SERVICIOS_VIGENTES</valueType>
     </method>
     <method name="selectApp" type="usrActionMethod">
       <script>UserProfile.selectApp();</script>

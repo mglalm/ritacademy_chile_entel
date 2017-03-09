@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="provisionManagerCS.DT_CS_SALDO_INICIAL">
+  <extends>dtype_com.conceptwave.system.Decimal</extends>
+  <label>Saldo Inicial</label>
+  <length>10</length>
+  <metaVersion>25</metaVersion>
+</dataType>

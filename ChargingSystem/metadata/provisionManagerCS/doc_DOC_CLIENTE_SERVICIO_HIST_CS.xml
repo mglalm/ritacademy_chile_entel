@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{b1bb6def-ba37-4914-ac34-448e79f9ca75}</guid>
+  <label>DOC_CLIENTE_SERVICIO_HIST_CS</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_SERVICIO_N_CS" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_N_CS</column>
+      <key>1</key>
+      <table>PR_CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.DT_ID_SERVICIO_N_CS</valueType>
+    </variable>
+    <variable name="ID_SERVICIO_C_CS" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_C_CS</column>
+      <table>PR_CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.DT_ID_SERVICIO_C_CS</valueType>
+    </variable>
+    <variable name="MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <table>PR_CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.DT_MSISDN</valueType>
+    </variable>
+    <variable name="ID_PLAN_C_CS" type="leaf">
+      <column>SYSTEM_ID_PLAN_C_CS</column>
+      <table>PR_CS_SERVICIO</table>
+      <valueType>dtype_planManagerCS.DT_ID_PLAN_C_CS</valueType>
+    </variable>
+    <variable name="ORDER_ID" type="leaf">
+      <column>ORDER_ID</column>
+      <table>PR_CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.DT_ORDER_ID</valueType>
+    </variable>
+    <variable name="ID_SERVICIO_ESTADO" type="leaf">
+      <column>ID_SERVICIO_ESTADO</column>
+      <propertyElement type="elslct">
+        <sorted>false</sorted>
+      </propertyElement>
+      <table>PR_CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.DT_DESC_ESTADO_SERVICIO_REF</valueType>
+    </variable>
+    <variable name="FECHA_ACTIVACION" type="leaf">
+      <column>FECHA_ACTIVACION</column>
+      <propertyElement type="eldatetime"/>
+      <table>PR_CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.DT_FECHA_ACTIVACION</valueType>
+    </variable>
+    <variable name="FECHA_ACTUALIZACION" type="leaf">
+      <column>FECHA_ACTUALIZACION</column>
+      <propertyElement type="eldatetime"/>
+      <table>PR_CS_SERVICIO</table>
+      <valueType>dtype_provisionManagerCS.DT_FECHA_ACTUALIZACION</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_HIST_CS</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

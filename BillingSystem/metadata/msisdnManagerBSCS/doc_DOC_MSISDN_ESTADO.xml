@@ -9,13 +9,13 @@
     <variable name="ID_MSISDN_ESTADO" type="leaf">
       <column>ID_MSISDN_ESTADO</column>
       <key>1</key>
-      <table>BSCS_MSISDN_ESTADO</table>
-      <valueType>dtype_msisdnManagerBSCS.ID_MSISDN_ESTADO</valueType>
+      <table>PR_BSCS_MSISDN_ESTADO</table>
+      <valueType>dtype_msisdnManagerBSCS.DT_BSCS_ID_MSISDN_ESTADO</valueType>
     </variable>
     <variable name="DESC_MSISDN_ESTADO" type="leaf">
       <column>DESC_MSISDN_ESTADO</column>
-      <table>BSCS_MSISDN_ESTADO</table>
-      <valueType>dtype_msisdnManagerBSCS.DESC_MSISDN_ESTADO</valueType>
+      <table>PR_BSCS_MSISDN_ESTADO</table>
+      <valueType>dtype_msisdnManagerBSCS.DT_BSCS_DESC_MSISDN_ESTADO</valueType>
     </variable>
   </variableList>
   <methodList>

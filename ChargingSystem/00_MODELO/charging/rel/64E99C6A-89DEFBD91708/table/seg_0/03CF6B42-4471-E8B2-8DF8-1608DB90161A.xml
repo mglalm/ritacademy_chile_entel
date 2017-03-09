@@ -1,14 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="03CF6B42-4471-E8B2-8DF8-1608DB90161A" name="CS_SERVICIO">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="03CF6B42-4471-E8B2-8DF8-1608DB90161A" name="PR_CS_SERVICIO">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 17:39:00 UTC</createdTime>
 <generatorID>B0CE0D00-5229-BD22-C983-3496FAA4B65E</generatorID>
 <ownerDesignName>charging</ownerDesignName>
+<ordsAlias>cs_servicio</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_SERVICIO" id="8E50A1EA-FBB1-526E-103F-BC9ECC0C2D9D">
+<Column name="SYSTEM_ID_SERVICIO_N_CS" id="8E50A1EA-FBB1-526E-103F-BC9ECC0C2D9D">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 17:39:00 UTC</createdTime>
 <generatorID>E789D6C4-1171-EA5F-EE1C-2FA648FF80AF</generatorID>
@@ -16,24 +17,58 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="ID_PLAN_CS" id="3AE4ACB0-C4C6-F371-C416-AE45B21A5A48">
+<Column name="SYSTEM_ID_SERVICIO_C_CS" id="F82B6587-B81D-D8DD-1523-0439589CA2ED">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-07 17:19:57 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MSISDN" id="2B2B5B19-58D9-2AF5-E80E-7464C812230A">
+<createdBy>EOC</createdBy>
+<createdTime>2017-02-27 17:39:00 UTC</createdTime>
+<generatorID>3EACE6E1-43D5-1330-6426-E4590B3531F9</generatorID>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SYSTEM_ID_PLAN_C_CS" id="3AE4ACB0-C4C6-F371-C416-AE45B21A5A48">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 17:39:00 UTC</createdTime>
 <generatorID>1E839FCC-D341-CF67-7E71-C3257559D9C8</generatorID>
 <ownerDesignName>charging</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="96CC4E8B-ED91-E0FE-423A-F90B10CF9FEA" referredColumn="1328197B-F68D-362C-A548-782291DC39BA"/>
-</associations>
+</Column>
+<Column name="ORDER_ID" id="24A56FB2-B0E0-E998-C898-1F25736353D0">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-02 15:33:15 UTC</createdTime>
+<ownerDesignName>charging</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="ID_SERVICIO_ESTADO" id="BED7B163-F104-3BF3-9EF7-1BE602ECACF7">
 <createdBy>EOC</createdBy>
@@ -50,19 +85,6 @@
 <colAssociation fkAssociation="B0FE3585-6EB9-163B-BAD6-FCB725213D59" referredColumn="9645F69B-26F1-6119-EE56-CEA5BF855FC2"/>
 </associations>
 </Column>
-<Column name="MSISDN" id="2B2B5B19-58D9-2AF5-E80E-7464C812230A">
-<createdBy>EOC</createdBy>
-<createdTime>2017-02-27 17:39:00 UTC</createdTime>
-<generatorID>3EACE6E1-43D5-1330-6426-E4590B3531F9</generatorID>
-<ownerDesignName>charging</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>15</dataTypeSize>
-<ownDataTypeParameters>15,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="FECHA_ACTIVACION" id="CE4DC469-247A-92DE-4352-D24A887096FF">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 17:39:00 UTC</createdTime>
@@ -75,43 +97,20 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="ORDER_ID" id="24A56FB2-B0E0-E998-C898-1F25736353D0">
+<Column name="FECHA_ACTUALIZACION" id="750D4F40-53B5-F799-8AA6-B62D21F0936A">
 <createdBy>EOC</createdBy>
-<createdTime>2017-03-02 15:33:15 UTC</createdTime>
+<createdTime>2017-03-07 17:19:57 UTC</createdTime>
 <ownerDesignName>charging</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>16</dataTypeSize>
-<ownDataTypeParameters>16,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="9F6E2B6B-0CCF-063D-4170-D517034A7BE0" name="CS_SERVICIO_PK">
-<createdBy>EOC</createdBy>
-<createdTime>2017-02-27 17:39:00 UTC</createdTime>
-<generatorID>F00A6E26-97CC-9830-911F-DCCE0A519753</generatorID>
-<ownerDesignName>charging</ownerDesignName>
-<pk>true</pk>
-<indexState>Primary Constraint</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="8E50A1EA-FBB1-526E-103F-BC9ECC0C2D9D"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="9D4AE174-F4BF-5CB2-62B6-0BC4AFBAF857" name="CS_SERVICIO_CS_PLAN_FK">
-<createdBy>EOC</createdBy>
-<createdTime>2017-02-27 17:40:12 UTC</createdTime>
-<ownerDesignName>charging</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="3AE4ACB0-C4C6-F371-C416-AE45B21A5A48"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="1F36F3AF-5F8D-5DD7-037E-EE73C5ACA1E5" name="CS_SERVICIO_CS_ESTADO_FK">
+<ind_PK_UK id="1F36F3AF-5F8D-5DD7-037E-EE73C5ACA1E5" name="PR_SERVICIO_CS_ESTADO_FK">
 <createdBy>EOC</createdBy>
 <createdTime>2017-02-27 17:54:39 UTC</createdTime>
 <ownerDesignName>charging</ownerDesignName>

@@ -14,10 +14,8 @@
     var var_estado = 1;
     var output = new DataStructure("externalSystemEMA.output_provServicioEMA");
 
-    externalSystemEMA.quiebra_ejecucion();
-
     //-----VALIDANDO SI EXISTE EL PROFILE QUE SE RECIBE COMO PARAMETRO
-    var perfiles_activos = new Finder("externalSystemEMA.DOC_PROFILE_EMA_FIND");
+    var perfiles_activos = new Finder("externalSystemEMA.FIND_SERV_EMA_PROFILE");
     var resultado = perfiles_activos.search();
 
     var existe_profile = 0 ;
@@ -25,7 +23,7 @@
     {
         for (var i=0 ;    i < resultado.length ; i++ )
         {
-            if (resultado[i].ID_PROFILE_SERVICIO_EMA == var_profile )
+            if (resultado[i].ID_PROFILE_SERVICIO_EMA_C == var_profile )
                 existe_profile = 1;
         }
     }
@@ -37,16 +35,21 @@
     }
 
     //-----VALIDANDO SI EL PERFIL TIENE PLATAFORMAS CONFIGURADAS PARA LA ACTIVACION
-    var perfiles_nodos_activos = new Finder("externalSystemEMA.DOC_PROF_DETALLE_EMA_FIND");
+    var perfiles_nodos_activos = new Finder("externalSystemEMA.FIND_SERV_EMA_PROF_DETALLE");
     var resultado = perfiles_nodos_activos.search();
-
+    var var_profile_c;
+    var var_profile_n;
     var existe_profile_nodo = 0 ;
     if ( resultado.length > 0 )
     {
         for (var i=0 ;    i < resultado.length ; i++ )
         {
-            if (resultado[i].ID_PROFILE_SERVICIO_EMA == var_profile )
+            if (resultado[i].DT_EMA_ID_PROFILE_C == var_profile )
+            {
                 existe_profile_nodo = 1;
+                 var_profile_c=resultado[i].DT_EMA_ID_PROFILE_C;
+                 var_profile_n=resultado[i].DT_EMA_ID_PROFILE_N;
+            }
         }
     }
     if ( existe_profile_nodo == 0 )
@@ -57,53 +60,74 @@
     }
 
 
+
     //-----VALIDANDO SI LA TRIPLETA YA TIENEN SERVICIO ACTIVO
-    var servicios_activos = new Finder("externalSystemEMA.DOC_SERVICIO_EMA_FIND");
+    var servicios_activos = new Finder("externalSystemEMA.FIND_SERV_EMA_SERVICIOS_VIGENTES");
     var resultado = servicios_activos.search();
     var ya_tiene_servicio = 0 ;
     if ( resultado.length > 0 )
     {
         for (var i=0 ;    i < resultado.length ; i++ )
         {
-            if (resultado[i].ID_PROFILE_SERVICIO_EMA == var_profile && resultado[i].ID_ESTADO_SERVICIO_EMA == var_estado && resultado[i].MSISDN_SERVICIO_EMA == var_msisdn)
+            if (resultado[i].DT_EMA_ID_ESTADO_SERVICIO == var_estado && resultado[i].DT_EMA_MSISDN == var_msisdn)
                 ya_tiene_servicio = 1;
         }
     }
     if ( ya_tiene_servicio > 0 )
     {
         output.estado = "NOOK";
-        output.mensaje = "El movil ya tiene ese Profile Activo en EMA";
+        output.mensaje = "El movil ya tiene un Profile Activo en EMA";
         return output;
     }
 
+    externalSystemEMA.quiebra_ejecucion();
+
+    //ACTIVACION------------------------------------------------------------------------------------------------
     //-----DADO QUE SE PASARON TODAS LAS VALIDACIONES SE CREA EL SERVICIO, RESTA ACTIVAR LOS NODOS
-    var documento = new Document("externalSystemEMA.DOC_SERVICIO_GET_EMA");
+
+    //-----OBTIENE NUEVA SECUENCIA PARA EL SERVICIO
+    var doc_secuencia = new Finder("externalSystemEMA.SEQ_ID_SERVICIO_EMA");
+    var nueva_secuencia = doc_secuencia.search();
+    var var_id_servicio_n=nueva_secuencia[0].type;
+    var var_id_servicio_c=var_id_servicio_n.toString();
+
+    //----SE GENERA REGISTROS EN TABLA HISTORICA
+    var documento = new Document("externalSystemEMA.DOC_SERV_EMA_SERVICIOS_HIST");
     var fecha_hoy = new Date();
-    documento.MSISDN_SERVICIO_EMA = var_msisdn;
-    documento.ID_PROFILE_SERVICIO_EMA = var_profile;
-    documento.ID_ESTADO_SERVICIO_EMA = var_estado;
-    documento.FECHA_ACTIVACION_SERVICIO_EMA = fecha_hoy;
-    documento.ORDER_ID_SERVICIO_EMA = var_orderid;
+
+    documento.DT_EMA_ID_SERVICIO_N=var_id_servicio_n;
+    documento.DT_EMA_ID_SERVICIO_C=var_id_servicio_c;
+    documento.DT_EMA_MSISDN=var_msisdn;
+    documento.DT_EMA_ID_PROFILE_C=var_profile_c;
+    documento.DT_EMA_ID_PROFILE_N=var_profile_n;
+    documento.DT_EMA_ORDER_ID=var_orderid;
+    documento.DT_EMA_ID_ESTADO_SERVICIO=var_estado;
+    documento.DT_EMA_FECHA_ACTIVACION=fecha_hoy;
+    documento.DT_EMA_FECHA_ACTUALIZACION=fecha_hoy;
     documento.save();
 
 
     //-----FALTA SOLO DEJAR EL REGISTRO EN LOS NODOS CORRESPONDIENTES
-    var perfiles_nodos_activos = new Finder("externalSystemEMA.DOC_PROF_DETALLE_EMA_FIND");
+    var perfiles_nodos_activos = new Finder("externalSystemEMA.FIND_SERV_EMA_PROF_DETALLE");
     var resultado = perfiles_nodos_activos.search();
 
     var existe_profile_nodo = 0 ;
     var var_id_nodo;
+    var var_id_nodo_n;
+    var var_id_nodo_c;
     if ( resultado.length > 0 )
     {
         for (var i=0 ;    i < resultado.length ; i++ )
         {
-            if (resultado[i].ID_PROFILE_SERVICIO_EMA == var_profile )
+            if (resultado[i].DT_EMA_ID_PROFILE_C == var_profile )
             {
                //-----SE INSERTA REGISTRO EN TABLA DE ACTIVACION DE NODOS
-                var_id_nodo=resultado[i].ID_NODO_SERVICIO_EMA;
-                var documento = new Document("externalSystemEMA.DOC_SERVICIO_NOD_ACT_GET_EMA");
-                documento.ID_NODO_SERVICIO_EMA = var_id_nodo;
-                documento.MSISDN_SERVICIO_EMA = var_msisdn
+                var_id_nodo_n=resultado[i].ID_NODO_SERVICIO_EMA_N;
+                var_id_nodo_c=resultado[i].ID_NODO_SERVICIO_EMA_C;
+                var documento = new Document("externalSystemEMA.DOC_SERV_EMA_NOD_ACT");
+                documento.ID_NODO_SERVICIO_EMA_C = var_id_nodo_c;
+                documento.ID_NODO_SERVICIO_EMA_N = var_id_nodo_n;
+                documento.MSISDN_SERVICIO_EMA = var_msisdn;
                 documento.FECHA_ACTIVACION_SERVICIO_EMA = fecha_hoy;
                 documento.save();
             }

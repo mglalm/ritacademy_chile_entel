@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST">
+  <dbSchema>PE_ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{70903937-6a22-4a6c-87eb-eab1df6fdd95}</guid>
+  <label>DOC_BSCS_SERVICIOS_HIST</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_BSCS_ID_CLIENTE_N" type="leaf">
+      <column>SYSTEM_ID_CLIENTE_N_BSCS</column>
+      <table>PR_BSCS_SERVICIO</table>
+      <valueType>dtype_provisionManagerBSCS.DT_BSCS_ID_CLIENTE_N</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_FECHA_ACTUALIZACION" type="leaf">
+      <column>FECHA_ACTUALIZACION</column>
+      <table>PR_BSCS_SERVICIO</table>
+      <valueType>dtype_provisionManagerBSCS.DT_BSCS_FECHA_ACTUALIZACION</valueType>
+    </variable>
+    <variable name="DT_BSCS_ID_SERVICIO_C" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_C_BSCS</column>
+      <table>PR_BSCS_SERVICIO</table>
+      <valueType>dtype_provisionManagerBSCS.DT_BSCS_ID_SERVICIO_C</valueType>
+    </variable>
+    <variable name="DT_BSCS_ID_SERVICIO_N" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_N_BSCS</column>
+      <key>1</key>
+      <table>PR_BSCS_SERVICIO</table>
+      <valueType>dtype_provisionManagerBSCS.DT_BSCS_ID_SERVICIO_N</valueType>
+    </variable>
+    <variable name="ID_PLAN_BSCS" type="leaf">
+      <column>SYSTEM_ID_PLAN_C_BSCS</column>
+      <propertyElement type="elslct">
+        <sorted>false</sorted>
+      </propertyElement>
+      <table>PR_BSCS_SERVICIO</table>
+      <valueType>dtype_provisionManagerBSCS.PROV_DESC_PLAN_BSCS_REF</valueType>
+    </variable>
+    <variable name="DT_BSCS_MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <table>PR_BSCS_SERVICIO</table>
+      <valueType>dtype_provisionManagerBSCS.DT_BSCS_MSISDN</valueType>
+    </variable>
+    <variable name="DT_BSCS_FECHA_ACTIVACION" type="leaf">
+      <column>FECHA_ACTIVACION</column>
+      <table>PR_BSCS_SERVICIO</table>
+      <valueType>dtype_provisionManagerBSCS.DT_BSCS_FECHA_ACTIVACION</valueType>
+    </variable>
+    <variable name="DT_BSCS_ID_SERVICIO_ESTADO" type="leaf">
+      <column>ID_SERVICIO_ESTADO</column>
+      <propertyElement type="elslct">
+        <sorted>false</sorted>
+      </propertyElement>
+      <table>PR_BSCS_SERVICIO</table>
+      <valueType>dtype_provisionManagerBSCS.PROV_DESC_ESTADO_SERVICIO_BSCS_REF</valueType>
+    </variable>
+    <variable name="DT_BSCS_ORDER_ID" type="leaf">
+      <column>ORDER_ID</column>
+      <table>PR_BSCS_SERVICIO</table>
+      <valueType>dtype_provisionManagerBSCS.DT_BSCS_ORDER_ID</valueType>
+    </variable>
+    <variable name="DT_BSCS_ID_CLIENT_C" type="leaf">
+      <valueType>dtype_provisionManagerBSCS.DT_BSCS_ID_CLIENTE_C</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Creacion" type="vform">
+            <label>Formulario_Creacion</label>
+            <root name="Formulario_CreacionGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_CLIENTE_SERVICIO_BSCSGrid" type="elgrd">
+                  <numOfCols>6</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="ID_CLIENTE_BSCS" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_ID_CLIENTE_N</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ID_PLAN_BSCS" type="elslct">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_ID_PLAN_BSCS</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="MSISDN" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="FECHA_ACTIVACION" type="eldatetime">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_FECHA_ACTIVACION</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="ID_SERVICIO_ESTADO" type="elslct">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_ID_SERVICIO_ESTADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ORDER_ID" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_ORDER_ID</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="Menu" type="exov">
+            <base>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</base>
+            <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+            <overrideList>
+              <override name="cwfSave" type="elmnu">
+                <menuAccel type="mAccelP"/>
+                <clickMethod type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.DocumentUserInterface/usrActionMethod_save</variablePath>
+                  </variablePathList>
+                </clickMethod>
+                <icon>/cwf/MenuIconSave.gif</icon>
+                <iconHeight>30px</iconHeight>
+                <iconWidth>30px</iconWidth>
+                <label>Guardar</label>
+                <showDown>true</showDown>
+                <tooltip>Save</tooltip>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Formulario_Edicion" type="vform">
+            <label>Formulario_Edicion</label>
+            <root name="Formulario_EdicionGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_CLIENTE_SERVICIO_BSCSGrid" type="elgrd">
+                  <numOfCols>6</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DOC_CLIENTE_SERVICIO_BSCSHeader" type="elhdr">
+                      <label>Actualizar Servicio</label>
+                    </element>
+                    <element name="ID_CLIENTE_BSCS" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_ID_CLIENTE_N</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ID_PLAN_BSCS" type="elslct">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_ID_PLAN_BSCS</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="MSISDN" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="FECHA_ACTIVACION" type="eldatetime">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_FECHA_ACTIVACION</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="ID_SERVICIO_ESTADO" type="elslct">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_ID_SERVICIO_ESTADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ORDER_ID" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_ORDER_ID</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

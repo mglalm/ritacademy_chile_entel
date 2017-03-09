@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="FD1132A2-A748-91F3-6E8B-B49C5F960009" name="VIEW_2">
+<createdBy>EOC</createdBy>
+<createdTime>2017-03-08 19:12:58 UTC</createdTime>
+<ownerDesignName>ema</ownerDesignName>
+<userDefined>false</userDefined>
+<parsed>true</parsed>
+</TableView>

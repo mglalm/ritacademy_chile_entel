@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{223a0f1a-4c37-4535-8d11-69921c7a900e}</guid>
+  <label>DOC_EMA_SERVICIOS_VIGENTES_FIND</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_EMA_ID_SERVICIO_C" type="leaf">
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_SERVICIO_C</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_SERVICIO_N" type="leaf">
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_SERVICIO_N</valueType>
+    </variable>
+    <variable name="DT_EMA_MSISDN" type="leaf">
+      <valueType>dtype_provisionManagerEMA.DT_EMA_MSISDN</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_PROFILE_N" type="leaf">
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_N</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_PROFILE_C" type="leaf">
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_C</valueType>
+    </variable>
+    <variable name="DT_EMA_ORDER_ID" type="leaf">
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ORDER_ID</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_ESTADO_SERVICIO" type="leaf">
+      <valueType>dtype_provisionManagerEMA.DT_EMA_ID_ESTADO_SERVICIO</valueType>
+    </variable>
+    <variable name="DT_EMA_FECHA_ACTIVACION" type="leaf">
+      <valueType>dtype_provisionManagerEMA.DT_EMA_FECHA_ACTIVACION</valueType>
+    </variable>
+    <variable name="DT_EMA_FECHA_ACTUALIZACION" type="leaf">
+      <valueType>dtype_provisionManagerEMA.DT_EMA_FECHA_ACTUALIZACION</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Busqueda" type="vform">
+            <label>Formulario_Busqueda</label>
+            <root name="Formulario_BusquedaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_EMA_SERVICIOS_VIGENTES_FINDGrid" type="elgrd">
+                  <numOfCols>9</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DT_EMA_ID_SERVICIO_C" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/leaf_DT_EMA_ID_SERVICIO_C</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>15%</width>
+                    </element>
+                    <element name="DT_EMA_ID_SERVICIO_N" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/leaf_DT_EMA_ID_SERVICIO_N</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                    </element>
+                    <element name="DT_EMA_MSISDN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/leaf_DT_EMA_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>15%</width>
+                    </element>
+                    <element name="DT_EMA_ID_PROFILE_N" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/leaf_DT_EMA_ID_PROFILE_N</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                    </element>
+                    <element name="DT_EMA_ID_PROFILE_C" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/leaf_DT_EMA_ID_PROFILE_C</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>15%</width>
+                    </element>
+                    <element name="DT_EMA_ORDER_ID" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/leaf_DT_EMA_ORDER_ID</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>15%</width>
+                    </element>
+                    <element name="DT_EMA_ID_ESTADO_SERVICIO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/leaf_DT_EMA_ID_ESTADO_SERVICIO</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>15%</width>
+                    </element>
+                    <element name="DT_EMA_FECHA_ACTIVACION" type="eldatetime">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/leaf_DT_EMA_FECHA_ACTIVACION</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                      <width>15%</width>
+                    </element>
+                    <element name="DT_EMA_FECHA_ACTUALIZACION" type="eldatetime">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerEMA.DOC_EMA_SERVICIOS_VIGENTES_FIND/leaf_DT_EMA_FECHA_ACTUALIZACION</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

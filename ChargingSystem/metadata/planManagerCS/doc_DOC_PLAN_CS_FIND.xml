@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <document name="planManagerCS.DOC_PLAN_CS_FIND">
   <extends>doc_com.conceptwave.system.Document</extends>
-  <guid>{7f8e6b82-a907-43f5-977c-26aa1cbd61d9}</guid>
+  <guid>{8868fb6e-0e62-40ee-a6b9-e9e2221c1667}</guid>
   <label>DOC_PLAN_CS_FIND</label>
   <metaVersion>25</metaVersion>
   <variableList>
-    <variable name="ID_PLAN" type="leaf">
-      <valueType>dtype_planManagerCS.ID_PLAN</valueType>
+    <variable name="DT_DESC_PLAN_CS" type="leaf">
+      <valueType>dtype_planManagerCS.DT_DESC_PLAN_CS</valueType>
     </variable>
-    <variable name="DESC_PLAN" type="leaf">
-      <valueType>dtype_planManagerCS.DESC_PLAN</valueType>
+    <variable name="DT_ID_PLAN_C_CS" type="leaf">
+      <valueType>dtype_planManagerCS.DT_ID_PLAN_C_CS</valueType>
     </variable>
-    <variable name="SALDO_INICIAL" type="leaf">
-      <valueType>dtype_planManagerCS.SALDO_INICIAL</valueType>
+    <variable name="DT_ID_PLAN_N_CS" type="leaf">
+      <valueType>dtype_planManagerCS.DT_ID_PLAN_N_CS</valueType>
+    </variable>
+    <variable name="DT_SALDO_INICIAL_CS" type="leaf">
+      <valueType>dtype_planManagerCS.DT_SALDO_INICIAL_CS</valueType>
     </variable>
   </variableList>
   <UserInterface name="UserInterface" type="ui">
@@ -39,35 +42,59 @@
                   <numOfCols>3</numOfCols>
                   <useDefaultHeight>true</useDefaultHeight>
                   <elementList>
-                    <element name="ID_PLAN" type="elfld">
+                    <element name="DT_ID_PLAN_C_CS" type="elfld">
                       <cellAlignment></cellAlignment>
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/leaf_ID_PLAN</variablePath>
+                          <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/leaf_DT_ID_PLAN_C_CS</variablePath>
                         </variablePathList>
                       </variable>
+                      <width>20%</width>
                     </element>
-                    <element name="DESC_PLAN" type="elfld">
+                    <element name="DT_DESC_PLAN_CS" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/leaf_DESC_PLAN</variablePath>
+                          <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/leaf_DT_DESC_PLAN_CS</variablePath>
                         </variablePathList>
                       </variable>
+                      <width>20%</width>
                     </element>
-                    <element name="SALDO_INICIAL" type="elfld">
+                    <element name="DT_SALDO_INICIAL_CS" type="elfld">
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/leaf_SALDO_INICIAL</variablePath>
+                          <variablePath>doc_planManagerCS.DOC_PLAN_CS_FIND/leaf_DT_SALDO_INICIAL_CS</variablePath>
                         </variablePathList>
                       </variable>
+                      <width>20%</width>
                     </element>
                   </elementList>
                 </element>
               </elementList>
             </root>
+          </overlay>
+          <overlay name="Menu" type="exov">
+            <base>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</base>
+            <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+            <overrideList>
+              <override name="cwfSave" type="elmnu">
+                <menuAccel type="mAccelP"/>
+                <clickMethod type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.DocumentUserInterface/usrActionMethod_save</variablePath>
+                  </variablePathList>
+                </clickMethod>
+                <icon>/cwf/MenuIconSave.gif</icon>
+                <iconHeight>30px</iconHeight>
+                <iconWidth>30px</iconWidth>
+                <label>Guardar</label>
+                <showDown>true</showDown>
+                <tooltip>Save</tooltip>
+              </override>
+            </overrideList>
           </overlay>
         </overlayList>
       </vform>

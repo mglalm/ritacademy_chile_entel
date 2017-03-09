@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="externalSystemEMA.FIND_SERV_EMA_NOD_EMA">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT</input>
+  <label>FIND_SERV_EMA_NOD_EMA</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT</output>
+  <type>document</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT</document>
+      <mappedDocument>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT</mappedDocument>
+      <mappedPath>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT/leaf_FECHA_ACTIVACION_SERVICIO_EMA</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT/leaf_FECHA_ACTIVACION_SERVICIO_EMA</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT</document>
+      <mappedDocument>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT</mappedDocument>
+      <mappedPath>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT/leaf_ID_NODO_SERVICIO_EMA_C</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT/leaf_ID_NODO_SERVICIO_EMA_C</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT</document>
+      <mappedDocument>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT</mappedDocument>
+      <mappedPath>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT/leaf_ID_NODO_SERVICIO_EMA_N</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT/leaf_ID_NODO_SERVICIO_EMA_N</path>
+    </search>
+    <search type="sitem">
+      <document>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT</document>
+      <mappedDocument>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT</mappedDocument>
+      <mappedPath>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT/leaf_MSISDN_SERVICIO_EMA</mappedPath>
+      <operation>equal</operation>
+      <path>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT/leaf_MSISDN_SERVICIO_EMA</path>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>ui_com.conceptwave.system.UserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>ui_com.conceptwave.system.UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_externalSystemEMA.FIND_SERV_EMA_NOD_EMA/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_externalSystemEMA.FIND_SERV_EMA_NOD_EMA/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="DOC_SERV_NOD_EMA_FINDResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_externalSystemEMA.FIND_SERV_EMA_NOD_EMA/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="ID_NODO_SERVICIO_EMA" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemEMA.FIND_SERV_EMA_NOD_EMA/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT/leaf_ID_NODO_SERVICIO_EMA_N</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="MSISDN_SERVICIO_EMA" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemEMA.FIND_SERV_EMA_NOD_EMA/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT/leaf_MSISDN_SERVICIO_EMA</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="FECHA_ACTIVACION_SERVICIO_EMA" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_externalSystemEMA.FIND_SERV_EMA_NOD_EMA/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_externalSystemEMA.DOC_SERV_EMA_NOD_ACT/leaf_FECHA_ACTIVACION_SERVICIO_EMA</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="DOC_SERV_NOD_EMA_FINDView" type="findVView">
+      <outputOverlay>findDoc_externalSystemEMA.FIND_SERV_EMA_NOD_EMA/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <searchImmediately>true</searchImmediately>
+    </view>
+  </viewList>
+</findDoc>

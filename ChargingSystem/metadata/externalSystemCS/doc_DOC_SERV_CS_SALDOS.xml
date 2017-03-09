@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemCS.DOC_SERV_CS_SALDOS">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{bb1525c3-47b1-4d0d-af19-f558a8d33556}</guid>
+  <label>DOC_SERV_CS_SALDOS</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_SERVICIO_SERVICO_CS" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_N_CS</column>
+      <key>1</key>
+      <table>PR_CS_SALDOS</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_ID_SERVICIO_N</valueType>
+    </variable>
+    <variable name="SALDO_INICIAL_SERVICIO_CS" type="leaf">
+      <column>SALDO_INICIAL</column>
+      <table>PR_CS_SALDOS</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_SALDO_INICIAL</valueType>
+    </variable>
+    <variable name="SALDO_ACTUAL_SERVICIO_CS" type="leaf">
+      <column>SALDO_ACTUAL</column>
+      <table>PR_CS_SALDOS</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_SALDO_ACTUAL</valueType>
+    </variable>
+    <variable name="FECHA_ULTIMO_SALDO_SERVICIO_CS" type="leaf">
+      <column>FECHA_ULTIMO_SALDO</column>
+      <table>PR_CS_SALDOS</table>
+      <valueType>dtype_externalSystemCS.DT_SERV_CS_FECHA_ULTIMO_SALDO</valueType>
+    </variable>
+  </variableList>
+</document>

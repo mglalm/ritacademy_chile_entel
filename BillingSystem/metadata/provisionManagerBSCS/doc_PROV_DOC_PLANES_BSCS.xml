@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="provisionManagerBSCS.PROV_DOC_PLANES_BSCS">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{18e8e1b5-593e-42ba-b7b5-f57acbc7bd72}</guid>
+  <label>PROV_DOC_PLANES_BSCS</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="PROV_ID_PLAN_BSCS" type="leaf">
+      <column>ID_PLAN_BSCS</column>
+      <key>1</key>
+      <table>BSCS_PLAN</table>
+      <valueType>dtype_provisionManagerBSCS.PROV_ID_PLAN_BSCS</valueType>
+    </variable>
+    <variable name="PROV_DESC_PLAN_BSCS" type="leaf">
+      <column>DESC_PLAN_BSCS</column>
+      <table>BSCS_PLAN</table>
+      <valueType>dtype_provisionManagerBSCS.PROV_DESC_PLAN_BSCS</valueType>
+    </variable>
+  </variableList>
+  <methodList>
+    <method name="cwOnDocVisualKey" type="action">
+      <system>true</system>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <script>return this.PROV_DESC_PLAN_BSCS;</script>
+    </method>
+  </methodList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_provisionManagerBSCS.PROV_DOC_PLANES_BSCS</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

@@ -1,47 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <document name="provisionManagerCS.DOC_CLIENTE_SERVICIO_CS">
-  <dbSchema>PE_ORDER</dbSchema>
+  <dbSchema>ORDER</dbSchema>
   <extends>doc_com.conceptwave.system.Document</extends>
-  <guid>{e51815a0-081e-47df-a18d-977bcf004575}</guid>
+  <guid>{0f8d3fc6-149f-479a-8754-17de0ef0e54a}</guid>
   <label>DOC_CLIENTE_SERVICIO_CS</label>
   <metaVersion>25</metaVersion>
   <variableList>
-    <variable name="ID_SERVICIO" type="leaf">
-      <column>ID_SERVICIO</column>
-      <table>CS_SERVICIO</table>
-      <valueType>dtype_provisionManagerCS.ID_SERVICIO</valueType>
-    </variable>
-    <variable name="ID_PLAN_CS" type="leaf">
-      <column>ID_PLAN_CS</column>
+    <variable name="ID_SERVICIO_N_CS" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_N_CS</column>
       <key>1</key>
-      <table>CS_SERVICIO</table>
-      <valueType>dtype_provisionManagerCS.ID_PLAN_CS</valueType>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerCS.DT_ID_SERVICIO_N_CS</valueType>
     </variable>
-    <variable name="ID_SERVICIO_ESTADO" type="leaf">
-      <column>ID_SERVICIO_ESTADO</column>
-      <key>2</key>
-      <propertyElement type="elslct">
-        <sorted>false</sorted>
-      </propertyElement>
-      <table>CS_SERVICIO</table>
-      <valueType>dtype_provisionManagerCS.DESC_ESTADO_SERVICIO_REF</valueType>
+    <variable name="ID_SERVICIO_C_CS" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_C_CS</column>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerCS.DT_ID_SERVICIO_C_CS</valueType>
     </variable>
     <variable name="MSISDN" type="leaf">
       <column>MSISDN</column>
-      <key>3</key>
-      <table>CS_SERVICIO</table>
-      <valueType>dtype_provisionManagerCS.MSISDN</valueType>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerCS.DT_MSISDN</valueType>
+    </variable>
+    <variable name="ID_PLAN_C_CS" type="leaf">
+      <column>SYSTEM_ID_PLAN_C_CS</column>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_planManagerCS.DT_ID_PLAN_C_CS</valueType>
+    </variable>
+    <variable name="ORDER_ID" type="leaf">
+      <column>ORDER_ID</column>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerCS.DT_ORDER_ID</valueType>
+    </variable>
+    <variable name="ID_SERVICIO_ESTADO" type="leaf">
+      <column>ID_SERVICIO_ESTADO</column>
+      <propertyElement type="elslct">
+        <sorted>false</sorted>
+      </propertyElement>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerCS.DT_DESC_ESTADO_SERVICIO_REF</valueType>
     </variable>
     <variable name="FECHA_ACTIVACION" type="leaf">
       <column>FECHA_ACTIVACION</column>
       <propertyElement type="eldatetime"/>
-      <table>CS_SERVICIO</table>
-      <valueType>dtype_provisionManagerCS.FECHA_ACTIVACION</valueType>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerCS.DT_FECHA_ACTIVACION</valueType>
     </variable>
-    <variable name="ORDER_ID" type="leaf">
-      <column>ORDER_ID</column>
-      <table>CS_SERVICIO</table>
-      <valueType>dtype_provisionManagerCS.ORDER_ID</valueType>
+    <variable name="FECHA_ACTUALIZACION" type="leaf">
+      <column>FECHA_ACTUALIZACION</column>
+      <propertyElement type="eldatetime"/>
+      <table>PR_CS_SERVICIO_VIGENTE</table>
+      <valueType>dtype_provisionManagerCS.DT_FECHA_ACTUALIZACION</valueType>
     </variable>
   </variableList>
   <UserInterface name="UserInterface" type="ui">
@@ -55,6 +64,121 @@
     <vformList>
       <vform name="Forms" type="frmui">
         <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+          </overlay>
+          <overlay name="Formulario_Creacion" type="vform">
+            <label>Formulario_Creacion</label>
+            <root name="Formulario_CreacionGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_CLIENTE_SERVICIO_CSGrid" type="elgrd">
+                  <numOfCols>6</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="ID_SERVICIO" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_SERVICIO_N_CS</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>15%</width>
+                    </element>
+                    <element name="ID_PLAN_CS" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_PLAN_C_CS</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ID_SERVICIO_ESTADO" type="elslct">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ID_SERVICIO_ESTADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="MSISDN" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="FECHA_ACTIVACION" type="eldatetime">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_FECHA_ACTIVACION</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="ORDER_ID" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS/leaf_ORDER_ID</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="Menu" type="exov">
+            <base>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</base>
+            <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+            <overrideList>
+              <override name="cwfSave" type="elmnu">
+                <menuAccel type="mAccelP"/>
+                <clickMethod type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.DocumentUserInterface/usrActionMethod_save</variablePath>
+                  </variablePathList>
+                </clickMethod>
+                <icon>/cwf/MenuIconSave.gif</icon>
+                <iconHeight>30px</iconHeight>
+                <iconWidth>30px</iconWidth>
+                <label>Guardar</label>
+                <showDown>true</showDown>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
       </vform>
     </vformList>
   </UserInterface>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemEMA.DOC_SERV_EMA_NOD_ACT">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{0aeb6eee-1648-4ee5-960e-291c253f2402}</guid>
+  <label>DOC_SERV_EMA_NOD_ACT</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_NODO_SERVICIO_EMA_N" type="leaf">
+      <column>SYSTEM_ID_NODO_N_EMA</column>
+      <key>1</key>
+      <table>PR_EMA_SERVICIO_NODO_ACTIVO</table>
+      <valueType>dtype_externalSystemEMA.DT_SERV_EMA_ID_NODO_N</valueType>
+    </variable>
+    <variable name="ID_NODO_SERVICIO_EMA_C" type="leaf">
+      <column>SYSTEM_ID_NODO_C_EMA</column>
+      <table>PR_EMA_SERVICIO_NODO_ACTIVO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_NODO_C</valueType>
+    </variable>
+    <variable name="MSISDN_SERVICIO_EMA" type="leaf">
+      <column>MSISDN</column>
+      <key>2</key>
+      <table>PR_EMA_SERVICIO_NODO_ACTIVO</table>
+      <valueType>dtype_externalSystemEMA.DT_SERV_EMA_MSISDN</valueType>
+    </variable>
+    <variable name="FECHA_ACTIVACION_SERVICIO_EMA" type="leaf">
+      <column>FECHA_ACTIVACION</column>
+      <table>PR_EMA_SERVICIO_NODO_ACTIVO</table>
+      <valueType>dtype_externalSystemEMA.DT_SERV_EMA_FECHA_ACTIVACION</valueType>
+    </variable>
+  </variableList>
+</document>

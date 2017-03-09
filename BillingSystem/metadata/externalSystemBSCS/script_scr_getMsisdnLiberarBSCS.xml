@@ -13,7 +13,7 @@
 
     externalSystemBSCS.quiebra_ejecucion();
 
-    var msisdn_disponibles = new Finder("externalSystemBSCS.FIND_SERV_MSISDN_BSCS");
+    var msisdn_disponibles = new Finder("externalSystemBSCS.FIND_SERV_BSCS_MSISDN");
     var resultado = msisdn_disponibles.search();
 
     if ( resultado.length > 0)
@@ -21,9 +21,9 @@
         for ( var i = 0 ; i < resultado.length ; i++ )
         {
             //-----SE BUSCA MSISDN CON ESTADO RESERVADO
-            if ( resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS == 2 && resultado[i].MSISDN_SERVICIO_BSCS == var_msisdn)
+            if ( resultado[i].DT_SERV_BSCS_ID_MSISDN_ESTADO == 2 && resultado[i].DT_SERV_BSCS_MSISDN == var_msisdn)
             {
-                resultado[i].ID_MSISDN_ESTADO_SERVICIO_BSCS=1;
+                resultado[i].DT_SERV_BSCS_ID_MSISDN_ESTADO=1;
                 output.estado = "OK";
                 output.mensaje = "MSISDN Liberado";
                 resultado[i].save();

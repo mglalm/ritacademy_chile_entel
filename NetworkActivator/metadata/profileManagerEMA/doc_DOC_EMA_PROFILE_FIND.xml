@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="profileManagerEMA.DOC_EMA_PROFILE_FIND">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{ff6587e4-8e1b-47fb-a8e6-e2720ef08036}</guid>
+  <label>DOC_EMA_PROFILE_FIND</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_PROFILE_N" type="leaf">
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_N</valueType>
+    </variable>
+    <variable name="ID_PROFILE_C" type="leaf">
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_C</valueType>
+    </variable>
+    <variable name="DESC_PROFILE" type="leaf">
+      <valueType>dtype_profileManagerEMA.DT_EMA_DESC_PROFILE</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Busqueda" type="vform">
+            <label>Formulario_Busqueda</label>
+            <root name="Formulario_BusquedaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_PROFILE_EMA_FINDGrid" type="elgrd">
+                  <numOfCols>2</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="ID_PROFILE" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND/leaf_ID_PROFILE_N</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="DESC_PROFILE" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE_FIND/leaf_DESC_PROFILE</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

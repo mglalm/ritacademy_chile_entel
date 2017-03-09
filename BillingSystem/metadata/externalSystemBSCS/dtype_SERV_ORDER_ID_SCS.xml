@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="externalSystemBSCS.SERV_ORDER_ID_SCS">
-  <extends>dtype_com.conceptwave.system.String</extends>
-  <label>SERV_ORDER_ID_SCS</label>
-  <length>16</length>
-  <metaVersion>25</metaVersion>
-</dataType>

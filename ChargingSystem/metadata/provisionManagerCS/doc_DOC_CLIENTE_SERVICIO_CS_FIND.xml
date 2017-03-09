@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <document name="provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND">
   <extends>doc_com.conceptwave.system.Document</extends>
-  <guid>{4b1a6433-12b7-4e01-8ffd-6646fb986e2a}</guid>
+  <guid>{75c7da1c-dfef-4393-b029-acde1cb0eab0}</guid>
   <label>DOC_CLIENTE_SERVICIO_CS_FIND</label>
   <metaVersion>25</metaVersion>
   <variableList>
     <variable name="ID_SERVICIO" type="leaf">
-      <valueType>dtype_provisionManagerCS.ID_SERVICIO</valueType>
+      <valueType>dtype_provisionManagerCS.DT_ID_SERVICIO_N_CS</valueType>
     </variable>
     <variable name="DESC_ESTADO_SERVICIO_REF" type="leaf">
       <propertyElement type="elslct">
         <sorted>false</sorted>
       </propertyElement>
-      <valueType>dtype_provisionManagerCS.DESC_ESTADO_SERVICIO_REF</valueType>
+      <valueType>dtype_provisionManagerCS.DT_DESC_ESTADO_SERVICIO_REF</valueType>
     </variable>
     <variable name="ID_PLAN_CS" type="leaf">
-      <valueType>dtype_provisionManagerCS.ID_PLAN_CS</valueType>
+      <valueType>dtype_planManagerCS.DT_ID_PLAN_C_CS</valueType>
     </variable>
     <variable name="MSISDN" type="leaf">
-      <valueType>dtype_provisionManagerCS.MSISDN</valueType>
+      <valueType>dtype_provisionManagerCS.DT_MSISDN</valueType>
     </variable>
     <variable name="FECHA_ACTIVACION" type="leaf">
       <propertyElement type="eldatetime"/>
-      <valueType>dtype_provisionManagerCS.FECHA_ACTIVACION</valueType>
+      <valueType>dtype_provisionManagerCS.DT_FECHA_ACTIVACION</valueType>
     </variable>
     <variable name="ORDER_ID" type="leaf">
-      <valueType>dtype_provisionManagerCS.ORDER_ID</valueType>
+      <valueType>dtype_provisionManagerCS.DT_ORDER_ID</valueType>
     </variable>
   </variableList>
   <UserInterface name="UserInterface" type="ui">
@@ -58,6 +58,7 @@
                           <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_ID_SERVICIO</variablePath>
                         </variablePathList>
                       </variable>
+                      <width>15%</width>
                     </element>
                     <element name="ID_PLAN_CS" type="elfld">
                       <variable type="varPath">
@@ -66,6 +67,7 @@
                           <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_ID_PLAN_CS</variablePath>
                         </variablePathList>
                       </variable>
+                      <width>20%</width>
                     </element>
                     <element name="DESC_ESTADO_SERVICIO_REF" type="elslct">
                       <variable type="varPath">
@@ -82,6 +84,7 @@
                           <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_MSISDN</variablePath>
                         </variablePathList>
                       </variable>
+                      <width>20%</width>
                     </element>
                     <element name="FECHA_ACTIVACION" type="eldatetime">
                       <variable type="varPath">
@@ -90,6 +93,12 @@
                           <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_FECHA_ACTIVACION</variablePath>
                         </variablePathList>
                       </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                      <width>20%</width>
                     </element>
                     <element name="ORDER_ID" type="elfld">
                       <variable type="varPath">
@@ -98,6 +107,7 @@
                           <variablePath>doc_provisionManagerCS.DOC_CLIENTE_SERVICIO_CS_FIND/leaf_ORDER_ID</variablePath>
                         </variablePathList>
                       </variable>
+                      <width>20%</width>
                     </element>
                   </elementList>
                 </element>

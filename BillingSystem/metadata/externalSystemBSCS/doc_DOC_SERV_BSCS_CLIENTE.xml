@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="externalSystemBSCS.DOC_SERV_BSCS_CLIENTE">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{271ff494-04ec-476e-8267-02b774663ee9}</guid>
+  <label>DOC_SERV_BSCS_CLIENTE</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_SERV_BSCS_ID_CLIENTE_N" type="leaf">
+      <column>SYSTEM_ID_CLIENTE_N_BSCS</column>
+      <key>1</key>
+      <table>PR_BSCS_CLIENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_CLIENTE_N</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_ID_CLIENTE_C" type="leaf">
+      <column>SYSTEM_ID_CLIENTE_C_BSCS</column>
+      <table>PR_BSCS_CLIENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_CLIENTE_C</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_FECHA_CREACION" type="leaf">
+      <column>FECHA_CREACION</column>
+      <table>PR_BSCS_CLIENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_FECHA_CREACION</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_ID_CLIENTE_ESTADO" type="leaf">
+      <column>ID_CLIENTE_ESTADO</column>
+      <table>PR_BSCS_CLIENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_ID_CLIENTE_ESTADO</valueType>
+    </variable>
+    <variable name="DT_SERV_BSCS_RUT" type="leaf">
+      <column>RUT</column>
+      <table>PR_BSCS_CLIENTE</table>
+      <valueType>dtype_externalSystemBSCS.DT_SERV_BSCS_RUT</valueType>
+    </variable>
+  </variableList>
+</document>

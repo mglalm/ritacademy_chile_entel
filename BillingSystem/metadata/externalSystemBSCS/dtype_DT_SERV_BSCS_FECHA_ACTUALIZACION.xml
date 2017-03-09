@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="externalSystemBSCS.DT_SERV_BSCS_FECHA_ACTUALIZACION">
+  <extends>dtype_com.conceptwave.system.DateTime</extends>
+  <label>DT_SERV_BSCS_FECHA_ACTUALIZACION</label>
+  <metaVersion>25</metaVersion>
+</dataType>

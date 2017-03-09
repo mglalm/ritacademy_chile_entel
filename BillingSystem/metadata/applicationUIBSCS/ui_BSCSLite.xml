@@ -16,7 +16,7 @@
             <override name="HorizontalLayout" type="elext">
               <elementList>
                 <element name="tools" type="elmnu">
-                  <label>Tools</label>
+                  <label>Aplicaciones</label>
                   <elementList>
                     <element name="selectApp" type="elmnu">
                       <clickMethod type="varPath">
@@ -24,7 +24,7 @@
                           <variablePath>ui_applicationUIBSCS.BSCSLite/usrActionMethod_selectApp</variablePath>
                         </variablePathList>
                       </clickMethod>
-                      <label>Select Application</label>
+                      <label>Seleccionar Aplicación</label>
                     </element>
                   </elementList>
                 </element>
@@ -35,14 +35,6 @@
                 <element name="Customers" type="elmnu">
                   <label>Clientes</label>
                   <elementList>
-                    <element name="Nuevo_Cliente" type="elmnu">
-                      <clickMethod type="varPath">
-                        <variablePathList>
-                          <variablePath>ui_applicationUIBSCS.BSCSLite/usrActionMethod_nvoCliente</variablePath>
-                        </variablePathList>
-                      </clickMethod>
-                      <label>Crear</label>
-                    </element>
                     <element name="Buscar_Cliente" type="elmnu">
                       <clickMethod type="varPath">
                         <variablePathList>
@@ -96,7 +88,7 @@
                   </elementList>
                 </element>
                 <element name="Servicios" type="elmnu">
-                  <label>Servicios Por Clientes</label>
+                  <label>Servicios por Cliente</label>
                   <elementList>
                     <element name="Servicios_Clientes" type="elmnu">
                       <clickMethod type="varPath">
@@ -104,11 +96,14 @@
                           <variablePath>ui_applicationUIBSCS.BSCSLite/usrActionMethod_buscarServicios</variablePath>
                         </variablePathList>
                       </clickMethod>
-                      <label>Servicios Por Cliente</label>
+                      <label>Servicios por Cliente</label>
                     </element>
                   </elementList>
                 </element>
               </elementList>
+            </override>
+            <override name="Separator" type="elsep">
+              <width>0%</width>
             </override>
           </overrideList>
         </overlay>
@@ -124,13 +119,13 @@
   </vformList>
   <methodList>
     <method name="nvoCliente" type="usrActionMethod">
-      <form>doc_customerManagerBSCS.DOC_CLIENTE_BSCS/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
-      <userInterface>doc_customerManagerBSCS.DOC_CLIENTE_BSCS</userInterface>
-      <valueType>doc_customerManagerBSCS.DOC_CLIENTE_BSCS</valueType>
+      <form>doc_customerManagerBSCS.DOC_BSCS_CLIENTE/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+      <userInterface>doc_customerManagerBSCS.DOC_BSCS_CLIENTE</userInterface>
+      <valueType>doc_customerManagerBSCS.DOC_BSCS_CLIENTE</valueType>
     </method>
     <method name="buscarCliente" type="usrActionMethod">
-      <userInterface>findDoc_customerManagerBSCS.busquedaCliente</userInterface>
-      <valueType>findDoc_customerManagerBSCS.busquedaCliente</valueType>
+      <userInterface>findDoc_customerManagerBSCS.FIND_BSCS_CLIENTE</userInterface>
+      <valueType>findDoc_customerManagerBSCS.FIND_BSCS_CLIENTE</valueType>
     </method>
     <method name="selectApp" type="usrActionMethod">
       <script>UserProfile.selectApp();</script>
@@ -150,8 +145,8 @@
       <valueType>doc_planManagerBSCS.DOC_PLAN_BSCS</valueType>
     </method>
     <method name="buscarPlan" type="usrActionMethod">
-      <userInterface>findDoc_planManagerBSCS.busquedaPlan</userInterface>
-      <valueType>findDoc_planManagerBSCS.busquedaPlan</valueType>
+      <userInterface>findDoc_planManagerBSCS.FIND_BSCS_PLAN</userInterface>
+      <valueType>findDoc_planManagerBSCS.FIND_BSCS_PLAN</valueType>
     </method>
     <method name="buscarServicios" type="usrActionMethod">
       <userInterface>findDoc_provisionManagerBSCS.busquedaServicios</userInterface>

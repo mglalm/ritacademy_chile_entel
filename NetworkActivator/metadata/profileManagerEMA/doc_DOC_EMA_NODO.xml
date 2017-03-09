@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="profileManagerEMA.DOC_EMA_NODO">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{f1b16b02-dfea-49c4-a7ac-20ccda0b8cc0}</guid>
+  <label>DOC_EMA_NODO</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_NODO_N" type="leaf">
+      <column>SYSTEM_ID_NODO_N_EMA</column>
+      <key>1</key>
+      <table>PR_EMA_NODO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_NODO_N</valueType>
+    </variable>
+    <variable name="ID_NODO_C" type="leaf">
+      <column>SYSTEM_ID_NODO_C_EMA</column>
+      <table>PR_EMA_NODO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_NODO_C</valueType>
+    </variable>
+    <variable name="DESC_NODO" type="leaf">
+      <column>DESC_NODO</column>
+      <table>PR_EMA_NODO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_DESC_NODO</valueType>
+    </variable>
+    <variable name="PLATAFORMA" type="leaf">
+      <column>PLATAFORMA</column>
+      <table>PR_EMA_NODO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_PLATAFORMA</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_profileManagerEMA.DOC_EMA_NODO</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Creacion" type="vform">
+            <label>Formulario_Creacion</label>
+            <root name="Formulario_CreacionGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_NODOGrid" type="elgrd">
+                  <numOfCols>3</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="Header" type="elhdr">
+                      <label>Crear Nodo</label>
+                    </element>
+                    <element name="ID_NODO_C" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/leaf_ID_NODO_C</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="DESC_NODO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/leaf_DESC_NODO</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="PLATAFORMA" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/leaf_PLATAFORMA</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="Formulario_Edicion" type="vform">
+            <label>Formulario_Edicion</label>
+            <root name="Formulario_EdicionGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_NODO_EMAGrid" type="elgrd">
+                  <numOfCols>3</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="Header" type="elhdr">
+                      <label>Editar Nodo</label>
+                    </element>
+                    <element name="ID_NODO" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/leaf_ID_NODO_N</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="DESC_NODO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/leaf_DESC_NODO</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                    <element name="PLATAFORMA" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/leaf_PLATAFORMA</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <width>20%</width>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="Menu" type="exov">
+            <base>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</base>
+            <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+            <overrideList>
+              <override name="cwfSave" type="elmnu">
+                <menuAccel type="mAccelP"/>
+                <clickMethod type="varPath">
+                  <variablePathList>
+                    <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/ui_UserInterface/usrActionMethod_btn_grabar</variablePath>
+                  </variablePathList>
+                </clickMethod>
+                <icon>/cwf/MenuIconSave.gif</icon>
+                <iconHeight>30px</iconHeight>
+                <iconWidth>30px</iconWidth>
+                <label>Guardar</label>
+                <showDown>true</showDown>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+    <methodList>
+      <method name="btn_grabar" type="usrActionMethod">
+        <script><![CDATA[
+          externalSystemEMA.quiebra_ejecucion();
+
+          if ( this.model.ID_NODO_C != null && this.model.ID_NODO_C != "" )
+          {
+              if ( this.model.ID_NODO_N == null )
+              {
+                  //-----OBTIENE NUEVA SECUENCIA PARA EL NUEVO PLAN
+                  var doc_secuencia = new Finder("profileManagerEMA.SEQ_ID_NODO_EMA");
+                  var nueva_secuencia = doc_secuencia.search();
+                  var var_campo_id=nueva_secuencia[0].type;  //Obtiene el valor desde el finder
+                  this.model.ID_NODO_N=var_campo_id;
+              }
+
+              this.save();
+              Global.showUserMessage("Nodo Almacenado");
+          }
+          else
+          {
+              Global.showUserMessage("Debe ingresar un ID");
+              return false;
+          }
+        ]]></script>
+      </method>
+    </methodList>
+  </UserInterface>
+</document>

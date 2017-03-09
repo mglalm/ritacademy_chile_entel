@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="externalSystemEMA.ID_ESTADO_SERVICIO_EMA">
-  <extends>dtype_com.conceptwave.system.String</extends>
-  <label>ID_ESTADO_SERVICIO_EMA</label>
-  <length>1</length>
-  <metaVersion>25</metaVersion>
-</dataType>
