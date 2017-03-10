@@ -16,26 +16,39 @@
     var grabarDocumento = new Document("EMA.clienteHLR");
 
 
-    var grabar = 0;
+    fnd.searchDocument.MSISDN = input.MSISDN;
+    var result = fnd.search();//retorna una DataObjectList() -> ARRAY
+    var doc1 = result && result.length>0 ? result[0] : null;
 
-    for (i=0;i<doc.length & grabar == 0;i=i+1)
+    if(doc1)
     {
-    if (doc[i].MSISDN == input.MSISDN) {grabar = 1; output.mensaje= "Ok"; output.estado = "Perfil de MSISDN " + input.MSISDN + " actualizado";
-          doc[i].MSISDN = input.IMSI;
+          output.mensaje= "Error EMA,  MSISDN " + input.MSISDN + " ya existe";
+          output.estado = "NOOK";
+          /*doc[i].IMSI = input.IMSI;
           doc[i].PROFILE = input.PROFILE;
-          doc[i].save();
+          doc[i].save(); */
     }
 
 
+    fnd.searchDocument.IMSI = input.IMSI;
+    var result = fnd.search();//retorna una DataObjectList() -> ARRAY
+    var doc2 = result && result.length>0 ? result[0] : null;
+    if(doc2)
+    {
 
-    if (input.IMSI == null) {grabar = 1; output.mensaje= "No/Ok"; output.estado = "IMSI nula"}}
+          output.mensaje= "Error EMA, IMSI " + input.IMSI + " ya existe";
+          output.estado = "NOOK";
+    }
 
-    if (grabar == 0)
-      {
-          grabarDocumento.MSISDN = input.MSISDN;
+    if( !doc1 &&  !doc2)
+    {
+         grabarDocumento.MSISDN = input.MSISDN;
           grabarDocumento.IMSI = input.IMSI;
           grabarDocumento.PROFILE = input.PROFILE;
-          grabarDocumento.save(); output.mensaje= "Ok"; output.estado = "Plan Asignado a la MSISDN " + input.MSISDN;}
+          grabarDocumento.save();
+          output.mensaje= "Plan Asignado a la MSISDN " + input.MSISDN;
+          output.estado = "OK";
+    }
 
     return output;
 
