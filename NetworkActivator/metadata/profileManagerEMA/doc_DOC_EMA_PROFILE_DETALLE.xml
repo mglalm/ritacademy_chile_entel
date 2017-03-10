@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="profileManagerEMA.DOC_EMA_PROFILE_DETALLE">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{f8650bfd-8009-4dff-9d23-1a2ecf7bfd8a}</guid>
+  <label>DOC_EMA_PROFILE_DETALLE</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_EMA_ID_PROFILE_N" type="leaf">
+      <column>SYSTEM_ID_PROFILE_N_EMA</column>
+      <table>PR_EMA_PROFILE_DETALLE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_N</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_PROFILE_C" type="leaf">
+      <column>SYSTEM_ID_PROFILE_C_EMA</column>
+      <key>1</key>
+      <table>PR_EMA_PROFILE_DETALLE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_C</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_NODO_N" type="leaf">
+      <column>SYSTEM_ID_NODO_N_EMA</column>
+      <table>PR_EMA_PROFILE_DETALLE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_NODO_N</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_NODO_C" type="leaf">
+      <column>SYSTEM_ID_NODO_C_EMA</column>
+      <key>2</key>
+      <table>PR_EMA_PROFILE_DETALLE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_NODO_C</valueType>
+    </variable>
+    <variable name="DT_EMA_DESC_PROFILE_DETALLE" type="leaf">
+      <column>DESC_PROFILE_DETALLE</column>
+      <table>PR_EMA_PROFILE_DETALLE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_DESC_PROFILE_DETALLE</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_profileManagerEMA.DOC_EMA_PROFILE_DETALLE</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

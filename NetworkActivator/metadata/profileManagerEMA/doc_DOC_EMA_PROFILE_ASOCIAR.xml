@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="profileManagerEMA.DOC_EMA_PROFILE_ASOCIAR">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{06e64bef-80a1-4d35-a4cd-695a48db4fc1}</guid>
+  <label>Modificar Asociación Perfil / Plataforma</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ID_PROFILE_C" type="leaf">
+      <column>SYSTEM_ID_PROFILE_C_EMA</column>
+      <key>1</key>
+      <table>PR_EMA_PROFILE</table>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_DESC_PROFILE_REF</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_PROFILE_N" type="leaf">
+      <column>SYSTEM_ID_PROFILE_N_EMA</column>
+      <table>PR_EMA_PROFILE</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_N</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_profileManagerEMA.DOC_EMA_PROFILE_ASOCIAR</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Busqueda" type="vform">
+            <label>Formulario_Busqueda</label>
+            <root name="Formulario_BusquedaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_EMA_PROFILE_ASOCIARGrid" type="elgrd">
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="ID_PROFILE_C" type="elslct">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE_ASOCIAR/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE_ASOCIAR/leaf_ID_PROFILE_C</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="DT_EMA_ID_PROFILE_N" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE_ASOCIAR/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_PROFILE_ASOCIAR/leaf_DT_EMA_ID_PROFILE_N</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

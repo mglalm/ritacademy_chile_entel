@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="profileManagerEMA.DT_NODO_PERFIL_CONFIGURADO">
+  <enumeration type="enum">
+    <valueList>
+      <value name="NO" type="enumItem" code="0"/>
+      <value name="SI" type="enumItem" code="1"/>
+    </valueList>
+  </enumeration>
+  <extends>dtype_com.conceptwave.system.Decimal</extends>
+  <label>Configurado</label>
+  <length>1</length>
+  <metaVersion>25</metaVersion>
+</dataType>

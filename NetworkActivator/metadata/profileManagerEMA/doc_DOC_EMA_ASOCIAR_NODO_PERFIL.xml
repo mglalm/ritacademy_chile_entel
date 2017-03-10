@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="profileManagerEMA.DOC_EMA_ASOCIAR_NODO_PERFIL">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{ee05a618-2dfb-4208-b02a-5d421395bc4a}</guid>
+  <label>Modificar Asociación Perfil / Plataforma</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_EMA_ID_PROFILE_N" type="leaf">
+      <column>SYSTEM_ID_PROFILE_N_EMA</column>
+      <key>2</key>
+      <table>PR_EMA_NODO_CONFIGURADO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_PROFILE_N</valueType>
+    </variable>
+    <variable name="DT_EMA_PLATAFORMA" type="leaf">
+      <column>PLATAFORMA</column>
+      <table>PR_EMA_NODO_CONFIGURADO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_PLATAFORMA</valueType>
+    </variable>
+    <variable name="DT_EMA_DESC_PROFILE_DETALLE" type="leaf">
+      <column>DESC_PROFILE_DETALLE</column>
+      <table>PR_EMA_NODO_CONFIGURADO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_DESC_PROFILE_DETALLE</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_PROFILE_C" type="leaf">
+      <column>SYSTEM_ID_PROFILE_C_EMA</column>
+      <table>PR_EMA_NODO_CONFIGURADO</table>
+      <valueType>dtype_provisionManagerEMA.DT_EMA_DESC_PROFILE_REF</valueType>
+    </variable>
+    <variable name="DT_NODO_PERFIL_CONFIGURADO" type="leaf">
+      <column>CONFIGURADO</column>
+      <table>PR_EMA_NODO_CONFIGURADO</table>
+      <valueType>dtype_profileManagerEMA.DT_NODO_PERFIL_CONFIGURADO</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_NODO_N" type="leaf">
+      <column>SYSTEM_ID_NODO_N_EMA</column>
+      <key>1</key>
+      <table>PR_EMA_NODO_CONFIGURADO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_NODO_N</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_NODO_C" type="leaf">
+      <column>SYSTEM_ID_NODO_C_EMA</column>
+      <table>PR_EMA_NODO_CONFIGURADO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_NODO_C_REF</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_profileManagerEMA.DOC_EMA_ASOCIAR_NODO_PERFIL</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Formulario_Busqueda" type="vform">
+            <label>Formulario_Busqueda</label>
+            <root name="Formulario_BusquedaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_EMA_ASOCIAR_NODO_PERFILGrid" type="elgrd">
+                  <numOfCols>5</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DOC_EMA_ASOCIAR_NODO_PERFILHeader" type="elhdr">
+                      <label>DOC_EMA_ASOCIAR_NODO_PERFIL</label>
+                    </element>
+                    <element name="DT_EMA_ID_PROFILE_N" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_ASOCIAR_NODO_PERFIL/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_ASOCIAR_NODO_PERFIL/leaf_DT_EMA_ID_PROFILE_N</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                    </element>
+                    <element name="DT_EMA_ID_PROFILE_C" type="elslct">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_ASOCIAR_NODO_PERFIL/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_ASOCIAR_NODO_PERFIL/leaf_DT_EMA_ID_PROFILE_C</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="DT_NODO_PERFIL_CONFIGURADO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_ASOCIAR_NODO_PERFIL/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_ASOCIAR_NODO_PERFIL/leaf_DT_NODO_PERFIL_CONFIGURADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                    </element>
+                    <element name="DT_EMA_ID_NODO_N" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_ASOCIAR_NODO_PERFIL/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_ASOCIAR_NODO_PERFIL/leaf_DT_EMA_ID_NODO_N</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                    </element>
+                    <element name="DT_EMA_ID_NODO_C" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_ASOCIAR_NODO_PERFIL/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_ASOCIAR_NODO_PERFIL/leaf_DT_EMA_ID_NODO_C</variablePath>
+                        </variablePathList>
+                      </variable>
+                      <visible type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </visible>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

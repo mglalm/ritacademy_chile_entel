@@ -78,11 +78,16 @@
                   <label>Nodos/Perfil</label>
                   <visible type="varPath">
                     <variablePathList>
-                      <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                      <variablePath>dtype_com.conceptwave.system.Boolean/leaf_TRUE</variablePath>
                     </variablePathList>
                   </visible>
                   <elementList>
                     <element name="Asociar" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUIEMA.EMALite/usrActionMethod_btn_asociarNodoPerfil</variablePath>
+                        </variablePathList>
+                      </clickMethod>
                       <label>Asociar Nodo/Perfil</label>
                     </element>
                   </elementList>
@@ -139,6 +144,10 @@
     </method>
     <method name="selectApp" type="usrActionMethod">
       <script>UserProfile.selectApp();</script>
+    </method>
+    <method name="btn_asociarNodoPerfil" type="usrActionMethod">
+      <userInterface>findDoc_profileManagerEMA.FIND_EMA_ASOCIAR_NODO_PERFIL</userInterface>
+      <valueType>findDoc_profileManagerEMA.FIND_EMA_ASOCIAR_NODO_PERFIL</valueType>
     </method>
   </methodList>
 </userInterface>

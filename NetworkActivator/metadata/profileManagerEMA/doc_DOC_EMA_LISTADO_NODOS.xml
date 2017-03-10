@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="profileManagerEMA.DOC_EMA_LISTADO_NODOS">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{6c468b28-0c00-41f0-8f3a-d70c2f8277fe}</guid>
+  <label>DOC_EMA_LISTADO_NODOS</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_EMA_DESC_NODO" type="leaf">
+      <column>DESC_NODO</column>
+      <table>PR_EMA_NODO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_DESC_NODO</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_NODO_N" type="leaf">
+      <column>SYSTEM_ID_NODO_N_EMA</column>
+      <table>PR_EMA_NODO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_NODO_N</valueType>
+    </variable>
+    <variable name="DT_EMA_PLATAFORMA" type="leaf">
+      <column>PLATAFORMA</column>
+      <table>PR_EMA_NODO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_PLATAFORMA</valueType>
+    </variable>
+    <variable name="DT_EMA_ID_NODO_C" type="leaf">
+      <column>SYSTEM_ID_NODO_C_EMA</column>
+      <key>1</key>
+      <table>PR_EMA_NODO</table>
+      <valueType>dtype_profileManagerEMA.DT_EMA_ID_NODO_C</valueType>
+    </variable>
+  </variableList>
+  <methodList>
+    <method name="cwOnDocVisualKey" type="action">
+      <system>true</system>
+      <valueType>dtype_com.conceptwave.system.String</valueType>
+      <script>return this.DT_EMA_DESC_NODO;</script>
+    </method>
+  </methodList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_profileManagerEMA.DOC_EMA_LISTADO_NODOS</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

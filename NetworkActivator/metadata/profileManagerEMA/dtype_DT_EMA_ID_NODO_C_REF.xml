@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="profileManagerEMA.DT_EMA_ID_NODO_C_REF">
+  <extends>dtype_cwf.sReference</extends>
+  <label>Nodo</label>
+  <length>10</length>
+  <metaVersion>25</metaVersion>
+  <reference>findDoc_profileManagerEMA.FIND_EMA_LISTADO_NODOS</reference>
+</dataType>

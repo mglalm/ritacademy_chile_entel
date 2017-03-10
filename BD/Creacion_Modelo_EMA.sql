@@ -127,6 +127,30 @@ from
   b.FECHA_ACTIVACION FECHA_ACTIVACION
   from PR_EMA_NODO a, PR_EMA_SERVICIO_NODO_ACTIVO b
   where a.SYSTEM_ID_NODO_N_EMA=b.SYSTEM_ID_NODO_N_EMA;
+
+  
+CREATE OR REPLACE VIEW PR_EMA_NODO_CONFIGURADO as 
+SELECT 	C.system_id_nodo_n_ema system_id_nodo_n_ema,
+		C.system_id_nodo_c_ema system_id_nodo_c_ema,
+		C.system_id_profile_n_ema system_id_profile_n_ema,
+		C.system_id_profile_c_ema system_id_profile_c_ema,
+		D.DESC_PROFILE_DETALLE DESC_PROFILE_DETALLE,
+		cast(nvl(length(substr(D.DESC_PROFILE_DETALLE,1,1)),0) as number(1)) CONFIGURADO,
+		C.PLATAFORMA
+from 	(  	select  a.system_id_nodo_n_ema system_id_nodo_n_ema, 
+					a.system_id_nodo_c_ema system_id_nodo_c_ema, 
+					b.system_id_profile_n_ema system_id_profile_n_ema,
+					b.system_id_profile_c_ema system_id_profile_c_ema,
+					a.plataforma
+			from    pr_ema_nodo a ,
+					pr_ema_profile b
+		) 	c,
+		pr_ema_profile_detalle D
+where C.system_id_nodo_n_ema=D.system_id_nodo_n_ema(+) and
+      C.system_id_profile_n_ema=D.system_id_profile_n_ema(+);
+
+
+
   
   --SECUENCIAS
 
