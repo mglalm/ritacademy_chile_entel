@@ -60,6 +60,11 @@
                       <label>Ingresar los valores para el nuevo parámetro</label>
                     </element>
                     <element name="ID" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
                       <label>Id Interno</label>
                       <variable type="varPath">
                         <variablePathList>
@@ -230,6 +235,13 @@
         <script><![CDATA[
           this.save();
           Global.showUserMessage("Parámetro almacenado correctamente");
+        ]]></script>
+      </method>
+      <method name="onInit" type="action">
+        <valueType>nmeta_com.conceptwave.system.Object</valueType>
+        <script><![CDATA[
+          this.model.ID = 8;
+          return this.cw$super_onInit();
         ]]></script>
       </method>
     </methodList>

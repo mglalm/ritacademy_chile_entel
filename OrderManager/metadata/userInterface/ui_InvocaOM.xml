@@ -3,7 +3,7 @@
   <extends>ui_com.conceptwave.system.Application</extends>
   <label>Invoca OM</label>
   <metaVersion>25</metaVersion>
-  <url>/InvocaOM</url>
+  <url>/ParametrosOM</url>
   <vformList>
     <vform name="Forms" type="frmui">
       <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
@@ -15,6 +15,7 @@
           <overrideList>
             <override name="HorizontalLayout" type="elext">
               <elementList>
+                <element name="HorizontalLayoutMenu" type="elhlt"/>
                 <element name="Tools" type="elmnu">
                   <label>Tools</label>
                   <elementList>
@@ -32,50 +33,16 @@
             </override>
             <override name="HorizontalLayoutForMenuItems" type="elext">
               <elementList>
-                <element name="InvocaOM" type="elmnu">
-                  <clickMethod type="varPath">
-                    <variablePathList>
-                      <variablePath>ui_userInterface.InvocaOM/usrActionMethod_invocarOM</variablePath>
-                    </variablePathList>
-                  </clickMethod>
-                  <label>Invocar OM</label>
-                  <visible type="varPath">
-                    <variablePathList>
-                      <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
-                    </variablePathList>
-                  </visible>
-                </element>
-                <element name="InvocaOMSimple" type="elmnu">
-                  <clickMethod type="varPath">
-                    <variablePathList>
-                      <variablePath>ui_userInterface.InvocaOM/usrActionMethod_InvocaOMSimpleUA</variablePath>
-                    </variablePathList>
-                  </clickMethod>
-                  <label>Invoca OM Simple</label>
-                  <visible type="varPath">
-                    <variablePathList>
-                      <variablePath>dtype_com.conceptwave.system.Boolean/leaf_TRUE</variablePath>
-                    </variablePathList>
-                  </visible>
-                </element>
                 <element name="ParametrosOM" type="elmnu">
-                  <label>Parametros OM</label>
+                  <label>Mantenedor Parametros OM</label>
                   <elementList>
-                    <element name="AgregaParametro" type="elmnu">
-                      <clickMethod type="varPath">
-                        <variablePathList>
-                          <variablePath>ui_userInterface.InvocaOM/usrActionMethod_agregarParametro</variablePath>
-                        </variablePathList>
-                      </clickMethod>
-                      <label>Agregar Parámetro</label>
-                    </element>
-                    <element name="buscarParametro" type="elmnu">
+                    <element name="MantenedorParametros" type="elmnu">
                       <clickMethod type="varPath">
                         <variablePathList>
                           <variablePath>ui_userInterface.InvocaOM/usrActionMethod_parametrosOM</variablePath>
                         </variablePathList>
                       </clickMethod>
-                      <label>Buscar Parametro</label>
+                      <label>Mantenedor de Parámetros de OM</label>
                     </element>
                   </elementList>
                 </element>
@@ -94,15 +61,6 @@
     </vform>
   </vformList>
   <methodList>
-    <method name="invocarOM" type="usrActionMethod">
-      <form>dstruct_OrderManager.dsOrderProvisionInput/tree_UserInterface/frmui_Forms/vform_IngresoOrderTab</form>
-      <userInterface>dstruct_OrderManager.dsOrderProvisionInput</userInterface>
-      <valueType>dstruct_OrderManager.dsOrderProvisionInput</valueType>
-    </method>
-    <method name="InvocaOMSimpleUA" type="usrActionMethod">
-      <userInterface>order_OrderManager.OrdenProvision</userInterface>
-      <valueType>order_OrderManager.OrdenProvision</valueType>
-    </method>
     <method name="parametrosOM" type="usrActionMethod">
       <userInterface>findDoc_OrderManager.fin_OMMantenedorParametro</userInterface>
       <valueType>findDoc_OrderManager.fin_OMMantenedorParametro</valueType>

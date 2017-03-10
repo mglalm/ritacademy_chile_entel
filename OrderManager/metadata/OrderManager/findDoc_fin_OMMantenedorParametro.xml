@@ -239,9 +239,21 @@
     </vformList>
     <methodList>
       <method name="agregarParametro" type="usrActionMethod">
-        <form>doc_OrderManager.docOMParametrosNodos/ui_UserInterface/frmui_Forms/vform_formParametros</form>
-        <userInterface>doc_OrderManager.docOMParametrosNodos</userInterface>
-        <valueType>doc_OrderManager.docOMParametrosNodos</valueType>
+        <script><![CDATA[
+          OrderManager.debug();
+          var arr = this.result;
+          var valor = 0;
+          var i;
+          for(i=0;i<arr.length;i++){
+              if(arr[i].ID > valor) valor = arr[i].ID;
+          }
+          valor = valor +1;
+
+          var doc = new Document("OrderManager.docOMParametrosNodos");
+          var UI = new doc.UserInterface(null, this);
+          UI.model.ID = valor;
+          return(UI);
+        ]]></script>
       </method>
       <method name="actualizar" type="usrActionMethod">
         <script><![CDATA[

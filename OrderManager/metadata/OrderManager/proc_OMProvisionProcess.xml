@@ -8,7 +8,7 @@
       <child name="rescataParamCS" type="scriptActivity">
         <label>validaParamCS</label>
         <x>11.0</x>
-        <y>224.0</y>
+        <y>225.0</y>
         <methodList>
           <method name="cwOnProcActBefore" type="action">
             <category>before</category>
