@@ -10,6 +10,7 @@
   <script><![CDATA[
     var MSISDN = null;
     var fnd = new Finder('BSCS_LISTENER.buscaMSISDN');
+    fnd.searchDocument.status="AVAILABLE";
     var result = fnd.search();//retorna una DataObjectList() -> ARRAY
     // var doc = result && result.length>0 ? result[0] : null;
 

@@ -10,13 +10,14 @@
         <attributes>localhost;1521;orcl;false</attributes>
         <driverType>Oracle thin</driverType>
       </driver>
-      <password>BA528B3B98D2C94E</password>
-      <user>c##bscs</user>
+      <password>B26DA5C23C2C972A5347C8B21011B9E7</password>
+      <user>c##train</user>
     </databases>
   </databasesMap>
   <excludedBuildWar>.bak</excludedBuildWar>
   <excludedResource>.svn</excludedResource>
   <jarExportFolder>C:\Users\EOC\Documents\ritacademy_chile_entel\BSCS\</jarExportFolder>
-  <nodeString>PE_UI</nodeString>
+  <joinCluster>true</joinCluster>
+  <nodeString>BSCS Metadata</nodeString>
   <skin>Enterprise</skin>
 </project>

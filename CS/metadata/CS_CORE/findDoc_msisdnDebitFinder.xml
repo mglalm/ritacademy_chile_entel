@@ -63,6 +63,7 @@
                         <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
                       </variablePathList>
                     </onSelectChange>
+                    <selectionAppearance>checkbox</selectionAppearance>
                     <variable type="varPath">
                       <variablePathList>
                         <variablePath>findDoc_CS_CORE.msisdnDebitFinder/ui_UserInterface/uivar_result</variablePath>

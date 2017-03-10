@@ -20,11 +20,11 @@
   <metaVersion>25</metaVersion>
   <metadataVersion>20150818</metadataVersion>
   <templateList>
-    <template>BSCS Metadata</template>
     <template>EMA Metadata</template>
+    <template>BSCS Metadata</template>
+    <template>CS</template>
     <template>ecm</template>
     <template>OM</template>
-    <template>CS</template>
     <template>EOC</template>
   </templateList>
 </header>

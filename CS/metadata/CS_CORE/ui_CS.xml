@@ -13,6 +13,18 @@
           <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
           <label>Menu</label>
           <overrideList>
+            <override name="HorizontalLayout" type="elext">
+              <elementList>
+                <element name="MenuItem3" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_CS_CORE.CS/usrActionMethod_selectApp</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Select App</label>
+                </element>
+              </elementList>
+            </override>
             <override name="HorizontalLayoutForMenuItems" type="elext">
               <elementList>
                 <element name="MenuItem" type="elmnu">
@@ -67,6 +79,9 @@
       <form>findDoc_CS_CORE.msisdnDebitFinder/ui_UserInterface/frmui_Forms/exov_Default</form>
       <userInterface>findDoc_CS_CORE.msisdnDebitFinder</userInterface>
       <valueType>findDoc_CS_CORE.msisdnDebitFinder</valueType>
+    </method>
+    <method name="selectApp" type="usrActionMethod">
+      <script>UserProfile.selectApp();</script>
     </method>
   </methodList>
 </userInterface>
