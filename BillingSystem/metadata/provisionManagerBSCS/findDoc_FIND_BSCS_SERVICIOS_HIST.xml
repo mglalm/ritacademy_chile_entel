@@ -5,6 +5,14 @@
   <label>Movimientos Históricos</label>
   <metaVersion>25</metaVersion>
   <output>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST</output>
+  <sortList>
+    <sort type="stitem">
+      <path>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_FECHA_ACTIVACION</path>
+    </sort>
+    <sort type="stitem">
+      <path>doc_provisionManagerBSCS.DOC_BSCS_SERVICIOS_HIST/leaf_DT_BSCS_ORDER_ID</path>
+    </sort>
+  </sortList>
   <type>document</type>
   <searchList>
     <search type="sitem">

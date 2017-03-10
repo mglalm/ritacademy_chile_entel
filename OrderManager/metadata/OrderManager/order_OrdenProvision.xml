@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<order name="OrderManager.OrdenProvision">
+  <extends>order_com.conceptwave.system.Order</extends>
+  <label>OrdenProvision</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="docOrden" type="order">
+      <label>docOrden</label>
+      <mandatory>true</mandatory>
+      <orderItem>doc_OrderManager.docOMOrden</orderItem>
+      <orderType>document</orderType>
+    </child>
+  </childList>
+  <UserInterface name="UserInterface" type="tree">
+    <autoExpand>true</autoExpand>
+    <defaultFolderImage>undefined</defaultFolderImage>
+    <defaultLeafImage>undefined</defaultLeafImage>
+    <element>order_OrderManager.OrdenProvision</element>
+    <extends>tree_com.conceptwave.system.OrderUserInterface</extends>
+    <label>OrdenProvision</label>
+    <tableDoc>doc_com.conceptwave.system.TreeDocument</tableDoc>
+    <childList>
+      <child name="docOrden" type="tnOi">
+        <autoExpand>true</autoExpand>
+        <autoSave>true</autoSave>
+        <detailForm>doc_OrderManager.docOMOrden/ui_UserInterface/frmui_Forms/vform_datosOrden</detailForm>
+        <detailUI>doc_OrderManager.docOMOrden/ui_UserInterface</detailUI>
+        <element>doc_OrderManager.docOMOrden</element>
+        <extends>tn_com.conceptwave.system.TreeNode</extends>
+        <label>docOrden</label>
+        <nodeType>4</nodeType>
+        <orderItem>order_OrderManager.OrdenProvision/order_docOrden</orderItem>
+        <vformList>
+          <vform name="Forms" type="frmui">
+            <extends>tn_com.conceptwave.system.TreeNode/frmui_Forms</extends>
+          </vform>
+        </vformList>
+      </child>
+    </childList>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>order_OrderManager.OrdenProvision</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</order>

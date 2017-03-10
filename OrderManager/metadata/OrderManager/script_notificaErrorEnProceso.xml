@@ -10,6 +10,29 @@
   <script><![CDATA[
     //OrderManager.debug();
 
+
+    var orden = new Document("OrderManager.docOMOrden");  //documento asociado a la tabla de BD OM_ORDEN
+    var fnd = new Finder("OrderManager.finOM_Orden"); // finder del OM_ORDEN
+    var resultOM_Orden; //lista que retornara el finder
+
+    orden.orderId = this.process.processDocument.IN_orderId;
+
+    var resultOM_Orden = fnd.search(resultOM_Orden, orden);//retorna una DataObjectList() -> ARRAY
+    var doc = resultOM_Orden && resultOM_Orden.length>0 ? resultOM_Orden[0] : null;
+
+    //Si lo encuentra en BD, debe entregar ERROR, ya que siempre debe provisionar una orden nueva
+
+    //Descomentar estas dos lineas para exportar JAR
+    if(doc){
+        orden = doc;
+        //orden.rut = docProcess.IN_rut;
+        orden.estado = docProcess.OUT_estadoOrden;
+        orden.motivoEstado = docProcess.CTRL_DESC_ERROR
+        orden.save();
+    }
+
+
+
     var ds = new DataStructure("OENamespace.dsOrderProvisionResponse");
 
     ds.orderId = docProcess.IN_orderId;

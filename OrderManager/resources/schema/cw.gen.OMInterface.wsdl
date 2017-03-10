@@ -24,6 +24,15 @@
 
 			<!-- Data types and elements -->
 
+			<simpleType name="dtTipoOrden">
+				<annotation>
+					<documentation>dtTipoOrden</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="20"/>
+				</restriction>
+			</simpleType>
+
 			<simpleType name="dtRut">
 				<annotation>
 					<documentation>dt Rut</documentation>
@@ -62,6 +71,7 @@
 						<element name="rut" minOccurs="0" maxOccurs="1" type="OrderManager:dtRut"/>
 						<element name="POIdBasico" minOccurs="0" maxOccurs="1" type="OrderManager:dtPOId"/>
 						<element name="POIdAdicional" minOccurs="0" maxOccurs="1" type="OrderManager:dtPOId"/>
+						<element name="tipoOrden" minOccurs="0" maxOccurs="1" type="OrderManager:dtTipoOrden"/>
 					</sequence>
 				</complexType>
 

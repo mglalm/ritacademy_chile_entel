@@ -74,4 +74,188 @@
       <valueType>dtype_cwf.updatedBy</valueType>
     </variable>
   </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_OrderManager.docOMOrden</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="datosOrden" type="vform">
+            <label>datosOrden</label>
+            <root name="datosOrdenGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="docOMOrdenGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="docOMOrdenHeader" type="elhdr">
+                      <label>docOMOrden</label>
+                    </element>
+                    <element name="cwDocId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_cwDocId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="orderId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_orderId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="rut" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_rut</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="estado" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_estado</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="tipoOrden" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_tipoOrden</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="motivoEstado" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_motivoEstado</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="fechaCreacion" type="eldatetime">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_fechaCreacion</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwDocStamp" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_cwDocStamp</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwOrderCreationDate" type="eldatetime">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_cwOrderCreationDate</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwParentId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_cwParentId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwSiteId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_cwSiteId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="lastUpdatedDate" type="eldatetime">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_lastUpdatedDate</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="updatedBy" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docOMOrden/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docOMOrden/leaf_updatedBy</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
 </document>

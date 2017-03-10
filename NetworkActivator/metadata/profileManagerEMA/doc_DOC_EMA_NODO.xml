@@ -100,7 +100,7 @@
                     <element name="Header" type="elhdr">
                       <label>Editar Nodo</label>
                     </element>
-                    <element name="ID_NODO" type="elfld">
+                    <element name="ID_NODO_C" type="elfld">
                       <editable type="varPath">
                         <variablePathList>
                           <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
@@ -109,7 +109,7 @@
                       <variable type="varPath">
                         <variablePathList>
                           <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/ui_UserInterface/uivar_model</variablePath>
-                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/leaf_ID_NODO_N</variablePath>
+                          <variablePath>doc_profileManagerEMA.DOC_EMA_NODO/leaf_ID_NODO_C</variablePath>
                         </variablePathList>
                       </variable>
                       <width>20%</width>
@@ -178,6 +178,10 @@
 
               this.save();
               Global.showUserMessage("Nodo Almacenado");
+
+              var finderUI = new profileManagerEMA.FIND_EMA_NODO.UserInterface(null, this);
+              return finderUI;
+
           }
           else
           {

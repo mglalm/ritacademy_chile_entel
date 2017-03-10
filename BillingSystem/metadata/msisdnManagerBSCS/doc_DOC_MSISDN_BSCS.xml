@@ -139,8 +139,17 @@
         <script><![CDATA[
           externalSystemBSCS.quiebra_ejecucion();
 
-          this.save();
-          Global.showUserMessage("MSISDN Almacenado");
+          if ( this.model.MSISDN != null && this.model.MSISDN != "" )
+          {
+              this.save();
+              Global.showUserMessage("MSISDN Almacenado");
+
+              var finderUI = new msisdnManagerBSCS.busquedaMsisdn.UserInterface(null, this);
+              return finderUI;
+
+          }
+          else
+              Global.showUserMessage("Debe ingresar un ID");
         ]]></script>
       </method>
     </methodList>

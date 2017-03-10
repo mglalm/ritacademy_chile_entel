@@ -293,6 +293,7 @@
                       </variablePathList>
                     </onSelectChange>
                     <selectionAppearance>checkbox</selectionAppearance>
+                    <selectionType>single</selectionType>
                     <showDetailColumn>false</showDetailColumn>
                     <variable type="varPath">
                       <variablePathList>
@@ -457,7 +458,6 @@
                 <label>Search</label>
                 <showDown>true</showDown>
                 <showFocused>true</showFocused>
-                <tooltip>Search</tooltip>
                 <visible type="varPath">
                   <variablePathList>
                     <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_searchVisible</variablePath>
@@ -484,7 +484,7 @@
                   <element name="Historico" type="elmnu">
                     <clickMethod type="varPath">
                       <variablePathList>
-                        <variablePath>findDoc_provisionManagerEMA.FIND_EMA_SERVICIOS_VIGENTES/ui_UserInterface/usrActionMethod_muestraHistorico</variablePath>
+                        <variablePath>findDoc_provisionManagerEMA.FIND_EMA_SERVICIOS_VIGENTES/ui_UserInterface/usrActionMethod_btn_historico</variablePath>
                       </variablePathList>
                     </clickMethod>
                     <icon>/cwf/find.gif</icon>
@@ -511,23 +511,27 @@
       </vform>
     </vformList>
     <methodList>
-      <method name="muestraHistorico" type="usrActionMethod">
+      <method name="btn_historico" type="usrActionMethod">
         <dialogHeight>1500</dialogHeight>
         <dialogWidth>1000</dialogWidth>
         <showInPopup>true</showInPopup>
         <script><![CDATA[
           externalSystemEMA.quiebra_ejecucion();
-          var var_msisdn = this.result.selected[0].DT_EMA_MSISDN;
-          var finder = new Finder("provisionManagerEMA.FIND_EMA_SERVICIOS_HIST");
-          finder.searchDocument.DT_EMA_MSISDN = var_msisdn;
+          if (this.result.selected!=null && this.result.selected.length == 1)
+          {
+              var var_msisdn = this.result.selected[0].DT_EMA_MSISDN;
+              var finder = new Finder("provisionManagerEMA.FIND_EMA_SERVICIOS_HIST");
+              finder.searchDocument.DT_EMA_MSISDN = var_msisdn;
 
-          var res = finder.search();
+              var res = finder.search();
 
-          //var finderUI = new provisionManagerCS.busquedaServiciosHistCS.UserInterface(null, null);
-          var finderUI = new provisionManagerEMA.FIND_EMA_SERVICIOS_HIST.UserInterface(null, this);
-          finderUI.result = res;
+              var finderUI = new provisionManagerEMA.FIND_EMA_SERVICIOS_HIST.UserInterface(null, this);
+              finderUI.result = res;
 
-          return finderUI;
+              return finderUI;
+          }
+          else
+              Global.showUserMessage("Debe seleccionar un registro para visualizar");
         ]]></script>
       </method>
       <method name="btn_mostrar_nodos" type="usrActionMethod">
@@ -536,17 +540,21 @@
         <showInPopup>true</showInPopup>
         <script><![CDATA[
           externalSystemEMA.quiebra_ejecucion();
+          if (this.result.selected!=null && this.result.selected.length == 1)
+          {
+              var var_valor = this.result.selected[0].DT_EMA_MSISDN;
+              var finder = new Finder("provisionManagerEMA.FIND_EMA_SERVICIOS_NODOS_POPUP");
+              finder.searchDocument.DT_EMA_MSISDN = var_valor;
 
-          var var_valor = this.result.selected[0].DT_EMA_MSISDN;
-          var finder = new Finder("provisionManagerEMA.FIND_EMA_SERVICIOS_NODOS_POPUP");
-          finder.searchDocument.DT_EMA_MSISDN = var_valor;
+              var res = finder.search();
 
-          var res = finder.search();
+              var finderUI = new provisionManagerEMA.FIND_EMA_SERVICIOS_NODOS_POPUP.UserInterface(null, this);
+              finderUI.result = res;
 
-          var finderUI = new provisionManagerEMA.FIND_EMA_SERVICIOS_NODOS_POPUP.UserInterface(null, this);
-          finderUI.result = res;
-
-          return finderUI;
+              return finderUI;
+          }
+          else
+              Global.showUserMessage("Debe seleccionar un registro para visualizar");
         ]]></script>
       </method>
     </methodList>

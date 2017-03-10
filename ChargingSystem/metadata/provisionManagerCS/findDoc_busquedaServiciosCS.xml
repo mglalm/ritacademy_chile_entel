@@ -293,6 +293,7 @@
                 <width>100%</width>
                 <elementList>
                   <element name="busquedaServiciosCSResultTable1" type="eltabl">
+                    <loadDataMessage>Cargando datos...</loadDataMessage>
                     <noItemsMessage>No se encontraron registros.</noItemsMessage>
                     <onSelectChange type="varPath">
                       <variablePathList>
@@ -300,6 +301,7 @@
                       </variablePathList>
                     </onSelectChange>
                     <selectionAppearance>checkbox</selectionAppearance>
+                    <selectionType>single</selectionType>
                     <showDetailColumn>false</showDetailColumn>
                     <variable type="varPath">
                       <variablePathList>
@@ -391,7 +393,6 @@
                   </variablePathList>
                 </clickMethod>
                 <icon>/cwf/MenuIconAdd.gif</icon>
-                <tooltip>Add</tooltip>
                 <visible type="varPath">
                   <variablePathList>
                     <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
@@ -405,7 +406,6 @@
                   </variablePathList>
                 </clickMethod>
                 <icon>/cwf/MenuIconCopy.gif</icon>
-                <tooltip>Copy</tooltip>
                 <visible type="varPath">
                   <variablePathList>
                     <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
@@ -439,7 +439,6 @@
                 <label>Buscar</label>
                 <showDown>true</showDown>
                 <showFocused>true</showFocused>
-                <tooltip>Search</tooltip>
                 <visible type="varPath">
                   <variablePathList>
                     <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_searchVisible</variablePath>
@@ -468,24 +467,26 @@
                   <element name="MnuSaldos" type="elmnu">
                     <clickMethod type="varPath">
                       <variablePathList>
-                        <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/usrActionMethod_despliega_saldos</variablePath>
+                        <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/usrActionMethod_btn_muestra_saldos</variablePath>
                       </variablePathList>
                     </clickMethod>
                     <icon>/cwf/dbase.gif</icon>
                     <iconHeight>30px</iconHeight>
                     <iconWidth>40%</iconWidth>
                     <label>Saldos</label>
+                    <tooltip>Muestra el Saldo inicial y actual del móvil</tooltip>
                   </element>
                   <element name="MnuHistoria" type="elmnu">
                     <clickMethod type="varPath">
                       <variablePathList>
-                        <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/usrActionMethod_muestra_detalle</variablePath>
+                        <variablePath>findDoc_provisionManagerCS.busquedaServiciosCS/ui_UserInterface/usrActionMethod_btn_historico</variablePath>
                       </variablePathList>
                     </clickMethod>
                     <icon>/cwf/find.gif</icon>
                     <iconHeight>30px</iconHeight>
                     <iconWidth>30px</iconWidth>
                     <label>Histórico</label>
+                    <tooltip>Muestra la historia de activacion y desactivación del móvil</tooltip>
                   </element>
                 </elementList>
               </override>
@@ -622,7 +623,7 @@
           if (theApp && theApp.hasMethod("cwCreateDialogDefault")) { return theApp.cwCreateDialogDefault(this, actionName, dialogMDName, width, height, x, y); }
         ]]></script>
       </method>
-      <method name="muestra_detalle" type="usrActionMethod">
+      <method name="btn_historico" type="usrActionMethod">
         <actionCategory>muestra_detalle</actionCategory>
         <dialogHeight>400</dialogHeight>
         <dialogWidth>2700</dialogWidth>
@@ -633,40 +634,46 @@
         </parameterList>
         <showInPopup>true</showInPopup>
         <script><![CDATA[
-          var a = this.result.selected[0].ID_SERVICIO_N_CS;
-          var var_msisdn = this.result.selected[0].MSISDN;
-          var finder = new Finder("provisionManagerCS.busquedaServiciosHistCS");
-          //finder.searchDocument.DT_ID_SERVICIO_N_CS = a;
-          finder.searchDocument.DT_SERV_CS_MSISDN = var_msisdn;
+          if (this.result.selected!=null && this.result.selected.length == 1)
+          {
+              var var_msisdn = this.result.selected[0].MSISDN;
+              var finder = new Finder("provisionManagerCS.busquedaServiciosHistCS");
+              finder.searchDocument.DT_SERV_CS_MSISDN = var_msisdn;
 
-          var res = finder.search();
+              var res = finder.search();
 
-          //var finderUI = new provisionManagerCS.busquedaServiciosHistCS.UserInterface(null, null);
-          var finderUI = new provisionManagerCS.busquedaServiciosHistCS.UserInterface(null, this);
-          finderUI.result = res;
+              var finderUI = new provisionManagerCS.busquedaServiciosHistCS.UserInterface(null, this);
+              finderUI.result = res;
 
-          return finderUI;
+              return finderUI;
+          }
+          else
+              Global.showUserMessage("Debe seleccionar un registro para visualizar");
         ]]></script>
       </method>
       <method name="prueba_codigo" type="usrActionMethod">
         <script>//this.result.selected(</script>
       </method>
-      <method name="despliega_saldos" type="usrActionMethod">
+      <method name="btn_muestra_saldos" type="usrActionMethod">
         <dialogHeight>1500</dialogHeight>
         <dialogWidth>1000</dialogWidth>
         <showInPopup>true</showInPopup>
         <script><![CDATA[
-          var a = this.result.selected[0].ID_SERVICIO_N_CS;
-          var finder = new Finder("provisionManagerCS.busquedaSaldos");
-          finder.searchDocument.DT_ID_SERVICIO_N_CS = a;
-          //finder.searchDocument.DT_SERV_CS_MSISDN = var_msisdn;
+          if (this.result.selected!=null && this.result.selected.length == 1)
+          {
+              var a = this.result.selected[0].ID_SERVICIO_N_CS;
+              var finder = new Finder("provisionManagerCS.busquedaSaldos");
+              finder.searchDocument.DT_ID_SERVICIO_N_CS = a;
 
-          var res = finder.search();
+              var res = finder.search();
 
-          var finderUI = new provisionManagerCS.busquedaSaldos.UserInterface(null, this);
-          finderUI.result = res;
+              var finderUI = new provisionManagerCS.busquedaSaldos.UserInterface(null, this);
+              finderUI.result = res;
 
-          return finderUI;
+              return finderUI;
+          }
+          else
+              Global.showUserMessage("Debe seleccionar un registro para visualizar");
         ]]></script>
       </method>
     </methodList>

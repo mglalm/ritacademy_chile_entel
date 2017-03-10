@@ -159,7 +159,13 @@
 
               this.save();
               Global.showUserMessage("Plan Almacenado");
+
+              var finderUI = new planManagerBSCS.FIND_BSCS_PLAN.UserInterface(null, this);
+              return finderUI;
+
           }
+          else
+              Global.showUserMessage("Debe ingresar un ID");
         ]]></script>
       </method>
     </methodList>

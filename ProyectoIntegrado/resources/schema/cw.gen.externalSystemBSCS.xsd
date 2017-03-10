@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema targetNamespace="http://www.readinessit.com/namespaces/proyectoBSCS/externalSystemBSCS"	
+	xmlns="http://www.w3.org/2001/XMLSchema"	
+	xmlns:externalSystemBSCS="http://www.readinessit.com/namespaces/proyectoBSCS/externalSystemBSCS"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+
+	<annotation>
+		<documentation>externalSystemBSCS</documentation>
+		<appinfo>
+			<metadata>AVM Metadata</metadata>
+			<created>Mon Mar 06 15:22:38 CLT 2017</created>
+		</appinfo>
+	</annotation>
+
+	<!-- Data types and elements -->
+
+	<simpleType name="DT_SERV_BSCS_DESC_PLAN">
+		<annotation>
+			<documentation>DT_SERV_BSCS_DESC_PLAN</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="30"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_FECHA_ACTIVACION">
+		<annotation>
+			<documentation>DT_SERV_BSCS_FECHA_ACTIVACION</documentation>
+		</annotation>
+		<restriction base="xsd:dateTime">
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_FECHA_ACTUALIZACION">
+		<annotation>
+			<documentation>DT_SERV_BSCS_FECHA_ACTUALIZACION</documentation>
+		</annotation>
+		<restriction base="xsd:dateTime">
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_FECHA_CREACION">
+		<annotation>
+			<documentation>DT_SERV_BSCS_FECHA_CREACION</documentation>
+		</annotation>
+		<restriction base="xsd:dateTime">
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_ID_CLIENTE_C">
+		<annotation>
+			<documentation>DT_SERV_BSCS_ID_CLIENTE_C</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="10"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_ID_CLIENTE_ESTADO">
+		<annotation>
+			<documentation>DT_SERV_BSCS_ID_CLIENTE_ESTADO</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="1"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_ID_CLIENTE_N">
+		<annotation>
+			<documentation>DT_SERV_BSCS_ID_CLIENTE_N</documentation>
+		</annotation>
+		<restriction base="xsd:decimal">
+			<totalDigits value="10"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_ID_MSISDN_ESTADO">
+		<annotation>
+			<documentation></documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="1"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_ID_PLAN_C">
+		<annotation>
+			<documentation>DT_SERV_BSCS_ID_PLAN_C</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="10"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_ID_PLAN_N">
+		<annotation>
+			<documentation>DT_SERV_BSCS_ID_PLAN_N</documentation>
+		</annotation>
+		<restriction base="xsd:decimal">
+			<totalDigits value="10"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_ID_SERVICIO_C">
+		<annotation>
+			<documentation>DT_SERV_BSCS_ID_SERVICIO_C</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="10"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_ID_SERVICIO_ESTADO">
+		<annotation>
+			<documentation>DT_SERV_BSCS_ID_SERVICIO_ESTADO</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="1"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_ID_SERVICIO_N">
+		<annotation>
+			<documentation>DT_SERV_BSCS_ID_SERVICIO_N</documentation>
+		</annotation>
+		<restriction base="xsd:decimal">
+			<totalDigits value="10"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_MSISDN">
+		<annotation>
+			<documentation></documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="15"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_ORDER_ID">
+		<annotation>
+			<documentation>DT_SERV_BSCS_ORDER_ID</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="16"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="DT_SERV_BSCS_RUT">
+		<annotation>
+			<documentation>DT_SERV_BSCS_RUT</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="15"/>
+		</restriction>
+	</simpleType>
+
+	<!-- Structures -->
+
+	<complexType name="input_desprovServicioBSCS">
+		<annotation>
+			<documentation>input_desprovServicioBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="orderid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="input_getMsisdnLiberarBSCS">
+		<annotation>
+			<documentation>input_getMsisdnLiberarBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="input_getMsisdnReserveBSCS">
+		<annotation>
+			<documentation>input_getMsisdnReserveBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="orderid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="rut" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="input_provServicioBSCS">
+		<annotation>
+			<documentation>input_provServicioBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="orderid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="rut" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="id_plan_bscs" minOccurs="0" maxOccurs="1" type="xsd:decimal"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="output_desprovServicioBSCS">
+		<annotation>
+			<documentation>output_desprovServicioBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="output_getMsisdnLiberarBSCS">
+		<annotation>
+			<documentation>output_getMsisdnLiberarBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="output_getMsisdnReserveBSCS">
+		<annotation>
+			<documentation>output_getMsisdnReserveBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="output_provServicioBSCS">
+		<annotation>
+			<documentation>output_provServicioBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<!-- Documents -->
+
+	<complexType name="DOC_SERV_BSCS_CLIENTE">
+		<annotation>
+			<documentation>DOC_SERV_BSCS_CLIENTE</documentation>
+		</annotation>
+			<sequence>
+				<element name="DT_SERV_BSCS_ID_CLIENTE_N" type="externalSystemBSCS:DT_SERV_BSCS_ID_CLIENTE_N"/>
+				<element name="DT_SERV_BSCS_ID_CLIENTE_C" type="externalSystemBSCS:DT_SERV_BSCS_ID_CLIENTE_C"/>
+				<element name="DT_SERV_BSCS_FECHA_CREACION" type="externalSystemBSCS:DT_SERV_BSCS_FECHA_CREACION"/>
+				<element name="DT_SERV_BSCS_ID_CLIENTE_ESTADO" type="externalSystemBSCS:DT_SERV_BSCS_ID_CLIENTE_ESTADO"/>
+				<element name="DT_SERV_BSCS_RUT" type="externalSystemBSCS:DT_SERV_BSCS_RUT"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="DOC_SERV_BSCS_MSISDN">
+		<annotation>
+			<documentation>DOC_SERV_BSCS_MSISDN</documentation>
+		</annotation>
+			<sequence>
+				<element name="DT_SERV_BSCS_MSISDN" type="externalSystemBSCS:DT_SERV_BSCS_MSISDN"/>
+				<element name="DT_SERV_BSCS_ID_MSISDN_ESTADO" type="externalSystemBSCS:DT_SERV_BSCS_ID_MSISDN_ESTADO"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="DOC_SERV_BSCS_PLAN">
+		<annotation>
+			<documentation>DOC_SERV_BSCS_PLAN</documentation>
+		</annotation>
+			<sequence>
+				<element name="DT_SERV_BSCS_ID_PLAN_N" type="externalSystemBSCS:DT_SERV_BSCS_ID_PLAN_N"/>
+				<element name="DT_SERV_BSCS_ID_PLAN_C" type="externalSystemBSCS:DT_SERV_BSCS_ID_PLAN_C"/>
+				<element name="DT_SERV_BSCS_DESC_PLAN" type="externalSystemBSCS:DT_SERV_BSCS_DESC_PLAN"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="DOC_SERV_BSCS_SERVICIOS_HIST">
+		<annotation>
+			<documentation>DOC_SERV_BSCS_SERVICIOS_HIST</documentation>
+		</annotation>
+			<sequence>
+				<element name="DT_SERV_BSCS_ID_SERVICIO_N" type="externalSystemBSCS:DT_SERV_BSCS_ID_SERVICIO_N"/>
+				<element name="DT_SERV_BSCS_ID_SERVICIO_C" type="externalSystemBSCS:DT_SERV_BSCS_ID_SERVICIO_C"/>
+				<element name="DT_SERV_BSCS_ID_CLIENTE_N" type="externalSystemBSCS:DT_SERV_BSCS_ID_CLIENTE_N"/>
+				<element name="DT_SERV_BSCS_ID_CLIENTE_C" type="externalSystemBSCS:DT_SERV_BSCS_ID_CLIENTE_C"/>
+				<element name="DT_SERV_BSCS_MSISDN" type="externalSystemBSCS:DT_SERV_BSCS_MSISDN"/>
+				<element name="DT_SERV_BSCS_ID_PLAN_N" type="externalSystemBSCS:DT_SERV_BSCS_ID_PLAN_N"/>
+				<element name="DT_SERV_BSCS_ID_PLAN_C" type="externalSystemBSCS:DT_SERV_BSCS_ID_PLAN_C"/>
+				<element name="DT_SERV_BSCS_ORDER_ID" type="externalSystemBSCS:DT_SERV_BSCS_ORDER_ID"/>
+				<element name="DT_SERV_BSCS_ID_SERVICIO_ESTADO" type="externalSystemBSCS:DT_SERV_BSCS_ID_SERVICIO_ESTADO"/>
+				<element name="DT_SERV_BSCS_FECHA_ACTIVACION" type="externalSystemBSCS:DT_SERV_BSCS_FECHA_ACTIVACION"/>
+				<element name="DT_SERV_BSCS_FECHA_ACTUALIZACION" type="externalSystemBSCS:DT_SERV_BSCS_FECHA_ACTUALIZACION"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="DOC_SERV_BSCS_SERVICIOS_VIGENTES">
+		<annotation>
+			<documentation>DOC_SERV_BSCS_SERVICIOS_VIGENTES</documentation>
+		</annotation>
+			<sequence>
+				<element name="DT_SERV_BSCS_ID_SERVICIO_N" type="externalSystemBSCS:DT_SERV_BSCS_ID_SERVICIO_N"/>
+				<element name="DT_SERV_BSCS_ID_SERVICIO_C" type="externalSystemBSCS:DT_SERV_BSCS_ID_SERVICIO_C"/>
+				<element name="DT_SERV_BSCS_ID_CLIENTE_N" type="externalSystemBSCS:DT_SERV_BSCS_ID_CLIENTE_N"/>
+				<element name="DT_SERV_BSCS_ID_CLIENTE_C" type="externalSystemBSCS:DT_SERV_BSCS_ID_CLIENTE_C"/>
+				<element name="DT_SERV_BSCS_MSISDN" type="externalSystemBSCS:DT_SERV_BSCS_MSISDN"/>
+				<element name="DT_SERV_BSCS_ID_PLAN_N" type="externalSystemBSCS:DT_SERV_BSCS_ID_PLAN_N"/>
+				<element name="DT_SERV_BSCS_ID_PLAN_C" type="externalSystemBSCS:DT_SERV_BSCS_ID_PLAN_C"/>
+				<element name="DT_SERV_BSCS_ORDER_ID" type="externalSystemBSCS:DT_SERV_BSCS_ORDER_ID"/>
+				<element name="DT_SERV_BSCS_ID_SERVICIO_ESTADO" type="externalSystemBSCS:DT_SERV_BSCS_ID_SERVICIO_ESTADO"/>
+				<element name="DT_SERV_BSCS_FECHA_ACTIVACION" type="externalSystemBSCS:DT_SERV_BSCS_FECHA_ACTIVACION"/>
+				<element name="DT_SERV_BSCS_FECHA_ACTUALIZACION" type="externalSystemBSCS:DT_SERV_BSCS_FECHA_ACTUALIZACION"/>
+			</sequence>
+		</complexType>
+
+</schema>

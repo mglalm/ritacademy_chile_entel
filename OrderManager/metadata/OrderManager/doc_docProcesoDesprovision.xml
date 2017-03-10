@@ -42,4 +42,139 @@
       <valueType>dtype_com.conceptwave.system.Boolean</valueType>
     </variable>
   </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_OrderManager.docProcesoDesprovision</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="datosForm" type="vform">
+            <label>datosForm</label>
+            <root name="datosFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="docProcesoDesprovisionGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="docProcesoDesprovisionHeader" type="elhdr">
+                      <label>docProcesoDesprovision</label>
+                    </element>
+                    <element name="IN_orderId" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/leaf_IN_orderId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="IN_rut" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/leaf_IN_rut</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="IN_POId" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/leaf_IN_POId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="IN_tipoOrden" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/leaf_IN_tipoOrden</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="OUT_estadoOrden" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/leaf_OUT_estadoOrden</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="CTRL_MSISDN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/leaf_CTRL_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="CTRL_ERROR" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/leaf_CTRL_ERROR</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="CTRL_DESC_ERROR" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/leaf_CTRL_DESC_ERROR</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="CTRL_NotificacionOK" type="elrgrp">
+                      <defaultEnum>yes/no</defaultEnum>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/leaf_CTRL_NotificacionOK</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="CTRL_ERROR_DesprovisionBSCS" type="elrgrp">
+                      <defaultEnum>yes/no</defaultEnum>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/leaf_CTRL_ERROR_DesprovisionBSCS</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="CTRL_ERROR_DesprovisionCS" type="elrgrp">
+                      <defaultEnum>yes/no</defaultEnum>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/leaf_CTRL_ERROR_DesprovisionCS</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="CTRL_ERROR_DesprovisionEMA" type="elrgrp">
+                      <defaultEnum>yes/no</defaultEnum>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_OrderManager.docProcesoDesprovision/leaf_CTRL_ERROR_DesprovisionEMA</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
 </document>

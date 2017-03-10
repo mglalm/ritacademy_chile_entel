@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="EOC_OE" targetNamespace="http://www.readinessit.com/namespaces/ProyectoCobras/EOC_EO"
+	xmlns:tns="http://www.readinessit.com/namespaces/ProyectoCobras/EOC_EO"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:EOC_OE="http://www.readinessit.com/namespaces/ProyectoCobras/EOC_EO">
+
+	<types>
+		<schema targetNamespace="http://www.readinessit.com/namespaces/ProyectoCobras/EOC_EO"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:EOC_OE="http://www.readinessit.com/namespaces/ProyectoCobras/EOC_EO"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>ORDER ENTRY</documentation>
+				<appinfo>
+					<metadata>Proyecto Cobras OM</metadata>
+					<created>Tue Feb 28 10:38:44 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<simpleType name="dtEstado">
+				<annotation>
+					<documentation>dt Estado</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="10"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="dtMSISDN">
+				<annotation>
+					<documentation>dt MSISDN</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="11"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="dtMotivoEstado">
+				<annotation>
+					<documentation>dt Motivo Estado</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="1000"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="dtOrderId">
+				<annotation>
+					<documentation>dt Order Id</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="16"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="dtPOId">
+				<annotation>
+					<documentation>dt PO Id</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="dtRut">
+				<annotation>
+					<documentation>dt Rut</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<!-- Structures -->
+
+			<complexType name="ack">
+				<annotation>
+					<documentation>ack</documentation>
+				</annotation>
+					<sequence>
+						<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="descripcion" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="tipoOrden" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="dsOrderProvisionResponse">
+				<annotation>
+					<documentation>dsOrderProvisionResponse</documentation>
+				</annotation>
+					<sequence>
+						<element name="orderId" minOccurs="0" maxOccurs="1" type="EOC_OE:dtOrderId"/>
+						<element name="rut" minOccurs="0" maxOccurs="1" type="EOC_OE:dtRut"/>
+						<element name="estadoOrden" minOccurs="0" maxOccurs="1" type="EOC_OE:dtEstado"/>
+						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="EOC_OE:dtMSISDN"/>
+						<element name="POIdBasica" minOccurs="0" maxOccurs="1" type="EOC_OE:dtPOId"/>
+						<element name="estadoPOBasica" minOccurs="0" maxOccurs="1" type="EOC_OE:dtEstado"/>
+						<element name="motivoEstadoPOBasica" minOccurs="0" maxOccurs="1" type="EOC_OE:dtMotivoEstado"/>
+						<element name="POIdAdicional" minOccurs="0" maxOccurs="1" type="EOC_OE:dtPOId"/>
+						<element name="estadoPOAdicional" minOccurs="0" maxOccurs="1" type="EOC_OE:dtEstado"/>
+						<element name="motivoEstadoPOAdicional" minOccurs="0" maxOccurs="1" type="EOC_OE:dtMotivoEstado"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+		</schema>
+	</types>
+
+	<message name="dsOrderProvisionResponse">
+		<part name="dsOrderProvisionResponse" type="EOC_OE:dsOrderProvisionResponse"/>
+	</message>
+
+	<message name="ack">
+		<part name="ack" type="EOC_OE:ack"/>
+	</message>
+
+	<portType name="recibeFinalOM">
+		<operation name="OE_Ope_recibe_PROV">
+			<input message="tns:dsOrderProvisionResponse"/>
+			<output message="tns:ack"/>
+		</operation>
+	</portType>
+
+	<binding name="OE_RecibeProvision" type="tns:recibeFinalOM">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="OE_Ope_recibe_PROV">
+			<soap:operation soapAction="OE_Ope_recibe_PROV"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="OE_Servicio_Recibe_Provi">
+		<port name="OE_Recibe_Prov_SOAP" binding="tns:OE_RecibeProvision">
+			<soap:address location="http://localhost:8080/cwf/services/recibeFinalOM"/>
+		</port>
+	</service>
+
+</definitions>

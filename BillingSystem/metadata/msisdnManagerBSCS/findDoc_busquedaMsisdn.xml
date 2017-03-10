@@ -299,6 +299,7 @@
                       </variablePathList>
                     </onSelectChange>
                     <selectionAppearance>checkbox</selectionAppearance>
+                    <selectionType>single</selectionType>
                     <showDetailColumn>false</showDetailColumn>
                     <variable type="varPath">
                       <variablePathList>
@@ -423,7 +424,7 @@
                     <menuAccel type="mAccelP"/>
                     <clickMethod type="varPath">
                       <variablePathList>
-                        <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/action_updateAction</variablePath>
+                        <variablePath>findDoc_msisdnManagerBSCS.busquedaMsisdn/ui_UserInterface/usrActionMethod_btn_editar</variablePath>
                       </variablePathList>
                     </clickMethod>
                     <icon>/cwf/MenuIconEdit.gif</icon>
@@ -473,6 +474,22 @@
         </overlayList>
       </vform>
     </vformList>
+    <methodList>
+      <method name="btn_editar" type="usrActionMethod">
+        <script><![CDATA[
+          if (this.result.selected!=null && this.result.selected.length == 1) {
+            this.detail = new this.result.selected[0].UserInterface(this.result.selected[0], this);
+            this.isSearchButtonVisible = false;
+          }
+          else{
+              if (this.result.selected==null || this.result.selected.length < 1)
+                  Global.showUserMessage("Debe seleccionar un registro para actualizar");
+              else
+                  Global.showUserMessage("Debe seleccionar solamente un registro para actualizar, no puede editar más de un registro a la vez");
+          }
+        ]]></script>
+      </method>
+    </methodList>
   </UserInterface>
   <viewList>
     <view name="busquedaMsisdnView" type="findVView">

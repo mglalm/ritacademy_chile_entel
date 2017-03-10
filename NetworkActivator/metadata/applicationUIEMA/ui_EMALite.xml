@@ -74,6 +74,19 @@
                     </element>
                   </elementList>
                 </element>
+                <element name="MenuNodosPerfiles" type="elmnu">
+                  <label>Nodos/Perfil</label>
+                  <visible type="varPath">
+                    <variablePathList>
+                      <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                    </variablePathList>
+                  </visible>
+                  <elementList>
+                    <element name="Asociar" type="elmnu">
+                      <label>Asociar Nodo/Perfil</label>
+                    </element>
+                  </elementList>
+                </element>
                 <element name="Servicios" type="elmnu">
                   <label>Servicios Por Móvil</label>
                   <elementList>

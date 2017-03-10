@@ -329,14 +329,18 @@
               <override name="cwfAdd" type="elmnu">
                 <clickMethod type="varPath">
                   <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/action_addAction</variablePath>
+                    <variablePath>findDoc_profileManagerEMA.FIND_EMA_NODO/ui_UserInterface/usrActionMethod_btn_agregar</variablePath>
                   </variablePathList>
                 </clickMethod>
                 <icon>/cwf/MenuIconAdd.gif</icon>
+                <iconHeight>30px</iconHeight>
+                <iconWidth>30px</iconWidth>
+                <label>Agregar</label>
                 <tooltip>Add</tooltip>
                 <visible type="varPath">
                   <variablePathList>
-                    <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                    <variablePath>ui_com.conceptwave.system.UserInterface/uivar_model</variablePath>
+                    <variablePath>mdl_com.conceptwave.system.Model/permMethod_addPerm</variablePath>
                   </variablePathList>
                 </visible>
               </override>
@@ -391,7 +395,7 @@
                 <menuAccel type="mAccelP"/>
                 <clickMethod type="varPath">
                   <variablePathList>
-                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/action_updateAction</variablePath>
+                    <variablePath>findDoc_profileManagerEMA.FIND_EMA_NODO/ui_UserInterface/usrActionMethod_btn_editar</variablePath>
                   </variablePathList>
                 </clickMethod>
                 <icon>/cwf/MenuIconEdit.gif</icon>
@@ -433,6 +437,28 @@
         </overlayList>
       </vform>
     </vformList>
+    <methodList>
+      <method name="btn_agregar" type="usrActionMethod">
+        <form>doc_profileManagerEMA.DOC_EMA_NODO/ui_UserInterface/frmui_Forms/vform_Formulario_Creacion</form>
+        <userInterface>doc_profileManagerEMA.DOC_EMA_NODO</userInterface>
+        <valueType>doc_profileManagerEMA.DOC_EMA_NODO</valueType>
+      </method>
+      <method name="btn_editar" type="usrActionMethod">
+        <script><![CDATA[
+          if (this.result.selected!=null && this.result.selected.length == 1)
+          {
+
+              if (this.result.selected!=null && this.result.selected.length == 1)
+              {
+                this.detail = new this.result.selected[0].UserInterface(this.result.selected[0], this);
+                this.isSearchButtonVisible = false;
+              }
+          }
+          else
+              Global.showUserMessage("Debe seleccionar un registro para editar");
+        ]]></script>
+      </method>
+    </methodList>
   </UserInterface>
   <viewList>
     <view name="busquedaNodoView" type="findVView">
