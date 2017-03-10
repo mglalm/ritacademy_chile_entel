@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="bscsProyOut.MSISDN">
-  <description>MSISDN</description>
-  <extends>dtype_com.conceptwave.system.String</extends>
-  <label>MSISDN</label>
-  <length>15</length>
-  <metaVersion>25</metaVersion>
-  <pattern>[\-+]?[0-9]+</pattern>
-</dataType>

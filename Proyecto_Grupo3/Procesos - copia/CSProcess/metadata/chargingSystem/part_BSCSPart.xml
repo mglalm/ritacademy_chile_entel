@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<participant name="chargingSystem.BSCSPart">
-  <invokeDirectly>true</invokeDirectly>
-  <label>BSCSPart</label>
-  <metaVersion>25</metaVersion>
-  <participant>iface_bscsProyOut.registroDeConsumo</participant>
-</participant>

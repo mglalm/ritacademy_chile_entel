@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<binding name="bscsProy.Crea_Cli_BSCS_Soap">
-  <interface>iface_bscsProy.Crea_Cli_BSCS</interface>
-  <label>Crea_Cli_BSCS_Soap</label>
-  <metaVersion>25</metaVersion>
-  <provider>prov_cwf.soapprov</provider>
-</binding>

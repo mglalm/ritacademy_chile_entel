@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="gg_OEResponseOutBound.ID_CLIENTE">
-  <description>ID_CLIENTE</description>
-  <extends>dtype_com.conceptwave.system.String</extends>
-  <label>ID_CLIENTE</label>
-  <length>15</length>
-  <metaVersion>25</metaVersion>
-</dataType>

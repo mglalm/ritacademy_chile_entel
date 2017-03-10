@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="orderManagement.offerItemReference">
-  <extends>dtype_cwf.sReference</extends>
-  <label>Offer Item Reference</label>
-  <length>24</length>
-  <metaVersion>25</metaVersion>
-  <reference>findDoc_offerManagement.offerFinder</reference>
-</dataType>

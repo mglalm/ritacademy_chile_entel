@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="bscsProyOut.IMSI">
-  <description>IMSI</description>
-  <extends>dtype_com.conceptwave.system.String</extends>
-  <label>IMSI</label>
-  <length>15</length>
-  <metaVersion>25</metaVersion>
-  <pattern>[\-+]?[0-9]+</pattern>
-</dataType>

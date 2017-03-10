@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<binding name="chargingSystem.ggBindingSOAPConsumoCS">
-  <interface>iface_chargingSystem.ggConsumoCS</interface>
-  <label>gg Binding SOAP Consulta Saldo CS</label>
-  <metaVersion>25</metaVersion>
-  <provider>prov_cwf.soapprov</provider>
-</binding>

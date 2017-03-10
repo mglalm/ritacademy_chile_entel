@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<binding name="bscsProy.BindingRegistroDesdeCSSOAP">
-  <interface>iface_bscsProy.registroDeConsumo</interface>
-  <label>Binding Registro Desde CS SOAP</label>
-  <metaVersion>25</metaVersion>
-  <provider>prov_cwf.soapprov</provider>
-</binding>

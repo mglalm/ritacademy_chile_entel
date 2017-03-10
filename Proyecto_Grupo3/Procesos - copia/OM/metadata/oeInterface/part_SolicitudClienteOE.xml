@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<participant name="oeInterface.SolicitudClienteOE">
-  <label>SolicitudClienteOE</label>
-  <metaVersion>25</metaVersion>
-  <participant>iface_oeInterface.Submit_Order_OE</participant>
-</participant>
