@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="EMAOutbound.responseEMA">
+  <container>true</container>
+  <description>responseEMA</description>
+  <label>responseEMA</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="mensaje" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>mensaje</label>
+    </child>
+    <child name="estado" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>estado</label>
+    </child>
+  </childList>
+</dataStructure>

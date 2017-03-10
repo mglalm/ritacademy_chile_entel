@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="chargingSystemOutbound.sendBSCS">
+  <container>true</container>
+  <description>sendBSCS</description>
+  <label>sendBSCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="saldo" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutbound.saldo</element>
+      <label>saldo</label>
+    </child>
+    <child name="MSISDN" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutbound.MSISDN</element>
+      <label>MSISDN</label>
+    </child>
+    <child name="consumo" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutbound.consumo</element>
+      <label>consumo</label>
+    </child>
+    <child name="usage" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutbound.usage</element>
+      <label>usage</label>
+    </child>
+  </childList>
+</dataStructure>

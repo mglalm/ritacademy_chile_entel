@@ -13,6 +13,18 @@
           <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
           <label>Menu</label>
           <overrideList>
+            <override name="HorizontalLayout" type="elext">
+              <elementList>
+                <element name="cambiarApp" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_UIEMA.UIEMA/usrActionMethod_cambiarApp</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Cambiar App</label>
+                </element>
+              </elementList>
+            </override>
             <override name="HorizontalLayoutForMenuItems" type="elext">
               <elementList>
                 <element name="busquedaHLR" type="elmnu">
@@ -43,6 +55,9 @@
       <form>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_ReferenceForm</form>
       <userInterface>findDoc_EMA.findIMSI</userInterface>
       <valueType>findDoc_EMA.findIMSI</valueType>
+    </method>
+    <method name="cambiarApp" type="usrActionMethod">
+      <script>UserProfile.selectApp();</script>
     </method>
   </methodList>
 </userInterface>

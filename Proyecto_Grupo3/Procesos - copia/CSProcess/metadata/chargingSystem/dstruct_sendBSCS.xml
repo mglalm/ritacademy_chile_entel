@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="chargingSystem.sendBSCS">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>sendBSCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="saldo" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.saldo</element>
+      <label>saldo</label>
+    </child>
+    <child name="MSISDN" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.MSISDN</element>
+      <label>MSISDN</label>
+    </child>
+    <child name="consumo" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.consumo</element>
+      <label>consumo</label>
+    </child>
+    <child name="usage" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystem.usage</element>
+      <label>usage</label>
+    </child>
+  </childList>
+</dataStructure>

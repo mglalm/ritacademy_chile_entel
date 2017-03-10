@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="bscsProy.recIMSI">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{7a7399d4-2614-4566-872c-18ed9a619c7e}</guid>
+  <label>Recurso IMSI</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="IMSI" type="leaf">
+      <column>IMSI</column>
+      <key>1</key>
+      <table>GG_recIMSI</table>
+      <valueType>dtype_bscsProy.IMSI</valueType>
+    </variable>
+    <variable name="ESTADO" type="leaf">
+      <column>ESTADO</column>
+      <table>GG_recIMSI</table>
+      <valueType>dtype_bscsProy.ESTADO</valueType>
+    </variable>
+    <variable name="ID_CLIENTE" type="leaf">
+      <column>ID_CLIENTE</column>
+      <table>GG_recIMSI</table>
+      <valueType>dtype_bscsProy.ID_CLIENTE</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_bscsProy.recIMSI</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="recIMSIGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="recIMSIHeader" type="elhdr">
+                      <label>Recurso IMSI</label>
+                    </element>
+                    <element name="IMSI" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_bscsProy.recIMSI/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_bscsProy.recIMSI/leaf_IMSI</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ESTADO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_bscsProy.recIMSI/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_bscsProy.recIMSI/leaf_ESTADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ID_CLIENTE" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_bscsProy.recIMSI/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_bscsProy.recIMSI/leaf_ID_CLIENTE</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="recIMSIGrid" type="elgrd">
+                <numOfCols>4</numOfCols>
+                <useDefaultHeight>true</useDefaultHeight>
+                <elementList>
+                  <element name="recIMSIHeader" type="elhdr">
+                    <label>Recurso IMSI</label>
+                  </element>
+                  <element name="IMSI" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_bscsProy.recIMSI/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_bscsProy.recIMSI/leaf_IMSI</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="ESTADO" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_bscsProy.recIMSI/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_bscsProy.recIMSI/leaf_ESTADO</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="ID_CLIENTE" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_bscsProy.recIMSI/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_bscsProy.recIMSI/leaf_ID_CLIENTE</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

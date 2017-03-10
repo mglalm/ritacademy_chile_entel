@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="oeInterface.Submit_Order_OE">
+  <label>Submit Order OE</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="SubmitOrderOE" type="oper">
+      <input>dstruct_oeInterface.Request</input>
+      <label>Submit Order OE</label>
+      <output>dstruct_oeInterface.Response</output>
+      <type>One-Way</type>
+    </operation>
+  </operationList>
+  <revision>3</revision>
+</interface>

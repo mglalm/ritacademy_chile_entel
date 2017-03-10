@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="chargingSystem.serviceCS">
+  <label>Service CS</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="chargingSystemJSPort" type="port">
+      <binding>bind_chargingSystem.bindingJSCS</binding>
+      <label>Charging System JS Port</label>
+      <recover>5</recover>
+    </port>
+    <port name="chargingSystemSOAPPort" type="port">
+      <binding>bind_chargingSystem.bindingSOAPCS</binding>
+      <exportReferencedOnly>true</exportReferencedOnly>
+      <exportSchemaInsideWsdl>true</exportSchemaInsideWsdl>
+      <label>Charging System SOAP Port</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+    <port name="ggChargingSystemJSPortConsumo" type="port">
+      <binding>bind_chargingSystem.ggBindingJSConsumoCS</binding>
+      <label>CS JS Port Consumo Saldo</label>
+      <recover>5</recover>
+    </port>
+    <port name="ggChargingSystemSOAPConsumo" type="port">
+      <binding>bind_chargingSystem.ggBindingSOAPConsumoCS</binding>
+      <label>Charging System SOAP Consumo</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+    <port name="ggBSCSJSConsumoPort" type="port">
+      <binding>bind_chargingSystem.ggBindingJSsendConsumo</binding>
+      <label>BSCS JS Consumo Port</label>
+      <recover>5</recover>
+    </port>
+    <port name="ggBSCSSOAPConsumoPort" type="port">
+      <binding>bind_chargingSystem.ggBindingSOAPsendConsumo</binding>
+      <label>BSCS SOAP Consumo Port</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="chargingSystem.ggBindingJSsendConsumo">
+  <interface>iface_chargingSystem.ggConsumoABSCS</interface>
+  <label>Binding JS Send Consumo</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

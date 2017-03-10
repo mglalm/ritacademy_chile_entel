@@ -72,6 +72,8 @@
           {
               output.ESTADO='FALLIDO'
            }
+
+
           return output
         ]]></elementItem>
       </elementItemMap>

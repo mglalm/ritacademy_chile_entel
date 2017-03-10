@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="chargingSystemOutbound.requestCS">
+  <container>true</container>
+  <description>requestCS</description>
+  <label>requestCS</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="MSISDN" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutbound.MSISDN</element>
+      <label>MSISDN</label>
+    </child>
+    <child name="IMSI" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutbound.IMSI</element>
+      <label>IMSI</label>
+    </child>
+    <child name="idCliente" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutbound.idCliente</element>
+      <label>idCliente</label>
+    </child>
+    <child name="planCS" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutbound.idCliente</element>
+      <label>planCS</label>
+    </child>
+    <child name="saldo" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutbound.saldo</element>
+      <label>saldo</label>
+    </child>
+  </childList>
+</dataStructure>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="orderManagement.ID_ORDER">
+  <extends>dtype_gg_OEResponseInbound.ID_ORDER</extends>
+  <label>ID_ORDER</label>
+  <length>16</length>
+  <metaVersion>25</metaVersion>
+</dataType>

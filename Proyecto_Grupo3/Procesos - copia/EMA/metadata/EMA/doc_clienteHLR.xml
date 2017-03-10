@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="EMA.clienteHLR">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{f53d1373-86cb-422f-8ba2-bd415104bd15}</guid>
+  <label>Cliente HLR</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="IMSI" type="leaf">
+      <column>IMSI</column>
+      <table>GG_clienteHLR</table>
+      <valueType>dtype_EMA.IMSI</valueType>
+    </variable>
+    <variable name="MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <key>1</key>
+      <table>GG_clienteHLR</table>
+      <valueType>dtype_EMA.MSISDN</valueType>
+    </variable>
+    <variable name="PROFILE" type="leaf">
+      <column>PROFILE</column>
+      <table>GG_clienteHLR</table>
+      <valueType>dtype_EMA.PROFILE</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_EMA.clienteHLR</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="clienteHLRGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="clienteHLRHeader" type="elhdr">
+                      <label>Cliente HLR</label>
+                    </element>
+                    <element name="IMSI" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EMA.clienteHLR/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EMA.clienteHLR/leaf_IMSI</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="MSISDN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EMA.clienteHLR/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EMA.clienteHLR/leaf_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="PROFILE" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_EMA.clienteHLR/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_EMA.clienteHLR/leaf_PROFILE</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="clienteHLRGrid" type="elgrd">
+                <numOfCols>4</numOfCols>
+                <useDefaultHeight>true</useDefaultHeight>
+                <elementList>
+                  <element name="clienteHLRHeader" type="elhdr">
+                    <label>Cliente HLR</label>
+                  </element>
+                  <element name="IMSI" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_EMA.clienteHLR/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_EMA.clienteHLR/leaf_IMSI</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="MSISDN" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_EMA.clienteHLR/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_EMA.clienteHLR/leaf_MSISDN</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="PROFILE" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_EMA.clienteHLR/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_EMA.clienteHLR/leaf_PROFILE</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

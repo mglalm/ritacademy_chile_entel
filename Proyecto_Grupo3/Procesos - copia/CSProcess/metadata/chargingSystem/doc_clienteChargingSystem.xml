@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="chargingSystem.clienteChargingSystem">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{612ae199-5e57-411e-b70f-d8fe1e2eb624}</guid>
+  <label>Cliente Charging System</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <key>1</key>
+      <label>MSISDN</label>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.MSISDN</valueType>
+    </variable>
+    <variable name="usage" type="leaf">
+      <valueType>dtype_chargingSystem.usage</valueType>
+    </variable>
+    <variable name="tarifa" type="leaf">
+      <column>TARIFA</column>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.tarifa</valueType>
+    </variable>
+    <variable name="IMSI" type="leaf">
+      <column>IMSI</column>
+      <label>IMSI</label>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.IMSI</valueType>
+    </variable>
+    <variable name="idCliente" type="leaf">
+      <column>IDCLIENTE</column>
+      <label>idCliente</label>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.idCliente</valueType>
+    </variable>
+    <variable name="planCS" type="leaf">
+      <column>PLANCS</column>
+      <label>planCS</label>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.idCliente</valueType>
+    </variable>
+    <variable name="saldo" type="leaf">
+      <column>SALDO</column>
+      <label>saldo</label>
+      <table>GG_clienteChargingSystem</table>
+      <valueType>dtype_chargingSystem.saldo</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_chargingSystem.clienteChargingSystem</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="clienteChargingSystemGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="clienteChargingSystemHeader" type="elhdr">
+                      <label>Cliente Charging System</label>
+                    </element>
+                    <element name="MSISDN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="usage" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_usage</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="tarifa" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_tarifa</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="IMSI" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_IMSI</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="idCliente" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_idCliente</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="planCS" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_planCS</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="saldo" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_saldo</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="clienteChargingSystemGrid" type="elgrd">
+                <numOfCols>4</numOfCols>
+                <useDefaultHeight>true</useDefaultHeight>
+                <elementList>
+                  <element name="clienteChargingSystemHeader" type="elhdr">
+                    <label>Cliente Charging System</label>
+                  </element>
+                  <element name="MSISDN" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_MSISDN</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="usage" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_usage</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="tarifa" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_tarifa</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="IMSI" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_IMSI</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="idCliente" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_idCliente</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="planCS" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_planCS</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="saldo" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_chargingSystem.clienteChargingSystem/leaf_saldo</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

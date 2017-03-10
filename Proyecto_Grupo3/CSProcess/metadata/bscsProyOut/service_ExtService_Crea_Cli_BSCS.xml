@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="bscsProyOut.ExtService_Crea_Cli_BSCS">
+  <label>ExtService_Crea_Cli_BSCS</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="PortRegistroDesdeCSSOAP" type="port">
+      <binding>bind_bscsProyOut.BindingRegistroDesdeCSSOAP</binding>
+      <label>PortRegistroDesdeCSSOAP</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

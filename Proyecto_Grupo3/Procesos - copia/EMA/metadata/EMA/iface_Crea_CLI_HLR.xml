@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="EMA.Crea_CLI_HLR">
+  <label>Creacion Cliente HLR</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="creacionClienteHLR" type="oper">
+      <input>dstruct_EMA.EMArequest</input>
+      <label>Creación Cliente EMA</label>
+      <output>dstruct_EMA.responseEMA</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>2</revision>
+</interface>

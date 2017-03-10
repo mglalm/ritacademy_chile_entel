@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="bscsProy.ScriptConsumo">
+  <label>ScriptConsumo</label>
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>nmeta_com.conceptwave.system.Object</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var doc = new Document('bscsProy.gg_clienteBSCS');            //Documento de cliente, contiene el saldo acutal.
+    var fnd = new Finder('bscsProy.busquedaCliente');
+    var fnd = fnd.search();
+
+
+    var detalle = new Document('bscsProy.gg_detalleTrafico');            //Documento de detalle de trafico, contiene el historial de consumos.
+
+    var i = 0;
+    var salir =0;
+
+
+    for(i=0;i<fnd.length;i=i+1)
+    {
+        if(fnd[i].MSISDN == input.MSISDN & salir ==0)
+        {
+        fnd[i].saldo = input.saldo;
+        fnd[i].usage = input.usage;
+        salir=1;
+        fnd[i].save();
+        }
+    }
+
+    detalle.MSISDN = input.MSISDN;
+    detalle.saldo = input.saldo;
+    detalle.usage = input.usage;
+    detalle.consumo = input.consumo;
+
+    detalle.save();
+  ]]></script>
+</script>

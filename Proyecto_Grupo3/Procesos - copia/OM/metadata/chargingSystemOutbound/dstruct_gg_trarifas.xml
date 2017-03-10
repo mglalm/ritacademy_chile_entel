@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="chargingSystemOutbound.gg_trarifas">
+  <container>true</container>
+  <description>Tarifas</description>
+  <label>gg_trarifas</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="planCS" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutbound.planCS</element>
+      <label>planCS</label>
+      <mandatory>true</mandatory>
+    </child>
+    <child name="tarifa" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_chargingSystemOutbound.tarifa</element>
+      <label>tarifa</label>
+      <mandatory>true</mandatory>
+    </child>
+  </childList>
+</dataStructure>

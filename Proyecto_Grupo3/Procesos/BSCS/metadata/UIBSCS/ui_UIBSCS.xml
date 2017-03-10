@@ -13,6 +13,18 @@
           <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
           <label>Menu</label>
           <overrideList>
+            <override name="HorizontalLayout" type="elext">
+              <elementList>
+                <element name="cambiarApp" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_UIBSCS.UIBSCS/usrActionMethod_selectApp</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Cambiar App</label>
+                </element>
+              </elementList>
+            </override>
             <override name="HorizontalLayoutForMenuItems" type="elext">
               <elementList>
                 <element name="estadoDeRecursos" type="elmnu">
@@ -93,6 +105,9 @@
       <showInPopup>true</showInPopup>
       <userInterface>findDoc_bscsProy.fndDetalleTrafico</userInterface>
       <valueType>findDoc_bscsProy.fndDetalleTrafico</valueType>
+    </method>
+    <method name="selectApp" type="usrActionMethod">
+      <script>UserProfile.selectApp();</script>
     </method>
   </methodList>
 </userInterface>

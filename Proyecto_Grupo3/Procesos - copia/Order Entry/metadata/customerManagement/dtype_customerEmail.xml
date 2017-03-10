@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="customerManagement.customerEmail">
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>Customer Email</label>
+  <length>24</length>
+  <metaVersion>25</metaVersion>
+</dataType>

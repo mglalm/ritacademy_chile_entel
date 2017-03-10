@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="chargingSystem" targetNamespace="chargingSystem"
+	xmlns:tns="chargingSystem"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:chargingSystem="chargingSystem">
+
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="chargingSystem" schemaLocation="chargingSystem.xsd"/>
+		</schema>
+	</types>
+
+	<message name="consumoCS">
+		<part name="consumoCS" type="chargingSystem:consumoCS"/>
+	</message>
+
+	<message name="ackConsumoCS">
+		<part name="ackConsumoCS" type="chargingSystem:ackConsumoCS"/>
+	</message>
+
+	<portType name="ggConsumoCS">
+		<operation name="ggConsumoSaldoCS">
+			<input message="tns:consumoCS"/>
+			<output message="tns:ackConsumoCS"/>
+		</operation>
+	</portType>
+
+	<binding name="ggBindingSOAPConsumoCS" type="tns:ggConsumoCS">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ggConsumoSaldoCS">
+			<soap:operation soapAction="ggConsumoSaldoCS"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="serviceCS">
+		<port name="ggChargingSystemSOAPConsumo" binding="tns:ggBindingSOAPConsumoCS">
+		</port>
+	</service>
+
+</definitions>

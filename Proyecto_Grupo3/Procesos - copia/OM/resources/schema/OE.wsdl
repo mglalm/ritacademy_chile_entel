@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="gg_Response" targetNamespace="gg_Response"
+	xmlns:tns="gg_Response"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:gg_Response="gg_Response">
+
+	<types>
+		<schema targetNamespace="gg_Response"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:gg_Response="gg_Response"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>GG RESPONSe</documentation>
+				<appinfo>
+					<metadata>TRAINING METADATA</metadata>
+					<created>Tue Feb 28 17:26:00 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<simpleType name="MSISDN">
+				<annotation>
+					<documentation>MSISDN</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="ESTADO">
+				<annotation>
+					<documentation>ESTADO</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="32"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="IMSI">
+				<annotation>
+					<documentation>IMSI</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="15"/>
+				</restriction>
+			</simpleType>
+
+			<!-- Structures -->
+
+			<complexType name="Response">
+				<annotation>
+					<documentation>Response</documentation>
+				</annotation>
+					<sequence>
+						<element name="Ack" minOccurs="0" maxOccurs="1" type="xsd:integer"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="RequestSendOE">
+				<annotation>
+					<documentation>RequestSendOE</documentation>
+				</annotation>
+					<sequence>
+						<element name="MSISDN" minOccurs="0" maxOccurs="1" type="gg_Response:MSISDN"/>
+						<element name="IMSI" minOccurs="0" maxOccurs="1" type="gg_Response:IMSI"/>
+						<element name="ESTADO" minOccurs="0" maxOccurs="1" type="gg_Response:ESTADO"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+		</schema>
+	</types>
+
+	<message name="RequestSendOE">
+		<part name="RequestSendOE" type="gg_Response:RequestSendOE"/>
+	</message>
+
+	<message name="Response">
+		<part name="Response" type="gg_Response:Response"/>
+	</message>
+
+	<portType name="Submit_Response_OE">
+		<operation name="submitResponseOE">
+			<input message="tns:RequestSendOE"/>
+			<output message="tns:Response"/>
+		</operation>
+	</portType>
+
+	<binding name="Submit_Response_OE_SOAP" type="tns:Submit_Response_OE">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="submitResponseOE">
+			<soap:operation soapAction="submitResponseOE"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="Submit_Response_OE_Ext">
+		<port name="Submit_Response_OE_Ext_SOAP" binding="tns:Submit_Response_OE_SOAP">
+		</port>
+	</service>
+
+</definitions>

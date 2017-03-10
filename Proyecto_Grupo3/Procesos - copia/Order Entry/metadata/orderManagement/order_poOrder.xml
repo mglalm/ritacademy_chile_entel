@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<order name="orderManagement.poOrder">
+  <extends>order_com.conceptwave.system.Order</extends>
+  <label>Product Offer Order</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="orderData" type="order">
+      <label>Order Data </label>
+      <mandatory>true</mandatory>
+      <orderItem>doc_orderManagement.orderData</orderItem>
+      <orderType>document</orderType>
+    </child>
+    <child name="poItem" type="order">
+      <collectionKey>doc_orderManagement.productOfferData</collectionKey>
+      <label>Product Offer Item</label>
+      <maxInstances>1</maxInstances>
+      <minInstances>1</minInstances>
+      <orderType>collection</orderType>
+      <childList>
+        <child name="productOfferData" type="order">
+          <label>Product Offer Data</label>
+          <mandatory>true</mandatory>
+          <orderItem>doc_orderManagement.productOfferData</orderItem>
+          <orderType>document</orderType>
+        </child>
+      </childList>
+    </child>
+  </childList>
+  <UserInterface name="UserInterface" type="tree">
+    <autoExpand>true</autoExpand>
+    <autoSaveInt>1</autoSaveInt>
+    <defaultFolderImage>undefined</defaultFolderImage>
+    <defaultLeafImage>undefined</defaultLeafImage>
+    <element>order_orderManagement.poOrder</element>
+    <extends>tree_com.conceptwave.system.OrderUserInterface</extends>
+    <label>Product Offer Order</label>
+    <tableDoc>doc_com.conceptwave.system.TreeDocument</tableDoc>
+    <childList>
+      <child name="orderData" type="tnOi">
+        <autoExpand>true</autoExpand>
+        <autoSave>true</autoSave>
+        <detailForm>doc_orderManagement.orderData/ui_UserInterface/frmui_Forms/exov_Default</detailForm>
+        <detailUI>doc_orderManagement.orderData/ui_UserInterface</detailUI>
+        <element>doc_orderManagement.orderData</element>
+        <extends>tn_com.conceptwave.system.TreeNode</extends>
+        <label>Order Data </label>
+        <nodeType>4</nodeType>
+        <orderItem>order_orderManagement.poOrder/order_orderData</orderItem>
+        <vformList>
+          <vform name="Forms" type="frmui">
+            <extends>tn_com.conceptwave.system.TreeNode/frmui_Forms</extends>
+          </vform>
+        </vformList>
+      </child>
+      <child name="poItem" type="tnOi">
+        <autoExpand>true</autoExpand>
+        <autoSave>true</autoSave>
+        <detailUI>doc_orderManagement.productOfferData/ui_UserInterface</detailUI>
+        <element>order_orderManagement.poOrder/order_poItem</element>
+        <extends>tn_com.conceptwave.system.TreeNode</extends>
+        <label>Product Offer Item</label>
+        <nodeType>4</nodeType>
+        <orderItem>order_orderManagement.poOrder/order_poItem</orderItem>
+        <showChildrenCount>true</showChildrenCount>
+        <childList>
+          <child name="poItemInstance" type="tnOi">
+            <autoExpand>true</autoExpand>
+            <autoSave>true</autoSave>
+            <collectionInstance>true</collectionInstance>
+            <element>order_orderManagement.poOrder/order_poItem</element>
+            <extends>tn_com.conceptwave.system.TreeNode</extends>
+            <label>Product Offer Item</label>
+            <nodeType>4</nodeType>
+            <orderItem>order_orderManagement.poOrder/order_poItem</orderItem>
+            <childList>
+              <child name="productOfferData" type="tnOi">
+                <autoExpand>true</autoExpand>
+                <autoSave>true</autoSave>
+                <detailForm>doc_orderManagement.productOfferData/ui_UserInterface/frmui_Forms/exov_Default</detailForm>
+                <detailUI>doc_orderManagement.productOfferData/ui_UserInterface</detailUI>
+                <element>doc_orderManagement.productOfferData</element>
+                <extends>tn_com.conceptwave.system.TreeNode</extends>
+                <label>Product Offer Data</label>
+                <nodeType>4</nodeType>
+                <orderItem>order_orderManagement.poOrder/order_poItem/order_productOfferData</orderItem>
+                <vformList>
+                  <vform name="Forms" type="frmui">
+                    <extends>tn_com.conceptwave.system.TreeNode/frmui_Forms</extends>
+                  </vform>
+                </vformList>
+              </child>
+            </childList>
+            <vformList>
+              <vform name="Forms" type="frmui">
+                <extends>tn_com.conceptwave.system.TreeNode/frmui_Forms</extends>
+              </vform>
+            </vformList>
+          </child>
+        </childList>
+        <vformList>
+          <vform name="Forms" type="frmui">
+            <extends>tn_com.conceptwave.system.TreeNode/frmui_Forms</extends>
+          </vform>
+        </vformList>
+      </child>
+    </childList>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>order_orderManagement.poOrder</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Menu" type="exov">
+            <base>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms/exov_Menu</base>
+            <extends>tree_com.conceptwave.system.OrderUserInterface/frmui_Forms/exov_Menu</extends>
+            <label>Menu</label>
+            <overrideList>
+              <override name="HorizontalLayout" type="elext">
+                <elementList>
+                  <element name="submitOrder" type="elmnu">
+                    <clickMethod type="varPath">
+                      <variablePathList>
+                        <variablePath>order_orderManagement.poOrder/tree_UserInterface/usrActionMethod_submitOrder</variablePath>
+                      </variablePathList>
+                    </clickMethod>
+                    <label>Submit Order</label>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+    <methodList>
+      <method name="submitOrder" type="usrActionMethod">
+        <script><![CDATA[
+          provisionManagement.dummy();
+
+
+
+          var procDoc = new Document("provisionManagement.procDoc");
+
+          procDoc.orderReference = this.model.orderData.cwDocId;
+          procDoc.customerReference = this.model.orderData.customerReference;
+          procDoc.offerItemReference = this.model.poItem[0].productOfferData.offerItemReference;
+          procDoc.purchaseOrderNumber = this.model.orderData.purchaseOrderNumber;
+
+
+
+          this.saveAllAction();
+          Process.startProcess("provisionManagement.SubmitOrder",procDoc,null,null);
+          this.saveAllAction();
+        ]]></script>
+      </method>
+    </methodList>
+  </UserInterface>
+</order>

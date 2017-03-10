@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="bscsProy.gg_detalleTrafico">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{eeacb848-2d52-4613-991d-e1ed710ebda0}</guid>
+  <label>Detalle de Tráfico</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <table>gg_detalleTrafico</table>
+      <valueType>dtype_bscsProy.MSISDN</valueType>
+    </variable>
+    <variable name="consumo" type="leaf">
+      <column>CONSUMO</column>
+      <table>gg_detalleTrafico</table>
+      <valueType>dtype_bscsProy.consumo</valueType>
+    </variable>
+    <variable name="usage" type="leaf">
+      <column>USAGE</column>
+      <table>gg_detalleTrafico</table>
+      <valueType>dtype_bscsProy.usage</valueType>
+    </variable>
+    <variable name="saldo" type="leaf">
+      <column>SALDO</column>
+      <table>gg_detalleTrafico</table>
+      <valueType>dtype_bscsProy.saldo</valueType>
+    </variable>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>gg_detalleTrafico</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_bscsProy.gg_detalleTrafico</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="gg_detalleTraficoGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="gg_detalleTraficoHeader" type="elhdr">
+                      <label>Detalle de Tráfico</label>
+                    </element>
+                    <element name="MSISDN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_bscsProy.gg_detalleTrafico/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_bscsProy.gg_detalleTrafico/leaf_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

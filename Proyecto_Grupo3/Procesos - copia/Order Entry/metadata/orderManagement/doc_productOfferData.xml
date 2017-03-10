@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="orderManagement.productOfferData">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{fafcf097-97bd-4e3f-900b-9e0d8af47750}</guid>
+  <label>Product Offer Data</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>gg_productOfferData</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+    <variable name="offerItemReference" type="leaf">
+      <column>OFFERITEMREFERENCE</column>
+      <table>gg_productOfferData</table>
+      <valueType>dtype_orderManagement.offerItemReference</valueType>
+    </variable>
+    <variable name="cwDocStamp" type="leaf">
+      <column>CWDOCSTAMP</column>
+      <table>gg_productOfferData</table>
+      <valueType>dtype_cwf.cwDocStamp</valueType>
+    </variable>
+    <variable name="cwOrderCreationDate" type="leaf">
+      <column>CWORDERCREATIONDATE</column>
+      <table>gg_productOfferData</table>
+      <valueType>dtype_cwf.cwOrderCreationDate</valueType>
+    </variable>
+    <variable name="cwOrderId" type="leaf">
+      <column>CWORDERID</column>
+      <table>gg_productOfferData</table>
+      <valueType>dtype_cwf.cwOrderId</valueType>
+    </variable>
+    <variable name="cwParentId" type="leaf">
+      <column>CWPARENTID</column>
+      <table>gg_productOfferData</table>
+      <valueType>dtype_cwf.cwParentId</valueType>
+    </variable>
+    <variable name="cwSiteId" type="leaf">
+      <column>CWSITEID</column>
+      <table>gg_productOfferData</table>
+      <valueType>dtype_cwf.cwSiteId</valueType>
+    </variable>
+    <variable name="lastUpdatedDate" type="leaf">
+      <column>LASTUPDATEDDATE</column>
+      <table>gg_productOfferData</table>
+      <valueType>dtype_cwf.lastUpdatedDate</valueType>
+    </variable>
+    <variable name="updatedBy" type="leaf">
+      <column>UPDATEDBY</column>
+      <table>gg_productOfferData</table>
+      <valueType>dtype_cwf.updatedBy</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_orderManagement.productOfferData</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="productOfferDataGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="productOfferDataHeader" type="elhdr">
+                      <label>Product Offer Data</label>
+                    </element>
+                    <element name="cwDocId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.productOfferData/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.productOfferData/leaf_cwDocId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="offerItemReference" type="elref">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.productOfferData/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.productOfferData/leaf_offerItemReference</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwDocStamp" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.productOfferData/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.productOfferData/leaf_cwDocStamp</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwOrderCreationDate" type="eldatetime">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.productOfferData/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.productOfferData/leaf_cwOrderCreationDate</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwOrderId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.productOfferData/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.productOfferData/leaf_cwOrderId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwParentId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.productOfferData/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.productOfferData/leaf_cwParentId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwSiteId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.productOfferData/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.productOfferData/leaf_cwSiteId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="lastUpdatedDate" type="eldate">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <showPickerIcon>false</showPickerIcon>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.productOfferData/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.productOfferData/leaf_lastUpdatedDate</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="updatedBy" type="elfld">
+                      <dataLength>15</dataLength>
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_orderManagement.productOfferData/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_orderManagement.productOfferData/leaf_updatedBy</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="productOfferDetails" type="vform">
+            <label>productOfferDetails</label>
+            <root name="HorizontalLayout" type="elhlt">
+              <elementList>
+                <element name="offerItemReference" type="elref">
+                  <variable type="varPath">
+                    <variablePathList>
+                      <variablePath>doc_orderManagement.productOfferData/ui_UserInterface/uivar_model</variablePath>
+                      <variablePath>doc_orderManagement.productOfferData/leaf_offerItemReference</variablePath>
+                    </variablePathList>
+                  </variable>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="Tabset" type="eltset">
+                <elementList>
+                  <element name="productOfferDetail" type="eltab">
+                    <formReference type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_orderManagement.productOfferData/ui_UserInterface/frmui_Forms/vform_productOfferDetails</variablePath>
+                      </variablePathList>
+                    </formReference>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

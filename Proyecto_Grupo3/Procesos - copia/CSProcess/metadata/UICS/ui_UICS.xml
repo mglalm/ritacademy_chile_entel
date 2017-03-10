@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="UICS.UICS">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>CS</label>
+  <metaVersion>25</metaVersion>
+  <url>/CS</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="busquedaCliente" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_UICS.UICS/usrActionMethod_busquedaCliente</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Busqueda Cliente</label>
+                </element>
+                <element name="busquedaRecurso" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_UICS.UICS/usrActionMethod_busquedaRecurso</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Busqueda Recurso</label>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <skin>Cupertino</skin>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>CS</title>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="busquedaCliente" type="usrActionMethod">
+      <form>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_ReferenceForm</form>
+      <userInterface>findDoc_chargingSystem.findMSISDNConsumo</userInterface>
+      <valueType>findDoc_chargingSystem.findMSISDNConsumo</valueType>
+    </method>
+    <method name="busquedaRecurso" type="usrActionMethod">
+      <form>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_ReferenceForm</form>
+      <userInterface>findDoc_chargingSystem.findMSISDN</userInterface>
+      <valueType>findDoc_chargingSystem.findMSISDN</valueType>
+    </method>
+  </methodList>
+</userInterface>

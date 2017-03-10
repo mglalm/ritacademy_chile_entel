@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <DefaultDB>TRAIN2</DefaultDB>
+  <applicationString>CS</applicationString>
+  <applicationVersionString>1</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="chargingSystem.dummy">0</breakpoint>
+  </breakpointMap>
+  <databasesMap>
+    <databases key="TRAIN2" type=".configdb">
+      <dbname>TRAIN2</dbname>
+      <driver type=".dbdriver">
+        <attributes>localhost;1521;orcl;false</attributes>
+        <driverType>Oracle thin</driverType>
+      </driver>
+      <password>5DC5700840C7B835</password>
+      <user>c##train2</user>
+    </databases>
+  </databasesMap>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <jarExportFolder>E:\ProyectoG3_\Proyecto_Grupo3\Procesos\CSProcess</jarExportFolder>
+  <joinCluster>true</joinCluster>
+  <nodeString>CS</nodeString>
+  <skin>Enterprise</skin>
+</project>

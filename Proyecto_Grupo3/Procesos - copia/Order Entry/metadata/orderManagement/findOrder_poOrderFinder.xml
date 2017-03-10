@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findOrder name="orderManagement.poOrderFinder">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_orderManagement.orderDataSearch</input>
+  <itemTypeList>
+    <itemType>order_orderManagement.poOrder</itemType>
+  </itemTypeList>
+  <label>Product Offer Finder</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_orderManagement.orderDataSearchResult</output>
+  <type>order</type>
+  <searchList>
+    <search type="sitem">
+      <document>doc_orderManagement.orderDataSearch</document>
+      <mappedDocument>doc_orderManagement.orderData</mappedDocument>
+      <mappedPath>doc_orderManagement.orderData/leaf_Estado</mappedPath>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearch/leaf_Estado</path>
+    </search>
+    <search type="sitem">
+      <document>doc_orderManagement.orderDataSearch</document>
+      <mappedDocument>doc_cwt_do.orderInstance</mappedDocument>
+      <mappedPath>doc_cwf.orderInstance/leaf_cwDocId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearch/leaf_ID_ORDER</path>
+    </search>
+    <search type="sitem">
+      <document>doc_orderManagement.orderDataSearch</document>
+      <mappedDocument>doc_orderManagement.orderData</mappedDocument>
+      <mappedOrder>order_orderManagement.poOrder/order_orderData</mappedOrder>
+      <mappedPath>doc_orderManagement.orderData/leaf_customerReference</mappedPath>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearch/leaf_customerReference</path>
+    </search>
+    <search type="sitem">
+      <document>doc_orderManagement.orderDataSearch</document>
+      <mappedDocument>doc_orderManagement.productOfferData</mappedDocument>
+      <mappedOrder>order_orderManagement.poOrder/order_poItem/order_productOfferData</mappedOrder>
+      <mappedPath>doc_orderManagement.productOfferData/leaf_offerItemReference</mappedPath>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearch/leaf_offerItemReference</path>
+    </search>
+    <search type="sitem">
+      <document>doc_orderManagement.orderDataSearch</document>
+      <mappedDocument>doc_orderManagement.orderData</mappedDocument>
+      <mappedOrder>order_orderManagement.poOrder/order_orderData</mappedOrder>
+      <mappedPath>doc_orderManagement.orderData/leaf_purchaseOrderNumber</mappedPath>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearch/leaf_purchaseOrderNumber</path>
+    </search>
+  </searchList>
+  <selectResultList>
+    <selectResult type="sitem">
+      <document>doc_orderManagement.orderDataSearchResult</document>
+      <mappedDocument>doc_orderManagement.orderData</mappedDocument>
+      <mappedOrder>order_orderManagement.poOrder/order_orderData</mappedOrder>
+      <mappedPath>doc_orderManagement.orderData/leaf_customerReference</mappedPath>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearchResult/leaf_customerReference</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_orderManagement.orderDataSearchResult</document>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearchResult/leaf_Estado</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_orderManagement.orderDataSearchResult</document>
+      <mappedDocument>doc_orderManagement.productOfferData</mappedDocument>
+      <mappedOrder>order_orderManagement.poOrder/order_poItem/order_productOfferData</mappedOrder>
+      <mappedPath>doc_orderManagement.productOfferData/leaf_offerItemReference</mappedPath>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearchResult/leaf_offerItemReference</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_orderManagement.orderDataSearchResult</document>
+      <mappedDocument>doc_orderManagement.orderData</mappedDocument>
+      <mappedOrder>order_orderManagement.poOrder/order_orderData</mappedOrder>
+      <mappedPath>doc_orderManagement.orderData/leaf_purchaseOrderNumber</mappedPath>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearchResult/leaf_purchaseOrderNumber</path>
+    </selectResult>
+    <selectResult type="sitem">
+      <document>doc_orderManagement.orderDataSearchResult</document>
+      <operation>equal</operation>
+      <path>doc_orderManagement.orderDataSearchResult/leaf_cwDocId</path>
+    </selectResult>
+  </selectResultList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.OrderFinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_orderManagement.orderDataSearchResult</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>doc_orderManagement.orderDataSearch/ui_UserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>doc_orderManagement.orderDataSearchResult/ui_UserInterface</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.OrderFinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="poOrderFinderResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findOrder_orderManagement.poOrderFinder/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="customerReference" type="elref">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_orderManagement.poOrderFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_orderManagement.orderDataSearchResult/leaf_customerReference</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="offerItemReference" type="elref">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_orderManagement.poOrderFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_orderManagement.orderDataSearchResult/leaf_offerItemReference</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="purchaseOrderNumber" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_orderManagement.poOrderFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_orderManagement.orderDataSearchResult/leaf_purchaseOrderNumber</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwDocId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findOrder_orderManagement.poOrderFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_orderManagement.orderDataSearchResult/leaf_cwDocId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.OrderFinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.OrderFinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findOrder_orderManagement.poOrderFinder/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findOrder_orderManagement.poOrderFinder/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="poOrderFinderView" type="findVView">
+      <inputOverlay>doc_orderManagement.orderDataSearch/ui_UserInterface/frmui_Forms/vform_generatedForm</inputOverlay>
+      <outputOverlay>findOrder_orderManagement.poOrderFinder/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <showSearchForm>true</showSearchForm>
+    </view>
+  </viewList>
+</findOrder>

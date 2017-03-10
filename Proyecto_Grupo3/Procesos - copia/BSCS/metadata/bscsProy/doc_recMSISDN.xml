@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="bscsProy.recMSISDN">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{50ad1d91-a909-401a-b5af-42ecd05671ba}</guid>
+  <label>Recurso MSISDN</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="ESTADO" type="leaf">
+      <column>ESTADO</column>
+      <table>GG_recMSISDN</table>
+      <valueType>dtype_bscsProy.ESTADO</valueType>
+    </variable>
+    <variable name="ID_CLIENTE" type="leaf">
+      <column>ID_CLIENTE</column>
+      <table>GG_recMSISDN</table>
+      <valueType>dtype_bscsProy.ID_CLIENTE</valueType>
+    </variable>
+    <variable name="MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <key>1</key>
+      <table>GG_recMSISDN</table>
+      <valueType>dtype_bscsProy.MSISDN</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_bscsProy.recMSISDN</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="recMSISDNGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="recMSISDNHeader" type="elhdr">
+                      <label>Recurso MSISDN</label>
+                    </element>
+                    <element name="ESTADO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_bscsProy.recMSISDN/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_bscsProy.recMSISDN/leaf_ESTADO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ID_CLIENTE" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_bscsProy.recMSISDN/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_bscsProy.recMSISDN/leaf_ID_CLIENTE</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="MSISDN" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_bscsProy.recMSISDN/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_bscsProy.recMSISDN/leaf_MSISDN</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="recMSISDNGrid" type="elgrd">
+                <numOfCols>4</numOfCols>
+                <useDefaultHeight>true</useDefaultHeight>
+                <elementList>
+                  <element name="recMSISDNHeader" type="elhdr">
+                    <label>Recurso MSISDN</label>
+                  </element>
+                  <element name="ESTADO" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_bscsProy.recMSISDN/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_bscsProy.recMSISDN/leaf_ESTADO</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="ID_CLIENTE" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_bscsProy.recMSISDN/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_bscsProy.recMSISDN/leaf_ID_CLIENTE</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="MSISDN" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_bscsProy.recMSISDN/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_bscsProy.recMSISDN/leaf_MSISDN</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>
