@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="ivanProcesos.procGlobalDoc">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{37bd6fbf-c954-4bd9-badd-00883842b790}</guid>
+  <label>procGlobalDoc</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="actual" type="leaf">
+      <key>1</key>
+      <valueType>dtype_ivanProcesos.timeStamp</valueType>
+    </variable>
+    <variable name="tmpoAntrior" type="leaf">
+      <valueType>dtype_ivanProcesos.timeStamp</valueType>
+    </variable>
+  </variableList>
+</document>

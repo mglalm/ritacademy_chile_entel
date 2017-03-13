@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="ivanUInterface.UITESTIvan">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>UITESTIvan</label>
+  <metaVersion>25</metaVersion>
+  <url>/UITESTIvan</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="MuestraTab01" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_ivanUInterface.UITESTIvan/usrActionMethod_MustraTab01Ac</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Muestra Tabla 01</label>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="MustraTab01Ac" type="usrActionMethod">
+      <form>findDoc_ivanTablas.finderTabla01/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>findDoc_ivanTablas.finderTabla01</userInterface>
+      <valueType>findDoc_ivanTablas.finderTabla01</valueType>
+    </method>
+  </methodList>
+</userInterface>

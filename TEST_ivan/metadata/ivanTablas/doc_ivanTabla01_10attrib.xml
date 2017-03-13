@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="ivanTablas.ivanTabla01_10attrib">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{5c504f9d-1757-497b-9d23-5119a5f08f19}</guid>
+  <label>ivanTabla01_10attrib</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="atributo01" type="leaf">
+      <column>ATRIBUTO01</column>
+      <table>IVAN_TABLA01</table>
+      <valueType>dtype_ivanTablas.atributo</valueType>
+    </variable>
+    <variable name="atributo02" type="leaf">
+      <column>ATRIBUTO02</column>
+      <table>IVAN_TABLA01</table>
+      <valueType>dtype_ivanTablas.atributo</valueType>
+    </variable>
+    <variable name="atributo03" type="leaf">
+      <column>ATRIBUTO03</column>
+      <table>IVAN_TABLA01</table>
+      <valueType>dtype_ivanTablas.atributo</valueType>
+    </variable>
+    <variable name="atributo04" type="leaf">
+      <column>ATRIBUTO04</column>
+      <table>IVAN_TABLA01</table>
+      <valueType>dtype_ivanTablas.atributo</valueType>
+    </variable>
+    <variable name="atributo05" type="leaf">
+      <column>ATRIBUTO05</column>
+      <table>IVAN_TABLA01</table>
+      <valueType>dtype_ivanTablas.atributo</valueType>
+    </variable>
+    <variable name="atributo06" type="leaf">
+      <column>ATRIBUTO06</column>
+      <table>IVAN_TABLA01</table>
+      <valueType>dtype_ivanTablas.atributo</valueType>
+    </variable>
+    <variable name="atributo07" type="leaf">
+      <column>ATRIBUTO07</column>
+      <table>IVAN_TABLA01</table>
+      <valueType>dtype_ivanTablas.atributo</valueType>
+    </variable>
+    <variable name="atributo08" type="leaf">
+      <column>ATRIBUTO08</column>
+      <table>IVAN_TABLA01</table>
+      <valueType>dtype_ivanTablas.atributo</valueType>
+    </variable>
+    <variable name="atributo09" type="leaf">
+      <column>ATRIBUTO09</column>
+      <table>IVAN_TABLA01</table>
+      <valueType>dtype_ivanTablas.atributo</valueType>
+    </variable>
+    <variable name="atributo10" type="leaf">
+      <column>ATRIBUTO10</column>
+      <table>IVAN_TABLA01</table>
+      <valueType>dtype_ivanTablas.atributo</valueType>
+    </variable>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>IVAN_TABLA01</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+  </variableList>
+</document>

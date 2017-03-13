@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="ivanTablas.finderTabla01">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <label>Finder Tabla 01 </label>
+  <metaVersion>25</metaVersion>
+  <output>doc_ivanTablas.ivanTabla01_10attrib</output>
+  <type>document</type>
+  <searchList>
+    <search type="sitem">
+      <mappedDocument>doc_ivanTablas.ivanTabla01_10attrib</mappedDocument>
+      <mappedPath>doc_ivanTablas.ivanTabla01_10attrib/leaf_atributo01</mappedPath>
+      <operation>is not null</operation>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>ui_com.conceptwave.system.UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_ivanTablas.ivanTabla01_10attrib</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_ivanTablas.finderTabla01/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="finderTabla01ResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_ivanTablas.finderTabla01/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="atributo01" type="elfld">
+                        <label>Atributo 01</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_ivanTablas.finderTabla01/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_ivanTablas.ivanTabla01_10attrib/leaf_atributo01</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo02" type="elfld">
+                        <label>Atributo 02</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_ivanTablas.finderTabla01/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_ivanTablas.ivanTabla01_10attrib/leaf_atributo02</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo03" type="elfld">
+                        <label>Atributo 03</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_ivanTablas.finderTabla01/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_ivanTablas.ivanTabla01_10attrib/leaf_atributo03</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo04" type="elfld">
+                        <label>Atributo 04</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_ivanTablas.finderTabla01/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_ivanTablas.ivanTabla01_10attrib/leaf_atributo04</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo05" type="elfld">
+                        <label>Atributo 05</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_ivanTablas.finderTabla01/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_ivanTablas.ivanTabla01_10attrib/leaf_atributo05</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo06" type="elfld">
+                        <label>Atributo 06</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_ivanTablas.finderTabla01/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_ivanTablas.ivanTabla01_10attrib/leaf_atributo06</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo07" type="elfld">
+                        <label>Atributo 07</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_ivanTablas.finderTabla01/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_ivanTablas.ivanTabla01_10attrib/leaf_atributo07</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo08" type="elfld">
+                        <label>Atributo 08</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_ivanTablas.finderTabla01/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_ivanTablas.ivanTabla01_10attrib/leaf_atributo08</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo09" type="elfld">
+                        <label>Atributo 10</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_ivanTablas.finderTabla01/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_ivanTablas.ivanTabla01_10attrib/leaf_atributo09</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo10" type="elfld">
+                        <label>Atributo 11</label>
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_ivanTablas.finderTabla01/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_ivanTablas.ivanTabla01_10attrib/leaf_atributo10</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="finderTabla01View" type="findVView">
+      <outputOverlay>findDoc_ivanTablas.finderTabla01/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+    </view>
+  </viewList>
+</findDoc>

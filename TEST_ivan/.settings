@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <DefaultDB>TEST_IVAN</DefaultDB>
+  <applicationString>TESTIvan</applicationString>
+  <applicationVersionString>1</applicationVersionString>
+  <databasesMap>
+    <databases key="TEST_IVAN" type=".configdb">
+      <dbname>TEST_IVAN</dbname>
+      <driver type=".dbdriver">
+        <attributes>localhost;1521;orcl;false</attributes>
+        <driverType>Oracle thin</driverType>
+      </driver>
+      <password>9FD9D3864234E55F5347C8B21011B9E7</password>
+      <user>C##TESTivan</user>
+    </databases>
+  </databasesMap>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <nodeString>TESTIvan</nodeString>
+  <skin>Enterprise</skin>
+</project>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="ivanProcesos.globalInserta2Min">
+  <activity name="Start" type="seqActivity">
+    <label>Start</label>
+    <x>17.0</x>
+    <y>175.0</y>
+    <childList>
+      <child name="ActualizaTime" type="scriptActivity">
+        <label>ActualizaTime</label>
+        <x>192.0</x>
+        <y>110.0</y>
+        <methodList>
+          <method name="cwOnProcActCond" type="action">
+            <category>cond</category>
+            <system>true</system>
+            <script><![CDATA[
+              var actual= this.process.DocumentProcess.actual;
+              var anterior=  this.process.DocumentProcess.tmpoAnterior;
+            ]]></script>
+          </method>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script><![CDATA[
+              var dt =new Date();
+
+              // Actualizo
+              this.process.DocumentProcess.tmpoAnterior=this.process.DocumentProcess.actual;
+              this.process.DocumentProcess.actual=dt.getTime();
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="veririficoTiempo" type="switchActivity">
+        <label>veririficoTiempo</label>
+        <x>334.0</x>
+        <y>129.0</y>
+        <childList>
+          <child name="no" type="caseActivity">
+            <label>no</label>
+            <x>334.0</x>
+            <y>229.0</y>
+            <childList>
+              <child name="back" type="repeatActivity">
+                <element>proc_ivanProcesos.globalInserta2Min/seqActivity_Start</element>
+                <label>back</label>
+                <x>109.0</x>
+                <y>268.0</y>
+              </child>
+            </childList>
+          </child>
+          <child name="si" type="caseActivity">
+            <label>si</label>
+            <x>334.0</x>
+            <y>229.0</y>
+            <childList>
+              <child name="insertpdata" type="scriptActivity">
+                <label>insertpdata</label>
+                <x>451.0</x>
+                <y>278.0</y>
+                <methodList>
+                  <method name="cwOnProcActBefore" type="action">
+                    <category>before</category>
+                    <system>true</system>
+                    <script><![CDATA[
+                      var doc_data= Document('ivanTablas.ivanTabla01_10attrib');
+
+                      doc_data.atributo01="110";
+                      doc_data.atributo02="220";
+                      doc_data.atributo03="330";
+                      doc_data.atributo04="440";
+                      doc_data.atributo05="550";
+                      doc_data.atributo06="660";
+                      doc_data.atributo07="770";
+                      doc_data.atributo08="880";
+                      doc_data.atributo09="990";
+                      doc_data.atributo10="10100";
+                      doc_data.atributo07="110";
+                      doc_data.save();
+                    ]]></script>
+                  </method>
+                </methodList>
+              </child>
+            </childList>
+            <methodList>
+              <method name="cwOnProcActCond" type="action">
+                <category>cond</category>
+                <system>true</system>
+                <script><![CDATA[
+                  var actual= this.process.DocumentProcess.actual;
+                  var anterior=  this.process.DocumentProcess.tmpoAnterior;
+
+                  return ( (actual-anterior)>= 120000); // verifico
+                ]]></script>
+              </method>
+            </methodList>
+          </child>
+        </childList>
+      </child>
+      <child name="back02" type="repeatActivity">
+        <element>proc_ivanProcesos.globalInserta2Min/seqActivity_Start</element>
+        <label>back02</label>
+        <x>206.0</x>
+        <y>250.0</y>
+      </child>
+    </childList>
+    <methodList>
+      <method name="cwOnProcActBefore" type="action">
+        <category>before</category>
+        <system>true</system>
+        <script><![CDATA[
+          // Inicializo las variables de Timer
+          var dt= new Date; //se instancia el objeto date
+
+
+          var tactual = dt.getTime(); // Obtengo timeStamp (en milisegundos)
+          var tanterior =  tactual;
+
+          // actializo Documento de Procesos
+          this.process.processDocument.actual=tactual;
+          this.process.processDocument.tmpoAnterior=tanterior;
+        ]]></script>
+      </method>
+    </methodList>
+  </activity>
+  <curRevision>true</curRevision>
+  <document>doc_ivanProcesos.procGlobalDoc</document>
+  <label>globalInserta2Min</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>Global</type>
+</process>

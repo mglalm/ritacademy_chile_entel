@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<header name="AVMMetadata">
+  <APIVersion>2</APIVersion>
+  <author>Ivan de la fuente</author>
+  <availableList>
+    <available type="loc">
+      <locale>en</locale>
+      <rightToLeft>false</rightToLeft>
+    </available>
+  </availableList>
+  <created>Mon Mar 13 09:37:18 CLT 2017</created>
+  <cwfBuildID>1</cwfBuildID>
+  <internalName>TESTIvan</internalName>
+  <internalSysVersion>16.0 ICP16-01EP01</internalSysVersion>
+  <internalVersion>1</internalVersion>
+  <label>TEST_Ivan</label>
+  <locale type="loc">
+    <locale>en</locale>
+    <rightToLeft>false</rightToLeft>
+  </locale>
+  <metaVersion>25</metaVersion>
+  <metadataVersion>20150818</metadataVersion>
+</header>
