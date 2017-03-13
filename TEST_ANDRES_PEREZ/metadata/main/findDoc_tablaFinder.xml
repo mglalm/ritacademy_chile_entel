@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="main.tablaFinder">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <label>tablaFinder</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_main.tabla</output>
+  <type>document</type>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>doc_main.tabla/ui_UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_main.tabla</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="tablaFinderResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="cwDocId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_main.tabla/leaf_cwDocId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo1" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_main.tabla/leaf_atributo1</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo2" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_main.tabla/leaf_atributo2</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo3" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_main.tabla/leaf_atributo3</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo4" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_main.tabla/leaf_atributo4</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo5" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_main.tabla/leaf_atributo5</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo6" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_main.tabla/leaf_atributo6</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo7" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_main.tabla/leaf_atributo7</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo8" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_main.tabla/leaf_atributo8</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo9" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_main.tabla/leaf_atributo9</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo10" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_main.tablaFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_main.tabla/leaf_atributo10</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="tablaFinderView" type="findVView">
+      <outputOverlay>findDoc_main.tablaFinder/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <searchImmediately>true</searchImmediately>
+    </view>
+  </viewList>
+</findDoc>

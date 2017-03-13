@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="main.tabla">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{c2614c0f-70f2-4307-b130-a0df28848952}</guid>
+  <label>tabla</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>tabla</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+    <variable name="atributo1" type="leaf">
+      <column>ATRIBUTO1</column>
+      <table>tabla</table>
+      <valueType>dtype_main.atributo1</valueType>
+    </variable>
+    <variable name="atributo2" type="leaf">
+      <column>ATRIBUTO2</column>
+      <table>tabla</table>
+      <valueType>dtype_main.atributo2</valueType>
+    </variable>
+    <variable name="atributo3" type="leaf">
+      <column>ATRIBUTO3</column>
+      <table>tabla</table>
+      <valueType>dtype_main.atributo3</valueType>
+    </variable>
+    <variable name="atributo4" type="leaf">
+      <column>ATRIBUTO4</column>
+      <table>tabla</table>
+      <valueType>dtype_main.atributo4</valueType>
+    </variable>
+    <variable name="atributo5" type="leaf">
+      <column>ATRIBUTO5</column>
+      <table>tabla</table>
+      <valueType>dtype_main.atributo5</valueType>
+    </variable>
+    <variable name="atributo6" type="leaf">
+      <column>ATRIBUTO6</column>
+      <table>tabla</table>
+      <valueType>dtype_main.atributo6</valueType>
+    </variable>
+    <variable name="atributo7" type="leaf">
+      <column>ATRIBUTO7</column>
+      <table>tabla</table>
+      <valueType>dtype_main.atributo7</valueType>
+    </variable>
+    <variable name="atributo8" type="leaf">
+      <column>ATRIBUTO8</column>
+      <table>tabla</table>
+      <valueType>dtype_main.atributo8</valueType>
+    </variable>
+    <variable name="atributo9" type="leaf">
+      <column>ATRIBUTO9</column>
+      <table>tabla</table>
+      <valueType>dtype_main.atributo9</valueType>
+    </variable>
+    <variable name="atributo10" type="leaf">
+      <column>ATRIBUTO10</column>
+      <table>tabla</table>
+      <valueType>dtype_main.atributo10</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_main.tabla</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="gf" type="vform">
+            <label>gf</label>
+            <root name="gfGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="tablaGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="tablaHeader" type="elhdr">
+                      <label>tabla</label>
+                    </element>
+                    <element name="cwDocId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_main.tabla/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_main.tabla/leaf_cwDocId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo1" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_main.tabla/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_main.tabla/leaf_atributo1</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo2" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_main.tabla/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_main.tabla/leaf_atributo2</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo3" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_main.tabla/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_main.tabla/leaf_atributo3</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo4" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_main.tabla/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_main.tabla/leaf_atributo4</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo5" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_main.tabla/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_main.tabla/leaf_atributo5</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo6" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_main.tabla/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_main.tabla/leaf_atributo6</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo7" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_main.tabla/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_main.tabla/leaf_atributo7</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo8" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_main.tabla/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_main.tabla/leaf_atributo8</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo9" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_main.tabla/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_main.tabla/leaf_atributo9</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo10" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_main.tabla/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_main.tabla/leaf_atributo10</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

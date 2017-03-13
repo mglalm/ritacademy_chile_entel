@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="main.welcome">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>welcome</label>
+  <metaVersion>25</metaVersion>
+  <url>/welcome</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="MenuItem" type="elmnu">
+                  <label>Items Tabla</label>
+                  <elementList>
+                    <element name="MenuItem2" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_main.welcome/usrActionMethod_mostrarItem</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Mostrar Items</label>
+                    </element>
+                    <element name="MenuItem1" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_main.welcome/usrActionMethod_agregarItem</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Agregar Item</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
+            <override name="WrkList" type="elext"/>
+          </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>PRUEBA</title>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="agregarItem" type="usrActionMethod">
+      <script>main.generador();</script>
+    </method>
+    <method name="mostrarItem" type="usrActionMethod">
+      <userInterface>findDoc_main.tablaFinder</userInterface>
+      <valueType>findDoc_main.tablaFinder</valueType>
+    </method>
+  </methodList>
+</userInterface>

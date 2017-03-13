@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="main.generador">
+  <label>generador</label>
+  <metaVersion>25</metaVersion>
+  <script><![CDATA[
+    var doc = new Document("main.tabla");
+
+    doc.atributo1 = Math.random();
+    doc.atributo2 = Math.random();
+    doc.atributo3 = Math.random();
+    doc.atributo4 = Math.random();
+    doc.atributo5 = Math.random();
+    doc.atributo6 = Math.random();
+    doc.atributo7 = Math.random();
+    doc.atributo8 = Math.random();
+    doc.atributo9 = Math.random();
+    doc.atributo10 = Math.random();
+
+    doc.save();
+  ]]></script>
+</script>
