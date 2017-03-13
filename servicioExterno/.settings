@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <DefaultDB>CON_TEST</DefaultDB>
+  <applicationString>Metadata Test</applicationString>
+  <applicationVersionString>1</applicationVersionString>
+  <databasesMap>
+    <databases key="CON_TEST" type=".configdb">
+      <dbname>CON_TEST</dbname>
+      <driver type=".dbdriver">
+        <attributes>localhost;1521;orcl;false</attributes>
+        <driverType>Oracle thin</driverType>
+      </driver>
+      <password>49A225C3CBCC77BF5347C8B21011B9E7</password>
+      <user>C##TEST</user>
+    </databases>
+  </databasesMap>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <joinCluster>true</joinCluster>
+  <nodeString>Metadata Test</nodeString>
+  <skin>Enterprise</skin>
+</project>

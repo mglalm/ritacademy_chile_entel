@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="registrosTabla.registrosFinder">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_registrosTabla.busquedaRegistrosDoc</input>
+  <label>Finder Registros</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_registrosTabla.registrosDoc</output>
+  <type>document</type>
+  <vDetailForm>doc_registrosTabla.registrosDoc/ui_UserInterface/frmui_Forms/vform_generatedForm</vDetailForm>
+  <searchList>
+    <search type="sitem">
+      <document>doc_registrosTabla.busquedaRegistrosDoc</document>
+      <mappedDocument>doc_registrosTabla.registrosDoc</mappedDocument>
+      <mappedPath>doc_registrosTabla.registrosDoc/leaf_atributo1</mappedPath>
+      <operation>equal</operation>
+      <path>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo1</path>
+    </search>
+    <search type="sitem">
+      <document>doc_registrosTabla.busquedaRegistrosDoc</document>
+      <mappedDocument>doc_registrosTabla.registrosDoc</mappedDocument>
+      <mappedPath>doc_registrosTabla.registrosDoc/leaf_atributo10</mappedPath>
+      <operation>equal</operation>
+      <path>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo10</path>
+    </search>
+    <search type="sitem">
+      <document>doc_registrosTabla.busquedaRegistrosDoc</document>
+      <mappedDocument>doc_registrosTabla.registrosDoc</mappedDocument>
+      <mappedPath>doc_registrosTabla.registrosDoc/leaf_atributo2</mappedPath>
+      <operation>equal</operation>
+      <path>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo2</path>
+    </search>
+    <search type="sitem">
+      <document>doc_registrosTabla.busquedaRegistrosDoc</document>
+      <mappedDocument>doc_registrosTabla.registrosDoc</mappedDocument>
+      <mappedPath>doc_registrosTabla.registrosDoc/leaf_atributo3</mappedPath>
+      <operation>equal</operation>
+      <path>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo3</path>
+    </search>
+    <search type="sitem">
+      <document>doc_registrosTabla.busquedaRegistrosDoc</document>
+      <mappedDocument>doc_registrosTabla.registrosDoc</mappedDocument>
+      <mappedPath>doc_registrosTabla.registrosDoc/leaf_atributo4</mappedPath>
+      <operation>equal</operation>
+      <path>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo4</path>
+    </search>
+    <search type="sitem">
+      <document>doc_registrosTabla.busquedaRegistrosDoc</document>
+      <mappedDocument>doc_registrosTabla.registrosDoc</mappedDocument>
+      <mappedPath>doc_registrosTabla.registrosDoc/leaf_atributo5</mappedPath>
+      <operation>equal</operation>
+      <path>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo5</path>
+    </search>
+    <search type="sitem">
+      <document>doc_registrosTabla.busquedaRegistrosDoc</document>
+      <mappedDocument>doc_registrosTabla.registrosDoc</mappedDocument>
+      <mappedPath>doc_registrosTabla.registrosDoc/leaf_atributo6</mappedPath>
+      <operation>equal</operation>
+      <path>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo6</path>
+    </search>
+    <search type="sitem">
+      <document>doc_registrosTabla.busquedaRegistrosDoc</document>
+      <mappedDocument>doc_registrosTabla.registrosDoc</mappedDocument>
+      <mappedPath>doc_registrosTabla.registrosDoc/leaf_atributo7</mappedPath>
+      <operation>equal</operation>
+      <path>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo7</path>
+    </search>
+    <search type="sitem">
+      <document>doc_registrosTabla.busquedaRegistrosDoc</document>
+      <mappedDocument>doc_registrosTabla.registrosDoc</mappedDocument>
+      <mappedPath>doc_registrosTabla.registrosDoc/leaf_atributo8</mappedPath>
+      <operation>equal</operation>
+      <path>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo8</path>
+    </search>
+    <search type="sitem">
+      <document>doc_registrosTabla.busquedaRegistrosDoc</document>
+      <mappedDocument>doc_registrosTabla.registrosDoc</mappedDocument>
+      <mappedPath>doc_registrosTabla.registrosDoc/leaf_atributo9</mappedPath>
+      <operation>equal</operation>
+      <path>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo9</path>
+    </search>
+    <search type="sitem">
+      <document>doc_registrosTabla.busquedaRegistrosDoc</document>
+      <mappedDocument>doc_registrosTabla.registrosDoc</mappedDocument>
+      <mappedPath>doc_registrosTabla.registrosDoc/leaf_cwDocId</mappedPath>
+      <operation>equal</operation>
+      <path>doc_registrosTabla.busquedaRegistrosDoc/leaf_idRegistro</path>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>doc_registrosTabla.registrosDoc/ui_UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_registrosTabla.registrosDoc</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="registrosFinderResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="atributo1" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo1</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo2" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo2</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo3" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo3</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo4" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo4</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo5" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo5</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo6" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo6</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo7" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo7</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo8" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo8</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo9" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo9</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="atributo10" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo10</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwCreated" type="eldate">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_cwCreated</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwCreatedBy" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_cwCreatedBy</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwTimestamp" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_cwTimestamp</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwDocId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_registrosTabla.registrosFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_registrosTabla.registrosDoc/leaf_cwDocId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="registrosFinderView" type="findVView">
+      <inputOverlay>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface/frmui_Forms/vform_generatedForm</inputOverlay>
+      <outputOverlay>findDoc_registrosTabla.registrosFinder/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <searchImmediately>true</searchImmediately>
+      <showSearchForm>true</showSearchForm>
+    </view>
+  </viewList>
+</findDoc>

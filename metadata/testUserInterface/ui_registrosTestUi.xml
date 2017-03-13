@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="testUserInterface.registrosTestUi">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>registrosTestUi</label>
+  <metaVersion>25</metaVersion>
+  <url>/registrosTestUi</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="Registros" type="elmnu">
+                  <label>Registros</label>
+                  <elementList>
+                    <element name="agregarRegistro" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_testUserInterface.registrosTestUi/usrActionMethod_agregarRegistro</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Agregar Registro</label>
+                    </element>
+                    <element name="verRegistro" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_testUserInterface.registrosTestUi/usrActionMethod_verRegistro</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Ver Registros</label>
+                    </element>
+                  </elementList>
+                </element>
+                <element name="iniciaProceso" type="elmnu">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_testUserInterface.registrosTestUi/usrActionMethod_iniciaProcesoChequeoRegistros</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Iniciar Proceso Chequeo Registros</label>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>Test Registros</title>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="agregarRegistro" type="usrActionMethod">
+      <form>doc_registrosTabla.registrosDoc/ui_UserInterface/frmui_Forms/vform_generatedForm</form>
+      <userInterface>doc_registrosTabla.registrosDoc</userInterface>
+      <valueType>doc_registrosTabla.registrosDoc</valueType>
+    </method>
+    <method name="verRegistro" type="usrActionMethod">
+      <form>findDoc_registrosTabla.registrosFinder/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>findDoc_registrosTabla.registrosFinder</userInterface>
+      <valueType>findDoc_registrosTabla.registrosFinder</valueType>
+    </method>
+    <method name="iniciaProcesoChequeoRegistros" type="usrActionMethod">
+      <script><![CDATA[Process.startProcess("");]]></script>
+    </method>
+  </methodList>
+</userInterface>

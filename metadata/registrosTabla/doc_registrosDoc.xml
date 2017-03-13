@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="registrosTabla.registrosDoc">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{8e89c7d0-e9cd-49dd-9b57-2decf935af9c}</guid>
+  <label>Documento de registros</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="atributo1" type="leaf">
+      <column>ATRIBUTO1</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_registrosTabla.atributo1</valueType>
+    </variable>
+    <variable name="atributo2" type="leaf">
+      <column>ATRIBUTO2</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_registrosTabla.atributo2</valueType>
+    </variable>
+    <variable name="atributo3" type="leaf">
+      <column>ATRIBUTO3</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_registrosTabla.atributo3</valueType>
+    </variable>
+    <variable name="atributo4" type="leaf">
+      <column>ATRIBUTO4</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_registrosTabla.atributo4</valueType>
+    </variable>
+    <variable name="atributo5" type="leaf">
+      <column>ATRIBUTO5</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_registrosTabla.atributo5</valueType>
+    </variable>
+    <variable name="atributo6" type="leaf">
+      <column>ATRIBUTO6</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_registrosTabla.atributo6</valueType>
+    </variable>
+    <variable name="atributo7" type="leaf">
+      <column>ATRIBUTO7</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_registrosTabla.atributo7</valueType>
+    </variable>
+    <variable name="atributo8" type="leaf">
+      <column>ATRIBUTO8</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_registrosTabla.atributo8</valueType>
+    </variable>
+    <variable name="atributo9" type="leaf">
+      <column>ATRIBUTO9</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_registrosTabla.atributo9</valueType>
+    </variable>
+    <variable name="atributo10" type="leaf">
+      <column>ATRIBUTO10</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_registrosTabla.atributo10</valueType>
+    </variable>
+    <variable name="cwCreated" type="leaf">
+      <column>CWCREATED</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_cwf.cwCreated</valueType>
+    </variable>
+    <variable name="cwCreatedBy" type="leaf">
+      <column>CWCREATEDBY</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_cwf.cwCreatedBy</valueType>
+    </variable>
+    <variable name="cwTimestamp" type="leaf">
+      <column>CWTIMESTAMP</column>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_cwf.cwTimestamp</valueType>
+    </variable>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>ggregistrosDoc</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_registrosTabla.registrosDoc</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="registrosDocGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="registrosDocHeader" type="elhdr">
+                      <label>Documento de registros</label>
+                    </element>
+                    <element name="atributo1" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo1</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo2" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo2</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo3" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo3</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo4" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo4</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo5" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo5</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo6" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo6</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo7" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo7</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo8" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo8</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo9" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo9</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo10" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_atributo10</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwCreated" type="eldatetime">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_cwCreated</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwCreatedBy" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_cwCreatedBy</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwTimestamp" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_cwTimestamp</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwDocId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.registrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.registrosDoc/leaf_cwDocId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

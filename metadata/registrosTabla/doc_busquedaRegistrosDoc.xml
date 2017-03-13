@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="registrosTabla.busquedaRegistrosDoc">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{166b9b9f-a8cf-4497-98ed-eb969c21ee8f}</guid>
+  <label>Documento busqueda registros</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="idRegistro" type="leaf">
+      <valueType>dtype_registrosTabla.idRegistro</valueType>
+    </variable>
+    <variable name="atributo1" type="leaf">
+      <valueType>dtype_registrosTabla.atributo1</valueType>
+    </variable>
+    <variable name="atributo2" type="leaf">
+      <valueType>dtype_registrosTabla.atributo2</valueType>
+    </variable>
+    <variable name="atributo3" type="leaf">
+      <valueType>dtype_registrosTabla.atributo3</valueType>
+    </variable>
+    <variable name="atributo4" type="leaf">
+      <valueType>dtype_registrosTabla.atributo4</valueType>
+    </variable>
+    <variable name="atributo5" type="leaf">
+      <valueType>dtype_registrosTabla.atributo5</valueType>
+    </variable>
+    <variable name="atributo6" type="leaf">
+      <valueType>dtype_registrosTabla.atributo6</valueType>
+    </variable>
+    <variable name="atributo7" type="leaf">
+      <valueType>dtype_registrosTabla.atributo7</valueType>
+    </variable>
+    <variable name="atributo8" type="leaf">
+      <valueType>dtype_registrosTabla.atributo8</valueType>
+    </variable>
+    <variable name="atributo9" type="leaf">
+      <valueType>dtype_registrosTabla.atributo9</valueType>
+    </variable>
+    <variable name="atributo10" type="leaf">
+      <valueType>dtype_registrosTabla.atributo10</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_registrosTabla.busquedaRegistrosDoc</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="busquedaRegistrosDocGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="busquedaRegistrosDocHeader" type="elhdr">
+                      <label>Documento busqueda registros</label>
+                    </element>
+                    <element name="idRegistro" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/leaf_idRegistro</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo1" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo1</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo2" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo2</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo3" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo3</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo4" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo4</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo5" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo5</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo6" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo6</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo7" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo7</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo8" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo8</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo9" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo9</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="atributo10" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_registrosTabla.busquedaRegistrosDoc/leaf_atributo10</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>
