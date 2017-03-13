@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <DefaultDB>PRUEBA</DefaultDB>
+  <applicationString>TEST ANDRES PEREZ</applicationString>
+  <applicationVersionString>1</applicationVersionString>
+  <databasesMap>
+    <databases key="PRUEBA" type=".configdb">
+      <dbname>PRUEBA</dbname>
+      <driver type=".dbdriver">
+        <attributes>localhost;1521;orcl;false</attributes>
+        <driverType>Oracle thin</driverType>
+      </driver>
+      <password>17B718A68389DED1</password>
+      <user>c##prueba</user>
+    </databases>
+  </databasesMap>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <joinCluster>true</joinCluster>
+  <nodeString>PE_UI</nodeString>
+  <skin>Enterprise</skin>
+</project>
