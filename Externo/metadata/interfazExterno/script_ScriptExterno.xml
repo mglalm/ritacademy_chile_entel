@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<script name="interfaz.ScriptExterno">
+<script name="interfazExterno.ScriptExterno">
   <label>Script Externo</label>
   <metaVersion>25</metaVersion>
   <script><![CDATA[
-    var output = new DataStructure("interfaz.salida");
+    var output = new DataStructure("interfazExterno.salida");
 
     output.respuestaServicio = "Ok";
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="interfazOutbound.salida">
+  <container>true</container>
+  <description>salida</description>
+  <label>salida</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="respuestaServicio" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_interfazOutbound.respuestaServicio</element>
+      <label>respuestaServicio</label>
+    </child>
+  </childList>
+</dataStructure>

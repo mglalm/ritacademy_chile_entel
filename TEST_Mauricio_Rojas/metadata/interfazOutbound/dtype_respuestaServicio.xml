@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<dataType name="interfaz.respuestaServicio">
+<dataType name="interfazOutbound.respuestaServicio">
+  <description>Respuesta Servicio</description>
   <extends>dtype_com.conceptwave.system.String</extends>
-  <label>Respuesta Servicio</label>
+  <label>respuestaServicio</label>
   <length>12</length>
   <metaVersion>25</metaVersion>
 </dataType>

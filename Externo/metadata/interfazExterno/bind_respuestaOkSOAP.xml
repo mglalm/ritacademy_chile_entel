@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<binding name="interfaz.respuestaOkSOAP">
-  <interface>iface_interfaz.request</interface>
+<binding name="interfazExterno.respuestaOkSOAP">
+  <interface>iface_interfazExterno.request</interface>
   <label>Respuesta OK SOAP</label>
   <metaVersion>25</metaVersion>
   <provider>prov_cwf.soapprov</provider>

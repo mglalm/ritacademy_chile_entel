@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="interfazOutbound.respuestaOkSOAP">
+  <extensionList>
+    <extension name="respuestaOk" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">respuestaOk</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="respuestaOk$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="respuestaOk$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_interfazOutbound.request</interface>
+  <label>respuestaOkSOAP</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>

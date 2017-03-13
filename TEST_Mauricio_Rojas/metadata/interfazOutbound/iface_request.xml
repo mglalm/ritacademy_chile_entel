@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="interfazOutbound.request">
+  <label>request</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="respuestaOk" type="oper">
+      <input>dstruct_interfazOutbound.entrada</input>
+      <label>respuestaOk</label>
+      <output>dstruct_interfazOutbound.salida</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

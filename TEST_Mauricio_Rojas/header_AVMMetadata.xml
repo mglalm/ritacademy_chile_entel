@@ -19,4 +19,7 @@
   </locale>
   <metaVersion>25</metaVersion>
   <metadataVersion>20150818</metadataVersion>
+  <templateList>
+    <template>Externo</template>
+  </templateList>
 </header>

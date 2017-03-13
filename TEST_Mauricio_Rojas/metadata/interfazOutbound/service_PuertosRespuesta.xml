@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="interfazOutbound.PuertosRespuesta">
+  <label>PuertosRespuesta</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="puertoSOAPRespuesta" type="port">
+      <binding>bind_interfazOutbound.respuestaOkSOAP</binding>
+      <label>puertoSOAPRespuesta</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

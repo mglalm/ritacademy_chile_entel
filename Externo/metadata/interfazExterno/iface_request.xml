@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<interface name="interfaz.request">
+<interface name="interfazExterno.request">
   <label>Request</label>
   <metaVersion>25</metaVersion>
   <operationList>
     <operation name="respuestaOk" type="oper">
+      <input>dstruct_interfazExterno.entrada</input>
       <label>Respuesta Ok</label>
+      <output>dstruct_interfazExterno.salida</output>
       <type>Request-Response</type>
     </operation>
   </operationList>
