@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="namespaceDocumento.globalScript">
+  <label>Script</label>
+  <metaVersion>25</metaVersion>
+  <script><![CDATA[
+    var doc= new Document("namespaceDocumento.producto");
+
+    doc.articulo = "martillo";
+  ]]></script>
+</script>

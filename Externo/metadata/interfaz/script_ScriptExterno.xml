@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="interfaz.ScriptExterno">
+  <label>Script Externo</label>
+  <metaVersion>25</metaVersion>
+  <script><![CDATA[
+    var output = new DataStructure("interfaz.salida");
+
+    output.respuestaServicio = "Ok";
+
+    return output;
+  ]]></script>
+</script>

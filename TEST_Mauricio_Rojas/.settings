@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <DefaultDB>TEST_RIT</DefaultDB>
+  <applicationString>Test Mauricio Rojas</applicationString>
+  <applicationVersionString>1</applicationVersionString>
+  <databasesMap>
+    <databases key="TEST_RIT" type=".configdb">
+      <dbname>TEST_RIT</dbname>
+      <driver type=".dbdriver">
+        <attributes>localhost;1521;orcl;false</attributes>
+        <driverType>Oracle thin</driverType>
+      </driver>
+      <password>CBC9FD8CBAC1D457</password>
+      <user>c##Rojas</user>
+    </databases>
+  </databasesMap>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <joinCluster>true</joinCluster>
+  <nodeString>PE_UI</nodeString>
+  <skin>Enterprise</skin>
+</project>

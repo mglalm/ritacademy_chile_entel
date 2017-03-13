@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="process.privilegios">
+  <extends>dtype_cwf.privilege</extends>
+  <label>provilegios</label>
+  <metaVersion>25</metaVersion>
+  <overrides>dtype_cwf.privilege</overrides>
+</dataType>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="namespaceDocumento.numeroDeSerie">
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>Numero de Serie</label>
+  <length>32</length>
+  <metaVersion>25</metaVersion>
+</dataType>

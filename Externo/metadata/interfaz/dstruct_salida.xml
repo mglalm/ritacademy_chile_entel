@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="interfaz.salida">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>salida</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="respuestaServicio" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_interfaz.respuestaServicio</element>
+      <label>respuestaServicio</label>
+    </child>
+  </childList>
+</dataStructure>

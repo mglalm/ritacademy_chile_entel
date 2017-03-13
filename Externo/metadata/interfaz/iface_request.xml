@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="interfaz.request">
+  <label>Request</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="respuestaOk" type="oper">
+      <label>Respuesta Ok</label>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

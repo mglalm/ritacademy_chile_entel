@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="namespaceDocumento.docBusquedaProducto">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{b5105e0a-2f6a-4ebe-8e89-c4ce40c80c14}</guid>
+  <label>docBusquedaProducto</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="articulo" type="leaf">
+      <valueType>dtype_namespaceDocumento.articulo</valueType>
+    </variable>
+    <variable name="vendedor" type="leaf">
+      <valueType>dtype_namespaceDocumento.vendedor</valueType>
+    </variable>
+    <variable name="numeroDeSerie" type="leaf">
+      <valueType>dtype_namespaceDocumento.numeroDeSerie</valueType>
+    </variable>
+    <variable name="tienda" type="leaf">
+      <valueType>dtype_namespaceDocumento.tienda</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_namespaceDocumento.docBusquedaProducto</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="docBusquedaProductoGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="docBusquedaProductoHeader" type="elhdr">
+                      <label>docBusquedaProducto</label>
+                    </element>
+                    <element name="articulo" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.docBusquedaProducto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.docBusquedaProducto/leaf_articulo</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="vendedor" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.docBusquedaProducto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.docBusquedaProducto/leaf_vendedor</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="numeroDeSerie" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.docBusquedaProducto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.docBusquedaProducto/leaf_numeroDeSerie</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="tienda" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.docBusquedaProducto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.docBusquedaProducto/leaf_tienda</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

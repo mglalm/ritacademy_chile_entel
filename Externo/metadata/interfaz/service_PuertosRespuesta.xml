@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="interfaz.PuertosRespuesta">
+  <label>Puertos Respuesta</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="PuertoJSRespuesta" type="port">
+      <binding>bind_interfaz.respuestaOkJS</binding>
+      <label>Puerto JS Respuesta</label>
+      <recover>5</recover>
+    </port>
+    <port name="puertoSOAPRespuesta" type="port">
+      <binding>bind_interfaz.respuestaOkSOAP</binding>
+      <exportReferencedOnly>true</exportReferencedOnly>
+      <exportSchemaInsideWsdl>true</exportSchemaInsideWsdl>
+      <label>Puerto SOAP Respuesta</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

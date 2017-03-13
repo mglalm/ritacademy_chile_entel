@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="process.venta">
+  <label>Venta</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="ventaAutomatica" type="oper">
+      <label>Vent Automatica</label>
+      <type>Notification</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="interfaz" targetNamespace="interfaz"
+	xmlns:tns="interfaz"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+	<types>
+	</types>
+
+	<portType name="request">
+		<operation name="respuestaOk">
+		</operation>
+	</portType>
+
+	<binding name="respuestaOkSOAP" type="tns:request">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="respuestaOk">
+			<soap:operation soapAction="respuestaOk"/>
+		</operation>
+	</binding>
+
+	<service name="PuertosRespuesta">
+		<port name="puertoSOAPRespuesta" binding="tns:respuestaOkSOAP">
+		</port>
+	</service>
+
+</definitions>
