@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="TEST.mainProcess">
+  <activity name="start" type="seqActivity">
+    <label>start</label>
+    <x>48.0</x>
+    <y>95.0</y>
+    <childList>
+      <child name="ValidaRespCheck" type="switchActivity">
+        <label>ValidaRespCheck</label>
+        <x>243.0</x>
+        <y>97.0</y>
+        <childList>
+          <child name="siExisteDato" type="caseActivity">
+            <label>siExisteDato</label>
+            <x>243.0</x>
+            <y>197.0</y>
+            <childList>
+              <child name="FinProceso" type="completeActivity">
+                <label>FinProceso</label>
+                <x>263.0</x>
+                <y>269.0</y>
+              </child>
+            </childList>
+            <methodList>
+              <method name="cwOnProcActCond" type="action">
+                <category>cond</category>
+                <system>true</system>
+                <script><![CDATA[return this.activityData.respCheck == "OK";]]></script>
+              </method>
+            </methodList>
+          </child>
+          <child name="noExisteDato" type="caseActivity">
+            <label>noExisteDato</label>
+            <x>447.0</x>
+            <y>97.0</y>
+            <childList>
+              <child name="procManual" type="seqActivity">
+                <label>procManual</label>
+                <x>457.0</x>
+                <y>97.0</y>
+              </child>
+            </childList>
+          </child>
+        </childList>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <label>mainProcess</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>User</type>
+</process>

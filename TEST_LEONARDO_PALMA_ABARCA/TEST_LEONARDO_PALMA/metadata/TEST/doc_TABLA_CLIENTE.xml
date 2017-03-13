@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="TEST.TABLA_CLIENTE">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{50ce8e82-4799-4e12-ab7c-e01eb9b66f06}</guid>
+  <label>TABLA_CLIENTE</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="Rut" type="leaf">
+      <column>RUT</column>
+      <table>TABLA_CLIENTE</table>
+      <valueType>dtype_TEST.Rut</valueType>
+    </variable>
+    <variable name="Nombre" type="leaf">
+      <column>NOMBRE</column>
+      <table>TABLA_CLIENTE</table>
+      <valueType>dtype_TEST.Nombre</valueType>
+    </variable>
+    <variable name="ApellidoPat" type="leaf">
+      <column>APELLIDOPAT</column>
+      <table>TABLA_CLIENTE</table>
+      <valueType>dtype_TEST.ApellidoPat</valueType>
+    </variable>
+    <variable name="ApellidoMat" type="leaf">
+      <column>APELLIDOMAT</column>
+      <table>TABLA_CLIENTE</table>
+      <valueType>dtype_TEST.ApellidoMat</valueType>
+    </variable>
+    <variable name="Direccion" type="leaf">
+      <column>DIRECCION</column>
+      <table>TABLA_CLIENTE</table>
+      <valueType>dtype_TEST.Direccion</valueType>
+    </variable>
+    <variable name="Ciudad" type="leaf">
+      <column>CIUDAD</column>
+      <table>TABLA_CLIENTE</table>
+      <valueType>dtype_TEST.Ciudad</valueType>
+    </variable>
+    <variable name="TelefonoTrabajo" type="leaf">
+      <column>TELEFONOTRABAJO</column>
+      <table>TABLA_CLIENTE</table>
+      <valueType>dtype_TEST.TelefonoTrabajo</valueType>
+    </variable>
+    <variable name="TelefonoParticular" type="leaf">
+      <column>TELEFONOPARTICULAR</column>
+      <table>TABLA_CLIENTE</table>
+      <valueType>dtype_TEST.TelefonoParticular</valueType>
+    </variable>
+    <variable name="Pais" type="leaf">
+      <column>PAIS</column>
+      <table>TABLA_CLIENTE</table>
+      <valueType>dtype_TEST.Pais</valueType>
+    </variable>
+    <variable name="CodigoPostal" type="leaf">
+      <column>CODIGOPOSTAL</column>
+      <table>TABLA_CLIENTE</table>
+      <valueType>dtype_TEST.CodigoPostal</valueType>
+    </variable>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>TABLA_CLIENTE</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_TEST.TABLA_CLIENTE</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="GridLayout" type="elgrd">
+                <numOfCols>11</numOfCols>
+                <elementList>
+                  <element name="Rut" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/leaf_Rut</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="Nombre" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/leaf_Nombre</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="ApellidoPat" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/leaf_ApellidoPat</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="ApellidoMat" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/leaf_ApellidoMat</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="Direccion" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/leaf_Direccion</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="Ciudad" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/leaf_Ciudad</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="TelefonoTrabajo" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/leaf_TelefonoTrabajo</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="TelefonoParticular" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/leaf_TelefonoParticular</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="Pais" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/leaf_Pais</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                  <element name="CodigoPostal" type="elfld">
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                        <variablePath>doc_TEST.TABLA_CLIENTE/leaf_CodigoPostal</variablePath>
+                      </variablePathList>
+                    </variable>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

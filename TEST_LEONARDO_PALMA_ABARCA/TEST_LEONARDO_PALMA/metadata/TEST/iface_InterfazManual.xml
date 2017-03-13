@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="TEST.InterfazManual">
+  <label>interfazManual</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="cancel" type="oper">
+      <label>cancel</label>
+      <type>One-Way</type>
+    </operation>
+    <operation name="resubmit" type="oper">
+      <label>resubmit</label>
+      <type>Request-Response</type>
+    </operation>
+    <operation name="executeScript" type="oper">
+      <label>executeScript</label>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

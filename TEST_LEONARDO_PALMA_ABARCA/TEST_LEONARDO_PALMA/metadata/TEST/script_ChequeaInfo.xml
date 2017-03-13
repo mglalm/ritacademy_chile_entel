@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="TEST.ChequeaInfo">
+  <label>ChequeaInfo</label>
+  <metaVersion>25</metaVersion>
+  <script><![CDATA[
+    var fnd = new Finder('TEST.findBuscaCliente');
+
+    var dt = new DataStructure('TEST.checkInfo');
+    dt.respCheck = "NO";
+
+    var result = fnd.search();
+
+    if(result && result.length>0)
+    {
+      result.delete();
+      dt.respCheck = "SI";
+    }
+  ]]></script>
+</script>

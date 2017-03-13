@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="TEST.BUSCA_CLIENTE">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{f5ac5655-4a4c-49b7-9bd5-104404b0faa0}</guid>
+  <label>BUSCA_CLIENTE</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="Rut" type="leaf">
+      <valueType>dtype_TEST.Rut</valueType>
+    </variable>
+    <variable name="Nombre" type="leaf">
+      <valueType>dtype_TEST.Nombre</valueType>
+    </variable>
+    <variable name="ApellidoPat" type="leaf">
+      <valueType>dtype_TEST.ApellidoPat</valueType>
+    </variable>
+    <variable name="ApellidoMat" type="leaf">
+      <valueType>dtype_TEST.ApellidoMat</valueType>
+    </variable>
+    <variable name="Direccion" type="leaf">
+      <valueType>dtype_TEST.Direccion</valueType>
+    </variable>
+    <variable name="Ciudad" type="leaf">
+      <valueType>dtype_TEST.Ciudad</valueType>
+    </variable>
+    <variable name="TelefonoTrabajo" type="leaf">
+      <valueType>dtype_TEST.TelefonoTrabajo</valueType>
+    </variable>
+    <variable name="TelefonoParticular" type="leaf">
+      <valueType>dtype_TEST.TelefonoParticular</valueType>
+    </variable>
+    <variable name="Pais" type="leaf">
+      <valueType>dtype_TEST.Pais</valueType>
+    </variable>
+    <variable name="CodigoPostal" type="leaf">
+      <valueType>dtype_TEST.CodigoPostal</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_TEST.BUSCA_CLIENTE</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="despliegaClientes" type="vform">
+            <label>despliegaClientes</label>
+            <root name="despliegaClientesGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="BUSCA_CLIENTEGrid" type="elgrd">
+                  <numOfCols>11</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="BUSCA_CLIENTEHeader" type="elhdr">
+                      <label>BUSCA_CLIENTE</label>
+                    </element>
+                    <element name="Rut" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/leaf_Rut</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="Nombre" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/leaf_Nombre</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ApellidoPat" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/leaf_ApellidoPat</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ApellidoMat" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/leaf_ApellidoMat</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="Direccion" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/leaf_Direccion</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="Ciudad" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/leaf_Ciudad</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="TelefonoTrabajo" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/leaf_TelefonoTrabajo</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="TelefonoParticular" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/leaf_TelefonoParticular</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="Pais" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/leaf_Pais</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="CodigoPostal" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_TEST.BUSCA_CLIENTE/leaf_CodigoPostal</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

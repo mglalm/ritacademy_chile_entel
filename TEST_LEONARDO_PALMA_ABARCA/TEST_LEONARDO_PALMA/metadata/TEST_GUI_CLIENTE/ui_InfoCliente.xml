@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="TEST_GUI_CLIENTE.InfoCliente">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>Informacion Cliente</label>
+  <metaVersion>25</metaVersion>
+  <url>/InfoCliente</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="Clientes" type="elmnu">
+                  <label>Clientes</label>
+                  <elementList>
+                    <element name="IngresaClientes" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_TEST_GUI_CLIENTE.InfoCliente/usrActionMethod_ingresaCliente</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Ingresa Clientes</label>
+                    </element>
+                    <element name="BuscaClientes" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_TEST_GUI_CLIENTE.InfoCliente/usrActionMethod_buscaClientes</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Busca Clientes</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="ingresaCliente" type="usrActionMethod">
+      <form>doc_TEST.TABLA_CLIENTE/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>doc_TEST.TABLA_CLIENTE</userInterface>
+      <valueType>doc_TEST.TABLA_CLIENTE</valueType>
+    </method>
+    <method name="buscaClientes" type="usrActionMethod">
+      <form>findDoc_TEST.findBuscaCliente/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>findDoc_TEST.findBuscaCliente</userInterface>
+      <valueType>findDoc_TEST.findBuscaCliente</valueType>
+    </method>
+  </methodList>
+</userInterface>
