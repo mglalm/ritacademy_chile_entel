@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="servicioConsumer.servicioExterno">
+  <label>servicioExterno</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="portSOAP" type="port">
+      <binding>bind_servicioConsumer.bindingSOAP</binding>
+      <label>portSOAP</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

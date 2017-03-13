@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="variableGenerales.respuesta">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>respuesta</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="estadoProcesoResp" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>estadoProcesoResp</label>
+    </child>
+    <child name="idClienteResp" type="dstruct">
+      <array>true</array>
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>idClienteResp</label>
+      <maxInstance>-1</maxInstance>
+    </child>
+  </childList>
+</dataStructure>
