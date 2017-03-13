@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="applicationUI.EXAMENLite">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>EXAMEN</label>
+  <metaVersion>25</metaVersion>
+  <url>/EXAMEN</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayout" type="elext"/>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="Servicios" type="elmnu">
+                  <label>Servicios por Cliente</label>
+                  <elementList>
+                    <element name="ServiciosBuscar" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_applicationUI.EXAMENLite/usrActionMethod_buscarServicios</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Servicios</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
+            <override name="HorizontalLayoutForUserWorklist" type="eldel"/>
+            <override name="Separator" type="elsep">
+              <width>0%</width>
+            </override>
+          </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>EXAMEN</title>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="buscarServicios" type="usrActionMethod">
+      <userInterface>findDoc_examen.FIND_SERVICIOS</userInterface>
+      <valueType>findDoc_examen.FIND_SERVICIOS</valueType>
+    </method>
+  </methodList>
+</userInterface>

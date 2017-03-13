@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <DefaultDB>TRAIN4</DefaultDB>
+  <applicationString>examex</applicationString>
+  <applicationVersionString>1</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="ExternalSystemSimulator.test">0</breakpoint>
+    <breakpoint key="customerManagerBSCS.DOC_CLIENTE_BSCS_FIND.cwOnDocVisualKey">0</breakpoint>
+    <breakpoint key="externalSystem.quiebra_ejecucion">0</breakpoint>
+  </breakpointMap>
+  <databasesMap>
+    <databases key="TRAIN4" type=".configdb">
+      <dbname>TRAIN4</dbname>
+      <driver type=".dbdriver">
+        <attributes>10.0.5.2;1522;orcl2;false</attributes>
+        <driverType>Oracle thin</driverType>
+      </driver>
+      <password>CBC9FD8CBAC1D457</password>
+      <user>C##TRAIN4</user>
+    </databases>
+  </databasesMap>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <jarExportFolder>C:\SJM\Archivos\Velocity\Proyecto_Cobras_Billing\00_JAR</jarExportFolder>
+  <joinCluster>true</joinCluster>
+  <nodeString>examex</nodeString>
+  <skin>Enterprise</skin>
+</project>

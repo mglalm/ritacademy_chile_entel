@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="externalSystem.bind_Servicio_JS">
+  <extensionList>
+    <extension name="getalgo" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="metadataScript">externalSystem.scr_get</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_externalSystem.interface_servicios</interface>
+  <label>bind_Servicio_JS</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="examen.DOC_SERVICIOS">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{d2f0498a-e0bb-4fe0-a939-27e0848cc5c7}</guid>
+  <label>DOC_SERVICIOS</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="DT_FECHA_ACTIVACION" type="leaf">
+      <column>FECHA_ACTIVACION</column>
+      <table>A_SERVICIO</table>
+      <valueType>dtype_examen.DT_FECHA_ACTIVACION</valueType>
+    </variable>
+    <variable name="DT_FECHA_ACTUALIZACION" type="leaf">
+      <column>FECHA_ACTUALIZACION</column>
+      <table>A_SERVICIO</table>
+      <valueType>dtype_examen.DT_FECHA_ACTUALIZACION</valueType>
+    </variable>
+    <variable name="DT_ID_CLIENTE_C" type="leaf">
+      <column>SYSTEM_ID_CLIENTE_C</column>
+      <table>A_SERVICIO</table>
+      <valueType>dtype_examen.DT_ID_CLIENTE_C</valueType>
+    </variable>
+    <variable name="DT_ID_CLIENTE_N" type="leaf">
+      <column>SYSTEM_ID_CLIENTE_N</column>
+      <table>A_SERVICIO</table>
+      <valueType>dtype_examen.DT_ID_CLIENTE_N</valueType>
+    </variable>
+    <variable name="DT_ID_PLAN_C" type="leaf">
+      <column>SYSTEM_ID_PLAN_C</column>
+      <table>A_SERVICIO</table>
+      <valueType>dtype_examen.DT_ID_PLAN_C</valueType>
+    </variable>
+    <variable name="DT_ID_PLAN_N" type="leaf">
+      <column>SYSTEM_ID_PLAN_N</column>
+      <table>A_SERVICIO</table>
+      <valueType>dtype_examen.DT_ID_PLAN_N</valueType>
+    </variable>
+    <variable name="DT_ID_SERVICIO_C" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_C</column>
+      <key>1</key>
+      <table>A_SERVICIO</table>
+      <valueType>dtype_cwf.processId</valueType>
+    </variable>
+    <variable name="DT_ID_SERVICIO_ESTADO" type="leaf">
+      <column>ID_SERVICIO_ESTADO</column>
+      <table>A_SERVICIO</table>
+      <valueType>dtype_examen.DT_ID_SERVICIO_ESTADO</valueType>
+    </variable>
+    <variable name="DT_ID_SERVICIO_N" type="leaf">
+      <column>SYSTEM_ID_SERVICIO_N</column>
+      <table>A_SERVICIO</table>
+      <valueType>dtype_examen.DT_ID_SERVICIO_N</valueType>
+    </variable>
+    <variable name="DT_MSISDN" type="leaf">
+      <column>MSISDN</column>
+      <table>A_SERVICIO</table>
+      <valueType>dtype_examen.DT_MSISDN</valueType>
+    </variable>
+    <variable name="DT_ORDER_ID" type="leaf">
+      <column>ORDER_ID</column>
+      <table>A_SERVICIO</table>
+      <valueType>dtype_examen.DT_ORDER_ID</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_examen.DOC_SERVICIOS</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

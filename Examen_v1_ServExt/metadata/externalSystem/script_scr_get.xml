@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="externalSystem.scr_get">
+  <metaVersion>25</metaVersion>
+  <parameterList>
+    <parameter name="input" type="rifp">
+      <type>dstruct_externalSystem.input_getalgo</type>
+    </parameter>
+  </parameterList>
+  <script><![CDATA[
+    var var_orderid = input.orderid;
+    var output = new DataStructure("externalSystem.output_getalgo");
+
+    externalSystem.quiebra_ejecucion();
+
+    output.estado = "OK";
+    output.mensaje = "Nada";
+
+    return output;
+  ]]></script>
+</script>

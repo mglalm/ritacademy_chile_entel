@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="externalSystem.xs_servicios">
+  <label>xs_servicios</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="port_servicios_SOAP" type="port">
+      <binding>bind_externalSystem.bind_Servicio_SOAP</binding>
+      <label>port_servicios_SOAP</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+    <port name="port_servicios_JS" type="port">
+      <binding>bind_externalSystem.bind_Servicio_JS</binding>
+      <label>port_servicios_JS</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

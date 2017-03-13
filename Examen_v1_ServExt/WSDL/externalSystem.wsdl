@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="externalSystem" targetNamespace="http://www.readinessit.com/namespaces/EXAMEN/externalSystem"
+	xmlns:tns="http://www.readinessit.com/namespaces/EXAMEN/externalSystem"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:externalSystem="http://www.readinessit.com/namespaces/EXAMEN/externalSystem">
+
+	<types>
+		<schema targetNamespace="http://www.readinessit.com/namespaces/EXAMEN/externalSystem"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:externalSystem="http://www.readinessit.com/namespaces/EXAMEN/externalSystem"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>externalSystem</documentation>
+				<appinfo>
+					<metadata>AVM Metadata2</metadata>
+					<created>Wed Feb 22 13:53:02 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<!-- Structures -->
+
+			<complexType name="input_getalgo">
+				<annotation>
+					<documentation>input_getalgo</documentation>
+				</annotation>
+					<sequence>
+						<element name="orderid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="output_getalgo">
+				<annotation>
+					<documentation>output_getalgo</documentation>
+				</annotation>
+					<sequence>
+						<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+		</schema>
+	</types>
+
+	<message name="input_getalgo">
+		<part name="input_getalgo" type="externalSystem:input_getalgo"/>
+	</message>
+
+	<message name="output_getalgo">
+		<part name="output_getalgo" type="externalSystem:output_getalgo"/>
+	</message>
+
+	<portType name="interface_servicios">
+		<operation name="getalgo">
+			<input message="tns:input_getalgo"/>
+			<output message="tns:output_getalgo"/>
+		</operation>
+	</portType>
+
+	<binding name="bind_Servicio_SOAP" type="tns:interface_servicios">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getalgo">
+			<soap:operation soapAction="getalgo"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="xs_servicios">
+		<port name="port_servicios_SOAP" binding="tns:bind_Servicio_SOAP">
+		</port>
+	</service>
+
+</definitions>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="externalSystem.interface_servicios">
+  <label>interface_servicios</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="getalgo" type="oper">
+      <input>dstruct_externalSystem.input_getalgo</input>
+      <label>getalgo</label>
+      <output>dstruct_externalSystem.output_getalgo</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>5</revision>
+</interface>

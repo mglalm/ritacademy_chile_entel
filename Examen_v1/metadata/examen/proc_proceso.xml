@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="examen.proceso">
+  <activity name="start" type="seqActivity">
+    <label>start</label>
+    <x>0.0</x>
+    <y>0.0</y>
+    <childList>
+      <child name="haydatos" type="opActivity">
+        <label>haydatos</label>
+        <participant>part_examen.participanteautomatico</participant>
+        <x>214.0</x>
+        <y>181.0</y>
+        <childList>
+          <child name="back" type="repeatActivity">
+            <element>proc_examen.proceso/seqActivity_start</element>
+            <label>back</label>
+            <x>214.0</x>
+            <y>281.0</y>
+          </child>
+        </childList>
+        <methodList>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script><![CDATA[
+              var listado_servicios = new Finder("examen.FIND_SERVICIOS");
+              var resultado = listado_servicios.search();
+              var ya_tiene_servicio = 0 ;
+              if ( resultado.length > 0)
+              {
+
+
+              }
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="participanteautomatico" type="participantActivity">
+        <label>participanteautomatico</label>
+        <participant>part_examen.participanteautomatico</participant>
+        <x>275.0</x>
+        <y>13.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <document>doc_examen.DOC_SERVICIOS</document>
+  <label>proceso</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>User</type>
+</process>

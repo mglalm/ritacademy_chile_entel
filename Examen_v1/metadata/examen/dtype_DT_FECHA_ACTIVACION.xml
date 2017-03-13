@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="examen.DT_FECHA_ACTIVACION">
+  <extends>dtype_com.conceptwave.system.DateTime</extends>
+  <label>DT_FECHA_ACTIVACION</label>
+  <metaVersion>25</metaVersion>
+</dataType>

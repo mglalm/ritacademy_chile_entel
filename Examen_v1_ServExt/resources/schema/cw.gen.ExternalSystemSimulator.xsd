@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema targetNamespace="ExternalSystemSimulator"	
+	xmlns="http://www.w3.org/2001/XMLSchema"	
+	xmlns:ExternalSystemSimulator="ExternalSystemSimulator"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+
+	<annotation>
+		<documentation>External System Simulator</documentation>
+		<appinfo>
+			<metadata>AVM Metadata</metadata>
+			<created>Wed Feb 22 13:53:02 CLT 2017</created>
+		</appinfo>
+	</annotation>
+
+	<!-- Data types and elements -->
+
+	<simpleType name="ID_MSISDN_ESTADO_SERVICIO">
+		<annotation>
+			<documentation>Id Estado</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="1"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="ID_CLIENTE_BSCS_SERVICIO">
+		<annotation>
+			<documentation>Id Cliente</documentation>
+		</annotation>
+		<restriction base="xsd:decimal">
+			<totalDigits value="5"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="FECHA_ACTIVACION_BSCS_SERVICIO">
+		<annotation>
+			<documentation>Fecha Activación</documentation>
+		</annotation>
+		<restriction base="xsd:dateTime">
+		</restriction>
+	</simpleType>
+
+	<simpleType name="ORDER_ID">
+		<annotation>
+			<documentation>ORDER_ID</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="30"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="MSISDN_SERVICIO">
+		<annotation>
+			<documentation>Msisdn</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="15"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="ID_SERVICIO_ESTADO_SERVICIO">
+		<annotation>
+			<documentation>Estado Servicio</documentation>
+		</annotation>
+		<restriction base="xsd:string">
+			<maxLength value="1"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="ID_PLAN_BSCS_SERVICIO">
+		<annotation>
+			<documentation>Id Plan</documentation>
+		</annotation>
+		<restriction base="xsd:decimal">
+			<totalDigits value="5"/>
+		</restriction>
+	</simpleType>
+
+	<!-- Structures -->
+
+	<complexType name="getCreditApprovalNumberResponse">
+		<annotation>
+			<documentation>getCreditApprovalNumberResponse</documentation>
+		</annotation>
+			<sequence>
+				<element name="destiny" minOccurs="0" maxOccurs="1">
+					<annotation>
+						<documentation>destiny</documentation>
+					</annotation>
+					<complexType>
+						<sequence>
+							<element name="destinyProcess" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+							<element name="destinyOrder" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="creditApprovalNumber" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="input_getMsisdnReserveBSCS">
+		<annotation>
+			<documentation>input_getMsisdnReserveBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="orderid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="rut" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="output_getMsisdnReserveBSCS">
+		<annotation>
+			<documentation>output_getMsisdnReserveBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="input_provServicioBSCS">
+		<annotation>
+			<documentation>input_provServicioBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="orderid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="rut" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="msisdn" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="id_plan_bscs" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="getCreditApprovalNumberRequest">
+		<annotation>
+			<documentation>getCreditApprovalNumberRequest</documentation>
+		</annotation>
+			<sequence>
+				<element name="origin" minOccurs="0" maxOccurs="1">
+					<annotation>
+						<documentation>origin</documentation>
+					</annotation>
+					<complexType>
+						<sequence>
+							<element name="originProcess" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+							<element name="originOrder" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="creditApprovalNumberOld" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="ack">
+		<annotation>
+			<documentation>ack</documentation>
+		</annotation>
+			<sequence>
+				<element name="code" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="description" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="output_provServicioBSCS">
+		<annotation>
+			<documentation>output_provServicioBSCS</documentation>
+		</annotation>
+			<sequence>
+				<element name="estado" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<element name="mensaje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<!-- Documents -->
+
+	<complexType name="DOC_SERVICIO_GET2">
+		<annotation>
+			<documentation>DOC_SERVICIO_GET2</documentation>
+		</annotation>
+			<sequence>
+				<element name="ID_CLIENTE_BSCS_SERVICIO" type="ExternalSystemSimulator:ID_CLIENTE_BSCS_SERVICIO"/>
+				<element name="MSISDN_SERVICIO" type="ExternalSystemSimulator:MSISDN_SERVICIO"/>
+				<element name="FECHA_ACTIVACION_BSCS_SERVICIO" type="ExternalSystemSimulator:FECHA_ACTIVACION_BSCS_SERVICIO"/>
+				<element name="ID_SERVICIO_ESTADO_SERVICIO" type="ExternalSystemSimulator:ID_SERVICIO_ESTADO_SERVICIO"/>
+				<element name="ID_PLAN_BSCS_SERVICIO" type="ExternalSystemSimulator:ID_PLAN_BSCS_SERVICIO"/>
+				<element name="ORDER_ID" type="ExternalSystemSimulator:ORDER_ID"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="DOC_MSISDN_PASO_GET">
+		<annotation>
+			<documentation>DOC_MSISDN_PASO_GET</documentation>
+		</annotation>
+			<sequence>
+				<element name="orderid" type="xsd:string"/>
+				<element name="rut" type="xsd:string"/>
+				<element name="estado" type="xsd:string"/>
+				<element name="mensaje" type="xsd:string"/>
+				<element name="msisdn" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="DOC_MSISDN_GET2">
+		<annotation>
+			<documentation>DOC_MSISDN_GET2</documentation>
+		</annotation>
+			<sequence>
+				<element name="MSISDN" type="ExternalSystemSimulator:MSISDN_SERVICIO"/>
+				<element name="ID_MSISDN_ESTADO" type="ExternalSystemSimulator:ID_MSISDN_ESTADO_SERVICIO"/>
+			</sequence>
+		</complexType>
+
+	<complexType name="procDoc">
+		<annotation>
+			<documentation>Proc Doc</documentation>
+		</annotation>
+			<sequence>
+				<element name="originProcess" type="xsd:string"/>
+				<element name="originOrder" type="xsd:string"/>
+				<element name="creditApprovalNumber" type="xsd:string"/>
+			</sequence>
+		</complexType>
+
+</schema>
