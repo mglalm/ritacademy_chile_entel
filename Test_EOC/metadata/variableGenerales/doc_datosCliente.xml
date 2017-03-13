@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="variableGenerales.datosCliente">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{f00af89e-b7da-469b-b69e-c4cd1ea10620}</guid>
+  <label>datosCliente</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="nombreCliente" type="leaf">
+      <column>NOMBRECLIENTE</column>
+      <table>TEST_DATOSCLIENTE</table>
+      <valueType>dtype_variableGenerales.nombreCliente</valueType>
+    </variable>
+    <variable name="edadCliente" type="leaf">
+      <column>EDADCLIENTE</column>
+      <table>TEST_DATOSCLIENTE</table>
+      <valueType>dtype_variableGenerales.edadCliente</valueType>
+    </variable>
+    <variable name="estadoCivil" type="leaf">
+      <column>ESTADOCIVIL</column>
+      <table>TEST_DATOSCLIENTE</table>
+      <valueType>dtype_variableGenerales.estadoCivil</valueType>
+    </variable>
+    <variable name="comunaCliente" type="leaf">
+      <column>COMUNACLIENTE</column>
+      <table>TEST_DATOSCLIENTE</table>
+      <valueType>dtype_variableGenerales.comunaCliente</valueType>
+    </variable>
+    <variable name="hijos" type="leaf">
+      <column>HIJOS</column>
+      <table>TEST_DATOSCLIENTE</table>
+      <valueType>dtype_variableGenerales.hijos</valueType>
+    </variable>
+    <variable name="colorFavorito" type="leaf">
+      <column>COLORFAVORITO</column>
+      <table>TEST_DATOSCLIENTE</table>
+      <valueType>dtype_variableGenerales.colorFavorito</valueType>
+    </variable>
+    <variable name="pais" type="leaf">
+      <column>PAIS</column>
+      <table>TEST_DATOSCLIENTE</table>
+      <valueType>dtype_variableGenerales.pais</valueType>
+    </variable>
+    <variable name="trabajo" type="leaf">
+      <column>TRABAJO</column>
+      <table>TEST_DATOSCLIENTE</table>
+      <valueType>dtype_variableGenerales.tipoTrabajo</valueType>
+    </variable>
+    <variable name="mascota" type="leaf">
+      <column>MASCOTA</column>
+      <table>TEST_DATOSCLIENTE</table>
+      <valueType>dtype_variableGenerales.tipoMascota</valueType>
+    </variable>
+    <variable name="signo" type="leaf">
+      <column>SIGNO</column>
+      <table>TEST_DATOSCLIENTE</table>
+      <valueType>dtype_variableGenerales.signo</valueType>
+    </variable>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>TEST_DATOSCLIENTE</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_variableGenerales.datosCliente</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="formaGenerada" type="vform">
+            <label>formaGenerada</label>
+            <root name="formaGeneradaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="datosClienteGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="datosClienteHeader" type="elhdr">
+                      <label>datosCliente</label>
+                    </element>
+                    <element name="nombreCliente" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.datosCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.datosCliente/leaf_nombreCliente</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="edadCliente" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.datosCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.datosCliente/leaf_edadCliente</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="estadoCivil" type="elslct">
+                      <sorted>false</sorted>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.datosCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.datosCliente/leaf_estadoCivil</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="comunaCliente" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.datosCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.datosCliente/leaf_comunaCliente</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="hijos" type="elrgrp">
+                      <defaultEnum>yes/no</defaultEnum>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.datosCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.datosCliente/leaf_hijos</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="colorFavorito" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.datosCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.datosCliente/leaf_colorFavorito</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="pais" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.datosCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.datosCliente/leaf_pais</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="trabajo" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.datosCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.datosCliente/leaf_trabajo</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="mascota" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.datosCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.datosCliente/leaf_mascota</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="signo" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.datosCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.datosCliente/leaf_signo</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cwDocId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.datosCliente/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.datosCliente/leaf_cwDocId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

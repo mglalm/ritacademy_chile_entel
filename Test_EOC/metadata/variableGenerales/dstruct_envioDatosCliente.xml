@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="variableGenerales.envioDatosCliente">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>envioDatosCliente</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="nombreEnvio" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>nombreEnvio</label>
+    </child>
+    <child name="comunaEnvio" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>comunaEnvio</label>
+    </child>
+    <child name="edadEnvio" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>edadEnvio</label>
+    </child>
+    <child name="estcivilEnvio" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>estcivilEnvio</label>
+    </child>
+    <child name="hijosEnvio" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.Boolean</element>
+      <label>hijosEnvio</label>
+    </child>
+    <child name="mascotaEnvio" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>mascotaEnvio</label>
+    </child>
+    <child name="colorEnvio" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>colorEnvio</label>
+    </child>
+    <child name="paisEnvio" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>paisEnvio</label>
+    </child>
+    <child name="trabajoEnvio" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>trabajoEnvio</label>
+    </child>
+    <child name="signoEnvio" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>signoEnvio</label>
+    </child>
+  </childList>
+</dataStructure>

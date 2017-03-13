@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="variableGenerales.processDocument">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{df3d75ae-c448-4c03-a187-c4bed915dcce}</guid>
+  <label>processDocument</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="estadoProceso" type="leaf">
+      <valueType>dtype_variableGenerales.estadoProceso</valueType>
+    </variable>
+    <variable name="idCliente" type="leaf">
+      <valueType>dtype_variableGenerales.idCliente</valueType>
+    </variable>
+  </variableList>
+</document>

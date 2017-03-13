@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="servicioConsumer.ingresoAutomatico">
+  <label>ingresoAutomatico</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="servicioIngreso" type="oper">
+      <input>dstruct_variableGenerales.envioDatosCliente</input>
+      <label>servicioIngreso</label>
+      <output>dstruct_variableGenerales.envioDatosRespuesta</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

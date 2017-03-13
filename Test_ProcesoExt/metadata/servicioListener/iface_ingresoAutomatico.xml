@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="servicioListener.ingresoAutomatico">
+  <label>ingresoAutomatico</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="servicioIngreso" type="oper">
+      <input>dstruct_variableGenerales.datosClientesIngreso</input>
+      <label>servicioIngreso</label>
+      <output>dstruct_variableGenerales.respuesta</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>2</revision>
+</interface>

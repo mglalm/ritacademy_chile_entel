@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="servicioListener.serviciosExternos">
+  <label>serviciosExternos</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="portJS_listener" type="port">
+      <binding>bind_servicioListener.bindingJS_listener</binding>
+      <label>portJS_listener</label>
+      <recover>5</recover>
+    </port>
+    <port name="portSOAP_listener" type="port">
+      <binding>bind_servicioListener.bindingSOAP_listener</binding>
+      <label>portSOAP_listener</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

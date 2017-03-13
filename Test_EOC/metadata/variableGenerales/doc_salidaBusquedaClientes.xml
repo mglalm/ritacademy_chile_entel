@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="variableGenerales.salidaBusquedaClientes">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{07bd4531-d21c-448b-9e77-bcf88085e5d4}</guid>
+  <label>salidaBusquedaClientes</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="nombreCliente" type="leaf">
+      <valueType>dtype_variableGenerales.nombreCliente</valueType>
+    </variable>
+    <variable name="edadCliente" type="leaf">
+      <valueType>dtype_variableGenerales.edadCliente</valueType>
+    </variable>
+    <variable name="estadoCivil" type="leaf">
+      <valueType>dtype_variableGenerales.estadoCivil</valueType>
+    </variable>
+    <variable name="comunaCliente" type="leaf">
+      <valueType>dtype_variableGenerales.comunaCliente</valueType>
+    </variable>
+    <variable name="tipoTrabajo" type="leaf">
+      <valueType>dtype_variableGenerales.tipoTrabajo</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_variableGenerales.salidaBusquedaClientes</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="formaGenerada" type="vform">
+            <label>formaGenerada</label>
+            <root name="formaGeneradaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="salidaBusquedaClientesGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="salidaBusquedaClientesHeader" type="elhdr">
+                      <label>salidaBusquedaClientes</label>
+                    </element>
+                    <element name="nombreCliente" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.salidaBusquedaClientes/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.salidaBusquedaClientes/leaf_nombreCliente</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="edadCliente" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.salidaBusquedaClientes/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.salidaBusquedaClientes/leaf_edadCliente</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="estadoCivil" type="elslct">
+                      <sorted>false</sorted>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.salidaBusquedaClientes/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.salidaBusquedaClientes/leaf_estadoCivil</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="comunaCliente" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.salidaBusquedaClientes/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.salidaBusquedaClientes/leaf_comunaCliente</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="tipoTrabajo" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_variableGenerales.salidaBusquedaClientes/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_variableGenerales.salidaBusquedaClientes/leaf_tipoTrabajo</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

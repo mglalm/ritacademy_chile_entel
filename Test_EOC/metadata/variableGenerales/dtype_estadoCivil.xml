@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="variableGenerales.estadoCivil">
+  <enumeration type="enum">
+    <valueList>
+      <value name="soltero" type="enumItem" code="S"/>
+      <value name="Casado" type="enumItem" code="C"/>
+      <value name="Divorciado" type="enumItem" code="D"/>
+    </valueList>
+  </enumeration>
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>estadoCivil</label>
+  <length>1</length>
+  <metaVersion>25</metaVersion>
+</dataType>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="interfacesAplicacion.admClientes">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>Adminstración Clientes</label>
+  <metaVersion>25</metaVersion>
+  <url>/admClientes</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="ingresoClientes" type="elmnu"/>
+                <element name="buscaClientes" type="elmnu"/>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>Administración Clientes</title>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="ingresoClientes" type="usrActionMethod"/>
+    <method name="buscaClientes" type="usrActionMethod">
+      <userInterface>findDoc_variableGenerales.busquedaClientesFinder</userInterface>
+      <valueType>findDoc_variableGenerales.busquedaClientesFinder</valueType>
+    </method>
+  </methodList>
+</userInterface>

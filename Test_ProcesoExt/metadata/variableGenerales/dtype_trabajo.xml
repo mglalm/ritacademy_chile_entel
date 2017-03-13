@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="variableGenerales.trabajo">
+  <extends>dtype_com.conceptwave.system.Boolean</extends>
+  <label>trabajo</label>
+  <metaVersion>25</metaVersion>
+</dataType>

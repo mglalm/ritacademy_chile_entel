@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="servicioListener.bindingJS_listener">
+  <interface>iface_servicioListener.ingresoAutomatico</interface>
+  <label>bindingJS_listener</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="variableGenerales.hijos">
+  <extends>dtype_com.conceptwave.system.Boolean</extends>
+  <label>hijos</label>
+  <metaVersion>25</metaVersion>
+</dataType>

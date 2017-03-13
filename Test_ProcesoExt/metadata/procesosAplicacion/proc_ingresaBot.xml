@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="procesosAplicacion.ingresaBot">
+  <activity name="start" type="seqActivity">
+    <label>start</label>
+    <x>98.0</x>
+    <y>95.0</y>
+    <childList>
+      <child name="recibeDatos" type="opActivity">
+        <element>iface_servicioListener.ingresoAutomatico/oper_servicioIngreso</element>
+        <label>recibeDatos</label>
+        <x>251.0</x>
+        <y>92.0</y>
+        <childList>
+          <child name="validacionIngreso" type="switchActivity">
+            <label>validacionIngreso</label>
+            <x>414.0</x>
+            <y>90.0</y>
+            <childList>
+              <child name="Ok" type="caseActivity">
+                <label>Ok</label>
+                <x>259.0</x>
+                <y>193.0</y>
+              </child>
+              <child name="error" type="caseActivity">
+                <label>error</label>
+                <x>448.0</x>
+                <y>285.0</y>
+                <methodList>
+                  <method name="cwOnProcActCond" type="action">
+                    <category>cond</category>
+                    <system>true</system>
+                    <script><![CDATA[return this.process.processDocument.estado != "OK"]]></script>
+                  </method>
+                </methodList>
+              </child>
+            </childList>
+          </child>
+        </childList>
+      </child>
+      <child name="repeat" type="repeatActivity">
+        <element>proc_procesosAplicacion.ingresaBot/seqActivity_start</element>
+        <label>repeat</label>
+        <schedule type="sched">
+          <duration type="dur">
+            <length>P0Y0M0DT0H2M0S</length>
+          </duration>
+        </schedule>
+        <x>97.0</x>
+        <y>294.0</y>
+      </child>
+    </childList>
+    <methodList>
+      <method name="cwOnProcActBefore" type="action">
+        <category>before</category>
+        <system>true</system>
+        <script><![CDATA[
+          // al inicio del proceso se limpian variables del processDocument
+
+          this.process.processDocument.estadoProceso = null;
+          this.process.processDocument.idCliente = null;
+        ]]></script>
+      </method>
+    </methodList>
+  </activity>
+  <curRevision>true</curRevision>
+  <interface>iface_servicioListener.ingresoAutomatico</interface>
+  <label>ingresaBot</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>Global</type>
+</process>

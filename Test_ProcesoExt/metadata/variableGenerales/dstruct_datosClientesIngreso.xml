@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="variableGenerales.datosClientesIngreso">
+  <container>true</container>
+  <jsonMap type="jmap">
+    <exclude>1</exclude>
+  </jsonMap>
+  <label>datosClientesIngreso</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="nombreIngreso" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>nombreIngreso</label>
+    </child>
+    <child name="colorIngreso" type="dstruct">
+      <array>true</array>
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>colorIngreso</label>
+      <maxInstance>-1</maxInstance>
+    </child>
+    <child name="comunaIngreso" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>comunaIngreso</label>
+    </child>
+    <child name="estcivilIngreso" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>estcivilIngreso</label>
+    </child>
+    <child name="edadIngreso" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>edadIngreso</label>
+    </child>
+    <child name="hijos" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.Boolean</element>
+      <label>hijos</label>
+    </child>
+    <child name="mascotaIngreso" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>mascotaIngreso</label>
+    </child>
+    <child name="paisIngreso" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>paisIngreso</label>
+    </child>
+    <child name="signoIngreso" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>signoIngreso</label>
+    </child>
+    <child name="trabajoIngreso" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>trabajoIngreso</label>
+    </child>
+  </childList>
+</dataStructure>

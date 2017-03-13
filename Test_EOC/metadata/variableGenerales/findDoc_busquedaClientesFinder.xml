@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="variableGenerales.busquedaClientesFinder">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_variableGenerales.salidaBusquedaClientes</input>
+  <label>busquedaClientesFinder</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_variableGenerales.datosCliente</output>
+  <sortList>
+    <sort type="stitem">
+      <path>doc_variableGenerales.datosCliente/leaf_nombreCliente</path>
+    </sort>
+  </sortList>
+  <type>document</type>
+  <vDetailForm>doc_variableGenerales.datosCliente/ui_UserInterface/frmui_Forms/vform_formaGenerada</vDetailForm>
+  <searchList>
+    <search type="sitem">
+      <document>doc_variableGenerales.salidaBusquedaClientes</document>
+      <mappedDocument>doc_variableGenerales.datosCliente</mappedDocument>
+      <mappedPath>doc_variableGenerales.datosCliente/leaf_comunaCliente</mappedPath>
+      <operation>equal</operation>
+      <path>doc_variableGenerales.salidaBusquedaClientes/leaf_comunaCliente</path>
+    </search>
+    <search type="sitem">
+      <document>doc_variableGenerales.salidaBusquedaClientes</document>
+      <mappedDocument>doc_variableGenerales.datosCliente</mappedDocument>
+      <mappedPath>doc_variableGenerales.datosCliente/leaf_edadCliente</mappedPath>
+      <operation>equal</operation>
+      <path>doc_variableGenerales.salidaBusquedaClientes/leaf_edadCliente</path>
+    </search>
+    <search type="sitem">
+      <document>doc_variableGenerales.salidaBusquedaClientes</document>
+      <mappedDocument>doc_variableGenerales.datosCliente</mappedDocument>
+      <mappedPath>doc_variableGenerales.datosCliente/leaf_estadoCivil</mappedPath>
+      <operation>equal</operation>
+      <path>doc_variableGenerales.salidaBusquedaClientes/leaf_estadoCivil</path>
+    </search>
+    <search type="sitem">
+      <document>doc_variableGenerales.salidaBusquedaClientes</document>
+      <mappedDocument>doc_variableGenerales.datosCliente</mappedDocument>
+      <mappedPath>doc_variableGenerales.datosCliente/leaf_nombreCliente</mappedPath>
+      <operation>equal</operation>
+      <path>doc_variableGenerales.salidaBusquedaClientes/leaf_nombreCliente</path>
+    </search>
+    <search type="sitem">
+      <document>doc_variableGenerales.salidaBusquedaClientes</document>
+      <mappedDocument>doc_variableGenerales.datosCliente</mappedDocument>
+      <mappedPath>doc_variableGenerales.datosCliente/leaf_trabajo</mappedPath>
+      <operation>equal</operation>
+      <path>doc_variableGenerales.salidaBusquedaClientes/leaf_tipoTrabajo</path>
+    </search>
+    <search type="sitem">
+      <mappedDocument>doc_variableGenerales.datosCliente</mappedDocument>
+      <mappedPath>doc_variableGenerales.datosCliente/leaf_nombreCliente</mappedPath>
+      <operation>is not null</operation>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>doc_variableGenerales.salidaBusquedaClientes/ui_UserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>doc_variableGenerales.datosCliente/ui_UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_variableGenerales.datosCliente</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="busquedaClientesFinderResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="nombreCliente" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_variableGenerales.datosCliente/leaf_nombreCliente</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="edadCliente" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_variableGenerales.datosCliente/leaf_edadCliente</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="estadoCivil" type="elslct">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_variableGenerales.datosCliente/leaf_estadoCivil</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="comunaCliente" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_variableGenerales.datosCliente/leaf_comunaCliente</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="hijos" type="elchk">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_variableGenerales.datosCliente/leaf_hijos</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="colorFavorito" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_variableGenerales.datosCliente/leaf_colorFavorito</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="pais" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_variableGenerales.datosCliente/leaf_pais</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="trabajo" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_variableGenerales.datosCliente/leaf_trabajo</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="mascota" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_variableGenerales.datosCliente/leaf_mascota</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="signo" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_variableGenerales.datosCliente/leaf_signo</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cwDocId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_variableGenerales.datosCliente/leaf_cwDocId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="busquedaClientesFinderView" type="findVView">
+      <inputOverlay>doc_variableGenerales.salidaBusquedaClientes/ui_UserInterface/frmui_Forms/vform_formaGenerada</inputOverlay>
+      <outputOverlay>findDoc_variableGenerales.busquedaClientesFinder/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <searchImmediately>true</searchImmediately>
+    </view>
+  </viewList>
+</findDoc>
