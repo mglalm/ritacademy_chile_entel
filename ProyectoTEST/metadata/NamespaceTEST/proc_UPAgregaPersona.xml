@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="NamespaceTEST.UPAgregaPersona">
+  <activity name="inicio" type="seqActivity">
+    <label>inicio</label>
+    <x>111.0</x>
+    <y>44.0</y>
+    <childList>
+      <child name="agregaPersona" type="scriptActivity">
+        <label>agregaPersona</label>
+        <schedule type="sched">
+          <duration type="dur">
+            <length>P0Y0M0DT0H2M0S</length>
+          </duration>
+        </schedule>
+        <x>319.0</x>
+        <y>38.0</y>
+        <methodList>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script><![CDATA[
+              UINamespace.debug();
+
+              var doc = new Document("NamespaceTEST.docPersona");
+
+              doc.dtRut = "13668652-6";
+              doc.dtNombre = "Luis";
+              doc.dtApellidoPaterno = "Gonzalez";
+              doc.dtApellidoMaterno = "Donoso";
+              doc.dtDireccion = "Camino de las Amapolas 5525";
+              doc.dtComuna = "Peñalolen";
+              doc.dtCiudad = "Santiago";
+              doc.dtAltura = "1,76";
+              doc.dtGenero = "M";
+              doc.dtPeso = "80";
+              doc.dtProfesion = "Ingeniero";
+
+              doc.save();
+            ]]></script>
+          </method>
+        </methodList>
+      </child>
+      <child name="cumplioVueltas" type="switchActivity">
+        <label>cumplioVueltas</label>
+        <x>321.0</x>
+        <y>146.0</y>
+        <childList>
+          <child name="no" type="caseActivity">
+            <label>no</label>
+            <x>322.0</x>
+            <y>261.0</y>
+            <childList>
+              <child name="repite" type="repeatActivity">
+                <element>proc_NamespaceTEST.UPAgregaPersona/seqActivity_inicio</element>
+                <label>repite</label>
+                <x>202.0</x>
+                <y>242.0</y>
+              </child>
+            </childList>
+            <methodList>
+              <method name="cwOnProcActCond" type="action">
+                <category>cond</category>
+                <system>true</system>
+                <script><![CDATA[
+                  UINamespace.debug();
+                  this.process.processDocument.numVueltas++;
+                  return this.process.processDocument.numVueltas <= 10;
+                ]]></script>
+              </method>
+            </methodList>
+          </child>
+          <child name="si" type="caseActivity">
+            <label>si</label>
+            <x>321.0</x>
+            <y>246.0</y>
+            <childList>
+              <child name="fin" type="completeActivity">
+                <label>fin</label>
+                <x>470.0</x>
+                <y>147.0</y>
+              </child>
+            </childList>
+          </child>
+        </childList>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <label>UPAgregaPersona</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>User</type>
+</process>

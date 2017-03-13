@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="NamespaceTEST.docProceso">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{62e3d33e-729e-4e66-a603-9a9f30a23fa2}</guid>
+  <label>docProceso</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="numVueltas" type="leaf">
+      <constantValue>0</constantValue>
+      <valueType>dtype_com.conceptwave.system.Integer</valueType>
+    </variable>
+  </variableList>
+</document>

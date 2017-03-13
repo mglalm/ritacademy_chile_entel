@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <DefaultDB>ORACLE THIN</DefaultDB>
+  <applicationString>proyectoTEST</applicationString>
+  <applicationVersionString>1</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="UINamespace.debug">0</breakpoint>
+  </breakpointMap>
+  <databasesMap>
+    <databases key="ORACLE THIN" type=".configdb">
+      <dbname>ORACLE THIN</dbname>
+      <driver type=".dbdriver">
+        <attributes>localhost;1521;orcl;false</attributes>
+        <driverType>Oracle thin</driverType>
+      </driver>
+      <password>ACCE13A4C43EDDAF</password>
+      <user>C##TRAIN</user>
+    </databases>
+  </databasesMap>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <nodeString>PE_UI</nodeString>
+  <skin>Enterprise</skin>
+</project>

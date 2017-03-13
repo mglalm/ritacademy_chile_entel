@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="UINamespace.debug">
+  <label>debug</label>
+  <metaVersion>25</metaVersion>
+  <script>var a  = 1;</script>
+</script>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="NamespaceTEST.docPersona">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{e67bd6d8-0389-4958-acc3-e88fb635b286}</guid>
+  <label>docPersona</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>docPersona</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+    <variable name="dtRut" type="leaf">
+      <column>DTRUT</column>
+      <table>docPersona</table>
+      <valueType>dtype_NamespaceTEST.dtRut</valueType>
+    </variable>
+    <variable name="dtNombre" type="leaf">
+      <column>DTNOMBRE</column>
+      <table>docPersona</table>
+      <valueType>dtype_NamespaceTEST.dtNombre</valueType>
+    </variable>
+    <variable name="dtApellidoPaterno" type="leaf">
+      <column>DTAPELLIDOPATERNO</column>
+      <table>docPersona</table>
+      <valueType>dtype_NamespaceTEST.dtApellido</valueType>
+    </variable>
+    <variable name="dtApellidoMaterno" type="leaf">
+      <column>DTAPELLIDOMATERNO</column>
+      <table>docPersona</table>
+      <valueType>dtype_NamespaceTEST.dtApellido</valueType>
+    </variable>
+    <variable name="dtDireccion" type="leaf">
+      <column>DTDIRECCION</column>
+      <table>docPersona</table>
+      <valueType>dtype_NamespaceTEST.dtDireccion</valueType>
+    </variable>
+    <variable name="dtComuna" type="leaf">
+      <column>DTCOMUNA</column>
+      <table>docPersona</table>
+      <valueType>dtype_NamespaceTEST.dtComuna</valueType>
+    </variable>
+    <variable name="dtCiudad" type="leaf">
+      <column>DTCIUDAD</column>
+      <table>docPersona</table>
+      <valueType>dtype_NamespaceTEST.dtCiudad</valueType>
+    </variable>
+    <variable name="dtAltura" type="leaf">
+      <column>DTALTURA</column>
+      <table>docPersona</table>
+      <valueType>dtype_NamespaceTEST.dtAltura</valueType>
+    </variable>
+    <variable name="dtGenero" type="leaf">
+      <column>DTGENERO</column>
+      <table>docPersona</table>
+      <valueType>dtype_NamespaceTEST.dtGenero</valueType>
+    </variable>
+    <variable name="dtPeso" type="leaf">
+      <column>DTPESO</column>
+      <table>docPersona</table>
+      <valueType>dtype_NamespaceTEST.dtPeso</valueType>
+    </variable>
+    <variable name="dtProfesion" type="leaf">
+      <column>DTPROFESION</column>
+      <table>docPersona</table>
+      <valueType>dtype_NamespaceTEST.dtProfesion</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_NamespaceTEST.docPersona</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="formConsulta" type="vform">
+            <label>formConsulta</label>
+            <root name="formConsultaGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="docPersonaGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="docPersonaHeader" type="elhdr">
+                      <label>docPersona</label>
+                    </element>
+                    <element name="cwDocId" type="elfld">
+                      <editable type="varPath">
+                        <variablePathList>
+                          <variablePath>dtype_com.conceptwave.system.Boolean/leaf_FALSE</variablePath>
+                        </variablePathList>
+                      </editable>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_NamespaceTEST.docPersona/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_NamespaceTEST.docPersona/leaf_cwDocId</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="dtRut" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_NamespaceTEST.docPersona/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_NamespaceTEST.docPersona/leaf_dtRut</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="dtNombre" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_NamespaceTEST.docPersona/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_NamespaceTEST.docPersona/leaf_dtNombre</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="dtApellidoPaterno" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_NamespaceTEST.docPersona/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_NamespaceTEST.docPersona/leaf_dtApellidoPaterno</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="dtApellidoMaterno" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_NamespaceTEST.docPersona/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_NamespaceTEST.docPersona/leaf_dtApellidoMaterno</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="dtDireccion" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_NamespaceTEST.docPersona/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_NamespaceTEST.docPersona/leaf_dtDireccion</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="dtComuna" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_NamespaceTEST.docPersona/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_NamespaceTEST.docPersona/leaf_dtComuna</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="dtCiudad" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_NamespaceTEST.docPersona/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_NamespaceTEST.docPersona/leaf_dtCiudad</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="dtAltura" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_NamespaceTEST.docPersona/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_NamespaceTEST.docPersona/leaf_dtAltura</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="dtGenero" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_NamespaceTEST.docPersona/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_NamespaceTEST.docPersona/leaf_dtGenero</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="dtPeso" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_NamespaceTEST.docPersona/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_NamespaceTEST.docPersona/leaf_dtPeso</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="dtProfesion" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_NamespaceTEST.docPersona/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_NamespaceTEST.docPersona/leaf_dtProfesion</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>

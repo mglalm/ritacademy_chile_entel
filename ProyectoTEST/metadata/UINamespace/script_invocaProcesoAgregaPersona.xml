@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="UINamespace.invocaProcesoAgregaPersona">
+  <label>invocaProcesoAgregaPersona</label>
+  <metaVersion>25</metaVersion>
+  <script><![CDATA[
+    UINamespace.debug();
+    Process.startProcess("NamespaceTEST.UPAgregaPersona");
+  ]]></script>
+</script>

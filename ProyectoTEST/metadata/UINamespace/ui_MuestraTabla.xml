@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="UINamespace.MuestraTabla">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>MuestraTabla</label>
+  <metaVersion>25</metaVersion>
+  <url>/Tablas</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="Tabla" type="elmnu">
+                  <label>Tablas</label>
+                  <elementList>
+                    <element name="consultarTablaPersona" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_UINamespace.MuestraTabla/usrActionMethod_clickMuestraTabla</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Consultar Tabla Persona</label>
+                    </element>
+                  </elementList>
+                </element>
+                <element name="Procesos" type="elmnu">
+                  <label>Procesos</label>
+                  <elementList>
+                    <element name="AgregaPersonas" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_UINamespace.MuestraTabla/usrActionMethod_clickAgregaPersona</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Agrega Personas</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <label>Page</label>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>Proyecto TEST</title>
+        </overlay>
+        <overlay name="Default" type="exov">
+          <base>ui_com.conceptwave.system.UserInterface/frmui_Forms/vform_Default</base>
+          <extends>ui_com.conceptwave.system.UserInterface/frmui_Forms/vform_Default</extends>
+          <label>Default</label>
+          <overrideList>
+            <override name="textoDesc" type="eltxtArea">
+              <label>Presione para ver la tabla de Personas</label>
+            </override>
+          </overrideList>
+        </overlay>
+        <overlay name="ConsultaTabla" type="vform">
+          <label>ConsultaTabla</label>
+          <root name="VerticalLayout" type="elvlt">
+            <elementList>
+              <element name="Label" type="ellab">
+                <label>Presione para consultar</label>
+              </element>
+              <element name="Button" type="elbtn">
+                <clickMethod type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_UINamespace.MuestraTabla/usrActionMethod_clickMuestraTabla</variablePath>
+                  </variablePathList>
+                </clickMethod>
+                <label>Consultar</label>
+              </element>
+            </elementList>
+          </root>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="clickConsultar" type="usrActionMethod">
+      <form>ui_UINamespace.MuestraTabla/frmui_Forms/vform_ConsultaTabla</form>
+      <userInterface>ui_UINamespace.MuestraTabla</userInterface>
+      <valueType>ui_UINamespace.MuestraTabla</valueType>
+    </method>
+    <method name="clickMuestraTabla" type="usrActionMethod">
+      <dialogHeight>600</dialogHeight>
+      <dialogWidth>800</dialogWidth>
+      <userInterface>findDoc_NamespaceTEST.finDocPersona</userInterface>
+      <valueType>findDoc_NamespaceTEST.finDocPersona</valueType>
+    </method>
+    <method name="clickAgregaPersona" type="usrActionMethod">
+      <script>UINamespace.invocaProcesoAgregaPersona();</script>
+    </method>
+  </methodList>
+</userInterface>
