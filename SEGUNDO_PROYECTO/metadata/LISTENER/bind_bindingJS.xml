@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="LISTENER.bindingJS">
+  <extensionList>
+    <extension name="operacion" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="metadataScript">LISTENER.globalScript</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_LISTENER.interfaz</interface>
+  <label>bindingJS</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.jsprov</provider>
+</binding>

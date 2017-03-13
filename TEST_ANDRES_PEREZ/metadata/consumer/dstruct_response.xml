@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="consumer.response">
+  <container>true</container>
+  <description>response</description>
+  <label>response</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="respuesta" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>respuesta</label>
+    </child>
+  </childList>
+</dataStructure>

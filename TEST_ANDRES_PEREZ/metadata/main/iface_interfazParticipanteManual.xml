@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="main.interfazParticipanteManual">
+  <label>interfazParticipanteManual</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="Cancel" type="oper">
+      <description>Cancel</description>
+      <label>Cancel</label>
+      <type>Notification</type>
+    </operation>
+    <operation name="Resubmit" type="oper">
+      <description>Resubmit</description>
+      <label>Resubmit</label>
+      <type>Notification</type>
+    </operation>
+    <operation name="Execute" type="oper">
+      <label>Execute</label>
+      <type>Notification</type>
+    </operation>
+    <operation name="Assign" type="oper">
+      <label>Assign</label>
+      <type>One-Way</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

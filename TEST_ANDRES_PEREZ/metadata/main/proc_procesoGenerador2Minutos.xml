@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<process name="main.gp">
+<process name="main.procesoGenerador2Minutos">
   <activity name="inicio" type="seqActivity">
     <label>inicio</label>
     <x>115.0</x>
@@ -10,19 +10,20 @@
         <schedule type="sched">
           <duration type="dur">
             <length>P0Y0M0DT0H1M0S</length>
-            <methodList>
-              <method name="cwOnDuration" type="action">
-                <system>true</system>
-                <script>main.generador();</script>
-              </method>
-            </methodList>
           </duration>
         </schedule>
         <x>427.0</x>
         <y>62.0</y>
+        <methodList>
+          <method name="cwOnProcActBefore" type="action">
+            <category>before</category>
+            <system>true</system>
+            <script>main.generador();</script>
+          </method>
+        </methodList>
       </child>
       <child name="volver" type="repeatActivity">
-        <element>proc_main.gp/seqActivity_inicio</element>
+        <element>proc_main.procesoGenerador2Minutos/seqActivity_inicio</element>
         <label>volver</label>
         <x>326.0</x>
         <y>242.0</y>
@@ -30,7 +31,7 @@
     </childList>
   </activity>
   <curRevision>true</curRevision>
-  <label>gp</label>
+  <label>procesoGenerador2Minutos</label>
   <metaVersion>25</metaVersion>
   <priority>8</priority>
   <type>Global</type>

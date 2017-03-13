@@ -34,6 +34,22 @@
                       </clickMethod>
                       <label>Agregar Item</label>
                     </element>
+                    <element name="MenuItem3" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_main.welcome/usrActionMethod_iniciaProceso</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Inicia Proceso Manual</label>
+                    </element>
+                    <element name="MenuItem4" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_main.welcome/usrActionMethod_invoca</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Invoca Proyecto 2</label>
+                    </element>
                   </elementList>
                 </element>
               </elementList>
@@ -58,6 +74,28 @@
     <method name="mostrarItem" type="usrActionMethod">
       <userInterface>findDoc_main.tablaFinder</userInterface>
       <valueType>findDoc_main.tablaFinder</valueType>
+    </method>
+    <method name="iniciaProceso" type="usrActionMethod">
+      <script><![CDATA[
+        var proceso = Process.startProcess("main.procesoLimpiador",null,null,null);
+        Global.showUserMessage("proceso iniciado");
+      ]]></script>
+    </method>
+    <method name="invoca" type="usrActionMethod">
+      <script><![CDATA[
+        main.dummy();
+        var dt = new DataStructure('consumer.request');
+        dt.pregunta = "hola mundo";
+
+        var arr = new Array();
+        arr[0] = dt;
+        arr[1] = null;
+
+        var resp = Global.invokeInterface('consumer.interfaz','operacion',arr);
+
+
+        Global.showUserMessage("respuesta obtenida desde el WS: "+resp[0].respuesta);
+      ]]></script>
     </method>
   </methodList>
 </userInterface>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="LISTENER.externalSevice">
+  <label>externalSevice</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="portSOAP" type="port">
+      <binding>bind_LISTENER.bindingSOAP</binding>
+      <exportReferencedOnly>true</exportReferencedOnly>
+      <exportSchemaInsideWsdl>true</exportSchemaInsideWsdl>
+      <label>portSOAP</label>
+      <listener>true</listener>
+      <recover>5</recover>
+    </port>
+    <port name="postJS" type="port">
+      <binding>bind_LISTENER.bindingJS</binding>
+      <label>postJS</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

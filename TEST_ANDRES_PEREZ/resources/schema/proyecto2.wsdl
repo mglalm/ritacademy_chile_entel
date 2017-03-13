@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="LISTENER" targetNamespace="LISTENER"
+	xmlns:tns="LISTENER"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:LISTENER="LISTENER">
+
+	<types>
+		<schema targetNamespace="LISTENER"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:LISTENER="LISTENER"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>LISTENER</documentation>
+				<appinfo>
+					<metadata>PROYECTO2</metadata>
+					<created>Mon Mar 13 11:09:52 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<!-- Structures -->
+
+			<complexType name="response">
+				<annotation>
+					<documentation>response</documentation>
+				</annotation>
+					<sequence>
+						<element name="respuesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="request">
+				<annotation>
+					<documentation>request</documentation>
+				</annotation>
+					<sequence>
+						<element name="pregunta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+		</schema>
+	</types>
+
+	<message name="request">
+		<part name="request" type="LISTENER:request"/>
+	</message>
+
+	<message name="response">
+		<part name="response" type="LISTENER:response"/>
+	</message>
+
+	<portType name="interfaz">
+		<operation name="operacion">
+			<input message="tns:request"/>
+			<output message="tns:response"/>
+		</operation>
+	</portType>
+
+	<binding name="bindingSOAP" type="tns:interfaz">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="operacion">
+			<soap:operation soapAction="operacion"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="externalSevice">
+		<port name="portSOAP" binding="tns:bindingSOAP">
+		</port>
+	</service>
+
+</definitions>

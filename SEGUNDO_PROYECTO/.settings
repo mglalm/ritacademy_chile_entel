@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+  <excludedBuildWar>.bak</excludedBuildWar>
+  <excludedResource>.svn</excludedResource>
+  <jarExportFolder>C:\Users\EOC\Documents\ritacademy_chile_entel\SEGUNDO_PROYECTO\</jarExportFolder>
+  <nodeString>CLUSTER</nodeString>
+  <skin>Enterprise</skin>
+</project>

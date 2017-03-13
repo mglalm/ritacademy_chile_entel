@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="LISTENER.globalScript">
+  <label>globalScript</label>
+  <metaVersion>25</metaVersion>
+  <script><![CDATA[
+    var dt = new DataStructure("LISTENER.response");
+    dt.respuesta = "OK";
+    return dt;
+  ]]></script>
+</script>

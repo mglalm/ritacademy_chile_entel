@@ -8,17 +8,16 @@
       <rightToLeft>false</rightToLeft>
     </available>
   </availableList>
-  <created>Mon Mar 13 09:24:12 CLT 2017</created>
-  <internalName>TEST ANDRES PEREZ</internalName>
+  <created>Mon Mar 13 11:09:52 CLT 2017</created>
+  <internalCompatibleVersion>1</internalCompatibleVersion>
+  <internalName>PROYECTO2</internalName>
   <internalSysVersion>16.0 ICP16-01EP01</internalSysVersion>
-  <label>TEST ANDRES PEREZ</label>
+  <internalVersion>1</internalVersion>
+  <label>PROYECTO2</label>
   <locale type="loc">
     <locale>en</locale>
     <rightToLeft>false</rightToLeft>
   </locale>
   <metaVersion>25</metaVersion>
   <metadataVersion>20150818</metadataVersion>
-  <templateList>
-    <template>PROYECTO2</template>
-  </templateList>
 </header>

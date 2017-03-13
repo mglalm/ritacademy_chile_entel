@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="consumer.interfaz">
+  <label>interfaz</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="operacion" type="oper">
+      <input>dstruct_consumer.request</input>
+      <label>operacion</label>
+      <output>dstruct_consumer.response</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

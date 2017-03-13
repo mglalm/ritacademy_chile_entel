@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="main.validaResultado">
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{87844895-1453-4238-80c5-c8dd21bafe76}</guid>
+  <label>validaResultado</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="cantidad" type="leaf">
+      <valueType>dtype_com.conceptwave.system.Integer</valueType>
+    </variable>
+  </variableList>
+</document>

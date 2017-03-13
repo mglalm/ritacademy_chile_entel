@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<binding name="consumer.bindingSOAP">
+  <extensionList>
+    <extension name="operacion" type="ext">
+      <element>Operation</element>
+      <elementItemMap>
+        <elementItem key="soapAction">operacion</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="operacion$Input" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+    <extension name="operacion$Output" type="ext">
+      <element>Message</element>
+      <elementItemMap>
+        <elementItem key="use">literal</elementItem>
+      </elementItemMap>
+    </extension>
+  </extensionList>
+  <interface>iface_consumer.interfaz</interface>
+  <label>bindingSOAP</label>
+  <metaVersion>25</metaVersion>
+  <provider>prov_cwf.soapprov</provider>
+</binding>
