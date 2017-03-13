@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="namespaceUno.AtributoTres">
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>Atributo Tres</label>
+  <metaVersion>25</metaVersion>
+</dataType>

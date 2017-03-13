@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<header name="AVMMetadata">
+  <APIVersion>2</APIVersion>
+  <author>Unknown</author>
+  <availableList>
+    <available type="loc">
+      <locale>en</locale>
+      <rightToLeft>false</rightToLeft>
+    </available>
+  </availableList>
+  <created>Mon Mar 13 09:47:07 CLT 2017</created>
+  <internalName>Examen</internalName>
+  <internalSysVersion>16.0 ICP16-01EP01</internalSysVersion>
+  <label>AVM Metadata</label>
+  <locale type="loc">
+    <locale>en</locale>
+    <rightToLeft>false</rightToLeft>
+  </locale>
+  <metaVersion>25</metaVersion>
+  <metadataVersion>20150818</metadataVersion>
+</header>

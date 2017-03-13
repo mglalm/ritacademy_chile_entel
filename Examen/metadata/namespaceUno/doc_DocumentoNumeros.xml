@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="namespaceUno.DocumentoNumeros">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
+  <guid>{2e5c1816-eae8-404a-b2ae-47c524dd101f}</guid>
+  <label>Documento Numeros</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="Cinco" type="leaf">
+      <column>CINCO</column>
+      <table>TablaNumeros</table>
+      <valueType>dtype_namespaceUno.AtributoCinco</valueType>
+    </variable>
+    <variable name="Cuatro" type="leaf">
+      <column>CUATRO</column>
+      <table>TablaNumeros</table>
+      <valueType>dtype_namespaceUno.AtributoCuatro</valueType>
+    </variable>
+    <variable name="Diez" type="leaf">
+      <column>DIEZ</column>
+      <table>TablaNumeros</table>
+      <valueType>dtype_namespaceUno.AtributoDiez</valueType>
+    </variable>
+    <variable name="Dos" type="leaf">
+      <column>DOS</column>
+      <table>TablaNumeros</table>
+      <valueType>dtype_namespaceUno.AtributoDos</valueType>
+    </variable>
+    <variable name="Nueve" type="leaf">
+      <column>NUEVE</column>
+      <table>TablaNumeros</table>
+      <valueType>dtype_namespaceUno.AtributoNueve</valueType>
+    </variable>
+    <variable name="Ocho" type="leaf">
+      <column>OCHO</column>
+      <table>TablaNumeros</table>
+      <valueType>dtype_namespaceUno.AtributoOcho</valueType>
+    </variable>
+    <variable name="Seis" type="leaf">
+      <column>SEIS</column>
+      <table>TablaNumeros</table>
+      <valueType>dtype_namespaceUno.AtributoSeis</valueType>
+    </variable>
+    <variable name="Siete" type="leaf">
+      <column>SIETE</column>
+      <table>TablaNumeros</table>
+      <valueType>dtype_namespaceUno.AtributoSiete</valueType>
+    </variable>
+    <variable name="Tres" type="leaf">
+      <column>TRES</column>
+      <table>TablaNumeros</table>
+      <valueType>dtype_namespaceUno.AtributoTres</valueType>
+    </variable>
+    <variable name="Uno" type="leaf">
+      <column>UNO</column>
+      <table>TablaNumeros</table>
+      <valueType>dtype_namespaceUno.AtributoUno</valueType>
+    </variable>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <key>1</key>
+      <table>TablaNumeros</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_namespaceUno.DocumentoNumeros</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+      </vform>
+    </vformList>
+    <methodList>
+      <method name="montrarTablaN" type="usrActionMethod">
+        <form>ui_com.conceptwave.system.DocumentUserInterface/frmui_Forms/exov_Default</form>
+        <userInterface>doc_namespaceUno.DocumentoNumeros</userInterface>
+        <valueType>doc_namespaceUno.DocumentoNumeros</valueType>
+      </method>
+    </methodList>
+  </UserInterface>
+</document>
