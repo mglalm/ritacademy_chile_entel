@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<script name="process.dummy">
+  <label>dummy</label>
+  <metaVersion>25</metaVersion>
+  <script>var i=1;</script>
+</script>

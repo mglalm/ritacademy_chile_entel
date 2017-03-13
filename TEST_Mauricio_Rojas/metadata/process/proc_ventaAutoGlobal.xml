@@ -11,9 +11,9 @@
           <day>-1</day>
           <instance>Daily</instance>
           <interval type="dur">
-            <length>P0Y0M0DT0H2M0S</length>
+            <length>P0Y0M0DT0H1M0S</length>
           </interval>
-          <time>00:00:00</time>
+          <time>11:40:00</time>
         </schedule>
         <x>201.0</x>
         <y>50.0</y>
@@ -28,6 +28,8 @@
 
 
               doc.save();
+
+              namespaceDocumento.dummy();
             ]]></script>
           </method>
         </methodList>

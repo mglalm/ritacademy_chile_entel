@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="process.procesamientoDatos">
+  <label>Procesamiento Datos</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="Cancel" type="oper">
+      <description>Cancel</description>
+      <label>Cancel</label>
+      <type>Notification</type>
+    </operation>
+    <operation name="Resubmit" type="oper">
+      <description>Resubmit</description>
+      <label>Resubmit</label>
+      <type>Notification</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

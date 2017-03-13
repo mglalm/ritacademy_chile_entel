@@ -3,6 +3,9 @@
   <DefaultDB>TEST_RIT</DefaultDB>
   <applicationString>Test Mauricio Rojas</applicationString>
   <applicationVersionString>1</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="process.dummy">0</breakpoint>
+  </breakpointMap>
   <databasesMap>
     <databases key="TEST_RIT" type=".configdb">
       <dbname>TEST_RIT</dbname>

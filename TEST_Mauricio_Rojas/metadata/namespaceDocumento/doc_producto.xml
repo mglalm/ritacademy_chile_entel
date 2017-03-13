@@ -2,12 +2,14 @@
 <document name="namespaceDocumento.producto">
   <dbSchema>ORDER</dbSchema>
   <extends>doc_com.conceptwave.system.Document</extends>
+  <generatedKey>true</generatedKey>
   <guid>{6df68d6e-d104-44af-9620-0385abfb44c0}</guid>
   <label>Producto</label>
   <metaVersion>25</metaVersion>
   <variableList>
     <variable name="cwDocId" type="leaf">
       <column>CWDOCID</column>
+      <key>1</key>
       <table>producto</table>
       <valueType>dtype_cwf.cwDocId</valueType>
     </variable>
@@ -63,7 +65,6 @@
     </variable>
     <variable name="processId" type="leaf">
       <column>PROCESSID</column>
-      <key>1</key>
       <table>producto</table>
       <valueType>dtype_cwf.processId</valueType>
     </variable>
@@ -174,14 +175,6 @@
                         </variablePathList>
                       </variable>
                     </element>
-                    <element name="Button" type="elbtn">
-                      <clickMethod type="varPath">
-                        <variablePathList>
-                          <variablePath>doc_namespaceDocumento.producto/ui_UserInterface/usrActionMethod_nuevoAutomatico</variablePath>
-                        </variablePathList>
-                      </clickMethod>
-                      <label>Nuevo</label>
-                    </element>
                   </elementList>
                 </element>
               </elementList>
@@ -190,10 +183,5 @@
         </overlayList>
       </vform>
     </vformList>
-    <methodList>
-      <method name="nuevoAutomatico" type="usrActionMethod">
-        <script><![CDATA[Process.startProcess("process.ventaAutomatica",this.model.id,null,null);]]></script>
-      </method>
-    </methodList>
   </UserInterface>
 </document>

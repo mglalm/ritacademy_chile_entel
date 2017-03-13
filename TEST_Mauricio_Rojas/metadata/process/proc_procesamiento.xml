@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process name="process.procesamiento">
+  <activity name="start" type="seqActivity">
+    <label>start</label>
+    <x>9.0</x>
+    <y>84.0</y>
+    <childList>
+      <child name="checkData" type="switchActivity">
+        <label>checkData</label>
+        <x>100.0</x>
+        <y>79.0</y>
+        <childList>
+          <child name="borrado" type="caseActivity">
+            <label>borrado</label>
+            <x>286.0</x>
+            <y>179.0</y>
+          </child>
+          <child name="Nuevo" type="caseActivity">
+            <label>Nuevo</label>
+            <x>300.0</x>
+            <y>2.0</y>
+            <childList>
+              <child name="TareaManual" type="opActivity">
+                <element>iface_process.procesamientoDatos/oper_Cancel</element>
+                <label>TareaManual</label>
+                <participant>part_process.participanteManual</participant>
+                <x>361.0</x>
+                <y>74.0</y>
+              </child>
+            </childList>
+          </child>
+        </childList>
+      </child>
+      <child name="participanteManual" type="participantActivity">
+        <label>participanteManual</label>
+        <participant>part_process.participanteManual</participant>
+        <x>511.0</x>
+        <y>1.0</y>
+      </child>
+    </childList>
+  </activity>
+  <curRevision>true</curRevision>
+  <label>procesamiento</label>
+  <metaVersion>25</metaVersion>
+  <priority>8</priority>
+  <type>User</type>
+</process>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="interfazExterno" targetNamespace="interfazExterno"
+	xmlns:tns="interfazExterno"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:interfazExterno="interfazExterno">
+
+	<types>
+		<schema targetNamespace="interfazExterno"			
+	xmlns="http://www.w3.org/2001/XMLSchema"			
+	xmlns:interfazExterno="interfazExterno"			
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+			<annotation>
+				<documentation>Interfaz</documentation>
+				<appinfo>
+					<metadata>TEST MAURICIO ROJAS</metadata>
+					<created>Mon Mar 13 09:25:57 CLT 2017</created>
+				</appinfo>
+			</annotation>
+
+			<!-- Data types and elements -->
+
+			<simpleType name="respuestaServicio">
+				<annotation>
+					<documentation>Respuesta Servicio</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="12"/>
+				</restriction>
+			</simpleType>
+
+			<simpleType name="solicitud">
+				<annotation>
+					<documentation>Solicitud</documentation>
+				</annotation>
+				<restriction base="xsd:string">
+					<maxLength value="12"/>
+				</restriction>
+			</simpleType>
+
+			<!-- Structures -->
+
+			<complexType name="entrada">
+				<annotation>
+					<documentation>entrada</documentation>
+				</annotation>
+					<sequence>
+						<element name="solicitud" minOccurs="0" maxOccurs="1" type="interfazExterno:solicitud"/>
+					</sequence>
+				</complexType>
+
+			<complexType name="salida">
+				<annotation>
+					<documentation>salida</documentation>
+				</annotation>
+					<sequence>
+						<element name="respuestaServicio" minOccurs="0" maxOccurs="1" type="interfazExterno:respuestaServicio"/>
+					</sequence>
+				</complexType>
+
+			<!-- Documents -->
+
+		</schema>
+	</types>
+
+	<message name="entrada">
+		<part name="entrada" type="interfazExterno:entrada"/>
+	</message>
+
+	<message name="salida">
+		<part name="salida" type="interfazExterno:salida"/>
+	</message>
+
+	<portType name="request">
+		<operation name="respuestaOk">
+			<input message="tns:entrada"/>
+			<output message="tns:salida"/>
+		</operation>
+	</portType>
+
+	<binding name="respuestaOkSOAP" type="tns:request">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="respuestaOk">
+			<soap:operation soapAction="respuestaOk"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="PuertosRespuesta">
+		<port name="puertoSOAPRespuesta" binding="tns:respuestaOkSOAP">
+		</port>
+	</service>
+
+</definitions>
