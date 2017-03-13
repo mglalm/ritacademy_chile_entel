@@ -9,7 +9,7 @@
         <label>invocaGenerador</label>
         <schedule type="sched">
           <duration type="dur">
-            <length>P0Y0M0DT0H1M0S</length>
+            <length>P0Y0M0DT0H2M0S</length>
           </duration>
         </schedule>
         <x>427.0</x>
