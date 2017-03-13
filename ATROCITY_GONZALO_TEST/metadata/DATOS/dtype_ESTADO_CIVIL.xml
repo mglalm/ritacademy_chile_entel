@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="DATOS.ESTADO_CIVIL">
+  <enumeration type="enum">
+    <valueList>
+      <value name="SOLTERO" type="enumItem" code="S"/>
+      <value name="CASADO" type="enumItem" code="C"/>
+    </valueList>
+  </enumeration>
+  <extends>dtype_com.conceptwave.system.String</extends>
+  <label>ESTADO_CIVIL</label>
+  <length>10</length>
+  <metaVersion>25</metaVersion>
+</dataType>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="DATOS.Aplicacion">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>Aplicacion</label>
+  <metaVersion>25</metaVersion>
+  <url>/Aplicacion</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="MenuItem" type="elmnu">
+                  <elementList>
+                    <element name="Separator" type="elsep"/>
+                    <element name="MenuItem1" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_DATOS.Aplicacion/usrActionMethod_INGRESA</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Ingresa Datos</label>
+                    </element>
+                    <element name="MenuItem2" type="elmnu">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>ui_DATOS.Aplicacion/usrActionMethod_BUSCA</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Busca Datos</label>
+                    </element>
+                  </elementList>
+                </element>
+                <element name="Button" type="elbtn">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_DATOS.Aplicacion/usrActionMethod_INGRESA</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>INGRESA</label>
+                </element>
+                <element name="Button1" type="elbtn">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_DATOS.Aplicacion/usrActionMethod_BUSCA</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>BUSCA</label>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="INGRESA" type="usrActionMethod">
+      <form>doc_DATOS.DOC_TABLA_MAPEADA/ui_UserInterface/frmui_Forms/vform_GF</form>
+      <userInterface>doc_DATOS.DOC_TABLA_MAPEADA</userInterface>
+      <valueType>doc_DATOS.DOC_TABLA_MAPEADA</valueType>
+    </method>
+    <method name="BUSCA" type="usrActionMethod">
+      <userInterface>findDoc_DATOS.BUSCA_DATOS</userInterface>
+      <valueType>findDoc_DATOS.BUSCA_DATOS</valueType>
+    </method>
+  </methodList>
+</userInterface>

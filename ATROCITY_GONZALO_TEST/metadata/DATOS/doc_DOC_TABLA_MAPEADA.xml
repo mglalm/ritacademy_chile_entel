@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="DATOS.DOC_TABLA_MAPEADA">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{89ea96a7-303c-44a9-aa22-56e1aede17a3}</guid>
+  <label>DOC_TABLA_MAPEADA</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="NOMBRE" type="leaf">
+      <column>NOMBRE</column>
+      <table>TABLA_DATOS_TEST</table>
+      <valueType>dtype_DATOS.NOMBRE</valueType>
+    </variable>
+    <variable name="RUT" type="leaf">
+      <column>RUT</column>
+      <key>1</key>
+      <table>TABLA_DATOS_TEST</table>
+      <valueType>dtype_DATOS.RUT</valueType>
+    </variable>
+    <variable name="DIRECCION" type="leaf">
+      <column>DIRECCION</column>
+      <table>TABLA_DATOS_TEST</table>
+      <valueType>dtype_DATOS.DIRECCION</valueType>
+    </variable>
+    <variable name="CIUDAD" type="leaf">
+      <column>CIUDAD</column>
+      <table>TABLA_DATOS_TEST</table>
+      <valueType>dtype_DATOS.CIUDAD</valueType>
+    </variable>
+    <variable name="APELLIDO" type="leaf">
+      <column>APELLIDO</column>
+      <table>TABLA_DATOS_TEST</table>
+      <valueType>dtype_DATOS.APELLIDO</valueType>
+    </variable>
+    <variable name="COMUNA" type="leaf">
+      <column>COMUNA</column>
+      <table>TABLA_DATOS_TEST</table>
+      <valueType>dtype_DATOS.COMUNA</valueType>
+    </variable>
+    <variable name="EMPRESA_TRABAJO" type="leaf">
+      <column>EMPRESA_TRABAJO</column>
+      <table>TABLA_DATOS_TEST</table>
+      <valueType>dtype_DATOS.EMPRESA_TRABAJO</valueType>
+    </variable>
+    <variable name="ESTADO_CIVIL" type="leaf">
+      <column>ESTADO_CIVIL</column>
+      <table>TABLA_DATOS_TEST</table>
+      <valueType>dtype_DATOS.ESTADO_CIVIL</valueType>
+    </variable>
+    <variable name="PROFESION" type="leaf">
+      <column>PROFESION</column>
+      <table>TABLA_DATOS_TEST</table>
+      <valueType>dtype_DATOS.PROFESION</valueType>
+    </variable>
+    <variable name="UNIVERSIDAD" type="leaf">
+      <column>UNIVERSIDAD</column>
+      <table>TABLA_DATOS_TEST</table>
+      <valueType>dtype_DATOS.UNIVERSIDAD</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_DATOS.DOC_TABLA_MAPEADA</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="GF" type="vform">
+            <label>GF</label>
+            <root name="GFGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="DOC_TABLA_MAPEADAGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="DOC_TABLA_MAPEADAHeader" type="elhdr">
+                      <label>DOC_TABLA_MAPEADA</label>
+                    </element>
+                    <element name="NOMBRE" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/leaf_NOMBRE</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="RUT" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/leaf_RUT</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="DIRECCION" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/leaf_DIRECCION</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="CIUDAD" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/leaf_CIUDAD</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="APELLIDO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/leaf_APELLIDO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="COMUNA" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/leaf_COMUNA</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="EMPRESA_TRABAJO" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/leaf_EMPRESA_TRABAJO</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="ESTADO_CIVIL" type="elslct">
+                      <sorted>false</sorted>
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/leaf_ESTADO_CIVIL</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="PROFESION" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/leaf_PROFESION</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="UNIVERSIDAD" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_DATOS.DOC_TABLA_MAPEADA/leaf_UNIVERSIDAD</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+</document>
