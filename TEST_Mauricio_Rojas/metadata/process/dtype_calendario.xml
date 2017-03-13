@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataType name="process.calendario">
+  <extends>dtype_cwf.allCalendars</extends>
+  <label>Calendario</label>
+  <metaVersion>25</metaVersion>
+  <overrides>dtype_cwf.allCalendars</overrides>
+</dataType>

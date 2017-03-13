@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<findDoc name="namespaceDocumento.busquedaProducto">
+  <extends>find_com.conceptwave.system.Finder</extends>
+  <input>doc_namespaceDocumento.docBusquedaProducto</input>
+  <label>Busqueda Producto</label>
+  <metaVersion>25</metaVersion>
+  <output>doc_namespaceDocumento.producto</output>
+  <type>document</type>
+  <vDetailForm>doc_namespaceDocumento.producto/ui_UserInterface/frmui_Forms/vform_generatedForm</vDetailForm>
+  <searchList>
+    <search type="sitem">
+      <document>doc_namespaceDocumento.docBusquedaProducto</document>
+      <mappedDocument>doc_namespaceDocumento.producto</mappedDocument>
+      <mappedPath>doc_namespaceDocumento.producto/leaf_articulo</mappedPath>
+      <operation>equal</operation>
+      <path>doc_namespaceDocumento.docBusquedaProducto/leaf_articulo</path>
+    </search>
+    <search type="sitem">
+      <document>doc_namespaceDocumento.docBusquedaProducto</document>
+      <mappedDocument>doc_namespaceDocumento.producto</mappedDocument>
+      <mappedPath>doc_namespaceDocumento.producto/leaf_numeroDeSerie</mappedPath>
+      <operation>equal</operation>
+      <path>doc_namespaceDocumento.docBusquedaProducto/leaf_numeroDeSerie</path>
+    </search>
+    <search type="sitem">
+      <document>doc_namespaceDocumento.docBusquedaProducto</document>
+      <mappedDocument>doc_namespaceDocumento.producto</mappedDocument>
+      <mappedPath>doc_namespaceDocumento.producto/leaf_tienda</mappedPath>
+      <operation>equal</operation>
+      <path>doc_namespaceDocumento.docBusquedaProducto/leaf_tienda</path>
+    </search>
+    <search type="sitem">
+      <document>doc_namespaceDocumento.docBusquedaProducto</document>
+      <mappedDocument>doc_namespaceDocumento.producto</mappedDocument>
+      <mappedPath>doc_namespaceDocumento.producto/leaf_vendedor</mappedPath>
+      <operation>equal</operation>
+      <path>doc_namespaceDocumento.docBusquedaProducto/leaf_vendedor</path>
+    </search>
+  </searchList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>ui_com.conceptwave.system.FinderUserInterface</extends>
+    <variableList>
+      <variable name="finder" type="uivar">
+        <valueType>ui_com.conceptwave.system.FinderUserInterface</valueType>
+      </variable>
+      <variable name="search" type="uivar">
+        <valueType>doc_namespaceDocumento.docBusquedaProducto/ui_UserInterface</valueType>
+      </variable>
+      <variable name="detail" type="uivar">
+        <flags enum-type="metadataFlag">VALIDATE</flags>
+        <valueType>doc_namespaceDocumento.producto/ui_UserInterface</valueType>
+      </variable>
+      <variable name="result" type="uivar">
+        <flags enum-type="metadataFlag">ARRAY</flags>
+        <valueType>doc_namespaceDocumento.producto</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="Default" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/exov_Default</extends>
+            <label>Default</label>
+            <overrideList>
+              <override name="detailSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/uivar_detailForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_detail</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/permMethod_detailVisible</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+              <override name="searchFormSection" type="elsect">
+                <formReference type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.BaseFinderUserInterface/uivar_searchForm</variablePath>
+                  </variablePathList>
+                </formReference>
+                <variable type="varPath">
+                  <variablePathList>
+                    <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_search</variablePath>
+                  </variablePathList>
+                </variable>
+                <visible type="varPath">
+                  <variablePathList>
+                    <variablePath>ui_com.conceptwave.system.FinderUserInterface/permMethod_showSearchForm</variablePath>
+                  </variablePathList>
+                </visible>
+              </override>
+            </overrideList>
+          </overlay>
+          <overlay name="Result" type="exov">
+            <base>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</base>
+            <extends>ui_com.conceptwave.system.FinderUserInterface/frmui_Forms/vform_Result</extends>
+            <label>Result</label>
+            <overrideList>
+              <override name="table" type="elvlt">
+                <height>100%</height>
+                <width>100%</width>
+                <elementList>
+                  <element name="busquedaProductoResultTable" type="eltabl">
+                    <onSelectChange type="varPath">
+                      <variablePathList>
+                        <variablePath>ui_com.conceptwave.system.MasterDetailUserInterface/action_OnSelChanged</variablePath>
+                      </variablePathList>
+                    </onSelectChange>
+                    <variable type="varPath">
+                      <variablePathList>
+                        <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_result</variablePath>
+                      </variablePathList>
+                    </variable>
+                    <elementList>
+                      <element name="cwDocId" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_namespaceDocumento.producto/leaf_cwDocId</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="articulo" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_namespaceDocumento.producto/leaf_articulo</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="cantidad" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_namespaceDocumento.producto/leaf_cantidad</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="color" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_namespaceDocumento.producto/leaf_color</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="numeroDeCompra" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_namespaceDocumento.producto/leaf_numeroDeCompra</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="numeroDeSerie" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_namespaceDocumento.producto/leaf_numeroDeSerie</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="paisDeOrigen" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_namespaceDocumento.producto/leaf_paisDeOrigen</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="talla" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_namespaceDocumento.producto/leaf_talla</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="vendedor" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_namespaceDocumento.producto/leaf_vendedor</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="tienda" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_namespaceDocumento.producto/leaf_tienda</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                      <element name="detalleProducto" type="elfld">
+                        <variable type="varPath">
+                          <variablePathList>
+                            <variablePath>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/uivar_result</variablePath>
+                            <variablePath>doc_namespaceDocumento.producto/leaf_detalleProducto</variablePath>
+                          </variablePathList>
+                        </variable>
+                      </element>
+                    </elementList>
+                  </element>
+                </elementList>
+              </override>
+            </overrideList>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+  </UserInterface>
+  <viewList>
+    <view name="busqueda" type="findVView">
+      <inputOverlay>doc_namespaceDocumento.docBusquedaProducto/ui_UserInterface/frmui_Forms/vform_generatedForm</inputOverlay>
+      <label>busqueda</label>
+      <outputOverlay>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/frmui_Forms/exov_Result</outputOverlay>
+      <searchImmediately>true</searchImmediately>
+      <showSearchForm>true</showSearchForm>
+    </view>
+  </viewList>
+</findDoc>

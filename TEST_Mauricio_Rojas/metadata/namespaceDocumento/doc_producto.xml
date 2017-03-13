@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document name="namespaceDocumento.producto">
+  <dbSchema>ORDER</dbSchema>
+  <extends>doc_com.conceptwave.system.Document</extends>
+  <guid>{6df68d6e-d104-44af-9620-0385abfb44c0}</guid>
+  <label>Producto</label>
+  <metaVersion>25</metaVersion>
+  <variableList>
+    <variable name="cwDocId" type="leaf">
+      <column>CWDOCID</column>
+      <table>producto</table>
+      <valueType>dtype_cwf.cwDocId</valueType>
+    </variable>
+    <variable name="articulo" type="leaf">
+      <column>ARTICULO</column>
+      <table>producto</table>
+      <valueType>dtype_namespaceDocumento.articulo</valueType>
+    </variable>
+    <variable name="cantidad" type="leaf">
+      <column>CANTIDAD</column>
+      <table>producto</table>
+      <valueType>dtype_namespaceDocumento.cantidad</valueType>
+    </variable>
+    <variable name="color" type="leaf">
+      <column>COLOR</column>
+      <table>producto</table>
+      <valueType>dtype_namespaceDocumento.color</valueType>
+    </variable>
+    <variable name="numeroDeCompra" type="leaf">
+      <column>NUMERODECOMPRA</column>
+      <table>producto</table>
+      <valueType>dtype_namespaceDocumento.numeroDeCompra</valueType>
+    </variable>
+    <variable name="numeroDeSerie" type="leaf">
+      <column>NUMERODESERIE</column>
+      <table>producto</table>
+      <valueType>dtype_namespaceDocumento.numeroDeSerie</valueType>
+    </variable>
+    <variable name="paisDeOrigen" type="leaf">
+      <column>PAISDEORIGEN</column>
+      <table>producto</table>
+      <valueType>dtype_namespaceDocumento.paisDeOrigen</valueType>
+    </variable>
+    <variable name="talla" type="leaf">
+      <column>TALLA</column>
+      <table>producto</table>
+      <valueType>dtype_namespaceDocumento.talla</valueType>
+    </variable>
+    <variable name="vendedor" type="leaf">
+      <column>VENDEDOR</column>
+      <table>producto</table>
+      <valueType>dtype_namespaceDocumento.vendedor</valueType>
+    </variable>
+    <variable name="tienda" type="leaf">
+      <column>TIENDA</column>
+      <table>producto</table>
+      <valueType>dtype_namespaceDocumento.tienda</valueType>
+    </variable>
+    <variable name="detalleProducto" type="leaf">
+      <column>DETALLEPRODUCTO</column>
+      <table>producto</table>
+      <valueType>dtype_namespaceDocumento.detalleProducto</valueType>
+    </variable>
+    <variable name="processId" type="leaf">
+      <column>PROCESSID</column>
+      <key>1</key>
+      <table>producto</table>
+      <valueType>dtype_cwf.processId</valueType>
+    </variable>
+  </variableList>
+  <UserInterface name="UserInterface" type="ui">
+    <extends>doc_com.conceptwave.system.Document/ui_UserInterface</extends>
+    <variableList>
+      <variable name="model" type="uivar">
+        <label>model</label>
+        <valueType>doc_namespaceDocumento.producto</valueType>
+      </variable>
+    </variableList>
+    <vformList>
+      <vform name="Forms" type="frmui">
+        <extends>doc_com.conceptwave.system.Document/ui_UserInterface/frmui_Forms</extends>
+        <overlayList>
+          <overlay name="generatedForm" type="vform">
+            <label>generatedForm</label>
+            <root name="generatedFormGrid_vCentering" type="elvltstck">
+              <height>100%</height>
+              <membersMargin>5</membersMargin>
+              <width>100%</width>
+              <elementList>
+                <element name="productoGrid" type="elgrd">
+                  <numOfCols>4</numOfCols>
+                  <useDefaultHeight>true</useDefaultHeight>
+                  <elementList>
+                    <element name="productoHeader" type="elhdr">
+                      <label>Producto</label>
+                    </element>
+                    <element name="articulo" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.producto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.producto/leaf_articulo</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="cantidad" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.producto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.producto/leaf_cantidad</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="color" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.producto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.producto/leaf_color</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="numeroDeCompra" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.producto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.producto/leaf_numeroDeCompra</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="numeroDeSerie" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.producto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.producto/leaf_numeroDeSerie</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="paisDeOrigen" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.producto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.producto/leaf_paisDeOrigen</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="talla" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.producto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.producto/leaf_talla</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="vendedor" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.producto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.producto/leaf_vendedor</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="tienda" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.producto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.producto/leaf_tienda</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="detalleProducto" type="elfld">
+                      <variable type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.producto/ui_UserInterface/uivar_model</variablePath>
+                          <variablePath>doc_namespaceDocumento.producto/leaf_detalleProducto</variablePath>
+                        </variablePathList>
+                      </variable>
+                    </element>
+                    <element name="Button" type="elbtn">
+                      <clickMethod type="varPath">
+                        <variablePathList>
+                          <variablePath>doc_namespaceDocumento.producto/ui_UserInterface/usrActionMethod_nuevoAutomatico</variablePath>
+                        </variablePathList>
+                      </clickMethod>
+                      <label>Nuevo</label>
+                    </element>
+                  </elementList>
+                </element>
+              </elementList>
+            </root>
+          </overlay>
+        </overlayList>
+      </vform>
+    </vformList>
+    <methodList>
+      <method name="nuevoAutomatico" type="usrActionMethod">
+        <script><![CDATA[Process.startProcess("process.ventaAutomatica",this.model.id,null,null);]]></script>
+      </method>
+    </methodList>
+  </UserInterface>
+</document>

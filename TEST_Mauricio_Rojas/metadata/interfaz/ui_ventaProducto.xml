@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface name="interfaz.ventaProducto">
+  <extends>ui_com.conceptwave.system.Application</extends>
+  <label>Venta Producto</label>
+  <metaVersion>25</metaVersion>
+  <url>/ventaProducto</url>
+  <vformList>
+    <vform name="Forms" type="frmui">
+      <extends>ui_com.conceptwave.system.Application/frmui_Forms</extends>
+      <overlayList>
+        <overlay name="Page" type="expg">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/pg_Page</extends>
+          <icon>/cwf/ico/cw.ico</icon>
+          <label>Page</label>
+          <skin>Cupertino</skin>
+          <stylesheet>/cwf/css/cwf.css</stylesheet>
+          <title>App de Venta</title>
+        </overlay>
+        <overlay name="Menu" type="exov">
+          <base>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</base>
+          <extends>ui_com.conceptwave.system.Application/frmui_Forms/exov_Menu</extends>
+          <label>Menu</label>
+          <overrideList>
+            <override name="HorizontalLayout" type="elext"/>
+            <override name="HorizontalLayoutForMenuItems" type="elext">
+              <elementList>
+                <element name="ventasRealizadas" type="elbtn">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_interfaz.ventaProducto/usrActionMethod_ventasRealizadas</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Ventas Realizadas</label>
+                </element>
+                <element name="nuevaVenta" type="elbtn">
+                  <clickMethod type="varPath">
+                    <variablePathList>
+                      <variablePath>ui_interfaz.ventaProducto/usrActionMethod_nuevaVenta</variablePath>
+                    </variablePathList>
+                  </clickMethod>
+                  <label>Nueva Venta</label>
+                </element>
+              </elementList>
+            </override>
+          </overrideList>
+        </overlay>
+      </overlayList>
+    </vform>
+  </vformList>
+  <methodList>
+    <method name="ventasRealizadas" type="usrActionMethod">
+      <form>findDoc_namespaceDocumento.busquedaProducto/ui_UserInterface/frmui_Forms/exov_Default</form>
+      <userInterface>findDoc_namespaceDocumento.busquedaProducto</userInterface>
+      <valueType>findDoc_namespaceDocumento.busquedaProducto</valueType>
+    </method>
+    <method name="nuevaVenta" type="usrActionMethod">
+      <form>doc_namespaceDocumento.producto/ui_UserInterface/frmui_Forms/vform_generatedForm</form>
+      <userInterface>doc_namespaceDocumento.producto</userInterface>
+      <valueType>doc_namespaceDocumento.producto</valueType>
+    </method>
+  </methodList>
+</userInterface>
