@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="genericdirectorynumbersearch.inputAttributes">
+  <container>true</container>
+  <description><![CDATA[&lt;p&gt;&lt;/p&gt;]]></description>
+  <label>inputAttributes</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="npcode" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;The Numbering plan the of the directory number.&lt;/p&gt;&lt;p&gt;This parameter will give information about the type of the searched directory numbers.&lt;/p&gt;&lt;p&gt;The type is visible also in client from the &lt;code&gt;NumberingPlans.NP_CLASS&lt;/code&gt; output parameter of the &lt;code&gt;NUMBERING_PLANS.SEARCH&lt;/code&gt; command.&lt;/p&gt;&lt;p&gt;For a particular service, the command &lt;code&gt;SERVICES.READ&lt;/code&gt; returns the required Numbering Plan for directory numbers.&lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>npcode</label>
+    </child>
+    <child name="npcodePub" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Public key of the numbering plan.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>npcodePub</label>
+    </child>
+    <child name="plcode" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Network the searched resources should belong to.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>plcode</label>
+    </child>
+    <child name="plcodePub" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Public key of the network&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>plcodePub</label>
+    </child>
+    <child name="dirnum" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;Resource number. Used in case of following Numbering Plan classes:
+                                                  &lt;ul&gt;&lt;li&gt;Telephone Number&lt;/li&gt;&lt;li&gt;Directory number block&lt;/li&gt;&lt;li&gt;PDP addresses&lt;/li&gt;&lt;li&gt;APNs&lt;/li&gt;&lt;li&gt;VPN owner&lt;/li&gt;&lt;li&gt;VPN user&lt;/li&gt;&lt;/ul&gt;
+                                                  &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>dirnum</label>
+    </child>
+    <child name="submId" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Submarket, also known as Technology Flavor.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>submId</label>
+    </child>
+    <child name="submIdPub" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Public key of the submarket&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>submIdPub</label>
+    </child>
+    <child name="hlcode" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Physical HLR&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>hlcode</label>
+    </child>
+    <child name="hlcodePub" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Public key of the physical HLR&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>hlcodePub</label>
+    </child>
+    <child name="hmcode" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Logical HLR&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>hmcode</label>
+    </child>
+    <child name="hmcodePub" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Public key of the logical HLR&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>hmcodePub</label>
+    </child>
+    <child name="vpnId" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;The VPN the resource should belong to; used in case of following Numbering Plan classes:
+                                                  &lt;ul&gt;&lt;li&gt;PDP addresses - mandatory&lt;/li&gt;&lt;li&gt;APNs - optional&lt;/li&gt;&lt;li&gt;VPN owner - mandatory&lt;/li&gt;&lt;li&gt;VPN user - mandatory&lt;/li&gt;&lt;/ul&gt;
+                                                  &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>vpnId</label>
+    </child>
+    <child name="vpnIdPub" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Public key of the VPN&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>vpnIdPub</label>
+    </child>
+    <child name="prefix" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;Prefix of the VPN number. Used in case of following Numbering Plan classes:
+                                                  &lt;ul&gt;&lt;li&gt;VPN owner - optional&lt;/li&gt;&lt;li&gt;VPN user - optional&lt;/li&gt;&lt;/ul&gt;
+                                                  &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>prefix</label>
+    </child>
+    <child name="publicDnNum" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;Public number.Used in case of following Numbering Plan classes:
+                                                  &lt;ul&gt;&lt;li&gt;VPN user - manadtory if REQUIRED_MAPPING_RULE is true&lt;/li&gt;&lt;/ul&gt;
+                                                  &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>publicDnNum</label>
+    </child>
+    <child name="publicNpcode" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;Resource regulation of the public number.Used in case of following Numbering Plan classes:
+                                                  &lt;ul&gt;&lt;li&gt;VPN user - manadtory if REQUIRED_MAPPING_RULE is true&lt;/li&gt;&lt;/ul&gt;
+                                                  &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>publicNpcode</label>
+    </child>
+    <child name="publicNpcodePub" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Public key of the number plan&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>publicNpcodePub</label>
+    </child>
+    <child name="sncode" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;Service code.Used in case of following Numbering Plan classes:
+                                                  &lt;ul&gt;&lt;li&gt;VPN user - manadtory if REQUIRED_MAPPING_RULE is true&lt;/li&gt;&lt;/ul&gt;
+                                                  &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>sncode</label>
+    </child>
+    <child name="sncodePub" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Public key of the service&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>sncodePub</label>
+    </child>
+    <child name="requiredMappingRule" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;Indicator whether VPN private numbers should be searched according to the VPN mapping rule.
+                                                  Used in case of following Numbering Plan classes:
+                                                  &lt;ul&gt;&lt;li&gt;VPN user - optional&lt;/li&gt;&lt;/ul&gt;
+                                                  &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.Boolean</element>
+      <label>requiredMappingRule</label>
+    </child>
+    <child name="searchBlock" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;If set to true, blocks of Directory numbers will be searched. Additionaly, limits can be specified.
+                                                  Can be used only in case of following Numbering Plan classes:
+                                                  &lt;ul&gt;&lt;li&gt;Telephone number - optional&lt;/li&gt;&lt;/ul&gt;
+                                                  &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.Boolean</element>
+      <label>searchBlock</label>
+    </child>
+    <child name="minBlkSize" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;Minimum block size in case of searching for Block Directory Numbers. Only relevant if &lt;code&gt;SEARCH_BLOCK&lt;/code&gt;
+                                                  is set to true. Can be used only in case of following Numbering Plan classes:
+                                                  &lt;ul&gt;&lt;li&gt;Telephone number - optional&lt;/li&gt;&lt;/ul&gt;
+                                                  &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>minBlkSize</label>
+    </child>
+    <child name="maxBlkSize" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;Maximum block size in case of searching for Block Directory Numbers. Only relevant if &lt;code&gt;SEARCH_BLOCK&lt;/code&gt;
+                                                  is set to true. Can be used only in case of following Numbering Plan classes:
+                                                  &lt;ul&gt;&lt;li&gt;Telephone number - optional&lt;/li&gt;&lt;/ul&gt;
+                                                  &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>maxBlkSize</label>
+    </child>
+    <child name="parameterValues" type="dstruct">
+      <element>dstruct_genericdirectorynumbersearch.parameterValuesRequest</element>
+      <label>parameterValues</label>
+    </child>
+    <child name="dntypes" type="dstruct">
+      <element>dstruct_genericdirectorynumbersearch.dntypesRequest</element>
+      <label>dntypes</label>
+    </child>
+    <child name="statuses" type="dstruct">
+      <element>dstruct_genericdirectorynumbersearch.statusesRequest</element>
+      <label>statuses</label>
+    </child>
+    <child name="searchCount" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;The size of the search output is restricted to the number of rows specified here.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>searchCount</label>
+    </child>
+    <child name="reservation" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;Flag indicating if resource reservation is enabled.&lt;/p&gt;&lt;p&gt;Reservation time is defined by Resource Settings: 'LockTime' in &lt;code&gt;Registry_CMS_Resource.xml&lt;/code&gt;.&lt;/p&gt;&lt;p&gt;    Used in case of following Numbering Plan classes:
+                                                  &lt;ul&gt;&lt;li&gt;Telephone Number&lt;/li&gt;&lt;li&gt;Directory number block&lt;/li&gt;&lt;li&gt;PDP addresses&lt;/li&gt;&lt;li&gt;APNs&lt;/li&gt;&lt;li&gt;VPN owner&lt;/li&gt;&lt;li&gt;VPN user&lt;/li&gt;&lt;/ul&gt;
+                                                  &lt;/p&gt;&lt;p&gt;In case if Content (instance Identifier) the resources are always reserved.&lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.Boolean</element>
+      <label>reservation</label>
+    </child>
+    <child name="externalState" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;Dependent on PC:15293 license&lt;/p&gt;&lt;p&gt;Directory number resources with EXTERNAL_STATE different from NULL must not be assignable to contracts, at CX. Those resources are used and managed by external systems.&lt;/p&gt;&lt;p&gt;EXTERNAL_STATE is not restricted into a domain. Operator can set it to any character value.&lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>externalState</label>
+    </child>
+    <child name="csId" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;Customer identifier.Used in case of following Numbering Plan classes:
+                                                  &lt;ul&gt;&lt;li&gt;VPN user - manadtory if REQUIRED_MAPPING_RULE is true&lt;/li&gt;&lt;/ul&gt;
+                                                  &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>csId</label>
+    </child>
+    <child name="csIdPub" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Customers public key&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>csIdPub</label>
+    </child>
+    <child name="rscode" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Private key of the resource structure.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>rscode</label>
+    </child>
+    <child name="rscodePub" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Public key of the resource structure.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>rscodePub</label>
+    </child>
+  </childList>
+</dataStructure>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="genericdirectorynumbersearch.genericDirectoryNumberSearchResponse">
+  <container>true</container>
+  <description><![CDATA[&lt;p&gt;Found data&lt;/p&gt;]]></description>
+  <label>genericDirectoryNumberSearchResponse</label>
+  <metaVersion>25</metaVersion>
+  <xmlMap type="xmap">
+    <includeNS>true</includeNS>
+    <includeXsiType>true</includeXsiType>
+  </xmlMap>
+  <childList>
+    <child name="directorynumbers" type="dstruct">
+      <element>dstruct_genericdirectorynumbersearch.directorynumbersResponse</element>
+      <label>directorynumbers</label>
+    </child>
+    <child name="searchIsComplete" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;flag indicating if search was completed.&lt;/p&gt;&lt;p&gt;This flag will be set to false if more rows than specified in Srch_Count are available in the database&lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.Boolean</element>
+      <label>searchIsComplete</label>
+    </child>
+  </childList>
+</dataStructure>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="genericdirectorynumbersearch.blocksListpartResponse">
+  <container>true</container>
+  <label>blocksListpartResponse</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="dnBlockSeqno" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;The sequence number of the current block winthin the current Directory Number&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>dnBlockSeqno</label>
+    </child>
+    <child name="dnBlockStatus" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;The resource status of the current block. Possible states:
+                                                                                                                          &lt;ul&gt;&lt;li&gt;f-free&lt;/li&gt;&lt;li&gt;p-purchased&lt;/li&gt;&lt;li&gt;v-received&lt;/li&gt;&lt;li&gt;r-(partially) reserved&lt;/li&gt;&lt;li&gt;a-(completely) assigned to customer&lt;/li&gt;&lt;li&gt;d-deassigned&lt;/li&gt;&lt;li&gt;l-locked (in case of prepaid cards)&lt;/li&gt;&lt;li&gt;i-ported in&lt;/li&gt;&lt;li&gt;o-ported out&lt;/li&gt;&lt;li&gt;s-snapped back out&lt;/li&gt;&lt;li&gt;t-snapped back out reserved&lt;/li&gt;&lt;/ul&gt;
+                                                                                                                          &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>dnBlockStatus</label>
+    </child>
+    <child name="size" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;The size of the current block&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>size</label>
+    </child>
+    <child name="low" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;The lower extension of the current block&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>low</label>
+    </child>
+    <child name="high" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;The upper extension of the current block&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>high</label>
+    </child>
+  </childList>
+</dataStructure>

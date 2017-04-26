@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="genericdirectorynumbersearch.parameterValuesListpartRequest">
+  <container>true</container>
+  <label>parameterValuesListpartRequest</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="prmValueString" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;List of parameter values used to create Directory Number&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>prmValueString</label>
+    </child>
+    <child name="prmNo" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Sequence number of the parameter.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>prmNo</label>
+    </child>
+    <child name="resourceLike" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Character determining type of resource "Y","N","C" C is content resource&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>resourceLike</label>
+    </child>
+  </childList>
+</dataStructure>

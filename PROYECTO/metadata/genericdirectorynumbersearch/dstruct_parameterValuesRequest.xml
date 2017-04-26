@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="genericdirectorynumbersearch.parameterValuesRequest">
+  <container>true</container>
+  <description><![CDATA[
+    &lt;p&gt;List of resource parameter values. Used to search for resources with Parameters - Instance identifiers&lt;/p&gt;
+  ]]></description>
+  <label>parameterValuesRequest</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="item" type="dstruct">
+      <array>true</array>
+      <element>dstruct_genericdirectorynumbersearch.parameterValuesListpartRequest</element>
+      <label>item</label>
+      <maxInstance>-1</maxInstance>
+    </child>
+  </childList>
+</dataStructure>

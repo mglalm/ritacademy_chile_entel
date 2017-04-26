@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="sessionchange.sessionChangeRequest">
+  <container>true</container>
+  <description><![CDATA[
+    &lt;p&gt;
+
+                                  &lt;/p&gt;
+  ]]></description>
+  <label>sessionChangeRequest</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="values" type="dstruct">
+      <element>dstruct_sessionchange.valuesRequest</element>
+      <label>values</label>
+    </child>
+  </childList>
+</dataStructure>

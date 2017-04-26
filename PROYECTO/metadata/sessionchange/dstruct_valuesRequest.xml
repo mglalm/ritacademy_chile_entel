@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="sessionchange.valuesRequest">
+  <container>true</container>
+  <description><![CDATA[&lt;p&gt;A list of all named values that shall be changed with this command.&lt;/p&gt;]]></description>
+  <label>valuesRequest</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="item" type="dstruct">
+      <array>true</array>
+      <element>dstruct_sessionchange.valuesListpartRequest</element>
+      <label>item</label>
+      <mandatory>true</mandatory>
+      <maxInstance>-1</maxInstance>
+      <minInstance>1</minInstance>
+    </child>
+  </childList>
+</dataStructure>

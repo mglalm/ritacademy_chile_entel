@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="genericdirectorynumbersearch.dntypesRequest">
+  <container>true</container>
+  <description><![CDATA[
+    &lt;p&gt;Types of Directory Number, e.g. Golden, Regular, VIP &lt;/p&gt;&lt;p&gt;This parameter will only be considered in case of non full number (DIRNUM parameter containing a wild card) be specified.&lt;/p&gt;&lt;p&gt;If a full number were specified there is no possibility of duplicate result items due to the database structure where is not possible to have two different directory numbers with the same DIRNUM and NPCODE (NPCODE is mandatory on command execution). &lt;/p&gt;
+  ]]></description>
+  <label>dntypesRequest</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="dnCode" type="dstruct">
+      <array>true</array>
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>dnCode</label>
+      <maxInstance>-1</maxInstance>
+    </child>
+  </childList>
+</dataStructure>

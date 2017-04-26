@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="money.money">
+  <container>true</container>
+  <label>money</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="amount" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.Decimal</element>
+      <label>amount</label>
+      <mandatory>true</mandatory>
+    </child>
+    <child name="currency" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>currency</label>
+      <mandatory>true</mandatory>
+    </child>
+  </childList>
+</dataStructure>

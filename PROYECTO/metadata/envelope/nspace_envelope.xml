@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<nameSpace name="envelope">
+  <label>envelope</label>
+  <metaVersion>25</metaVersion>
+  <targetNS>http://schemas.xmlsoap.org/soap/envelope</targetNS>
+</nameSpace>

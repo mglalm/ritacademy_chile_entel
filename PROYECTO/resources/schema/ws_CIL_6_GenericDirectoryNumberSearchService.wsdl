@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope" xmlns:sch0="http://lhsgroup.com/lhsws/money" xmlns:sch1="http://lhsgroup.com/lhsws/svlany" xmlns:sch2="http://ericsson.com/services/ws_CIL_6/sessionchange" xmlns:sch3="http://ericsson.com/services/ws_CIL_6/genericdirectorynumbersearch" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ericsson.com/services/ws_CIL_6" targetNamespace="http://ericsson.com/services/ws_CIL_6">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:lhsws="http://lhsgroup.com/lhsws/money" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://lhsgroup.com/lhsws/money"><xs:complexType name="money"><xs:sequence><xs:element name="amount" type="xs:double"/><xs:element name="currency" type="xs:string"/></xs:sequence></xs:complexType></xs:schema>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:lhsws="http://lhsgroup.com/lhsws/svlany" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://lhsgroup.com/lhsws/svlany"><xs:complexType name="svlany"><xs:sequence><xs:element name="content" type="xs:string"/></xs:sequence></xs:complexType></xs:schema>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ericsson="http://ericsson.com/schemas" xmlns:wsi="http://ericsson.com/services/ws_CIL_6/sessionchange" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ericsson.com/services/ws_CIL_6/sessionchange"><xs:complexType name="valuesListpartRequest"><xs:all><xs:element name="key" type="xs:string"><xs:annotation><xs:documentation>
+													<![CDATA[<p> Name of the value that shall be changed. See release dependent documentation for supported keys</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element name="value" type="xs:string"><xs:annotation><xs:documentation>
+													<![CDATA[<p>New value for a named value.</p>]]>
+												</xs:documentation></xs:annotation></xs:element></xs:all></xs:complexType><xs:complexType name="valuesRequest"><xs:annotation><xs:documentation>
+								<![CDATA[<p>A list of all named values that shall be changed with this command.</p>]]>
+							</xs:documentation></xs:annotation><xs:sequence><xs:element maxOccurs="unbounded" name="item" type="wsi:valuesListpartRequest"/></xs:sequence></xs:complexType><xs:complexType name="sessionChangeRequest"><xs:annotation><xs:documentation>
+					<![CDATA[<p>
+					
+					</p>]]>
+				</xs:documentation></xs:annotation><xs:all><xs:element minOccurs="0" name="values" type="wsi:valuesRequest"/></xs:all></xs:complexType></xs:schema>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ericsson="http://ericsson.com/schemas" xmlns:sessionchange="http://ericsson.com/services/ws_CIL_6/sessionchange" xmlns:wsi="http://ericsson.com/services/ws_CIL_6/genericdirectorynumbersearch" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ericsson.com/services/ws_CIL_6/genericdirectorynumbersearch"><xs:import namespace="http://ericsson.com/services/ws_CIL_6/sessionchange"/><xs:element name="genericDirectoryNumberSearchRequest" type="wsi:genericDirectoryNumberSearchRequest"/><xs:element name="genericDirectoryNumberSearchResponse" type="wsi:genericDirectoryNumberSearchResponse"/><xs:complexType name="blocksListpartResponse"><xs:all><xs:element minOccurs="0" name="dnBlockSeqno" type="xs:long"><xs:annotation><xs:documentation>
+																			<![CDATA[<p>The sequence number of the current block winthin the current Directory Number</p>]]>
+																		</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="dnBlockStatus" type="xs:string"><xs:annotation><xs:documentation>
+																			<![CDATA[<p>The resource status of the current block. Possible states:
+																			<ul><li>f-free</li><li>p-purchased</li><li>v-received</li><li>r-(partially) reserved</li><li>a-(completely) assigned to customer</li><li>d-deassigned</li><li>l-locked (in case of prepaid cards)</li><li>i-ported in</li><li>o-ported out</li><li>s-snapped back out</li><li>t-snapped back out reserved</li></ul>
+																			</p>]]>
+																		</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="size" type="xs:long"><xs:annotation><xs:documentation>
+																			<![CDATA[<p>The size of the current block</p>]]>
+																		</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="low" type="xs:string"><xs:annotation><xs:documentation>
+																			<![CDATA[<p>The lower extension of the current block</p>]]>
+																		</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="high" type="xs:string"><xs:annotation><xs:documentation>
+																			<![CDATA[<p>The upper extension of the current block</p>]]>
+																		</xs:documentation></xs:annotation></xs:element></xs:all></xs:complexType><xs:complexType name="blocksResponse"><xs:annotation><xs:documentation>
+														<![CDATA[<p>List of DN blocks.</p>]]>
+													</xs:documentation></xs:annotation><xs:sequence><xs:element maxOccurs="unbounded" minOccurs="0" name="item" type="wsi:blocksListpartResponse"/></xs:sequence></xs:complexType><xs:complexType name="directorynumbersListpartResponse"><xs:all><xs:element minOccurs="0" name="dnId" type="xs:long"><xs:annotation><xs:documentation>
+													<![CDATA[<p>ID (primary key) of this Directory Number.</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="dirnum" type="xs:string"><xs:annotation><xs:documentation>
+													<![CDATA[<p>Resource Number.</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="npcode" type="xs:long"><xs:annotation><xs:documentation>
+													<![CDATA[<p>Numbering plan for this Directory Number.</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="dnCode" type="xs:long"><xs:annotation><xs:documentation>
+													<![CDATA[<p>Type of Directory Number</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="dnStatus" type="xs:string"><xs:annotation><xs:documentation>
+													<![CDATA[<p>Status of this Directory Number.</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="portId" type="xs:long"><xs:annotation><xs:documentation>
+													<![CDATA[<p>Primary key for the linked port number.</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="hlcode" type="xs:long"><xs:annotation><xs:documentation>
+													<![CDATA[<p>The HLR of the resource.</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="hmcode" type="xs:long"><xs:annotation><xs:documentation>
+													<![CDATA[<p>Logical HLR</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="des" type="xs:string"><xs:annotation><xs:documentation>
+													<![CDATA[<p>Description of the resource. Set in case of following Numbering Plan classes:
+													<ul><li>APN</li></ul>
+													</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="vpnId" type="xs:long"><xs:annotation><xs:documentation>
+													<![CDATA[<p>The ID of the VPN the number belongs to.Set in case of following Numbering Plan classes:
+													<ul><li>APN - optional</li><li>PDP - mandatory</li><li>VPN User (Private number) - mandatory</li><li>VPN Owner - mandatory</li></ul>
+													</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="blocks" type="wsi:blocksResponse"/><xs:element minOccurs="0" name="rscode" type="xs:long"><xs:annotation><xs:documentation>
+													<![CDATA[<p>Private key of the resource structure.</p>]]>
+												</xs:documentation></xs:annotation></xs:element></xs:all></xs:complexType><xs:complexType name="directorynumbersResponse"><xs:annotation><xs:documentation>
+								<![CDATA[<p>A list of all Directory Numbers found according to the specified in parameters</p>]]>
+							</xs:documentation></xs:annotation><xs:sequence><xs:element maxOccurs="unbounded" minOccurs="0" name="item" type="wsi:directorynumbersListpartResponse"/></xs:sequence></xs:complexType><xs:complexType name="genericDirectoryNumberSearchResponse"><xs:annotation><xs:documentation>
+					<![CDATA[<p>Found data</p>]]>
+				</xs:documentation></xs:annotation><xs:all><xs:element minOccurs="0" name="directorynumbers" type="wsi:directorynumbersResponse"/><xs:element minOccurs="0" name="searchIsComplete" type="xs:boolean"><xs:annotation><xs:documentation>
+							<![CDATA[<p>flag indicating if search was completed.</p><p>This flag will be set to false if more rows than specified in Srch_Count are available in the database</p>]]>
+						</xs:documentation></xs:annotation></xs:element></xs:all></xs:complexType><xs:complexType name="statusesRequest"><xs:annotation><xs:documentation>
+								<![CDATA[<p>A status that the searched directory number could be in.</p><p>Note, that only directory numbers in status 'r', 'o', 't', 'i' and 'a' (in case resource sharing is allowed).</p>]]>
+							</xs:documentation></xs:annotation><xs:sequence><xs:element maxOccurs="unbounded" minOccurs="0" name="dnStatus" type="xs:string"/></xs:sequence></xs:complexType><xs:complexType name="dntypesRequest"><xs:annotation><xs:documentation>
+								<![CDATA[<p>Types of Directory Number, e.g. Golden, Regular, VIP </p><p>This parameter will only be considered in case of non full number (DIRNUM parameter containing a wild card) be specified.</p><p>If a full number were specified there is no possibility of duplicate result items due to the database structure where is not possible to have two different directory numbers with the same DIRNUM and NPCODE (NPCODE is mandatory on command execution). </p>]]>
+							</xs:documentation></xs:annotation><xs:sequence><xs:element maxOccurs="unbounded" minOccurs="0" name="dnCode" type="xs:long"/></xs:sequence></xs:complexType><xs:complexType name="parameterValuesListpartRequest"><xs:all><xs:element minOccurs="0" name="prmValueString" type="xs:string"><xs:annotation><xs:documentation>
+													<![CDATA[<p>List of parameter values used to create Directory Number</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="prmNo" type="xs:long"><xs:annotation><xs:documentation>
+													<![CDATA[<p>Sequence number of the parameter.</p>]]>
+												</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="resourceLike" type="xs:string"><xs:annotation><xs:documentation>
+													<![CDATA[<p>Character determining type of resource "Y","N","C" C is content resource</p>]]>
+												</xs:documentation></xs:annotation></xs:element></xs:all></xs:complexType><xs:complexType name="parameterValuesRequest"><xs:annotation><xs:documentation>
+								<![CDATA[<p>List of resource parameter values. Used to search for resources with Parameters - Instance identifiers</p>]]>
+							</xs:documentation></xs:annotation><xs:sequence><xs:element maxOccurs="unbounded" minOccurs="0" name="item" type="wsi:parameterValuesListpartRequest"/></xs:sequence></xs:complexType><xs:complexType name="inputAttributes"><xs:annotation><xs:documentation>
+					<![CDATA[<p></p>]]>
+				</xs:documentation></xs:annotation><xs:all><xs:element minOccurs="0" name="npcode" type="xs:long"><xs:annotation><xs:documentation>
+							<![CDATA[<p>The Numbering plan the of the directory number.</p><p>This parameter will give information about the type of the searched directory numbers.</p><p>The type is visible also in client from the <code>NumberingPlans.NP_CLASS</code> output parameter of the <code>NUMBERING_PLANS.SEARCH</code> command.</p><p>For a particular service, the command <code>SERVICES.READ</code> returns the required Numbering Plan for directory numbers.</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="npcodePub" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Public key of the numbering plan.</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="plcode" type="xs:long"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Network the searched resources should belong to.</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="plcodePub" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Public key of the network</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="dirnum" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Resource number. Used in case of following Numbering Plan classes:
+							<ul><li>Telephone Number</li><li>Directory number block</li><li>PDP addresses</li><li>APNs</li><li>VPN owner</li><li>VPN user</li></ul>
+							</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="submId" type="xs:long"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Submarket, also known as Technology Flavor.</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="submIdPub" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Public key of the submarket</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="hlcode" type="xs:long"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Physical HLR</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="hlcodePub" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Public key of the physical HLR</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="hmcode" type="xs:long"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Logical HLR</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="hmcodePub" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Public key of the logical HLR</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="vpnId" type="xs:long"><xs:annotation><xs:documentation>
+							<![CDATA[<p>The VPN the resource should belong to; used in case of following Numbering Plan classes:
+							<ul><li>PDP addresses - mandatory</li><li>APNs - optional</li><li>VPN owner - mandatory</li><li>VPN user - mandatory</li></ul>
+							</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="vpnIdPub" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Public key of the VPN</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="prefix" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Prefix of the VPN number. Used in case of following Numbering Plan classes:
+							<ul><li>VPN owner - optional</li><li>VPN user - optional</li></ul>
+							</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="publicDnNum" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Public number.Used in case of following Numbering Plan classes:
+							<ul><li>VPN user - manadtory if REQUIRED_MAPPING_RULE is true</li></ul>
+							</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="publicNpcode" type="xs:long"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Resource regulation of the public number.Used in case of following Numbering Plan classes:
+							<ul><li>VPN user - manadtory if REQUIRED_MAPPING_RULE is true</li></ul>
+							</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="publicNpcodePub" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Public key of the number plan</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="sncode" type="xs:long"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Service code.Used in case of following Numbering Plan classes:
+							<ul><li>VPN user - manadtory if REQUIRED_MAPPING_RULE is true</li></ul>
+							</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="sncodePub" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Public key of the service</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="requiredMappingRule" type="xs:boolean"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Indicator whether VPN private numbers should be searched according to the VPN mapping rule.
+							Used in case of following Numbering Plan classes:
+							<ul><li>VPN user - optional</li></ul>
+							</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="searchBlock" type="xs:boolean"><xs:annotation><xs:documentation>
+							<![CDATA[<p>If set to true, blocks of Directory numbers will be searched. Additionaly, limits can be specified.
+							Can be used only in case of following Numbering Plan classes:
+							<ul><li>Telephone number - optional</li></ul>
+							</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="minBlkSize" type="xs:integer"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Minimum block size in case of searching for Block Directory Numbers. Only relevant if <code>SEARCH_BLOCK</code>
+							is set to true. Can be used only in case of following Numbering Plan classes:
+							<ul><li>Telephone number - optional</li></ul>
+							</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="maxBlkSize" type="xs:integer"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Maximum block size in case of searching for Block Directory Numbers. Only relevant if <code>SEARCH_BLOCK</code>
+							is set to true. Can be used only in case of following Numbering Plan classes:
+							<ul><li>Telephone number - optional</li></ul>
+							</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="parameterValues" type="wsi:parameterValuesRequest"/><xs:element minOccurs="0" name="dntypes" type="wsi:dntypesRequest"/><xs:element minOccurs="0" name="statuses" type="wsi:statusesRequest"/><xs:element minOccurs="0" name="searchCount" type="xs:integer"><xs:annotation><xs:documentation>
+							<![CDATA[<p>The size of the search output is restricted to the number of rows specified here.</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="reservation" type="xs:boolean"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Flag indicating if resource reservation is enabled.</p><p>Reservation time is defined by Resource Settings: 'LockTime' in <code>Registry_CMS_Resource.xml</code>.</p><p>    Used in case of following Numbering Plan classes:
+							<ul><li>Telephone Number</li><li>Directory number block</li><li>PDP addresses</li><li>APNs</li><li>VPN owner</li><li>VPN user</li></ul>
+							</p><p>In case if Content (instance Identifier) the resources are always reserved.</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="externalState" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Dependent on PC:15293 license</p><p>Directory number resources with EXTERNAL_STATE different from NULL must not be assignable to contracts, at CX. Those resources are used and managed by external systems.</p><p>EXTERNAL_STATE is not restricted into a domain. Operator can set it to any character value.</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="csId" type="xs:long"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Customer identifier.Used in case of following Numbering Plan classes:
+							<ul><li>VPN user - manadtory if REQUIRED_MAPPING_RULE is true</li></ul>
+							</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="csIdPub" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Customers public key</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="rscode" type="xs:long"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Private key of the resource structure.</p>]]>
+						</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="rscodePub" type="xs:string"><xs:annotation><xs:documentation>
+							<![CDATA[<p>Public key of the resource structure.</p>]]>
+						</xs:documentation></xs:annotation></xs:element></xs:all></xs:complexType><xs:complexType name="genericDirectoryNumberSearchRequest"><xs:all><xs:element minOccurs="0" name="inputAttributes" type="wsi:inputAttributes"/><xs:element minOccurs="0" name="sessionChangeRequest" type="sessionchange:sessionChangeRequest"/></xs:all></xs:complexType></xs:schema>
+  </wsdl:types>
+  <wsdl:message name="genericDirectoryNumberSearchResponse">
+    <wsdl:part element="sch3:genericDirectoryNumberSearchResponse" name="genericDirectoryNumberSearchResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="genericDirectoryNumberSearchRequest">
+    <wsdl:part element="sch3:genericDirectoryNumberSearchRequest" name="genericDirectoryNumberSearchRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Fault">
+    <wsdl:part element="SOAP-ENV:Fault" name="error">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="GenericDirectoryNumberSearchService">
+    <wsdl:operation name="genericDirectoryNumberSearch">
+<wsdl:documentation>&lt;![CDATA[&lt;p&gt;Send from the client to request a list of available directory numbers.&lt;/p&gt;&lt;p&gt;Multiple directory number types can be read with the optional performing of temporary directory number reservation.&lt;/p&gt;&lt;p&gt;If the user is restricted to a dealer or service provider then the resulting directory numbers are restricted to those belonging to the dealer or service provider.&lt;/p&gt;&lt;p&gt;This command can be used instead of any of the following:
+          &lt;ul&gt;&lt;li&gt;&lt;code&gt;DIRECTORY_NUMBERS.SEARCH&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DIRECTORY_NUMBER_BLOCKS.SEARCH&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;ACCESS_POINT_NAMES.SEARCH&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;INSTANCE_IDENTIFIER.SEARCH&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;PDP_ADDRESSES.SEARCH&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;VPN_PRIVATE_NUMBERS.SEARCH&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;VPN_NUMBERS.SEARCH&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+      &lt;/p&gt;]]&gt;</wsdl:documentation>
+      <wsdl:input message="tns:genericDirectoryNumberSearchRequest" name="genericDirectoryNumberSearchRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:genericDirectoryNumberSearchResponse" name="genericDirectoryNumberSearchResponse">
+    </wsdl:output>
+      <wsdl:fault message="Fault" name="error">
+<wsdl:documentation><error code="RC9901">&lt;![CDATA[&lt;p&gt;InvalidParameterType&lt;/p&gt;]]&gt;</error><error code="RC9001-003">&lt;![CDATA[&lt;p&gt;InternalCMSError&lt;/p&gt;]]&gt;</error></wsdl:documentation>
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GenericDirectoryNumberSearchServiceSoap11" type="tns:GenericDirectoryNumberSearchService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="genericDirectoryNumberSearch">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="genericDirectoryNumberSearchRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="genericDirectoryNumberSearchResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="error">
+        <soap:fault name="error" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GenericDirectoryNumberSearchService">
+    <wsdl:port binding="tns:GenericDirectoryNumberSearchServiceSoap11" name="GenericDirectoryNumberSearchServiceSoap11">
+      <soap:address location="http://10.49.4.12:36762/wsi/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

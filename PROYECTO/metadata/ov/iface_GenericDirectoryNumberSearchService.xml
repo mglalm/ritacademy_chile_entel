@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface name="ov.GenericDirectoryNumberSearchService">
+  <label>GenericDirectoryNumberSearchService</label>
+  <metaVersion>25</metaVersion>
+  <operationList>
+    <operation name="genericDirectoryNumberSearch" type="oper">
+      <fault>dstruct_envelope.Fault</fault>
+      <input>dstruct_genericdirectorynumbersearch.genericDirectoryNumberSearchRequest</input>
+      <label>genericDirectoryNumberSearch</label>
+      <output>dstruct_genericdirectorynumbersearch.genericDirectoryNumberSearchResponse</output>
+      <type>Request-Response</type>
+    </operation>
+  </operationList>
+  <revision>1</revision>
+</interface>

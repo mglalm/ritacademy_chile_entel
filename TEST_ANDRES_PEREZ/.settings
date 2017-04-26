@@ -3,6 +3,9 @@
   <DefaultDB>PRUEBA</DefaultDB>
   <applicationString>TEST ANDRES PEREZ</applicationString>
   <applicationVersionString>1</applicationVersionString>
+  <breakpointMap>
+    <breakpoint key="main.dummy">0</breakpoint>
+  </breakpointMap>
   <databasesMap>
     <databases key="PRUEBA" type=".configdb">
       <dbname>PRUEBA</dbname>

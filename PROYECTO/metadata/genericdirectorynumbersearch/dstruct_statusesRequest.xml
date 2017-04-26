@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="genericdirectorynumbersearch.statusesRequest">
+  <container>true</container>
+  <description><![CDATA[
+    &lt;p&gt;A status that the searched directory number could be in.&lt;/p&gt;&lt;p&gt;Note, that only directory numbers in status 'r', 'o', 't', 'i' and 'a' (in case resource sharing is allowed).&lt;/p&gt;
+  ]]></description>
+  <label>statusesRequest</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="dnStatus" type="dstruct">
+      <array>true</array>
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>dnStatus</label>
+      <maxInstance>-1</maxInstance>
+    </child>
+  </childList>
+</dataStructure>

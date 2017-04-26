@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="envelope.Fault">
+  <abstract>true</abstract>
+  <label>Fault</label>
+  <metaVersion>25</metaVersion>
+</dataStructure>

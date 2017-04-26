@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="genericdirectorynumbersearch.genericDirectoryNumberSearchRequest">
+  <container>true</container>
+  <label>genericDirectoryNumberSearchRequest</label>
+  <metaVersion>25</metaVersion>
+  <xmlMap type="xmap">
+    <includeNS>true</includeNS>
+    <includeXsiType>true</includeXsiType>
+  </xmlMap>
+  <childList>
+    <child name="inputAttributes" type="dstruct">
+      <element>dstruct_genericdirectorynumbersearch.inputAttributes</element>
+      <label>inputAttributes</label>
+    </child>
+    <child name="sessionChangeRequest" type="dstruct">
+      <element>dstruct_sessionchange.sessionChangeRequest</element>
+      <label>sessionChangeRequest</label>
+    </child>
+  </childList>
+</dataStructure>

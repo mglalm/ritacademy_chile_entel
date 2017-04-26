@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<nameSpace name="svlany">
+  <label>svlany</label>
+  <metaVersion>25</metaVersion>
+  <qualified>true</qualified>
+  <targetNS>http://lhsgroup.com/lhsws/svlany</targetNS>
+</nameSpace>

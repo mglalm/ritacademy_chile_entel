@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<externalService name="ov.GenericDirectoryNumberSearchServiceService">
+  <label>GenericDirectoryNumberSearchServiceService</label>
+  <metaVersion>25</metaVersion>
+  <portList>
+    <port name="GenericDirectoryNumberSearchServiceSoap11" type="port">
+      <binding>bind_ov.GenericDirectoryNumberSearchServiceSoap11</binding>
+      <label>GenericDirectoryNumberSearchServiceSoap11</label>
+      <recover>5</recover>
+    </port>
+  </portList>
+</externalService>

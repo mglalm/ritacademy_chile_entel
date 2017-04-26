@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<nameSpace name="sessionchange">
+  <label>sessionchange</label>
+  <metaVersion>25</metaVersion>
+  <qualified>true</qualified>
+  <targetNS>http://ericsson.com/services/ws_CIL_6/sessionchange</targetNS>
+</nameSpace>

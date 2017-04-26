@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<participant name="ov.BSCSParticipant_OV">
+  <label>BSCSParticipant_OV</label>
+  <metaVersion>25</metaVersion>
+  <participant>iface_ov.GenericDirectoryNumberSearchService</participant>
+</participant>

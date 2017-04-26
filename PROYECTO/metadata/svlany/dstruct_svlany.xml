@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="svlany.svlany">
+  <container>true</container>
+  <label>svlany</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="content" type="dstruct">
+      <datatype>true</datatype>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>content</label>
+      <mandatory>true</mandatory>
+    </child>
+  </childList>
+</dataStructure>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="genericdirectorynumbersearch.directorynumbersResponse">
+  <container>true</container>
+  <description><![CDATA[&lt;p&gt;A list of all Directory Numbers found according to the specified in parameters&lt;/p&gt;]]></description>
+  <label>directorynumbersResponse</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="item" type="dstruct">
+      <array>true</array>
+      <element>dstruct_genericdirectorynumbersearch.directorynumbersListpartResponse</element>
+      <label>item</label>
+      <maxInstance>-1</maxInstance>
+    </child>
+  </childList>
+</dataStructure>

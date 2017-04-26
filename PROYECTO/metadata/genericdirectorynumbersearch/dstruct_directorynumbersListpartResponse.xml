@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataStructure name="genericdirectorynumbersearch.directorynumbersListpartResponse">
+  <container>true</container>
+  <label>directorynumbersListpartResponse</label>
+  <metaVersion>25</metaVersion>
+  <childList>
+    <child name="dnId" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;ID (primary key) of this Directory Number.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>dnId</label>
+    </child>
+    <child name="dirnum" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Resource Number.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>dirnum</label>
+    </child>
+    <child name="npcode" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Numbering plan for this Directory Number.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>npcode</label>
+    </child>
+    <child name="dnCode" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Type of Directory Number&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>dnCode</label>
+    </child>
+    <child name="dnStatus" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Status of this Directory Number.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>dnStatus</label>
+    </child>
+    <child name="portId" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Primary key for the linked port number.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>portId</label>
+    </child>
+    <child name="hlcode" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;The HLR of the resource.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>hlcode</label>
+    </child>
+    <child name="hmcode" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Logical HLR&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>hmcode</label>
+    </child>
+    <child name="des" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;Description of the resource. Set in case of following Numbering Plan classes:
+                                                                                      &lt;ul&gt;&lt;li&gt;APN&lt;/li&gt;&lt;/ul&gt;
+                                                                                      &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.String</element>
+      <label>des</label>
+    </child>
+    <child name="vpnId" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[
+        &lt;p&gt;The ID of the VPN the number belongs to.Set in case of following Numbering Plan classes:
+                                                                                      &lt;ul&gt;&lt;li&gt;APN - optional&lt;/li&gt;&lt;li&gt;PDP - mandatory&lt;/li&gt;&lt;li&gt;VPN User (Private number) - mandatory&lt;/li&gt;&lt;li&gt;VPN Owner - mandatory&lt;/li&gt;&lt;/ul&gt;
+                                                                                      &lt;/p&gt;
+      ]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>vpnId</label>
+    </child>
+    <child name="blocks" type="dstruct">
+      <element>dstruct_genericdirectorynumbersearch.blocksResponse</element>
+      <label>blocks</label>
+    </child>
+    <child name="rscode" type="dstruct">
+      <datatype>true</datatype>
+      <description><![CDATA[&lt;p&gt;Private key of the resource structure.&lt;/p&gt;]]></description>
+      <element>dtype_com.conceptwave.system.Integer</element>
+      <label>rscode</label>
+    </child>
+  </childList>
+</dataStructure>
